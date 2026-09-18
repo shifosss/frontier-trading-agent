@@ -37,6 +37,7 @@ from `uv sync --frozen` to exist.
 
 ## What works
 
+- **Active-trading target:** hourly/daily decisions and intraday to roughly one-week stock positions. The [cadence specification](docs/trading-cadence.md) separates holding time from multi-year testing and identifies the required update to the existing historical/paper baselines.
 - **Historical-first Strategy lab:** 8,434 current US/Canadian candidates, daily data requested from 2000, 30 declared strategy/horizon hypotheses, continuous cash portfolios, daily drawdowns, and training-only rolling selection. Four account sizes and three costs remain visible, alongside the original cohort and prospective observations. See [historical research](docs/historical-research.md) and the [completed 28.6-million-bar study](docs/historical-research-results.md), including negative US results, Canadian data gaps and an audited issuer-data repair study. The lab runs separately from the 41-name starter scanner and frozen paper account. See [broad research](docs/broad-research.md) for coverage, scheduling and interpretation.
 
 - **Stock scanner:** one click captures free five-year daily histories for 41 declared

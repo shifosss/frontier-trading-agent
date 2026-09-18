@@ -4,7 +4,11 @@ The Strategy lab now prioritizes long historical tests before relying on new sha
 
 The [first completed job](historical-research-results.md) captured 8,234 usable histories and 28.6 million daily bars. Its negative US results and incomplete Canadian portfolios are retained. A separately audited three-session issuer-data repair recovered 10 Canadian rolling tests, with nine exceeding 30% drawdown; no candidate was promoted.
 
-## What runs
+## Updated active-trading target
+
+The owner clarified hourly/daily decisions and intraday to roughly one-week holdings. New tests should follow [the trading-cadence design](trading-cadence.md): 1/3/5-session daily trades, a separately qualified hourly lane, continuous position/cash management and trade-level plus weekly/monthly evidence. The existing 5/10/20-session engine described below is a retained baseline; changing only its horizon constants would not implement the new cadence. Multi-year history measures repeated short trades, not a static multi-year stock holding.
+
+## Existing baseline
 
 Five fixed families are compared: 20/60-session momentum, trend pullback, short-term mean reversion, 55-session breakout, and intermediate momentum from 252 to 21 sessions ago. Each also has a version requiring the market ETF above its 200-session average. Three holding horizons (5, 10 and 20 sessions) produce **30 declared hypotheses**, with every attempt retained. The intermediate rule requires 253 consecutive observations; other rules require 201. Liquidity thresholds remain USD5m/CAD1m trailing daily turnover.
 

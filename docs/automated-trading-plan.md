@@ -1,4 +1,4 @@
-# Automated daily/weekly trading: delivery plan and current implementation
+# Automated hourly/daily trading: delivery plan and current implementation
 
 Updated September 18, 2026. The destination remains an automated trading system. The owner now prioritizes extensive historical refinement before promoting new strategies to forward observation.
 
@@ -6,7 +6,7 @@ Updated September 18, 2026. The destination remains an automated trading system.
 
 The destination is software that the owner can deploy to operate a trading account: select opportunities, enter positions, manage exits, respect available cash and portfolio risk, and explain every decision. A scanner is one input. Paper execution is a validation stage on that path, not the final product.
 
-Daily reviews and weekly entries fit the requested horizon. They do not need high-frequency infrastructure. Advanced strategies can be added through versioned decision policies; complexity must beat simpler alternatives after realistic costs, rather than become a product requirement in itself.
+The latest owner clarification targets hourly/daily decisions and intraday to roughly one-week stock positions. Weekly-only entries and 20-session holds are now a legacy baseline, not the target cadence. The concrete next experiment design and implementation gaps are in [trading cadence](trading-cadence.md). Hourly/daily operation does not require microsecond execution infrastructure. Advanced strategies can be added through versioned decision policies; complexity must beat simpler alternatives after realistic costs, rather than become a product requirement in itself.
 
 The confirmed mandate remains a taxable, cash-only active sleeve, approximately CAD600–800 in new monthly contributions, US/CAD stocks and ETFs, and a maximum tolerated loss of 30%. CAD-to-USD funding is acceptable. No contribution is treated as deposited until observed. XGRO and the regular ETF portfolio are separate. Options require another qualified execution/accounting lane. This implementation records a 30% sampled, cash-flow-adjusted CAD drawdown halt; it cannot guarantee that gaps or intervening moves stop at 30%.
 
@@ -30,7 +30,7 @@ Sources checked September 18, 2026: [Alpaca paper specification](https://docs.al
 
 `paper-init` pins a dedicated empty USD paper account and its exact simulated starting cash. `paper-cycle` reconciles saved intents against the broker, verifies cash/shares against recorded fills, marks CAD risk, submits eligible saved paper orders, and creates the next daily decision after the market closes. `paper-watch` repeats that same durable cycle every five minutes while the host stays awake. Repeated completed-session scans are skipped. Nothing starts on page load.
 
-The first policy uses SPY's 200-session trend as an entry regime,20/60-session stock momentum normalized by volatility, and complete 201-session histories across the declared USD stock universe. Entries are decided after the week's last trading close, with buffered DAY limit orders eligible at the next opening. Holiday calendars determine the opening. Unfilled plans expire. Holdings are reviewed daily for a 50-session trend break, a 2.5-ATR decline from an observed closing-price peak, and a 20-session maximum holding period. These are close-confirmed exits, not intraday stops.
+The existing frozen legacy policy uses SPY's 200-session trend as an entry regime,20/60-session stock momentum normalized by volatility, and complete 201-session histories across the declared USD stock universe. Entries are decided after the week's last trading close, with buffered DAY limit orders eligible at the next opening. Holiday calendars determine the opening. Unfilled plans expire. Holdings are reviewed daily for a 50-session trend break, a 2.5-ATR decline from an observed closing-price peak, and a 20-session maximum holding period. These are close-confirmed exits, not intraday stops.
 
 Default allocation limits are four positions, 20% per position, 80% gross exposure, one stock per exposure group, and 0.5% modeled ATR risk per entry. Existing holdings still consume exposure and slots until filled exits are observed. Expected sale proceeds cannot finance another order before conservative T+1 settlement. Settlement skips both US banking holidays and exchange holidays, including dates when stocks trade but settlement is closed. [DTCC 2026 settlement holiday schedule](https://www.dtcc.com/-/media/Files/pdf/2025/10/15/23036-25.pdf)
 

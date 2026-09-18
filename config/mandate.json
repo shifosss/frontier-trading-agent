@@ -76,5 +76,28 @@
     "owner_selected_existing_account_on": "2026-09-18",
     "purpose": "Validate the frozen daily/weekly policy and unattended paper operations using the existing simulated balance.",
     "scope_limit": "This balance is simulated, is not real active capital, and does not validate US$500 whole-share affordability or position sizing."
+  },
+  "active_trading_cadence": {
+    "clarified_on": "2026-09-18",
+    "decision_intervals": [
+      "1h",
+      "1d"
+    ],
+    "slowest_review_interval": "1 trading week",
+    "default_research_holding_sessions": [
+      1,
+      3,
+      5
+    ],
+    "intraday_research_holding_bars": [
+      1,
+      2,
+      4
+    ],
+    "intraday_session_policy": "Dedicated intraday candidates exit by the official session close; actual elapsed duration is reported.",
+    "historical_test_span": "Use multiple years of repeated short trades, with trade-level and weekly/monthly evaluation; do not interpret the test span as a holding period.",
+    "default_holding_interpretation": "New individual-stock experiments target intraday to at most five trading sessions. This is the working interpretation of the hourly/daily/at-most-weekly instruction.",
+    "implementation_status": "Target mandate; current historical and frozen paper policies require a versioned cadence update.",
+    "design_document": "docs/trading-cadence.md"
   }
 }
