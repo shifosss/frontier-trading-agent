@@ -6,6 +6,24 @@ type Props = {
   request: (path: string, body?: unknown) => Promise<any>;
   error: (message: string) => void;
 };
+type TradeMetrics = {
+  completed_trades: number;
+  net_expectancy_native?: number | null;
+  net_expectancy_return?: number | null;
+  win_rate?: number | null;
+  annualized_turnover?: number | null;
+  mean_exposure_fraction?: number | null;
+  mean_holding_sessions?: number | null;
+  mean_holding_calendar_days?: number | null;
+  trades_per_week?: number | null;
+};
+type PeriodMetrics = {
+  count: number;
+  profitable_fraction: number | null;
+  mean_return: number | null;
+  median_return: number | null;
+  worst_return: number | null;
+};
 type Portfolio = {
   currency: string;
   budget: number;
@@ -20,6 +38,8 @@ type Portfolio = {
   ending_equity: number | null;
   trades: number;
   fees: number;
+  trade_metrics?: TradeMetrics;
+  period_metrics?: { weekly?: PeriodMetrics; monthly?: PeriodMetrics };
   first_session: string;
   last_session: string;
   monthly_equity_curve?: {
@@ -53,14 +73,28 @@ type Result = {
       rows: number;
     }[];
   };
-  methodology: { limitations: string[]; attempts: unknown[] };
+  study_mode?: string;
+  methodology: {
+    version?: string;
+    horizons?: number[];
+    screening_frequency?: string;
+    execution?: string;
+    limitations: string[];
+    attempts: unknown[];
+  };
   portfolios: Portfolio[];
   benchmarks: (Portfolio & { symbol: string })[];
   walk_forward: Portfolio[];
 };
 type Status = {
   status: string;
+  run_id?: string;
+  study_mode?: string;
   phase?: string;
+  stage?: string;
+  budget?: number;
+  test_start?: string;
+  symbols?: number;
   message?: string;
   currency?: string;
   requested?: number;
@@ -75,6 +109,100 @@ type Status = {
 };
 const rate = (value: number | null | undefined) =>
   value == null ? "Unavailable" : percent(value);
+const amount = (value: number | null | undefined, decimals = 2) =>
+  value == null ? "Unavailable" : number(value, decimals);
+const completedValue = (row: Portfolio, value: number | null | undefined) =>
+  row.status === "complete" ? value : null;
+
+function TradingMetrics({ row }: { row: Portfolio }) {
+  const metrics = row.trade_metrics;
+  if (!metrics) return null;
+  if (row.status !== "complete")
+    return (
+      <p>
+        {number(metrics.completed_trades, 0)} completed round trips before this
+        test stopped. Trade profitability and period statistics are unavailable
+        for the incomplete account.
+      </p>
+    );
+  return (
+    <section aria-label="Short-hold trading statistics">
+      <h4>Actual trading activity</h4>
+      <dl className="historical-trade-metrics">
+        <div>
+          <dt>Completed round trips</dt>
+          <dd>{number(metrics.completed_trades, 0)}</dd>
+          <small>{amount(metrics.trades_per_week)} per 5 sessions</small>
+        </div>
+        <div>
+          <dt>Average holding time</dt>
+          <dd>{amount(metrics.mean_holding_sessions)} sessions</dd>
+          <small>
+            {amount(metrics.mean_holding_calendar_days)} calendar days
+          </small>
+        </div>
+        <div>
+          <dt>Net expectancy per trade</dt>
+          <dd>
+            {row.currency} {amount(metrics.net_expectancy_native)}
+          </dd>
+          <small>
+            {rate(metrics.net_expectancy_return)} average net trade return
+          </small>
+        </div>
+        <div>
+          <dt>Winning trades</dt>
+          <dd>{rate(metrics.win_rate)}</dd>
+          <small>After modeled trading costs</small>
+        </div>
+        <div>
+          <dt>Annualized turnover</dt>
+          <dd>{amount(metrics.annualized_turnover)}×</dd>
+          <small>Entry + exit notional / mean equity</small>
+        </div>
+        <div>
+          <dt>Average invested fraction</dt>
+          <dd>{rate(metrics.mean_exposure_fraction)}</dd>
+          <small>Remaining equity is cash</small>
+        </div>
+      </dl>
+      {row.period_metrics && (
+        <>
+          <h4>Account results by calendar period</h4>
+          <Table
+            columns={[
+              ["period", "Period"],
+              ["count", "Periods observed"],
+              ["profitable", "Profitable periods"],
+              ["average", "Average return"],
+              ["median", "Median return"],
+              ["worst", "Worst return"],
+            ]}
+            rows={(["weekly", "monthly"] as const).flatMap((period) => {
+              const values = row.period_metrics?.[period];
+              return values
+                ? [
+                    {
+                      period: readable(period),
+                      count: number(values.count, 0),
+                      profitable: rate(values.profitable_fraction),
+                      average: rate(values.mean_return),
+                      median: rate(values.median_return),
+                      worst: rate(values.worst_return),
+                    },
+                  ]
+                : [];
+            })}
+          />
+          <p>
+            These are whole-account returns, including time spent in cash and
+            the first and last partial calendar periods.
+          </p>
+        </>
+      )}
+    </section>
+  );
+}
 
 export default function HistoricalResearchPanel({ request, error }: Props) {
   const [state, setState] = useState<Status>({ status: "loading" });
@@ -83,6 +211,8 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
   const [budget, setBudget] = useState(500);
   const [cost, setCost] = useState(40);
   const [busy, setBusy] = useState(false);
+  const [studyMode, setStudyMode] = useState("short_horizon");
+  const [reuseCapture, setReuseCapture] = useState(true);
   const loaded = useRef("");
   const active = state.status === "running" || state.status === "starting";
   const refresh = useCallback(async () => {
@@ -111,13 +241,21 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
   async function start() {
     setBusy(true);
     try {
-      setState(await request("/historical-lab/start", {}));
+      setState(
+        await request("/historical-lab/start", {
+          study_mode: studyMode,
+          ...(reuseCapture && result ? { source_run_id: result.run_id } : {}),
+        }),
+      );
     } catch (failure) {
       error((failure as Error).message);
     } finally {
       setBusy(false);
     }
   }
+  const shortHold =
+    result?.study_mode === "short_horizon" ||
+    result?.methodology.version === "daily-short-hold-v1";
   const matches = (row: Portfolio) =>
     row.currency === currency && row.budget === budget && row.cost_bps === cost;
   const rows = [
@@ -166,11 +304,24 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
         <div>
           <h2>Historical strategy development</h2>
           <p>
-            History from 2000 where available · continuous cash portfolios ·
-            rolling annual tests
+            Daily market history from 2000 where available · cash accounts ·
+            costs and settlement modeled
           </p>
         </div>
-        <div className="lab-actions">
+        <div className="lab-actions historical-run-actions">
+          <label>
+            Study to run
+            <select
+              value={studyMode}
+              disabled={active || busy}
+              onChange={(event) => setStudyMode(event.target.value)}
+            >
+              <option value="short_horizon">
+                Daily screening · 1 / 3 / 5 sessions
+              </option>
+              <option value="legacy">Baseline · 5 / 10 / 20 sessions</option>
+            </select>
+          </label>
           <button className="secondary compact" onClick={() => void refresh()}>
             Refresh historical status
           </button>
@@ -181,16 +332,46 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
           >
             {active || busy
               ? "Historical study running"
-              : "Run / resume historical study"}
+              : studyMode === "short_horizon"
+                ? "Run short-hold study"
+                : "Run baseline study"}
           </button>
         </div>
       </div>
+      {result && (
+        <label className="historical-reuse-capture">
+          <input
+            type="checkbox"
+            checked={reuseCapture}
+            disabled={active || busy}
+            onChange={(event) => setReuseCapture(event.target.checked)}
+          />
+          Reuse the saved histories from the result below
+        </label>
+      )}
+      <p>
+        The short-hold study screens stocks after each daily session and tests
+        positions held for 1, 3, or 5 trading sessions. It uses daily bars; it
+        does not simulate intraday or hourly execution.
+      </p>
       <div role="status" aria-live="polite" className="operator-state">
         <span className="badge synthetic">Historical research</span>
         <h3>
           {readable(state.status)}
-          {state.phase ? ` · ${readable(state.phase)}` : ""}
+          {state.phase
+            ? ` · ${readable(state.phase === "evaluation" ? (state.stage ?? state.phase) : state.phase)}`
+            : ""}
         </h3>
+        {active && state.study_mode && (
+          <p>
+            {state.study_mode === "short_horizon"
+              ? "Running daily screening with 1 / 3 / 5-session holds."
+              : "Running the 5 / 10 / 20-session baseline."}
+          </p>
+        )}
+        {active && state.run_id && (
+          <p className="lab-timestamp">Active run {state.run_id}</p>
+        )}
         <p>
           {state.message ??
             "Long histories support repeated tests before new forward observations mature."}
@@ -210,6 +391,21 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
             value={(state.cached ?? 0) + (state.attempted ?? 0)}
           />
         )}
+        {active && state.phase === "evaluation" && (
+          <p>
+            {state.currency}
+            {state.stage === "historical_features" && state.symbols != null
+              ? ` · ${number(state.symbols, 0)} instrument features prepared`
+              : (state.stage?.endsWith("portfolios") ||
+                    state.stage?.endsWith("walk_forward")) &&
+                  state.budget != null
+                ? ` · ${number(state.budget, 0)} starting cash`
+                : ""}
+            {state.stage?.endsWith("walk_forward") && state.test_start
+              ? ` · test year starting ${state.test_start}`
+              : ""}
+          </p>
+        )}
         {active && state.phase === "normalization" && (
           <p>
             {state.currency}: {number(state.normalized ?? 0, 0)} /{" "}
@@ -219,6 +415,20 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
       </div>
       {result && (
         <>
+          <h3>
+            {shortHold
+              ? "Daily short-hold results"
+              : "Baseline historical results"}
+          </h3>
+          {active && (
+            <p className="historical-retained-result">
+              A new study is running. The previously published results remain
+              below until the new study finishes.
+            </p>
+          )}
+          <p className="lab-timestamp">
+            Published {result.created_at} · Run {result.run_id}
+          </p>
           <p>
             {number(result.capture.usable, 0)} histories ·{" "}
             {number(result.capture.rows, 0)} daily observations ·{" "}
@@ -272,12 +482,21 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               Download historical evidence
             </a>
           </div>
+          {shortHold && (
+            <p>
+              Daily screening · next-session close execution · target holds of{" "}
+              {(result.methodology.horizons ?? [1, 3, 5]).join(", ")} sessions.
+              Positions enter and exit independently as settled cash permits.
+            </p>
+          )}
           <h3>Training-only selection, tested on the following year</h3>
           <p>
             Each selection uses the previous three years. Test periods keep
             their selected rule; cash remains an eligible choice. These are
             retrospective tests designed today, with current listing and data
             limitations.
+            {shortHold &&
+              " The rule is selected annually; trading decisions are made daily within each test year."}
           </p>
           {walk ? (
             <>
@@ -321,9 +540,11 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               </p>
               <p>
                 <strong>{readable(walk.status)}</strong> · total return{" "}
-                {rate(walk.total_return)} · maximum drawdown{" "}
-                {rate(walk.max_drawdown)} · annualized return {rate(walk.cagr)}{" "}
-                · {number(walk.trades, 0)} trades
+                {rate(completedValue(walk, walk.total_return))} · maximum
+                drawdown {rate(completedValue(walk, walk.max_drawdown))} ·
+                annualized return {rate(completedValue(walk, walk.cagr))} ·{" "}
+                {number(walk.trade_metrics?.completed_trades ?? walk.trades, 0)}{" "}
+                {walk.trade_metrics ? "completed round trips" : "trades"}
               </p>
               {compareBenchmark && (
                 <p>
@@ -332,9 +553,10 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
                   {rate(walk.benchmark?.max_drawdown)}.
                 </p>
               )}
-              {(walk.max_drawdown ?? 0) > 0.3 && (
+              {walk.status === "complete" && (walk.max_drawdown ?? 0) > 0.3 && (
                 <p>This test exceeds your 30% maximum loss tolerance.</p>
               )}
+              <TradingMetrics row={walk} />
               <Table
                 columns={[
                   ["training", "Training interval"],
@@ -372,18 +594,38 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               ["total", "Total return"],
               ["drawdown", "Max drawdown"],
               ["annual", "Annualized"],
-              ["trades", "Trades"],
-              ["fees", "Fees"],
+              ["trades", shortHold ? "Completed round trips" : "Trades"],
+              ["fees", `Fees (${currency})`],
+              ...(shortHold
+                ? ([
+                    ["average_hold", "Average hold (sessions)"],
+                    ["expectancy", `Net expectancy (${currency}/trade)`],
+                    ["win_rate", "Winning trades"],
+                    ["turnover", "Annualized turnover"],
+                  ] as [string, string][])
+                : []),
             ]}
             rows={rows.map((r) => ({
               rule: readable(r.strategy),
               hold: r.horizon ? `${r.horizon} sessions` : "—",
               status: readable(r.status),
-              total: rate(r.total_return),
-              drawdown: rate(r.max_drawdown),
-              annual: rate(r.cagr),
-              trades: number(r.trades, 0),
+              total: rate(completedValue(r, r.total_return)),
+              drawdown: rate(completedValue(r, r.max_drawdown)),
+              annual: rate(completedValue(r, r.cagr)),
+              trades: number(r.trade_metrics?.completed_trades ?? r.trades, 0),
               fees: number(r.fees, 2),
+              average_hold: amount(
+                completedValue(r, r.trade_metrics?.mean_holding_sessions),
+              ),
+              expectancy: amount(
+                completedValue(r, r.trade_metrics?.net_expectancy_native),
+              ),
+              win_rate: rate(completedValue(r, r.trade_metrics?.win_rate)),
+              turnover:
+                r.status === "complete" &&
+                r.trade_metrics?.annualized_turnover != null
+                  ? `${amount(r.trade_metrics.annualized_turnover)}×`
+                  : "Unavailable",
             }))}
           />
           <details>

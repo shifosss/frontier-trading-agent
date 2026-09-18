@@ -1905,3 +1905,57 @@ td small.earlier-version {
 .historical-research .historical-chart-scroll .equity-chart {
   min-width: 930px;
 }
+
+.historical-research .historical-run-actions {
+  align-items: end;
+}
+.historical-research .historical-run-actions label {
+  display: grid;
+  gap: 5px;
+  max-width: 100%;
+}
+.historical-research .historical-run-actions select {
+  min-width: 0;
+  max-width: 100%;
+}
+.historical-research .historical-retained-result {
+  padding: 12px 16px;
+  border-left: 3px solid #245bd3;
+  background: #f0f5ff;
+}
+.historical-research .historical-trade-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+.historical-research .historical-trade-metrics > div {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+}
+.historical-research .historical-trade-metrics dt,
+.historical-research .historical-trade-metrics small {
+  color: #62758a;
+  font-size: 12px;
+}
+.historical-research .historical-trade-metrics dd {
+  margin: 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.historical-research .lab-timestamp {
+  overflow-wrap: anywhere;
+}
+
+.historical-research .historical-reuse-capture {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+.historical-research .historical-reuse-capture input {
+  width: auto;
+  flex-shrink: 0;
+}

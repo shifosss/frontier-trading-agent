@@ -7,6 +7,7 @@ import threading
 from contextlib import contextmanager
 from importlib.metadata import version
 from pathlib import Path
+from typing import Literal
 
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request
@@ -69,6 +70,8 @@ class BroadResearchRequest(BaseModel):
 class HistoricalRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     rediscover: bool = False
+    study_mode: Literal["short_horizon", "legacy"] = "short_horizon"
+    source_run_id: str | None = Field(default=None, pattern=r"^[0-9a-f]{32}$")
 
 
 class FreezeRequest(BaseModel):
@@ -252,7 +255,10 @@ def create_app(workspace: Path) -> FastAPI:
     def historical_start(body: HistoricalRequest):
         from frontier.historical_lab import start_historical_job
 
-        return start_historical_job(workspace, **body.model_dump())
+        try:
+            return start_historical_job(workspace, **body.model_dump())
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(422, str(exc)) from exc
 
     @app.get("/api/historical-lab/runs/{run_id}")
     def historical_result(run_id: str):

@@ -409,12 +409,19 @@ def historical_research(
     start: str = "2000-01-01",
     rediscover: bool = False,
     capture_only: bool = False,
+    study_mode: str = "short_horizon",
+    source_run_id: str | None = None,
 ):
     """Capture long histories and test continuous cash portfolios and rolling selection."""
     from frontier.historical_lab import run_historical_lab
 
     result = run_historical_lab(
-        ctx.obj, start=start, rediscover=rediscover, capture_only=capture_only
+        ctx.obj,
+        start=start,
+        rediscover=rediscover,
+        capture_only=capture_only,
+        study_mode=study_mode,
+        source_run_id=source_run_id,
     )
     output({key: result[key] for key in ("run_id", "capture", "captured") if key in result})
 

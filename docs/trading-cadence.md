@@ -2,7 +2,7 @@
 
 Clarified by the owner on September 18, 2026: the active sleeve is for individual-stock trading with hourly or daily decisions and, at the slowest, weekly activity. It is separate from the regular ETF allocation. The working default for new experiments is intraday or 1-5 trading-session positions, rather than the earlier 10-20-session swing holds.
 
-This is a saved mandate and implementation specification. It does not claim that the existing historical simulator or frozen paper account already executes this cadence.
+The default historical lane now implements daily screening and independent 1/3/5-session positions with dated cash settlement; see [historical research](historical-research.md). Hourly stock research and the frozen paper-policy migration remain open. The older historical lane is retained as an explicit legacy comparison.
 
 ## Separate the three clocks
 
@@ -35,11 +35,11 @@ Record this new experiment definition before inspecting its outcomes. Previously
 - Results by market regime, liquidity band and account size; concentration of profit in a few dates or names. Preserve failed/incomplete attempts.
 - Matched-period cash and market references plus simpler strategy baselines. Annualized return remains context, not the sole ranking criterion. No future return or 30% loss cap is guaranteed by a passing historical filter.
 
-## Current implementation findings to resolve
+## Legacy findings and remaining work
 
-- Historical research currently uses 5/10/20-session holds, 756-session training and 252-session evaluation. Its no-position branch advances by `horizon + 3`, so merely changing the horizon tuple would still miss daily signals.
-- Its training-score partition currently depends on the evaluation length. Changing evaluation to 21 sessions without changing that partition would create unequal training blocks. Give training sub-blocks their own declared boundaries.
-- The earlier cohort study caches ranks every five sessions. Replacing its shared horizons with 1/3/5 would request uncached ranks. Add a new versioned lane instead of mutating archived study semantics.
+- The retained legacy historical engine uses 5/10/20-session holds, 756-session training and 252-session evaluation. Its no-position branch advances by `horizon + 3`, so merely changing the horizon tuple would still miss daily signals.
+- The legacy training-score partition depends on the evaluation length. Changing evaluation to 21 sessions without changing that partition would create unequal training blocks. The new short-hold lane already declares training sub-blocks separately; any future monthly-selection experiment must keep that separation.
+- The earlier cohort study caches ranks every five sessions. Replacing its shared horizons with 1/3/5 would request uncached ranks. The new versioned short-hold lane avoids mutating those archived semantics.
 - The frozen paper operator decides entries weekly, checks exits daily and allows 20-session holds. Its five-minute worker interval is reconciliation polling, not a five-minute strategy. It remains a legacy paper execution baseline until a tested policy/state migration implements the new mandate.
 - The scheduled Codex research follow-ups are development wakeups, not the strategy's market-event clock. Their current twice-daily schedule does not define the eventual hourly trading frequency.
 
