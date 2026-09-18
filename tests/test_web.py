@@ -151,3 +151,18 @@ def test_actual_campaign_trials_retained(service):
     assert campaign["trial_count"] == len(campaign["run_ids"]) == 11
     assert len(client.get("/api/runs").json()) == 11
     assert len(campaign["ranking"]) == 11
+
+
+def test_operator_status_is_local_and_setup_required(service, monkeypatch):
+    client, _, _ = service
+
+    def forbid_broker(*args, **kwargs):
+        raise AssertionError("Status must not contact or construct a broker")
+
+    monkeypatch.setattr("frontier.operator.AlpacaPaper", forbid_broker)
+    response = client.get("/api/operator/status")
+    assert response.status_code == 200
+    assert response.json()["status"] == "setup_required"
+    assert response.json()["mode"] == "paper"
+    assert response.json()["orders"] == []
+    assert response.json()["account"] is None

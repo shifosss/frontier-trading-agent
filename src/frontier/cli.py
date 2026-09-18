@@ -43,7 +43,7 @@ def doctor():
             "python_requirement": "3.13",
             "nautilus_trader": version("nautilus-trader"),
             "frontier": version("frontier-trading"),
-            "execution": "local research only",
+            "execution": "Research and opt-in Alpaca paper operation; live execution disabled",
             "corporate_actions": (
                 "cash dividends require payment dates; stock splits rejected; "
                 "unknown coverage requires opt-in"
@@ -317,6 +317,62 @@ def saved_scans(ctx: typer.Context):
             for row in list_scans(ctx.obj)
         ]
     )
+
+
+@app.command("paper-status")
+def paper_status(ctx: typer.Context):
+    """Show locally saved operator state without contacting a broker."""
+    from frontier.operator import operator_status
+
+    output(operator_status(ctx.obj))
+
+
+@app.command("paper-init")
+def paper_init(
+    ctx: typer.Context,
+    account_id: str = typer.Option(...),
+    cash_usd: float = typer.Option(...),
+):
+    """Initialize an empty dedicated Alpaca paper account; no money is transferred."""
+    from frontier.operator import initialize_paper
+
+    output(initialize_paper(ctx.obj, account_id, cash_usd))
+
+
+@app.command("paper-cycle")
+def paper_cycle(ctx: typer.Context):
+    """Reconcile and execute eligible saved paper intents, then prepare the next decision."""
+    from frontier.operator import run_paper_cycle
+
+    output(run_paper_cycle(ctx.obj))
+
+
+@app.command("paper-watch")
+def paper_watch(ctx: typer.Context, interval_seconds: int = typer.Option(300, min=30)):
+    """Keep running paper cycles until stopped; the host must remain awake."""
+    from frontier.operator import watch_paper
+
+    watch_paper(ctx.obj, interval_seconds)
+
+
+@app.command("paper-flow")
+def paper_flow(
+    ctx: typer.Context,
+    event_id: str = typer.Option(...),
+    amount_usd: float = typer.Option(...),
+):
+    """Record a funding change already made in the broker simulator; never transfer funds."""
+    from frontier.operator import record_paper_flow
+
+    output(record_paper_flow(ctx.obj, event_id, amount_usd))
+
+
+@app.command("paper-pause")
+def paper_pause(ctx: typer.Context, resume: bool = False):
+    """Pause new entries while cycles continue managing exits; resume cannot clear a risk halt."""
+    from frontier.operator import pause_paper
+
+    output(pause_paper(ctx.obj, paused=not resume))
 
 
 if __name__ == "__main__":

@@ -172,3 +172,34 @@ Final checks: **132 tests passed in 80.37s**, Ruff/TypeScript/build passed, and 
 actual conversion form/API/download/saved-history/reload flow passed in Chrome.
 Four screen widths had no page/HTTP errors or horizontal overflow. Current IDs,
 reference assumptions and financial results are in [USD funding study](usd-funding-study.md).
+
+
+## Automated paper operator — September 18, 2026
+
+Applied the previously source-loaded Ponytail skill at full (standard) level. Reused
+httpx, exchange calendars, captured scanner features, SQLite and native process locks;
+no new dependency or abstraction framework was introduced. The paper broker owns
+cash, holdings and fills. The separate journal records evidence and checks known
+cash/share changes; it does not replace Nautilus or invent a second execution engine.
+
+Two independent reviews found and resolved: incorrect settlement on bank-only
+holidays; a reopened holding inheriting old age; non-atomic plan/peak persistence;
+incomplete captures consuming a session's only decision; entry prices masquerading
+as completed-close peaks; fills later than request-start being rejected as future;
+stale gross exposure between immediately filled orders; rejected exits appearing
+healthy; cross-endpoint market marks causing false reconciliation failures; and one
+working exit blocking risk exits in other holdings. Each consequential counterexample
+has a regression check. Paused decisions also say wait when their buy intents are removed.
+
+Final full verification: **196 tests passed in 99.23 seconds**, Ruff passed, and
+TypeScript/Vite production build passed. The 96 warnings are existing upstream
+Starlette/AnyIO and Nautilus/pandas deprecations. Independent reviewers rechecked
+closure of their last findings. Paper HTTP tests use MockTransport, operating tests
+use an explicit broker double, and no broker credentials or accounts were accessed.
+The Windows launcher passed PowerShell syntax parsing; actual daemon/broker startup
+remains unqualified until a dedicated paper account is configured locally.
+
+Five UI states were checked at 1440, 768, 390 and 320 pixels using mocked status responses;
+the actual local endpoint was then checked separately. Evidence lives under
+`.qualification/operator-ui-smoke` and `.qualification/operator-ui-actual`. Public
+product claims and remaining deployment gates are in [the updated plan](automated-trading-plan.md).

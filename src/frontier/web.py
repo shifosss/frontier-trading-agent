@@ -156,6 +156,7 @@ def create_app(workspace: Path) -> FastAPI:
                     "Regular-session raw-bar replay; inferred quotes and availability"
                 ),
                 "broker_connection": False,
+                "paper_operator": "Opt-in Alpaca paper loop; see /api/operator/status",
                 "automatic_fx_trading": False,
                 "research_agent": (
                     "Codex proposals with measured feedback; at most 2 calls per campaign"
@@ -171,6 +172,12 @@ def create_app(workspace: Path) -> FastAPI:
                 for d in datasets
             ],
         }
+
+    @app.get("/api/operator/status")
+    def paper_operator_status():
+        from frontier.operator import operator_status
+
+        return operator_status(workspace)
 
     @app.get("/api/scans")
     def scans():

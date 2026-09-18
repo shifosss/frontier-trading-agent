@@ -1637,3 +1637,115 @@ td small.earlier-version {
     padding-inline: 18px;
   }
 }
+
+.operator .wide-sheet {
+  overflow: hidden;
+}
+.operator-state {
+  margin: 0 24px 18px;
+  padding: 18px;
+  border-left: 3px solid #245bd3;
+  background: #f3f7fe;
+}
+.operator-state h3 {
+  margin-top: 10px;
+}
+.operator-state p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+.operator-attention {
+  border-color: #b25a50;
+  background: #faeeee;
+}
+.operator-copy {
+  padding: 0 24px 20px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.operator-pipeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 0 0 24px;
+}
+.operator-pipeline article {
+  padding: 20px;
+  background: white;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+}
+.operator-pipeline span {
+  display: block;
+  font-size: 11px;
+  color: #718399;
+  margin-bottom: 10px;
+}
+.operator-pipeline h3 {
+  font-size: 15px;
+}
+.operator-pipeline p {
+  margin-top: 9px;
+  font-size: 12px;
+}
+.operator-setup,
+.operator-requirements {
+  padding: 24px;
+}
+.operator-setup > p {
+  padding: 0;
+  margin-top: 10px;
+  max-width: 760px;
+  font-size: 13px;
+}
+.operator-setup ol {
+  padding-left: 20px;
+  font-size: 13px;
+  color: #62758a;
+}
+.operator-setup code,
+.operator-setup pre {
+  overflow-wrap: anywhere;
+}
+.operator-setup pre {
+  white-space: pre-wrap;
+  padding: 14px;
+  border-radius: 5px;
+  background: #f6f9fc;
+  font-size: 12px;
+}
+.operator-setup details p {
+  font-size: 12px;
+}
+.operator-table-heading {
+  padding: 4px 24px 0;
+}
+.operator-decisions td:last-child,
+.operator-orders td:nth-last-child(2) {
+  white-space: normal;
+  min-width: 180px;
+  max-width: 520px;
+}
+.operator-requirements li {
+  color: #62758a;
+  font-size: 13px;
+}
+.operator .metric-strip strong {
+  font-size: 18px;
+}
+@media (max-width: 1050px) {
+  .operator-pipeline {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+@media (max-width: 760px) {
+  .rail nav {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .operator .section-heading {
+    flex-wrap: wrap;
+  }
+}

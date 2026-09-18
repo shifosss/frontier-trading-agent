@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./style.css";
 import ResearchPanel from "./ResearchPanel";
 import ScannerPanel from "./ScannerPanel";
+import OperatorPanel from "./OperatorPanel";
 import { Download, EquityChart, Table } from "./StudyDisplay";
 import { day, number, percent } from "./format";
 import type { Dataset } from "./types";
@@ -36,6 +37,13 @@ async function api(path: string, body?: unknown) {
   return j;
 }
 const pages = [
+  {
+    id: "Trading desk",
+    icon: "⇄",
+    title: "Trading desk",
+    description:
+      "Daily decisions, paper execution and account risk in one place.",
+  },
   {
     id: "Scanner",
     icon: "⌕",
@@ -77,7 +85,7 @@ const pages = [
 type Page = (typeof pages)[number]["id"];
 
 function App() {
-  const [page, setPage] = useState<Page>("Scanner"),
+  const [page, setPage] = useState<Page>("Trading desk"),
     [datasets, setDatasets] = useState<Dataset[]>([]),
     [runs, setRuns] = useState<Obj[]>([]),
     [status, setStatus] = useState<Obj | null>(null),
@@ -423,7 +431,7 @@ function App() {
         <a className="brand" href="#" onClick={(e) => e.preventDefault()}>
           <span className="brand-mark">F</span>
           <span>
-            Frontier<small>Research</small>
+            Frontier<small>Trading</small>
           </span>
         </a>
         <nav aria-label="Main navigation">
@@ -444,9 +452,9 @@ function App() {
           <span className="status-dot" />
           Local workspace
           <small>
-            Research only
+            Paper validation
             <br />
-            No broker connection
+            Live trading disabled
           </small>
         </div>
       </aside>
@@ -500,6 +508,9 @@ function App() {
                   ? "Actual replay is in progress."
                   : "Waiting for the requested operation to complete."}
           </div>
+        )}
+        {page === "Trading desk" && (
+          <OperatorPanel request={api} error={setError} />
         )}
         {page === "Scanner" && (
           <ScannerPanel
@@ -1282,7 +1293,7 @@ function App() {
           </section>
         )}
         <footer>
-          Frontier Research{" "}
+          Frontier Trading{" "}
           <span>
             Local snapshots. Explicit assumptions. Inspectable evidence.
           </span>

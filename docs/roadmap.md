@@ -1,5 +1,7 @@
 # Delivery Roadmap
 
+> September 18 delivery correction: the destination is an automated daily/weekly trading operator. The portfolio operating loop now takes priority over further research-dashboard expansion. See [the updated delivery plan](automated-trading-plan.md) for implemented paper operation, broker findings, reasoning and remaining live-deployment gates.
+
 Date: 2026-09-18
 
 Status: partially implemented as of September 18, 2026. A runnable local research

@@ -1,4 +1,6 @@
-# Frontier Research
+# Frontier Trading
+
+The product target is automated daily/weekly trading. A persistent **paper operator** now joins the scanner and research engine: weekly entries, daily exits, settled-cash checks, CAD drawdown control, durable orders and restart recovery. It is not connected to a broker yet and live execution is not implemented. Start with the [paper operator setup](docs/paper-operator.md) and [updated delivery plan](docs/automated-trading-plan.md).
 
 A local research workstation for US and Canadian stocks and ETFs. It imports
 traceable data, runs real Nautilus simulations, compares fixed baselines and bounded
