@@ -275,6 +275,23 @@ def _dataset_path(data_root: Path, dataset_id: str) -> Path:
     return path
 
 
+def _semantic_frame(frame: pd.DataFrame) -> pd.DataFrame:
+    """Normalize storage dtypes/order without rounding economic values or timestamps."""
+    normalized = frame.drop(columns=["ingested_at"], errors="ignore").copy()
+    numeric = {"open", "high", "low", "close", "volume", "cash_amount", "ratio", "usd_cad"}
+    for column in normalized:
+        if column in {"event_time", "available_at"}:
+            normalized[column] = pd.to_datetime(normalized[column], utc=True).astype(
+                "datetime64[ns, UTC]"
+            )
+        elif column in numeric:
+            normalized[column] = pd.to_numeric(normalized[column], errors="raise").astype("Float64")
+        else:
+            normalized[column] = normalized[column].astype("string")
+    columns = sorted(normalized.columns)
+    return normalized[columns].sort_values(columns).reset_index(drop=True)
+
+
 def load_dataset(data_root: Path, dataset_id: str) -> MarketDataset:
     """Verify stored digests, then perform analytical reads through DuckDB."""
     path = _dataset_path(data_root, dataset_id)
@@ -314,6 +331,16 @@ def load_dataset(data_root: Path, dataset_id: str) -> MarketDataset:
             frames[name] = connection.execute(
                 "SELECT * FROM read_parquet(?)", [str(path / f"{name}.parquet")]
             ).fetchdf()
+            try:
+                pd.testing.assert_frame_equal(
+                    _semantic_frame(frames[name]),
+                    _semantic_frame(source_frames[name]),
+                    check_exact=True,
+                )
+            except (AssertionError, ValueError, TypeError) as exc:
+                raise ValueError(
+                    f"dataset integrity error: {name} semantic content differs from source"
+                ) from exc
     return MarketDataset(manifest=manifest, **frames)
 
 

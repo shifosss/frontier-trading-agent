@@ -332,3 +332,73 @@ def test_source_changes_cannot_keep_identity_even_with_updated_digest(tmp_path):
     manifest_path.write_text(json.dumps(document))
     with pytest.raises(ValueError, match="source content does not match dataset_id"):
         load_dataset(root, manifest.dataset_id)
+
+
+@pytest.mark.parametrize(
+    "table,column,value",
+    [
+        ("bars", "close", 103.0),
+        ("bars", "available_at", pd.Timestamp("2025-07-02T21:00:00Z")),
+        ("actions", "cash_amount", 9.0),
+        ("fx", "usd_cad", 1.99),
+        ("fx", "available_at", pd.Timestamp("2025-07-02T16:01:00Z")),
+    ],
+)
+def test_parquet_changes_rejected_even_with_updated_manifest_hash(tmp_path, table, column, value):
+    import hashlib
+
+    actions = [
+        dict(
+            instrument_id="FICTUS.XNYS",
+            event_time="2025-07-02T13:30:00Z",
+            available_at="2025-07-02T13:30:00Z",
+            type="dividend",
+            cash_amount=1.25,
+            currency="USD",
+            ratio=None,
+        )
+    ]
+    fx = [
+        dict(
+            event_time="2025-07-02T16:00:00Z",
+            available_at="2025-07-02T20:30:00Z",
+            usd_cad=1.35,
+            source="fiction",
+        )
+    ]
+    root = tmp_path / "store"
+    manifest = import_dataset(source(tmp_path, actions=actions, fx=fx), root)
+    stored = root / manifest.dataset_id
+    parquet_path = stored / f"{table}.parquet"
+    altered = pd.read_parquet(parquet_path)
+    altered.loc[0, column] = value
+    altered.to_parquet(parquet_path, index=False)
+    manifest_path = stored / "manifest.json"
+    document = json.loads(manifest_path.read_text())
+    document["files"][parquet_path.name] = hashlib.sha256(parquet_path.read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(document))
+
+    with pytest.raises(ValueError, match=f"{table} semantic content differs from source"):
+        load_dataset(root, manifest.dataset_id)
+
+
+def test_semantically_identical_parquet_reencoding_is_accepted(tmp_path):
+    import hashlib
+
+    root = tmp_path / "store"
+    manifest = import_dataset(source(tmp_path), root)
+    stored = root / manifest.dataset_id
+    parquet_path = stored / "bars.parquet"
+    frame = pd.read_parquet(parquet_path).iloc[::-1]
+    frame["volume"] = frame.volume.astype("int64")
+    for column in ("event_time", "available_at"):
+        frame[column] = frame[column].dt.tz_convert("America/Toronto")
+    frame["ingested_at"] = pd.Timestamp("2026-01-01T00:00:00Z")
+    frame[list(reversed(frame.columns))].to_parquet(parquet_path, index=False)
+    manifest_path = stored / "manifest.json"
+    document = json.loads(manifest_path.read_text())
+    document["files"]["bars.parquet"] = hashlib.sha256(parquet_path.read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(document))
+    loaded = load_dataset(root, manifest.dataset_id)
+    assert loaded.manifest.dataset_id == manifest.dataset_id
+    assert loaded.bars.close.tolist() == [102, 102]

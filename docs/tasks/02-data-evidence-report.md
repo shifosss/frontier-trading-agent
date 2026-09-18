@@ -119,3 +119,20 @@ the working fallback. Dependencies/cache remain project-local.
 - Synthetic fixtures establish software behavior only, never observed performance.
 - No CLI entry point added by this task; downstream task owns CLI wiring.
 
+
+## Independent review P1 follow-up
+
+Fixed the gap between authenticated source identity and returned Parquet inputs.
+load_dataset now compares every loaded bars/actions/fx frame to the authenticated
+source frame before return. It excludes local ingested_at, normalizes timezone and
+storage dtypes, and ignores row/column ordering while comparing financial numbers
+and timestamps exactly (no numeric tolerance or temporal rounding).
+
+Five regressions initially reproduced acceptance of mutated bar price, bar
+available_at, dividend cash amount, FX rate and FX available_at when the attacker
+also updated manifest.files hashes. All now reject the altered frame. An additional
+positive test accepts equivalent integer/float, timezone and ordering representations.
+
+Validation: .venv\Scripts\python.exe -m pytest -q tests/test_data.py tests/test_store.py
+completed with 30 passed. Ruff check src/frontier/data.py tests/test_data.py passed.
+Only data.py, tests/test_data.py and this report changed in the follow-up.
