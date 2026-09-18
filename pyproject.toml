@@ -14,6 +14,9 @@ dependencies = [
   "fastapi", "uvicorn", "typer", "httpx",
 ]
 
+[project.scripts]
+frontier = "frontier.cli:app"
+
 [dependency-groups]
 dev = ["pytest", "ruff"]
 

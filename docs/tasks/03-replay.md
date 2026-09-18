@@ -36,3 +36,17 @@ scripts/import_session_snapshots.py reads the exact files in data/raw (SPY,XIU.T
 ## Verification
 Run focused tests with actual engine: exact USD/CAD shares,cash,fee/NAV hand calculation; no capital duplication; next-open timing; zero cash negative forbidden;20% group allocation; holiday mismatch; future-mutation invariance including revisions/FX; split/dividend rejection and failed registry persistence; identical replay; all campaign trials retained. CLI demo generates valid report/registry; real snapshot import run visibly exploratory. Run Ruff. Report exact output artifacts/test evidence and remaining gaps.
 
+
+## Frozen result schema for interface integration
+
+Use these exact result keys (extend with additional evidence fields if needed; do not rename silently):
+- schema_version:1, config:RunConfig JSON, dataset:manifest JSON.
+- summary:{mode,evidence_label,start,end,base_currency,initial_nav,final_nav,total_return,max_drawdown,annualized_volatility,sharpe,trade_count,turnover,average_exposure,fees:{USD,CAD},limitations:list[str]}. Ratios are fractions, not already multiplied by100. Undefined metrics are null. Include bootstrap_ci as additional object when computed.
+- equity_curve:list[{timestamp,nav,cash_usd,cash_cad,positions_value_usd,positions_value_cad,usd_cad,gross_exposure}]. UTC ISO timestamps. Gross exposure is a NAV fraction.
+- decisions:list[{instrument_id,decision_time,input_event_time,available_at,signal,target_weight,reason,execution_time:null|string}]. Extra target_quantity/status fields okay.
+- fills:list[{instrument_id,timestamp,side,quantity,price,commission,currency,decision_time}]. Native currency numeric price and commission, original listing ID.
+- positions:list[{instrument_id,quantity,average_basis,mark,currency}], balances:{USD,CAD}, engine_identity:dict.
+- run_research writes artifact_root/run_id/result.json and report.html, registers artifact_path as the run DIRECTORY, returns registry record. get_run returns that record; result data stays persisted in result.json.
+- run_campaign returns {campaign_id,dataset_id,created_at,kind:"exploratory_tournament",trial_count,run_ids,ranking,limitations}. Ranking entries include run_id,strategy,status,total_return,sharpe; failed entries retained elsewhere/all runs shown. Save campaign.json under its artifact folder.
+- API detail envelope is {record:<registry row>,result:<full result or null if failed>}. POST run returns the same envelope, list runs returns registry rows. Shared group/balance accounting matters more than cosmetics; root must be told immediately if exact contract needs a justified correction.
+

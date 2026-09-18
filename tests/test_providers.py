@@ -44,10 +44,15 @@ elif args[0] == 'exec':
     mode = os.environ.get('PROVIDER_FIXTURE_MODE', 'success')
     if mode == 'timeout':
         time.sleep(3)
-    if mode == 'child_timeout':
+    if mode in ('child_timeout', 'orphan_timeout'):
         child = __import__('subprocess').Popen(
-            [sys.executable, '-c', 'import time; time.sleep(20)'])
+            [sys.executable, '-c', 'import time; time.sleep(20)'],
+            stdin=__import__('subprocess').DEVNULL,
+            stdout=sys.stdout, stderr=sys.stderr)
         pathlib.Path('child.pid').write_text(str(child.pid))
+        print('partial-before-timeout', flush=True)
+        if mode == 'orphan_timeout':
+            sys.exit(0)
         time.sleep(20)
     if mode == 'nonzero':
         print(json.dumps({'type': 'turn.failed', 'error': 'fixture failure'}))
@@ -121,15 +126,17 @@ def test_loose_schema_is_recorded_as_failure(fake_cli, tmp_path):
     assert not (artifacts / "invocation.json").exists()
 
 
-def test_timeout_terminates_owned_child(fake_cli, tmp_path, monkeypatch):
-    monkeypatch.setenv("PROVIDER_FIXTURE_MODE", "child_timeout")
-    artifacts = tmp_path / "tree"
+@pytest.mark.parametrize("mode", ["child_timeout", "orphan_timeout"])
+def test_timeout_terminates_owned_child(fake_cli, tmp_path, monkeypatch, mode):
+    monkeypatch.setenv("PROVIDER_FIXTURE_MODE", mode)
+    artifacts = tmp_path / mode
     with pytest.raises(ProviderError):
         CodexProvider(cli_command=fake_cli).propose(
             "give one name", SCHEMA, artifacts, timeout_seconds=1
         )
     pid = int((artifacts / "child.pid").read_text())
     assert json.loads((artifacts / "failure.json").read_text())["timed_out"] is True
+    assert "partial-before-timeout" in (artifacts / "timeout-stdout.txt").read_text()
     if os.name == "nt":
         # tasklist reports the PID only while the process remains alive.
         for _ in range(10):

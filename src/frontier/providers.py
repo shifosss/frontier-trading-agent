@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import ctypes
 import hashlib
 import json
 import os
 import shutil
 import signal
 import subprocess
+import sys
 import time
 from pathlib import Path
 from typing import Any, Sequence
@@ -79,6 +81,79 @@ def _digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+# A gate waits for its parent to assign it to a Windows Job Object before
+# starting the CLI. This closes the race between process creation and assignment.
+_WINDOWS_GATE = (
+    "import os,subprocess,sys; "
+    "os.read(0,1); "
+    "p=subprocess.Popen(sys.argv[1:],stdin=sys.stdin.buffer,"
+    "stdout=sys.stdout.buffer,stderr=sys.stderr.buffer); "
+    "sys.exit(p.wait())"
+)
+
+
+class _JobBasicLimits(ctypes.Structure):
+    _fields_ = [
+        ("PerProcessUserTimeLimit", ctypes.c_int64),
+        ("PerJobUserTimeLimit", ctypes.c_int64),
+        ("LimitFlags", ctypes.c_uint32),
+        ("MinimumWorkingSetSize", ctypes.c_size_t),
+        ("MaximumWorkingSetSize", ctypes.c_size_t),
+        ("ActiveProcessLimit", ctypes.c_uint32),
+        ("Affinity", ctypes.c_size_t),
+        ("PriorityClass", ctypes.c_uint32),
+        ("SchedulingClass", ctypes.c_uint32),
+    ]
+
+
+class _JobIoCounters(ctypes.Structure):
+    _fields_ = [(name, ctypes.c_uint64) for name in (
+        "ReadOperationCount", "WriteOperationCount", "OtherOperationCount",
+        "ReadTransferCount", "WriteTransferCount", "OtherTransferCount",
+    )]
+
+
+class _JobExtendedLimits(ctypes.Structure):
+    _fields_ = [
+        ("BasicLimitInformation", _JobBasicLimits),
+        ("IoInfo", _JobIoCounters),
+        ("ProcessMemoryLimit", ctypes.c_size_t),
+        ("JobMemoryLimit", ctypes.c_size_t),
+        ("PeakProcessMemoryUsed", ctypes.c_size_t),
+        ("PeakJobMemoryUsed", ctypes.c_size_t),
+    ]
+
+
+def _windows_job(process: subprocess.Popen[str]) -> tuple[object, int]:
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateJobObjectW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p]
+    kernel.CreateJobObjectW.restype = ctypes.c_void_p
+    kernel.SetInformationJobObject.argtypes = [
+        ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_uint32
+    ]
+    kernel.SetInformationJobObject.restype = ctypes.c_int
+    kernel.AssignProcessToJobObject.argtypes = [ctypes.c_void_p, ctypes.c_void_p]
+    kernel.AssignProcessToJobObject.restype = ctypes.c_int
+    kernel.TerminateJobObject.argtypes = [ctypes.c_void_p, ctypes.c_uint]
+    kernel.TerminateJobObject.restype = ctypes.c_int
+    kernel.CloseHandle.argtypes = [ctypes.c_void_p]
+    kernel.CloseHandle.restype = ctypes.c_int
+    job = kernel.CreateJobObjectW(None, None)
+    if not job:
+        raise OSError(ctypes.get_last_error(), "CreateJobObjectW failed")
+    limits = _JobExtendedLimits()
+    limits.BasicLimitInformation.LimitFlags = 0x2000  # JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+    if not kernel.SetInformationJobObject(job, 9, ctypes.byref(limits), ctypes.sizeof(limits)):
+        error = ctypes.get_last_error()
+        kernel.CloseHandle(job)
+        raise OSError(error, "SetInformationJobObject failed")
+    if not kernel.AssignProcessToJobObject(job, int(process._handle)):
+        error = ctypes.get_last_error()
+        kernel.CloseHandle(job)
+        raise OSError(error, "AssignProcessToJobObject failed")
+    return kernel, job
+
+
 class CodexProvider:
     """Use an existing ChatGPT Codex login for one bounded proposal call."""
 
@@ -136,9 +211,12 @@ class CodexProvider:
 
         def run(args: list[str], input_text: str | None = None) -> subprocess.CompletedProcess[str]:
             timeout = remaining()
+            command = self._command + args
+            windows = os.name == "nt"
+            launch = [sys.executable, "-c", _WINDOWS_GATE, *command] if windows else command
             process = subprocess.Popen(
-                self._command + args,
-                stdin=subprocess.PIPE if input_text is not None else subprocess.DEVNULL,
+                launch,
+                stdin=subprocess.PIPE if windows or input_text is not None else subprocess.DEVNULL,
                 text=True,
                 encoding="utf-8",
                 errors="replace",
@@ -147,37 +225,78 @@ class CodexProvider:
                 shell=False,
                 env=env,
                 cwd=artifact_dir,
-                creationflags=(subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0),
-                start_new_session=(os.name != "nt"),
+                start_new_session=not windows,
             )
+            job: tuple[object, int] | None = None
+            timed_out = False
             try:
-                stdout, stderr = process.communicate(input=input_text, timeout=timeout)
-            except subprocess.TimeoutExpired as exc:
-                metadata["timed_out"] = True
-                if os.name == "nt" and process.poll() is None:
-                    subprocess.run(
-                        ["taskkill", "/PID", str(process.pid), "/T", "/F"],
-                        stdout=subprocess.DEVNULL,
-                        stderr=subprocess.DEVNULL,
-                        timeout=10,
-                        check=False,
-                        shell=False,
-                    )
-                elif process.poll() is None:
-                    os.killpg(process.pid, signal.SIGKILL)
+                if windows:
+                    try:
+                        job = _windows_job(process)
+                    except OSError:
+                        # The gate has not started the CLI yet. Stop it before failing closed.
+                        process.kill()
+                        process.wait(timeout=2)
+                        raise
+                stdin_text = ("G" + (input_text or "")) if windows else input_text
                 try:
-                    stdout, stderr = process.communicate(timeout=10)
-                except subprocess.TimeoutExpired:
-                    process.kill()
-                    stdout, stderr = process.communicate()
-                (artifact_dir / "timeout-stdout.txt").write_text(stdout or "", encoding="utf-8")
-                (artifact_dir / "timeout-stderr.txt").write_text(stderr or "", encoding="utf-8")
-                raise TimeoutError(
-                    "provider call timed out; owned process tree terminated"
-                ) from exc
-            return subprocess.CompletedProcess(
-                self._command + args, process.returncode, stdout, stderr
-            )
+                    stdout, stderr = process.communicate(input=stdin_text, timeout=timeout)
+                except subprocess.TimeoutExpired as exc:
+                    timed_out = True
+                    metadata["timed_out"] = True
+                    # TimeoutExpired carries bytes even when text mode was requested.
+                    partial_out = exc.stdout or b""
+                    partial_err = exc.stderr or b""
+                    if isinstance(partial_out, bytes):
+                        partial_out = partial_out.decode("utf-8", errors="replace")
+                    if isinstance(partial_err, bytes):
+                        partial_err = partial_err.decode("utf-8", errors="replace")
+                    (artifact_dir / "timeout-stdout.txt").write_text(
+                        partial_out, encoding="utf-8"
+                    )
+                    (artifact_dir / "timeout-stderr.txt").write_text(
+                        partial_err, encoding="utf-8"
+                    )
+                    if windows:
+                        assert job is not None
+                        kernel, handle = job
+                        if not kernel.TerminateJobObject(handle, 1):
+                            raise OSError(ctypes.get_last_error(), "TerminateJobObject failed")
+                    else:
+                        # A process group survives its original leader exiting.
+                        try:
+                            os.killpg(process.pid, signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
+                    # A bounded second communicate gathers bytes already in the pipes.
+                    # Never wait indefinitely if a foreign handle keeps a pipe open.
+                    try:
+                        drained_out, drained_err = process.communicate(timeout=2)
+                    except subprocess.TimeoutExpired as drain:
+                        drained_out, drained_err = drain.stdout, drain.stderr
+                        if process.poll() is None:
+                            process.kill()
+                            try:
+                                process.wait(timeout=1)
+                            except subprocess.TimeoutExpired:
+                                pass
+                    for path, value, fallback in (
+                        ("timeout-stdout.txt", drained_out, partial_out),
+                        ("timeout-stderr.txt", drained_err, partial_err),
+                    ):
+                        if isinstance(value, bytes):
+                            value = value.decode("utf-8", errors="replace")
+                        (artifact_dir / path).write_text(value or fallback, encoding="utf-8")
+                    raise TimeoutError(
+                        "provider call timed out; owned process tree terminated"
+                    ) from exc
+                return subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
+            finally:
+                if job is not None:
+                    kernel, handle = job
+                    if not timed_out and process.poll() is None:
+                        kernel.TerminateJobObject(handle, 1)
+                    kernel.CloseHandle(handle)
 
         try:
             _strict_schema(schema)

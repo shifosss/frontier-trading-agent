@@ -2,7 +2,30 @@
 
 Date: 2026-09-18
 
-Status: proposed delivery sequence. These are acceptance contracts, not a claim that the commands or modules already exist. The system design is [here](superpowers/specs/2026-09-18-frontier-trading-system-design.md).
+Status: partially implemented as of September 18, 2026. A runnable local research
+workstation now exists under `src/frontier`. The acceptance contracts below remain
+the broader delivery target; they are not all satisfied by the current build.
+The system design is [here](superpowers/specs/2026-09-18-frontier-trading-system-design.md).
+Current commands are in the [README](../README.md), with consolidated verification
+in [validation](validation.md).
+
+## Current milestone assessment
+
+| Milestone | September 18 status | Why the full milestone remains open |
+| --- | --- | --- |
+| M1 — research kernel | Runnable bounded implementation: actual Nautilus accounting, immutable data/runs, strict timing, reports and exact replay. | Full equity corporate-action semantics are not qualified. Known actions reject replay; LEAN was not executed. |
+| M2 — real data/baselines | US/Canada daily samples, 434 US SPY hourly bars, dated BoC FX, fixed 11-trial baseline/cost tournament and access ledger. | Canadian hourly data, complete actions, longer point-in-time history and continuous nested walk-forward evaluation remain absent. |
+| M3 — research factory | Two actual two-call Codex campaigns using existing ChatGPT access, typed templates, real feedback and persisted attempts. | Broad autonomous research, isolated outer holdouts, resumable scheduling and measured multi-agent advantage are not established. |
+| M4 — tournament/dashboard | Local React/FastAPI workstation and comparison/inspection workflows are implemented. | Advanced statistical/ML families, Qlib/RD-Agent comparisons and adaptive scheduling remain future work. |
+| M5a — frozen observation | Freeze and as-of observation commands exist for compatible appended datasets. | No accumulated prospective outcomes or continuously refreshed, recovered observation service is claimed. |
+| M5b — broker paper | Not qualified or enabled. | No broker orders, account reconciliation or execution/recovery evidence. |
+| M6 — live expansion | Future scope. | Requires validated evidence and an explicit live-capital mandate. |
+
+The unchecked lists below preserve the original acceptance scope rather than
+pretending that partial delivery closes every item. Consult the dated assessment,
+[progress ledger](progress.md), and task reports for implemented subsets.
+Original `trading_agent` file names were planning placeholders; the concrete module
+map below records the current `frontier` implementation.
 
 ## Delivery method
 
@@ -18,21 +41,25 @@ Every material decision record contains: requirement, chosen approach, alternati
 
 **Files and responsibilities:**
 
-| Path | Responsibility |
+| Current path | Responsibility |
 | --- | --- |
-| `pyproject.toml`, `uv.lock`, `.python-version` | Isolated control application and exact dependency resolution. |
-| `src/trading_agent/contracts.py` | Versioned campaign, dataset, experiment, and result records. |
-| `src/trading_agent/data/catalog.py` | Read frozen manifests and expose time-filtered data. |
-| `src/trading_agent/research/registry.py` | Coordinator-owned SQLite trial/access registry. |
-| `src/trading_agent/engines/runner.py` | Invoke the qualified pinned engine; map real artifacts to result records. Implement only the selected primary runtime after qualification. |
-| `src/trading_agent/strategies/baselines.py` | Cash/passive/trend baseline specifications. |
-| `src/trading_agent/evaluation/metrics.py` | Explicit metric definitions computed from portfolio returns. |
-| `src/trading_agent/reports/render.py` | Standalone HTML evidence report plus machine-readable JSON. |
-| `src/trading_agent/cli.py` | `doctor`, fixture run, replay, and report entry points. |
-| `engines/qualification/`, then `engines/primary/` | Bounded candidate comparison, then selected engine manifest, build/run configuration, and project-owned bridge. |
-| `tests/fixtures/` | Small source-controlled datasets, actions, expected orders, and independently computed account results. |
-| `tests/integration/`, `tests/unit/` | Engine contract tests and pure numerical/time tests. |
-| `.github/workflows/ci.yml` | Lint, types, tests, package build, and platform-specific integration checks. |
+| `pyproject.toml`, `uv.lock` | Isolated Python 3.13 application and locked dependency resolution. |
+| `src/frontier/domain.py` | Versioned instrument, dataset, strategy and run contracts. |
+| `src/frontier/data.py`, `src/frontier/fixtures.py` | Immutable imports, temporal reads and fictional engineering fixtures. |
+| `src/frontier/store.py` | SQLite run and evaluation-access registry. |
+| `src/frontier/replay.py` | Actual Nautilus execution, shared native-currency account and built-in strategies. |
+| `src/frontier/metrics.py`, `src/frontier/reports.py` | Descriptive metrics and standalone evidence reports. |
+| `src/frontier/campaign.py` | Frozen deterministic tournament and identical financial replay verification. |
+| `src/frontier/providers.py`, `src/frontier/research.py` | Existing Codex access and bounded typed model campaigns. |
+| `src/frontier/observation.py`, `src/frontier/workflow.py` | Frozen strategy observations and persisted workflow artifacts. |
+| `src/frontier/sources.py`, `scripts/import_session_snapshots.py` | Narrow read-only source capture and retained sample imports. |
+| `src/frontier/cli.py`, `src/frontier/web.py`, `frontend/` | CLI and local FastAPI/React workstation. |
+| `Launch Frontier.cmd`, `scripts/start.ps1` | Workspace-aware Windows launcher. |
+| `engines/qualification/` | Candidate runtime probes and qualification evidence. |
+| `tests/test_*.py` | Accounting, temporal, data, provider, workflow, API and CLI verification. |
+
+A remote CI workflow and additional qualification fixtures remain delivery work;
+local verification does not imply an unrun Linux or remote CI result.
 
 **Ordered work:**
 
@@ -51,7 +78,7 @@ Every material decision record contains: requirement, chosen approach, alternati
 
 **Acceptance:** no fabricated engine outputs; a frozen run repeats its decisions and accounting; changing data after a decision cannot change that decision; corporate-action and FX fixtures reconcile; both markets' temporal and instrument semantics are demonstrated; a failed run remains inspectable; one command emits both JSON and HTML. A broker-paper connection is qualified in M5b, not implied by an M1 mapping check. All app commands exit visibly on invalid input or unavailable engine dependencies.
 
-**Expected future user command:** `uv run trading-agent demo --output artifacts/demo`. This becomes documented as runnable only after integration passes.
+**Current runnable command:** `.venv\Scripts\python.exe -m frontier.cli demo`. It persists a registry record plus `result.json` and `report.html` under the returned artifact directory. This bounded synthetic demonstration does not close the broader corporate-action acceptance requirement.
 
 ## M2. Real data and honest baselines
 

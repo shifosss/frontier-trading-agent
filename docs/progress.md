@@ -1,31 +1,77 @@
-# Execution ledger — Research Kernel
+# Execution ledger — Frontier Research
 
-Plan: docs/superpowers/plans/2026-09-18-research-kernel.md
+Updated September 18, 2026. The user delegated implementation, testing, and
+validation. Routine work continues under that authorization; milestone progress
+does not require another approval. New spending or broker authority remains a
+separate decision.
 
-## Authority and rulings
+## Delivered local workflow
 
-- Architecture approved by the user's explicit delegation of the build, testing, and validation. Routine technical work proceeds without repeated approvals.
-- Ruling: initialize a development branch in the greenfield workspace; no existing repository or code requires a separate worktree. Cost if wrong: local branch/worktree reorganization, with no production state involved.
-- Ruling: engine selection uses actual executable package evidence. Planning sources are not accepted as proof of runtime availability. Cost if wrong: a bounded qualification experiment and documented dependency revision.
-
-## Preflight review
-
-| Task/interface | Producer -> consumer | Check |
+| Area | Current evidence | Remaining boundary |
 | --- | --- | --- |
-| Task 1 -> data/replay | Installed engine evidence -> exact integration contracts | Dependent API design waits for actual probe results. |
-| Data -> replay -> UI | Dataset/run records -> engine results -> report | Shared schemas will be frozen in the next task brief; UI must display persisted results. |
-| All tasks | US/Canada, USD/CAD, existing/free-only | Binding scope copied into plan and qualification brief. |
-| Task 1 | Candidate source inspection vs runtime probes | Report labels required; neither is allowed to imply the other. |
+| Engine | Actual Nautilus Trader 1.231.0 fills, one USD/CAD cash account, native fees, dated FX, calendar-aware next-opening timing, independent accounting tests. | Splits/dividends are unsupported and rejected. Inferred opening quotes do not qualify market microstructure or broker execution. |
+| Data and registry | Immutable manifests, source/content identities, retained CSV/Parquet inputs, point-in-time filtering, failed run persistence, evaluation-access records. | Historical availability is often inferred; access overlap is scoped to an immutable dataset identity, not all provider aliases or vintages. |
+| Daily research | Retained 100-bar SPY and XIU sources; a separately identified June 22–September 17 window; cash/passive/trend/reversion and declared cost stress. | The full sample contains a known SPY dividend and rejects replay. Canadian action coverage is unknown. Results are raw-price exploration. |
+| US hourly data | 434 retained Longbridge SPY bars across 62 sessions, converted to official endpoints with partial final hours and cross-source comparisons preserved. | Canadian hourly coverage and a complete production data lane remain unqualified. |
+| Model campaigns | Two actual two-call campaigns through the existing ChatGPT Codex login; typed templates, genuine replay feedback, recorded prompts/output/usage and all attempts. | No untouched holdout, alpha proof, open-ended generated code, broad autonomous research factory, or measured multi-agent advantage. |
+| Workstation and CLI | React/FastAPI UI, local launcher, saved studies/campaigns, source helpers, reports, inspection and deterministic replay commands. | Local operation is not a continuously available deployment. |
+| Frozen observation | Immutable completed-run configuration, compatible appended data, as-of decisions, duplicate protection, and historical/prospective classification. | No broker orders, inferred future fills, accumulated forward performance claim, or automatic strategy promotion. |
 
-## Status
+The runnable package is `frontier` under `src/frontier`; the original design's
+`trading_agent` paths were planning placeholders. The broader roadmap is partially
+implemented, not fully accepted.
 
-- Planning/design: reviewed and approved.
-- Task 1: running; Nautilus 1.231.0 actual dual-currency trade/fee checks passed. Corporate actions not qualified. LEAN source-only; installed SDK 9 cannot build pinned .NET 10 source.
-- Task 2: brief prepared; awaiting qualification handoff. Remaining tasks queued.
+## Accounting and evidence decisions
 
-## Implementation decisions
+- Nautilus owns the execution ledger. A narrow internal venue mapping consolidates
+  both currencies into one simulated account while outputs retain original listing
+  identities and official calendars. This avoids duplicated starting capital.
+- Signals use only bars and revisions available by the decision time. Close-based
+  decisions wait for an eligible opening strictly after availability. Pending final
+  intents remain unfilled, and positions are not liquidated for free.
+- Funding remains in native currency. Fees and slippage are separate, and valuation
+  uses available dated FX without assuming a 1.0 rate or inventing conversion trades.
+- Known actions are preserved and block replay. Unknown action coverage requires an
+  explicit opt-in, prominent raw-price limitations, and no total-return metric.
+- Fixed and model-driven campaigns expose their full research intervals. Candidate
+  configurations and costs are frozen; rejected, duplicate, and failed attempts count.
+  Short historical returns do not authorize promotion or deployment.
+- Existing ChatGPT access is a verified Codex CLI provider route, not an assumed API
+  key. Tokens and runtime are recorded; a dollar charge is not inferred from usage.
 
-- Restrict Nautilus replay to proven capabilities. Preserve action records; reject action-bearing replay until qualified. Unknown action coverage may support explicitly labeled exploratory runs only.
-- Existing Alpha Vantage access returned 100 raw daily bars for SPY and XIU.TRT. This is a session snapshot, not an unattended backend credential. Canadian actions remain unknown. No paid endpoints used.
-- Bank of Canada Valet provides free indicative daily FX. Use publication timestamps; do not call these executable conversion prices.
-- Sandbox process helper failed after repository initialization. Host commands work with per-command Git safe.directory; no global trust setting changed. RTK unavailable in host PATH, so explicit executables are used.
+## External access and deployment
+
+Working Codex connectors and unattended standalone processes have different access
+boundaries. Existing connectors supplied Alpha Vantage daily snapshots, Longbridge
+SPY hourly observations, and Alpaca action evidence. The public Bank of Canada
+helper has also fetched and reused a verified local capture.
+
+The Longbridge standalone CLI reported an expired token on September 18. Manual
+user authentication is required before its unattended history helper can operate.
+No automatic login, credential extraction, broker account mutation, or order was
+performed. A successful app connector call does not clear this standalone dependency.
+
+No recurring job or broker-paper service was installed. An always-on host, source
+freshness, restart recovery, forward outcome tracking, and broker reconciliation
+remain additional work. LEAN was inspected at a pinned source revision; its local
+build was blocked by the available SDK version and was not represented as execution.
+
+## Reproduction and validation
+
+[README](../README.md) contains the current quickstart and CLI examples.
+[Validation](validation.md) records the final consolidated checks and their exact
+scope; task reports describe the evidence produced at each implementation stage.
+Do not add their intermediate test counts together or treat older artifact IDs as
+proof against a later financial-code identity.
+
+- [Engine qualification](engine-qualification.md)
+- [Data foundation](tasks/02-data-evidence-report.md)
+- [Replay and fixed campaigns](tasks/03-replay-report.md)
+- [Workstation](tasks/04-interface-report.md)
+- [Model research and observations](tasks/05-research-report.md)
+- [Existing source integration](tasks/06-sources-report.md)
+
+Next priorities are complete action coverage/accounting, Canadian hourly data,
+longer point-in-time history, nested chronological evaluation, advanced baselines,
+and honest prospective outcome collection. The workstation can be useful while
+those broader acceptance conditions remain open.
