@@ -1,9 +1,9 @@
 """Dated research membership from public exchange directories, never the paper universe.
 
 These are current listings, not a survivorship-free historical security master.
-TMX publishes issuer roots: Canadian symbols are candidates until a price provider
-confirms the requested symbol and currency. Only predeclared project ETFs are
-eligible because the directories do not publish reliable leverage classifications.
+TMX issuer roots are resolved against its current security directory when available.
+All symbols still require a price-provider identity and currency check. Only predeclared
+project ETFs are eligible because the directories lack reliable leverage classifications.
 """
 
 import csv
@@ -14,15 +14,27 @@ import re
 import xml.etree.ElementTree as ET
 import zipfile
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
+from string import ascii_uppercase
 
 import httpx
 
 NASDAQ_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
 OTHER_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
 TMX_URL = "https://www.tsx.com/en/resource/571"
-SOURCES = {"nasdaq": NASDAQ_URL, "other_us": OTHER_URL, "tsx": TMX_URL}
+CSE_URL = "https://thecse.com/api/webapi/listed-companies/"
+CBOE_CA_URL = "https://www-api.cboe.com/ca/equities/listing-directory-data/"
+TMX_DIRECTORY_URL = "https://www.tsx.com/json/company-directory/search/{exchange}/{letter}"
+SOURCES = {
+    "nasdaq": NASDAQ_URL,
+    "other_us": OTHER_URL,
+    "tsx": TMX_URL,
+    "cse": CSE_URL,
+    "cboe_ca": CBOE_CA_URL,
+}
+CANADIAN_SOURCES = {"tsx", "tsxv", "cse", "cboe_ca"}
 EXCHANGES = {
     "A": "NYSE American",
     "N": "NYSE",
@@ -38,9 +50,12 @@ LIMITATIONS = [
     "Membership was discovered at capture time; it is not historical index membership.",
     "Backtests on this universe have survivorship and current-membership selection bias.",
     "Directory inclusion does not establish liquidity, broker availability or an investment edge.",
-    "Canadian coverage is TSX issuer roots, excluding TSXV, CSE and Cboe Canada.",
+    "Canadian coverage includes TSX, TSXV, CSE and Cboe Canada; NEX is not complete.",
     "TMX monthly publication may lag new listings and delistings; preserve its stated vintage.",
-    "TMX issuer roots may omit share classes; Canadian price symbols require provider validation.",
+    "TMX share classes use the official directory; unmatched monthly roots remain candidates.",
+    "Canadian USD-quoted listings are excluded until mixed-calendar USD books are supported.",
+    "US coverage includes ordinary/common shares and equity ADRs, excluding OTC listings.",
+    "Current status flags are retained; they cannot establish historical trading eligibility.",
     "ETF eligibility is limited to the existing reviewed project list; leverage is not inferred.",
     "No issuer-level deduplication across US and Canadian interlistings is claimed.",
 ]
@@ -127,9 +142,10 @@ def parse_tmx_workbook(content):
     records = []
     vintages = []
     for sheet, rows in _xlsx_rows(content):
-        if not sheet.startswith("TSX Issuers "):
+        if not sheet.startswith(("TSX Issuers ", "TSXV Issuers ")):
             continue
-        vintages.append(sheet.removeprefix("TSX Issuers "))
+        exchange = sheet.split(" Issuers ", 1)[0]
+        vintages.append(sheet.split(" Issuers ", 1)[1])
         headers = None
         for row in rows:
             normalized = {col: " ".join(value.split()) for col, value in row.items()}
@@ -140,7 +156,7 @@ def parse_tmx_workbook(content):
                 continue
             item = {headers[col]: value for col, value in row.items() if col in headers}
             root = item.get("Root Ticker", "").strip()
-            if item.get("Exchange") != "TSX" or not root:
+            if item.get("Exchange") != exchange or not root:
                 continue
 
             def number(prefix):
@@ -149,13 +165,13 @@ def parse_tmx_workbook(content):
 
             records.append(
                 {
-                    "source_id": "tsx",
+                    "source_id": exchange.lower(),
                     "source_symbol": root,
-                    "symbol": root.replace(".", "-") + ".TO",
+                    "symbol": root.replace(".", "-") + (".TO" if exchange == "TSX" else ".V"),
                     "name": item["Name"].strip(),
                     "currency": "CAD",
                     "calendar": "XTSE",
-                    "exchange": "TSX",
+                    "exchange": exchange,
                     "sector": item.get("Sector", ""),
                     "listing_type": item.get("Listing Type", ""),
                     "product_type": item.get("SP_Type", ""),
@@ -167,17 +183,146 @@ def parse_tmx_workbook(content):
                     "ytd_value_cad": number("Value (C$) YTD"),
                     "listing_date": item.get("Listing Date"),
                     "interlisted": [
-                        item[key] for key in ("Interlisted I", "Interlisted II") if item.get(key)
+                        item[key]
+                        for key in ("Interlisted I", "Interlisted II", "Interlisted")
+                        if item.get(key)
                     ],
                 }
             )
     if not records:
-        raise ValueError("TMX workbook has no TSX issuer records with the expected headers")
-    return records, ", ".join(vintages)
+        raise ValueError("TMX workbook has no issuer records with the expected headers")
+    return records, ", ".join(dict.fromkeys(vintages))
+
+
+def parse_cse_directory(content):
+    rows = json.loads(content)
+    required = {"symbol", "security_name", "security_type", "currency", "status", "listing_market"}
+    if not isinstance(rows, list) or not rows or any(not required <= row.keys() for row in rows):
+        raise ValueError("CSE directory schema differs from the public listing feed")
+    records = []
+    for row in rows:
+        symbol = row["symbol"]
+        records.append(
+            {
+                "source_id": "cse",
+                "source_symbol": symbol,
+                "symbol": symbol.replace(".", "-") + ".CN",
+                "name": row["security_name"],
+                "currency": row["currency"],
+                "calendar": "XTSE",
+                "exchange": row["listing_market"],
+                "sector": row.get("sector", ""),
+                "listing_date": row.get("listing_date"),
+                "listing_status": row["status"],
+                "directory_security_type": row["security_type"],
+                "is_etf": row["security_type"] == "ETF",
+                "is_test": False,
+                "symbol_identity": "exchange_security_symbol",
+            }
+        )
+    return records, "current directory; no publication timestamp supplied"
+
+
+def parse_cboe_canada_directory(content):
+    rows = json.loads(content).get("data")
+    required = {"symbol", "name", "currency", "security", "security_sub_type"}
+    if not isinstance(rows, list) or not rows or any(not required <= row.keys() for row in rows):
+        raise ValueError("Cboe Canada directory schema differs from the public listing feed")
+    return [
+        {
+            "source_id": "cboe_ca",
+            "source_symbol": row["symbol"],
+            "symbol": row["symbol"].replace(".", "-") + ".NE",
+            "name": row["name"],
+            "currency": row["currency"],
+            "calendar": "XTSE",
+            "exchange": "Cboe Canada",
+            "directory_security_type": row["security"],
+            "directory_security_subtype": row["security_sub_type"],
+            "is_etf": row["security"] == "etf",
+            "is_test": False,
+            "symbol_identity": "exchange_security_symbol",
+        }
+        for row in rows
+    ], "current directory; no publication timestamp supplied"
+
+
+def parse_tmx_directory(content):
+    document = json.loads(content)
+    rows = document.get("results")
+    if (
+        not isinstance(rows, list)
+        or document.get("length") != len(rows)
+        or document.get("isHttpError")
+        or any(not {"symbol", "name", "instruments"} <= row.keys() for row in rows)
+    ):
+        raise ValueError("TMX security directory is incomplete or has changed schema")
+    for row in rows:
+        if any(not {"symbol", "name"} <= item.keys() for item in row["instruments"]):
+            raise ValueError("TMX security directory has incomplete instruments")
+    stamp = document.get("last_updated")
+    if not isinstance(stamp, (int, float)):
+        raise ValueError("TMX security directory has no publication timestamp")
+    return rows, datetime.fromtimestamp(stamp, timezone.utc).isoformat()
+
+
+def resolve_tmx_securities(records, directories):
+    """Replace roots with exchange-published classes, retaining unmatched roots explicitly."""
+    resolved = []
+    for exchange in ("tsx", "tsxv"):
+        issuers = {item["symbol"]: item for item in directories.get(exchange, [])}
+        names = {re.sub(r"[^a-z0-9]", "", item["name"].lower()): item for item in issuers.values()}
+        used = set()
+        for record in (r for r in records if r["source_id"] == exchange):
+            issuer = issuers.get(record["source_symbol"]) or names.get(
+                re.sub(r"[^a-z0-9]", "", record["name"].lower())
+            )
+            if issuer is None:
+                resolved.append(record)
+                continue
+            used.add(issuer["symbol"])
+            resolved.extend(_tmx_classes(record, issuer))
+        # Include recent listings missing from the monthly issuer publication.
+        for issuer in issuers.values():
+            if issuer["symbol"] in used:
+                continue
+            record = {
+                "source_id": exchange,
+                "name": issuer["name"],
+                "currency": "CAD",
+                "calendar": "XTSE",
+                "exchange": exchange.upper(),
+                "sector": "",
+                "listing_type": "",
+                "product_type": "",
+                "is_test": False,
+                "is_etf": bool(re.search(r"\bETF\b", issuer["name"], re.I)),
+                "issuer_metadata": "absent from monthly workbook",
+            }
+            resolved.extend(_tmx_classes(record, issuer))
+    return resolved
+
+
+def _tmx_classes(record, issuer):
+    suffix = ".TO" if record["source_id"] == "tsx" else ".V"
+    return [
+        {
+            **record,
+            "source_symbol": item["symbol"],
+            "symbol": item["symbol"].replace(".", "-") + suffix,
+            "security_name": item["name"],
+            "issuer_root": issuer["symbol"],
+            "currency": "USD" if item["symbol"].endswith(".U") else "CAD",
+            "symbol_identity": "exchange_security_symbol",
+            "symbol_mapping_source": "TMX current company directory",
+        }
+        for item in issuer["instruments"]
+    ]
 
 
 def _exclusion(record, approved_etfs):
     name = record["name"]
+    source = record["source_id"]
     if record["is_test"]:
         return "test_issue"
     if not re.fullmatch(r"[A-Z0-9][A-Z0-9.-]{0,19}", record["symbol"]):
@@ -186,23 +331,47 @@ def _exclusion(record, approved_etfs):
         return "unknown_exchange_code"
     if record.get("next_shares"):
         return "nextshares"
-    if record.get("financial_status") not in (None, "N"):
-        return "non_normal_nasdaq_financial_status"
+    if source in CANADIAN_SOURCES and record["currency"] != "CAD":
+        return "canadian_non_cad_listing"
+    if record.get("listing_status") == "Delisted":
+        return "delisted_in_current_directory"
     if record["is_etf"]:
-        if record["symbol"] not in approved_etfs:
-            return "etf_leverage_classification_not_verified"
-        return None
-    if re.search(
-        r"\b(warrants?|rights|preferred|preference|depositary|depository|notes?|ETN)\b", name, re.I
-    ):
+        return (
+            None
+            if record["symbol"] in approved_etfs
+            else "etf_leverage_classification_not_verified"
+        )
+    if re.search(r"\b(warrants?|rights|preferred|preference|notes?|ETN|debentures?)\b", name, re.I):
         return "non_common_security"
-    if record["source_id"] == "tsx":
-        if record["sector"] in {"ETP", "CDR", "CPC/SPAC", "Closed-End Funds"}:
+    if source in CANADIAN_SOURCES:
+        if re.search(r"\.(PR|PF|WT|WS|DB|RT|CV|P)(?:\.|$)", record["source_symbol"]):
+            return "non_common_security_symbol"
+        if source == "cse":
+            return None if record["directory_security_type"] == "Equity" else "non_common_security"
+        if source == "cboe_ca":
+            return (
+                None
+                if record["directory_security_type"] == "equity"
+                and record["directory_security_subtype"] in {"common", "subvtshr"}
+                else "non_common_security"
+            )
+        if record["sector"] in {"ETP", "CDR", "CPC/SPAC", "Closed-End Funds", "CPC"}:
             return "non_common_issuer_category"
-        if record["product_type"] or re.search(r"\b(trust|units?|fund)\b", name, re.I):
+        if record["product_type"] not in {"", "Income Trust"} or re.search(
+            r"\b(CDR|ETF|fund)\b", name, re.I
+        ):
+            return "non_common_or_ambiguous_issuer"
+        # Explicit trust units are equities; an unresolved issuer root is not a unit symbol.
+        if re.search(r"\b(trust|units?)\b", name, re.I) and not record["source_symbol"].endswith(
+            ".UN"
+        ):
             return "non_common_or_ambiguous_issuer"
     elif not re.search(
-        r"\b(common stock|common shares|ordinary shares|ordinary stock)\b", name, re.I
+        r"\b(common stocks?|common shares?|ordinary shares?|ordinary stocks?|"
+        r"american depositary shares?|american depository shares?|american depositary receipts?|"
+        r"new york registry shares)\b",
+        name,
+        re.I,
     ):
         return "common_share_type_not_explicit"
     elif re.search(r"\bunits?\b", name, re.I):
@@ -242,15 +411,15 @@ def build_membership(records, baseline):
         else:
             spec["security_type"] = (
                 "issuer_equity_candidate"
-                if record["source_id"] == "tsx"
-                else "common_or_ordinary_shares"
+                if record["symbol_identity"] == "issuer_root_requires_provider_verification"
+                else "common_ordinary_or_equity_depositary_shares"
             )
         instruments.append(spec)
     return instruments, excluded
 
 
 def discover_universe(workspace, *, client=None, captured_at=None):
-    """Fetch three public files and persist an immutable, dated research snapshot.
+    """Fetch official exchange directories and persist an immutable, dated research snapshot.
 
     Returns a JSON-serializable manifest; ``instruments`` feeds a research-only
     capture workspace. Never writes config/scanner_universe.json or paper state.
@@ -270,35 +439,69 @@ def discover_universe(workspace, *, client=None, captured_at=None):
         client = httpx.Client(
             timeout=30, follow_redirects=True, headers={"User-Agent": "Mozilla/5.0"}
         )
-    sources, records = [], []
+    sources, records, tmx_records = [], [], []
+    directories = {"tsx": [], "tsxv": []}
+    parsers = {
+        "tsx": parse_tmx_workbook,
+        "cse": parse_cse_directory,
+        "cboe_ca": parse_cboe_canada_directory,
+    }
+
+    def capture(source_id, url, parser, suffix):
+        response = client.get(url)
+        response.raise_for_status()
+        content = response.content
+        rows, vintage = parser(content)
+        digest = _digest(content)
+        relative = f"data/research/universe/raw/{source_id}.{digest}{suffix}"
+        raw_path = workspace / relative
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        if not raw_path.exists():
+            raw_path.write_bytes(content)
+        source = {
+            "source_id": source_id,
+            "url": str(response.url),
+            "path": relative,
+            "sha256": digest,
+            "source_vintage": vintage,
+            "observed_rows": len(rows),
+        }
+        return source, rows
+
     try:
         for source_id, url in SOURCES.items():
-            response = client.get(url)
-            response.raise_for_status()
-            content = response.content
-            rows, vintage = (
-                parse_tmx_workbook(content)
-                if source_id == "tsx"
-                else parse_nasdaq_directory(content, source_id)
+            parser = parsers.get(source_id)
+            if parser is None:
+
+                def parser(content, key=source_id):
+                    return parse_nasdaq_directory(content, key)
+
+            suffix = ".xlsx" if source_id == "tsx" else ".json" if source_id in parsers else ".txt"
+            source, rows = capture(source_id, url, parser, suffix)
+            sources.append(source)
+            if source_id == "tsx":
+                tmx_records = rows
+            else:
+                records.extend(rows)
+        tasks = [
+            (exchange, letter) for exchange in directories for letter in (*ascii_uppercase, "0-9")
+        ]
+
+        def capture_letter(task):
+            exchange, letter = task
+            source, rows = capture(
+                f"{exchange}_directory_{letter}",
+                TMX_DIRECTORY_URL.format(exchange=exchange, letter=letter),
+                parse_tmx_directory,
+                ".json",
             )
-            digest = _digest(content)
-            suffix = ".xlsx" if source_id == "tsx" else ".txt"
-            relative = f"data/research/universe/raw/{source_id}.{digest}{suffix}"
-            raw_path = workspace / relative
-            raw_path.parent.mkdir(parents=True, exist_ok=True)
-            if not raw_path.exists():
-                raw_path.write_bytes(content)
-            sources.append(
-                {
-                    "source_id": source_id,
-                    "url": str(response.url),
-                    "path": relative,
-                    "sha256": digest,
-                    "source_vintage": vintage,
-                    "observed_rows": len(rows),
-                }
-            )
-            records.extend(rows)
+            return exchange, source, rows
+
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            for exchange, source, rows in pool.map(capture_letter, tasks):
+                sources.append(source)
+                directories[exchange].extend(rows)
+        records.extend(resolve_tmx_securities(tmx_records, directories))
     finally:
         if owned_client:
             client.close()
@@ -315,6 +518,11 @@ def discover_universe(workspace, *, client=None, captured_at=None):
         "sources": sources,
         "instruments": instruments,
         "observed_count": len(records),
+        "source_observed_count": sum(item["observed_rows"] for item in sources),
+        "exchange_counts": dict(sorted(Counter(item["exchange"] for item in instruments).items())),
+        "identity_counts": dict(
+            sorted(Counter(item["symbol_identity"] for item in instruments).items())
+        ),
         "eligible_count": len(instruments),
         "counts": dict(
             sorted(

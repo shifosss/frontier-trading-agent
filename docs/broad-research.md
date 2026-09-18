@@ -2,7 +2,9 @@
 
 The Strategy lab is the broad research workflow. The Starter scanner retains its original 41-name sample; the existing paper account remains pinned to its 11 eligible US stocks. Research coverage and an execution mandate are separate: new research must not silently change accepted trading decisions.
 
-## Current scope
+The primary development workflow is now [historical-first portfolio testing](historical-research.md). Discovery has expanded to [8,434 candidates](universe-coverage.md), including TSXV, CSE and Cboe Canada. The following describes the retained initial five-year cohort workflow.
+
+## Initial scope
 
 Discovery on September 18, 2026 saved **5,640 candidates: 4,996 US stocks, 624 Canadian equity candidates, and 20 reference ETFs**. US membership comes from Nasdaq Trader's official Nasdaq and other-listed directories. Canadian candidates come from TMX's August 2026 TSX issuer workbook. Canadian issuer roots can omit share classes, so price-provider symbol/currency validation determines usable histories. TSXV, CSE and Cboe Canada are not covered. Unknown leveraged/inverse ETF classifications are excluded; the existing reference ETF list is explicitly retained.
 

@@ -66,6 +66,11 @@ class BroadResearchRequest(BaseModel):
     rediscover: bool = False
 
 
+class HistoricalRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    rediscover: bool = False
+
+
 class FreezeRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     run_id: str
@@ -236,6 +241,37 @@ def create_app(workspace: Path) -> FastAPI:
         from frontier.research_lab import start_research_job
 
         return start_research_job(workspace, **body.model_dump())
+
+    @app.get("/api/historical-lab/status")
+    def historical_status():
+        from frontier.historical_lab import historical_status
+
+        return historical_status(workspace)
+
+    @app.post("/api/historical-lab/start")
+    def historical_start(body: HistoricalRequest):
+        from frontier.historical_lab import start_historical_job
+
+        return start_historical_job(workspace, **body.model_dump())
+
+    @app.get("/api/historical-lab/runs/{run_id}")
+    def historical_result(run_id: str):
+        from frontier.historical_lab import historical_result
+
+        try:
+            return historical_result(workspace, run_id, compact=True)
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+
+    @app.get("/api/historical-lab/runs/{run_id}/download")
+    def historical_download(run_id: str):
+        from frontier.historical_lab import historical_result_path
+
+        try:
+            path = historical_result_path(workspace, run_id)
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return FileResponse(path, filename=f"frontier-historical-{run_id}.json")
 
     @app.get("/api/scans")
     def scans():

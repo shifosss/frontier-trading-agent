@@ -1896,3 +1896,12 @@ td small.earlier-version {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.historical-research .historical-chart-scroll {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.historical-research .historical-chart-scroll .equity-chart {
+  min-width: 930px;
+}

@@ -1,6 +1,6 @@
 # Automated daily/weekly trading: delivery plan and current implementation
 
-Updated September 18, 2026. This supersedes the research-first delivery order, not the saved research evidence.
+Updated September 18, 2026. The destination remains an automated trading system. The owner now prioritizes extensive historical refinement before promoting new strategies to forward observation.
 
 ## Product outcome
 
@@ -47,8 +47,8 @@ Automated tests cover scheduled eligibility, partial fills, cash settlement and 
 Next acceptance gates, in order:
 
 1. Continue the paper trial activated September 18 on the owner-selected US$100,000 simulated account. Initialization, initial real reconciliation and five-minute worker startup passed; real order submission, partial/expired/canceled states, disconnects, and host restart remain to be qualified. Signal rules are shared, but this balance does not validate whole-share affordability at US$500. No credentials belong in chat.
-2. Accumulate dated forward operations and compare the frozen baseline with cost-matched alternatives. Account for Alpaca paper's omitted dividends, fees, queueing and market impact separately. Zero-commission paper observations do not establish Moomoo net returns.
-3. The broad [Strategy lab](broad-research.md) now discovers 5,640 candidates and compares momentum, trend pullback, reversion and breakout hypotheses. Its first study completed with 5,592 usable histories and 96 frozen prospective plans. Next qualify portfolio execution/accounting on that broader scope and collect prospective outcomes before a versioned paper-policy migration. Event-driven inputs remain unimplemented. No historical winner is automatically promoted.
+2. Prioritize long historical portfolio testing and training-only rolling selection using the expanded [historical workflow](historical-research.md); do not wait for new observations to improve the research. Continue dated forward operations as a separate baseline and compare the frozen baseline with cost-matched alternatives. Account for Alpaca paper's omitted dividends, fees, queueing and market impact separately. Zero-commission paper observations do not establish Moomoo net returns.
+3. The broad [Strategy lab](historical-research.md) now discovers 8,434 candidates and tests 30 fixed strategy/horizon hypotheses on continuous research portfolios and rolling training/test windows. The earlier five-year cohort study and its 96 frozen prospective plans are retained. Use the historical findings to reject weak rules and improve the system before a versioned paper-policy migration; later prospective evidence tests execution and unseen behavior. Event-driven inputs remain unimplemented. No historical winner is automatically promoted.
 4. Implement and qualify Moomoo's account-specific cash execution adapter, corporate actions, actual fee schedule, account activity/funding import, and operational recovery. Add Canadian execution only through a verified supported broker route.
 5. Prepare owner-operated live deployment with a reconciled account, precise capital allocation, frozen strategy versions and executable operating instructions. The assistant can develop and test the software but does not custody funds or operate a live securities account.
 

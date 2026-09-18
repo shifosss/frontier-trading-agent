@@ -274,3 +274,23 @@ Final completed-study browser checks matched 16 currency/budget/horizon/cost vie
 against the real saved API, with all four strategy families visible. Full and
 forward downloads returned 11,840 historical cohorts and 96 pending plans. Evidence:
 `.qualification/broad-research-ui/completed-actual-report.json`.
+
+
+## Historical-first expansion - September 18, 2026
+
+Ponytail full/standard and independent financial correctness review were applied. The new historical path reuses existing HTTP, calendars, numerical tools, UI tables/charts and durable launcher; no dependency or broker adapter was added. Source collection, job orchestration and portfolio simulation have separate responsibilities. Large audit JSON is streamed to disk, while the UI receives a separately saved compact summary and monthly chart samples.
+
+Reviews found and fixed: a callback-signature mismatch, omitted CAD benchmarks/instrument audit records when combining books, pre-2017 cash settlement assumptions, settlement across annual folds, invalidating zero-filled holdings for missing future marks, treating an unknown market regime as bearish cash, and relabeling already-loaded orchestration with newly edited source. Final loaded-code regression verifies publication stops while raw data remains reusable. Historical price reconstruction was independently checked against Longbridge's January 2000 AAPL quotes, and calendar optimization retained exact output on sampled histories.
+
+The final full project suite passed **262 tests in 116.40 seconds**, Ruff and TypeScript/Vite build. A separate targeted run passed **35 historical/discovery tests**, including the added provenance regression. Existing upstream deprecation warnings remain. Economic tests cover daily unrealized losses, fees, gap sizing, missing data, split continuity, settlement, rolling selection causality, recent-month exclusion, benchmark/cash comparisons and per-stock warmup. Browser checks and actual study findings are recorded separately from software correctness.
+
+
+The first long run exposed a real Windows file-sharing failure while replacing a progress snapshot. A narrowly bounded PermissionError retry now preserves atomic replacement without hiding persistent write failures. Six orchestration regressions pass, including preservation of the old status until successful replacement. An independent real-kernel check held a destination without FILE_SHARE_DELETE for 120 ms; the writer completed correctly after 153 ms. Captured histories and the completed preliminary US report were retained, and both books were rerun under the final source identity. This is an observed runtime fix, not speculative exception handling.
+
+
+The completed full-data audit independently compared all 792 portfolio/reference rows with their compact API representations, recomputed ending equity, total return and daily maximum drawdown for all 683 complete rows, and confirmed that all 109 incomplete rows retain null aggregate metrics. Sample USD and CAD trades were reconstructed from frozen raw sources with exact notional, fee and cash agreement. The saved financial source identity matches the implementation. Evidence: `.qualification/historical-source-probes/independent-final-reproducibility.json`.
+
+The final report preserves the negative US findings and all incomplete Canadian attempts; see [extended historical study](historical-research-results.md). Browser review caught a full-period benchmark displayed beside an incomplete Canadian path. The interface now suppresses that comparison for incomplete accounts, labels the usable prefix and identifies missing held prices. The archived financial results remain unchanged.
+
+
+Completed-study Chrome verification passed 48 real currency/budget/cost views against saved API values. The incomplete CAD warning, exact missing dates and partial chart were checked at 1440, 768, 390 and 320 pixels; its full-period benchmark is absent, while complete US comparisons remain available. There were no JavaScript errors, page overflow or mutating API calls. A one-byte ranged download returned HTTP 206 with the correct filename and 503,091,620-byte total. Desktop/mobile screenshots were visually inspected. Final TypeScript/Vite build passed. Evidence: `.qualification/historical-ui/actual-report.json` and `actual-incomplete-report.json`.

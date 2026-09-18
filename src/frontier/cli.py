@@ -403,5 +403,29 @@ def broad_research_status(ctx: typer.Context):
     output(research_status(ctx.obj))
 
 
+@app.command("historical-run")
+def historical_research(
+    ctx: typer.Context,
+    start: str = "2000-01-01",
+    rediscover: bool = False,
+    capture_only: bool = False,
+):
+    """Capture long histories and test continuous cash portfolios and rolling selection."""
+    from frontier.historical_lab import run_historical_lab
+
+    result = run_historical_lab(
+        ctx.obj, start=start, rediscover=rediscover, capture_only=capture_only
+    )
+    output({key: result[key] for key in ("run_id", "capture", "captured") if key in result})
+
+
+@app.command("historical-status")
+def historical_research_status(ctx: typer.Context):
+    """Inspect saved historical progress without launching work."""
+    from frontier.historical_lab import historical_status
+
+    output(historical_status(ctx.obj))
+
+
 if __name__ == "__main__":
     app()

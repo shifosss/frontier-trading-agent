@@ -1,3 +1,4 @@
+import HistoricalResearchPanel from "./HistoricalResearchPanel";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Table } from "./StudyDisplay";
 import { number, percent, readable } from "./format";
@@ -215,6 +216,7 @@ export default function BroadResearchPanel({ request, error }: Props) {
   const captured = (state?.cached ?? 0) + (state?.attempted ?? 0);
   return (
     <div className="broad-research">
+      <HistoricalResearchPanel request={request} error={error} />
       <section className="wide-sheet">
         <div className="section-heading">
           <div>
