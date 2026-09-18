@@ -1,12 +1,12 @@
 # Engine qualification (2026-09-18)
 
-Neither candidate is fully qualified for the combined US/Canadian market and corporate-action accounting requirement. Nautilus 1.231.0 is usable for a strictly limited synthetic/raw-data execution harness with native USD/CAD ledgers. Corporate-action periods must remain unsupported until the missing accounting and event semantics are resolved. This is an engineering qualification, not a performance backtest or live-capital authorization.
+Neither candidate is fully qualified for the combined US/Canadian market and corporate-action accounting requirement. Nautilus 1.231.0 is usable for a strictly limited synthetic/raw-data execution harness with native-currency debits in two separately seeded multi-currency venue accounts; consolidated account/NAV behavior is not proven. Corporate-action periods must remain unsupported until the missing accounting and event semantics are resolved. This is an engineering qualification, not a performance backtest or live-capital authorization.
 
 ## Executed Nautilus result
 
 Official PyPI version JSON confirmed 1.231.0, including a CPython 3.13 Windows wheel. The wheel SHA-256 is `5fc8e08e98b6a47a5f0104c12ac6d8d3cefa0fd9dd2bb0d211c1b14517ff9aaf`. The installation uses existing Python 3.13.7 at `C:\Python313\python.exe`, workspace environment `.qualification/nautilus`, and workspace uv cache `.cache/uv`. All 15 installed package versions are pinned in `engines/qualification/requirements.lock`; no global Python package was installed. Package identity is in `evidence/pypi-identity.json`.
 
-`engines/qualification/probe.py` imports the real installed engine. Each scenario supplies 8 synthetic quotes and 2 synthetic bars for distinct native Equity objects `SYNTH_US.XNAS` (USD) and `SYNTH_CA.XTSE` (CAD). Each venue has its own cash account with initial USD 10,000 and CAD 10,000; this does not establish a consolidated cross-venue brokerage account. Fixed fee is 1 native currency unit per order. These identifiers, prices, timestamps and market conditions are engineering fixtures, not real stocks or data.
+`engines/qualification/probe.py` imports the real installed engine. Each scenario supplies 8 synthetic quotes and 2 synthetic bars for distinct native Equity objects `SYNTH_US.XNAS` (USD) and `SYNTH_CA.XTSE` (CAD). There are two separate multi-currency cash accounts, one per venue. Each account is independently seeded with USD 10,000 and CAD 10,000 (USD 20,000 and CAD 20,000 across both accounts). The probe establishes native-currency debits within these accounts; it does not establish one consolidated cross-venue brokerage account or consolidated NAV. Fixed fee is 1 native currency unit per order. These identifiers, prices, timestamps and market conditions are engineering fixtures, not real stocks or data.
 
 For each instrument, the baseline buys 10 shares at 100.00. Hand calculation: 10,000 - (10 x 100) - 1 = 8,999 native currency cash. Actual engine cash is exactly 8,999, quantity 10, basis 100, realized P&L -1 (fee), unrealized P&L 0. The other currency remains 10,000. A sell limit of 5 at 300 remains ACCEPTED. Both quote and external bar delivery are exercised.
 
@@ -29,6 +29,37 @@ Pinned accessible source: commit `985ef30ad3ac774218c5ac516b4cb0aa2655730f` from
 Default market-hours keys contain `Equity-usa-[*]` and `Equity-india-[*]`; inspected `Market.cs` has no Canada/Toronto constant and default equity symbol properties provide no verified Canadian market route. Arbitrary market extensions may be possible but Canadian native data/calendar/symbol/fee/corporate-action configuration is unqualified. US-listed Canadian exposure is not evidence of native CAD Canadian equities.
 
 The host has SDK 9.0.310 and an existing .NET 10.0.12 runtime. Building the fetched pinned Launcher project with `--no-restore` fails NETSDK1045 because SDK 9 cannot target .NET 10. This is a target-framework preflight on the actual Launcher file, not a full repository build; no executable was produced or run. No .NET runtime/SDK or Docker change was made. First-run CLI output mentioned a development certificate; read-only inspection found only a localhost certificate dated 2026-05-31, predating this task. Nothing was deleted. `lean-build.txt` captures the exact failure; `lean-inspection.json` captures compact source content; full downloaded source snapshots are local in ignored `.qualification/lean-source-inspection`.
+
+
+### Reproducing the LEAN source and target-framework preflight
+
+Run `& 'C:\Python313\python.exe' 'engines/qualification/fetch_sources.py'` from the repository root to retrieve the pinned source files, including `Launcher/QuantConnect.Lean.Launcher.csproj`. The script reads the committed SHA from `engines/qualification/evidence/lean-identity.json` and saves upstream files under ignored `.qualification/lean-source-inspection`. The current Launcher snapshot is `.qualification/lean-source-inspection/lean-Launcher_QuantConnect.Lean.Launcher.csproj`.
+
+The existing `engines/qualification/evidence/lean-build.txt` was captured before the source snapshots were moved out of the evidence directory. Its original exact preflight command and environment were:
+
+```powershell
+$env:DOTNET_CLI_HOME = (Join-Path (Get-Location) '.qualification/dotnet-home')
+$env:NUGET_PACKAGES = (Join-Path (Get-Location) '.qualification/nuget')
+$env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1'
+& 'C:\Program Files\dotnet\dotnet.exe' build 'engines/qualification/evidence/lean-Launcher_QuantConnect.Lean.Launcher.csproj' --no-restore '-p:BaseIntermediateOutputPath=../../../.qualification/lean-obj/' '-p:OutputPath=../../../.qualification/lean-bin/' 2>&1 | Tee-Object 'engines/qualification/evidence/lean-build.txt'
+exit $LASTEXITCODE
+```
+
+To reproduce against the current snapshot location, use the following in a fresh PowerShell process. This adjusted command uses absolute workspace-local output paths and a new log so it does not overwrite the original evidence. It disables first-run certificate generation. It is documented here without rerunning .NET during the review fix.
+
+```powershell
+& 'C:\Python313\python.exe' 'engines/qualification/fetch_sources.py'
+$env:DOTNET_CLI_HOME = (Join-Path (Get-Location) '.qualification/dotnet-home')
+$env:NUGET_PACKAGES = (Join-Path (Get-Location) '.qualification/nuget')
+$env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1'
+$env:DOTNET_GENERATE_ASPNET_CERTIFICATE = 'false'
+$leanObjectPath = (Join-Path (Get-Location) '.qualification/lean-obj/')
+$leanOutputPath = (Join-Path (Get-Location) '.qualification/lean-bin/')
+& 'C:\Program Files\dotnet\dotnet.exe' build '.qualification/lean-source-inspection/lean-Launcher_QuantConnect.Lean.Launcher.csproj' --no-restore "-p:BaseIntermediateOutputPath=$leanObjectPath" "-p:OutputPath=$leanOutputPath" 2>&1 | Tee-Object '.qualification/lean-preflight-reproduced.txt'
+exit $LASTEXITCODE
+```
+
+This reproduces a target-framework preflight, not a full LEAN build: the fetched Launcher project has not been provided with the full repository and restored dependencies. NETSDK1045 is expected with the observed SDK 9.0.310; a future compatible SDK would require a separate full-build qualification.
 
 ## Smallest route and validation
 
