@@ -1,0 +1,37 @@
+{
+  "source": "https://pypi.org/pypi/nautilus_trader/1.231.0/json",
+  "version": "1.231.0",
+  "requires_python": "<3.15,>=3.12",
+  "project_urls": {
+    "Homepage": "https://nautilustrader.io",
+    "Repository": "https://github.com/nautechsystems/nautilus_trader",
+    "docs": "https://nautilustrader.io/docs"
+  },
+  "license": "LGPL-3.0-or-later",
+  "windows_cp313_files": [
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "fbf75753dc1ff4497d9bf70ea09a2480b031ece17ad75766ab4807852eaf48f2"
+      },
+      "digests": {
+        "blake2b_256": "b89d5b85148ef24c185c53f2cf582f21398787297b088c6ee0c7021c7659692b",
+        "md5": "493aa223bd04fb73a4c31baea29e5148",
+        "sha256": "5fc8e08e98b6a47a5f0104c12ac6d8d3cefa0fd9dd2bb0d211c1b14517ff9aaf"
+      },
+      "downloads": -1,
+      "filename": "nautilus_trader-1.231.0-cp313-cp313-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "493aa223bd04fb73a4c31baea29e5148",
+      "packagetype": "bdist_wheel",
+      "python_version": "cp313",
+      "requires_python": "<3.15,>=3.12",
+      "size": 112708191,
+      "upload_time": "2026-08-02T18:49:19",
+      "upload_time_iso_8601": "2026-08-02T18:49:19.759817Z",
+      "url": "https://files.pythonhosted.org/packages/b8/9d/5b85148ef24c185c53f2cf582f21398787297b088c6ee0c7021c7659692b/nautilus_trader-1.231.0-cp313-cp313-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

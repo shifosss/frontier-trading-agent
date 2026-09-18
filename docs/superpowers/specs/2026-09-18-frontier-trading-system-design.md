@@ -2,7 +2,7 @@
 
 Date: 2026-09-18
 
-Status: proposed architecture, independently reviewed; implementation has not started.
+Status: architecture approved by user delegation; implementation and executable qualification underway. Current evidence is tracked in docs/progress.md.
 
 ## 1. Mandate and current facts
 

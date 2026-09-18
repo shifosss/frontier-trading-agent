@@ -20,5 +20,12 @@ Plan: docs/superpowers/plans/2026-09-18-research-kernel.md
 ## Status
 
 - Planning/design: reviewed and approved.
-- Task 1: not started.
-- Remaining implementation: not started.
+- Task 1: running; Nautilus 1.231.0 actual dual-currency trade/fee checks passed. Corporate actions not qualified. LEAN source-only; installed SDK 9 cannot build pinned .NET 10 source.
+- Task 2: brief prepared; awaiting qualification handoff. Remaining tasks queued.
+
+## Implementation decisions
+
+- Restrict Nautilus replay to proven capabilities. Preserve action records; reject action-bearing replay until qualified. Unknown action coverage may support explicitly labeled exploratory runs only.
+- Existing Alpha Vantage access returned 100 raw daily bars for SPY and XIU.TRT. This is a session snapshot, not an unattended backend credential. Canadian actions remain unknown. No paid endpoints used.
+- Bank of Canada Valet provides free indicative daily FX. Use publication timestamps; do not call these executable conversion prices.
+- Sandbox process helper failed after repository initialization. Host commands work with per-command Git safe.directory; no global trust setting changed. RTK unavailable in host PATH, so explicit executables are used.

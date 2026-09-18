@@ -1,0 +1,240 @@
+{
+  "fixture": "SYNTHETIC ENGINEERING ONLY; no market data or brokerage",
+  "engine": "1.231.0",
+  "python": "3.13.7",
+  "repeat_equal": true,
+  "normalization": "Exclude generated event/order/position UUIDs and wall-clock runtime; preserve instrument, side, quantity, price, commission, order status, cash, basis and P&L.",
+  "results": [
+    {
+      "mode": "baseline",
+      "input_quote_count": 8,
+      "input_bar_count": 2,
+      "bars_received": 2,
+      "fills": [
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "side": "BUY",
+          "quantity": "10",
+          "price": "100.00",
+          "commission": "1.00 USD"
+        },
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "side": "BUY",
+          "quantity": "10",
+          "price": "100.00",
+          "commission": "1.00 CAD"
+        }
+      ],
+      "balances": {
+        "XNAS": {
+          "USD": "8999.00 USD",
+          "CAD": "10000.00 CAD"
+        },
+        "XTSE": {
+          "USD": "10000.00 USD",
+          "CAD": "8999.00 CAD"
+        }
+      },
+      "positions": [
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "quantity": "10",
+          "average_basis": 100.0,
+          "realized_pnl": "-1.00 CAD",
+          "unrealized_pnl": "0.00 CAD",
+          "adjustment_count": 0
+        },
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "quantity": "10",
+          "average_basis": 100.0,
+          "realized_pnl": "-1.00 USD",
+          "unrealized_pnl": "0.00 USD",
+          "adjustment_count": 0
+        }
+      ],
+      "fx_without_quote": {
+        "XNAS": null,
+        "XTSE": null
+      },
+      "resting_orders": [
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "quantity": "5",
+          "price": "300.00",
+          "status": "ACCEPTED"
+        },
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "quantity": "5",
+          "price": "300.00",
+          "status": "ACCEPTED"
+        }
+      ],
+      "actions": {}
+    },
+    {
+      "mode": "dividend",
+      "input_quote_count": 8,
+      "input_bar_count": 2,
+      "bars_received": 2,
+      "fills": [
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "side": "BUY",
+          "quantity": "10",
+          "price": "100.00",
+          "commission": "1.00 USD"
+        },
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "side": "BUY",
+          "quantity": "10",
+          "price": "100.00",
+          "commission": "1.00 CAD"
+        }
+      ],
+      "balances": {
+        "XNAS": {
+          "USD": "9004.00 USD",
+          "CAD": "10000.00 CAD"
+        },
+        "XTSE": {
+          "USD": "10000.00 USD",
+          "CAD": "9004.00 CAD"
+        }
+      },
+      "positions": [
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "quantity": "10",
+          "average_basis": 100.0,
+          "realized_pnl": "4.00 CAD",
+          "unrealized_pnl": "0.00 CAD",
+          "adjustment_count": 1
+        },
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "quantity": "10",
+          "average_basis": 100.0,
+          "realized_pnl": "4.00 USD",
+          "unrealized_pnl": "0.00 USD",
+          "adjustment_count": 1
+        }
+      ],
+      "fx_without_quote": {
+        "XNAS": null,
+        "XTSE": null
+      },
+      "resting_orders": [
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "quantity": "5",
+          "price": "300.00",
+          "status": "ACCEPTED"
+        },
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "quantity": "5",
+          "price": "300.00",
+          "status": "ACCEPTED"
+        }
+      ],
+      "actions": {
+        "SYNTH_US.XNAS": {
+          "dividend_before": "-1.00 USD",
+          "dividend_after": "4.00 USD",
+          "dividend_quantity": "10"
+        },
+        "SYNTH_CA.XTSE": {
+          "dividend_before": "-1.00 CAD",
+          "dividend_after": "4.00 CAD",
+          "dividend_quantity": "10"
+        }
+      }
+    },
+    {
+      "mode": "split",
+      "input_quote_count": 8,
+      "input_bar_count": 2,
+      "bars_received": 2,
+      "fills": [
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "side": "BUY",
+          "quantity": "10",
+          "price": "100.00",
+          "commission": "1.00 USD"
+        },
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "side": "BUY",
+          "quantity": "10",
+          "price": "100.00",
+          "commission": "1.00 CAD"
+        }
+      ],
+      "balances": {
+        "XNAS": {
+          "USD": "9004.00 USD",
+          "CAD": "10000.00 CAD"
+        },
+        "XTSE": {
+          "USD": "10000.00 USD",
+          "CAD": "9004.00 CAD"
+        }
+      },
+      "positions": [
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "quantity": "20",
+          "average_basis": 100.0,
+          "realized_pnl": "4.00 CAD",
+          "unrealized_pnl": "-1000.00 CAD",
+          "adjustment_count": 2
+        },
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "quantity": "20",
+          "average_basis": 100.0,
+          "realized_pnl": "4.00 USD",
+          "unrealized_pnl": "-1000.00 USD",
+          "adjustment_count": 2
+        }
+      ],
+      "fx_without_quote": {
+        "XNAS": null,
+        "XTSE": null
+      },
+      "resting_orders": [
+        {
+          "instrument": "SYNTH_US.XNAS",
+          "quantity": "10",
+          "price": "150.00",
+          "status": "ACCEPTED"
+        },
+        {
+          "instrument": "SYNTH_CA.XTSE",
+          "quantity": "10",
+          "price": "150.00",
+          "status": "ACCEPTED"
+        }
+      ],
+      "actions": {
+        "SYNTH_US.XNAS": {
+          "dividend_before": "-1.00 USD",
+          "dividend_after": "4.00 USD",
+          "dividend_quantity": "10",
+          "split_average_basis": 100.0
+        },
+        "SYNTH_CA.XTSE": {
+          "dividend_before": "-1.00 CAD",
+          "dividend_after": "4.00 CAD",
+          "dividend_quantity": "10",
+          "split_average_basis": 100.0
+        }
+      }
+    }
+  ]
+}
