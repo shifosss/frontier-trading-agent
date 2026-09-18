@@ -45,3 +45,5 @@ Saved results must state actual usable symbols, rows and date spans; each traini
 - Actual run `577a24e71a844022b3ac86ca66e32c34` completed: 8,234 histories / 28,621,250 bars, 720 fixed portfolios, 24 rolling portfolios and 48 references. US representative rolling accounts lose money after costs; all Canadian rolling accounts are incomplete at missing Wajax marks. Findings and denominators are in `docs/historical-research-results.md`.
 
 - Final actual UI: 48 saved-result filter views and incomplete CAD at four widths passed; missing marks and partial history are explicit, with no mismatched-period benchmark comparison. Full evidence download was range-verified.
+
+- Historical iteration completed: an independently sourced three-session Wajax repair recovered 10/12 Canadian rolling tests in an isolated sensitivity run. Nine complete tests breached 30% drawdown; all remaining gaps and the failed setup attempt remain visible. Independent audit reconciled all 396 rows and preserved the base study.

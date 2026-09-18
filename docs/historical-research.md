@@ -2,7 +2,7 @@
 
 The Strategy lab now prioritizes long historical tests before relying on new shadow observations. It requests daily history from **January 1, 2000**, subject to each security's actual listing and provider history. The universe has **8,434 current candidates** across major US exchanges, TSX, TSXV, CSE and Cboe Canada; see [coverage](universe-coverage.md). Coverage is broad, but current membership still omits delisted historical firms.
 
-The [first completed job](historical-research-results.md) captured 8,234 usable histories and 28.6 million daily bars. Its negative US results and incomplete Canadian portfolios are retained; no candidate was promoted.
+The [first completed job](historical-research-results.md) captured 8,234 usable histories and 28.6 million daily bars. Its negative US results and incomplete Canadian portfolios are retained. A separately audited three-session issuer-data repair recovered 10 Canadian rolling tests, with nine exceeding 30% drawdown; no candidate was promoted.
 
 ## What runs
 
