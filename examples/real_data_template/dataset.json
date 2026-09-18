@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "name": "REPLACE: real provider dataset name",
+  "mode": "historical",
+  "source": "REPLACE: provider and data vintage",
+  "source_url": "https://example.com/REPLACE-provider-source",
+  "retrieved_at": "2025-01-01T00:00:00Z",
+  "usage_notes": "REPLACE: actual license, permissions, source retrieval notes",
+  "availability_basis": "unknown",
+  "adjustment_policy": "raw",
+  "corporate_actions_status": "unknown",
+  "instruments": [
+    {
+      "id": "REPLACE.XNYS",
+      "symbol": "REPLACE",
+      "venue": "XNYS",
+      "currency": "USD",
+      "asset_type": "stock",
+      "exposure_group": "REPLACE-issuer"
+    }
+  ],
+  "interval": "1d",
+  "limitations": [
+    "Template only: supply actual observations and provenance before import."
+  ]
+}
+

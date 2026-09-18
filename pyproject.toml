@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "frontier-trading"
+version = "0.1.0"
+description = "Explicit US and Canadian market research evidence"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "nautilus-trader==1.231.0",
+  "pydantic>=2,<3",
+  "pyarrow", "duckdb", "numpy", "pandas", "exchange-calendars",
+  "fastapi", "uvicorn", "typer", "httpx",
+]
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/frontier"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

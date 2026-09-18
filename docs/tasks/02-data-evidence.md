@@ -14,7 +14,7 @@ Own `pyproject.toml`, `uv.lock`, `src/frontier/domain.py`, `src/frontier/data.py
 - Pydantic models with strict unknown-field rejection for user configs. `Instrument`: id in SYMBOL.VENUE notation, symbol, venue (XNAS/XNYS/ARCX/XTSE), currency USD/CAD, asset_type stock/etf, exposure_group. Venue maps explicitly to XNYS or XTSE calendars.
 - `DatasetManifest`: schema_version, dataset_id (content-derived), name, mode synthetic_fixture/historical, source, source_url, retrieved_at UTC, usage_notes, availability_basis observed/documented/inferred/unknown, adjustment_policy raw only for engine dataset, corporate_actions_status complete/unknown, instruments, interval 1d/1h, start/end, row_count, files and digests, limitations list.
 - `StrategyConfig`: family cash/passive/trend/reversion, lookback integer >=2, rebalance_every>=1, max_weight in(0,.2], name. Shared defaults long-only whole shares and separate currency funding.
-- `RunConfig`: dataset_id, strategy, initial_cash_usd/cad positive, base_currency CAD/USD, commission_per_order>=0, slippage_bps>=0, seed, allow_incomplete_actions false by default. Cost/default timing explicitly visible. Run mode inherited from dataset.
+- `RunConfig`: dataset_id, strategy, initial_cash_usd/cad finite nonnegative, default10000 each, combined funding positive, base_currency CAD/USD, commission_per_order>=0, slippage_bps>=0, seed, allow_incomplete_actions false by default. Cost/default timing explicitly visible. Run mode inherited from dataset.
 - `MarketDataset` simple dataclass owns manifest and pandas frames bars/actions/fx. No implicit process-global paths.
 
 ## Dataset import and storage
@@ -36,3 +36,7 @@ Actions columns: instrument_id,event_time,available_at,type(dividend/split),cash
 Provide deterministic offline example source for both markets with XNYS vs XTSE calendar differences, USD/CAD FX published16:30 Eastern, and 100+ daily sessions with nontrivial trend/reversion regimes. Clearly named fictional engineering instruments and synthetic_fixture mode; never label synthetic data market observations. Fixture generator produces data with fixed seed and source identity. Also small import template for real user data and actions.
 
 Tests must independently check future revisions cannot affect earlier as_of, timezone and currency errors, calendar holiday discrepancy, immutable import/reimport, changed content new ID, separate actions/FX, DuckDB reads, failed run retained, globally overlapping test access detected. Run actual pytest and Ruff. Report commands/results and interfaces. Do not use fabricated success for any missing integration.
+
+## Reviewed domain clarification
+
+Listing venue and quote currency are independent fields: a TSX listing may be USD-denominated. Reject unsupported currencies, not valid currency/listing combinations.
