@@ -27,10 +27,16 @@ def calculate_metrics(curve, fills, config, incomplete=False):
         turnover += fill["quantity"] * fill["price"] * conversion
     final = frame.iloc[-1]
     contribution["USD"] = float(
-        final.cash_usd + final.positions_value_usd - config.initial_cash_usd
+        final.cash_usd
+        + final.positions_value_usd
+        + final.get("dividend_receivable_usd", 0)
+        - config.initial_cash_usd
     )
     contribution["CAD"] = float(
-        final.cash_cad + final.positions_value_cad - config.initial_cash_cad
+        final.cash_cad
+        + final.positions_value_cad
+        + final.get("dividend_receivable_cad", 0)
+        - config.initial_cash_cad
     )
     ci = None
     if len(returns) >= 10:
@@ -76,6 +82,9 @@ def calculate_metrics(curve, fills, config, incomplete=False):
         "slippage": slippage,
         "bootstrap_ci": ci,
         "native_market_contribution": contribution,
-        "metric_basis": "daily NAV, zero risk-free rate, 252 sessions; raw-price when exploratory",
+        "metric_basis": (
+            "daily marked NAV including recorded gross dividend receivables and cash payments; "
+            "zero risk-free rate, 252 sessions; unrecorded actions remain excluded"
+        ),
     }
     return result

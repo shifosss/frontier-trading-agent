@@ -9,9 +9,10 @@ separate decision.
 
 | Area | Current evidence | Remaining boundary |
 | --- | --- | --- |
-| Engine | Actual Nautilus Trader 1.231.0 fills, one USD/CAD cash account, native fees, dated FX, calendar-aware next-opening timing, independent accounting tests. | Splits/dividends are unsupported and rejected. Inferred opening quotes do not qualify market microstructure or broker execution. |
+| Engine | Actual Nautilus Trader 1.231.0 fills, one USD/CAD cash account, native fees, dated FX, calendar-aware next-opening timing, independent accounting tests. | Cash dividends with known payment dates are tested. Splits remain unsupported and rejected. Inferred opening quotes do not qualify market microstructure or broker execution. |
+| Scanner | 41 declared instruments, five years of daily adjusted histories, fixed stock ranking, native cash sizing, saved cohorts and benchmark/cost comparisons. | Current-universe retrospective diagnostics, not a live strategy or account reconciliation. |
 | Data and registry | Immutable manifests, source/content identities, retained CSV/Parquet inputs, point-in-time filtering, failed run persistence, evaluation-access records. | Historical availability is often inferred; access overlap is scoped to an immutable dataset identity, not all provider aliases or vintages. |
-| Daily research | Retained 100-bar SPY and XIU sources; a separately identified June 22–September 17 window; cash/passive/trend/reversion and declared cost stress. | The full sample contains a known SPY dividend and rejects replay. Canadian action coverage is unknown. Results are raw-price exploration. |
+| Daily research | Retained 100-bar SPY and XIU sources; a separately identified June 22–September 17 window; cash/passive/trend/reversion and declared cost stress. | The full sample now replays on an enriched immutable dataset with dividend payment dates and prior FX. Canadian action coverage remains unknown; results remain exploratory. |
 | US hourly data | 434 retained Longbridge SPY bars across 62 sessions, converted to official endpoints with partial final hours and cross-source comparisons preserved. | Canadian hourly coverage and a complete production data lane remain unqualified. |
 | Model campaigns | Two actual two-call campaigns through the existing ChatGPT Codex login; typed templates, genuine replay feedback, recorded prompts/output/usage and all attempts. | No untouched holdout, alpha proof, open-ended generated code, broad autonomous research factory, or measured multi-agent advantage. |
 | Workstation and CLI | React/FastAPI UI, local launcher, saved studies/campaigns, source helpers, reports, inspection and deterministic replay commands. | Local operation is not a continuously available deployment. |
@@ -31,8 +32,9 @@ implemented, not fully accepted.
   intents remain unfilled, and positions are not liquidated for free.
 - Funding remains in native currency. Fees and slippage are separate, and valuation
   uses available dated FX without assuming a 1.0 rate or inventing conversion trades.
-- Known actions are preserved and block replay. Unknown action coverage requires an
-  explicit opt-in, prominent raw-price limitations, and no total-return metric.
+- Cash-dividend entitlements and payments are separate: receivables contribute to NAV
+  but cannot fund orders. Unsupported splits still block replay. Unknown action
+  coverage requires explicit opt-in and leaves total return unavailable.
 - Fixed and model-driven campaigns expose their full research intervals. Candidate
   configurations and costs are frozen; rejected, duplicate, and failed attempts count.
   Short historical returns do not authorize promotion or deployment.
@@ -51,9 +53,10 @@ user authentication is required before its unattended history helper can operate
 No automatic login, credential extraction, broker account mutation, or order was
 performed. A successful app connector call does not clear this standalone dependency.
 
-No recurring job or broker-paper service was installed. An always-on host, source
-freshness, restart recovery, forward outcome tracking, and broker reconciliation
-remain additional work. LEAN was inspected at a pinned source revision; its local
+A Codex weekday 17:15 Toronto heartbeat now refreshes the research scanner and
+notifies only on meaningful changes or failures. No broker-paper service was
+installed. An always-on host, restart recovery, forward outcome tracking, and broker
+reconciliation remain additional work. LEAN was inspected at a pinned source revision; its local
 build was blocked by the available SDK version and was not represented as execution.
 
 ## Reproduction and validation
@@ -76,3 +79,8 @@ Next priorities are complete action coverage/accounting, Canadian hourly data,
 longer point-in-time history, nested chronological evaluation, advanced baselines,
 and honest prospective outcome collection. The workstation can be useful while
 those broader acceptance conditions remain open.
+
+The [scanner study](scanner-study.md) records the actual repaired study and the
+CAD600–800 funding scenarios. [Broker readiness](active-account-readiness.md) checks
+Wealthsimple/moomoo fees, options permissions and Canadian taxable records against
+current official sources. Neither document establishes live profitability.

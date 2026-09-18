@@ -76,3 +76,27 @@ Run from repository root in PowerShell:
 The final probe exits 0: baseline, dividend, split each run twice (six real engine runs), with direct equality of normalized financial/order content and independent cash/fee/quantity/order/P&L assertions. Generated event/order/position IDs and wall-clock run timings are excluded explicitly; economic fields are retained. Output is `engines/qualification/evidence/nautilus-probe.json`. The installed engine emits a pandas `Timestamp.utcnow` deprecation warning; it does not affect assertions. Initial development errors (calling the adjustments property and crossing split order) were investigated before this final successful run. `rtk --version` exited 1 because rtk is not available in the working escalated shell; explicit executable paths were used. Regular sandbox commands were unavailable due to helper setup failure.
 
 Sources: [PyPI pinned release](https://pypi.org/pypi/nautilus_trader/1.231.0/json), [LEAN pinned Launcher](https://github.com/QuantConnect/Lean/blob/985ef30ad3ac774218c5ac516b4cb0aa2655730f/Launcher/QuantConnect.Lean.Launcher.csproj), [LEAN portfolio accounting](https://github.com/QuantConnect/Lean/blob/985ef30ad3ac774218c5ac516b4cb0aa2655730f/Common/Securities/SecurityPortfolioManager.cs), [LEAN market hours](https://github.com/QuantConnect/Lean/blob/985ef30ad3ac774218c5ac516b4cb0aa2655730f/Data/market-hours/market-hours-database.json), [LEAN license](https://github.com/QuantConnect/Lean/blob/985ef30ad3ac774218c5ac516b4cb0aa2655730f/LICENSE).
+
+
+## Cash-dividend lifecycle update — September 18, 2026
+
+The earlier public-adjustment probe above remains historical evidence. The current
+replay implements a narrow `SimulationModule.pre_process` lifecycle using the
+engine's real positions and cash account. Holdings before the ex-date opening earn
+gross native-currency receivables. Those amounts enter NAV, not spendable cash;
+engine cash is credited at the first replay event on or after `payable_at`. Previous
+close marks are adjusted for the known ex-dividend amount until a post-ex-date close
+is available. Per-market income attribution and standalone dividend ledgers reconcile.
+
+Regressions cover entitlement timing, ex-date buys, a sale before payment, unpaid
+terminal receivables, future payments not funding orders, multiple events, foreign
+currency and late/unverified action rejection. Replay verification now includes the
+entire dividend ledger and unpaid receivables, with a tampering regression.
+
+The retained full SPY/XIU study completed and reproduced exactly after supplying the
+retained SPY payment-date fact and five actual earlier Bank of Canada observations.
+Original bars and original FX observations are unchanged. See the
+[study report](scanner-study.md) for exact artifact IDs and accounting. Payments and
+returns are gross; incomplete Canadian action coverage keeps `total_return` null.
+Splits remain rejected because quantity mutation alone leaves incorrect engine cost
+basis. This update does not qualify options, market quotes or broker execution.

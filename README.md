@@ -5,8 +5,9 @@ traceable data, runs real Nautilus simulations, compares fixed baselines and bou
 model proposals, and preserves the decisions and accounting behind each result.
 
 **Current status — September 18, 2026:** the workstation and research workflow run
-locally. Historical studies remain exploratory. Corporate-action accounting,
-complete point-in-time data, and broker execution are not qualified; no alpha or
+locally, including a 41-instrument market scanner and tested cash-dividend accounting.
+Historical studies remain exploratory. Stock splits, complete point-in-time data,
+options, and broker execution are not qualified; no profitable trading edge or
 state-of-the-art performance is claimed.
 
 ## Open the workstation
@@ -34,6 +35,17 @@ from `uv sync --frozen` to exist.
 
 ## What works
 
+- **Stock scanner:** one click captures free five-year daily histories for 41 declared
+  US/Canadian stocks and ETFs. A fixed momentum/volatility rule ranks stocks;
+  ETFs supply context. Whole-share sizing separates CAD/USD cash and exposure
+  groups. Every exclusion and saved scan is inspectable. Forward-return cohorts
+  compare the rule with native benchmarks and cash, with cost stress and explicit
+  missing-data exclusions; they are not a compounded portfolio backtest.
+- **Account mandate:** CAD600–800 monthly additions, a recorded 30% drawdown
+  tolerance, Wealthsimple primary/moomoo cash alternative, no borrowing or automatic
+  FX, and separate long-term ETF reserves. CAD700 is illustrative cash; the scanner
+  does not monitor the real account or enforce its drawdown limit.
+
 - **Research and inspection:** local React/FastAPI workstation, immutable dataset
   imports, saved runs and failed attempts, equity curves, decisions, fills, positions,
   source provenance, configuration, and standalone reports.
@@ -58,14 +70,21 @@ from `uv sync --frozen` to exist.
 The retained real sample contains 100 daily bars each for SPY and XIU, plus 434 SPY
 hourly bars across 62 US sessions. Bank of Canada observations provide dated USD/CAD
 reference rates. Raw prices and inferred historical availability do not establish
-point-in-time or total-return evidence. Known dividends/splits reject replay;
-unknown coverage requires explicit exploratory opt-in and leaves `total_return` null.
+point-in-time or total-return evidence. Known cash dividends require verified ex-date
+and payment-date records: entitlement enters NAV before payment but cannot be spent
+until paid. Splits remain rejected. Unknown coverage requires explicit exploratory
+opt-in and leaves `total_return` null. The previously failing full SPY/XIU study now
+runs on a new immutable dataset with a dividend payment date and earlier published FX.
+The original source and failure records are preserved.
 
 ## Useful commands
 
 Use the returned dataset, run, and frozen IDs in place of the placeholders:
 
 ```powershell
+& '.venv/Scripts/python.exe' -m frontier.cli scan --cad 700 --usd 0
+& '.venv/Scripts/python.exe' -m frontier.cli scan --no-refresh --cad 700 --usd 0
+& '.venv/Scripts/python.exe' -m frontier.cli scans
 & '.venv/Scripts/python.exe' -m frontier.cli datasets
 & '.venv/Scripts/python.exe' -m frontier.cli run DATASET_ID --strategy trend --lookback 20 --allow-incomplete-actions
 & '.venv/Scripts/python.exe' -m frontier.cli campaign DATASET_ID --allow-incomplete-actions
@@ -95,7 +114,9 @@ outcomes, and broker-paper reconciliation remain open. Synthetic opening quotes
 model fixed slippage without observed bid/ask or market impact. Historical intervals
 used by research are exposed, and frozen observation is not a live trading system.
 
-See [validation evidence](docs/validation.md),
+See [the completed scanner and dividend study](docs/scanner-study.md),
+[account and options readiness](docs/active-account-readiness.md),
+[validation evidence](docs/validation.md),
 [Ponytail code-quality review](docs/code-quality-review.md),
 [current progress](docs/progress.md),
 [roadmap and acceptance criteria](docs/roadmap.md),

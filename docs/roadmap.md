@@ -13,8 +13,8 @@ in [validation](validation.md).
 
 | Milestone | September 18 status | Why the full milestone remains open |
 | --- | --- | --- |
-| M1 — research kernel | Runnable bounded implementation: actual Nautilus accounting, immutable data/runs, strict timing, reports and exact replay. | Full equity corporate-action semantics are not qualified. Known actions reject replay; LEAN was not executed. |
-| M2 — real data/baselines | US/Canada daily samples, 434 US SPY hourly bars, dated BoC FX, fixed 11-trial baseline/cost tournament and access ledger. | Canadian hourly data, complete actions, longer point-in-time history and continuous nested walk-forward evaluation remain absent. |
+| M1 — research kernel | Runnable bounded implementation: actual Nautilus accounting, immutable data/runs, strict timing, reports and exact replay. | Full equity corporate-action semantics are not qualified. Cash dividends with payment dates now pass lifecycle tests; splits remain rejected; LEAN was not executed. |
+| M2 — real data/baselines | US/Canada daily samples plus a 41-instrument five-year scanner capture, 434 US SPY hourly bars, dated BoC FX, fixed baseline/cost tournaments and access ledger. | Canadian hourly data, complete actions, longer point-in-time history and continuous nested walk-forward evaluation remain absent. |
 | M3 — research factory | Two actual two-call Codex campaigns using existing ChatGPT access, typed templates, real feedback and persisted attempts. | Broad autonomous research, isolated outer holdouts, resumable scheduling and measured multi-agent advantage are not established. |
 | M4 — tournament/dashboard | Local React/FastAPI workstation and comparison/inspection workflows are implemented. | Advanced statistical/ML families, Qlib/RD-Agent comparisons and adaptive scheduling remain future work. |
 | M5a — frozen observation | Freeze and as-of observation commands exist for compatible appended datasets. | No accumulated prospective outcomes or continuously refreshed, recovered observation service is claimed. |

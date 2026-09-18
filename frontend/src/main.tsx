@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import ResearchPanel from "./ResearchPanel";
+import ScannerPanel from "./ScannerPanel";
 import { Download, EquityChart, Table } from "./StudyDisplay";
 import { day, number, percent } from "./format";
 import type { Dataset } from "./types";
@@ -11,6 +12,8 @@ const label = (s: string) =>
 const evidence = (s: string) =>
   ({
     exploratory_raw_price: "Exploratory raw-price study",
+    exploratory_incomplete_actions:
+      "Exploratory study · incomplete action coverage",
     synthetic_engineering: "Synthetic engineering fixture",
     limited_raw_price_replay: "Limited raw-price replay",
   })[s] ?? s;
@@ -33,6 +36,13 @@ async function api(path: string, body?: unknown) {
   return j;
 }
 const pages = [
+  {
+    id: "Scanner",
+    icon: "⌕",
+    title: "Market scanner",
+    description:
+      "Find candidates, size a simulated basket, and examine the evidence.",
+  },
   {
     id: "Study",
     icon: "◷",
@@ -67,7 +77,7 @@ const pages = [
 type Page = (typeof pages)[number]["id"];
 
 function App() {
-  const [page, setPage] = useState<Page>("Study"),
+  const [page, setPage] = useState<Page>("Scanner"),
     [datasets, setDatasets] = useState<Dataset[]>([]),
     [runs, setRuns] = useState<Obj[]>([]),
     [status, setStatus] = useState<Obj | null>(null),
@@ -125,6 +135,8 @@ function App() {
   }
   useEffect(() => {
     refresh().catch((e) => setError(e.message));
+    const studyId = new URLSearchParams(window.location.search).get("study");
+    if (studyId) openStudy(studyId).catch((e) => setError(e.message));
   }, []);
   useEffect(() => {
     setOptIn(localStorage.getItem(`frontier-actions-${datasetId}`) === "yes");
@@ -151,7 +163,7 @@ function App() {
     localStorage.setItem(`frontier-actions-${datasetId}`, value ? "yes" : "no");
   }
   async function openStudy(id: string) {
-    setActive(await api(`/runs/${id}`));
+    setActive(await api(`/runs/${encodeURIComponent(id)}`));
     setCompared([]);
     setPage("Study");
   }
@@ -455,8 +467,10 @@ function App() {
             <strong>Unable to complete request</strong>
             <p>{error}</p>
             <span>
-              Review the reported constraint and retry. Saved job details remain
-              available in Experiments or Research.
+              {error.toLowerCase().includes("split") ||
+              error.toLowerCase().includes("dividend")
+                ? "This study cannot account for the reported corporate action with its current inputs. Inspect the dataset's action details in Data; changing strategy parameters will not repair the missing accounting."
+                : "The request was not completed. Inspect the reported detail before retrying; saved study attempts remain available in Experiments or Research."}
             </span>
             <button aria-label="Dismiss error" onClick={() => setError("")}>
               ×
@@ -474,16 +488,27 @@ function App() {
         {busy && (
           <div className="working" role="status">
             {busy}…{" "}
-            {busy === "Exploring with Codex"
-              ? "The bounded request may take several minutes. Completed attempts are saved."
-              : [
-                    "Running study",
-                    "Rerunning saved settings",
-                    "Comparing baselines",
-                  ].includes(busy)
-                ? "Actual replay is in progress."
-                : "Waiting for the requested operation to complete."}
+            {busy === "Scanning US and Canadian markets"
+              ? "Retrieving completed sessions and testing historical selections. This may take a minute."
+              : busy === "Exploring with Codex"
+                ? "The bounded request may take several minutes. Completed attempts are saved."
+                : [
+                      "Running study",
+                      "Rerunning saved settings",
+                      "Comparing baselines",
+                    ].includes(busy)
+                  ? "Actual replay is in progress."
+                  : "Waiting for the requested operation to complete."}
           </div>
+        )}
+        {page === "Scanner" && (
+          <ScannerPanel
+            busy={busy}
+            request={api}
+            work={work}
+            notice={setNotice}
+            error={setError}
+          />
         )}
         {page === "Study" && (
           <div className="study-layout">
@@ -525,7 +550,10 @@ function App() {
                     [
                       summary?.total_return == null &&
                       summary?.raw_price_return != null
-                        ? "Simulated raw-price return"
+                        ? summary.return_basis ===
+                          "raw_price_plus_gross_cash_dividends"
+                          ? "Exploratory return"
+                          : "Simulated raw-price return"
                         : "Net return",
                       summary
                         ? percent(
@@ -761,6 +789,21 @@ function App() {
                           {percent(summary.average_exposure)}. Sharpe{" "}
                           {number(summary.sharpe)}.
                         </p>
+                        {summary.dividend_income && (
+                          <p>
+                            Gross dividends earned:{" "}
+                            {number(summary.dividend_income.USD)} USD /{" "}
+                            {number(summary.dividend_income.CAD)} CAD.
+                            {summary.dividend_receivables && (
+                              <>
+                                {" "}
+                                Unpaid at study end:{" "}
+                                {number(summary.dividend_receivables.USD)} USD /{" "}
+                                {number(summary.dividend_receivables.CAD)} CAD.
+                              </>
+                            )}
+                          </p>
+                        )}
                         <ul>
                           {summary.limitations.map((l: string) => (
                             <li key={l}>{l}</li>
@@ -1051,7 +1094,10 @@ function App() {
                               {r.summary && (
                                 <small>
                                   {r.summary.total_return == null
-                                    ? "Simulated raw-price return"
+                                    ? r.summary.return_basis ===
+                                      "raw_price_plus_gross_cash_dividends"
+                                      ? "Exploratory return"
+                                      : "Simulated raw-price return"
                                     : "Replay return"}
                                 </small>
                               )}

@@ -91,6 +91,8 @@ def run_campaign(
             "status": record["status"],
             "total_return": summary.get("total_return"),
             "raw_price_return": summary.get("raw_price_return"),
+            "return_basis": summary.get("return_basis"),
+            "dividend_income": summary.get("dividend_income"),
             "sharpe": summary.get("sharpe"),
             "costs": {
                 "commission_per_order": config.commission_per_order,
@@ -158,6 +160,8 @@ def verify_replay(run_id, data_root, registry):
         "fills",
         "positions",
         "balances",
+        "dividends",
+        "dividend_receivables",
         "engine_identity",
         "exposure_drift",
         "unfilled_intents",

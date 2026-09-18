@@ -52,6 +52,13 @@ class ModelCampaignRequest(CampaignRequest):
     max_proposals: int = Field(default=2, ge=1, le=2, strict=True)
 
 
+class ScanRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
+    refresh: bool = True
+    initial_cash_usd: float = Field(default=0, ge=0)
+    initial_cash_cad: float = Field(default=700, ge=0)
+
+
 class FreezeRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     run_id: str
@@ -141,7 +148,9 @@ def create_app(workspace: Path) -> FastAPI:
             "capabilities": {
                 "daily_raw_replay": "Synthetic quotes from raw bars; research only",
                 "separate_currency_funding": True,
-                "corporate_actions": False,
+                "corporate_actions": "Cash dividends with payment dates; stock splits unsupported",
+                "cash_dividends": True,
+                "stock_splits": False,
                 "hourly_execution": (
                     "Regular-session raw-bar replay; inferred quotes and availability"
                 ),
@@ -161,6 +170,28 @@ def create_app(workspace: Path) -> FastAPI:
                 for d in datasets
             ],
         }
+
+    @app.get("/api/scans")
+    def scans():
+        from frontier.scan_data import list_scans
+
+        return list_scans(workspace)
+
+    @app.get("/api/scans/{scan_id}")
+    def scan_detail(scan_id: str):
+        from frontier.scan_data import list_scans
+
+        for saved in list_scans(workspace):
+            if saved["scan_id"] == scan_id:
+                return saved
+        raise HTTPException(404, "Scan not found")
+
+    @app.post("/api/scans")
+    def scan(body: ScanRequest):
+        from frontier.scan_data import run_scan
+
+        with _engine_job():
+            return run_scan(workspace, **body.model_dump())
 
     @app.get("/api/datasets")
     def datasets():

@@ -95,3 +95,61 @@ Comparison results: `artifacts/quality-equivalence.json`. Financial code identit
 
 Normal development still requires restarting the local service after Python changes;
 the launcher deliberately reuses a running service rather than hot-reloading code.
+
+
+## Scanner and dividend milestone — September 18, 2026
+
+The same requested Ponytail **full/standard** skill was applied after implementation.
+The source adapter and fixed scanner remain two ordinary Python modules, using
+existing pandas/httpx/calendar dependencies and a bounded standard-library thread
+pool. The interface adds one screen to the existing React state/navigation and API
+job lock. No plugin framework, generic provider factory, new product dependency,
+custom scheduler or broker abstraction was added. The Codex heartbeat handles the
+requested recurring research scan; its state is app-owned, not hand-written cron.
+
+The narrow dividend module relies on engine positions and native cash mutation;
+it does not synthesize income as trades or replace the execution ledger. Dataset
+imports accept an optional payment timestamp while preserving old source identities.
+Financial input checks remain because they prevent demonstrated wrong accounting
+or mislabeled evidence, rather than providing speculative fallback behavior.
+
+Independent reviews identified and closed four concrete issues:
+
+| Finding | Resolution and evidence |
+| --- | --- |
+| Provider metadata could name another symbol | Require matching symbol and currency; regression rejects mismatches. |
+| Exact replay ignored dividend ledger/receivables | Compare both fields; a tampered ledger/receivable now fails verification. |
+| USD0 generated misleading zero-return cohorts | Unfunded currencies have zero cohorts, null means, explicit reason and UI copy. |
+| Missing stock histories looked like valid cash decisions | Exclude incomplete declared-universe cohorts; expose coverage/counts. Adequate no-signal histories still count as cash. |
+
+Profiling the retained five-year capture found repeated whole-frame filtering.
+Grouping history once by symbol and reusing each calendar lookback reduced comparable
+profiled time from 139.94s to 48.66s. The latest scan, all 238 CAD cohorts and their
+original summary fields were exactly unchanged. Coverage correction also leaves
+this fully covered capture unchanged; current reference data and real capture IDs
+remain separate from that before/after comparison.
+
+Final verification: **114 tests passed in 79.04s**, Ruff passed, TypeScript and Vite
+production build passed. The 96 upstream deprecation warnings remain visible.
+The repaired historical replay is exactly identical across all 14 compared fields;
+source enrichment preserves original raw bars byte for byte and original FX rows.
+Current artifact/code IDs are in [the completed study](scanner-study.md).
+
+Actual Chrome checks exercised the new scan button against the real service and
+public data (41/41 captures), saved-history selection and exact JSON download.
+All six pages passed at 1440, 768, 390 and 320 pixels: 24 page/width combinations,
+no page errors, no failed HTTP responses, no horizontal overflow. The repaired
+study deep link and Assumptions-tab dividend income display passed. The desktop
+scanner screenshot was also visually inspected. Evidence:
+`artifacts/scanner-browser-validation.json` and `.qualification/scanner-real-validation`.
+
+The browser harness initially used a label selector where a combobox role selector
+was needed, then looked for dividend text outside the Assumptions tab. These were
+harness corrections; the final pass inspected the actual saved scan without another
+unnecessary data fetch. This is distinct from the earlier mocked UI contract smoke
+check in `.qualification/scanner-ui-smoke`.
+
+The project Python environment was not changed for browser tooling. The verification
+harness uses a workspace-local uv cache with Playwright/greenlet and the installed
+Chrome executable. No global plugin, machine service, paid data or brokerage action
+was installed or executed.

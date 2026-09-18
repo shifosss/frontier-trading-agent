@@ -60,7 +60,8 @@ def _read_frame(raw: bytes | None, columns: list[str], name: str) -> pd.DataFram
         return pd.DataFrame(columns=columns + ["revision_id", "ingested_at"])
     frame = pd.read_csv(io.BytesIO(raw), dtype={"revision_id": str})
     missing = set(columns) - set(frame.columns)
-    unexpected = set(frame.columns) - set(columns) - {"revision_id"}
+    optional = {"revision_id", "payable_at"} if name == "actions" else {"revision_id"}
+    unexpected = set(frame.columns) - set(columns) - optional
     if missing or unexpected:
         raise ValueError(f"{name}: missing columns {sorted(missing)}, unknown {sorted(unexpected)}")
     for column in ("event_time", "available_at"):
@@ -68,6 +69,16 @@ def _read_frame(raw: bytes | None, columns: list[str], name: str) -> pd.DataFram
             [_timestamp(v, f"{name} row {i + 2} {column}") for i, v in enumerate(frame[column])],
             utc=True,
         )
+    if name == "actions" and "payable_at" in frame:
+        frame["payable_at"] = pd.to_datetime(
+            [
+                _timestamp(v, f"actions row {i + 2} payable_at") if pd.notna(v) else pd.NaT
+                for i, v in enumerate(frame.payable_at)
+            ],
+            utc=True,
+        )
+        if (frame.payable_at < frame.event_time).any():
+            raise ValueError("actions: payable_at cannot precede event_time")
     if (frame.available_at < frame.event_time).any():
         raise ValueError(f"{name}: available_at cannot precede event_time")
     if "revision_id" not in frame:
@@ -280,7 +291,7 @@ def _semantic_frame(frame: pd.DataFrame) -> pd.DataFrame:
     normalized = frame.drop(columns=["ingested_at"], errors="ignore").copy()
     numeric = {"open", "high", "low", "close", "volume", "cash_amount", "ratio", "usd_cad"}
     for column in normalized:
-        if column in {"event_time", "available_at"}:
+        if column in {"event_time", "available_at", "payable_at"}:
             normalized[column] = pd.to_datetime(normalized[column], utc=True).astype(
                 "datetime64[ns, UTC]"
             )

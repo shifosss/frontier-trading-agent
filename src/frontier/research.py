@@ -12,7 +12,7 @@ from typing import Any
 from frontier.data import load_dataset
 from frontier.domain import RunConfig, StrategyConfig
 from frontier.providers import CodexProvider, ProviderError
-from frontier.replay import code_identity, run_research, save_json
+from frontier.replay import code_identity, run_research, save_json, validate_replay_actions
 
 _SUPPORTED_INPUTS = {"raw_close", "raw_open", "dated_usd_cad_fx"}
 _REQUIRED_INPUTS = _SUPPORTED_INPUTS
@@ -156,8 +156,7 @@ def run_model_campaign(
     if type(max_proposals) is not int or not 1 <= max_proposals <= 2:
         raise ValueError("max_proposals must be 1 or 2; repairs consume the same budget")
     dataset = load_dataset(data_root, dataset_id)
-    if not dataset.actions.empty:
-        raise ValueError("Known split/dividend actions are unsupported by replay")
+    validate_replay_actions(dataset)
     if dataset.manifest.corporate_actions_status != "complete" and not allow_incomplete_actions:
         raise ValueError("Action coverage incomplete: allow_incomplete_actions required")
     worker = provider if provider is not None else CodexProvider()
@@ -257,6 +256,8 @@ def run_model_campaign(
                         "run_id": record["id"],
                         "total_return": summary.get("total_return"),
                         "raw_price_return": summary.get("raw_price_return"),
+                        "return_basis": summary.get("return_basis"),
+                        "dividend_income": summary.get("dividend_income"),
                         "max_drawdown": summary.get("max_drawdown"),
                         "sharpe": summary.get("sharpe"),
                         "trade_count": summary.get("trade_count"),

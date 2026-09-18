@@ -402,3 +402,31 @@ def test_semantically_identical_parquet_reencoding_is_accepted(tmp_path):
     loaded = load_dataset(root, manifest.dataset_id)
     assert loaded.manifest.dataset_id == manifest.dataset_id
     assert loaded.bars.close.tolist() == [102, 102]
+
+
+@pytest.mark.parametrize("payable_at", ["2025-07-03T20:00:00Z", None])
+def test_optional_dividend_payable_at_roundtrip(tmp_path, payable_at):
+    action = dict(
+        instrument_id="FICTUS.XNYS",
+        event_time="2025-07-02T13:30:00Z",
+        available_at="2025-07-02T13:30:00Z",
+        type="dividend",
+        cash_amount=1,
+        currency="USD",
+        ratio=None,
+    )
+    if payable_at is not None:
+        action["payable_at"] = payable_at
+    root = tmp_path / "store"
+    manifest = import_dataset(source(tmp_path, actions=[action]), root)
+    dataset = load_dataset(root, manifest.dataset_id)
+    if payable_at is None:
+        assert "payable_at" not in dataset.actions
+    else:
+        assert dataset.actions.payable_at.iloc[0] == pd.Timestamp(payable_at)
+        action["payable_at"] = "2025-07-01T20:00:00Z"
+        with pytest.raises(ValueError, match="cannot precede"):
+            import_dataset(source(tmp_path, actions=[action]), root)
+        action["payable_at"] = "2025-07-03T20:00:00"
+        with pytest.raises(ValueError, match="explicit timezone"):
+            import_dataset(source(tmp_path, actions=[action]), root)

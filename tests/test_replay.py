@@ -7,6 +7,7 @@ from frontier.data import import_dataset, load_dataset
 from frontier.domain import RunConfig, StrategyConfig
 from frontier.fixtures import generate_fixture
 from frontier.replay import replay_dataset, run_research
+from frontier.reports import write_report
 from frontier.store import Registry
 
 
@@ -126,7 +127,7 @@ def test_cash_repeat_zero_variance_and_missing_fx(tiny):
 def test_actions_incomplete_explicit_and_failure_persistence(tiny, tmp_path):
     dataset, root = tiny
     dataset.actions = pd.DataFrame([{"type": "split"}])
-    with pytest.raises(ValueError, match="Known split/dividend"):
+    with pytest.raises(ValueError, match="Stock splits"):
         replay_dataset(dataset, config(dataset))
     dataset.actions = dataset.actions.iloc[0:0]
     dataset.manifest.corporate_actions_status = "unknown"
@@ -213,7 +214,7 @@ def test_known_dividend_failure_is_durable(tiny, tmp_path):
     ).to_csv(source / "actions.csv", index=False)
     manifest = import_dataset(source, root)
     registry = Registry(tmp_path / "action-registry.sqlite")
-    with pytest.raises(ValueError, match="Known split/dividend"):
+    with pytest.raises(ValueError, match="require payable_at"):
         run_research(
             RunConfig(dataset_id=manifest.dataset_id, allow_incomplete_actions=True),
             root,
@@ -222,7 +223,7 @@ def test_known_dividend_failure_is_durable(tiny, tmp_path):
         )
     failed = registry.list_runs()[0]
     assert failed["status"] == "FAILED"
-    assert "Known split/dividend" in failed["error"]
+    assert "require payable_at" in failed["error"]
 
 
 def test_market_attribution_retains_reopened_lifecycles_and_cash_rounding(tmp_path):
@@ -265,3 +266,125 @@ def test_market_attribution_retains_reopened_lifecycles_and_cash_rounding(tmp_pa
     for currency, native in result["summary"]["native_market_contribution"].items():
         attributed = sum(v[currency] for v in result["summary"]["per_market_contribution"].values())
         assert attributed == pytest.approx(native)
+
+
+@pytest.mark.parametrize("paid", [True, False])
+def test_dividend_receivable_native_cash_and_market_contribution(tiny, paid):
+    dataset, root = tiny
+    later = dataset.bars.loc[dataset.bars.event_time.dt.day == 6].copy()
+    later["event_time"] += pd.Timedelta(days=1)
+    later["available_at"] += pd.Timedelta(days=1)
+    dataset.bars = pd.concat([dataset.bars, later], ignore_index=True)
+    dataset.bars.loc[dataset.bars.event_time.dt.day >= 6, ["open", "high", "low", "close"]] = 99
+    payable = pd.Timestamp("2025-01-07T01:00Z" if paid else "2025-01-10T01:00Z")
+    dataset.actions = pd.DataFrame(
+        [
+            {
+                "instrument_id": i.id,
+                "event_time": pd.Timestamp("2025-01-06T14:30Z"),
+                "available_at": pd.Timestamp("2025-01-06T14:30Z"),
+                "type": "dividend",
+                "cash_amount": 1.0,
+                "currency": i.currency,
+                "ratio": None,
+                "payable_at": payable,
+            }
+            for i in dataset.manifest.instruments
+        ]
+    )
+    dataset.manifest.corporate_actions_status = "unknown"
+    result = replay_dataset(
+        dataset, config(dataset, commission_per_order=0, allow_incomplete_actions=True)
+    )
+    assert result["summary"]["total_return"] is None
+    report = write_report(result, root / "dividend-report.html").read_text("utf-8")
+    assert "Raw prices plus recorded gross cash dividends" in report
+    assert "action coverage is incomplete" in report
+    assert "Dividend Receivables" in report
+    assert result["summary"]["final_nav"] == 2250
+    assert all(point["nav"] == 2250 for point in result["equity_curve"])
+    assert result["summary"]["dividend_income"] == {"USD": 3, "CAD": 4}
+    assert result["summary"]["native_market_contribution"] == {"USD": 0, "CAD": 0}
+    assert result["summary"]["per_market_contribution"] == {
+        "XNYS": {"USD": 0, "CAD": 0},
+        "XTSE": {"USD": 0, "CAD": 0},
+    }
+    assert result["summary"]["return_basis"] == "raw_price_plus_gross_cash_dividends"
+    assert result["balances"] == ({"USD": 703, "CAD": 604} if paid else {"USD": 700, "CAD": 600})
+    assert result["dividend_receivables"] == (
+        {"USD": 0, "CAD": 0} if paid else {"USD": 3, "CAD": 4}
+    )
+    assert {entry["paid_at"] for entry in result["dividends"]} == {
+        "2025-01-07T14:30:00+00:00" if paid else None
+    }
+    # There is no quote at the payment timestamp; cash cannot be spent before it.
+    before_payment = [p for p in result["equity_curve"] if p["timestamp"] < payable.isoformat()]
+    assert all(p["cash_usd"] == 700 for p in before_payment if p["dividend_receivable_usd"])
+
+
+@pytest.mark.parametrize("ex_day, expected_entitlement", [(6, 0), (7, 3)])
+def test_dividend_ex_date_seller_keeps_entitlement_and_buyer_does_not(
+    tiny, ex_day, expected_entitlement
+):
+    dataset, _ = tiny
+    dataset.manifest.instruments = [i for i in dataset.manifest.instruments if i.currency == "USD"]
+    bars = dataset.bars.loc[dataset.bars.instrument_id == "FICTUS.XNYS"].copy()
+    later = bars.iloc[[-1]].copy()
+    later["event_time"] += pd.Timedelta(days=1)
+    later["available_at"] += pd.Timedelta(days=1)
+    bars = pd.concat([bars, later], ignore_index=True)
+    bars["close"] = [100, 110, 90, 89]
+    bars["open"] = [100, 100, 100, 89]
+    bars["high"], bars["low"] = 111, 88
+    dataset.bars = bars
+    ex_time = pd.Timestamp(f"2025-01-{ex_day:02}T14:30Z")
+    dataset.actions = pd.DataFrame(
+        [
+            {
+                "instrument_id": "FICTUS.XNYS",
+                "event_time": ex_time,
+                "available_at": ex_time,
+                "type": "dividend",
+                "cash_amount": 1.0,
+                "currency": "USD",
+                "ratio": None,
+                "payable_at": pd.Timestamp("2025-01-10T01:00Z"),
+            }
+        ]
+    )
+    result = replay_dataset(
+        dataset,
+        config(
+            dataset,
+            commission_per_order=0,
+            strategy=StrategyConfig(family="trend", lookback=2, rebalance_every=1),
+        ),
+    )
+    assert result["dividends"][0]["quantity"] == expected_entitlement
+    assert [(f["timestamp"][:10], f["side"]) for f in result["fills"]] == [
+        ("2025-01-06", "BUY"),
+        ("2025-01-07", "SELL"),
+    ]
+    assert result["dividend_receivables"]["USD"] == expected_entitlement
+    assert result["positions"] == []
+
+
+def test_dividend_revisions_and_late_availability_are_rejected(tiny):
+    dataset, _ = tiny
+    event = pd.Timestamp("2025-01-06T14:30Z")
+    row = {
+        "instrument_id": "FICTUS.XNYS",
+        "event_time": event,
+        "available_at": event,
+        "type": "dividend",
+        "cash_amount": 1.0,
+        "currency": "USD",
+        "ratio": None,
+        "payable_at": pd.Timestamp("2025-01-10T01:00Z"),
+    }
+    dataset.actions = pd.DataFrame([row, row])
+    with pytest.raises(ValueError, match="Revised dividend"):
+        replay_dataset(dataset, config(dataset))
+    dataset.actions = pd.DataFrame([{**row, "available_at": event + pd.Timedelta(hours=1)}])
+    with pytest.raises(ValueError, match="Late dividend"):
+        replay_dataset(dataset, config(dataset))

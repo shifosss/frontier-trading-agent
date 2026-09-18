@@ -10,9 +10,10 @@ from pathlib import Path
 import exchange_calendars as xcals
 import nautilus_trader
 import pandas as pd
-from nautilus_trader.backtest.config import BacktestEngineConfig
+from nautilus_trader.backtest.config import BacktestEngineConfig, SimulationModuleConfig
 from nautilus_trader.backtest.engine import BacktestEngine
 from nautilus_trader.backtest.models import FeeModel
+from nautilus_trader.backtest.modules import SimulationModule
 from nautilus_trader.common.config import LoggingConfig
 from nautilus_trader.model.currencies import CAD, USD
 from nautilus_trader.model.data import QuoteTick
@@ -82,8 +83,101 @@ def opening_time(row, calendar, interval):
     return opening if index == 0 else endpoints[index - 1]
 
 
+def validate_replay_actions(dataset):
+    """Reject actions whose economic timing cannot be reconstructed honestly."""
+    actions = dataset.actions
+    if actions.empty:
+        return
+    if actions.type.ne("dividend").any():
+        raise ValueError(
+            "Stock splits are unsupported by the pinned engine; use a split-free window"
+        )
+    if "payable_at" not in actions or actions.payable_at.isna().any():
+        raise ValueError(
+            "Cash dividends require payable_at; reimport actions with payment timestamps"
+        )
+    if actions.duplicated(["instrument_id", "event_time"]).any():
+        raise ValueError("Revised dividend records are unsupported; supply one verified event")
+    if (actions.available_at != actions.event_time).any():
+        raise ValueError(
+            "Late dividend availability is unsupported; entitlement requires ex-date data"
+        )
+    specs = {i.id: i for i in dataset.manifest.instruments}
+    for row in actions.itertuples():
+        if row.payable_at < row.event_time:
+            raise ValueError("Dividend payable_at cannot precede its ex-date")
+        calendar = xcals.get_calendar(CALENDAR_BY_VENUE[specs[row.instrument_id].venue])
+        session = str(row.event_time.tz_convert("America/Toronto").date())
+        if not calendar.is_session(session) or row.event_time != calendar.session_open(session):
+            raise ValueError("Dividend event_time must be the ex-date exchange opening")
+
+
+class CashDividends(SimulationModule):
+    """Gross dividend entitlement, separate from spendable native engine cash."""
+
+    def __init__(self, actions, instruments):
+        super().__init__(SimulationModuleConfig())
+        self.actions = (
+            list(actions.sort_values("event_time").itertuples()) if not actions.empty else []
+        )
+        self.instruments = instruments
+        self.ledger = []
+        self.next_action = 0
+
+    def pre_process(self, data):
+        timestamp = pd.Timestamp(data.ts_event, unit="ns", tz="UTC")
+        while self.next_action < len(self.actions):
+            row = self.actions[self.next_action]
+            if row.event_time > timestamp:
+                break
+            positions = self.cache.positions_open(
+                instrument_id=self.instruments[row.instrument_id].id
+            )
+            quantity = sum(int(p.quantity) for p in positions)
+            income = Money(Decimal(str(row.cash_amount)) * quantity, CURRENCIES[row.currency])
+            self.ledger.append(
+                {
+                    "instrument_id": row.instrument_id,
+                    "event_time": row.event_time.isoformat(),
+                    "payable_at": row.payable_at.isoformat(),
+                    "quantity": quantity,
+                    "cash_amount": row.cash_amount,
+                    "currency": row.currency,
+                    "income": float(income),
+                    "paid_at": None,
+                }
+            )
+            self.next_action += 1
+        for entry in self.ledger:
+            if entry["paid_at"] is None and pd.Timestamp(entry["payable_at"]) <= timestamp:
+                self.exchange.adjust_account(Money(entry["income"], CURRENCIES[entry["currency"]]))
+                entry["paid_at"] = timestamp.isoformat()
+
+    def receivables(self):
+        return {
+            currency: float(
+                sum(
+                    Decimal(str(e["income"]))
+                    for e in self.ledger
+                    if e["currency"] == currency and e["paid_at"] is None
+                )
+            )
+            for currency in CURRENCIES
+        }
+
+    def process(self, ts_now):
+        pass
+
+    def log_diagnostics(self, logger):
+        pass
+
+    def reset(self):
+        self.ledger.clear()
+        self.next_action = 0
+
+
 class ReplayStrategy(Strategy):
-    def __init__(self, dataset, config, instruments, event_map):
+    def __init__(self, dataset, config, instruments, event_map, dividends):
         super().__init__()
         self.dataset = dataset
         self.run_config = config
@@ -92,6 +186,8 @@ class ReplayStrategy(Strategy):
         self.specs = {i.id: i for i in dataset.manifest.instruments}
         self.event_map = event_map
         self.marks = {}
+        self.last_closes = {}
+        self.dividends = dividends
         self.pending = {}
         self.order_decisions = {}
         self.decisions = []
@@ -125,7 +221,16 @@ class ReplayStrategy(Strategy):
         if rate is None:
             return None
         fx = float(rate.usd_cad)
+        # A pre-ex close loses the cash distribution until a post-ex price is available.
+        for key, (price, event_time) in self.last_closes.items():
+            distributions = sum(
+                e["cash_amount"]
+                for e in self.dividends.ledger
+                if e["instrument_id"] == key and pd.Timestamp(e["event_time"]) > event_time
+            )
+            self.marks[key] = price - distributions
         cash = self.balances_now()
+        receivables = self.dividends.receivables()
         values = {"USD": 0.0, "CAD": 0.0}
         groups = Counter()
         for key, position in self.positions_now().items():
@@ -133,7 +238,8 @@ class ReplayStrategy(Strategy):
             currency = self.specs[key].currency
             values[currency] += value
             groups[self.specs[key].exposure_group] += value * (fx if currency == "USD" else 1)
-        nav_cad = (cash["USD"] + values["USD"]) * fx + cash["CAD"] + values["CAD"]
+        nav_cad = (cash["USD"] + values["USD"] + receivables["USD"]) * fx
+        nav_cad += cash["CAD"] + values["CAD"] + receivables["CAD"]
         nav = nav_cad if self.run_config.base_currency == "CAD" else nav_cad / fx
         entry = {
             "timestamp": pd.Timestamp(timestamp).isoformat(),
@@ -142,6 +248,8 @@ class ReplayStrategy(Strategy):
             "cash_cad": cash["CAD"],
             "positions_value_usd": values["USD"],
             "positions_value_cad": values["CAD"],
+            "dividend_receivable_usd": receivables["USD"],
+            "dividend_receivable_cad": receivables["CAD"],
             "usd_cad": fx,
             "gross_exposure": (values["USD"] * fx + values["CAD"]) / nav_cad,
         }
@@ -173,7 +281,7 @@ class ReplayStrategy(Strategy):
             history = as_of(self.dataset.bars, timestamp)
             history = history.loc[history.instrument_id == key]
             latest = history.iloc[-1]
-            self.marks[key] = float(latest.close)
+            self.last_closes[key] = (float(latest.close), latest.event_time)
             snapshot = self.snapshot(timestamp)
             # Revisions update knowable marks/features but never invent extra sessions.
             if row.event_time in self.seen_events[key]:
@@ -277,8 +385,7 @@ class ReplayStrategy(Strategy):
 def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
     if dataset.manifest.dataset_id != config.dataset_id:
         raise ValueError("Run configuration dataset identity mismatch")
-    if not dataset.actions.empty:
-        raise ValueError("Known split/dividend actions are unsupported: replay rejected")
+    validate_replay_actions(dataset)
     incomplete = dataset.manifest.corporate_actions_status != "complete"
     if incomplete and not config.allow_incomplete_actions:
         raise ValueError("Action coverage incomplete: explicit allow_incomplete_actions required")
@@ -288,6 +395,8 @@ def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
         raise ValueError("No published FX before first price observation; supply prior dated FX")
     engine = BacktestEngine(BacktestEngineConfig(logging=LoggingConfig(bypass_logging=True)))
     try:
+        instruments, events, event_map = {}, [], {}
+        dividends = CashDividends(dataset.actions, instruments)
         engine.add_venue(
             VENUE,
             OmsType.NETTING,
@@ -295,8 +404,8 @@ def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
             [Money(config.initial_cash_usd, USD), Money(config.initial_cash_cad, CAD)],
             base_currency=None,
             fee_model=NativeFeeModel(config.commission_per_order),
+            modules=[dividends],
         )
-        instruments, events, event_map = {}, [], {}
         earliest = dataset.bars.sort_values("available_at").drop_duplicates(
             ["instrument_id", "event_time"], keep="first"
         )
@@ -347,7 +456,7 @@ def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
                         ns,
                     )
                 )
-        strategy = ReplayStrategy(dataset, config, instruments, event_map)
+        strategy = ReplayStrategy(dataset, config, instruments, event_map, dividends)
         engine.add_strategy(strategy)
         engine.add_data(sorted(events, key=lambda event: (event.ts_init, str(event.instrument_id))))
         engine.run()
@@ -381,11 +490,22 @@ def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
                 "vintage; not point-in-time certified"
             ),
         ]
+        if not dataset.actions.empty:
+            limitations.extend(
+                [
+                    "Cash dividends are gross, before withholding/taxes; "
+                    "receivables are not spendable",
+                    "Payments enter engine cash at first replay event on/after payable_at",
+                    "Strategy features use raw closes; dividend price gaps can affect signals",
+                    "Engine position P&L is price-only; dividend income is recorded separately",
+                ]
+            )
         if incomplete:
             limitations.insert(
                 0,
                 (
-                    "EXPLORATORY RAW-PRICE ONLY: incomplete corporate actions; no "
+                    "EXPLORATORY NAV: incomplete corporate actions; includes only recorded "
+                    "gross cash dividends, not complete "
                     "total return or qualified equity execution"
                 ),
             )
@@ -413,13 +533,31 @@ def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
             bucket[spec.currency] += Decimal(str(position["quantity"])) * Decimal(
                 str(position["mark"])
             )
+        for dividend in dividends.ledger:
+            spec = strategy.specs[dividend["instrument_id"]]
+            bucket = contribution.setdefault(spec.venue, {"USD": Decimal(0), "CAD": Decimal(0)})
+            bucket[spec.currency] += Decimal(str(dividend["income"]))
+        summary["dividend_income"] = {
+            currency: float(
+                sum(
+                    Decimal(str(e["income"])) for e in dividends.ledger if e["currency"] == currency
+                )
+            )
+            for currency in CURRENCIES
+        }
+        summary["dividend_receivables"] = dividends.receivables()
+        summary["return_basis"] = (
+            "raw_price_plus_gross_cash_dividends" if not dataset.actions.empty else "raw_price"
+        )
         summary["per_market_contribution"] = {
             venue: {currency: float(amount) for currency, amount in values.items()}
             for venue, values in contribution.items()
         }
         summary.update(
             mode=dataset.manifest.mode,
-            evidence_label="exploratory_raw_price"
+            evidence_label="exploratory_incomplete_actions"
+            if incomplete and not dataset.actions.empty
+            else "exploratory_raw_price"
             if incomplete
             else "synthetic_engineering"
             if dataset.manifest.mode == "synthetic_fixture"
@@ -439,6 +577,8 @@ def replay_dataset(dataset: MarketDataset, config: RunConfig) -> dict:
             "fills": strategy.fills,
             "positions": positions,
             "balances": strategy.balances_now(),
+            "dividends": dividends.ledger,
+            "dividend_receivables": dividends.receivables(),
             "exposure_drift": strategy.drift,
             "unfilled_intents": [
                 d for d in strategy.decisions if d["status"] in {"pending", "submitted", "rejected"}

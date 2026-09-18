@@ -76,3 +76,29 @@ def test_source_identity_survives_checkout_line_endings_but_detects_edits(
     changed = package / changed_module
     changed.write_bytes(changed.read_bytes() + b"\nCHANGED_IMPLEMENTATION = True\n")
     assert replay.code_identity() != before
+
+
+def test_verify_replay_checks_dividend_ledger_and_receivables(tmp_path):
+    source = generate_fixture(tmp_path / "source")
+    (source / "actions.csv").write_text(
+        "instrument_id,event_time,available_at,type,cash_amount,currency,ratio,payable_at\n"
+        "FICTUS.XNYS,2025-01-06T14:30:00Z,2025-01-06T14:30:00Z,dividend,1,USD,,"
+        "2025-01-10T00:00:00Z\n",
+        encoding="utf-8",
+    )
+    data_root = tmp_path / "datasets"
+    manifest = import_dataset(source, data_root)
+    registry = Registry(tmp_path / "registry.sqlite")
+    record = run_research(
+        RunConfig(dataset_id=manifest.dataset_id), data_root, registry, tmp_path / "artifacts"
+    )
+    assert verify_replay(record["id"], data_root, registry)["identical"]
+    result_path = Path(record["artifact_path"]) / "result.json"
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    result["dividends"][0]["quantity"] += 1
+    result["dividends"][0]["paid_at"] = "2099-01-01T00:00:00+00:00"
+    result["dividend_receivables"]["USD"] += 1
+    result_path.write_text(json.dumps(result), encoding="utf-8")
+    verified = verify_replay(record["id"], data_root, registry)
+    assert not verified["identical"]
+    assert verified["differences"] == ["dividends", "dividend_receivables"]

@@ -45,7 +45,8 @@ def doctor():
             "frontier": version("frontier-trading"),
             "execution": "local research only",
             "corporate_actions": (
-                "known actions rejected; unknown coverage requires explicit opt-in"
+                "cash dividends require payment dates; stock splits rejected; "
+                "unknown coverage requires opt-in"
             ),
         }
     )
@@ -269,6 +270,44 @@ def import_session_hourly(ctx: typer.Context, captured_at: str | None = None):
     from frontier.sources import import_longbridge_snapshot
 
     output(import_longbridge_snapshot(ctx.obj, captured_at=captured_at))
+
+
+@app.command()
+def scan(
+    ctx: typer.Context,
+    refresh: bool = True,
+    cad: float = 700,
+    usd: float = 0,
+):
+    """Capture the declared universe and save a fixed-rule stock watchlist and study."""
+    from frontier.scan_data import run_scan
+
+    result = run_scan(ctx.obj, refresh=refresh, initial_cash_cad=cad, initial_cash_usd=usd)
+    output(
+        {
+            "scan_id": result["scan_id"],
+            "source": result["source"],
+            "scan": result["scan"],
+            "study_summary": result["study"]["summary"],
+            "readiness": result["readiness"],
+        }
+    )
+
+
+@app.command("scans")
+def saved_scans(ctx: typer.Context):
+    from frontier.scan_data import list_scans
+
+    output(
+        [
+            {
+                "scan_id": row["scan_id"],
+                "created_at": row["created_at"],
+                "status": row["scan"]["status"],
+            }
+            for row in list_scans(ctx.obj)
+        ]
+    )
 
 
 if __name__ == "__main__":

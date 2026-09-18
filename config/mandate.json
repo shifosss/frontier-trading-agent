@@ -1,0 +1,55 @@
+{
+  "account_type": "taxable_non_registered",
+  "base_currency": "CAD",
+  "borrowing": false,
+  "automatic_fx": false,
+  "fx_preference": "Norberts gambit after explicit conversion plan; settlement, spread and fees are not free",
+  "active_capital_cad": null,
+  "maximum_loss_cad": null,
+  "active_broker": "Wealthsimple",
+  "active_focus": [
+    "individual_stocks",
+    "options_without_margin"
+  ],
+  "options_scope": "No uncovered short options; any future contract plan must have explicit bounded loss, permission and sufficient cash.",
+  "out_of_scope": [
+    {
+      "symbol_as_provided": "XGRO",
+      "value_cad_as_provided": 1200
+    }
+  ],
+  "regular_portfolio": {
+    "value_cad_as_provided": 1000,
+    "target_weights": {
+      "equities": 0.7,
+      "bonds": 0.22,
+      "gold": 0.08
+    },
+    "within_equities": {
+      "XEQT": 0.54,
+      "VDY": 0.12,
+      "QQC": 0.04,
+      "CHPS_Canada": 0.01,
+      "VTV": 0.06,
+      "VFV": 0.06,
+      "SPMO": 0.08,
+      "SMH": 0.01,
+      "IXJ": 0.05,
+      "XBI": 0.03
+    },
+    "policy": "Preserve broad preference; proposals allowed. Not funding for active trading unless user says so."
+  },
+  "notes": [
+    "User-provided values, not reconciled brokerage holdings.",
+    "Symbols and quantities require reconciliation before allocation/order changes.",
+    "Example scanner balances are simulated, not permission to use either ETF portfolio.",
+    "No present active cash balance was stated; CAD700 is one illustrative monthly addition, not verified spendable funds."
+  ],
+  "monthly_contribution_cad": {
+    "minimum": 600,
+    "maximum": 800,
+    "illustrative": 700
+  },
+  "maximum_drawdown_fraction": 0.3,
+  "alternative_broker": "moomoo cash account"
+}
