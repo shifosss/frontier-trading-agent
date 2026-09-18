@@ -1,9 +1,9 @@
 # Run the paper operator
 
-The code is implemented and tested with a broker double. No paper account is connected in the delivered workspace. No live endpoint exists in this integration.
+The code is implemented and tested with a broker double. A read-only connection to the configured Alpaca paper account was verified on September 18, 2026; it had US$100,000 simulated cash, no holdings and no open orders. The operator is not initialized or running. No live endpoint exists in this integration.
 
-1. Create/use a dedicated **Alpaca paper** account with no holdings or orders and set its simulated USD cash to the amount you intend to test. The normal USD100,000 default does not represent the small active sleeve. Do not fund a live account for this setup.
-2. Configure `FRONTIER_ALPACA_PAPER_KEY` and `FRONTIER_ALPACA_PAPER_SECRET` in your local environment using paper credentials. The process inherits them; neither the dashboard nor repository stores keys. Do not paste secrets into chat.
+1. Create/use a dedicated **Alpaca paper** account with no holdings or orders and the simulated USD cash you intend to test. Current Alpaca documentation says a different starting balance requires creating a new paper account from the dashboard account selector, then generating that account's new keys; no account needs to be deleted. [Official instructions](https://docs.alpaca.markets/us/docs/paper-trading). The normal USD100,000 default does not represent the small active sleeve. Do not fund a live account for this setup.
+2. Configure `FRONTIER_ALPACA_PAPER_KEY` and `FRONTIER_ALPACA_PAPER_SECRET` in your local environment using paper credentials. The process reads them from its environment; on Windows it also reads these exact two User variables when both are absent from an older process environment. Neither the dashboard nor repository stores keys. Do not paste secrets into chat.
 3. From the project directory, initialize with the paper account's exact ID and simulated cash. Example only:
 
 ```powershell

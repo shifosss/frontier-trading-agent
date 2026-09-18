@@ -1,12 +1,28 @@
 """Paper transport contracts, entirely through httpx.MockTransport."""
 
 import json
+import os
+import subprocess
+import sys
 import traceback
+from types import SimpleNamespace
 
 import httpx
 import pytest
 
 from frontier.paper_broker import AlpacaPaper, SubmissionUncertain
+
+
+@pytest.fixture(autouse=True)
+def isolated_user_environment(monkeypatch):
+    """No transport test reads credentials from the real Windows user registry."""
+
+    def missing(*args):
+        raise FileNotFoundError("No test user environment")
+
+    fake = SimpleNamespace(HKEY_CURRENT_USER="test-user", OpenKey=missing, QueryValueEx=missing)
+    monkeypatch.setitem(sys.modules, "winreg", fake)
+    return fake
 
 
 def test_snapshot_and_order_methods_lock_host_and_preserve_raw_results(monkeypatch):
@@ -187,3 +203,86 @@ def test_explicit_submission_rejection_is_distinct_from_uncertain_failure():
             AlpacaPaper(client).submit({})
     assert not isinstance(error.value, SubmissionUncertain)
     assert str(error.value) == "Alpaca paper HTTP 403 (code 40310000)"
+
+
+def test_windows_saved_user_keys_work_with_stale_process_environment(
+    monkeypatch, isolated_user_environment
+):
+    from contextlib import nullcontext
+
+    from frontier.paper_broker import _paper_credentials
+
+    monkeypatch.delenv("FRONTIER_ALPACA_PAPER_KEY", raising=False)
+    monkeypatch.delenv("FRONTIER_ALPACA_PAPER_SECRET", raising=False)
+    monkeypatch.setattr("frontier.paper_broker.sys.platform", "win32")
+    calls = []
+
+    def read(key, name):
+        calls.append(name)
+        return {
+            "FRONTIER_ALPACA_PAPER_KEY": "test-paper-key",
+            "FRONTIER_ALPACA_PAPER_SECRET": "test-paper-secret",
+        }[name], 1
+
+    isolated_user_environment.OpenKey = lambda hive, key: nullcontext("registry-handle")
+    isolated_user_environment.QueryValueEx = read
+    assert _paper_credentials() == ["test-paper-key", "test-paper-secret"]
+    assert calls == ["FRONTIER_ALPACA_PAPER_KEY", "FRONTIER_ALPACA_PAPER_SECRET"]
+
+
+def test_partial_process_credentials_are_not_mixed_with_registry(
+    monkeypatch, isolated_user_environment
+):
+    from frontier.paper_broker import _paper_credentials
+
+    monkeypatch.setenv("FRONTIER_ALPACA_PAPER_KEY", "process-key")
+    monkeypatch.delenv("FRONTIER_ALPACA_PAPER_SECRET", raising=False)
+    monkeypatch.setattr("frontier.paper_broker.sys.platform", "win32")
+
+    def should_not_read(*args):
+        raise AssertionError("A partial process pair must not be mixed with user credentials")
+
+    isolated_user_environment.OpenKey = should_not_read
+    with pytest.raises(RuntimeError, match="not configured"):
+        _paper_credentials()
+
+
+def test_complete_process_credentials_take_precedence(monkeypatch, isolated_user_environment):
+    from frontier.paper_broker import _paper_credentials
+
+    monkeypatch.setenv("FRONTIER_ALPACA_PAPER_KEY", "process-key")
+    monkeypatch.setenv("FRONTIER_ALPACA_PAPER_SECRET", "process-secret")
+
+    def should_not_read(*args):
+        raise AssertionError("Explicit process configuration takes precedence")
+
+    isolated_user_environment.OpenKey = should_not_read
+    assert _paper_credentials() == ["process-key", "process-secret"]
+
+
+def test_cli_configuration_error_does_not_print_credential_locals(tmp_path):
+    marker = "fixture-paper-key-must-not-appear-in-output"
+    environment = {**os.environ, "FRONTIER_ALPACA_PAPER_KEY": marker}
+    environment.pop("FRONTIER_ALPACA_PAPER_SECRET", None)
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "frontier.cli",
+            "--workspace",
+            str(tmp_path),
+            "paper-init",
+            "--account-id",
+            "not-an-account",
+            "--cash-usd",
+            "500",
+        ],
+        env=environment,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        timeout=30,
+    )
+    assert result.returncode != 0
+    assert "paper credentials are not configured" in result.stderr
+    assert marker not in result.stdout + result.stderr

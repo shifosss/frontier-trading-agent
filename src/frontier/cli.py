@@ -13,7 +13,7 @@ from frontier.fixtures import generate_fixture
 from frontier.replay import run_research
 from frontier.store import Registry
 
-app = typer.Typer(no_args_is_help=True)
+app = typer.Typer(no_args_is_help=True, pretty_exceptions_show_locals=False)
 
 
 def output(value):

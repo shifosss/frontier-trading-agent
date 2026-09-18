@@ -203,3 +203,24 @@ Five UI states were checked at 1440, 768, 390 and 320 pixels using mocked status
 the actual local endpoint was then checked separately. Evidence lives under
 `.qualification/operator-ui-smoke` and `.qualification/operator-ui-actual`. Public
 product claims and remaining deployment gates are in [the updated plan](automated-trading-plan.md).
+
+
+## Windows paper credential setup — September 18, 2026
+
+A real read-only probe established that both configured Windows User variables exist,
+but the Codex command process retained an older environment. The broker now reads
+that exact User-variable pair when both process values are absent. A partial process
+pair is rejected rather than combined with registry credentials. The Windows launcher
+uses the same resolver through client construction, without making an API request.
+CLI tracebacks no longer render local variables, so incomplete credential setup cannot
+print a key through Typer's exception renderer. No credentials are written to artifacts.
+
+Validation: **47 targeted broker/operator/CLI tests passed in 14.79 seconds**, Ruff
+passed, and independent review found no remaining issue in this patch. Tests use a
+fake Windows registry, and a dummy partial credential pair exercises the real CLI
+failure path. A separate real paper GET snapshot then authenticated successfully
+through the application resolver with both process variables absent: ACTIVE, USD,
+US$100,000 simulated cash, no holdings and no open orders. Account validation passed;
+no initialization, order submission, account reset or runner activation occurred.
+The local connection-status update followed a verified SQLite backup and integrity
+check. Sanitized probe evidence is saved in `artifacts/paper-operator/connection-check.json`.

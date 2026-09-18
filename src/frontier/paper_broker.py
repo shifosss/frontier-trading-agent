@@ -1,6 +1,7 @@
 """Alpaca paper-only HTTP transport. Live hosts and submission retries are excluded."""
 
 import os
+import sys
 from urllib.parse import quote
 
 import httpx
@@ -13,13 +14,28 @@ class SubmissionUncertain(RuntimeError):
     """The submission may exist at the broker; reconcile before doing anything else."""
 
 
+def _paper_credentials():
+    names = ("FRONTIER_ALPACA_PAPER_KEY", "FRONTIER_ALPACA_PAPER_SECRET")
+    values = [os.environ.get(name) for name in names]
+    # Windows app hosts can retain an old environment after user variables change.
+    # Read this exact pair only, without mixing a partial process pair with registry values.
+    if not any(values) and sys.platform == "win32":
+        import winreg
+
+        try:
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as key:
+                values = [winreg.QueryValueEx(key, name)[0] for name in names]
+        except OSError:
+            values = [None, None]
+    if not all(isinstance(value, str) and value for value in values):
+        raise RuntimeError("Alpaca paper credentials are not configured")
+    return values
+
+
 class AlpacaPaper:
     def __init__(self, client: httpx.Client | None = None):
         if client is None:
-            key = os.environ.get("FRONTIER_ALPACA_PAPER_KEY")
-            secret = os.environ.get("FRONTIER_ALPACA_PAPER_SECRET")
-            if not key or not secret:
-                raise RuntimeError("Alpaca paper credentials are not configured")
+            key, secret = _paper_credentials()
             client = httpx.Client(
                 headers={"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret},
                 timeout=TIMEOUT,

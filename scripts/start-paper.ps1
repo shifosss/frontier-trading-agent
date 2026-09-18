@@ -4,9 +4,13 @@ $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $pythonPath = Join-Path $projectRoot '.venv\Scripts\python.exe'
 $logsRoot = Join-Path $projectRoot 'artifacts\paper-operator'
 if ($IntervalSeconds -lt 30) { throw 'Paper cycle interval must be at least 30 seconds.' }
-if (-not $env:FRONTIER_ALPACA_PAPER_KEY -or -not $env:FRONTIER_ALPACA_PAPER_SECRET) {
-    throw 'Configure FRONTIER_ALPACA_PAPER_KEY and FRONTIER_ALPACA_PAPER_SECRET locally first. Do not paste credentials into chat.'
-}
+# Resolve credentials exactly as the worker does, including Windows user variables.
+# Constructing this client performs no broker request and prints no credentials.
+Push-Location -LiteralPath $projectRoot
+try {
+    & $pythonPath -c "from frontier.paper_broker import AlpacaPaper; broker = AlpacaPaper(); broker.close()"
+    if ($LASTEXITCODE -ne 0) { throw 'Paper credentials are not configured locally.' }
+} finally { Pop-Location }
 $statusText = & $pythonPath -m frontier.cli --workspace $projectRoot paper-status
 if ($LASTEXITCODE -ne 0) { throw 'Unable to read paper operator status.' }
 $status = ($statusText -join "`n") | ConvertFrom-Json
