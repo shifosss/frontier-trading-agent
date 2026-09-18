@@ -27,8 +27,12 @@ if (Test-Path -LiteralPath $pidPath) {
         exit 0
     }
 }
-$arguments = @('-u', '-m', 'frontier.cli', '--workspace', ('"' + $projectRoot + '"'),
-               'paper-watch', '--interval-seconds', "$IntervalSeconds")
-$process = Start-Process -FilePath $pythonPath -ArgumentList $arguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logsRoot 'stdout.log') -RedirectStandardError (Join-Path $logsRoot 'stderr.log')
+$launchArguments = @('-X', 'utf8', (Join-Path $PSScriptRoot 'start_background.py'),
+    '--working-directory', $projectRoot, '--log-directory', $logsRoot, '--',
+    $pythonPath, '-X', 'utf8', '-u', '-m', 'frontier.cli', '--workspace', $projectRoot,
+    'paper-watch', '--interval-seconds', $IntervalSeconds)
+$workerPid = & $pythonPath @launchArguments
+if ($LASTEXITCODE -ne 0) { throw 'Unable to start the paper operator. Review the launcher error above.' }
+$process = Get-Process -Id ([int]$workerPid) -ErrorAction Stop
 $process.Id | Set-Content -LiteralPath $pidPath
 Write-Output "Paper operator started (PID $($process.Id)); inspect Trading desk and artifacts/paper-operator logs. The host must remain awake."

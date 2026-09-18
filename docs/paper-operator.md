@@ -53,3 +53,6 @@ issues. The five-minute local runner was started for this trial. When it is runn
 
 
 Activation evidence is saved locally in `artifacts/paper-operator/activation.json` and `running-check.json`; the pre-activation SQLite backup passed its integrity check. For this Friday activation, the first eligible decision uses the September 18 completed close after 16:01 Toronto time, once all required data are available. Any qualifying weekly entries become eligible on Monday, September 21 at 09:30 Toronto time, and are checked on the next worker poll. This schedule is not a promise that a signal or fill will occur.
+
+
+September 18 launcher qualification found that the old Windows launch retained the command parent until its child finished. Both launchers now use independent standard streams and restricted inherited handles. A disposable child survived parent exit, repeated starts reused the existing worker, and the actual paper worker recorded a later scheduled cycle. Logs append; earlier logs were backed up. Broad strategy research is separately scheduled and visible in [Strategy lab](broad-research.md).

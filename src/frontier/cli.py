@@ -375,5 +375,33 @@ def paper_pause(ctx: typer.Context, resume: bool = False):
     output(pause_paper(ctx.obj, paused=not resume))
 
 
+@app.command("research-run")
+def broad_research(
+    ctx: typer.Context,
+    max_symbols: int | None = typer.Option(None, min=2),
+    rediscover: bool = False,
+):
+    """Resume broad histories and evaluate the declared daily/weekly research hypotheses."""
+    from frontier.research_lab import run_research_lab
+
+    result = run_research_lab(ctx.obj, max_symbols=max_symbols, rediscover=rediscover)
+    output(
+        {
+            "run_id": result["run_id"],
+            "capture": result["capture"],
+            "attempts": len(result["attempts"]),
+            "summary_rows": len(result["summaries"]),
+        }
+    )
+
+
+@app.command("research-status")
+def broad_research_status(ctx: typer.Context):
+    """Inspect broad-research progress without fetching data or starting work."""
+    from frontier.research_lab import research_status
+
+    output(research_status(ctx.obj))
+
+
 if __name__ == "__main__":
     app()

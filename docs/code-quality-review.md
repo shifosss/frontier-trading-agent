@@ -237,3 +237,40 @@ line matched this workspace. The initialized code identity matched the current
 source. Activation evidence is local under `artifacts/paper-operator/`. These are
 startup and reconciliation observations, not an order-fill trial or evidence of
 profitability. No execution code or frozen policy changed during activation.
+
+
+## Broad research and durable workers - September 18, 2026
+
+Applied source-loaded Ponytail full/standard and independent correctness review.
+Discovery uses official listing files and the standard library XLSX reader; no
+new runtime dependency, agent framework or order adapter was added. Historical
+and prospective cohorts share cash/cost arithmetic. Existing normalization,
+calendars, HTTP handling and UI primitives are reused. The redundant derived-data
+cache was removed after review reproduced a completion-cutoff collision. Raw
+sources are hash-checked and normalized at their recorded availability.
+
+Review also fixed source-version pinning across long captures, reused-PID status
+confusion (SQLite ownership is authoritative), saved prospective-plan tampering,
+and interrupted snapshot publication. Full-payload validation and exclusive atomic
+publication preserve those plans. Windows subprocess checks explicitly decode
+UTF-8. Research remains isolated from the frozen paper journal and financial files.
+
+A measured 0.187-second single-name normalization bottleneck justified four bounded
+standard-library process workers for broad captures. A 100-history comparison took
+3.627 seconds and three sampled outputs exactly matched serial normalization.
+Both the web and paper launchers now return while their workers continue, and
+later scheduled paper observations verified survival. Repeated launches reuse the
+existing worker; old log bytes are retained.
+
+Final scripts/verify.ps1: **231 tests passed in 92.57 seconds**, Ruff passed, and
+TypeScript/Vite build passed. The 96 warnings are existing upstream deprecations.
+Strategy lab mock and actual browser evidence is under
+`.qualification/broad-research-ui/`; four widths had no errors or horizontal
+overflow. Independent final source review reported no remaining material findings.
+The [first broad study](broad-research-results.md) records actual coverage and
+research findings separately from software validation and paper-account results.
+
+Final completed-study browser checks matched 16 currency/budget/horizon/cost views
+against the real saved API, with all four strategy families visible. Full and
+forward downloads returned 11,840 historical cohorts and 96 pending plans. Evidence:
+`.qualification/broad-research-ui/completed-actual-report.json`.

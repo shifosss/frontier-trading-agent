@@ -26,9 +26,13 @@ if ($currentStatus -and ($currentStatus.service -ne 'frontier-research' -or $cur
 if (-not $currentStatus) {
     $logsRoot = Join-Path $projectRoot 'artifacts\service'
     New-Item -ItemType Directory -Path $logsRoot -Force | Out-Null
-    # Double-quoted native arguments preserve spaces and apostrophes without a shell.
-    $serverArguments = @('-m', 'frontier.cli', '--workspace', ('"' + $projectRoot + '"'), 'serve', '--port', "$Port")
-    $serverProcess = Start-Process -FilePath $pythonPath -ArgumentList $serverArguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logsRoot 'stdout.log') -RedirectStandardError (Join-Path $logsRoot 'stderr.log')
+    $launchArguments = @('-X', 'utf8', (Join-Path $PSScriptRoot 'start_background.py'),
+        '--working-directory', $projectRoot, '--log-directory', $logsRoot, '--',
+        $pythonPath, '-X', 'utf8', '-u', '-m', 'frontier.cli', '--workspace', $projectRoot,
+        'serve', '--port', $Port)
+    $serverPid = & $pythonPath @launchArguments
+    if ($LASTEXITCODE -ne 0) { throw 'Unable to start Frontier. Review the launcher error above.' }
+    $serverProcess = Get-Process -Id ([int]$serverPid) -ErrorAction Stop
     $deadline = (Get-Date).AddSeconds(60)
     do {
         Start-Sleep -Milliseconds 400

@@ -60,6 +60,12 @@ class ScanRequest(BaseModel):
     convert_cad: float = Field(default=0, ge=0)
 
 
+class BroadResearchRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    max_symbols: int | None = Field(default=None, ge=2, strict=True)
+    rediscover: bool = False
+
+
 class FreezeRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     run_id: str
@@ -178,6 +184,58 @@ def create_app(workspace: Path) -> FastAPI:
         from frontier.operator import operator_status
 
         return operator_status(workspace)
+
+    @app.get("/api/research-lab/status")
+    def broad_research_status():
+        from frontier.research_lab import research_status
+
+        return research_status(workspace)
+
+    @app.get("/api/research-lab/runs/{run_id}")
+    def broad_research_result(run_id: str):
+        from frontier.research_lab import research_result
+
+        try:
+            result = research_result(workspace, run_id)
+            return {key: value for key, value in result.items() if key != "cohorts"}
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+
+    @app.get("/api/research-lab/runs/{run_id}/download")
+    def download_broad_research(run_id: str):
+        from frontier.research_lab import research_result
+
+        try:
+            research_result(workspace, run_id)
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return FileResponse(
+            artifact_root / "research-lab/runs" / run_id / "result.json",
+            filename=f"frontier-research-{run_id}.json",
+        )
+
+    @app.get("/api/research-lab/runs/{run_id}/forward")
+    def download_forward_research(run_id: str):
+        from frontier.research_lab import research_result
+
+        try:
+            result = research_result(workspace, run_id)
+            relative = result.get("forward_observation", {}).get("evaluation_path")
+            if not relative:
+                raise FileNotFoundError("No forward observations saved for this study")
+            path = (workspace / relative).resolve()
+            allowed = (artifact_root / "forward-studies/evaluations").resolve()
+            if not path.is_relative_to(allowed) or not path.is_file():
+                raise FileNotFoundError("Forward observation artifact is unavailable")
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return FileResponse(path, filename=f"frontier-forward-{run_id}.json")
+
+    @app.post("/api/research-lab/start")
+    def start_broad_research(body: BroadResearchRequest):
+        from frontier.research_lab import start_research_job
+
+        return start_research_job(workspace, **body.model_dump())
 
     @app.get("/api/scans")
     def scans():

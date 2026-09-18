@@ -4,6 +4,7 @@ import "./style.css";
 import ResearchPanel from "./ResearchPanel";
 import ScannerPanel from "./ScannerPanel";
 import OperatorPanel from "./OperatorPanel";
+import BroadResearchPanel from "./BroadResearchPanel";
 import { Download, EquityChart, Table } from "./StudyDisplay";
 import { day, number, percent } from "./format";
 import type { Dataset } from "./types";
@@ -45,11 +46,17 @@ const pages = [
       "Daily decisions, paper execution and account risk in one place.",
   },
   {
+    id: "Strategy lab",
+    icon: "◈",
+    title: "Strategy lab",
+    description: "Explore broader markets and compare every fixed strategy attempt.",
+  },
+  {
     id: "Scanner",
     icon: "⌕",
-    title: "Market scanner",
+    title: "Starter market scanner",
     description:
-      "Find candidates, size a simulated basket, and examine the evidence.",
+      "Explore the original 41-instrument basket and simulated position sizing.",
   },
   {
     id: "Study",
@@ -444,7 +451,7 @@ function App() {
               <span className="nav-icon" aria-hidden="true">
                 {item.icon}
               </span>
-              {item.id}
+              {item.id === "Scanner" ? "Starter scanner" : item.id}
             </button>
           ))}
         </nav>
@@ -511,6 +518,9 @@ function App() {
         )}
         {page === "Trading desk" && (
           <OperatorPanel request={api} error={setError} />
+        )}
+        {page === "Strategy lab" && (
+          <BroadResearchPanel request={api} error={setError} />
         )}
         {page === "Scanner" && (
           <ScannerPanel

@@ -37,6 +37,8 @@ from `uv sync --frozen` to exist.
 
 ## What works
 
+- **Broad Strategy lab:** sourced discovery of 5,640 current US/Canadian candidates, resumable daily histories, 12 fixed strategy/horizon hypotheses, four account sizes, three cost levels, chronological comparisons and immutable forward observations. The lab runs separately from the 41-name starter scanner and frozen paper account. See [broad research](docs/broad-research.md) for coverage, scheduling and interpretation.
+
 - **Stock scanner:** one click captures free five-year daily histories for 41 declared
   US/Canadian stocks and ETFs. A fixed momentum/volatility rule ranks stocks;
   ETFs supply context. Whole-share sizing separates CAD/USD cash and exposure
