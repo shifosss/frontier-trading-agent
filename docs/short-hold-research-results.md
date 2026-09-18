@@ -123,3 +123,7 @@ The project suite passed **307 tests**, Ruff and the production TypeScript/Vite 
 The actual completed interface passed **96 currency/balance/cost comparisons across four viewport widths**, including fixed rows, rolling trades/periods/folds and benchmarks. No page errors, horizontal overflow or mutation occurred. A one-byte ranged request verified the downloadable full report without transferring its entire payload. The earlier running-state checks preserved the previous report and displayed the new mode/stage accurately.
 
 Evidence: `.qualification/historical-source-probes/independent-short-horizon-90af4c840aad48f7ab58fba7a682f96a.json` and `.qualification/historical-ui/short-hold-actual-report.json`. The owner did not need to launch the study manually. Existing weekday 09:35/17:35 Toronto follow-ups now read this report and prioritize the next declared short-term hypotheses and cost qualification. No live account or active paper policy was changed.
+
+## Next declared comparison
+
+The [three-family short-term signal study](superpowers/plans/2026-09-18-short-term-signal-study.md) fixes nine rule/holding-period hypotheses before implementation or outcome inspection. [Current broker cost evidence](trading-cost-evidence.md) separates per-order fee floors from proportional stress assumptions, FX and recurring account charges. These are the next research definition and tariff evidence, not new strategy results.
