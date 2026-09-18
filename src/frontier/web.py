@@ -4,6 +4,7 @@ import json
 import platform
 import subprocess
 import threading
+from contextlib import contextmanager
 from importlib.metadata import version
 from pathlib import Path
 
@@ -19,8 +20,21 @@ from frontier.fixtures import generate_fixture
 from frontier.store import Registry
 from frontier.workflow import list_artifacts
 
-# Every app instance in this process shares the real engine coordinator.
+# ponytail: one engine job per process; isolate worker processes for concurrent jobs.
 _ENGINE_LOCK = threading.Lock()
+
+
+@contextmanager
+def _engine_job():
+    """Coordinate replay jobs and retain the API's busy/failure responses."""
+    if not _ENGINE_LOCK.acquire(blocking=False):
+        raise HTTPException(409, "Another engine job is running. Wait for it to finish.")
+    try:
+        yield
+    except Exception as exc:
+        raise HTTPException(422, str(exc)) from exc
+    finally:
+        _ENGINE_LOCK.release()
 
 
 class ImportRequest(BaseModel):
@@ -211,22 +225,14 @@ def create_app(workspace: Path) -> FastAPI:
     def run(body: RunConfig):
         from frontier.replay import run_research
 
-        if not _ENGINE_LOCK.acquire(blocking=False):
-            raise HTTPException(409, "Another engine job is running. Wait for it to finish.")
-        try:
+        with _engine_job():
             return envelope(run_research(body, data_root, registry, artifact_root))
-        except Exception as exc:
-            raise HTTPException(422, str(exc)) from exc
-        finally:
-            _ENGINE_LOCK.release()
 
     @app.post("/api/campaigns")
     def campaign(body: CampaignRequest):
         from frontier.campaign import run_campaign
 
-        if not _ENGINE_LOCK.acquire(blocking=False):
-            raise HTTPException(409, "Another engine job is running. Wait for it to finish.")
-        try:
+        with _engine_job():
             return run_campaign(
                 body.dataset_id,
                 data_root,
@@ -234,10 +240,6 @@ def create_app(workspace: Path) -> FastAPI:
                 artifact_root,
                 allow_incomplete_actions=body.allow_incomplete_actions,
             )
-        except Exception as exc:
-            raise HTTPException(422, str(exc)) from exc
-        finally:
-            _ENGINE_LOCK.release()
 
     @app.get("/api/model-campaigns")
     def model_campaigns():
@@ -251,9 +253,7 @@ def create_app(workspace: Path) -> FastAPI:
     def model_campaign(body: ModelCampaignRequest):
         from frontier.research import run_model_campaign
 
-        if not _ENGINE_LOCK.acquire(blocking=False):
-            raise HTTPException(409, "Another engine job is running. Wait for it to finish.")
-        try:
+        with _engine_job():
             return run_model_campaign(
                 body.dataset_id,
                 data_root,
@@ -262,10 +262,6 @@ def create_app(workspace: Path) -> FastAPI:
                 max_proposals=body.max_proposals,
                 allow_incomplete_actions=body.allow_incomplete_actions,
             )
-        except Exception as exc:
-            raise HTTPException(422, str(exc)) from exc
-        finally:
-            _ENGINE_LOCK.release()
 
     @app.get("/api/frozen")
     def frozen():

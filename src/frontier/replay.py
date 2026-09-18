@@ -26,6 +26,7 @@ from frontier.data import as_of, fx_as_of, load_dataset, session_endpoints
 from frontier.domain import CALENDAR_BY_VENUE, MarketDataset, RunConfig
 from frontier.metrics import calculate_metrics
 from frontier.reports import write_report
+from frontier.signals import target_for_history
 
 VENUE = Venue("RESEARCH")
 CURRENCIES = {"USD": USD, "CAD": CAD}
@@ -40,6 +41,7 @@ def code_identity():
         "store.py",
         "fixtures.py",
         "replay.py",
+        "signals.py",
         "metrics.py",
         "campaign.py",
         "reports.py",
@@ -179,35 +181,18 @@ class ReplayStrategy(Strategy):
             self.seen_events[key].add(row.event_time)
             count = len(self.seen_events[key])
             cfg = self.run_config.strategy
-            warm = cfg.family in {"cash", "passive"} or len(history) >= cfg.lookback
             if snapshot is None or (count - 1) % cfg.rebalance_every:
                 return
-            signal = False
-            reason = "warmup"
-            if warm:
-                closes = history.close.iloc[-cfg.lookback :]
-                signal = (
-                    cfg.family == "passive"
-                    or cfg.family == "trend"
-                    and closes.iloc[-1] > closes.mean()
-                    or cfg.family == "reversion"
-                    and closes.iloc[-1] < closes.iloc[0]
-                )
-                reason = {
-                    "cash": "cash benchmark",
-                    "passive": "equal capped allocation",
-                    "trend": "close above trailing mean",
-                    "reversion": "negative trailing close return",
-                }[cfg.family]
-            weight = min(cfg.max_weight, 1 / len(self.group_count))
-            weight /= self.group_count[self.specs[key].exposure_group]
+            signal, target_weight, reason = target_for_history(
+                history.close, cfg, self.group_count, self.specs[key].exposure_group
+            )
             decision = {
                 "instrument_id": key,
                 "decision_time": timestamp.isoformat(),
                 "input_event_time": latest.event_time.isoformat(),
                 "available_at": latest.available_at.isoformat(),
                 "signal": int(signal),
-                "target_weight": weight if signal else 0.0,
+                "target_weight": target_weight,
                 "reason": reason,
                 "execution_time": None,
                 "status": "pending",

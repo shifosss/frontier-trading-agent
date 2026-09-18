@@ -4,6 +4,11 @@ Verified September 18, 2026 on the configured Windows host. This is a working
 research workstation. The broader state-of-the-art and broker-operation goals
 remain subject to the acceptance criteria in [the roadmap](roadmap.md).
 
+This page records the initial release at `674c02d`. The subsequent
+[Ponytail full-mode quality review](code-quality-review.md) passed 92 tests,
+23 exact financial-result comparisons, and desktop/mobile browser checks.
+That report records the new code identity; the original evidence below is retained.
+
 ## Automated checks
 
 `./scripts/verify.ps1` completed successfully:

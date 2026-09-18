@@ -64,6 +64,7 @@ scope; task reports describe the evidence produced at each implementation stage.
 Do not add their intermediate test counts together or treat older artifact IDs as
 proof against a later financial-code identity.
 
+- [Ponytail full-mode quality review](code-quality-review.md)
 - [Engine qualification](engine-qualification.md)
 - [Data foundation](tasks/02-data-evidence-report.md)
 - [Replay and fixed campaigns](tasks/03-replay-report.md)

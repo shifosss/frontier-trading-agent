@@ -2,28 +2,10 @@ import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import ResearchPanel from "./ResearchPanel";
+import { Download, EquityChart, Table } from "./StudyDisplay";
+import { day, number, percent } from "./format";
+import type { Dataset } from "./types";
 type Obj = Record<string, any>;
-type Dataset = {
-  dataset_id: string;
-  name: string;
-  mode: string;
-  start: string;
-  end: string;
-  row_count: number;
-  instruments: Obj[];
-  corporate_actions_status: string;
-  [key: string]: any;
-};
-const number = (n: unknown, digits = 2) =>
-  typeof n === "number" && Number.isFinite(n)
-    ? n.toLocaleString("en-CA", {
-        maximumFractionDigits: digits,
-        minimumFractionDigits: digits,
-      })
-    : "Not enough observations";
-const percent = (n: unknown) =>
-  typeof n === "number" ? `${number(n * 100)}%` : "Not enough observations";
-const day = (s: string) => (s ? s.slice(0, 10) : "—");
 const label = (s: string) =>
   s === "synthetic_fixture" ? "Synthetic fixture" : "Historical snapshot";
 const evidence = (s: string) =>
@@ -50,155 +32,42 @@ async function api(path: string, body?: unknown) {
     );
   return j;
 }
-function Download({
-  value,
-  name,
-  children,
-}: {
-  value: unknown;
-  name: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <button
-      className="text-button"
-      onClick={() => {
-        const u = URL.createObjectURL(
-          new Blob([JSON.stringify(value, null, 2)], {
-            type: "application/json",
-          }),
-        );
-        const a = document.createElement("a");
-        a.href = u;
-        a.download = name;
-        a.click();
-        URL.revokeObjectURL(u);
-      }}
-    >
-      {children}
-    </button>
-  );
-}
-function Table({
-  rows,
-  columns,
-}: {
-  rows: Obj[];
-  columns: [string, string][];
-}) {
-  return rows.length ? (
-    <div className="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            {columns.map(([key, title]) => (
-              <th key={key}>{title}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={i}>
-              {columns.map(([key]) => (
-                <td key={key}>
-                  {typeof r[key] === "number"
-                    ? number(r[key], 4)
-                    : String(r[key] ?? "—")}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  ) : (
-    <p className="empty-small">No records for this study.</p>
-  );
-}
-function EquityChart({
-  series,
-  currency,
-}: {
-  series: { name: string; points: Obj[]; color: string }[];
-  currency: string;
-}) {
-  const all = series.flatMap((s) => s.points);
-  if (!all.length)
-    return (
-      <div className="chart-empty">
-        <div className="empty-plot" aria-hidden="true" />
-        <h3>Your first study starts here</h3>
-        <p>
-          Select a dataset and run a study to inspect actual equity,
-          <br />
-          decisions and fills from the replay engine.
-        </p>
-        <span>No result has been generated.</span>
-      </div>
-    );
-  const minTime = Math.min(...all.map((p) => Date.parse(p.timestamp)));
-  const maxTime = Math.max(...all.map((p) => Date.parse(p.timestamp)));
-  let low = Math.min(...all.map((p) => p.nav)),
-    high = Math.max(...all.map((p) => p.nav));
-  const pad = (high - low) * 0.12 || Math.max(high * 0.005, 1);
-  low -= pad;
-  high += pad;
-  const x = (p: Obj) =>
-    70 + ((Date.parse(p.timestamp) - minTime) / (maxTime - minTime || 1)) * 830;
-  const y = (v: number) => 260 - ((v - low) / (high - low)) * 215;
-  return (
-    <>
-      <div className="chart-legend">
-        {series.map((s) => (
-          <span key={s.name}>
-            <i style={{ background: s.color }} />
-            {s.name}
-          </span>
-        ))}
-      </div>
-      <svg
-        role="img"
-        aria-label={`Equity curve in ${currency}, from ${day(new Date(minTime).toISOString())} to ${day(new Date(maxTime).toISOString())}`}
-        viewBox="0 0 930 310"
-        className="equity-chart"
-      >
-        {Array.from({ length: 5 }, (_, i) => {
-          const v = low + ((high - low) * i) / 4;
-          return (
-            <g key={i}>
-              <line x1="70" x2="900" y1={y(v)} y2={y(v)} stroke="#e5edf5" />
-              <text x="59" y={y(v) + 4} textAnchor="end">
-                {number(v, 0)}
-              </text>
-            </g>
-          );
-        })}
-        {series.map((s) => (
-          <polyline
-            key={s.name}
-            points={s.points.map((p) => `${x(p)},${y(p.nav)}`).join(" ")}
-            fill="none"
-            stroke={s.color}
-            strokeWidth="2.5"
-            strokeLinejoin="round"
-          />
-        ))}
-        {[0, 0.5, 1].map((v, i) => (
-          <text
-            key={i}
-            x={70 + 830 * v}
-            y="293"
-            textAnchor={v === 0 ? "start" : v === 1 ? "end" : "middle"}
-          >
-            {day(new Date(minTime + (maxTime - minTime) * v).toISOString())}
-          </text>
-        ))}
-      </svg>
-    </>
-  );
-}
+const pages = [
+  {
+    id: "Study",
+    icon: "◷",
+    title: "Research study",
+    description: "From an explicit hypothesis to an inspectable result.",
+  },
+  {
+    id: "Data",
+    icon: "▤",
+    title: "Data",
+    description: "Know the source, timing and limits of every observation.",
+  },
+  {
+    id: "Experiments",
+    icon: "⤨",
+    title: "Experiments",
+    description: "Inspect every attempt and compare like-for-like inputs.",
+  },
+  {
+    id: "Research",
+    icon: "◇",
+    title: "Research",
+    description: "Bounded proposals, replay feedback and frozen observations.",
+  },
+  {
+    id: "Operations",
+    icon: "⚙",
+    title: "Operations",
+    description: "Runtime evidence and the limits of this workstation.",
+  },
+] as const;
+type Page = (typeof pages)[number]["id"];
+
 function App() {
-  const [page, setPage] = useState("Study"),
+  const [page, setPage] = useState<Page>("Study"),
     [datasets, setDatasets] = useState<Dataset[]>([]),
     [runs, setRuns] = useState<Obj[]>([]),
     [status, setStatus] = useState<Obj | null>(null),
@@ -225,6 +94,7 @@ function App() {
     [campaign, setCampaign] = useState<Obj | null>(null),
     [baselineCampaigns, setBaselineCampaigns] = useState<Obj[]>([]),
     [sort, setSort] = useState("created_at");
+  const currentPage = pages.find((item) => item.id === page)!;
   const dataset = datasets.find((d) => d.dataset_id === datasetId),
     result = active?.result,
     summary = result?.summary;
@@ -275,6 +145,21 @@ function App() {
     } finally {
       setBusy("");
     }
+  }
+  function updateOptIn(value: boolean) {
+    setOptIn(value);
+    localStorage.setItem(`frontier-actions-${datasetId}`, value ? "yes" : "no");
+  }
+  async function openStudy(id: string) {
+    setActive(await api(`/runs/${id}`));
+    setCompared([]);
+    setPage("Study");
+  }
+  function importDemo(message: string) {
+    return work("Importing demo", async () => {
+      await api("/demo", {});
+      setNotice(message);
+    });
   }
   function config() {
     return {
@@ -475,13 +360,7 @@ function App() {
           <input
             type="checkbox"
             checked={optIn}
-            onChange={(e) => {
-              setOptIn(e.target.checked);
-              localStorage.setItem(
-                `frontier-actions-${datasetId}`,
-                e.target.checked ? "yes" : "no",
-              );
-            }}
+            onChange={(e) => updateOptIn(e.target.checked)}
           />
           <span>
             Allow exploratory raw-price study. Distributions may be omitted;
@@ -536,20 +415,18 @@ function App() {
           </span>
         </a>
         <nav aria-label="Main navigation">
-          {["Study", "Data", "Experiments", "Research", "Operations"].map(
-            (p, i) => (
-              <button
-                key={p}
-                className={page === p ? "active" : ""}
-                onClick={() => setPage(p)}
-              >
-                <span className="nav-icon" aria-hidden="true">
-                  {["◷", "▤", "⤨", "◇", "⚙"][i]}
-                </span>
-                {p}
-              </button>
-            ),
-          )}
+          {pages.map((item) => (
+            <button
+              key={item.id}
+              className={page === item.id ? "active" : ""}
+              onClick={() => setPage(item.id)}
+            >
+              <span className="nav-icon" aria-hidden="true">
+                {item.icon}
+              </span>
+              {item.id}
+            </button>
+          ))}
         </nav>
         <div className="rail-foot">
           <span className="status-dot" />
@@ -564,18 +441,8 @@ function App() {
       <main>
         <header>
           <div>
-            <h1>{page === "Study" ? "Research study" : page}</h1>
-            <p>
-              {page === "Study"
-                ? "From an explicit hypothesis to an inspectable result."
-                : page === "Data"
-                  ? "Know the source, timing and limits of every observation."
-                  : page === "Experiments"
-                    ? "Inspect every attempt and compare like-for-like inputs."
-                    : page === "Research"
-                      ? "Bounded proposals, replay feedback and frozen observations."
-                      : "Runtime evidence and the limits of this workstation."}
-            </p>
+            <h1>{currentPage.title}</h1>
+            <p>{currentPage.description}</p>
           </div>
           <div className="service">
             <span className="status-dot" />
@@ -919,12 +786,9 @@ function App() {
                       className="secondary"
                       disabled={!!busy}
                       onClick={() =>
-                        work("Importing demo", async () => {
-                          await api("/demo", {});
-                          setNotice(
-                            "Synthetic engineering fixture imported. It does not represent market performance.",
-                          );
-                        })
+                        importDemo(
+                          "Synthetic engineering fixture imported. It does not represent market performance.",
+                        )
                       }
                     >
                       Import engineering demo
@@ -945,10 +809,7 @@ function App() {
                   className="secondary compact"
                   disabled={!!busy}
                   onClick={() =>
-                    work("Importing demo", async () => {
-                      await api("/demo", {});
-                      setNotice("Synthetic engineering fixture is available.");
-                    })
+                    importDemo("Synthetic engineering fixture is available.")
                   }
                 >
                   Import engineering demo
@@ -1214,11 +1075,7 @@ function App() {
                                 <button
                                   className="text-button"
                                   onClick={() =>
-                                    work("Opening study", async () => {
-                                      setActive(await api(`/runs/${r.id}`));
-                                      setCompared([]);
-                                      setPage("Study");
-                                    })
+                                    work("Opening study", () => openStudy(r.id))
                                   }
                                 >
                                   Open
@@ -1293,23 +1150,13 @@ function App() {
             datasetId={datasetId}
             setDatasetId={setDatasetId}
             optIn={optIn}
-            setOptIn={(value) => {
-              setOptIn(value);
-              localStorage.setItem(
-                `frontier-actions-${datasetId}`,
-                value ? "yes" : "no",
-              );
-            }}
+            setOptIn={updateOptIn}
             busy={busy}
             request={api}
             work={work}
             notice={setNotice}
             error={setError}
-            openStudy={async (id) => {
-              setActive(await api(`/runs/${id}`));
-              setCompared([]);
-              setPage("Study");
-            }}
+            openStudy={openStudy}
           />
         )}
         {page === "Operations" && (

@@ -26,12 +26,12 @@ class ProviderError(RuntimeError):
 def _cli_command() -> list[str]:
     """Resolve a native executable or an npm shim without invoking a shell."""
     if os.name == "nt":
+        node = shutil.which("node.exe")
         # Python's which does not resolve .ps1 on installations whose PATHEXT omits it.
         for directory in os.environ.get("PATH", "").split(os.pathsep):
             entry = (
                 Path(directory) / "node_modules" / "@openai" / "codex" / "bin" / "codex.js"
             )
-            node = shutil.which("node.exe")
             if (Path(directory) / "codex.ps1").is_file() and entry.is_file() and node:
                 return [node, str(entry)]
         launcher = shutil.which("codex.exe")

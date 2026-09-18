@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 
+import pytest
 from fastapi.testclient import TestClient
 
 from frontier.web import _ENGINE_LOCK, create_app
@@ -113,3 +114,38 @@ def test_source_status_is_read_only_and_does_not_claim_missing_data(tmp_path, mo
         state = response.json()
         assert state["longbridge"]["status"] == "authentication_required"
         assert state["acquisition"]["us_hourly"] == "No hourly snapshot imported"
+
+
+@pytest.mark.parametrize(
+    ("endpoint", "worker"),
+    [
+        ("/api/runs", "frontier.replay.run_research"),
+        ("/api/campaigns", "frontier.campaign.run_campaign"),
+        ("/api/model-campaigns", "frontier.research.run_model_campaign"),
+    ],
+)
+def test_engine_jobs_reject_busy_and_release_lock_after_failure(
+    tmp_path, monkeypatch, endpoint, worker
+):
+    attempts = []
+
+    def fail(*args, **kwargs):
+        assert _ENGINE_LOCK.locked()
+        attempts.append(1)
+        raise ValueError("fixture job failed")
+
+    monkeypatch.setattr(worker, fail)
+    with TestClient(create_app(tmp_path), base_url="http://127.0.0.1") as client:
+        payload = {"dataset_id": "a" * 64}
+        _ENGINE_LOCK.acquire()
+        try:
+            assert client.post(endpoint, json=payload).status_code == 409
+            assert attempts == []
+        finally:
+            _ENGINE_LOCK.release()
+        for count in (1, 2):
+            response = client.post(endpoint, json=payload)
+            assert response.status_code == 422
+            assert response.json() == {"detail": "fixture job failed"}
+            assert len(attempts) == count
+            assert not _ENGINE_LOCK.locked()

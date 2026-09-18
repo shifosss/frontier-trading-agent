@@ -11,7 +11,7 @@ def calculate_metrics(curve, fills, config, incomplete=False):
     # Preserve pre-trade initial NAV, including all first-day costs.
     daily_nav = np.r_[nav[0], daily.to_numpy()]
     returns = daily_nav[1:] / daily_nav[:-1] - 1
-    variance = float(np.std(returns, ddof=1)) if len(returns) > 1 else 0
+    daily_return_std = float(np.std(returns, ddof=1)) if len(returns) > 1 else 0
     fees = {c: sum(f["commission"] for f in fills if f["currency"] == c) for c in ("USD", "CAD")}
     slippage = {
         c: sum(f["slippage_cost"] for f in fills if f["currency"] == c) for c in ("USD", "CAD")
@@ -63,8 +63,12 @@ def calculate_metrics(curve, fills, config, incomplete=False):
         "total_return": None if incomplete else float(nav[-1] / nav[0] - 1),
         "raw_price_return": float(nav[-1] / nav[0] - 1),
         "max_drawdown": float(np.min(nav / np.maximum.accumulate(nav) - 1)),
-        "annualized_volatility": variance * np.sqrt(252) if variance > 1e-14 else None,
-        "sharpe": float(np.mean(returns) / variance * np.sqrt(252)) if variance > 1e-14 else None,
+        "annualized_volatility": daily_return_std * np.sqrt(252)
+        if daily_return_std > 1e-14
+        else None,
+        "sharpe": float(np.mean(returns) / daily_return_std * np.sqrt(252))
+        if daily_return_std > 1e-14
+        else None,
         "trade_count": len(fills),
         "turnover": turnover / nav[0],
         "average_exposure": float(frame.gross_exposure.mean()),

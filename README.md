@@ -95,7 +95,9 @@ outcomes, and broker-paper reconciliation remain open. Synthetic opening quotes
 model fixed slippage without observed bid/ask or market impact. Historical intervals
 used by research are exposed, and frozen observation is not a live trading system.
 
-See [validation evidence](docs/validation.md), [current progress](docs/progress.md),
+See [validation evidence](docs/validation.md),
+[Ponytail code-quality review](docs/code-quality-review.md),
+[current progress](docs/progress.md),
 [roadmap and acceptance criteria](docs/roadmap.md),
 [engine qualification](docs/engine-qualification.md), and
 [existing connector boundaries](docs/existing-connectors.md).

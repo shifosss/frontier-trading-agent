@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from frontier.campaign import run_campaign, verify_replay
 from frontier.data import import_dataset
 from frontier.domain import RunConfig, StrategyConfig
@@ -53,7 +55,10 @@ def test_registry_result_and_report_contract(tmp_path):
     assert result["engine_identity"]["account_count"] == 1
 
 
-def test_source_identity_survives_checkout_line_endings_but_detects_edits(tmp_path, monkeypatch):
+@pytest.mark.parametrize("changed_module", ["metrics.py", "signals.py"])
+def test_source_identity_survives_checkout_line_endings_but_detects_edits(
+    tmp_path, monkeypatch, changed_module
+):
     import frontier.replay as replay
 
     original = Path(replay.__file__).parent
@@ -68,6 +73,6 @@ def test_source_identity_survives_checkout_line_endings_but_detects_edits(tmp_pa
     for path in [*package.glob("*.py"), tmp_path / "uv.lock"]:
         path.write_bytes(path.read_bytes().replace(b"\n", b"\r\n"))
     assert replay.code_identity() == before
-    changed = package / "metrics.py"
+    changed = package / changed_module
     changed.write_bytes(changed.read_bytes() + b"\nCHANGED_IMPLEMENTATION = True\n")
     assert replay.code_identity() != before

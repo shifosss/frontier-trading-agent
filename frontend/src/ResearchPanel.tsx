@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
+import { ratio, readable } from "./format";
+import {
+  ProposalAttempt,
+  SavedJson,
+  type ResearchAttempt,
+} from "./ResearchDisplay";
+import type { Dataset } from "./types";
 
 type Obj = Record<string, any>;
 type Props = {
-  datasets: Obj[];
+  datasets: Dataset[];
   runs: Obj[];
   datasetId: string;
   setDatasetId: (id: string) => void;
@@ -15,30 +22,10 @@ type Props = {
   error: (message: string) => void;
   openStudy: (id: string) => Promise<void>;
 };
-const ratio = (value: unknown) =>
-  typeof value === "number"
-    ? `${(value * 100).toFixed(2)}%`
-    : "Not enough observations";
-const readable = (value: unknown) =>
-  typeof value === "string" ? value.replaceAll("_", " ") : "Unknown";
-const savedText = (value: unknown) =>
-  typeof value === "string" || typeof value === "number"
-    ? String(value)
-    : value == null
-      ? "Not provided"
-      : JSON.stringify(value);
-const datasetEvidence = (value: Obj | undefined) =>
+const datasetEvidence = (value: Dataset | undefined) =>
   value?.mode === "synthetic_fixture"
     ? "Synthetic engineering fixture"
     : "Historical snapshot";
-function SavedJson({ value }: { value: unknown }) {
-  return (
-    <details className="saved-json">
-      <summary>Inspect saved record</summary>
-      <pre>{JSON.stringify(value, null, 2)}</pre>
-    </details>
-  );
-}
 export default function ResearchPanel(props: Props) {
   const {
     datasets,
@@ -70,18 +57,16 @@ export default function ResearchPanel(props: Props) {
   const activeFrozen = frozen.find((f) => f.frozen_id === selectedFrozen);
   const eligibleRuns = runs.filter((r) => r.status === "COMPLETED");
   const frozenDataset = activeFrozen?.source_dataset;
-  const instrumentIdentity = (manifest: Obj) =>
+  const instrumentIdentity = (manifest: Pick<Dataset, "instruments">) =>
     JSON.stringify(
       manifest.instruments
-        .map((instrument: Obj) => [
+        .map((instrument) => [
           instrument.id,
           instrument.venue,
           instrument.currency,
           instrument.exposure_group,
         ])
-        .sort((a: unknown[], b: unknown[]) =>
-          JSON.stringify(a).localeCompare(JSON.stringify(b)),
-        ),
+        .sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b))),
     );
   const eligibleDatasets = frozenDataset
     ? datasets.filter(
@@ -309,147 +294,13 @@ export default function ResearchPanel(props: Props) {
               {activeCampaign.evaluation_access.prior_overlaps.length} earlier
               overlapping access record(s).
             </p>
-            {activeCampaign.attempts.map((attempt: Obj) => (
-              <article className="proposal-attempt" key={attempt.number}>
-                <div className="section-heading">
-                  <div>
-                    <h3>
-                      Attempt {attempt.number}
-                      {attempt.proposal?.name
-                        ? `: ${attempt.proposal.name}`
-                        : ""}
-                    </h3>
-                    <p>
-                      {attempt.created_at?.slice(0, 19).replace("T", " ")} UTC
-                    </p>
-                  </div>
-                  <span
-                    className={`badge ${["provider_failed", "evaluation_failed", "rejected"].includes(attempt.status) ? "failed" : ""}`}
-                  >
-                    {readable(attempt.status)}
-                  </span>
-                </div>
-                {attempt.error && (
-                  <p className="attempt-error">{attempt.error}</p>
-                )}
-                {attempt.reasons?.length > 0 && (
-                  <ul className="attempt-error">
-                    {attempt.reasons.map((reason: string) => (
-                      <li key={reason}>{reason}</li>
-                    ))}
-                  </ul>
-                )}
-                {attempt.proposal && (
-                  <div className="proposal-body">
-                    <div>
-                      <h4>Proposed mechanism</h4>
-                      <p>{savedText(attempt.proposal.economic_mechanism)}</p>
-                      <h4>Failure condition</h4>
-                      <p>{savedText(attempt.proposal.failure_condition)}</p>
-                    </div>
-                    <dl>
-                      <dt>Rule</dt>
-                      <dd>{readable(attempt.proposal.family)}</dd>
-                      <dt>Lookback</dt>
-                      <dd>{savedText(attempt.proposal.lookback)} bars</dd>
-                      <dt>Rebalance</dt>
-                      <dd>
-                        Every {savedText(attempt.proposal.rebalance_every)} bars
-                      </dd>
-                      <dt>Max group weight</dt>
-                      <dd>{ratio(attempt.proposal.max_weight)}</dd>
-                      <dt>Required inputs</dt>
-                      <dd>
-                        {Array.isArray(attempt.proposal.required_inputs)
-                          ? attempt.proposal.required_inputs
-                              .map(readable)
-                              .join(", ")
-                          : savedText(attempt.proposal.required_inputs)}
-                      </dd>
-                    </dl>
-                  </div>
-                )}
-                {attempt.feedback && (
-                  <div className="attempt-feedback">
-                    <div>
-                      <span>
-                        {attempt.feedback.total_return == null
-                          ? "Simulated raw-price return"
-                          : "Replay return"}
-                      </span>
-                      <strong>
-                        {ratio(
-                          attempt.feedback.total_return ??
-                            attempt.feedback.raw_price_return,
-                        )}
-                      </strong>
-                    </div>
-                    <div>
-                      <span>Max drawdown</span>
-                      <strong>{ratio(attempt.feedback.max_drawdown)}</strong>
-                    </div>
-                    <div>
-                      <span>Fills</span>
-                      <strong>
-                        {attempt.feedback.trade_count ?? "Not available"}
-                      </strong>
-                    </div>
-                    <div>
-                      <span>Native fees</span>
-                      <strong>
-                        {attempt.feedback.fees?.USD ?? "—"} USD /{" "}
-                        {attempt.feedback.fees?.CAD ?? "—"} CAD
-                      </strong>
-                    </div>
-                  </div>
-                )}
-                <div className="attempt-actions">
-                  {attempt.run_id && (
-                    <button
-                      className="text-button"
-                      disabled={!!busy}
-                      onClick={() =>
-                        work("Opening study", () => openStudy(attempt.run_id))
-                      }
-                    >
-                      Inspect replay
-                    </button>
-                  )}
-                  {attempt.provider && (
-                    <span>
-                      Model {attempt.provider.requested_model ?? "Not reported"}
-                      ;{" "}
-                      {typeof attempt.provider.elapsed_seconds === "number"
-                        ? `${attempt.provider.elapsed_seconds.toFixed(1)}s`
-                        : "Time not reported"}
-                    </span>
-                  )}
-                </div>
-                {attempt.provider?.usage && (
-                  <details className="usage-details">
-                    <summary>Recorded model usage</summary>
-                    <dl>
-                      {Object.entries(attempt.provider.usage).map(
-                        ([key, value]) => (
-                          <div key={key}>
-                            <dt>{readable(key)}</dt>
-                            <dd>
-                              {typeof value === "object"
-                                ? JSON.stringify(value)
-                                : String(value)}
-                            </dd>
-                          </div>
-                        ),
-                      )}
-                    </dl>
-                    <p>
-                      Recorded usage is shown as returned. No dollar cost is
-                      inferred.
-                    </p>
-                  </details>
-                )}
-                <SavedJson value={attempt} />
-              </article>
+            {activeCampaign.attempts.map((attempt: ResearchAttempt) => (
+              <ProposalAttempt
+                key={attempt.number}
+                attempt={attempt}
+                busy={!!busy}
+                onInspect={(id) => work("Opening study", () => openStudy(id))}
+              />
             ))}
             <ul className="research-limitations">
               {activeCampaign.limitations.map((text: string) => (

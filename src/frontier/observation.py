@@ -16,6 +16,7 @@ import pandas as pd
 from frontier.data import as_of, fx_as_of, load_dataset, session_endpoints
 from frontier.domain import CALENDAR_BY_VENUE, RunConfig
 from frontier.replay import code_identity
+from frontier.signals import target_for_history
 
 
 def _now() -> datetime:
@@ -177,29 +178,14 @@ def observe(
         latest = history.iloc[-1]
         lookback = config.strategy.lookback
         due = (len(history) - 1) % config.strategy.rebalance_every == 0
-        warm = config.strategy.family in {"cash", "passive"} or len(history) >= lookback
         closes = history.close.iloc[-lookback:]
         signal: bool | None = None
         target_weight: float | None = None
         reason = "rebalance not due; existing position unknown"
         if due:
-            signal = False
-            reason = "warmup"
-            if warm:
-                if config.strategy.family == "trend":
-                    signal = bool(closes.iloc[-1] > closes.mean())
-                    reason = "close above trailing mean"
-                elif config.strategy.family == "reversion":
-                    signal = bool(closes.iloc[-1] < closes.iloc[0])
-                    reason = "negative trailing close return"
-                elif config.strategy.family == "passive":
-                    signal = True
-                    reason = "equal capped allocation"
-                else:
-                    reason = "cash benchmark"
-            weight = min(config.strategy.max_weight, 1 / len(groups))
-            weight /= groups[instrument.exposure_group]
-            target_weight = weight if signal else 0.0
+            signal, target_weight, reason = target_for_history(
+                history.close, config.strategy, groups, instrument.exposure_group
+            )
         inputs.append(
             {
                 "instrument_id": instrument.id,

@@ -556,6 +556,7 @@ details label {
   display: flex;
   gap: 14px;
   align-items: center;
+  flex-wrap: wrap;
 }
 .text-button {
   background: transparent;
@@ -956,13 +957,13 @@ footer {
   }
   .rail nav {
     flex-direction: row;
-    gap: 2px;
+    gap: 0;
     flex: 1;
     justify-content: flex-end;
   }
   .rail nav button {
     font-size: 12px;
-    padding: 8px;
+    padding: 8px 7px;
   }
   .nav-icon,
   .rail-foot {
@@ -1038,8 +1039,7 @@ footer {
     justify-content: space-between;
   }
   .rail nav button {
-    font-size: 13px;
-    padding: 8px 12px;
+    padding-inline: 6px;
   }
   .setup {
     display: block;
@@ -1360,9 +1360,6 @@ footer {
 .research-source-status p {
   line-height: 1.75;
 }
-.result-toolbar > div {
-  flex-wrap: wrap;
-}
 @media (max-width: 1050px) {
   .research-setup {
     grid-template-columns: 1fr;
@@ -1396,12 +1393,6 @@ footer {
   }
 }
 @media (max-width: 760px) {
-  .rail nav {
-    gap: 0;
-  }
-  .rail nav button {
-    padding-inline: 7px;
-  }
   .campaign-history > .section-heading > label {
     min-width: 0;
     width: 100%;
@@ -1429,10 +1420,6 @@ footer {
   }
 }
 @media (max-width: 450px) {
-  .rail nav button {
-    font-size: 12px;
-    padding-inline: 6px;
-  }
   .research-setup {
     display: block;
   }
