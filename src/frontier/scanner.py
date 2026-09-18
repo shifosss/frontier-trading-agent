@@ -36,6 +36,8 @@ LIMITATIONS = [
     "Provider-adjusted historical prices and a current selected universe are retrospective, "
     "not point-in-time membership or an untouched holdout.",
     "Scores rank one fixed technical rule; they are not expected returns or profit probabilities.",
+    "Historical provider closes may be split-adjusted. Whole-share affordability in these "
+    "diagnostics does not reconstruct pre-split share prices or historical tradability.",
     "ATR is an adjusted-price range proxy scaled to the latest provider close; "
     "its risk distance is not a guaranteed stop execution price.",
     "One selection per declared exposure group does not establish correlation diversification.",

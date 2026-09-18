@@ -4,7 +4,10 @@ Verified September 18, 2026 on the configured Windows host. This is a working
 research workstation. The broader state-of-the-art and broker-operation goals
 remain subject to the acceptance criteria in [the roadmap](roadmap.md).
 
-The subsequent [scanner and dividend milestone](scanner-study.md) passed **114 tests**,
+The latest [planned USD funding follow-up](usd-funding-study.md) passed **132 tests**,
+lint/build and the real conversion-preview browser workflow.
+
+The preceding [scanner and dividend milestone](scanner-study.md) passed **114 tests**,
 Ruff, TypeScript/build, exact dividend replay and real desktop/mobile browser checks.
 Its current evidence is recorded in the [quality-review update](code-quality-review.md#scanner-and-dividend-milestone--september-18-2026).
 

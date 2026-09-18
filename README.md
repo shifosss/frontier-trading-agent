@@ -42,8 +42,10 @@ from `uv sync --frozen` to exist.
   compare the rule with native benchmarks and cash, with cost stress and explicit
   missing-data exclusions; they are not a compounded portfolio backtest.
 - **Account mandate:** CAD600–800 monthly additions, a recorded 30% drawdown
-  tolerance, Wealthsimple primary/moomoo cash alternative, no borrowing or automatic
-  FX, and separate long-term ETF reserves. CAD700 is illustrative cash; the scanner
+  tolerance, Wealthsimple primary/moomoo cash alternative, no borrowing, planned
+  CAD-to-USD funding allowed, and separate long-term ETF reserves. The scanner can
+  model a one-time conversion into retained USD cash, using a dated reference and
+  published fee tiers, without making a transfer or counting the CAD twice. CAD700 is illustrative cash; the scanner
   does not monitor the real account or enforce its drawdown limit.
 
 - **Research and inspection:** local React/FastAPI workstation, immutable dataset
@@ -84,6 +86,7 @@ Use the returned dataset, run, and frozen IDs in place of the placeholders:
 ```powershell
 & '.venv/Scripts/python.exe' -m frontier.cli scan --cad 700 --usd 0
 & '.venv/Scripts/python.exe' -m frontier.cli scan --no-refresh --cad 700 --usd 0
+& '.venv/Scripts/python.exe' -m frontier.cli scan --no-refresh --cad 700 --usd 0 --convert-cad 700
 & '.venv/Scripts/python.exe' -m frontier.cli scans
 & '.venv/Scripts/python.exe' -m frontier.cli datasets
 & '.venv/Scripts/python.exe' -m frontier.cli run DATASET_ID --strategy trend --lookback 20 --allow-incomplete-actions
@@ -115,6 +118,7 @@ model fixed slippage without observed bid/ask or market impact. Historical inter
 used by research are exposed, and frozen observation is not a live trading system.
 
 See [the completed scanner and dividend study](docs/scanner-study.md),
+[USD funding study](docs/usd-funding-study.md),
 [account and options readiness](docs/active-account-readiness.md),
 [validation evidence](docs/validation.md),
 [Ponytail code-quality review](docs/code-quality-review.md),

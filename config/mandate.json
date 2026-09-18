@@ -3,7 +3,7 @@
   "base_currency": "CAD",
   "borrowing": false,
   "automatic_fx": false,
-  "fx_preference": "Norberts gambit after explicit conversion plan; settlement, spread and fees are not free",
+  "fx_preference": "CAD-to-USD funding is acceptable for US trading; compare broker conversion with Norberts gambit including spread, journal costs and settlement. No conversion executed.",
   "active_capital_cad": null,
   "maximum_loss_cad": null,
   "active_broker": "Wealthsimple",
@@ -43,7 +43,8 @@
     "User-provided values, not reconciled brokerage holdings.",
     "Symbols and quantities require reconciliation before allocation/order changes.",
     "Example scanner balances are simulated, not permission to use either ETF portfolio.",
-    "No present active cash balance was stated; CAD700 is one illustrative monthly addition, not verified spendable funds."
+    "No present active cash balance was stated; CAD700 is one illustrative monthly addition, not verified spendable funds.",
+    "User accepts CAD-to-USD transfers for active trading. The 100% conversion research case is illustrative, not a confirmed allocation or actual transfer."
   ],
   "monthly_contribution_cad": {
     "minimum": 600,
@@ -51,5 +52,20 @@
     "illustrative": 700
   },
   "maximum_drawdown_fraction": 0.3,
-  "alternative_broker": "moomoo cash account"
+  "alternative_broker": "moomoo cash account",
+  "planned_fx_allowed": true,
+  "research_funding_scenarios": [
+    {
+      "name": "CAD funded",
+      "initial_cash_cad": 700,
+      "initial_cash_usd": 0,
+      "convert_cad": 0
+    },
+    {
+      "name": "Illustrative USD funded",
+      "initial_cash_cad": 700,
+      "initial_cash_usd": 0,
+      "convert_cad": 700
+    }
+  ]
 }

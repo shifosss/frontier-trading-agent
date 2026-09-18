@@ -72,6 +72,21 @@ type ScanArtifact = {
     summary: Record<Currency, DiagnosticSummary>;
     limitations: string[];
   };
+  funding?: {
+    mode: "existing_cash" | "planned_cad_to_usd";
+    cash_before: Record<Currency, number>;
+    cash_after: Record<Currency, number>;
+    convert_cad: number;
+    estimated_fee_cad: number;
+    estimated_usd_credit: number;
+    reference: {
+      usd_cad: number;
+      event_time: string;
+      available_at: string;
+      source_url: string;
+    } | null;
+    limitations: string[];
+  };
   readiness: { status: string; reasons: string[] };
 };
 type Props = {
@@ -165,8 +180,16 @@ export default function ScannerPanel({
   const [selectedId, setSelectedId] = useState("");
   const [cashUSD, setCashUSD] = useState(0);
   const [cashCAD, setCashCAD] = useState(700);
+  const [convertCAD, setConvertCAD] = useState(0);
   const [loading, setLoading] = useState(true);
   const active = scans.find((scan) => scan.scan_id === selectedId);
+  useEffect(() => {
+    if (!active) return;
+    const cash = active.funding?.cash_before ?? active.scan.cash_by_currency;
+    setCashCAD(cash.CAD);
+    setCashUSD(cash.USD);
+    setConvertCAD(active.funding?.convert_cad ?? 0);
+  }, [active]);
   useEffect(() => {
     let mounted = true;
     request("/scans")
@@ -191,6 +214,7 @@ export default function ScannerPanel({
         refresh: true,
         initial_cash_usd: cashUSD,
         initial_cash_cad: cashCAD,
+        convert_cad: convertCAD,
       });
       setScans((saved) => [result, ...saved]);
       setSelectedId(result.scan_id);
@@ -243,6 +267,18 @@ export default function ScannerPanel({
               onChange={(event) => setCashCAD(Number(event.target.value))}
             />
           </label>
+          <label>
+            CAD to convert (simulation)
+            <input
+              type="number"
+              min="0"
+              max={cashCAD}
+              step="0.01"
+              required
+              value={convertCAD}
+              onChange={(event) => setConvertCAD(Number(event.target.value))}
+            />
+          </label>
           <button
             className="primary"
             type="submit"
@@ -254,8 +290,12 @@ export default function ScannerPanel({
         <p className="scan-copy">
           CAD 700 illustrates a first monthly contribution within your CAD
           600–800 plan; it is not reconciled account cash. Your long-term ETF
-          holdings and contributions stay separate. USD starts at zero, with no
-          automatic currency conversion. Option selection is not yet qualified.
+          holdings and contributions stay separate. Enter balances before any
+          planned conversion. You can model CAD-to-USD funding using the latest
+          published reference rate and Wealthsimple conversion fees (1.5% below
+          CAD 10,000); the result assumes USD is retained in a USD account
+          between trades. Actual conversion is not performed. Option selection
+          is not yet qualified.
         </p>
       </section>
       {loading ? (
@@ -284,7 +324,10 @@ export default function ScannerPanel({
                 {scans.map((scan) => (
                   <option key={scan.scan_id} value={scan.scan_id}>
                     {scan.created_at.slice(0, 19).replace("T", " ")} UTC ·{" "}
-                    {scan.scan.selected.length} candidates
+                    {scan.scan.selected.length} candidates ·{" "}
+                    {scan.funding?.mode === "planned_cad_to_usd"
+                      ? "USD conversion scenario"
+                      : "Native cash"}
                   </option>
                 ))}
               </select>
@@ -296,6 +339,41 @@ export default function ScannerPanel({
               Download scan and evidence
             </Download>
           </div>
+          {active.funding?.mode === "planned_cad_to_usd" && (
+            <section className="wide-sheet">
+              <div className="section-heading">
+                <div>
+                  <h2>Simulated CAD-to-USD funding</h2>
+                  <p>One conversion into a retained USD cash balance.</p>
+                </div>
+                <span className="badge synthetic">Reference estimate</span>
+              </div>
+              <p className="scan-copy">
+                CAD {number(active.funding.convert_cad)} debited once →
+                approximately USD {number(active.funding.estimated_usd_credit)}{" "}
+                credited, including an estimated CAD{" "}
+                {number(active.funding.estimated_fee_cad)} conversion fee,
+                before broker spread and account charges.
+                {active.funding.reference && (
+                  <>
+                    {" "}
+                    Reference: {number(active.funding.reference.usd_cad, 4)} CAD
+                    per USD, published{" "}
+                    {day(active.funding.reference.available_at)}.
+                  </>
+                )}{" "}
+                The cash balances below are after this simulated conversion.
+              </p>
+              <details className="scan-details">
+                <summary>Conversion assumptions and excluded costs</summary>
+                <ul>
+                  {active.funding.limitations.map((limit) => (
+                    <li key={limit}>{limit}</li>
+                  ))}
+                </ul>
+              </details>
+            </section>
+          )}
           <section className="wide-sheet">
             <div className="section-heading">
               <div>
@@ -410,7 +488,10 @@ export default function ScannerPanel({
             <p className="scan-copy">
               Each historical basket is a separate forward observation, not a
               compounded portfolio. These averages are not annualized. Cash
-              earns 0% in this comparison. Estimated round-trip costs are{" "}
+              earns 0% in this comparison.{" "}
+              {active.funding?.mode === "planned_cad_to_usd" &&
+                "USD cohort returns exclude CAD/USD valuation changes, conversion fees and account charges. "}{" "}
+              Estimated round-trip costs are{" "}
               {active.study.policy.diagnostic_round_trip_cost_bps} bps, rising
               to {active.study.policy.diagnostic_stressed_cost_bps} bps in the
               stress case.

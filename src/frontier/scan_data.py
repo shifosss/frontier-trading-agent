@@ -161,7 +161,8 @@ def read_capture(workspace, manifest):
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=COLUMNS)
 
 
-def run_scan(workspace, *, refresh=True, initial_cash_usd=0, initial_cash_cad=700):
+def run_scan(workspace, *, refresh=True, initial_cash_usd=0, initial_cash_cad=700, convert_cad=0):
+    from frontier.funding import plan_usd_funding
     from frontier.scanner import build_scan, forward_diagnostics
 
     workspace = Path(workspace)
@@ -171,14 +172,22 @@ def run_scan(workspace, *, refresh=True, initial_cash_usd=0, initial_cash_cad=70
         or sum(cash.values()) <= 0
     ):
         raise ValueError("Specify finite nonnegative simulated balances with some funding")
+    funding = plan_usd_funding(workspace, cash, convert_cad, datetime.now(timezone.utc))
+    cash = funding["cash_after"]
     universe = load_universe(workspace)
     manifest, cached = capture_universe(workspace, universe, refresh=refresh)
     frame = read_capture(workspace, manifest)
     as_of = datetime.now(timezone.utc).isoformat()
     scan = build_scan(frame, universe, as_of, cash)
     study = forward_diagnostics(frame, universe, as_of, cash)
+    if convert_cad:
+        study["limitations"].append(
+            "Uses a constant illustrative post-conversion USD budget for each cohort; "
+            "FX funding costs reduce that budget once. Cohort returns exclude conversion "
+            "fees, subscriptions, repatriation costs and changes in CAD/USD value."
+        )
     digest = hashlib.sha256()
-    for name in ("scanner.py", "scan_data.py"):
+    for name in ("scanner.py", "scan_data.py", "funding.py", "sources.py"):
         digest.update((Path(__file__).parent / name).read_text("utf-8").encode())
     envelope = {
         "scan_id": uuid4().hex,
@@ -193,6 +202,7 @@ def run_scan(workspace, *, refresh=True, initial_cash_usd=0, initial_cash_cad=70
             "succeeded": sum("error" not in row for row in manifest["captures"]),
             "failed": [row for row in manifest["captures"] if "error" in row],
         },
+        "funding": funding,
         "scan": scan,
         "study": study,
         "readiness": {

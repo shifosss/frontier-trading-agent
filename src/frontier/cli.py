@@ -278,17 +278,26 @@ def scan(
     refresh: bool = True,
     cad: float = 700,
     usd: float = 0,
+    convert_cad: float = 0,
 ):
     """Capture the declared universe and save a fixed-rule stock watchlist and study."""
     from frontier.scan_data import run_scan
 
-    result = run_scan(ctx.obj, refresh=refresh, initial_cash_cad=cad, initial_cash_usd=usd)
+    result = run_scan(
+        ctx.obj,
+        refresh=refresh,
+        initial_cash_cad=cad,
+        initial_cash_usd=usd,
+        convert_cad=convert_cad,
+    )
     output(
         {
             "scan_id": result["scan_id"],
             "source": result["source"],
+            "funding": result["funding"],
             "scan": result["scan"],
             "study_summary": result["study"]["summary"],
+            "study_limitations": result["study"]["limitations"],
             "readiness": result["readiness"],
         }
     )

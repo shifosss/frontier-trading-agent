@@ -153,3 +153,22 @@ The project Python environment was not changed for browser tooling. The verifica
 harness uses a workspace-local uv cache with Playwright/greenlet and the installed
 Chrome executable. No global plugin, machine service, paid data or brokerage action
 was installed or executed.
+
+
+## Planned USD funding follow-up — September 18, 2026
+
+The user now accepts CAD-to-USD funding for US trading. One narrow helper reuses the
+existing public FX capture and Decimal; it deducts the CAD amount once, applies the
+published whole-transaction conversion-fee tier and credits USD once. Existing cash
+and old saved artifacts keep their behavior. No product dependency was added.
+
+Independent review verified post-conversion cash propagation and saved-input restore.
+It found that CLI summary output omitted the diagnostic's native-currency/FX-cost
+limitations; the CLI now includes them. Historical split-adjusted share prices are
+also explicitly identified as unsuitable evidence of pre-split whole-share
+tradability. The strategy was not retuned to manufacture a funded entry.
+
+Final checks: **132 tests passed in 80.37s**, Ruff/TypeScript/build passed, and the
+actual conversion form/API/download/saved-history/reload flow passed in Chrome.
+Four screen widths had no page/HTTP errors or horizontal overflow. Current IDs,
+reference assumptions and financial results are in [USD funding study](usd-funding-study.md).

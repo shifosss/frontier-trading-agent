@@ -2,7 +2,12 @@
 
 Verified against public broker and CRA sources on **2026-09-18**. This checks published terms, not the user's actual account permissions, balances, or tax classification.
 
-The [saved mandate](../config/mandate.json) uses a taxable non-registered Wealthsimple account, with moomoo cash as an alternative: individual stocks and potentially options, no borrowing, no automatic FX, CAD600–800 of additional funding per month, and a 30% maximum tolerable drawdown. Existing ETF reserves are outside the active sleeve. **CAD700 is an illustrative monthly contribution, not verified available cash or permission to spend the ETF reserves.**
+The [saved mandate](../config/mandate.json) uses a taxable non-registered Wealthsimple account, with moomoo cash as an alternative: individual stocks and potentially options, no borrowing, planned CAD-to-USD funding permitted but no automatic transfers, CAD600–800 of additional funding per month, and a 30% maximum tolerable drawdown. Existing ETF reserves are outside the active sleeve. **CAD700 is an illustrative monthly contribution, not verified available cash or permission to spend the ETF reserves.**
+
+The user subsequently confirmed that CAD can be converted into USD for active
+trading. The [USD funding preview](usd-funding-study.md) models this explicitly;
+permission to consider conversion does not establish a transferred balance or a
+100% US allocation.
 
 ## Broker costs that change the decision
 

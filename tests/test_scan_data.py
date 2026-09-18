@@ -107,7 +107,9 @@ def test_scan_api_uses_simulated_native_budgets_and_busy_lock(tmp_path, monkeypa
         assert client.get("/api/scans").json() == []
         assert client.get("/api/scans/missing").status_code == 404
         assert client.post("/api/scans", json={}).json() == {"scan_id": "fixture"}
-        assert calls == [{"refresh": True, "initial_cash_usd": 0, "initial_cash_cad": 700}]
+        assert calls == [
+            {"refresh": True, "initial_cash_usd": 0, "initial_cash_cad": 700, "convert_cad": 0}
+        ]
         assert not _ENGINE_LOCK.locked()
         assert client.post("/api/scans", json={"initial_cash_cad": -1}).status_code == 422
         _ENGINE_LOCK.acquire()
@@ -116,3 +118,38 @@ def test_scan_api_uses_simulated_native_budgets_and_busy_lock(tmp_path, monkeypa
         finally:
             _ENGINE_LOCK.release()
         assert len(calls) == 1
+
+
+def test_scan_passes_post_conversion_cash_to_both_calculations(tmp_path, monkeypatch):
+    from frontier.scan_data import run_scan
+
+    after = {"USD": 492.92, "CAD": 0}
+    funding = {"cash_after": after, "convert_cad": 700}
+    monkeypatch.setattr("frontier.funding.plan_usd_funding", lambda *args: funding)
+    monkeypatch.setattr("frontier.scan_data.load_universe", lambda *args: [SPEC])
+    monkeypatch.setattr(
+        "frontier.scan_data.capture_universe",
+        lambda *args, **kwargs: (
+            {
+                "source": "fixture",
+                "captured_at": "2026-07-02T20:01:00Z",
+                "capture_id": "fixture",
+                "captures": [],
+            },
+            True,
+        ),
+    )
+    monkeypatch.setattr("frontier.scan_data.read_capture", lambda *args: pd.DataFrame())
+    seen = []
+
+    def calculate(frame, universe, as_of, cash):
+        seen.append(cash)
+        return {"cash_by_currency": cash, "limitations": []}
+
+    monkeypatch.setattr("frontier.scanner.build_scan", calculate)
+    monkeypatch.setattr("frontier.scanner.forward_diagnostics", calculate)
+    result = run_scan(tmp_path, refresh=False, convert_cad=700)
+    assert seen == [after, after]
+    saved = json.loads((tmp_path / "artifacts/scans" / result["scan_id"] / "scan.json").read_text())
+    assert saved["funding"] == funding
+    assert "Cohort returns exclude conversion" in saved["study"]["limitations"][-1]

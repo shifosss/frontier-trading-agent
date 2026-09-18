@@ -9,6 +9,10 @@ illustrative scenario; keep candidates available for further evaluation.
 [Open repaired study](http://127.0.0.1:8765/?study=ba3ba6dd186c4201b7d1a151dd2be024) ·
 [Account costs and options permissions](active-account-readiness.md)
 
+A subsequent user clarification permits planned CAD-to-USD funding. See the
+[USD funding study](usd-funding-study.md) for the new funded-US scenario. The CAD-only
+results below remain the original dated comparison, not a permanent country limit.
+
 ## Mandate applied
 
 - CAD600–800 additional active funding monthly; CAD700/USD0 is an illustrative first

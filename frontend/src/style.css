@@ -1471,7 +1471,7 @@ td small.earlier-version {
 }
 .scan-form {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
   gap: 16px;
   align-items: end;
   padding: 0 24px 18px;

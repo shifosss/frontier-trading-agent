@@ -84,3 +84,8 @@ The [scanner study](scanner-study.md) records the actual repaired study and the
 CAD600–800 funding scenarios. [Broker readiness](active-account-readiness.md) checks
 Wealthsimple/moomoo fees, options permissions and Canadian taxable records against
 current official sources. Neither document establishes live profitability.
+
+The user now accepts CAD-to-USD funding. The scanner models a one-time conversion
+with a published BoC reference and Wealthsimple fee tiers, preserving before/after
+cash and source provenance. The heartbeat compares native CAD and illustrative
+USD-funded scenarios from one stock capture. See [USD funding study](usd-funding-study.md).

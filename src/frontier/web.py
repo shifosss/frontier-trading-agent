@@ -57,6 +57,7 @@ class ScanRequest(BaseModel):
     refresh: bool = True
     initial_cash_usd: float = Field(default=0, ge=0)
     initial_cash_cad: float = Field(default=700, ge=0)
+    convert_cad: float = Field(default=0, ge=0)
 
 
 class FreezeRequest(BaseModel):
