@@ -1,13 +1,15 @@
 # Run the paper operator
 
-The code is implemented and tested with a broker double. A read-only connection to the configured Alpaca paper account was verified on September 18, 2026; it had US$100,000 simulated cash, no holdings and no open orders. The operator is not initialized or running. No live endpoint exists in this integration.
+Activated September 18, 2026 at approximately 14:51 Toronto time on the existing **US$100,000 Alpaca paper account**, following the owner's instruction to use its current balance. Initialization, real paper-account reconciliation and the hidden five-minute worker were verified. The first observations contain no holdings or orders; no daily decision has been saved yet. Check the Trading desk and runner logs for current state. No live endpoint exists in this integration.
+
+This is a larger-account operating and strategy trial. Signal rules are unchanged, but whole-share affordability and position sizes differ from a US$500 account. These results must not be presented as small-budget execution validation. The setup below is for a fresh account; **do not reinitialize the active journal**.
 
 1. Create/use a dedicated **Alpaca paper** account with no holdings or orders and the simulated USD cash you intend to test. Current Alpaca documentation says a different starting balance requires creating a new paper account from the dashboard account selector, then generating that account's new keys; no account needs to be deleted. [Official instructions](https://docs.alpaca.markets/us/docs/paper-trading). The normal USD100,000 default does not represent the small active sleeve. Do not fund a live account for this setup.
 2. Configure `FRONTIER_ALPACA_PAPER_KEY` and `FRONTIER_ALPACA_PAPER_SECRET` in your local environment using paper credentials. The process reads them from its environment; on Windows it also reads these exact two User variables when both are absent from an older process environment. Neither the dashboard nor repository stores keys. Do not paste secrets into chat.
-3. From the project directory, initialize with the paper account's exact ID and simulated cash. Example only:
+3. From the project directory, initialize with the paper account's exact ID and simulated cash. For example, when that empty paper account contains US$100,000:
 
 ```powershell
-.venv/Scripts/python.exe -m frontier.cli paper-init --account-id YOUR_PAPER_ACCOUNT_ID --cash-usd 500
+.venv/Scripts/python.exe -m frontier.cli paper-init --account-id YOUR_PAPER_ACCOUNT_ID --cash-usd 100000
 .venv/Scripts/python.exe -m frontier.cli paper-cycle
 ```
 
@@ -19,7 +21,7 @@ Initialization reads the paper account and refuses mismatched cash, existing pos
 ./scripts/start-paper.ps1
 ```
 
-The runner is hidden on Windows, uses the same initialized account, and logs to `artifacts/paper-operator/`. Alternatively run `paper-watch` in a terminal. It checks every five minutes, only submits during regular market hours, and creates daily plans outside the session. The machine must remain awake and connected. No OS login task, cloud service, broker connection or runner was automatically activated during development.
+The runner is hidden on Windows, uses the same initialized account, and logs to `artifacts/paper-operator/`. Alternatively run `paper-watch` in a terminal. It checks every five minutes, only submits during regular market hours, and creates daily plans outside the session. The machine must remain awake and connected. The local runner was started for the authorized trial. It is not installed as an OS login task or cloud service; after a reboot, run `scripts/start-paper.ps1` again. Closing the dashboard does not stop the worker.
 
 Useful controls:
 
@@ -47,4 +49,7 @@ Toronto time. It inspects local setup first and only calls the paper cycle after
 owner has initialized the dedicated paper mandate; otherwise it continues local
 qualification/research. This follow-up is not a substitute for an awake host or an
 observed paper connection. Notifications remain limited to meaningful changes or
-issues. The five-minute local runner is optional and is not currently running.
+issues. The five-minute local runner was started for this trial. When it is running and observations are fresh, the follow-up inspects its saved results instead of starting a duplicate cycle.
+
+
+Activation evidence is saved locally in `artifacts/paper-operator/activation.json` and `running-check.json`; the pre-activation SQLite backup passed its integrity check. For this Friday activation, the first eligible decision uses the September 18 completed close after 16:01 Toronto time, once all required data are available. Any qualifying weekly entries become eligible on Monday, September 21 at 09:30 Toronto time, and are checked on the next worker poll. This schedule is not a promise that a signal or fill will occur.

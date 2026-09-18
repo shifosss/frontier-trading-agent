@@ -46,7 +46,7 @@ Automated tests cover scheduled eligibility, partial fills, cash settlement and 
 
 Next acceptance gates, in order:
 
-1. Connect a dedicated paper account locally and qualify real order submission, partial/expired/canceled states, reconciliation, disconnects, and host restart. No credentials belong in chat.
+1. Continue the paper trial activated September 18 on the owner-selected US$100,000 simulated account. Initialization, initial real reconciliation and five-minute worker startup passed; real order submission, partial/expired/canceled states, disconnects, and host restart remain to be qualified. Signal rules are shared, but this balance does not validate whole-share affordability at US$500. No credentials belong in chat.
 2. Accumulate dated forward operations and compare the frozen baseline with cost-matched alternatives. Account for Alpaca paper's omitted dividends, fees, queueing and market impact separately. Zero-commission paper observations do not establish Moomoo net returns.
 3. Expand the liquid, affordable universe and compare complementary strategies: trend/pullback, short-horizon mean reversion, and event-driven signals where data access supports them. Use fixed validation periods and prospective challenger decisions; do not auto-promote a backtest winner.
 4. Implement and qualify Moomoo's account-specific cash execution adapter, corporate actions, actual fee schedule, account activity/funding import, and operational recovery. Add Canadian execution only through a verified supported broker route.

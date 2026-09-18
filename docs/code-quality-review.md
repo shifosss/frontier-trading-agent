@@ -224,3 +224,16 @@ US$100,000 simulated cash, no holdings and no open orders. Account validation pa
 no initialization, order submission, account reset or runner activation occurred.
 The local connection-status update followed a verified SQLite backup and integrity
 check. Sanitized probe evidence is saved in `artifacts/paper-operator/connection-check.json`.
+
+
+## Authorized paper activation - September 18, 2026
+
+The owner chose the existing US$100,000 simulated balance. A SQLite backup passed
+its integrity check before initialization. The actual paper account matched its
+pinned ID, ACTIVE status, USD cash and empty holdings/orders. Initialization and
+the first real reconciliation passed. The hidden five-minute worker then recorded
+a successful independent cycle, with no stderr output; its executable and command
+line matched this workspace. The initialized code identity matched the current
+source. Activation evidence is local under `artifacts/paper-operator/`. These are
+startup and reconciliation observations, not an order-fill trial or evidence of
+profitability. No execution code or frozen policy changed during activation.

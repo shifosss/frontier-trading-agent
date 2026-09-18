@@ -1,6 +1,6 @@
 # Frontier Trading
 
-The product target is automated daily/weekly trading. A persistent **paper operator** now joins the scanner and research engine: weekly entries, daily exits, settled-cash checks, CAD drawdown control, durable orders and restart recovery. Read-only Alpaca paper access has been verified; the operator is not initialized or running, and live execution is not implemented. Start with the [paper operator setup](docs/paper-operator.md) and [updated delivery plan](docs/automated-trading-plan.md).
+The product target is automated daily/weekly trading. A persistent **paper operator** now joins the scanner and research engine: weekly entries, daily exits, settled-cash checks, CAD drawdown control, durable orders and restart recovery. The existing US$100,000 Alpaca paper account was initialized and its five-minute worker started on September 18, 2026; the first reconciliation passed with no holdings or orders. Check the Trading desk for current saved state. This larger-account trial does not validate US$500 affordability, and live execution is not implemented. Start with the [paper operator setup](docs/paper-operator.md) and [updated delivery plan](docs/automated-trading-plan.md).
 
 A local research workstation for US and Canadian stocks and ETFs. It imports
 traceable data, runs real Nautilus simulations, compares fixed baselines and bounded
@@ -115,7 +115,7 @@ Longbridge fetching can work. The application never logs in automatically.
 
 Canadian hourly coverage, complete corporate actions, longer point-in-time history,
 nested walk-forward evaluation, advanced model comparisons, accumulated prospective
-outcomes, and broker-paper reconciliation remain open. Synthetic opening quotes
+outcomes, and qualification of the full broker-paper order lifecycle remain open. Synthetic opening quotes
 model fixed slippage without observed bid/ask or market impact. Historical intervals
 used by research are exposed, and frozen observation is not a live trading system.
 

@@ -67,5 +67,14 @@
       "initial_cash_usd": 0,
       "convert_cad": 700
     }
-  ]
+  ],
+  "paper_trial": {
+    "broker": "Alpaca",
+    "mode": "paper",
+    "currency": "USD",
+    "initial_cash_usd": 100000,
+    "owner_selected_existing_account_on": "2026-09-18",
+    "purpose": "Validate the frozen daily/weekly policy and unattended paper operations using the existing simulated balance.",
+    "scope_limit": "This balance is simulated, is not real active capital, and does not validate US$500 whole-share affordability or position sizing."
+  }
 }
