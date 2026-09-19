@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 import numpy as np
 import pandas as pd
 
+from frontier.daily_policy import plan_entries
 from frontier.historical_settlement import SETTLEMENT_ASSUMPTION, build_settlement_indices
 from frontier.historical_study import (
     FAMILIES,
@@ -263,27 +264,32 @@ def _simulate_daily(
             activity["no_signal_sessions"] += 1
             continue
         activity["eligible_signal_sessions"] += 1
-        ranked = ranked[~np.isin(ranked, list(held))]
-        prices, atrs = market["close"][i, ranked], market["atr"][i, ranked]
-        planned = np.floor(
-            np.minimum(0.2 * nav / (prices * (1 + half_cost)), 0.005 * nav / (2 * atrs))
+        plan = plan_entries(
+            symbols=market["symbols"],
+            ranking=ranked,
+            prices=market["close"][i],
+            atrs=market["atr"][i],
+            nav=nav,
+            available_cash=available,
+            held_symbols=[market["symbols"][j] for j in held],
+            slots=slots,
+            cost_bps=cost_bps,
+            correlation_allowed=(
+                lambda candidate, peers: _diversified(
+                    market["adjusted"], i, candidate, peers, correlation_limit
+                )
+            )
+            if correlation_limit is not None
+            else None,
+            audit=False,
         )
-        affordable = (planned > 0) & (prices * (1 + half_cost) <= available)
-        for j, planned_quantity in zip(ranked[affordable], planned[affordable]):
-            j = int(j)
-            if correlation_limit is not None:
-                peers = list(held) + [order["symbol_index"] for order in pending]
-                if not _diversified(market["adjusted"], i, j, peers, correlation_limit):
-                    activity["correlation_rejected_candidates"] += 1
-                    continue
-            price = market["close"][i, j]
-            quantity = math.floor(min(planned_quantity, available / (price * (1 + half_cost))))
-            if quantity <= 0:
-                continue
-            pending.append({"symbol_index": j, "quantity": quantity, "signal": i})
-            available -= quantity * price * (1 + half_cost)
-            if len(pending) >= slots:
-                break
+        pending = [
+            {"symbol_index": order["symbol_index"], "quantity": order["quantity"], "signal": i}
+            for order in plan["orders"]
+        ]
+        rejected = sum(row["reason"] == "correlation" for row in plan["decisions"])
+        if rejected:
+            activity["correlation_rejected_candidates"] += rejected
         activity["planned_orders"] += len(pending)
         if not pending:
             activity["unaffordable_or_held_signal_sessions"] += 1

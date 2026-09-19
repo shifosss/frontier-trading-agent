@@ -213,3 +213,31 @@ def test_only_negative_downside_predictions_are_clipped():
 
     prediction = models._prediction(Predictions(), np.ones((1, 2)))
     np.testing.assert_array_equal(prediction, [[-2.0, -0.01, 3.0, 0.0, 0.1, 2.0]])
+
+
+def test_separate_fit_predict_preserves_legacy_results_and_empty_rows(sample, fitted):
+    bundle = models.fit_heads(*sample[:4])
+    predictions = models.predict_heads(bundle, sample[4])
+    assert bundle.audit.keys() == fitted.keys() - {"predictions"}
+    assert_calibration_close(bundle.audit["calibration"], fitted["calibration"])
+    for name in models.MODEL_NAMES:
+        np.testing.assert_allclose(predictions[name], fitted["predictions"][name], atol=1e-15)
+    assert all(x.shape == (0, 6) for x in models.predict_heads(bundle, sample[4][:0]).values())
+    with pytest.raises(ValueError, match="same column count"):
+        models.predict_heads(bundle, np.zeros((2, 4)))
+
+
+def test_repeated_fits_calibration_and_predictions_are_exact(sample):
+    first = models.fit_heads(*sample[:4])
+    second = models.fit_heads(*sample[:4])
+    assert first.audit == second.audit
+    np.testing.assert_array_equal(first.weights, second.weights)
+    assert first.models["extra_trees"].n_jobs == 1
+    assert first.audit["model_audit"]["extra_trees"]["fit_n_jobs"] == 2
+    assert first.audit["model_audit"]["extra_trees"]["predict_n_jobs"] == 1
+    assert first.audit["config"]["extra_trees_prediction_n_jobs"] == 1
+    expected = models.predict_heads(first, sample[4])
+    for bundle in (first, first, second):
+        actual = models.predict_heads(bundle, sample[4])
+        for name in models.MODEL_NAMES:
+            np.testing.assert_array_equal(expected[name], actual[name])

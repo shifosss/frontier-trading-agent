@@ -434,5 +434,37 @@ def historical_research_status(ctx: typer.Context):
     output(historical_status(ctx.obj))
 
 
+@app.command("candidate-build")
+def candidate_build(
+    ctx: typer.Context,
+    capture_run_id: str,
+    signal_session: str | None = None,
+    budget: float = 2000,
+    cost_bps: float = 40,
+    horizon: int = 5,
+    strategy: str = "calibrated_ensemble",
+):
+    """Save an unqualified daily model and decision preview from verified frozen data."""
+    from frontier.candidate_daily import build_candidate
+
+    report = build_candidate(
+        ctx.obj, capture_run_id, signal_session, budget, cost_bps, horizon, strategy
+    )
+    output(
+        {
+            key: report[key]
+            for key in (
+                "status",
+                "artifact_path",
+                "model_id",
+                "eligible_count",
+                "prediction_reload_exact",
+                "intents",
+                "limitations",
+            )
+        }
+    )
+
+
 if __name__ == "__main__":
     app()

@@ -73,6 +73,7 @@ def _identity():
         "ensemble_study.py",
         "ensemble_features.py",
         "ensemble_models.py",
+        "daily_policy.py",
         "historical_settlement.py",
         "strategy_study.py",
         "research_lab.py",

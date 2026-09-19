@@ -7,6 +7,7 @@ weights are pooled predictive-error diagnostics, not evidence of a tradable edge
 
 import warnings
 from copy import deepcopy
+from dataclasses import dataclass
 
 import numpy as np
 import sklearn
@@ -58,6 +59,7 @@ CONFIG = {
     "version": "multi-output-ensemble-v1",
     "head_names": HEAD_NAMES,
     "models": MODEL_CONFIG,
+    "extra_trees_prediction_n_jobs": 1,
     "boosting_wrapper": {"class": "MultiOutputRegressor", "n_jobs": 1},
     "feature_imputation": "training median, missing indicators, retain empty features",
     "feature_scaling": "training StandardScaler for ridge and multi_head_mlp",
@@ -139,20 +141,26 @@ def _calibration(y_train, y_cal, predictions):
     return weights, audit
 
 
-def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
-    """Fit four six-output models; return six predictions plus calibration audit.
+@dataclass
+class FittedHeads:
+    """Fitted train-only preprocessing, models and chronological ensemble weights."""
 
-    Heads are gross returns at 1/3/5 sessions followed by nonnegative downside
-    magnitudes at 1/3/5 sessions. NaN features are imputed from training only.
-    Empty test matrices are valid; training and calibration must contain rows.
-    A failed model raises instead of changing the declared ensemble membership.
-    """
+    imputer: SimpleImputer
+    feature_scaler: StandardScaler
+    target_scaler: StandardScaler
+    models: dict
+    weights: np.ndarray
+    feature_count: int
+    audit: dict
+
+
+def fit_heads(X_train, y_train, X_cal, y_cal, *, seed=1729):
+    """Fit four six-output models and calibrate using the separate calibration rows."""
     X_train = _features(X_train, "X_train")
     X_cal = _features(X_cal, "X_cal")
-    X_test = _features(X_test, "X_test")
     if not len(X_train) or not len(X_cal):
         raise ValueError("Training and calibration matrices must contain rows")
-    if X_cal.shape[1] != X_train.shape[1] or X_test.shape[1] != X_train.shape[1]:
+    if X_cal.shape[1] != X_train.shape[1]:
         raise ValueError("All feature matrices must have the same column count")
     y_train = _targets(y_train, len(X_train), "y_train")
     y_cal = _targets(y_cal, len(X_cal), "y_cal")
@@ -175,7 +183,7 @@ def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
         ),
         "multi_head_mlp": MLPRegressor(**MODEL_CONFIG["multi_head_mlp"], random_state=seed),
     }
-    test_predictions, cal_predictions, model_audit, warning_records = {}, {}, {}, []
+    cal_predictions, model_audit, warning_records = {}, {}, []
     with threadpool_limits(limits=CONFIG["thread_limit"]):
         for name, model in models.items():
             tree_model = name in {"extra_trees", "hist_gradient_boosting"}
@@ -185,15 +193,10 @@ def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
             with warnings.catch_warnings(record=True) as caught:
                 warnings.simplefilter("always")
                 model.fit(train, targets)
+                if name == "extra_trees":
+                    # Fixed estimator reduction order for calibration and saved inference.
+                    model.set_params(n_jobs=CONFIG["extra_trees_prediction_n_jobs"])
                 cal_predictions[name] = _prediction(model, cal, scaler)
-                predicted = np.empty((len(X_test), len(HEAD_NAMES)), dtype=float)
-                for start in range(0, len(X_test), PREDICTION_BATCH_SIZE):
-                    stop = start + PREDICTION_BATCH_SIZE
-                    test = imputer.transform(X_test[start:stop])
-                    if not tree_model:
-                        test = feature_scaler.transform(test)
-                    predicted[start:stop] = _prediction(model, test, scaler)
-                test_predictions[name] = predicted
             warning_records.extend(
                 {
                     "model": name,
@@ -209,6 +212,13 @@ def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
                     issubclass(item.category, ConvergenceWarning) for item in caught
                 ),
             }
+            if name == "extra_trees":
+                model_audit[name].update(
+                    {
+                        "fit_n_jobs": MODEL_CONFIG["extra_trees"]["n_jobs"],
+                        "predict_n_jobs": model.n_jobs,
+                    }
+                )
             if name == "hist_gradient_boosting":
                 model_audit[name].update(
                     {
@@ -228,14 +238,9 @@ def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
                 )
 
     weights, calibration = _calibration(y_train, y_cal, cal_predictions)
-    stacked = np.stack([test_predictions[name] for name in BASE_MODEL_NAMES], axis=0)
-    test_predictions["equal_ensemble"] = stacked.mean(axis=0)
-    paired_weights = np.concatenate((weights, weights), axis=1)
-    test_predictions["calibrated_ensemble"] = (stacked * paired_weights[:, None, :]).sum(axis=0)
     config = deepcopy(CONFIG)
     config.update({"seed": seed, "sklearn_version": sklearn.__version__})
-    return {
-        "predictions": test_predictions,
+    audit = {
         "calibration": calibration,
         "warnings": warning_records,
         "config": config,
@@ -250,3 +255,42 @@ def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
             "target_scale": target_scaler.scale_.tolist(),
         },
     }
+
+    return FittedHeads(
+        imputer, feature_scaler, target_scaler, models, weights, X_train.shape[1], audit
+    )
+
+
+def predict_heads(bundle, X):
+    """Predict all six declared outputs without fitting any state; empty rows are valid."""
+    X = _features(X, "X")
+    if X.shape[1] != bundle.feature_count:
+        raise ValueError("All feature matrices must have the same column count")
+    predictions = {}
+    with threadpool_limits(limits=CONFIG["thread_limit"]):
+        for name in BASE_MODEL_NAMES:
+            tree_model = name in {"extra_trees", "hist_gradient_boosting"}
+            scaler = bundle.target_scaler if name == "multi_head_mlp" else None
+            predicted = np.empty((len(X), len(HEAD_NAMES)), dtype=float)
+            for start in range(0, len(X), PREDICTION_BATCH_SIZE):
+                stop = start + PREDICTION_BATCH_SIZE
+                features = bundle.imputer.transform(X[start:stop])
+                if not tree_model:
+                    features = bundle.feature_scaler.transform(features)
+                predicted[start:stop] = _prediction(bundle.models[name], features, scaler)
+            predictions[name] = predicted
+    stacked = np.stack([predictions[name] for name in BASE_MODEL_NAMES], axis=0)
+    predictions["equal_ensemble"] = stacked.mean(axis=0)
+    paired_weights = np.concatenate((bundle.weights, bundle.weights), axis=1)
+    predictions["calibrated_ensemble"] = (stacked * paired_weights[:, None, :]).sum(axis=0)
+    return predictions
+
+
+def fit_predict_heads(X_train, y_train, X_cal, y_cal, X_test, *, seed=1729):
+    """Legacy fit/predict interface with unchanged prediction and audit structure."""
+    X_test = _features(X_test, "X_test")
+    X_train = _features(X_train, "X_train")
+    if X_test.shape[1] != X_train.shape[1]:
+        raise ValueError("All feature matrices must have the same column count")
+    bundle = fit_heads(X_train, y_train, X_cal, y_cal, seed=seed)
+    return {"predictions": predict_heads(bundle, X_test), **bundle.audit}

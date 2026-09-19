@@ -9,6 +9,7 @@ from collections import Counter
 
 import numpy as np
 
+from frontier.daily_policy import forecast_score as _forecast_score
 from frontier.ensemble_features import build_features
 from frontier.ensemble_models import CONFIG as MODEL_CONFIG
 from frontier.ensemble_models import fit_predict_heads
@@ -251,16 +252,6 @@ def _fold_forecasts(features, start, end, fold, currency, sessions, progress):
         **{key: value for key, value in fitted.items() if key != "predictions"},
     }
     return fitted["predictions"], (local_rows, test_symbols), diagnostics
-
-
-def _forecast_score(predicted, head, cost_bps):
-    """Expected net return on entry notional, using the ledger's two-sided fee basis."""
-    half_cost = cost_bps / 20000
-    return (
-        predicted[:, head] * (1 - half_cost)
-        - 2 * half_cost
-        - CONFIG["predicted_downside_penalty"] * np.maximum(0, predicted[:, head + 3])
-    )
 
 
 def _latest_forecasts(market, strategy, horizon, head, predicted, indices, start, end, currency):

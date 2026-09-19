@@ -62,3 +62,44 @@ The concrete next step is a separately predeclared quote-sampling study across l
 Evidence: [fixed request and analysis definition](../.qualification/cost-access20260919/probe-definition.json), [page summary](../.qualification/cost-access20260919/probe-summary.json), [full distributions and validity audit](../.qualification/cost-access20260919/quote-analysis.json), and [offline reproduction script](../.qualification/cost-access20260919/analyze_saved.py).
 
 Raw SHA-256 hashes are `279bfabfd175f89924f3b44dccc68acec54c5e212eb9634d8b6783c47f0236df` for page 1 and `24672da7049153da3aba71aceb5bce0d47150a37074e4d5f39dd81a9cfd8543d` for page 2. The corresponding capture metadata preserves request parameters, response timestamps and raw filenames; credentials are not stored.
+
+
+## September 19: broader predeclared historical quote sample
+
+The [sample definition](../.qualification/daily-model-bridge/cost-definition.json) was saved before retrieval: six US stocks, first trading sessions of 2016, 2020 and 2024, and 09:30, 12:00 and 15:59 ET one-minute windows. AAPL/MSFT were high-price/activity candidates, F/T lower-price active candidates, and HRL/BANF lower-activity candidates. These are purposive hypotheses, not independently measured volume strata or random selection. No model returns were used and no empty/error cell substitutions were allowed. The installed XNYS calendar independently confirms ordinary 09:30–16:00 sessions on all three dates.
+
+All **54 cells** returned data, with **131,655 quote updates in 17 HTTP-200 pages**, complete pagination and no request errors. Each raw page, full SHA-256, fixed request parameters, capture time and safe response date remain under `.qualification/daily-model-bridge/cost-*`. [Capture summary](../.qualification/daily-model-bridge/cost-capture-summary.json), [all 54 results](../.qualification/daily-model-bridge/cost-all-cells.md), and [full analysis](../.qualification/daily-model-bridge/cost-analysis.json) retain sparse and wide-spread observations.
+
+| Symbol | Observed time-weighted midpoint range, USD | Updates per minute range | Range of per-cell duration-weighted mean full spread, bps |
+| --- | ---: | ---: | ---: |
+| AAPL | 102.15–300.44 | 742–19,906 | 0.552–4.108 |
+| MSFT | 53.78–374.89 | 1,322–13,724 | 0.681–2.500 |
+| F | 9.25–13.99 | 36–2,407 | 7.148–10.817 |
+| T | 16.85–39.17 | 72–3,183 | 2.572–6.921 |
+| HRL | 32.05–78.19 | 72–1,511 | 1.893–26.293 |
+| BANF | 56.49–97.99 | 4–152 | 11.396–420.968 |
+
+The full 3,240 sampled symbol-seconds reconcile to **3,184.489061 valid**, **0.006969 crossed**, **0 other-invalid**, and **55.503969 uncovered** seconds. BANF contributes 50.948319 uncovered seconds. Uncovered means no initial in-window quote; it is not a diagnosed provider outage. Valid quote states persist until the next observed update or window end, without a stale timeout. The longest state is 59.5 seconds (BANF, 2016 opening). Duration weighting therefore does not independently prove continuing executable liquidity in sparse cells. Quote-update activity is not traded-volume liquidity.
+
+The analyzer preserves raw conditions/exchanges/tapes, excludes nonpositive/nonfinite prices or sizes and crossed quotes, retains locked quotes, uses `[start,end)` and last-record precedence for identical timestamps, and never bridges crossed intervals. All 54 time-weighted means were independently recomputed with Decimal arithmetic; synthetic checks cover leading gaps, empty cells, crossed/locked states, invalid sizes, equal timestamps and terminal exclusion. [Verification](../.qualification/daily-model-bridge/cost-verification.json).
+
+This broader fixture demonstrates price/activity/time variation; it remains six selected surviving names on three January sessions, with no Canadian listings, penny stocks, delisted universe, seasonality coverage or effective-fill observations. Spreads are full quoted spreads relative to midpoint, not broker execution costs or round-trip slippage calibration. Today's provider vintage and symbol mapping are not point-in-time data vintages. In particular, BANF's wide opening quotes are retained rather than discarded as inconvenient. **The existing 20/40/100-bps scenarios and all frozen strategy results remain unchanged.**
+
+## USD2,000 / five-slot current-fee arithmetic
+
+The [current primary tariff recheck](../.qualification/daily-model-bridge/cost-tariff-source-review.json) agrees with the fees above. Moomoo's direct page again returned 403; its indexed Canadian-entity schedule supplied the current figures. Wealthsimple's legal fee page was retrieved directly. Neither establishes the user's actual promotions or a historical tariff archive. [Moomoo Canada](https://www.moomoo.com/ca/support/topic10_122), [Wealthsimple legal schedule](https://www.wealthsimple.com/en-ca/legal/fees/trade).
+
+With USD2,000 NAV and five slots, each slot permits at most USD400 **including its buy fee**. This arithmetic assumes unchanged buy/sell prices, one order each way and five distinct stocks at the same example price. It applies only the published commission/platform formula when sizing; venue fees, taxes, spreads, price moves and rounding are unresolved, so it is not an executable buying-power guarantee.
+
+| Price USD | Whole shares per slot | Notional per slot USD | Buy fee USD | Broker round trip USD | Broker round trip bps of position | Cash for five entries USD |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | 396 | 396 | 3.9204 | 7.8408 | 198.00 | 1,999.6020 |
+| 5 | 79 | 395 | 1.99 | 3.98 | 100.76 | 1,984.95 |
+| 10 | 39 | 390 | 1.99 | 3.98 | 102.05 | 1,959.95 |
+| 50 | 7 | 350 | 1.99 | 3.98 | 113.71 | 1,759.95 |
+| 100 | 3 | 300 | 1.99 | 3.98 | 132.67 | 1,509.95 |
+| 400 | 0 | 0 | 0 | 0 | n/a | 0 |
+
+At USD10, forty shares plus USD1.99 would exceed the slot cap, so only 39 fit. Five completed positions cost USD19.90 in broker fees, or 99.5 bps of starting NAV, **plus USD0.05 sell SEC minima** before other charges. At USD1, broker fees total USD39.204 (196.02 bps of NAV), plus USD0.05 SEC. USD400 shares cannot fit the Moomoo cap after fees. These are independent calculations, not production ledger changes. [Reproducible fee checks](../.qualification/daily-model-bridge/cost-verify.py).
+
+For Wealthsimple with existing USD cash and an active USD account, the published commission and trade FX charges are zero: five USD400 positions nominally fit USD2,000 before execution uncertainty; USD400 shares fit one per slot. The ordinary CAD10/month plus tax USD-account charge is separate and the owner's waiver eligibility is unknown. If USD400 positions instead trade from CAD, the published conversion formula implies about USD12.0914 equivalent FX-only loss per flat round trip, USD60.4569 across five, or 302.28 bps of USD2,000 position notional, before the variable exchange-rate spread. Funding, ongoing account expense, explicit order fees and quoted spreads must remain separate.
