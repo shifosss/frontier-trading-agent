@@ -130,7 +130,11 @@ def test_historical_http_is_read_only_and_compact(tmp_path, monkeypatch):
         assert client.get(f"/api/historical-lab/runs/{run}/download").json() == report
         assert client.post("/api/historical-lab/start", json={}).json()["pid"] == 123
         assert len(calls) == 1
-        assert calls[0][0][-2:] == ["--study-mode", "short_horizon"]
+        assert calls[0][0][-2:] == ["--study-mode", "multi_model"]
+        for mode in ("legacy", "short_horizon", "multi_model"):
+            response = client.post("/api/historical-lab/start", json={"study_mode": mode})
+            assert response.status_code == 200
+            assert calls[-1][0][-2:] == ["--study-mode", mode]
         assert (
             client.post("/api/historical-lab/start", json={"study_mode": "unknown"}).status_code
             == 422
@@ -245,8 +249,139 @@ def test_new_study_mode_routes_to_daily_engine(inputs, monkeypatch):
         return result
 
     monkeypatch.setattr(short_horizon_study, "evaluate_short_horizon", evaluate)
-    result = lab.run_historical_lab(workspace)
+    result = lab.run_historical_lab(workspace, study_mode="short_horizon")
     assert seen == ["USD", "CAD"]
     assert result["definition"]["study_mode"] == "short_horizon"
     assert result["definition"]["capture_index_sha256"]
     assert result["methodology"]["version"] == "short-test"
+
+
+@pytest.mark.parametrize("with_manifests", [False, True])
+def test_multi_model_reuses_sources_freezes_config_and_merges_diagnostics(
+    inputs, monkeypatch, with_manifests
+):
+    import sys
+    from types import ModuleType
+
+    workspace, captures = inputs
+    source = lab.run_historical_lab(workspace, study_mode="legacy")
+    previous_summary = lab.historical_result(workspace, source["run_id"], compact=True)
+    journal = workspace / "paper.sqlite"
+    journal.write_bytes(b"unchanged paper journal")
+    monkeypatch.setattr(lab, "capture_histories", lambda *a, **k: pytest.fail("new capture"))
+    monkeypatch.setattr(research_universe, "load_snapshot", lambda *a: pytest.fail("discovery"))
+    monkeypatch.setattr(lab, "version", lambda name: "test-" + name)
+    module = ModuleType("frontier.ensemble_study")
+    module.CONFIG = {"version": "ensemble-test", "budgets": [2000, 10000]}
+    manifests = {"pyproject.toml": b"declared dependencies", "uv.lock": b"locked dependencies"}
+    if with_manifests:
+        for name, contents in manifests.items():
+            (workspace / name).write_bytes(contents)
+    seen = []
+
+    def evaluate(frame, specs, *, as_of, progress):
+        currency = specs[0]["currency"]
+        definitions = [
+            lab._read(path)
+            for path in (workspace / "artifacts/historical-lab/runs").glob("*/definition.json")
+        ]
+        frozen = next(value for value in definitions if value["study_mode"] == "multi_model")
+        assert frozen["model_config"] == module.CONFIG
+        assert frozen["environment"]["packages"] == {
+            name: "test-" + name
+            for name in ("numpy", "pandas", "scikit-learn", "scipy", "joblib", "threadpoolctl")
+        }
+        assert frozen["environment"]["manifest_sha256"] == {
+            name: hashlib.sha256(contents).hexdigest() if with_manifests else None
+            for name, contents in manifests.items()
+        }
+        assert frozen["source_reuse"]["run_id"] == source["run_id"]
+        assert as_of == source["definition"]["frozen_at"]
+        # Publication must continue to point to the prior completed study during evaluation.
+        assert lab.historical_status(workspace)["latest"]["run_id"] == source["run_id"]
+        seen.append(currency)
+        progress({"stage": "ensemble_fit", "currency": currency, "fold": 1, "total_folds": 1})
+        points = [
+            {"session": "2026-01-02", "equity": 2000, "cash": 2000},
+            {"session": "2026-01-30", "equity": 2010, "cash": 2000},
+            {"session": "2026-02-27", "equity": 1990, "cash": 1990},
+        ]
+        row = {"currency": currency, "equity_curve": points, "trade_records": [{"id": 1}]}
+        return {
+            "methodology": {"attempts": [], **module.CONFIG},
+            "portfolios": [{"strategy": "calibrated_ensemble", **row}],
+            "benchmarks": [{"symbol": "SPY" if currency == "USD" else "XIU.TO", **row}],
+            "walk_forward": [],
+            "model_diagnostics": [{"currency": currency, "test_start": "2026-01-02"}],
+            "latest_candidates": [{"currency": currency, "symbol": specs[0]["symbol"]}],
+            "coverage": {"markets": [{"currency": currency}], "instruments": specs},
+        }
+
+    module.evaluate_ensemble = evaluate
+    monkeypatch.setitem(sys.modules, "frontier.ensemble_study", module)
+    result = lab.run_historical_lab(workspace, source_run_id=source["run_id"])
+    assert seen == ["USD", "CAD"]
+    assert result["study_mode"] == "multi_model"
+    assert len(captures) == 1
+    for key in ("portfolios", "benchmarks", "model_diagnostics", "latest_candidates"):
+        assert [row["currency"] for row in result[key]] == ["USD", "CAD"]
+    compact = lab.historical_result(workspace, result["run_id"], compact=True)
+    for key in ("portfolios", "benchmarks"):
+        assert [p["session"] for p in compact[key][0]["monthly_equity_curve"]] == [
+            "2026-01-02",
+            "2026-01-30",
+            "2026-02-27",
+        ]
+        assert "equity_curve" not in compact[key][0]
+        assert "trade_records" not in compact[key][0]
+    assert compact["model_diagnostics"] == result["model_diagnostics"]
+    assert lab.historical_result(workspace, source["run_id"], compact=True) == previous_summary
+    assert journal.read_bytes() == b"unchanged paper journal"
+    assert lab.historical_status(workspace)["latest"]["study_mode"] == "multi_model"
+
+
+def test_running_worker_lock_prevents_a_second_background_launch(tmp_path, monkeypatch):
+    import sqlite3
+
+    from frontier import processes
+
+    cache = tmp_path / "data/historical"
+    cache.mkdir(parents=True)
+    path = cache / "worker.lock.sqlite"
+    lab._save(
+        tmp_path / "artifacts/historical-lab/status.json",
+        {
+            "status": "running",
+            "study_mode": "multi_model",
+            "run_id": "b" * 32,
+        },
+    )
+    monkeypatch.setattr(processes, "start_background", lambda *a: pytest.fail("duplicate launch"))
+    connection = sqlite3.connect(path)
+    try:
+        connection.execute("BEGIN EXCLUSIVE")
+        assert lab.start_historical_job(tmp_path)["run_id"] == "b" * 32
+    finally:
+        connection.rollback()
+        connection.close()
+    assert not lab._running(tmp_path)
+
+
+def test_cli_default_and_explicit_study_modes_do_not_launch_real_workers(tmp_path, monkeypatch):
+    from typer.testing import CliRunner
+
+    from frontier.cli import app
+
+    seen = []
+    monkeypatch.setattr(
+        lab,
+        "run_historical_lab",
+        lambda workspace, **kwargs: seen.append(kwargs) or {"captured": 0},
+    )
+    runner = CliRunner()
+    base = ["--workspace", str(tmp_path), "historical-run"]
+    assert runner.invoke(app, base).exit_code == 0
+    assert seen[-1]["study_mode"] == "multi_model"
+    for mode in ("short_horizon", "legacy", "multi_model"):
+        assert runner.invoke(app, [*base, "--study-mode", mode]).exit_code == 0
+        assert seen[-1]["study_mode"] == mode

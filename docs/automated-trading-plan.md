@@ -53,3 +53,6 @@ Next acceptance gates, in order:
 5. Prepare owner-operated live deployment with a reconciled account, precise capital allocation, frozen strategy versions and executable operating instructions. The assistant can develop and test the software but does not custody funds or operate a live securities account.
 
 Options, unattended live operation, robust corporate-action accounting for the paper broker, strategy migration, point-in-time broad-universe portfolio validation and demonstrated net profitability remain unfinished. A small-budget policy can rationally hold cash when no affordable candidate fits; these tests do not establish an edge.
+
+
+September 19 research expansion: the [multi-model study](multi-model-research.md) adds four learned predictor families, six return/downside targets, forecast ensembles and a correlation-constrained variant. This is a separate historical research mode. The frozen paper policy described above remains unchanged.

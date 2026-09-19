@@ -8,6 +8,7 @@ import sqlite3
 import sys
 import time
 from datetime import datetime, timezone
+from importlib.metadata import version
 from pathlib import Path
 from uuid import uuid4
 
@@ -69,6 +70,9 @@ def _identity():
         "historical_data.py",
         "historical_study.py",
         "short_horizon_study.py",
+        "ensemble_study.py",
+        "ensemble_features.py",
+        "ensemble_models.py",
         "historical_settlement.py",
         "strategy_study.py",
         "research_lab.py",
@@ -125,7 +129,7 @@ def historical_result(workspace, run_id, *, compact=False):
 
 
 def start_historical_job(
-    workspace, *, rediscover=False, study_mode="short_horizon", source_run_id=None
+    workspace, *, rediscover=False, study_mode="multi_model", source_run_id=None
 ):
     from frontier.processes import start_background
 
@@ -155,8 +159,8 @@ def start_historical_job(
 
 
 def _validate_request(study_mode, rediscover, source_run_id):
-    if study_mode not in {"short_horizon", "legacy"}:
-        raise ValueError("Study mode must be short_horizon or legacy")
+    if study_mode not in {"multi_model", "short_horizon", "legacy"}:
+        raise ValueError("Study mode must be multi_model, short_horizon or legacy")
     if rediscover and source_run_id is not None:
         raise ValueError("Saved-source replay cannot rediscover a different universe")
 
@@ -203,7 +207,7 @@ def run_historical_lab(
     start=DEFAULT_START,
     rediscover=False,
     capture_only=False,
-    study_mode="short_horizon",
+    study_mode="multi_model",
     source_run_id=None,
 ):
     """Acquire long histories, then freeze and evaluate all declared retrospective tests."""
@@ -362,7 +366,34 @@ def run_historical_lab(
             raise RuntimeError(
                 "Historical capture code changed; restart to evaluate saved sources."
             )
-        if study_mode == "short_horizon":
+        if study_mode == "multi_model":
+            from frontier.ensemble_study import CONFIG
+            from frontier.ensemble_study import evaluate_ensemble as evaluate
+
+            definition.update(
+                model_config=CONFIG,
+                environment={
+                    "python": sys.version.split()[0],
+                    "packages": {
+                        name: version(name)
+                        for name in (
+                            "numpy",
+                            "pandas",
+                            "scikit-learn",
+                            "scipy",
+                            "joblib",
+                            "threadpoolctl",
+                        )
+                    },
+                    "manifest_sha256": {
+                        name: hashlib.sha256((workspace / name).read_bytes()).hexdigest()
+                        if (workspace / name).is_file()
+                        else None
+                        for name in ("pyproject.toml", "uv.lock")
+                    },
+                },
+            )
+        elif study_mode == "short_horizon":
             from frontier.short_horizon_study import evaluate_short_horizon as evaluate
         else:
             from frontier.historical_study import evaluate_historical as evaluate
@@ -429,9 +460,13 @@ def run_historical_lab(
                     result[key].extend(part[key])
                 for key in ("markets", "instruments"):
                     result["coverage"][key].extend(part["coverage"][key])
+                for key in ("model_diagnostics", "latest_candidates"):
+                    if key in part:
+                        result.setdefault(key, []).extend(part[key])
         result.update(
             run_id=run_id,
             created_at=_now(),
+            study_mode=study_mode,
             definition=definition,
             capture={
                 "discovered": len(universe),
@@ -448,17 +483,23 @@ def run_historical_lab(
         )
         _save(run_root / "result.json", result)
         summary = compact_result(result)
-        for full, brief in zip(result["walk_forward"], summary["walk_forward"]):
-            for source, target in (
-                (full, brief),
-                (full.get("benchmark", {}), brief.get("benchmark", {})),
-            ):
-                points = source.get("equity_curve", [])
-                by_month = {row["session"][:7]: row for row in points}
-                sampled = list(by_month.values())
-                if points and (not sampled or sampled[0] != points[0]):
-                    sampled.insert(0, points[0])
-                target["monthly_equity_curve"] = sampled
+        collections = (
+            ("walk_forward", "portfolios", "benchmarks")
+            if study_mode == "multi_model"
+            else ("walk_forward",)
+        )
+        for collection in collections:
+            for full, brief in zip(result[collection], summary[collection]):
+                for source, target in (
+                    (full, brief),
+                    (full.get("benchmark", {}), brief.get("benchmark", {})),
+                ):
+                    points = source.get("equity_curve", [])
+                    by_month = {row["session"][:7]: row for row in points}
+                    sampled = list(by_month.values())
+                    if points and (not sampled or sampled[0] != points[0]):
+                        sampled.insert(0, points[0])
+                    target["monthly_equity_curve"] = sampled
         _save(run_root / "summary.json", summary)
         _save(
             root / "latest.json",

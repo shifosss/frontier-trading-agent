@@ -1,5 +1,7 @@
 # Historical-first strategy development
 
+The **multi-model** study is now the default for the broader development requested on September 19. It adds learned linear/tree/neural forecasts and ensembles while retaining the earlier rule studies as explicit modes. See [learned models and ensembles](multi-model-research.md) and the [frozen design](superpowers/plans/2026-09-19-multi-model-study.md). The sections below document the retained v1 lanes.
+
 The Strategy lab now prioritizes long historical tests before relying on new shadow observations. It requests daily history from **January 1, 2000**, subject to each security's actual listing and provider history. The universe has **8,434 current candidates** across major US exchanges, TSX, TSXV, CSE and Cboe Canada; see [coverage](universe-coverage.md). Coverage is broad, but current membership still omits delisted historical firms.
 
 The [first completed job](historical-research-results.md) captured 8,234 usable histories and 28.6 million daily bars. Its negative US results and incomplete Canadian portfolios are retained. A separately audited three-session issuer-data repair recovered 10 Canadian rolling tests, with nine exceeding 30% drawdown; no candidate was promoted.
@@ -12,7 +14,7 @@ The owner clarified hourly/daily decisions and intraday to roughly one-week hold
 
 ## Daily short-hold engine
 
-The default `short_horizon` mode implements daily screening with independent **1-, 3- and 5-session** positions. It reuses the ten existing rule families for a controlled comparison: 30 strategy/horizon combinations, four native-currency balances and three cost assumptions, or 720 fixed portfolios across both markets, plus 24 rolling accounts. Historical test dates span many repeated short trades; position ages begin at actual fills.
+The retained `short_horizon` mode implements daily screening with independent **1-, 3- and 5-session** positions. It reuses the ten existing rule families for a controlled comparison: 30 strategy/horizon combinations, four native-currency balances and three cost assumptions, or 720 fixed portfolios across both markets, plus 24 rolling accounts. Historical test dates span many repeated short trades; position ages begin at actual fills.
 
 A completed close signal fills at the next session close. Each position exits independently after its declared holding interval. The cash ledger distinguishes available and unsettled proceeds using dated US/Canadian T+3, T+2 and T+1 rules. Its banking/exchange holiday intersection is conservative and can delay some settlements beyond real clearing calendars. Unused settled cash remains available while other sales settle. Whole shares, at most five positions, 20% entry allocations and 0.5% two-ATR signal sizing remain unchanged. Orders may shrink at the fill; no margin or same-close signal fills are assumed.
 

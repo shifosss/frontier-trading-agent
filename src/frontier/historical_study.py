@@ -58,7 +58,7 @@ def _notify(progress, **value):
         progress(value)
 
 
-def _build_market(frame, universe, current, currency, progress):
+def _build_market(frame, universe, current, currency, progress, *, include_activity=False):
     """Calculate each symbol's rolling features once, with bounded temporary matrices."""
     specs = {row["symbol"]: row for row in universe if row["currency"] == currency}
     symbols = sorted(specs)
@@ -78,6 +78,8 @@ def _build_market(frame, universe, current, currency, progress):
     sessions = schedule.index[completed].strftime("%Y-%m-%d").tolist()
     n, m = len(sessions), len(symbols)
     arrays = {key: np.full((n, m), np.nan) for key in ("close", "adjusted", "atr")}
+    if include_activity:
+        arrays.update({key: np.full((n, m), np.nan) for key in ("turnover", "dollar_volume")})
     scores = {key: np.full((n, m), np.nan) for key in SIGNALS}
     positions = pd.Index(sessions)
     coverage, discarded = [], 0

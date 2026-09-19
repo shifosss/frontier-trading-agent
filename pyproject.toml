@@ -12,6 +12,7 @@ dependencies = [
   "pydantic>=2,<3",
   "pyarrow", "duckdb", "numpy", "pandas", "exchange-calendars",
   "fastapi", "uvicorn", "typer", "httpx",
+  "scikit-learn==1.7.2",
 ]
 
 [project.scripts]

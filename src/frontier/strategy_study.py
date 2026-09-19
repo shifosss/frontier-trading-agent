@@ -187,6 +187,7 @@ def _market(data, specs, current, currency):
         "adjusted": prices.to_numpy(),
         "atr": atr.to_numpy(),
         "turnover": turnover.to_numpy(),
+        "dollar_volume": (close * matrices["volume"]).to_numpy(),
         "scores": scores,
         "coverage": coverage,
         "periods": periods,

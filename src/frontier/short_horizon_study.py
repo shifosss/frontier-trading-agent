@@ -61,6 +61,23 @@ def _market_data(frame, universe, current, currency, progress):
     return market
 
 
+def _diversified(adjusted, signal, candidate, peers, limit):
+    """Compare trailing completed returns only; unknown pair risk is not zero risk."""
+    if not peers:
+        return True
+    history = adjusted[max(0, signal - 60) : signal + 1, [candidate, *peers]]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        returns = history[1:] / history[:-1] - 1
+    for column in range(1, returns.shape[1]):
+        pair = returns[:, [0, column]]
+        pair = pair[np.isfinite(pair).all(axis=1)]
+        if len(pair) < 40 or (pair.std(axis=0) <= 1e-12).any():
+            return False
+        if np.corrcoef(pair.T)[0, 1] > limit:
+            return False
+    return True
+
+
 def _statistics():
     return {"pnl": [], "returns": [], "holds": [], "days": [], "symbols": defaultdict(float)}
 
@@ -77,13 +94,17 @@ def _simulate_daily(
     state=None,
     audit=False,
     statistics=True,
+    signal_ranking=None,
+    signal_counts=None,
+    signal_known=None,
+    correlation_limit=None,
 ):
     """Signal after close, fill at next close, expire each position independently.
 
     Receivables settle at their calendar-derived session open. Known next-opening
     settlements may reserve an order today; proceeds cannot be spent before settlement.
     """
-    if horizon not in HORIZONS or strategy not in {*FAMILIES, "cash"}:
+    if horizon not in HORIZONS or (signal_ranking is None and strategy not in {*FAMILIES, "cash"}):
         raise ValueError("Unknown short-hold strategy or horizon")
     length = max(0, end - start + 1)
     path = {
@@ -229,8 +250,15 @@ def _simulate_daily(
             if not market["market_trend"][i]:
                 activity["market_regime_off_sessions"] += 1
                 continue
+        if signal_known is not None and not signal_known[i]:
+            missing.append(f"{market['benchmark_symbol']}:{market['sessions'][i]}:signal_input")
+            for values in path.values():
+                values[offset:] = np.nan
+            break
         family = strategy.removesuffix("_market_trend")
-        ranked = market["ranking"][family][i, : market["counts"][family][i]]
+        ranking = market["ranking"][family] if signal_ranking is None else signal_ranking
+        counts = market["counts"][family] if signal_counts is None else signal_counts
+        ranked = ranking[i, : counts[i]]
         if not len(ranked):
             activity["no_signal_sessions"] += 1
             continue
@@ -243,6 +271,11 @@ def _simulate_daily(
         affordable = (planned > 0) & (prices * (1 + half_cost) <= available)
         for j, planned_quantity in zip(ranked[affordable], planned[affordable]):
             j = int(j)
+            if correlation_limit is not None:
+                peers = list(held) + [order["symbol_index"] for order in pending]
+                if not _diversified(market["adjusted"], i, j, peers, correlation_limit):
+                    activity["correlation_rejected_candidates"] += 1
+                    continue
             price = market["close"][i, j]
             quantity = math.floor(min(planned_quantity, available / (price * (1 + half_cost))))
             if quantity <= 0:

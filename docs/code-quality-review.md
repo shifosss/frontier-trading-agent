@@ -311,3 +311,14 @@ Synthetic browser checks covered 192 filter combinations across four viewport wi
 
 
 Final completed short-hold run `90af4c840aad48f7ab58fba7a682f96a` passed independent reproduction of all 792 full/compact account/reference rows. All 24 rolling cash/settled/equity ledgers and 1,344 completed trades reconcile to immutable source prices and independently calculated settlement dates; all 8,234 raw hashes and frozen identities match. All 211 incomplete Canadian fixed portfolios retain null profitability aggregates. Actual browser checks passed 96 filter combinations across four widths, matched saved API values and verified a one-byte ranged download. A final frontend-only fix displays the actual running mode and stage while suppressing stale cumulative budget/date fields; the production build and four targeted status-state checks passed after that change. Evidence and limitations are in [the completed short-hold report](short-hold-research-results.md).
+
+
+## September 19: learned-model expansion
+
+Applied the locally retained Ponytail skill at full intensity: reused the existing market preparation, daily cash ledger, settlement and reporting; added focused feature/model/study modules instead of a second execution framework. Extracted forecast scoring, latest-candidate formatting and per-account fold evaluation to keep the study loop readable.
+
+Implemented four fitted predictors (Ridge, ExtraTrees, HistGradientBoosting and shared-hidden six-output MLP), two forecast ensembles and a separate correlation-constrained variant. Model preprocessing is fitted only on earlier rows. Purged chronological calibration sets ensemble weights. Independent review corrected a small forecast fee-basis mismatch before economic evaluation and bounded detailed trade records to the declared 42-account subset.
+
+Validation: full repository lint, 347 tests and TypeScript/Vite build passed. The 49 focused feature/model/engine checks passed. An independent comparison established exact previous-version equality for 360 ledger cases and 35,011 trades, default market preparation and complete retained study fixtures. A saved-data operational smoke verified 360 accounts, 12 references, 1,777 detailed trades and 3,554 fee legs; all accounting checks passed. Its six MLP convergence warnings remain recorded. No model was silently removed or tuned from the sample's performance.
+
+Evidence under `.qualification/multi-model-review/`, `.qualification/multi-model-smoke/` and `.qualification/historical-ui/`. Browser checks cover legacy and multi-model filters, missing/incomplete/zero-trade states, calibration weights, forecasts and source-reuse controls. The historical worker additionally freezes dependency versions and manifest hashes. The frozen paper policy and journal are unchanged. Full-capture economic findings are reported separately.

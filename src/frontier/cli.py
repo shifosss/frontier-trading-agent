@@ -409,10 +409,10 @@ def historical_research(
     start: str = "2000-01-01",
     rediscover: bool = False,
     capture_only: bool = False,
-    study_mode: str = "short_horizon",
+    study_mode: str = "multi_model",
     source_run_id: str | None = None,
 ):
-    """Capture long histories and test continuous cash portfolios and rolling selection."""
+    """Run learned models, daily rules or legacy cash portfolios on historical data."""
     from frontier.historical_lab import run_historical_lab
 
     result = run_historical_lab(

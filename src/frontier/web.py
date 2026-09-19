@@ -70,7 +70,7 @@ class BroadResearchRequest(BaseModel):
 class HistoricalRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     rediscover: bool = False
-    study_mode: Literal["short_horizon", "legacy"] = "short_horizon"
+    study_mode: Literal["multi_model", "short_horizon", "legacy"] = "multi_model"
     source_run_id: str | None = Field(default=None, pattern=r"^[0-9a-f]{32}$")
 
 

@@ -58,6 +58,43 @@ type Portfolio = {
     test_return: number | null;
   }[];
 };
+type ModelDiagnostic = {
+  currency: string;
+  training_start: string;
+  training_end: string;
+  calibration_start: string;
+  calibration_end: string;
+  test_start: string;
+  test_end: string;
+  fit_rows: number;
+  calibration_rows: number;
+  prediction_rows: number;
+  excluded_label_rows: number;
+  calibration?: {
+    baseline_mse?: number[];
+    model_mse?: Record<string, number[]>;
+    horizons?: Record<
+      string,
+      {
+        weights: Record<string, number>;
+        equal_weight_fallback: boolean;
+      }
+    >;
+  };
+  warnings?: string[];
+};
+type ForecastCandidate = {
+  currency: string;
+  strategy: string;
+  horizon: number;
+  symbol: string;
+  session: string;
+  predicted_return: number;
+  predicted_downside: number;
+  score_40bps: number;
+  rank: number;
+  price: number;
+};
 type Result = {
   run_id: string;
   created_at: string;
@@ -77,6 +114,8 @@ type Result = {
   methodology: {
     version?: string;
     horizons?: number[];
+    budgets?: number[];
+    cost_bps?: number[];
     screening_frequency?: string;
     execution?: string;
     limitations: string[];
@@ -85,6 +124,8 @@ type Result = {
   portfolios: Portfolio[];
   benchmarks: (Portfolio & { symbol: string })[];
   walk_forward: Portfolio[];
+  model_diagnostics?: ModelDiagnostic[];
+  latest_candidates?: ForecastCandidate[];
 };
 type Status = {
   status: string;
@@ -95,6 +136,9 @@ type Status = {
   budget?: number;
   test_start?: string;
   symbols?: number;
+  fold?: number;
+  total_folds?: number;
+  model?: string;
   message?: string;
   currency?: string;
   requested?: number;
@@ -113,6 +157,73 @@ const amount = (value: number | null | undefined, decimals = 2) =>
   value == null ? "Unavailable" : number(value, decimals);
 const completedValue = (row: Portfolio, value: number | null | undefined) =>
   row.status === "complete" ? value : null;
+const portfolioKey = (row: Portfolio) => `${row.strategy}:${row.horizon}`;
+
+function ModelDiagnostics({ rows }: { rows: ModelDiagnostic[] }) {
+  return (
+    <details>
+      <summary>
+        Model refits and calibration · {number(rows.length, 0)} test windows
+      </summary>
+      <p>
+        Fitting, calibration and testing use separate chronological intervals.
+        Error diagnostics measure forecasts; they do not establish trading
+        profit. Equal-weight fallbacks are shown explicitly.
+      </p>
+      <Table
+        columns={[
+          ["fit", "Fit interval"],
+          ["calibration", "Calibration interval"],
+          ["test", "Test interval"],
+          ["fit_rows", "Fit rows"],
+          ["calibration_rows", "Calibration rows"],
+          ["predictions", "Prediction rows"],
+          ["excluded", "Excluded labels"],
+          ["weights", "Calibration weights by hold"],
+          ["baseline", "Baseline MSE (return / downside)"],
+          ["model_error", "Model MSE (return / downside)"],
+          ["warnings", "Warnings"],
+        ]}
+        rows={rows.map((row) => ({
+          fit: `${row.training_start} – ${row.training_end}`,
+          calibration: `${row.calibration_start} – ${row.calibration_end}`,
+          test: `${row.test_start} – ${row.test_end}`,
+          fit_rows: number(row.fit_rows, 0),
+          calibration_rows: number(row.calibration_rows, 0),
+          predictions: number(row.prediction_rows, 0),
+          excluded: number(row.excluded_label_rows, 0),
+          weights:
+            Object.entries(row.calibration?.horizons ?? {})
+              .map(
+                ([hold, value]) =>
+                  `${hold} sessions: ${Object.entries(value.weights)
+                    .map(
+                      ([model, weight]) => `${readable(model)} ${rate(weight)}`,
+                    )
+                    .join(
+                      ", ",
+                    )}${value.equal_weight_fallback ? " (equal-weight fallback)" : ""}`,
+              )
+              .join("; ") || "Unavailable",
+          baseline: [1, 3, 5]
+            .map(
+              (hold, index) =>
+                `${hold} sessions: ${amount(row.calibration?.baseline_mse?.[index], 8)} / ${amount(row.calibration?.baseline_mse?.[index + 3], 8)}`,
+            )
+            .join("; "),
+          model_error:
+            Object.entries(row.calibration?.model_mse ?? {})
+              .map(
+                ([model, values]) =>
+                  `${readable(model)}: ${[1, 3, 5].map((hold, index) => `${hold}s ${amount(values[index], 8)} / ${amount(values[index + 3], 8)}`).join(", ")}`,
+              )
+              .join("; ") || "Unavailable",
+          warnings: row.warnings?.join("; ") || "None reported",
+        }))}
+      />
+    </details>
+  );
+}
 
 function TradingMetrics({ row }: { row: Portfolio }) {
   const metrics = row.trade_metrics;
@@ -211,7 +322,8 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
   const [budget, setBudget] = useState(500);
   const [cost, setCost] = useState(40);
   const [busy, setBusy] = useState(false);
-  const [studyMode, setStudyMode] = useState("short_horizon");
+  const [studyMode, setStudyMode] = useState("multi_model");
+  const [modelPortfolio, setModelPortfolio] = useState("");
   const [reuseCapture, setReuseCapture] = useState(true);
   const loaded = useRef("");
   const active = state.status === "running" || state.status === "starting";
@@ -253,30 +365,50 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
       setBusy(false);
     }
   }
+  const multiModel = result?.study_mode === "multi_model";
   const shortHold =
+    multiModel ||
     result?.study_mode === "short_horizon" ||
     result?.methodology.version === "daily-short-hold-v1";
+  const budgets = result?.methodology.budgets ?? [500, 2000, 10000, 100000];
+  const costs = result?.methodology.cost_bps ?? [20, 40, 100];
+  const selectedBudget = budgets.includes(budget) ? budget : budgets[0];
+  const selectedCost = costs.includes(cost) ? cost : costs[0];
   const matches = (row: Portfolio) =>
-    row.currency === currency && row.budget === budget && row.cost_bps === cost;
+    row.currency === currency &&
+    row.budget === selectedBudget &&
+    row.cost_bps === selectedCost;
+  const portfolios = result?.portfolios.filter(matches) ?? [];
   const rows = [
-    ...(result?.portfolios.filter(matches) ?? []),
+    ...portfolios,
     ...(result?.benchmarks
       .filter(matches)
       .map((r) => ({ ...r, strategy: `${r.symbol} buy and hold` })) ?? []),
   ];
-  const walk = result?.walk_forward.find(matches);
+  const walk = multiModel
+    ? (portfolios.find((row) => portfolioKey(row) === modelPortfolio) ??
+      portfolios[0])
+    : result?.walk_forward.find(matches);
+  const benchmark =
+    walk?.benchmark ??
+    (multiModel
+      ? result?.benchmarks.find(
+          (row) =>
+            matches(row) &&
+            row.symbol !== "CASH" &&
+            row.first_session === walk?.first_session &&
+            row.last_session === walk?.last_session,
+        )
+      : undefined);
   const compareBenchmark =
     walk?.status === "complete" &&
-    walk.benchmark?.status === "complete" &&
-    walk.first_session === walk.benchmark.first_session &&
-    walk.last_session === walk.benchmark.last_session;
+    benchmark?.status === "complete" &&
+    walk.first_session === benchmark.first_session &&
+    walk.last_session === benchmark.last_session;
   const chartSeries = walk
     ? [
         {
-          name:
-            walk.status === "complete"
-              ? "Rolling selection"
-              : "Rolling selection (partial history)",
+          name: `${multiModel ? readable(walk.strategy) : "Rolling selection"}${walk.status === "complete" ? "" : " (partial history)"}`,
           color: "#78d7bb",
           points: (walk.monthly_equity_curve ?? [])
             .filter((point) => point.equity != null)
@@ -287,7 +419,7 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               {
                 name: "Buy and hold benchmark",
                 color: "#caa574",
-                points: (walk.benchmark?.monthly_equity_curve ?? [])
+                points: (benchmark?.monthly_equity_curve ?? [])
                   .filter((point) => point.equity != null)
                   .map((point) => ({
                     timestamp: point.session,
@@ -316,6 +448,9 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               disabled={active || busy}
               onChange={(event) => setStudyMode(event.target.value)}
             >
+              <option value="multi_model">
+                Rolling models · 1 / 3 / 5 sessions
+              </option>
               <option value="short_horizon">
                 Daily screening · 1 / 3 / 5 sessions
               </option>
@@ -332,9 +467,11 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
           >
             {active || busy
               ? "Historical study running"
-              : studyMode === "short_horizon"
-                ? "Run short-hold study"
-                : "Run baseline study"}
+              : studyMode === "multi_model"
+                ? "Run model study"
+                : studyMode === "short_horizon"
+                  ? "Run short-hold study"
+                  : "Run baseline study"}
           </button>
         </div>
       </div>
@@ -350,9 +487,9 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
         </label>
       )}
       <p>
-        The short-hold study screens stocks after each daily session and tests
-        positions held for 1, 3, or 5 trading sessions. It uses daily bars; it
-        does not simulate intraday or hourly execution.
+        The model study compares rolling forecasts with daily trading rules,
+        using 1, 3, or 5-session positions. All current modes use daily bars;
+        they do not simulate intraday or hourly execution.
       </p>
       <div role="status" aria-live="polite" className="operator-state">
         <span className="badge synthetic">Historical research</span>
@@ -364,9 +501,11 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
         </h3>
         {active && state.study_mode && (
           <p>
-            {state.study_mode === "short_horizon"
-              ? "Running daily screening with 1 / 3 / 5-session holds."
-              : "Running the 5 / 10 / 20-session baseline."}
+            {state.study_mode === "multi_model"
+              ? "Running rolling model forecasts with separate fitting, calibration and test windows."
+              : state.study_mode === "short_horizon"
+                ? "Running daily screening with 1 / 3 / 5-session holds."
+                : "Running the 5 / 10 / 20-session baseline."}
           </p>
         )}
         {active && state.run_id && (
@@ -394,15 +533,25 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
         {active && state.phase === "evaluation" && (
           <p>
             {state.currency}
-            {state.stage === "historical_features" && state.symbols != null
+            {(state.stage === "historical_features" ||
+              state.stage === "ensemble_features") &&
+            state.symbols != null
               ? ` · ${number(state.symbols, 0)} instrument features prepared`
               : (state.stage?.endsWith("portfolios") ||
                     state.stage?.endsWith("walk_forward")) &&
                   state.budget != null
                 ? ` · ${number(state.budget, 0)} starting cash`
                 : ""}
-            {state.stage?.endsWith("walk_forward") && state.test_start
-              ? ` · test year starting ${state.test_start}`
+            {(state.stage?.endsWith("walk_forward") ||
+              state.stage === "ensemble_fit") &&
+            state.test_start
+              ? ` · test window starting ${state.test_start}`
+              : ""}
+            {state.stage === "ensemble_fit" && state.fold != null
+              ? ` · fold ${state.fold}${state.total_folds != null ? ` / ${state.total_folds}` : ""}`
+              : ""}
+            {state.stage === "ensemble_portfolios" && state.model
+              ? ` · ${readable(state.model)}`
               : ""}
           </p>
         )}
@@ -416,9 +565,11 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
       {result && (
         <>
           <h3>
-            {shortHold
-              ? "Daily short-hold results"
-              : "Baseline historical results"}
+            {multiModel
+              ? "Rolling model study results"
+              : shortHold
+                ? "Daily short-hold results"
+                : "Baseline historical results"}
           </h3>
           {active && (
             <p className="historical-retained-result">
@@ -432,8 +583,8 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
           <p>
             {number(result.capture.usable, 0)} histories ·{" "}
             {number(result.capture.rows, 0)} daily observations ·{" "}
-            {number(result.methodology.attempts.length, 0)} declared strategy
-            variants.
+            {number(result.methodology.attempts.length, 0)} declared{" "}
+            {multiModel ? "model and rule comparisons" : "strategy variants"}.
             {result.capture.markets.map(
               (m) => ` ${m.currency}: ${m.first_session} to ${m.last_session}.`,
             )}
@@ -452,10 +603,10 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
             <label>
               Historical starting cash{" "}
               <select
-                value={budget}
+                value={selectedBudget}
                 onChange={(e) => setBudget(Number(e.target.value))}
               >
-                {[500, 2000, 10000, 100000].map((v) => (
+                {budgets.map((v) => (
                   <option key={v} value={v}>
                     {number(v, 0)}
                   </option>
@@ -465,10 +616,10 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
             <label>
               Historical round-trip cost{" "}
               <select
-                value={cost}
+                value={selectedCost}
                 onChange={(e) => setCost(Number(e.target.value))}
               >
-                {[20, 40, 100].map((v) => (
+                {costs.map((v) => (
                   <option key={v} value={v}>
                     {v} bps
                   </option>
@@ -489,15 +640,48 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               Positions enter and exit independently as settled cash permits.
             </p>
           )}
-          <h3>Training-only selection, tested on the following year</h3>
-          <p>
-            Each selection uses the previous three years. Test periods keep
-            their selected rule; cash remains an eligible choice. These are
-            retrospective tests designed today, with current listing and data
-            limitations.
-            {shortHold &&
-              " The rule is selected annually; trading decisions are made daily within each test year."}
-          </p>
+          {multiModel ? (
+            <>
+              <h3>Continuous portfolios from rolling forecasts</h3>
+              <p>
+                Each model is fitted and calibrated using prior outcomes, then
+                evaluated on the following test window. These accounts continue
+                across successive windows with daily decisions and short holds.
+                The comparison rules remain visible alongside learned models.
+                This is retrospective research on previously examined data.
+              </p>
+              <label>
+                Model or comparison portfolio
+                <select
+                  value={walk ? portfolioKey(walk) : ""}
+                  onChange={(event) => setModelPortfolio(event.target.value)}
+                >
+                  {portfolios.map((row) => (
+                    <option key={portfolioKey(row)} value={portfolioKey(row)}>
+                      {readable(row.strategy)} · {row.horizon} sessions
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <ModelDiagnostics
+                rows={(result.model_diagnostics ?? []).filter(
+                  (row) => row.currency === currency,
+                )}
+              />
+            </>
+          ) : (
+            <>
+              <h3>Training-only selection, tested on the following year</h3>
+              <p>
+                Each selection uses the previous three years. Test periods keep
+                their selected rule; cash remains an eligible choice. These are
+                retrospective tests designed today, with current listing and
+                data limitations.
+                {shortHold &&
+                  " The rule is selected annually; trading decisions are made daily within each test year."}
+              </p>
+            </>
+          )}
           {walk ? (
             <>
               {walk.status !== "complete" && (
@@ -548,39 +732,87 @@ export default function HistoricalResearchPanel({ request, error }: Props) {
               </p>
               {compareBenchmark && (
                 <p>
-                  Same-period benchmark return:{" "}
-                  {rate(walk.benchmark?.total_return)} · drawdown:{" "}
-                  {rate(walk.benchmark?.max_drawdown)}.
+                  Same-period benchmark return: {rate(benchmark?.total_return)}{" "}
+                  · drawdown: {rate(benchmark?.max_drawdown)}.
                 </p>
               )}
               {walk.status === "complete" && (walk.max_drawdown ?? 0) > 0.3 && (
                 <p>This test exceeds your 30% maximum loss tolerance.</p>
               )}
               <TradingMetrics row={walk} />
-              <Table
-                columns={[
-                  ["training", "Training interval"],
-                  ["test", "Test interval"],
-                  ["rule", "Chosen rule"],
-                  ["hold", "Hold"],
-                  ["result", "Test return"],
-                ]}
-                rows={(walk.folds ?? []).map((f) => ({
-                  training: `${f.training_start} – ${f.training_end}`,
-                  test: `${f.test_start} – ${f.test_end}`,
-                  rule: readable(f.selected_strategy),
-                  hold:
-                    f.selected_strategy === "cash"
-                      ? "Cash"
-                      : `${f.selected_horizon} sessions`,
-                  result: rate(f.test_return),
-                }))}
-              />
+              {!multiModel && (
+                <Table
+                  columns={[
+                    ["training", "Training interval"],
+                    ["test", "Test interval"],
+                    ["rule", "Chosen rule"],
+                    ["hold", "Hold"],
+                    ["result", "Test return"],
+                  ]}
+                  rows={(walk.folds ?? []).map((f) => ({
+                    training: `${f.training_start} – ${f.training_end}`,
+                    test: `${f.test_start} – ${f.test_end}`,
+                    rule: readable(f.selected_strategy),
+                    hold:
+                      f.selected_strategy === "cash"
+                        ? "Cash"
+                        : `${f.selected_horizon} sessions`,
+                    result: rate(f.test_return),
+                  }))}
+                />
+              )}
             </>
           ) : (
-            <p>No rolling test is available for this selection.</p>
+            <p>
+              {multiModel
+                ? "No model portfolio is available for this selection."
+                : "No rolling test is available for this selection."}
+            </p>
           )}
-          <h3>All fixed strategies and benchmarks</h3>
+          {multiModel && (
+            <details>
+              <summary>
+                Latest research forecasts for this model and hold
+              </summary>
+              <p>
+                Saved forecasts from the study cutoff, not current quotes or
+                qualified buy recommendations. The score uses the declared
+                40-bps scenario regardless of the cost filter above.
+              </p>
+              <Table
+                columns={[
+                  ["rank", "Rank"],
+                  ["symbol", "Symbol"],
+                  ["session", "As of session"],
+                  ["price", `Price (${currency})`],
+                  ["return", "Predicted return"],
+                  ["downside", "Predicted downside"],
+                  ["score", "Score at 40 bps"],
+                ]}
+                rows={(result.latest_candidates ?? [])
+                  .filter(
+                    (row) =>
+                      row.currency === currency &&
+                      row.strategy === walk?.strategy &&
+                      row.horizon === walk?.horizon,
+                  )
+                  .map((row) => ({
+                    rank: number(row.rank, 0),
+                    symbol: row.symbol,
+                    session: row.session,
+                    price: amount(row.price),
+                    return: rate(row.predicted_return),
+                    downside: rate(row.predicted_downside),
+                    score: rate(row.score_40bps),
+                  }))}
+              />
+            </details>
+          )}
+          <h3>
+            {multiModel
+              ? "All rolling model portfolios, rules and benchmarks"
+              : "All fixed strategies and benchmarks"}
+          </h3>
           <p>
             Whole-period results are exploratory comparisons. Starting cash
             stays in the account between trades; unused cash earns zero. Returns
