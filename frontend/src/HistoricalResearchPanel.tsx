@@ -81,7 +81,7 @@ type ModelDiagnostic = {
       }
     >;
   };
-  warnings?: string[];
+  warnings?: (string | { model: string; category: string; message: string })[];
 };
 type ForecastCandidate = {
   currency: string;
@@ -218,7 +218,14 @@ function ModelDiagnostics({ rows }: { rows: ModelDiagnostic[] }) {
                   `${readable(model)}: ${[1, 3, 5].map((hold, index) => `${hold}s ${amount(values[index], 8)} / ${amount(values[index + 3], 8)}`).join(", ")}`,
               )
               .join("; ") || "Unavailable",
-          warnings: row.warnings?.join("; ") || "None reported",
+          warnings:
+            row.warnings
+              ?.map((warning) =>
+                typeof warning === "string"
+                  ? warning
+                  : `${readable(warning.model)} (${warning.category}): ${warning.message}`,
+              )
+              .join("; ") || "None reported",
         }))}
       />
     </details>

@@ -35,3 +35,8 @@ Keep all model convergence warnings, exclusions, failed accounts, fold definitio
 Test feature/label timing, future-price mutation invariance, missing label independence, train-only preprocessing, deterministic calibration weights, six-head shapes, fold purging, settled-cash accounting, correlation decisions and unchanged v1 outputs. Run a saved-data smoke before the full frozen capture, perform independent code and accounting review, then publish all results in the existing Strategy lab. No automatic winner promotion. A failed simple baseline does not block testing a richer model; complexity earns inclusion through measured comparisons.
 
 Primary implementation references: https://scikit-learn.org/1.7/modules/generated/sklearn.neural_network.MLPRegressor.html ; https://scikit-learn.org/1.7/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html ; https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.Ridge.html
+
+
+## Dated outcome record
+
+September 19, 2026: the implementation and saved-data qualification completed, followed by full run `814780d48b4141b9a82a3fb917d1b85a` on the predeclared frozen capture. The declaration above is retained as written before economic results. See [all findings](../../multi-model-research-results.md): 569 complete and 151 incomplete accounts, independent accounting verification, model warnings and a subsequently identified issuer/action continuity concern. No historical winner was promoted to the paper policy. Subsequent source or model corrections require their own declared comparisons.
