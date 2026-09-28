@@ -56,3 +56,12 @@ Activation evidence is saved locally in `artifacts/paper-operator/activation.jso
 
 
 September 18 launcher qualification found that the old Windows launch retained the command parent until its child finished. Both launchers now use independent standard streams and restricted inherited handles. A disposable child survived parent exit, repeated starts reused the existing worker, and the actual paper worker recorded a later scheduled cycle. Logs append; earlier logs were backed up. Broad strategy research is separately scheduled and visible in [Strategy lab](broad-research.md).
+
+
+## September 28 operating observation
+
+The initialized worker was found stopped after its September 26 observation and was resumed using the existing launcher. At 14:37 Toronto it submitted the three saved September 25 paper intents using their original durable IDs. The broker subsequently confirmed MSFT 15 at USD511.03, META 6 at USD721.74 and XOM 42 at an average USD162.142619. These are simulated fills in the existing USD100,000 account, not a deployment of the learned USD2,000 candidate.
+
+An XOM partial fill was observed while sequential broker snapshots were changing, causing a holdings mismatch and a visible recovery status. A read-only check reconciled all three filled orders to broker holdings and USD81,194.12 cash (USD0.000002 difference from the broker's rounded average fill prices). The next scheduled five-minute cycle at 14:42 reconciled successfully and returned `ready`, with the same three IDs and no resubmission. The frozen operator code identity remained `9fd509d8ce514b9fe3e3136684c7475637a12304670cc517b285e48aebbc26a2`.
+
+Evidence: `.qualification/stateful-daily-agent/paper-reconciliation-20260928.json` and `paper-recovered-20260928.json`, plus the original journal acknowledgements and runner logs. This qualifies one observed partial-to-full/reconciliation recovery path, not every disconnect, rejection or corporate-action case. The host must still be awake; automatic OS startup and an always-available deployment are not established by this observation.

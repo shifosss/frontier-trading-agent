@@ -46,6 +46,7 @@ def plan_entries(
     cost_bps=40,
     correlation_allowed=None,
     audit=True,
+    cost_model=None,
 ):
     """Reserve settled-by-fill cash in rank order, with independent positions.
 
@@ -97,21 +98,32 @@ def plan_entries(
                 reason = "invalid_quote"
             else:
                 unit_cost = price * (1 + half_cost)
-                planned = math.floor(
-                    min(
-                        POLICY["position_budget_fraction"] * nav / unit_cost,
-                        POLICY["atr_risk_budget_fraction"] * nav / (POLICY["atr_multiple"] * atr),
-                    )
+                risk_quantity = math.floor(
+                    POLICY["atr_risk_budget_fraction"] * nav / (POLICY["atr_multiple"] * atr)
                 )
+                if cost_model is None:
+                    planned = math.floor(
+                        min(POLICY["position_budget_fraction"] * nav / unit_cost, risk_quantity)
+                    )
+                    quantity = math.floor(min(planned, available / unit_cost))
+                else:
+                    planned = cost_model.maximum_quantity(
+                        risk_quantity, price, POLICY["position_budget_fraction"] * nav
+                    )
+                    quantity = cost_model.maximum_quantity(planned, price, available)
                 if planned <= 0:
                     reason = "position_budget_or_atr"
-                elif unit_cost > available:
+                elif quantity <= 0:
                     reason = "insufficient_cash"
                 elif correlation_allowed is not None and not correlation_allowed(j, peers):
                     reason = "correlation"
                 else:
-                    quantity = math.floor(min(planned, available / unit_cost))
-                    reservation = quantity * price * (1 + half_cost)
+                    notional = quantity * price
+                    reservation = (
+                        notional * (1 + half_cost)
+                        if cost_model is None
+                        else notional + cost_model.fee(quantity, notional, "buy")
+                    )
                     orders.append(
                         {
                             "symbol_index": j,

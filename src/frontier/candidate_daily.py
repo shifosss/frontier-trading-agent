@@ -40,7 +40,7 @@ def _digest(value):
     ).hexdigest()
 
 
-def load_saved_history(workspace, capture_run_id, signal_session=None):
+def load_saved_history(workspace, capture_run_id, signal_session=None, *, window_start=None):
     """Verify original source bytes and retain only the needed USD history window."""
     definition, records, failures, evidence = _reuse_source_run(workspace, capture_run_id)
     reuse = definition.get("source_reuse")
@@ -65,7 +65,9 @@ def load_saved_history(workspace, capture_run_id, signal_session=None):
     index = dates.index(signal)
     if index < 1008:
         raise ValueError("Signal requires 252 warmup, 504 fit and 252 calibration sessions")
-    first = dates[index - 1008]
+    first = dates[index - 1008] if window_start is None else str(window_start)
+    if first not in dates or first > dates[index - 1008]:
+        raise ValueError("Explicit history start must preserve the complete model warmup")
     universe = [s for s in definition["instruments"] if s["currency"] == "USD"]
     selected = [r for r in records if r["spec"]["currency"] == "USD"]
     frames, source_hashes, normalization = [], [], []
@@ -203,6 +205,7 @@ def _build_candidate(
                 "ensemble_study.py",
                 "model_artifact.py",
                 "historical_lab.py",
+                "short_horizon_study.py",
                 "daily_policy.py",
                 "ensemble_features.py",
                 "ensemble_models.py",

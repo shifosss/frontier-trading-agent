@@ -434,6 +434,48 @@ def historical_research_status(ctx: typer.Context):
     output(historical_status(ctx.obj))
 
 
+@app.command("candidate-replay")
+def candidate_replay(
+    ctx: typer.Context,
+    candidate_id: str,
+    end_session: str | None = None,
+    cost_profile: str = "proportional",
+    round_trip_bps: float = 40,
+    chunk_sessions: int = 21,
+    replay_id: str | None = None,
+    max_chunks: int | None = None,
+):
+    """Rehearse or resume a saved model in an isolated historical cash journal."""
+    from frontier.candidate_replay import replay_candidate
+
+    report = replay_candidate(
+        ctx.obj,
+        candidate_id,
+        end_session=end_session,
+        cost_profile=cost_profile,
+        round_trip_bps=round_trip_bps,
+        chunk_sessions=chunk_sessions,
+        replay_id=replay_id,
+        max_chunks=max_chunks,
+    )
+    output(
+        {
+            key: report[key]
+            for key in (
+                "replay_id",
+                "artifact_path",
+                "status",
+                "qualification",
+                "chunk_count",
+                "next_session_index",
+                "fees",
+                "trades",
+                "limitations",
+            )
+        }
+    )
+
+
 @app.command("candidate-build")
 def candidate_build(
     ctx: typer.Context,

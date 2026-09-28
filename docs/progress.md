@@ -1,5 +1,23 @@
 # Execution ledger — Frontier Research
 
+## Current checkpoint — September 28, 2026
+
+The goal and weekday 09:35/17:35 Toronto research follow-ups are active after the owner's explicit resume. Existing paper operations remain separate. No live execution or new spending is authorized.
+
+| Area | Delivered evidence | Next requirement |
+| --- | --- | --- |
+| Broad daily research | Four learned model families, ensembles and rule controls; 569 completed accounts and 151 retained invalid paths. | Correct source/action interpretation, useful predeclared economic improvements and robust net performance. |
+| Persistent saved-model account | Both nonempty rehearsals completed; independent cash/source-price audit and exact resumed/one-pass comparison. API/CLI cost-identity mismatch fixed in specification version 2. | Quantity-aware selection after source qualification; real broker position and partial-fill integration. |
+| Economic findings | USD2,000 proportional account -6.31%; Moomoo scenario -55.44%; both lost before fees. | No promotion; retain all variants, failures and data limitations. |
+| Data | Full capture frozen at September 18; separate recent refresh through September 25; 7,143-action inventory and 91-event sample. | Independent action type, entity, share-unit, cash and fee validation; no guessed corrections. |
+| Existing paper baseline | Actual worker verified; September 28 saved observations show filled MSFT15/META6/XOM42, ready status and no open orders. | Further execution/recovery evidence and separately versioned daily policy migration; frozen weekly baseline stays unchanged. |
+
+Details: [account results](candidate-replay-results.md), [source validation plan](action-source-validation-plan.md), [recent data](weekly-data-refresh.md), [paper operations](paper-operator.md) and [quality review](code-quality-review.md). The original qualified source is archived with matching model/journal hashes; old results and unmodified journals remain reproducible with their recorded implementation.
+
+## Archived September 18 milestone
+
+The remainder records the earlier workstation milestone, including the access and scheduling state observed then. Use the checkpoint above and linked reports for current status.
+
 Updated September 18, 2026. The user delegated implementation, testing, and
 validation. Routine work continues under that authorization; milestone progress
 does not require another approval. New spending or broker authority remains a

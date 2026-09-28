@@ -97,7 +97,7 @@
     "intraday_session_policy": "Dedicated intraday candidates exit by the official session close; actual elapsed duration is reported.",
     "historical_test_span": "Use multiple years of repeated short trades, with trade-level and weekly/monthly evaluation; do not interpret the test span as a holding period.",
     "default_holding_interpretation": "New individual-stock experiments target intraday to at most five trading sessions. This is the working interpretation of the hourly/daily/at-most-weekly instruction.",
-    "implementation_status": "Daily independent 1/3/5-session and multi-model historical studies complete. Saved-model/shared daily decision bridge qualified on the frozen US universe (2878 eligible forecasts; default USD2000 policy remained cash). No strategy economically promoted. Hourly stock workflow and active daily paper-policy migration remain open.",
+    "implementation_status": "Daily 1/3/5-session and multi-model historical studies complete. Saved-model daily decision bridge plus durable historical account rehearsal and cost profiles implemented. Both declared USD2000 replay accounts lost money; no economic promotion. AIXI source-unit mismatch confirmed and requires separately versioned data correction. Hourly stock workflow and daily broker partial-fill/paper-policy migration remain open.",
     "design_document": "docs/trading-cadence.md"
   },
   "research_capital_usd": {

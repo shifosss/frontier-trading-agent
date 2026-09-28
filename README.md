@@ -1,16 +1,10 @@
 # Frontier Trading
 
-The product target is automated daily/weekly trading. A persistent **paper operator** now joins the scanner and research engine: weekly entries, daily exits, settled-cash checks, CAD drawdown control, durable orders and restart recovery. The existing US$100,000 Alpaca paper account was initialized and its five-minute worker started on September 18, 2026; the first reconciliation passed with no holdings or orders. Check the Trading desk for current saved state. This larger-account trial does not validate US$500 affordability, and live execution is not implemented. Start with the [paper operator setup](docs/paper-operator.md) and [updated delivery plan](docs/automated-trading-plan.md).
+The target is automated hourly/daily decisions with intraday to roughly one-week individual-stock positions. The local system now combines broad historical research, saved learned models and persistent simulated accounts with a separate operating Alpaca paper baseline. Start with the [delivery plan](docs/automated-trading-plan.md), [latest account rehearsal](docs/candidate-replay-results.md) and [paper operator](docs/paper-operator.md).
 
-A local research workstation for US and Canadian stocks and ETFs. It imports
-traceable data, runs real Nautilus simulations, compares fixed baselines and bounded
-model proposals, and preserves the decisions and accounting behind each result.
+**Current status — September 28, 2026:** daily models can screen the frozen broad universe and carry holdings, orders and settled cash across restartable historical sessions. Both declared USD2,000 rehearsals lost money, including before fees. Corporate-action source inconsistencies are under independent investigation; no model is economically qualified for promotion. The existing eleven-stock paper baseline has submitted and reconciled simulated fills, but still uses weekly entries and up to 20-session holds. Hourly research, daily paper migration, options and live execution remain unfinished.
 
-**Current status — September 18, 2026:** the workstation and research workflow run
-locally, including a 41-instrument market scanner and tested cash-dividend accounting.
-Historical studies remain exploratory. Stock splits, complete point-in-time data,
-options, and broker execution are not qualified; no profitable trading edge or
-state-of-the-art performance is claimed.
+The React/FastAPI workstation preserves data, decisions, accounting, failures and reports. Local historical simulations, saved model forecasts and actual paper observations are distinct evidence sources; none demonstrates future profitability.
 
 ## Open the workstation
 
@@ -38,7 +32,10 @@ from `uv sync --frozen` to exist.
 ## What works
 
 - **Active-trading target:** hourly/daily decisions and intraday to roughly one-week stock positions. The [cadence specification](docs/trading-cadence.md) separates holding time from multi-year testing. The new historical lane screens daily with independent 1/3/5-session positions; hourly stock qualification and paper-policy migration remain open.
-- **Historical-first Strategy lab:** 8,434 current US/Canadian candidates, daily data requested from 2000, 30 declared strategy/horizon hypotheses, independent short-hold cash portfolios, dated settlement, daily drawdowns, trade/weekly/monthly metrics and training-only rolling selection. The older 5/10/20-session engine remains available as legacy mode. Four account sizes and three costs remain visible, alongside the original cohort and prospective observations. See [historical research](docs/historical-research.md), the [daily short-hold results](docs/short-hold-research-results.md), and the [completed 28.6-million-bar study](docs/historical-research-results.md), including negative US results, Canadian data gaps and an audited issuer-data repair study. The lab runs separately from the 41-name starter scanner and frozen paper account. See [broad research](docs/broad-research.md) for coverage, scheduling and interpretation.
+- **Historical-first Strategy lab:** the frozen 8,434-member US/Canadian capture contains 8,234 usable histories and 28.6 million daily bars. The multi-model lane compares Ridge, ExtraTrees, boosted trees, a six-output MLP and ensembles with technical-rule controls across 1/3/5-session holds, two budgets and three cost scenarios. Of 720 accounts, 569 completed and 151 retained missing-data failures; no strategy is promoted. See [multi-model findings](docs/multi-model-research-results.md) and [historical research](docs/historical-research.md). The earlier rule and 5/10/20-session studies remain explicit baselines.
+- **Saved-model account rehearsal:** immutable fitted models, purged sample boundaries, every-session forecasts, independent positions, scheduled exits, cost-aware sizing and dated cash settlement. SQLite chunks preserve state across process restarts; the API and CLI can resume the same new journal. See [commands and compatibility](docs/candidate-replay.md) and [independently audited results](docs/candidate-replay-results.md). Historical fills are atomic simulations; broker partial-fill integration remains separate.
+- **Source qualification:** a separate September 25 [bounded refresh](docs/weekly-data-refresh.md) captured 8,387 histories and retained 50 failures without replacing the full historical capture. An [action inventory](docs/action-source-validation-plan.md) covers 7,143 reported events with a predeclared 91-event independent sample. The [AIXI audit](docs/aixi-source-continuity.md) confirms a source-unit error; revisions and original results are preserved.
+
 
 - **Stock scanner:** one click captures free five-year daily histories for 41 declared
   US/Canadian stocks and ETFs. A fixed momentum/volatility rule ranks stocks;
@@ -117,8 +114,8 @@ an expired token. The user must authenticate that CLI manually before unattended
 Longbridge fetching can work. The application never logs in automatically.
 
 Canadian hourly coverage, complete corporate actions, longer point-in-time history,
-nested walk-forward evaluation, advanced model comparisons, accumulated prospective
-outcomes, and qualification of the full broker-paper order lifecycle remain open. Synthetic opening quotes
+nested walk-forward qualification, demonstrated model profitability, accumulated prospective
+outcomes, and qualification of the full daily broker-paper order lifecycle remain open. Synthetic opening quotes
 model fixed slippage without observed bid/ask or market impact. Historical intervals
 used by research are exposed, and frozen observation is not a live trading system.
 

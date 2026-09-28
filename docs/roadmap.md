@@ -1,27 +1,20 @@
 # Delivery Roadmap
 
-> September 18 delivery correction: the destination is an automated daily/weekly trading operator. The portfolio operating loop now takes priority over further research-dashboard expansion. See [the updated delivery plan](automated-trading-plan.md) for implemented paper operation, broker findings, reasoning and remaining live-deployment gates.
+> September 28: the destination is an automated hourly/daily individual-stock agent. Historical economic development and source qualification take priority before promoting a new forward policy. The eleven-stock weekly-entry paper baseline continues separately. See the [delivery plan](automated-trading-plan.md) and [current checkpoint](progress.md).
 
-Date: 2026-09-18
-
-Status: partially implemented as of September 18, 2026. A runnable local research
-workstation now exists under `src/frontier`. The acceptance contracts below remain
-the broader delivery target; they are not all satisfied by the current build.
-The system design is [here](superpowers/specs/2026-09-18-frontier-trading-system-design.md).
-Current commands are in the [README](../README.md), with consolidated verification
-in [validation](validation.md).
+Status: partially implemented. The original [system design](superpowers/specs/2026-09-18-frontier-trading-system-design.md) remains the broader acceptance contract; implemented research and paper subsets do not close every milestone.
 
 ## Current milestone assessment
 
-| Milestone | September 18 status | Why the full milestone remains open |
+| Milestone | September 28 evidence | Why the full milestone remains open |
 | --- | --- | --- |
-| M1 — research kernel | Runnable bounded implementation: actual Nautilus accounting, immutable data/runs, strict timing, reports and exact replay. | Full equity corporate-action semantics are not qualified. Cash dividends with payment dates now pass lifecycle tests; splits remain rejected; LEAN was not executed. |
-| M2 — real data/baselines | US/Canada daily samples plus a 41-instrument five-year scanner capture, 434 US SPY hourly bars, dated BoC FX, fixed baseline/cost tournaments and access ledger. | Canadian hourly data, complete actions, longer point-in-time history and continuous nested walk-forward evaluation remain absent. |
-| M3 — research factory | Two actual two-call Codex campaigns using existing ChatGPT access, typed templates, real feedback and persisted attempts. | Broad autonomous research, isolated outer holdouts, resumable scheduling and measured multi-agent advantage are not established. |
-| M4 — tournament/dashboard | Local React/FastAPI workstation and comparison/inspection workflows are implemented. | Advanced statistical/ML families, Qlib/RD-Agent comparisons and adaptive scheduling remain future work. |
-| M5a — frozen observation | Freeze and as-of observation commands exist for compatible appended datasets. | No accumulated prospective outcomes or continuously refreshed, recovered observation service is claimed. |
-| M5b — broker paper | Not qualified or enabled. | No broker orders, account reconciliation or execution/recovery evidence. |
-| M6 — live expansion | Future scope. | Requires validated evidence and an explicit live-capital mandate. |
+| M1 — research kernel | Nautilus accounting and a separate daily short-hold cash engine; immutable inputs, strict timing and independent ledger audits. | Complete equity-action accounting remains unqualified; synthetic adjusted-return studies are explicitly distinct from nominal share/cash accounting. |
+| M2 — real data/baselines | 8,234 usable broad histories; retained 1/3/5-session and legacy baselines; separate weekly refresh; existing-access US hourly/minute fixtures. | Current-member survivorship, source-unit inconsistencies, complete actions and production hourly/Canadian coverage. |
+| M3 — research factory | Background captures, chronological learned-model comparisons, saved fitted artifacts, persistent historical accounts and scheduled research follow-ups. | Untouched outer qualification, useful economic adaptation and measured research effectiveness. |
+| M4 — tournament/dashboard | Multi-model account comparisons, forecasts and diagnostics in the workstation; persistent candidate replay through CLI/API. | Net-profitability qualification, model adaptation and Qlib/RD-Agent comparisons. |
+| M5a — frozen observation | Frozen plans and separately retained prospective observations. | Prospective evidence does not replace historical improvement or prove profitability. |
+| M5b — broker paper | Existing fixed Alpaca paper transport, durable order IDs, simulated fills and reconciled account observations. | Daily-model policy migration, genuine partial-fill integration and broader operational qualification. |
+| M6 — live expansion | Future owner-operated deployment scope. | Requires qualified evidence, reconciled capital and explicit operating arrangements. No live trading is performed by this assistant. |
 
 The unchecked lists below preserve the original acceptance scope rather than
 pretending that partial delivery closes every item. Consult the dated assessment,

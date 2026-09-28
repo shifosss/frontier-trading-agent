@@ -99,6 +99,8 @@ def _simulate_daily(
     signal_counts=None,
     signal_known=None,
     correlation_limit=None,
+    cost_model=None,
+    process_through=None,
 ):
     """Signal after close, fill at next close, expire each position independently.
 
@@ -107,19 +109,55 @@ def _simulate_daily(
     """
     if horizon not in HORIZONS or (signal_ranking is None and strategy not in {*FAMILIES, "cash"}):
         raise ValueError("Unknown short-hold strategy or horizon")
-    length = max(0, end - start + 1)
+    streaming = process_through is not None or (state is not None and "next_session_index" in state)
+    stop = end if process_through is None else process_through
+    if streaming and not (
+        0 <= start <= end + 1 <= len(market["sessions"]) and start - 1 <= stop <= end
+    ):
+        raise ValueError("Invalid streaming session interval")
+    scope = None
+    if streaming:
+        scope = hashlib.sha256(
+            json.dumps(
+                {
+                    "strategy": strategy,
+                    "horizon": horizon,
+                    "end": end,
+                    "symbols": market["symbols"],
+                    "sessions": market["sessions"],
+                    "cost": cost_model.specification
+                    if cost_model is not None
+                    else {"bps": cost_bps},
+                    "correlation_limit": correlation_limit,
+                },
+                sort_keys=True,
+            ).encode()
+        ).hexdigest()
+        if state is not None and "next_session_index" in state:
+            if state["next_session_index"] != start or state["scope"] != scope:
+                raise ValueError("Resume cursor, market or policy differs from saved account")
+    length = max(0, stop - start + 1)
     path = {
         key: np.full(length, np.nan) for key in ("equity", "cash", "settled_cash", "unsettled_cash")
     }
     cash = float(state["cash"] if state is not None else budget)
     settled = float(state["settled_cash"] if state is not None else budget)
     receivables = list(state["receivables"]) if state is not None else []
-    held, pending, missing, records = {}, [], [], []
+    if streaming:
+        # JSON restores Python floats; retain numpy scalar summation semantics across chunks.
+        receivables = [(int(due), np.float64(amount)) for due, amount in receivables]
+    held = {}
+    if streaming and state:
+        for position in state.get("held", []):
+            saved = dict(position)
+            held[int(saved.pop("symbol_index"))] = saved
+    pending = [dict(order) for order in state.get("pending", [])] if streaming and state else []
+    missing, records = [], []
     tallies, activity = _statistics(), Counter()
     fees = traded_notional = net_pnl = 0.0
     completed_trades = 0
     half_cost = cost_bps / 20_000
-    for i in range(start, end + 1):
+    for i in range(start, stop + 1):
         remaining = []
         for due, amount in receivables:
             if due <= i:
@@ -141,10 +179,21 @@ def _simulate_daily(
             if position["exit"] != i:
                 continue
             value = marks.pop(j)
-            exit_fee = value * half_cost
+            exit_fee = (
+                value * half_cost
+                if cost_model is None
+                else cost_model.fee(position["quantity"], value, "sell")
+            )
             proceeds = value - exit_fee
+            if proceeds < 0 and settled + proceeds < -1e-7:
+                missing.append(f"{market['symbols'][j]}:{market['sessions'][i]}:unfunded_exit_cost")
+                break
             cash += proceeds
-            receivables.append((int(market["settlement_index"][i]), proceeds))
+            if proceeds < 0:
+                # Pay fee shortfalls from settled cash now, never borrow against future proceeds.
+                settled += proceeds
+            else:
+                receivables.append((int(market["settlement_index"][i]), proceeds))
             profit = proceeds - position["notional"] - position["entry_fee"]
             completed_trades += 1
             net_pnl += profit
@@ -178,6 +227,8 @@ def _simulate_daily(
                     }
                 )
             del held[j]
+        if missing:
+            break
         nav = cash + sum(marks.values())
         for order in pending:
             j = order["symbol_index"]
@@ -185,13 +236,18 @@ def _simulate_daily(
             if not np.isfinite(price) or price <= 0:
                 missing.append(f"{market['symbols'][j]}:{market['sessions'][i]}:entry")
                 break
-            quantity = int(
-                min(
-                    order["quantity"],
-                    math.floor(0.2 * nav / (price * (1 + half_cost))),
-                    math.floor(max(0.0, settled) / (price * (1 + half_cost))),
+            if cost_model is None:
+                quantity = int(
+                    min(
+                        order["quantity"],
+                        math.floor(0.2 * nav / (price * (1 + half_cost))),
+                        math.floor(max(0.0, settled) / (price * (1 + half_cost))),
+                    )
                 )
-            )
+            else:
+                quantity = cost_model.maximum_quantity(
+                    order["quantity"], price, min(0.2 * nav, max(0.0, settled))
+                )
             if not quantity:
                 activity["zero_fill_orders"] += 1
                 continue
@@ -200,7 +256,11 @@ def _simulate_daily(
                 missing.append(f"{market['symbols'][j]}:{market['sessions'][i]}:entry_adjustment")
                 break
             notional = quantity * price
-            fee = notional * half_cost
+            fee = (
+                notional * half_cost
+                if cost_model is None
+                else cost_model.fee(quantity, notional, "buy")
+            )
             cash -= notional + fee
             settled -= notional + fee
             if min(cash, settled) < -1e-7 or len(held) >= 5 or j in held:
@@ -282,6 +342,7 @@ def _simulate_daily(
             if correlation_limit is not None
             else None,
             audit=False,
+            cost_model=cost_model,
         )
         pending = [
             {"symbol_index": order["symbol_index"], "quantity": order["quantity"], "signal": i}
@@ -293,6 +354,14 @@ def _simulate_daily(
         activity["planned_orders"] += len(pending)
         if not pending:
             activity["unaffordable_or_held_signal_sessions"] += 1
+    next_state = {"cash": cash, "settled_cash": settled, "receivables": receivables}
+    if streaming:
+        next_state.update(
+            held=[{"symbol_index": j, **position} for j, position in held.items()],
+            pending=pending,
+            scope=scope,
+            next_session_index=None if missing else stop + 1,
+        )
     return {
         **path,
         "status": "incomplete" if missing else "complete" if length else "insufficient_history",
@@ -305,7 +374,7 @@ def _simulate_daily(
         "traded_notional": traded_notional,
         "net_pnl_total": net_pnl,
         "activity": dict(activity),
-        "state": {"cash": cash, "settled_cash": settled, "receivables": receivables},
+        "state": next_state,
     }
 
 
