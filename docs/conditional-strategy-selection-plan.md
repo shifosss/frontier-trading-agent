@@ -1,6 +1,6 @@
 # Conditional strategy selection: follow-up design
 
-**Execution request frozen; the historical study is running.** See [current study status](conditional-strategy-selection-results.md). Reuse frozen historical data and existing/free access. New forward observations are not a prerequisite. This asks a new economic question; it does not rerun the unchanged strategy grid or change the active paper policy. The working evidence is under `.qualification/conditional-selection20260928`.
+**Execution request frozen; all 18 historical accounts and independent economic checks completed.** See [completed results and next decisions](conditional-strategy-selection-results.md). All accounts lost under the declared costs; no policy is promoted. The design below remains the original declaration. The working evidence is under `.qualification/conditional-selection20260928`.
 
 ## Question and fixed scope
 
