@@ -1,6 +1,6 @@
 # Next information source: original quarterly filings
 
-**September 28, 2026: bounded source feasibility is verified and the declared historical capture has started; a historical earnings-strategy account has not yet been run.** The completed technical, conditional and intraday studies have not established an economically qualified strategy. The next experiment will add original issuer financial disclosures, rather than just retuning the same price signals.
+**September 28, 2026: source capture, original-filing feature qualification and all four declared historical accounts are complete.** The [results](post-filing-results.md) show a USD2.53 gain in the best USD2,000 scenario and losses in the other three. No strategy is economically qualified for promotion. This experiment adds original issuer financial disclosures rather than retuning the same price signals.
 
 ## The proposed comparison
 
@@ -26,14 +26,22 @@ Apple's original 2020 quarterly EPS is 2.58, while later-accession API records f
 
 The same Apple example was accepted July 30 at 19:29 ET but has a July 31 filing date. Its API UTC timestamp, original index and header agree. The conservative proposed entry is August 3, after the weekend. This is a reproducible availability proxy, not proof of the first public dissemination instant. SEC describes after-hours dissemination and later archive corrections. [SEC access guidance](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data).
 
-## Work still required
+## Completed historical sources and features
 
-The separately declared capture under `.qualification/filing-source20260928` launched at 22:34 UTC on September 28. Its completed submission discovery identifies **252 original 10-Q accessions, 42 per issuer**, filed during 2012–2025. Amendments, duplicate periods, year counts and discovery failures remain explicit. These are filing-date counts, not proof of qualified fiscal-quarter coverage. Fourteen offline tests and independent review passed before launch. The first actual older, non-inline XBRL source was captured successfully with consistent API/index/header clocks; at 22:35 UTC, 16 filings had been captured with no reported clock discrepancy. Feature extraction and the four strategy accounts had not run.
+The base capture retained **252 original 10-Q accessions, 42 per issuer**, filed during 2012–2025. It completed 220 captures and preserved 32 failures. A separately declared supplement recovered 26 reports whose original indexes listed both primary HTML and printable PDF documents, plus five transient index failures. All 31 targeted recoveries succeeded in 95 requests, without changing the original failures. One January 2012 Microsoft original has no qualifying XBRL instance and remains unavailable. Amendments and discovery evidence remain explicit; these filing-date counts do not establish fiscal-quarter eligibility.
 
-Request identity `dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764` and implementation identity `f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5` preserve the fixed six issuers, original documents, request limits and source reuse. The acquisition is resumable and keeps failed sources visible; inspect its actual worker and lock before starting anything else. The frozen source archive remains separate from operational progress.
+Base request `dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764`, supplement request `469baa8fd32deb8d8dab0ffc117f85628c36f30a5b6eabcb58fdbd2253f50526`, and feature definition `f9d7845419cf556ade90a9b5598aa3e1a93b3d4b625e226727bc384dfffb1e2b` bind the inputs and implementation. Completed source workers must not be relaunched as unfinished work.
 
-After acquisition, qualify exact quarterly contexts, the previous eight observations, security-class mapping and price/action linkage. The bounded inspector is not a general XBRL parser. An original document may lack a required standard concept or require a different extraction path; such failures remain visible without future-data substitutions.
+Feature attempt `657ca3491cb34dd59f29c37f3eca96c0` retains all 252 originals: 223 provide unambiguous financial inputs, and 150 also have the required eight-event history. The 2017–2025 evaluation subset contains **121 eligible events and 27 selected positive-income signals across five issuers and nine years**. This falls below the declared minimum of 30 matched selected events. No threshold was changed to increase activity. Missing or conflicting original facts remain visible, including Ford reports that interrupt its required history.
 
-Only then run the four frozen accounts and assess net expectancy, drawdown, yearly stability, concentration and missingness. A profitable few-event subset will not justify promotion. Filing-text changes and learned combinations remain eligible subsequent comparisons once their historical input timing is qualified; they do not require this simple signal to profit first. A modern language model's remembered future company outcomes must not enter a historical feature.
+Twenty-eight feature tests, eight collector tests and independent review passed. An independent audit checked 3,727 saved fact/context/unit spans and recomputed every qualified income innovation and standardized score, without reading price returns. Source-only extraction and the return comparison remain separate artifacts.
 
-This adds a concrete free source path and a falsifiable next hypothesis. It does not establish profitability, broad issuer coverage or readiness for live execution.
+The existing frozen daily panel supplies five issuers and SPY. AT&T was absent from its requested population, so two separately declared Alpaca SIP daily requests supply raw and all-adjusted prices for its 2,693 sessions from January 2016 through September 18, 2026. Independent checks reproduced all 2,679 finite ATR values and verified that the other six columns were unchanged. This mixed, retrospective price panel still does not establish complete security lineage or cash-dividend/corporate-action accounting.
+
+## Account comparison
+
+The [execution plan](../.qualification/post-filing-strategy20260928/plan.md) reuses the existing daily cash ledger. Each decision occurs at 09:00 ET after the conservative disclosure floor, using only preceding completed-session price, ATR and NAV inputs. It enters that session's close, holds five sessions, retains the original fee-inclusive reservation and can only reduce the planned quantity at execution. Twelve focused execution tests and independent review passed, including missing-price failures, cash settlement and equivalence to the existing engine.
+
+All four accounts must be reported together, including invalid paths. Assess net expectancy, drawdown, yearly stability, concentration and missingness; a profitable few-event subset will not justify promotion. Filing-text changes and learned combinations remain eligible subsequent comparisons once their historical input timing is qualified; they do not require this simple signal to profit first. A modern language model's remembered future company outcomes must not enter a historical feature.
+
+This study remains an exploratory six-issuer comparison, without strategy promotion or live execution.
