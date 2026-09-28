@@ -1,6 +1,6 @@
 # Conditional strategy selection: follow-up design
 
-**Implementation and historical preparation verified; fitting awaits the frozen execution request.** Reuse frozen historical data and existing/free access. New forward observations are not a prerequisite. This asks a new economic question; it does not rerun the unchanged strategy grid or change the active paper policy. The working evidence is under `.qualification/conditional-selection20260928`.
+**Execution request frozen; the historical study is running.** See [current study status](conditional-strategy-selection-results.md). Reuse frozen historical data and existing/free access. New forward observations are not a prerequisite. This asks a new economic question; it does not rerun the unchanged strategy grid or change the active paper policy. The working evidence is under `.qualification/conditional-selection20260928`.
 
 ## Question and fixed scope
 
@@ -50,4 +50,4 @@ Freeze the 18-attempt request, features, folds, sampling, calibration and cost i
 
 Smaller losses, favorable percentage averages or a single strong period do not meet the economic objective. An all-cash path is an acceptable decision, not a profitable trading agent. If dollar ranking does not improve its matched conditional-percent arm, report that refutation. Do not change source treatment, cutoff, fee scenario or hold to manufacture a winner. All dates have already been studied; even positive results would require further qualification rather than automatic paper promotion.
 
-**Execution remains unstarted.** Before fitting, freeze the exact feature schemas, chronological folds, calibration and deterministic fit-failure behavior in the execution request. These implementation details do not authorize an expanded search. No production cleanup, new spending or broker operation is part of this design.
+The exact feature schemas, chronological folds, calibration and deterministic failure behavior were frozen in `request.json` before fitting. Definition SHA256: `27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc`. These implementation details do not authorize an expanded search. No production cleanup, new spending or broker operation is part of this design.
