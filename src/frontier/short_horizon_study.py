@@ -101,6 +101,7 @@ def _simulate_daily(
     correlation_limit=None,
     cost_model=None,
     process_through=None,
+    entry_policy=None,
 ):
     """Signal after close, fill at next close, expire each position independently.
 
@@ -129,6 +130,7 @@ def _simulate_daily(
                     if cost_model is not None
                     else {"bps": cost_bps},
                     "correlation_limit": correlation_limit,
+                    **({"entry_policy": entry_policy.specification} if entry_policy is not None else {}),
                 },
                 sort_keys=True,
             ).encode()
@@ -153,6 +155,7 @@ def _simulate_daily(
             held[int(saved.pop("symbol_index"))] = saved
     pending = [dict(order) for order in state.get("pending", [])] if streaming and state else []
     missing, records = [], []
+    policy_audit = []
     tallies, activity = _statistics(), Counter()
     fees = traded_notional = net_pnl = 0.0
     completed_trades = 0
@@ -226,6 +229,19 @@ def _simulate_daily(
                         "settlement_index": int(market["settlement_index"][i]),
                     }
                 )
+                if entry_policy is not None:
+                    projection = position["conditional"]
+                    reference = projection["reference_projection"]
+                    fill = projection["fill_projection"]
+                    records[-1]["conditional"] = {
+                        **projection,
+                        "realized_minus_reference_projected_fees": (
+                            position["entry_fee"] + exit_fee - reference["entry_fee"] - reference["exit_fee"]
+                        ),
+                        "realized_minus_fill_projected_fees": (
+                            position["entry_fee"] + exit_fee - fill["entry_fee"] - fill["exit_fee"]
+                        ),
+                    }
             del held[j]
         if missing:
             break
@@ -248,8 +264,22 @@ def _simulate_daily(
                 quantity = cost_model.maximum_quantity(
                     order["quantity"], price, min(0.2 * nav, max(0.0, settled))
                 )
+            guard = None
+            if entry_policy is not None:
+                guard = entry_policy.check_fill(order, quantity, price, cost_bps, cost_model)
+                if audit:
+                    policy_audit.append({
+                        "phase": "fill", "symbol": market["symbols"][j],
+                        "signal_session": market["sessions"][order["signal"]],
+                        "fill_session": market["sessions"][i],
+                        "planned_quantity": order["quantity"], "quantity": quantity,
+                        "reference_projection": order["projection"], **guard,
+                    })
             if not quantity:
                 activity["zero_fill_orders"] += 1
+                continue
+            if guard is not None and not guard["accepted"]:
+                activity["conditional_fill_rejected_" + guard["reason"]] += 1
                 continue
             adjusted = market["adjusted"][i, j]
             if not np.isfinite(adjusted) or adjusted <= 0:
@@ -275,6 +305,11 @@ def _simulate_daily(
                 "adjusted_entry": adjusted,
                 "entry_fee": fee,
             }
+            if entry_policy is not None:
+                held[j]["conditional"] = {
+                    "reference_projection": order["projection"],
+                    "fill_projection": guard["projection"],
+                }
             marks[j] = notional
             fees += fee
             traded_notional += notional
@@ -324,7 +359,9 @@ def _simulate_daily(
             activity["no_signal_sessions"] += 1
             continue
         activity["eligible_signal_sessions"] += 1
-        plan = plan_entries(
+        planner = plan_entries if entry_policy is None else entry_policy.plan_entries
+        plan = planner(
+            **({"signal_index": i} if entry_policy is not None else {}),
             symbols=market["symbols"],
             ranking=ranked,
             prices=market["close"][i],
@@ -345,9 +382,20 @@ def _simulate_daily(
             cost_model=cost_model,
         )
         pending = [
-            {"symbol_index": order["symbol_index"], "quantity": order["quantity"], "signal": i}
+            {
+                "symbol_index": order["symbol_index"], "quantity": order["quantity"], "signal": i,
+                **({"projection": order["projection"]} if entry_policy is not None else {}),
+            }
             for order in plan["orders"]
         ]
+        if entry_policy is not None:
+            for reason, count in plan["rejection_counts"].items():
+                activity["conditional_plan_" + reason] += count
+            if audit:
+                policy_audit.append({
+                    "phase": "selection", "signal_session": market["sessions"][i],
+                    "planned_orders": len(pending), "rejection_counts": plan["rejection_counts"],
+                })
         rejected = sum(row["reason"] == "correlation" for row in plan["decisions"])
         if rejected:
             activity["correlation_rejected_candidates"] += rejected
@@ -373,6 +421,8 @@ def _simulate_daily(
         "tallies": tallies,
         "traded_notional": traded_notional,
         "net_pnl_total": net_pnl,
+        **({"conditional_policy": entry_policy.specification, "policy_audit": policy_audit}
+           if entry_policy is not None else {}),
         "activity": dict(activity),
         "state": next_state,
     }
@@ -416,6 +466,10 @@ def _period_returns(equity, sessions, budget):
 def _summarize(simulation, sessions, budget, *, curves=True):
     result = _metrics(simulation, sessions, budget, curves=curves)
     result.update(activity=simulation["activity"], audit_retained=simulation["audit_retained"])
+    if "conditional_policy" in simulation:
+        result["conditional_policy"] = simulation["conditional_policy"]
+        if simulation["audit_retained"]:
+            result["policy_audit"] = simulation["policy_audit"]
     if simulation["audit_retained"]:
         result["trade_records"] = simulation["trade_records"]
     keys = (
