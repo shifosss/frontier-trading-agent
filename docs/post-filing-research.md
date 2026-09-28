@@ -1,6 +1,6 @@
 # Next information source: original quarterly filings
 
-**September 28, 2026: bounded source feasibility is verified; a historical earnings-strategy account has not yet been run.** The completed technical, conditional and intraday studies have not established an economically qualified strategy. The next experiment will add original issuer financial disclosures, rather than just retuning the same price signals.
+**September 28, 2026: bounded source feasibility is verified and the declared historical capture has started; a historical earnings-strategy account has not yet been run.** The completed technical, conditional and intraday studies have not established an economically qualified strategy. The next experiment will add original issuer financial disclosures, rather than just retuning the same price signals.
 
 ## The proposed comparison
 
@@ -28,7 +28,11 @@ The same Apple example was accepted July 30 at 19:29 ET but has a July 31 filing
 
 ## Work still required
 
-Separately declare and capture the six issuers' relevant 2012–2025 original filings and submission-history pages, then qualify exact quarterly contexts, the previous eight observations, security-class mapping and price/action linkage. The bounded inspector is not a general XBRL parser. An original document may lack a required standard concept or require a different extraction path; such failures remain visible without future-data substitutions.
+The separately declared capture under `.qualification/filing-source20260928` launched at 22:34 UTC on September 28. Its completed submission discovery identifies **252 original 10-Q accessions, 42 per issuer**, filed during 2012–2025. Amendments, duplicate periods, year counts and discovery failures remain explicit. These are filing-date counts, not proof of qualified fiscal-quarter coverage. Fourteen offline tests and independent review passed before launch. The first actual older, non-inline XBRL source was captured successfully with consistent API/index/header clocks; at 22:35 UTC, 16 filings had been captured with no reported clock discrepancy. Feature extraction and the four strategy accounts had not run.
+
+Request identity `dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764` and implementation identity `f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5` preserve the fixed six issuers, original documents, request limits and source reuse. The acquisition is resumable and keeps failed sources visible; inspect its actual worker and lock before starting anything else. The frozen source archive remains separate from operational progress.
+
+After acquisition, qualify exact quarterly contexts, the previous eight observations, security-class mapping and price/action linkage. The bounded inspector is not a general XBRL parser. An original document may lack a required standard concept or require a different extraction path; such failures remain visible without future-data substitutions.
 
 Only then run the four frozen accounts and assess net expectancy, drawdown, yearly stability, concentration and missingness. A profitable few-event subset will not justify promotion. Filing-text changes and learned combinations remain eligible subsequent comparisons once their historical input timing is qualified; they do not require this simple signal to profit first. A modern language model's remembered future company outcomes must not enter a historical feature.
 
