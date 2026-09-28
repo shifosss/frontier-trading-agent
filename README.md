@@ -4,6 +4,8 @@ The target is automated hourly/daily decisions with intraday to roughly one-week
 
 **Current status — September 28, 2026:** daily models can screen the frozen broad universe and carry holdings, orders and settled cash across restartable historical sessions. Both declared USD2,000 rehearsals lost money, including before fees. Corporate-action source inconsistencies are under independent investigation; no model is economically qualified for promotion. The existing eleven-stock paper baseline has submitted and reconciled simulated fills, but still uses weekly entries and up to 20-session holds. Hourly research, daily paper migration, options and live execution remain unfinished.
 
+**Latest strategy experiments:** all [54 reversal/continuation/mixture accounts](docs/strategy-interaction-results.md) completed across 1/3/5-session holds; none was profitable under the declared cost scenarios. A separate [81-cell timing study](docs/strategy-timing-results.md) found that earlier next-open entry worsened all nine tactics on average. The next research priority is conditional strategy selection and expected profit after costs, with cash as an available decision. Original sources, unsuccessful variants and complete results remain preserved.
+
 The React/FastAPI workstation preserves data, decisions, accounting, failures and reports. Local historical simulations, saved model forecasts and actual paper observations are distinct evidence sources; none demonstrates future profitability.
 
 ## Open the workstation
