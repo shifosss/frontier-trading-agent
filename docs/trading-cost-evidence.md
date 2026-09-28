@@ -103,3 +103,26 @@ With USD2,000 NAV and five slots, each slot permits at most USD400 **including i
 At USD10, forty shares plus USD1.99 would exceed the slot cap, so only 39 fit. Five completed positions cost USD19.90 in broker fees, or 99.5 bps of starting NAV, **plus USD0.05 sell SEC minima** before other charges. At USD1, broker fees total USD39.204 (196.02 bps of NAV), plus USD0.05 SEC. USD400 shares cannot fit the Moomoo cap after fees. These are independent calculations, not production ledger changes. [Reproducible fee checks](../.qualification/daily-model-bridge/cost-verify.py).
 
 For Wealthsimple with existing USD cash and an active USD account, the published commission and trade FX charges are zero: five USD400 positions nominally fit USD2,000 before execution uncertainty; USD400 shares fit one per slot. The ordinary CAD10/month plus tax USD-account charge is separate and the owner's waiver eligibility is unknown. If USD400 positions instead trade from CAD, the published conversion formula implies about USD12.0914 equivalent FX-only loss per flat round trip, USD60.4569 across five, or 302.28 bps of USD2,000 position notional, before the variable exchange-rate spread. Funding, ongoing account expense, explicit order fees and quoted spreads must remain separate.
+
+## September 28: the intraday strategy's entry and exit windows
+
+A separately declared sample adds **144 symbol/window cells** at 10:46 and 12:46 ET on the second Tuesdays of February, May, August and November in 2017, 2021 and 2025. Dates and the same six source-fixture stocks were fixed before any new intraday strategy result was read. These twelve independent dates add seasonal and execution-clock coverage to the earlier January sample; no empty or wide-spread cell was replaced.
+
+All 24 requested windows completed in 29 HTTP200 pages, preserving 130,584 retained quote updates. Independent Decimal calculations verified all 144 cells' duration/count-weighted spread means, midpoint means, interval classifications, counts, raw hashes, pagination, SIP feed and session-asof parameters. Four wrapper checks cover preserved access failures, incomplete pagination and transport failures; the original verified capture and analyzer were reused unchanged.
+
+| Symbol | Cells with valid quoted time / 24 | Range of duration-weighted mean full spread, bps |
+|---|---:|---:|
+| AAPL | 24 | 0.609–1.472 |
+| MSFT | 24 | 0.538–3.191 |
+| F | 24 | 5.023–10.859 |
+| T | 24 | 2.465–4.056 |
+| HRL | 24 | 2.193–8.251 |
+| BANF | 18 | 12.004–105.315 |
+
+The 8,640 requested symbol-seconds reconcile to 7,894.659755585 valid, 745.339400882 uncovered and 0.000843533 crossed seconds, with no other-invalid duration. Six empty BANF cells remain in the denominator. Locked states remain visible. Uncovered/empty time is not proof that the market had no quote.
+
+This evidence reinforces stock-specific cost differences; **40 bps is not a measured universal trading cost**. It also does not supply a replacement all-in fee. These are full quoted spreads during the minute after each clock time, without a pre-window quote or stale timeout. They do not establish exact minute-open executable prices, realized slippage, price impact, fill capacity or broker routing costs. No frozen account, threshold or fee assumption was changed.
+
+The Wealthsimple primary legal schedule was rechecked on September 28: zero listed-security commission and no trade FX for existing USD cash remain conditional on the USD-account route; its ordinary CAD10/month plus tax and funding FX remain separate. The owner's waiver is unverified. Moomoo direct retrieval again returned403; the earlier preserved tariff evidence remains the stated source, rather than claiming a new complete tariff retrieval. [Wealthsimple tariff](https://www.wealthsimple.com/en-ca/legal/fees/trade).
+
+Evidence: `.qualification/intraday-cost-windows20260928`, definition `3dca6aa658167a658d908edf0f3b9b685785de8d313f3980abf631628c28d794`, [independent report](../.qualification/intraday-cost-windows20260928/independent-verification/report.md) and its `verification.json`. All 144 outcomes and original request/implementation/source identities remain preserved.

@@ -1,6 +1,6 @@
 # Intraday opening continuation versus reversal
 
-**Declared September 28, 2026; historical source capture is in progress. No strategy results are available yet.** This is the next economic experiment after the [calibration comparison](calibration-shrinkage-results.md), whose smaller forecast errors did not establish a useful return signal.
+**Declared and completed September 28, 2026. All four accounts lost under the declared assumptions; see the [complete results](intraday-opening-results.md).** The specification below preserves the pre-execution choices following the [calibration comparison](calibration-shrinkage-results.md), whose smaller forecast errors did not establish a useful return signal.
 
 ## What this tests
 
@@ -38,8 +38,8 @@ The frozen source request spans 2,514 sessions and seven symbols, with 6,836,760
 
 The strategy, source adapter and automatic runner passed 28 focused tests and independent review. Definition `d9c539e611076c9d2a18c56aa2e9f9e0a702411dcb0fcb9f96ea08b7568f3463` freezes 63 implementation/configuration files; request `17bbf306dcc44de9642834f561bd31e258f9d62a150cec168b4d9334022890a0` and `frozen-study-code.zip` are preserved before outcomes.
 
-The automatic study worker was launched at 21:47 UTC on September 28 with `--wait-for-source`. It waits up to six hours for the capture lock, then requires every source session to have completed transport and freezes every session's audit identity before any strategy account runs. Complete transport still permits legitimately missing minute observations; those are never filled or silently replaced. If capture stops incomplete, the study records the constraint instead of treating a partial history as a complete result. Committed account failures remain visible and are not silently retried. No manual start is needed while this worker remains active.
+The automatic study worker was launched at 21:47 UTC on September 28 with `--wait-for-source`. Source capture completed all 2,514 sessions at 22:03 UTC; the worker then qualified every session before automatically running all four accounts. Complete transport still permits legitimately missing minute observations; those were never filled or silently replaced. The runner preserves source constraints and committed account failures rather than treating a partial history as complete or silently retrying failed accounts. This experiment is now complete and must not be restarted unchanged.
 
-Evidence lives under `.qualification/intraday-opening20260928` and `.qualification/intraday-opening-strategy20260928`. Check actual process/lock ownership and append-only `worker/stdout.log` before resuming either job. The strategy's `completed.json` will identify the immutable attempt containing all four outcomes and their ledgers; its absence means completion is not established.
+Evidence lives under `.qualification/intraday-opening20260928` and `.qualification/intraday-opening-strategy20260928`. The strategy's committed `completed.json` identifies immutable attempt `75d60237bbe6436da358465eb6d3d820` containing all four outcomes and their ledgers. Retain the original capture interruptions, recovery evidence and caches; completion does not erase those attempts.
 
 The active eleven-stock Alpaca paper baseline remains separate. This experiment neither changes that policy nor qualifies a live strategy.
