@@ -9,7 +9,8 @@
   "active_broker": "Wealthsimple",
   "active_focus": [
     "individual_stocks",
-    "options_without_margin"
+    "options_without_margin",
+    "active_etf_strategies"
   ],
   "options_scope": "No uncovered short options; any future contract plan must have explicit bounded loss, permission and sufficient cash.",
   "out_of_scope": [
@@ -101,8 +102,17 @@
     "design_document": "docs/trading-cadence.md"
   },
   "research_capital_usd": {
-    "primary": 2000,
-    "comparison": 10000,
-    "source": "Owner reported about US$2,000 or more available from reserves on2026-09-19. Research balances only; not broker-reconciled cash or authorization to transfer funds."
+    "primary": 10000,
+    "comparison": 2000,
+    "source": "Owner allowed research funding up to US$10,000 on2026-09-28 when price or contract affordability limits the US$2,000 account. Research balances only; not broker-reconciled cash or authorization to transfer funds."
+  },
+  "research_return_objective": {
+    "clarified_on": "2026-09-28",
+    "desired_weekly_net_return_fraction": 0.05,
+    "preferred_weekly_net_return_fractions": [0.10, 0.15],
+    "measurement": "Whole-account weekly time-weighted return after trading costs; deposits, withdrawals and option-premium-only returns are not trading gains. Report target-hit frequency, median and worst week, losing streaks, fees, exposure and drawdown alongside cumulative results.",
+    "interpretation": "An aspirational research target, not an attainable floor, expected return or profitability guarantee. It does not relax the 30% drawdown mandate, no-borrowing constraint, source requirements or qualification standards.",
+    "strategy_scope": "Stocks, active ETF strategies, cash-funded long options and defined-risk option combinations whose cash-account funding and assignment mechanics are verified. Other instruments need a concrete data, funding and risk rationale before a separately declared study.",
+    "execution_scope": "Historical research and separately authorized fixed Alpaca paper baseline only. No live trading, transfers, new spending or automatic paper-policy promotion."
   }
 }

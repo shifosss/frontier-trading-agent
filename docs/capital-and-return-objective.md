@@ -1,0 +1,39 @@
+# Capital, weekly targets and expanded strategy research
+
+The owner's September 28 instruction allows a **USD10,000 primary research account**, with USD2,000 retained as the affordability comparison, and seeks at least 5%, preferably 10–15%, per week. These are desired returns on the **entire account after costs**, not returns on an option premium or the occupied portion of cash. They are not established expected returns or guaranteed weekly floors. At 5% compounded each week, capital would multiply approximately 12.6 times in a year; the target needs unusually strong evidence.
+
+More capital can reduce fixed-fee drag and permit whole shares or option contracts that a smaller account cannot fund. It does not by itself improve a strategy's percentage edge. The existing 30% maximum drawdown mandate, no borrowing, reserved ETF portfolios and separate paper account remain in force. A historical drawdown constraint does not guarantee the same limit in future trading.
+
+At USD10,000, those weekly targets mean USD500, USD1,000 and USD1,500 respectively; at USD2,000 they mean USD100, USD200 and USD300. Existing research returns are in USD after the declared modeled trading costs, before personal taxes, CAD/USD funding costs and unverified additional execution charges.
+
+Research will compare individual-stock signals, active ETF trading, cash-funded long options and defined-risk option combinations. The first option-access probe uses existing Alpha Vantage access and two predetermined SPY chain dates. Alpha Vantage describes historical chains since 2008 as a premium API; the probe establishes whether existing access works without buying anything. Contract prices, bid/ask timing, multipliers, adjusted deliverables, fees, expiry and assignment must be established before option-account performance claims. [Alpha Vantage documentation](https://www.alphavantage.co/documentation/#historical-options).
+
+A defined-risk payoff diagram does not establish cash-account operability: early assignment of a short leg may create an obligation even when another leg remains open. Any combination requires explicit cash, exercise and assignment treatment. This research scope does not authorize option orders in the current paper baseline. [FINRA assignment explanation](https://syndication.finra.org/content/trading-options-understanding-assignment).
+
+Every account report should retain all calendar weeks, including idle and losing weeks, and show net time-weighted weekly returns, the fractions reaching 5%, 10% and 15%, median and worst week, longest losing streak, fees, exposure, cumulative return and maximum drawdown. Deposits are cash flows, not profits. Failure to meet the targets is a valid result; it must not trigger outcome-selected costs, leverage, omitted failures or threshold changes.
+
+## Amendment to the pending earnings-quality comparison
+
+The existing [next-stage proposal](../.qualification/post-filing-strategy20260928/next-stage-design.md) remains immutable. Its ten USD2,000 accounts are expanded, before new outcomes or model fitting, to **twenty accounts: five recipes × two cost scenarios × USD2,000/USD10,000**. Source selection, signals, holding time, model comparison, chronological boundaries, fees and risk fractions are unchanged. USD10,000 is the primary interpretation, and both balances must be reported together. This amendment follows a user capital instruction, not selection of a profitable result. The completed four-account pilot and active USD100,000 Alpaca paper baseline are not restated or rerun.
+
+The immediate parallel work is the fixed 100-issuer original-filing expansion and bounded historical option-data access. Neither currently establishes a deployable profitable strategy.
+
+## Existing evidence at the two capital levels
+
+A descriptive re-read of the saved September 19 multi-model experiment retains all seven learned/ensemble families, all three holding horizons and both USD balances at the same 40-basis-point scenario: 42 complete account paths, without fitting or rerunning anything. At USD2,000, none of the 21 paths gained money. At USD10,000, one of 21 gained money: five-session ExtraTrees returned 2.7846% over the **entire 2003–2026 test**, with 17.6100% observed drawdown. This is not a weekly return or a qualified winner. Only four paths at each capital level stayed within 30% observed drawdown; no path averaged 5% per week.
+
+The largest arithmetic mean weekly return at USD10,000 was 0.010412%. That belonged to a different account with a negative compounded result, illustrating why a weekly average must not substitute for account growth. The [complete capital comparison](../.qualification/options-access20260928/capital-comparison.json) retains every selected path, yearly results and summary metrics. Weekly target-hit rates cannot be reconstructed from aggregate summaries and are not invented. The same survivorship, revised-price and cost-scenario limitations remain.
+
+## Option-access findings
+
+The first declared Alpha Vantage request returned a structured premium-entitlement error, although the connector envelope reported `isError=false`. It supplied no historical chain. The second request was not sent, and nothing was purchased. The [retained response](../.qualification/options-access20260928/alpha-vantage-probe-1.json) records this failure.
+
+One separate read-only Alpaca request succeeded: six fixed SPY call/put contracts with March 15, 2024 expiry, strikes 495/500/505, each supplied six daily bars during February 15–23, 2024. All 36 bars and the exact request are saved. These are traded-price aggregates, not a historical chain or verified bid/ask executions. They provide a useful source path for further option research but do not yet support spread, fill, deliverable or assignment assumptions. Alpaca documents historical options since February 2024 and distinguishes its modified indicative prices from actual OPRA quotes. [Alpaca historical-options documentation](https://docs.alpaca.markets/us/docs/historical-option-data), [saved access result](../.qualification/options-access20260928/alpaca-summary.json).
+
+Independent review verified all 36 bars against the declared symbols, exchange sessions, raw hashes and Decimal price/count checks. It also reconciled all 42 capital-comparison rows and their reported aggregates with the original saved study. Neither check supplies missing execution evidence.
+
+## Practical next strategy tests
+
+The [three bounded proposals](../.qualification/options-access20260928/strategy-proposal.md) prioritize ETF relative-price reversal, directional long-option exposure, and selective event-driven long straddles. A source-only inventory verified saved raw hashes and symbol/currency identities for all 14 USD ETFs in the frozen listing, including broad-market and sector funds; full price and corporate-action qualification must precede their new study. The option proposals need historical chain, contract and quote evidence before an execution backtest. No new strategy account has been run for these proposals.
+
+Fully paid debit spreads are not currently a confirmed workaround for the owner's cash accounts. Official eligibility pages require a margin-account type at both Wealthsimple and Moomoo Canada; this is distinct from whether a particular trade borrows money. The project will not change account types or funding permissions. The [broker feasibility report](../.qualification/options-access20260928/broker-feasibility.md) records eligible cash-account alternatives, tariffs and unresolved assignment details, including the limits of indexed official Moomoo evidence. [Wealthsimple spread eligibility](https://help.wealthsimple.com/hc/en-ca/articles/43913330243227-Trade-multi-leg-options-spreads), [Moomoo Canada account eligibility](https://www.moomoo.com/ca/support/topic10_153).

@@ -1,0 +1,33 @@
+# Cash-backed earnings and short-term price response
+
+This study asks whether an earnings improvement backed by stronger operating cash flow behaves differently over the following five sessions, depending on the preceding price move, trading activity and broad market trend. A regularized linear model tests additive information; shallow boosted trees test interactions. This is a specific economic hypothesis, not a claim that a more complex model will earn more.
+
+The [fixed specification](../.qualification/earnings-quality20260928/cohort/model-specification.json) declares **20 continuous historical accounts**: five recipes, two unchanged cost scenarios, and USD10,000/USD2,000 balances. The recipes are all eligible filings, the existing positive-income signal, that signal with positive cash-backing change, Ridge and boosted trees. Every recipe uses the same complete-feature population, five-session holdings and 2021–2025 entry period. The original smaller proposal is preserved; the second capital level follows the owner's September 28 instruction.
+
+## Information and chronology
+
+The existing original-accession income signal `S` is unchanged. The new feature is `Q = ((current YTD operating cash flow - current YTD net income) - (same-original prior-year YTD operating cash flow - prior-year YTD net income)) / prior fiscal-year-end assets`. Exact concepts, matching periods, units and original disclosure timestamps are required. Working capital, taxes and attribution differences can still affect this measure; it is a cash-backing hypothesis, not a proven quality score.
+
+Three additional inputs use only completed prior sessions: five-session stock-minus-SPY return, latest dollar activity relative to its preceding 20-session median, and SPY's distance from its 200-session average. Signals decide at 09:00 ET after the conservative original-filing availability floor and simulate an entry at that session's close. The signal is post-filing, not a trade at an assumed earlier earnings announcement.
+
+Two outputs predict the five-session return and adverse movement sampled at daily closes. The latter is not an intraday stop or a guaranteed loss bound. Fit on 2017–2019, calibrate on 2020, test on 2021, then expand annually through the 2025 test. Purge labels reaching the next partition. Both fixed models run independently; no hyperparameter or entry-threshold search is declared. A fold needs at least 256 fitting events across 25 issuers and 64 calibration events across 16 issuers, or it abstains. These pragmatic floors do not establish statistical independence.
+
+Models, preprocessing and calibration are shared across account sizes and costs. Whole-share affordability, costs, risk sizing and settled cash determine each account's actual positions. Retain every warning, abstention, failed account, losing week and unavailable source. Full weekly returns must support the owner's 5/10/15% target-hit statistics; the targets do not change entry thresholds or the 30% drawdown qualification limit.
+
+## Cohort and source evidence
+
+The source-only screen retained all 5,661 requested USD stock-labelled instruments in the frozen listing. Explicit common-share titles, exact SEC ticker/CIK matches and 2016 liquidity qualified 1,222 unique issuers. The declared CIK hash order fixed a 300-issuer classification pool, without looking at financial extraction success or strategy returns. Seven focused tests and independent review passed.
+
+The profile collector completed all 300 current SEC submissions roots in 299 new requests and one cache reuse, at at most one request per second. Six independently repeated tests cover exact membership, URL scope, failure preservation, request limits and worker exclusion. Every raw response remains saved. Classification qualified 199 issuers; the first 100 matching US-incorporated operating issuers outside financial SIC ranges are now frozen, with no replacements after original-filing capture. Current membership and classification are not a historical market reconstruction.
+
+All original 10-Qs for that fixed cohort are retained, including failures. Event eligibility additionally requires unambiguous SIC evidence from the matching CIK's original filer header; missing or conflicting evidence is unavailable, and current SIC cannot fill it. The existing eight-event `S` history calculation remains unchanged, so prior industry changes remain a separate caveat. Original share/entity continuity and complete corporate-action accounting are not established merely by matching a CIK.
+
+Before acquiring the new financial panel, the cash-backing extractor was checked against the previous 252 originals. It qualified 146 `Q` values and retained 106 failures. All old income, timing and history fields remained exactly unchanged. Independent rational arithmetic and 3,186 original fact/context/unit spans agreed; 44 focused tests and peer review passed. The prior 2017–2025 joint population has 111 eligible events, compared with 121 for `S` alone. Seventy-three unavailable originals use a different continuing-operations cash-flow concept; that concept is not silently substituted.
+
+The broad source envelope is fixed at 100 issuers, at most 6,000 original accessions, 24,900 request starts, 32 MiB per response and 40 GiB total new raw storage. Completed failures are retained; access or resource-limit stops require review. The source worker shares a lock with profile discovery and must not be duplicated. These are free official sources and existing local storage, with no service purchase.
+
+## Status and continuation
+
+The final 100-issuer cohort, model specification and cash-backing extraction are frozen. The original-filing capture started at 00:12:17 UTC on September 29 (20:12 Toronto on September 28), through the existing durable launcher. Root verified fresh source requests and discovery progress; this is a source-acquisition job, not a model or account run. Request `2d688da497c4c58a8701db66083d88b5f07aff28a436a65dcb9395bdcb26dfe1` and implementation `3570a2d8067ea9031ec84d4eeb0cb6e17530039402b60a75d2fdd4bc4e4b303c` bind the capture. Fifteen source/finalization tests and independent review passed; the 30-member source archive was verified.
+
+The 20 new account paths have **not** been fitted or run. Source capture/qualification must finish first; a missing-data or insufficient-sample result remains valid. The [capital and option-source report](capital-and-return-objective.md) records the parallel strategy expansion. This study does not change the existing eleven-stock paper policy or qualify a live strategy.

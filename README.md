@@ -8,6 +8,10 @@ The target is automated hourly/daily decisions with intraday to roughly one-week
 
 Earlier [18 conditional-selection accounts](docs/conditional-strategy-selection-results.md) covered 4,434 eligible US-listed equity instruments and lost under all declared scenarios; independent checks reconciled 38,849 trades. The [54 reversal/continuation/mixture accounts](docs/strategy-interaction-results.md) and [81-cell timing study](docs/strategy-timing-results.md) also remain visible. Original sources, unsuccessful variants and complete results are preserved.
 
+**Updated research mandate:** USD10,000 is now the primary simulated balance, with USD2,000 retained for comparison. The owner's 5–15% weekly aspiration is measured on the entire account after costs and does not relax the 30% drawdown or cash-only constraints. Existing results do not support that return rate. Active ETF and cash-funded option research now accompanies the original-filing expansion; a bounded Alpaca probe returned 36 historical option bars, while full historical-chain access through Alpha Vantage was unavailable. See the [capital comparison, return objective and source findings](docs/capital-and-return-objective.md).
+
+The [next cash-backed earnings study](docs/earnings-quality-research.md) declares 20 accounts and a fixed 100-issuer panel. A source-only screen qualified 1,222 issuers and froze the first 300 in a deterministic hash order for SEC classification. The new cash-flow feature passed original-source checks; the new model fits and accounts await the broader financial-source capture.
+
 The React/FastAPI workstation preserves data, decisions, accounting, failures and reports. Local historical simulations, saved model forecasts and actual paper observations are distinct evidence sources; none demonstrates future profitability.
 
 ## Open the workstation
