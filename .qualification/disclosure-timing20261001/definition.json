@@ -9,7 +9,7 @@
    "retained submissions root/history raw bytes for the 100 frozen CIKs, resolved through each issuer's saved discovery.json with the capture's own path rule",
    "the 4,057 frozen original 10-Q manifests",
    "the retained XNYS calendar used by the completed study",
-   "the terminal qualification events: the bound file is hashed, and only accession, strategy_source_status and entry_session survive parsing; every other field, including S, Q and u, is dropped while parsing and never used, compared or written"
+   "the terminal qualification events: the bound file is hashed, then a projection parser decodes only the values of the events, accession, strategy_source_status and entry_session members; every other member's value, including S, Q and u, is skipped by scanning its bytes and is never decoded, used, compared or written"
   ],
   "never": [
    "network requests",
@@ -63,7 +63,7 @@
   "tzdata": "2026.4",
   "timezone_data": "Before the reused clock module loads, a real run resets zoneinfo's search path so America/New_York resolves only from the uv.lock-pinned tzdata package (2026.4), never from system TZif files. The installed package version must equal this value, and each attempt records the SHA256 of the exact America/New_York TZif bytes used. The recomputed 10-Q sessions must also equal the completed study's saved sessions."
  },
- "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking. When the capture lock exists, all source inspection runs while preflight holds the same read transaction as a run; a held or invalid lock skips inspection and is blocking. When the lock is absent the inspection is reported as unguarded. The result states which applied in source_inspection. If the declaration differs from the freeze, preflight returns only the declaration blockers and follows none of its paths.",
+ "preflight": "audit.py --preflight writes nothing and returns ready, blocking, issuer_unavailable and source_inspection. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), an audit lock held by another process, a prior attempt that forbids a run, a missing, held or invalid source lock (both SEC source writer locks, probed read-only), any absent or changed global input, code or manifest, and changed per-issuer bytes. issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. ready is true when nothing is blocking. Source inputs are hashed and inspected only while preflight holds the same read transaction on both source locks as a run. A starting worker creates an absent lock file, so a missing lock guards nothing: if either source lock is missing, held or invalid, preflight reports every lock problem and returns before hashing or inspecting any source input. Raw-source inspection also requires the request and the discovery file to match their bound identities. If the declaration differs from the freeze, preflight returns only the declaration blockers and follows none of its paths.",
  "outputs": "Every attempt JSON/CSV record is written through a sibling temporary file, flushed and fsynced, then atomically replaced, so an interruption never truncates attempt.json or a result file.",
  "matching": {
   "candidate_form": "8-K",
@@ -177,9 +177,14 @@
    "id": "amendment-11",
    "supersedes_definition_sha256": "321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516",
    "record": "amendment-11.json"
+  },
+  {
+   "id": "amendment-12",
+   "supersedes_definition_sha256": "47b14c3b771a67747bb09eba63ea29d636c862712f5ccdfd70a807c5946cba4e",
+   "record": "amendment-12.json"
   }
  ],
- "declared_at_utc": "2026-10-01T19:49:02.281249+00:00",
+ "declared_at_utc": "2026-10-01T20:03:58.790077+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -397,7 +402,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "c89fddaca3475177b16baebde0b1af301030aefe31d72922414c8dcd7a3d92c3",
+  ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

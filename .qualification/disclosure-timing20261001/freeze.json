@@ -1,8 +1,8 @@
 {
- "definition_sha256": "47b14c3b771a67747bb09eba63ea29d636c862712f5ccdfd70a807c5946cba4e",
- "frozen_at_utc": "2026-10-01T19:49:14.429545+00:00",
+ "definition_sha256": "e48d158b119094f0b320a3d0f875eb27475febc93688bb29b3ba397c9c151ca2",
+ "frozen_at_utc": "2026-10-01T20:04:10.264141+00:00",
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "c89fddaca3475177b16baebde0b1af301030aefe31d72922414c8dcd7a3d92c3",
+  ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  },
@@ -19,6 +19,7 @@
   "amendment-08.json": "966b7ded25a0c8be116cd295bac4a1835ee5ac01a66a91384660b1692c036339",
   "amendment-09.json": "65e67d6019449f3ad2de276da715ea29b2dd24ec62751a6801f839236ce9d3cd",
   "amendment-10.json": "719b961df1e378bdb6b63941040cef83355f3d0c01a2d5cf113dbb92aea0be04",
-  "amendment-11.json": "1e80cc7cb766abfe49d57f6167b5b160009b95b8cef900ec9bfe05779bf5308f"
+  "amendment-11.json": "1e80cc7cb766abfe49d57f6167b5b160009b95b8cef900ec9bfe05779bf5308f",
+  "amendment-12.json": "e0fd5e28dcf0fd7bce0eb3de55c6048891b6776530371f214d5df1fa8dc7dbd1"
  }
 }

@@ -8,7 +8,7 @@ The [cash-backed earnings comparison](earnings-quality-results.md) decided at 09
 
 ## What is frozen
 
-The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `47b14c3b771a67747bb09eba63ea29d636c862712f5ccdfd70a807c5946cba4e`.
+The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `e48d158b119094f0b320a3d0f875eb27475febc93688bb29b3ba397c9c151ca2`.
 
 - **Denominators:** all 100 issuers and 4,057 registered original 10-Qs, including the 190 failed captures. The 3,867 captured originals and the 2,010 strategy-source-qualified events are reported as separate strata, and each filing year is also reported. No issuer is replaced or dropped.
 - **Candidate:** a same-CIK original `8-K` whose `items` field holds the exact token `2.02`, filed after the 10-Q period end. The window closes at day 83 or the day before the issuer's next period end, whichever comes first, so a later period's results release cannot fall in it. The next period end is the next frozen 10-Q, or an original 10-K/10-KT/10-QT in the issuer's submissions. The shortest 12-week quarter ends on day 84. Three issuers have consecutive 10-Q period ends only 52–81 days apart, and ROP has a 10-K period end 61 days after a 10-Q. Review made these changes before any run; see `amendment-01.json`, `amendment-06.json` and `amendment-10.json`. `8-K/A` rows are counted but are never candidates.
@@ -22,4 +22,4 @@ Item 2.02 metadata says an earnings-related release was furnished. It does not s
 
 ## To run it
 
-Restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and two empty source lock files, not the 31.8 GB corpus. Then run `audit.py --preflight` until it reports `ready: true` with an empty or accepted `issuer_unavailable` list, and run `audit.py` once. A second run of the same frozen definition is refused; a rerun needs a new declared amendment. Record the attempt and summary in a dated `*-results.md` next to this file.
+Restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and two empty source lock files, not the 31.8 GB corpus. Restore the two lock files first: until both exist, the preflight reports only them and reads no source input. Then run `audit.py --preflight` until it reports `ready: true` with an empty or accepted `issuer_unavailable` list, and run `audit.py` once. A second run of the same frozen definition is refused; a rerun needs a new declared amendment. Record the attempt and summary in a dated `*-results.md` next to this file.

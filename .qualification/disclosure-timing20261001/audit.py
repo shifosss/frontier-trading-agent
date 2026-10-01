@@ -72,16 +72,96 @@ def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
-# The qualification events also carry S, Q and u; only these keys survive parsing.
+# The qualification events also carry S, Q and u; only these keys' values are ever decoded.
 EVENT_FIELDS = {"events", "accession", "strategy_source_status", "entry_session"}
+_decode = json.JSONDecoder().raw_decode
+_WS = re.compile(r"[ \t\n\r]*")
+# Python's json writes NaN/Infinity for non-finite floats, so those are bare values too.
+_BARE = re.compile(r"-?(?:Infinity|[0-9][0-9.eE+-]*)|NaN|true|false|null")
+
+
+def _string_end(text, i):
+    i += 1
+    while text[i] != '"':
+        i += 2 if text[i] == "\\" else 1
+    return i + 1
+
+
+def _skip(text, i):
+    """Index just past the JSON value starting at i, found by scanning, never decoding it."""
+    if text[i] == '"':
+        return _string_end(text, i)
+    if text[i] not in "[{":
+        bare = _BARE.match(text, i)
+        if not bare:
+            raise ValueError("Malformed JSON value at offset " + str(i))
+        return bare.end()
+    depth = 0
+    while True:
+        if text[i] == '"':
+            i = _string_end(text, i)
+            continue
+        if text[i] in "[{":
+            depth += 1
+        elif text[i] in "]}":
+            depth -= 1
+            if depth == 0:
+                return i + 1
+        i += 1
+
+
+def project_json(text, keep):
+    """Decode JSON keeping only object members whose key is in `keep`. Every other member's
+    value is skipped by scanning its bytes, so it never becomes a Python value."""
+
+    def expect(i, chars):
+        i = _WS.match(text, i).end()
+        if text[i] not in chars:
+            raise ValueError("Malformed JSON at offset " + str(i))
+        return i
+
+    def value(i):
+        i = _WS.match(text, i).end()
+        if text[i] == "{":
+            obj, i = {}, expect(i + 1, '"}')
+            if text[i] == "}":
+                return obj, i + 1
+            while True:
+                key, i = _decode(text, expect(i, '"'))
+                i = expect(i, ":") + 1
+                if key in keep:
+                    obj[key], i = value(i)
+                else:
+                    i = _skip(text, _WS.match(text, i).end())
+                i = expect(i, ",}")
+                if text[i] == "}":
+                    return obj, i + 1
+                i += 1
+        if text[i] == "[":
+            items, i = [], _WS.match(text, i + 1).end()
+            if text[i] == "]":
+                return items, i + 1
+            while True:
+                item, i = value(i)
+                items.append(item)
+                i = expect(i, ",]")
+                if text[i] == "]":
+                    return items, i + 1
+                i += 1
+        return _decode(text, i)
+
+    try:
+        result, end = value(0)
+    except IndexError:
+        raise ValueError("Truncated JSON") from None
+    if _WS.match(text, end).end() != len(text):
+        raise ValueError("Extra data after JSON value")
+    return result
 
 
 def load_event_fields(path):
-    """Parse the bound qualification events, dropping every field except EVENT_FIELDS."""
-    return json.loads(
-        Path(path).read_text(encoding="utf-8"),
-        object_pairs_hook=lambda pairs: {k: v for k, v in pairs if k in EVENT_FIELDS},
-    )
+    """Parse the bound qualification events, decoding only EVENT_FIELDS values."""
+    return project_json(Path(path).read_text(encoding="utf-8"), EVENT_FIELDS)
 
 
 def now():
@@ -1025,7 +1105,8 @@ def lock_busy(path):
 def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_root=ROOT):
     """What a real run would meet, without writing: blocking problems stop the run, while
     issuer_unavailable lists absent per-issuer files the run keeps in every denominator.
-    Source files are inspected under the capture read guard whenever the lock exists."""
+    Source files are inspected only while both source read guards are held; a missing, held
+    or invalid source lock is reported for every lock and inspection is skipped."""
     definition, definition_sha, declaration = definition_problems(definition_path, freeze_path)
     blocking = [{"path": "definition", "problem": p} for p in declaration]
     unavailable = []
@@ -1048,13 +1129,10 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
     ]
     source_root = repo / definition["paths"]["source_root"]
     with ExitStack() as stack:
-        missing = []
+        skipped = []
         for lock, rel_lock, label in source_locks(repo, definition):
-            if not lock.exists():
-                blocking.append({"path": rel_lock, "problem": "missing"})
-                missing.append(label)
-                continue
-            problem = lock_busy(lock)
+            # A worker creates an absent lock file when it starts, so absence guards nothing.
+            problem = "missing" if not lock.exists() else lock_busy(lock)
             if problem is None:
                 try:
                     stack.enter_context(read_guard(lock, label))
@@ -1062,20 +1140,14 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
                     problem = "held by another process"
             if problem:
                 blocking.append({"path": rel_lock, "problem": problem})
-                return {
-                    "ready": False,
-                    "blocking": blocking,
-                    "issuer_unavailable": unavailable,
-                    "source_inspection": "skipped: " + label + " " + problem,
-                }
-        if missing:
-            inspection = (
-                "unguarded by the missing "
-                + " and ".join(missing)
-                + ", so no worker can hold it; any present source lock is held"
-            )
-        else:
-            inspection = "guarded by both source read locks"
+                skipped.append(label + " " + problem)
+        if skipped:
+            return {
+                "ready": False,
+                "blocking": blocking,
+                "issuer_unavailable": unavailable,
+                "source_inspection": "skipped: " + "; ".join(skipped),
+            }
         blocking += check_inputs(repo, definition)
         state = input_state(repo, definition)
         unavailable += [
@@ -1102,7 +1174,7 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
         "ready": not blocking,
         "blocking": blocking,
         "issuer_unavailable": unavailable,
-        "source_inspection": inspection,
+        "source_inspection": "guarded by both source read locks",
     }
 
 

@@ -929,3 +929,59 @@ def test_drifted_definition_with_malformed_amendments_is_reported(tmp_path):
     assert not result["ready"] and result["source_inspection"].startswith("skipped")
     with pytest.raises(m.AuditError, match="frozen declaration"):
         m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_unapproved_event_values_are_never_decoded(tmp_path, monkeypatch):
+    decoded = []
+
+    def spy(text, i):
+        value, end = json.JSONDecoder().raw_decode(text, i)
+        decoded.append(value)
+        return value, end
+
+    monkeypatch.setattr(m, "_decode", spy)
+    path = tmp_path / "events.json"
+    huge = "7" * 5000  # json.loads refuses to decode an integer this long
+    path.write_text(
+        '{"attempt": "x", "events": [{"accession": "a", "S": 0.123456, "Q": NaN, '
+        '"strategy_source_status": "qualified", "u": ' + huge + ", "
+        '"history": [{"S": "S-secret", "accession": "old"}], "entry_session": "s"}]}',
+        encoding="utf-8",
+    )
+    assert m.load_event_fields(path) == {
+        "events": [{"accession": "a", "strategy_source_status": "qualified", "entry_session": "s"}]
+    }
+    # Member names are decoded to be matched; only approved members' values are decoded.
+    assert decoded == [
+        "attempt",
+        "events",
+        "accession",
+        "a",
+        "S",
+        "Q",
+        "strategy_source_status",
+        "qualified",
+        "u",
+        "history",
+        "entry_session",
+        "s",
+    ]
+
+
+def test_preflight_skips_inspection_when_a_source_lock_is_missing(tmp_path, monkeypatch):
+    def refuse(*args, **kwargs):
+        raise AssertionError("source input read without both source read guards")
+
+    for name in ("check_inputs", "input_state", "resolve_source"):
+        monkeypatch.setattr(m, name, refuse)
+    for rel, label in [
+        (FROZEN["paths"]["shared_source_lock"], "shared SEC source lock"),
+        (E + "/source/capture.lock.sqlite", "capture lock"),
+    ]:
+        repo, study = build(tmp_path / label.replace(" ", "-"))
+        (repo / rel).unlink()
+        result = pre(repo, study)
+        assert not result["ready"]
+        assert {"path": rel, "problem": "missing"} in result["blocking"]
+        assert result["issuer_unavailable"] == []
+        assert result["source_inspection"] == "skipped: " + label + " missing"
