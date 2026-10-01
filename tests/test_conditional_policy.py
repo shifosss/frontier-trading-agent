@@ -141,7 +141,8 @@ def test_fill_never_increases_quantity_and_trade_reports_realized_fee_error():
     assert trade["quantity"] == 39  # lower price never doubles the original reservation's shares
     assert trade["entry_notional"] == 195
     assert trade["exit_notional"] == pytest.approx(234)
-    assert trade["conditional"]["fill_projection"]["projected_exit_notional"] == pytest.approx(214.5)
+    fill_projection = trade["conditional"]["fill_projection"]
+    assert fill_projection["projected_exit_notional"] == pytest.approx(214.5)
     assert trade["conditional"]["realized_minus_fill_projected_fees"] == pytest.approx(0.039)
     assert result["equity"][-1]-2000 == pytest.approx(trade["net_pnl"])
 
