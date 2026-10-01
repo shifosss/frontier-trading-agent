@@ -1,0 +1,24 @@
+{
+ "id": "amendment-01",
+ "recorded_at_utc": "2026-10-01T18:04:11.904153+00:00",
+ "supersedes_definition_sha256": "67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd",
+ "new_definition_sha256": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, two P2 findings on commit 9574f977",
+ "changes": [
+  {
+   "field": "matching.window_days_after_report_date",
+   "from": 84,
+   "to": 83,
+   "reason": "With an inclusive day-84 bound, a 12-week next quarter ends on the window's last day, so the declared claim that the next period's results release cannot enter the window was false at that boundary. A synthetic day-84 Item 2.02 row reproduced the defect (single_prior became multiple) before the change."
+  },
+  {
+   "field": "locks (new) and audit.py locks()",
+   "from": "read guard only when capture.lock.sqlite exists",
+   "to": "capture.lock.sqlite required; read transaction held; refusal before any attempt when missing or write-held",
+   "reason": "Matches the terminal qualification collector and prevents auditing while a capture worker could add history pages."
+  }
+ ],
+ "unchanged": "Denominators, candidate form/token, clock, ambiguity/coverage rules, statistics and verdict thresholds."
+}

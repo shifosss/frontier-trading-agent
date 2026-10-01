@@ -1,10 +1,10 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd`) and the three code files it relies on. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten.
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205`), the three code files it relies on and the amendment record. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. `amendment-01.json` records the only change so far, made after review and before any run: the window now ends on day 83, and the source lock is required.
 
 ## What it does
 
-For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls in (10-Q `reportDate`, `reportDate` + 84 days]. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
+For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls in (10-Q `reportDate`, `reportDate` + 83 days]. The shortest possible next quarter ends on day 84, so its results release cannot fall in the window. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
 
 Provenance is rebuilt from the retained raw submissions bytes. Reused sources resolve repository-relative and must match the frozen request reuse catalog. Captured sources resolve under `source/`. The re-parsed concatenation must equal each saved `discovery.json` row list. A raw-hash mismatch stops the attempt. A missing retained file makes only that issuer unavailable, and its 10-Qs stay in every denominator.
 
@@ -24,7 +24,8 @@ The clone already contains `source/request.json`, `source/completion.json`, all 
 2. The 100 reused root submissions sources under `.qualification/earnings-quality20260928/discovery/profiles/raw/`, named in `definition.json` `inputs`.
 3. `.qualification/post-filing-strategy20260928/calendar.json`.
 4. `.qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json`.
-5. The 79 history pages under `.qualification/earnings-quality20260928/source/raw/`. Each `discovery.json` names its pages, so run the preflight after step 1 to list them.
+5. `.qualification/earnings-quality20260928/source/capture.lock.sqlite`, the capture's empty SQLite lock file.
+6. The 79 history pages under `.qualification/earnings-quality20260928/source/raw/`. Each `discovery.json` names its pages, so run the preflight after step 1 to list them.
 
 The full 31.8 GB corpus is not needed.
 
@@ -36,4 +37,4 @@ The full 31.8 GB corpus is not needed.
 .venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider
 ```
 
-On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit takes a read-only guard on `source/capture.lock.sqlite` when that file exists, and its own exclusive `audit.lock.sqlite`.
+On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit requires `source/capture.lock.sqlite` and holds a read transaction on it, plus its own exclusive `audit.lock.sqlite`. If the lock file is missing or a writer holds it, the run is refused before any attempt is created.

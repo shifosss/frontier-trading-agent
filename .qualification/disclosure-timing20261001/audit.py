@@ -480,6 +480,10 @@ def flatten(issuer, manifest, result, qualified):
 
 @contextmanager
 def locks(source_root, root):
+    """Own exclusive lock plus a read transaction on the capture lock, like the collector."""
+    lock = source_root / "capture.lock.sqlite"
+    if not lock.is_file():
+        raise AuditError("Source worker lock is missing: " + lock.as_posix())
     own = sqlite3.connect(root / "audit.lock.sqlite", timeout=0)
     reader = None
     try:
@@ -487,12 +491,13 @@ def locks(source_root, root):
             own.execute("BEGIN EXCLUSIVE")
         except sqlite3.OperationalError as exc:
             raise AuditError("Another timing audit holds the lock") from exc
-        lock = source_root / "capture.lock.sqlite"
-        if lock.is_file():
+        try:
             reader = sqlite3.connect(lock.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
             reader.execute("BEGIN")
             reader.execute("SELECT count(*) FROM sqlite_master").fetchone()
-        yield "read_guard_held" if reader else "absent"
+        except sqlite3.OperationalError as exc:
+            raise AuditError("A source capture worker holds the capture lock") from exc
+        yield "read_guard_held"
     finally:
         if reader:
             reader.rollback()
@@ -627,6 +632,26 @@ def audit(definition, repo):
     )
 
 
+CSV_FIELDS = [
+    "symbol",
+    "cik",
+    "accession",
+    "report_date",
+    "filing_date",
+    "acceptance",
+    "capture_status",
+    "strategy_source_qualified",
+    "status",
+    "q_entry_session",
+    "n_candidates",
+    "n_prior",
+    "n_same_session",
+    "n_after",
+    "earliest_prior_lead_sessions",
+    "late_10q_beyond_window",
+]
+
+
 def write_json(path, value):
     path.write_text(json.dumps(value, indent=1, sort_keys=False) + "\n", encoding="utf-8")
     return sha(path.read_bytes())
@@ -634,61 +659,43 @@ def write_json(path, value):
 
 def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=ROOT):
     definition, definition_sha = verify_definition(definition_path, freeze_path, repo)
-    attempt = output_root / "attempts" / uuid.uuid4().hex
-    attempt.mkdir(parents=True, exist_ok=False)
-    meta = {
-        "attempt": attempt.name,
-        "definition_sha256": definition_sha,
-        "started_at_utc": now(),
-        "network_requests": 0,
-        "prices_or_returns_read": False,
-        "status": "running",
-    }
-    write_json(attempt / "attempt.json", meta)
-    try:
-        with locks(repo / definition["paths"]["source_root"], output_root) as guard:
+    with locks(repo / definition["paths"]["source_root"], output_root) as guard:
+        attempt = output_root / "attempts" / uuid.uuid4().hex
+        attempt.mkdir(parents=True, exist_ok=False)
+        meta = {
+            "attempt": attempt.name,
+            "definition_sha256": definition_sha,
+            "started_at_utc": now(),
+            "network_requests": 0,
+            "prices_or_returns_read": False,
+            "status": "running",
+        }
+        write_json(attempt / "attempt.json", meta)
+        try:
             issuers, rows, summary = audit(definition, repo)
             if check_inputs(repo, definition):
                 raise AuditError("Bound inputs changed during the audit")
-        files = {
-            "issuers.json": write_json(attempt / "issuers.json", issuers),
-            "events.json": write_json(attempt / "events.json", rows),
-        }
-        flat = [
-            "symbol",
-            "cik",
-            "accession",
-            "report_date",
-            "filing_date",
-            "acceptance",
-            "capture_status",
-            "strategy_source_qualified",
-            "status",
-            "q_entry_session",
-            "n_candidates",
-            "n_prior",
-            "n_same_session",
-            "n_after",
-            "earliest_prior_lead_sessions",
-            "late_10q_beyond_window",
-        ]
-        with (attempt / "events.csv").open("w", newline="", encoding="utf-8") as handle:
-            writer = csv.DictWriter(handle, fieldnames=flat, extrasaction="ignore")
-            writer.writeheader()
-            writer.writerows(rows)
-        files["events.csv"] = sha((attempt / "events.csv").read_bytes())
-        summary.update(source_lock=guard, network_requests=0, prices_or_returns_read=False)
-        files["summary.json"] = write_json(attempt / "summary.json", summary)
-        meta.update(status="complete", finished_at_utc=now(), files=files)
-        write_json(attempt / "attempt.json", meta)
-        return attempt
-    except Exception as exc:
-        meta.update(
-            status="failed", finished_at_utc=now(), error=type(exc).__name__ + ": " + str(exc)
-        )
-        write_json(attempt / "attempt.json", meta)
-        write_json(attempt / "failure.json", meta)
-        raise
+            files = {
+                "issuers.json": write_json(attempt / "issuers.json", issuers),
+                "events.json": write_json(attempt / "events.json", rows),
+            }
+            with (attempt / "events.csv").open("w", newline="", encoding="utf-8") as handle:
+                writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, extrasaction="ignore")
+                writer.writeheader()
+                writer.writerows(rows)
+            files["events.csv"] = sha((attempt / "events.csv").read_bytes())
+            summary.update(source_lock=guard, network_requests=0, prices_or_returns_read=False)
+            files["summary.json"] = write_json(attempt / "summary.json", summary)
+            meta.update(status="complete", finished_at_utc=now(), files=files)
+            write_json(attempt / "attempt.json", meta)
+            return attempt
+        except Exception as exc:
+            meta.update(
+                status="failed", finished_at_utc=now(), error=type(exc).__name__ + ": " + str(exc)
+            )
+            write_json(attempt / "attempt.json", meta)
+            write_json(attempt / "failure.json", meta)
+            raise
 
 
 def preflight(definition_path=DEFINITION, repo=REPO):
@@ -696,6 +703,13 @@ def preflight(definition_path=DEFINITION, repo=REPO):
     definition = load(definition_path)
     problems = check_inputs(repo, definition)
     source_root = repo / definition["paths"]["source_root"]
+    if not (source_root / "capture.lock.sqlite").is_file():
+        problems.append(
+            {
+                "path": (source_root / "capture.lock.sqlite").relative_to(repo).as_posix(),
+                "problem": "missing",
+            }
+        )
     reuse = {r["url"]: r for r in load(repo / definition["paths"]["source_request"])["reuse"]}
     for rel in definition["inputs"]:
         if rel.endswith("/discovery.json") and (repo / rel).is_file():

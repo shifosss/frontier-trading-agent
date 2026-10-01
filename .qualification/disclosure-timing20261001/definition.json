@@ -40,14 +40,15 @@
   "canonicalization": "Group occurrences by accessionNumber within an issuer. Identical occurrences form one canonical row; differing occurrences are a retained conflict and are never used as a candidate.",
   "registered_set": "Each issuer's discovery original_accessions must equal its frozen 10-Q manifests exactly, else the issuer is unavailable."
  },
+ "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite and holds a read-only transaction on it, plus its own exclusive audit.lock.sqlite, for the whole audit, as the terminal qualification collector does. A missing lock or a writer holding it refuses the run before any attempt is created.",
  "matching": {
   "candidate_form": "8-K",
   "amendment_form": "8-K/A",
   "item_token": "2.02",
   "items_rule": "Split the submissions items string on commas, strip whitespace, require an exact 2.02 token. Missing/empty items on an in-window 8-K make the 10-Q ambiguous.",
   "window_field": "filingDate",
-  "window_days_after_report_date": 84,
-  "window_rule": "Same-issuer rows with 10-Q reportDate < filingDate <= reportDate + 84 calendar days. 84 days is the shortest 12-week fiscal quarter, so the next period's results release cannot enter the window. 10-Qs filed after the window end are flagged late_10q_beyond_window, not re-windowed.",
+  "window_days_after_report_date": 83,
+  "window_rule": "Same-issuer rows with 10-Q reportDate < filingDate <= reportDate + 83 calendar days. The shortest 12-week next quarter ends at reportDate + 84 days, and its results cannot be filed before it ends, so the next period's results release cannot enter the window. 10-Qs filed after the window end are flagged late_10q_beyond_window, not re-windowed.",
   "amendments": "In-window 8-K/A rows with Item 2.02 are reported and never candidates."
  },
  "clock": {
@@ -89,7 +90,14 @@
  },
  "next_stage_if_supported": "Declare separately before any request: a seeded random sample of strategy-qualified single_prior candidates; fetch only each candidate's original accession index and press-release exhibit under the existing SEC bounds (1 request/second, no retries of completed failures, 403/429 global stop); record whether the release itself states current-period net income, year-to-date operating cash flow and total assets. Only components shown to be public may ever be used at the earlier clock, in a new predeclared economic comparison.",
  "verification": "Offline synthetic tests only (test_audit.py); see verification.json.",
- "declared_at_utc": "2026-10-01T17:54:11.322328+00:00",
+ "amendments": [
+  {
+   "id": "amendment-01",
+   "supersedes_definition_sha256": "67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd",
+   "record": "amendment-01.json"
+  }
+ ],
+ "declared_at_utc": "2026-10-01T18:04:01.915181+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -303,7 +311,7 @@
   ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json": "0bf6151739e3cb8adabbb01ba38a9828474746b502ad6cdb7f196cd07a9277d3"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "4d8bf19499aa48a18209220cd16d579e2494d370fe7d8465e234908c4c40effb",
+  ".qualification/disclosure-timing20261001/audit.py": "b9b1084a3a41baab4dc6640dd9413d3a4027fea6744db1a72acf665541f27f72",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

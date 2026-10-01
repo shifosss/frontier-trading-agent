@@ -4,6 +4,7 @@ import hashlib
 import importlib.util
 import json
 import socket
+import sqlite3
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -70,6 +71,7 @@ AAA = [
     row(acc(1, 27), "8-K", "2020-10-15", "2020-10-15T20:00:00.000Z", "2020-10-15", "12.02,5.02"),
     row(acc(1, 26), "8-K", "2020-09-30", "2020-09-30T20:00:00.000Z", "2020-09-30", "2.02"),
     row(acc(1, 20), "10-Q", "2020-07-30", "2020-07-30T11:00:00.000Z", "2020-06-30"),
+    row(acc(1, 11), "8-K", "2020-06-23", "2020-06-23T20:05:00.000Z", "2020-06-23", "2.02"),
     row(acc(1, 19), "8-K", "2020-07-30", "2020-07-30T10:30:00.000Z", "2020-07-30", "2.02,9.01"),
     row(acc(1, 10), "10-Q", "2020-05-01", "2020-05-01T20:30:00.000Z", "2020-03-31"),
     row(acc(1, 8), "8-K", "2020-04-28", "2020-04-28T20:05:00.000Z", "2020-04-28", "2.02, 9.01"),
@@ -122,6 +124,7 @@ def build(tmp, drop_history_for=("CCC",), events_override=None):
     repo = tmp / "repo"
     source = repo / E / "source"
     issuers, reuse = [], []
+    write(source / "capture.lock.sqlite", b"")
     for symbol, number, root_rows, history in ISSUERS:
         cik = f"{number:010d}"
         issuers.append({"symbol": symbol, "cik": cik})
@@ -270,6 +273,9 @@ def test_exact_item_token_and_window(tmp_path):
     assert acc(1, 26) not in candidates  # filed on the period end, outside the window
     assert acc(1, 7) not in candidates  # Item 5.02 only
     assert acc(1, 29) not in candidates  # 8-K/A is reported, never a candidate
+    # reportDate + 84 days is the earliest possible next-quarter end, so it is outside the window.
+    assert acc(1, 11) not in candidates
+    assert events[acc(1, 10)]["status"] == "single_prior"
 
 
 def test_coverage_union():
@@ -331,6 +337,26 @@ def test_changed_definition_or_input_refused(tmp_path):
     assert not (study / "attempts").exists()
 
 
+def test_missing_or_held_source_lock_refused(tmp_path):
+    repo, study = build(tmp_path)
+    lock = repo / E / "source/capture.lock.sqlite"
+    writer = sqlite3.connect(lock, timeout=0)
+    writer.execute("BEGIN EXCLUSIVE")
+    try:
+        with pytest.raises(m.AuditError, match="holds the capture lock"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+    finally:
+        writer.rollback()
+        writer.close()
+    lock.unlink()
+    with pytest.raises(m.AuditError, match="lock is missing"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+    assert {"path": E + "/source/capture.lock.sqlite", "problem": "missing"} in m.preflight(
+        study / "definition.json", repo
+    )
+
+
 def test_preflight_names_missing_retained_source(tmp_path):
     repo, study = build(tmp_path)
     problems = m.preflight(study / "definition.json", repo)
@@ -356,6 +382,8 @@ def test_no_network_and_append_only(tmp_path, monkeypatch):
 def test_frozen_declaration_identity():
     frozen = json.loads((HERE / "freeze.json").read_text())
     assert sha((HERE / "definition.json").read_bytes()) == frozen["definition_sha256"]
+    for name, digest in frozen.get("amendments", {}).items():
+        assert sha((HERE / name).read_bytes()) == digest, name
     for rel, digest in FROZEN["code"].items():
         assert sha((REPO / rel).read_bytes()) == digest, rel
     assert FROZEN["denominators"] == {

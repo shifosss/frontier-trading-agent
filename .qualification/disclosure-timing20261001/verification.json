@@ -1,31 +1,34 @@
 {
  "status": "passed",
- "checked_at": "2026-10-01T17:55:24.328974+00:00",
+ "checked_at": "2026-10-01T18:04:41.748484+00:00",
  "platform": "Linux container, Python 3.13.14, uv sync --frozen",
  "command": ".venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider",
- "result": "10 passed",
+ "result": "11 passed",
  "synthetic_only": true,
  "actual_8k_rows_read": false,
  "network_requests": 0,
- "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run.",
+ "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition.",
  "files": {
-  "audit.py": "4d8bf19499aa48a18209220cd16d579e2494d370fe7d8465e234908c4c40effb",
-  "test_audit.py": "fde190581b305a855b137c44ade84e2aae61525a297e702fbb6113dc83b4e66a",
-  "definition.json": "67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd",
-  "freeze.json": "acf43f8687780c447351b007140d9c5e01cbbbaa050890cf4351d68207840ed1",
-  "interface.md": "2378ebc48504f6cd25c28faa44946e21393f6b9f221087d563a1ab297b84724d"
+  "audit.py": "b9b1084a3a41baab4dc6640dd9413d3a4027fea6744db1a72acf665541f27f72",
+  "test_audit.py": "1e7146ede306f9a4349b4a7e038c5f2e0219ef5281b38b7ccaeb185e7c502649",
+  "definition.json": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
+  "freeze.json": "ca45a0de2a7de2c0aa093fe188e77652efd00ce31d8ed42e0fb713f26b9e7828",
+  "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
+  "interface.md": "0646203ca33479908556c328ee42d9f322a144dc73dd99497c3d428883853c55"
  },
  "scope": [
   "single prior / same-session / after / multiple candidate classification and XNYS-session leads",
   "exact 2.02 token, period-end exclusion, 8-K/A reported but never a candidate",
+  "reportDate + 84 (earliest next-quarter end) excluded from the window",
   "submissions coverage union and window_coverage_incomplete",
   "missing retained raw source keeps the issuer's 10-Qs as issuer_unavailable",
   "conflicting duplicate accession and empty items -> ambiguous_metadata",
   "lower/upper prior-share bounds and predeclared verdict",
   "recomputed 10-Q entry session must equal the completed study's, else failed attempt with failure.json",
+  "missing or write-held capture lock refused before any attempt; preflight names a missing lock",
   "raw byte corruption stops the attempt; changed definition or bound input refused before any attempt",
   "preflight names the missing retained page; no socket use; append-only attempts",
-  "frozen declaration SHA, bound code SHAs, 4,057-manifest digest and 100 discovery bindings in this clone"
+  "frozen declaration SHA, amendment record SHA, bound code SHAs, 4,057-manifest digest and 100 discovery bindings in this clone"
  ],
  "real_preflight": "Not ready in this clone: 69 discovery.json, 100 root raw sources, the calendar, the qualification events and the history pages named by the 31 present discovery files are absent.",
  "qualification": "Software checks only; no economic or source result."
