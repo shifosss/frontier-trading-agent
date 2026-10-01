@@ -316,6 +316,28 @@ def test_entry_session_must_match_completed_study(tmp_path):
     assert json.loads((failed / "failure.json").read_text())["status"] == "failed"
 
 
+def test_unavailable_issuer_clock_is_still_checked(tmp_path):
+    # CCC's sources are missing, but its 10-Q clock comes from the frozen manifest.
+    saved = [
+        {"accession": a, "strategy_source_status": "qualified", "entry_session": s}
+        for a, s in QUALIFIED.items()
+    ]
+    right = saved + [
+        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-08-07"}
+    ]
+    repo, study = build(tmp_path / "right", events_override=right)
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    rows = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows[acc(3, 10)]["status"] == "issuer_unavailable"
+    assert rows[acc(3, 10)]["q_entry_session"] == "2020-08-07"
+    wrong = saved + [
+        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-08-10"}
+    ]
+    repo, study = build(tmp_path / "wrong", events_override=wrong)
+    with pytest.raises(m.AuditError, match="entry session differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
 def test_raw_corruption_stops_attempt(tmp_path):
     repo, study = build(tmp_path)
     raw = next((repo / E / "source/raw").glob("*.bin"))

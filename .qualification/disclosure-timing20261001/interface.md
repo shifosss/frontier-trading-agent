@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205`), the three code files it relies on and the amendment record. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. `amendment-01.json` records the only change so far, made after review and before any run: the window now ends on day 83, and the source lock is required.
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Two amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable.
 
 ## What it does
 

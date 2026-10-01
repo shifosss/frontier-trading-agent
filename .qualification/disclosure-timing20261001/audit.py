@@ -572,6 +572,11 @@ def audit(definition, repo):
             canonical = None
         issuers.append(record)
         for manifest in own:
+            # The 10-Q clock comes from its frozen manifest, so it exists even when sources do not.
+            q_row = manifest["registry_row"]
+            q_session = entry_session(
+                q_row.get("acceptanceDateTime"), q_row.get("filingDate"), calendar
+            )[0]
             if canonical is None:
                 result = {
                     "status": "issuer_unavailable",
@@ -592,17 +597,20 @@ def audit(definition, repo):
                     positions,
                     rules,
                 )
-            accession = manifest["registry_row"]["accessionNumber"]
+            if result["q_entry_session"] not in (None, q_session):
+                raise AuditError("Classification and manifest 10-Q clocks differ")
+            result["q_entry_session"] = q_session
+            accession = q_row["accessionNumber"]
             rows.append(flatten(issuer, manifest, result, accession in qualified))
     if len(rows) != definition["denominators"]["registered_originals"] or not qualified <= {
         r["accession"] for r in rows
     }:
         raise AuditError("Audit rows do not cover the declared original/qualified denominators")
-    # The reused 10-Q clock must reproduce the completed study's entry session exactly.
+    # The reused 10-Q clock must reproduce every saved entry session exactly, issuer status aside.
     by_accession = {r["accession"]: r for r in rows}
     for event in events:
         session = by_accession.get(event["accession"], {}).get("q_entry_session")
-        if event.get("entry_session") and session not in (None, event["entry_session"]):
+        if event.get("entry_session") and session != event["entry_session"]:
             raise AuditError("Recomputed 10-Q entry session differs: " + event["accession"])
     interpretation = definition["interpretation"]
     strata = {

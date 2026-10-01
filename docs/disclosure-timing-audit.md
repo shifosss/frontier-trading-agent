@@ -8,11 +8,11 @@ The [cash-backed earnings comparison](earnings-quality-results.md) decided at 09
 
 ## What is frozen
 
-The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205`.
+The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47`.
 
 - **Denominators:** all 100 issuers and 4,057 registered original 10-Qs, including the 190 failed captures. The 3,867 captured originals and the 2,010 strategy-source-qualified events are reported as separate strata, and each filing year is also reported. No issuer is replaced or dropped.
 - **Candidate:** a same-CIK original `8-K` whose `items` field holds the exact token `2.02`, filed after the 10-Q period end and within 83 days of it. The shortest 12-week next quarter ends on day 84, so its results release cannot fall in the window. Review moved this bound from 84 to 83 days before any run; see `amendment-01.json`. `8-K/A` rows are counted but are never candidates.
-- **Clock:** the completed study's `event_clock` is reused unchanged for both filings. A candidate is `prior` only if its decision session is strictly earlier than the 10-Q's. The recomputed 10-Q session must match the completed study for every qualified event, or the attempt stops.
+- **Clock:** the completed study's `event_clock` is reused unchanged for both filings. A candidate is `prior` only if its decision session is strictly earlier than the 10-Q's. Every 10-Q session is recomputed from its frozen manifest and must match the completed study's saved session, including for issuers whose sources are unavailable, or the attempt stops.
 - **Ambiguity:** conflicting duplicate accessions, in-window 8-Ks without items metadata and unclockable candidates are kept as `ambiguous_metadata`. A window outside the retained submissions date ranges is kept as `window_coverage_incomplete`. Both stay in the denominator.
 - **Verdict (2,010 qualified events):** `supported_at_metadata_level` if at least 50% have an unambiguous prior candidate. `not_supported_at_metadata_level` if fewer than 20% could possibly have one, counting every unavailable, uncovered or ambiguous row as possible. Otherwise `inconclusive`.
 

@@ -54,7 +54,7 @@
  "clock": {
   "rule": "Both the 10-Q and every candidate use the frozen filing-features event_clock unchanged: availability floor 01:00 ET on the calendar day after max(ET acceptance date, filingDate); decision session is the first XNYS session whose 09:00 ET is at or after the floor.",
   "timing": "prior if the candidate decision session is strictly earlier than the 10-Q decision session; same_session if equal; after if later. lead_sessions counts XNYS sessions; lead_hours is API acceptance difference.",
-  "limits": "8-K clocks are submissions API acceptanceDateTime/filingDate only, not header/index-verified, and not proof of first public dissemination. The recomputed 10-Q decision session must equal the completed study's entry_session for every qualified event, else the attempt stops."
+  "limits": "8-K clocks are submissions API acceptanceDateTime/filingDate only, not header/index-verified, and not proof of first public dissemination. Every 10-Q decision session is recomputed from its frozen manifest, whatever its issuer's source status, and must equal the completed study's entry_session for every saved event that has one (all qualified events included), else the attempt stops."
  },
  "classification_order": [
   "issuer_unavailable: retained discovery/raw provenance unavailable or inconsistent",
@@ -95,9 +95,14 @@
    "id": "amendment-01",
    "supersedes_definition_sha256": "67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd",
    "record": "amendment-01.json"
+  },
+  {
+   "id": "amendment-02",
+   "supersedes_definition_sha256": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
+   "record": "amendment-02.json"
   }
  ],
- "declared_at_utc": "2026-10-01T18:04:01.915181+00:00",
+ "declared_at_utc": "2026-10-01T18:10:25.994750+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -311,7 +316,7 @@
   ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json": "0bf6151739e3cb8adabbb01ba38a9828474746b502ad6cdb7f196cd07a9277d3"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "b9b1084a3a41baab4dc6640dd9413d3a4027fea6744db1a72acf665541f27f72",
+  ".qualification/disclosure-timing20261001/audit.py": "4758621aada1fdc50434921b6ff37db6f5d08d619c47ab1f2b885665ec5d4d50",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

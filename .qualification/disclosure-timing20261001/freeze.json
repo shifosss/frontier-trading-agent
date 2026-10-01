@@ -1,14 +1,15 @@
 {
- "definition_sha256": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
- "frozen_at_utc": "2026-10-01T18:04:11.904153+00:00",
+ "definition_sha256": "6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47",
+ "frozen_at_utc": "2026-10-01T18:10:26.047930+00:00",
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "b9b1084a3a41baab4dc6640dd9413d3a4027fea6744db1a72acf665541f27f72",
+  ".qualification/disclosure-timing20261001/audit.py": "4758621aada1fdc50434921b6ff37db6f5d08d619c47ab1f2b885665ec5d4d50",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  },
  "outcome_access_before_freeze": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read",
  "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten.",
  "amendments": {
-  "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195"
+  "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
+  "amendment-02.json": "906a70495713610e7d4d10bb55c80ef2a1cbdee93afad38b5fa11beb6735d858"
  }
 }

@@ -1,20 +1,21 @@
 {
  "status": "passed",
- "checked_at": "2026-10-01T18:04:41.748484+00:00",
+ "checked_at": "2026-10-01T18:10:37.392978+00:00",
  "platform": "Linux container, Python 3.13.14, uv sync --frozen",
  "command": ".venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider",
- "result": "11 passed",
+ "result": "12 passed",
  "synthetic_only": true,
  "actual_8k_rows_read": false,
  "network_requests": 0,
- "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition.",
+ "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed.",
  "files": {
-  "audit.py": "b9b1084a3a41baab4dc6640dd9413d3a4027fea6744db1a72acf665541f27f72",
-  "test_audit.py": "1e7146ede306f9a4349b4a7e038c5f2e0219ef5281b38b7ccaeb185e7c502649",
-  "definition.json": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
-  "freeze.json": "ca45a0de2a7de2c0aa093fe188e77652efd00ce31d8ed42e0fb713f26b9e7828",
+  "audit.py": "4758621aada1fdc50434921b6ff37db6f5d08d619c47ab1f2b885665ec5d4d50",
+  "test_audit.py": "f276031da4937f1da3c2b2b3df43e7762ea015338483b9f30059dec8706feebe",
+  "definition.json": "6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47",
+  "freeze.json": "7d5d3c4e8f5f59594861e9bf6d46bd752b2c1d473ce0188c38da57412d66b077",
   "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
-  "interface.md": "0646203ca33479908556c328ee42d9f322a144dc73dd99497c3d428883853c55"
+  "amendment-02.json": "906a70495713610e7d4d10bb55c80ef2a1cbdee93afad38b5fa11beb6735d858",
+  "interface.md": "ffbdc6f40a8d9da91f779e72390cd37c0e950487fff933e55b3dc42297e10184"
  },
  "scope": [
   "single prior / same-session / after / multiple candidate classification and XNYS-session leads",
@@ -24,6 +25,7 @@
   "missing retained raw source keeps the issuer's 10-Qs as issuer_unavailable",
   "conflicting duplicate accession and empty items -> ambiguous_metadata",
   "lower/upper prior-share bounds and predeclared verdict",
+  "10-Q clock recomputed from the manifest for unavailable issuers and strictly compared with every saved entry session",
   "recomputed 10-Q entry session must equal the completed study's, else failed attempt with failure.json",
   "missing or write-held capture lock refused before any attempt; preflight names a missing lock",
   "raw byte corruption stops the attempt; changed definition or bound input refused before any attempt",
