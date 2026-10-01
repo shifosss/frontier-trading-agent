@@ -34,14 +34,14 @@
  },
  "provenance": {
   "row_reconstruction": "Re-parse every discovery source in saved order with the frozen capture table_rows parser: source 0 is the root filings.recent table, later sources are bare history arrays. Keep every occurrence with (source index, row index). The concatenation must equal discovery.json rows exactly, else the issuer is unavailable.",
-  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt.",
+  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt. The final check also recomputes the 4,057-manifest count and digest.",
   "history_pages": "Fetched history URLs must equal, in order, the frozen capture's selection of declared history files overlapping 2012-01-01..2025-12-31.",
   "coverage": "Filing-date coverage is the union of [earliest root recent filingDate, open end] and each fetched history page's declared [filingFrom, filingTo]; an issuer with no declared history files is fully covered.",
   "canonicalization": "Group occurrences by accessionNumber within an issuer. Identical occurrences form one canonical row; differing occurrences are a retained conflict and are never used as a candidate.",
   "registered_set": "Each issuer's discovery original_accessions must equal its frozen 10-Q manifests exactly, else the issuer is unavailable.",
   "conflict_evidence": "Every conflicting accession's differing row variants and per-occurrence (source index, row index) provenance are written to issuers.json, and to each affected 10-Q's events.json entry."
  },
- "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite. A real run checks only its own study-directory declaration (definition, freeze, amendments, runtime, module identities) before taking its exclusive audit.lock.sqlite and a read-only transaction on the capture lock, as the terminal qualification collector does; every source input, manifest and code file is hashed and read only while both locks are held, through the final identity check. A missing, write-held or invalid (non-SQLite) lock refuses the run before any attempt is created; preflight reports the same conditions as blocking.",
+ "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite. A real run checks only its own study-directory declaration (definition, freeze, amendments, runtime, module identities) before taking its exclusive audit.lock.sqlite and a read-only transaction on the capture lock, as the terminal qualification collector does; every source input, manifest and code file is hashed and read only while both locks are held, through the final identity check. A missing, write-held or invalid (non-SQLite) lock refuses the run before any attempt is created; preflight reports the same conditions as blocking. A lock path that exists but is not a regular file is invalid.",
  "runtime": {
   "python": "3.13",
   "bound_files": [
@@ -52,11 +52,13 @@
    "exact Python version and implementation",
    "platform",
    "SQLite version",
-   "tzdata package version",
-   "zoneinfo TZPATH",
+   "tzdata package version and America/New_York TZif SHA256",
+   "zoneinfo TZPATH (empty during the run)",
    "every bound input SHA256 or absence"
   ],
-  "reused_modules": "audit.py hard-codes the SHA256 of the reused capture and features modules and refuses to execute changed bytes. From the verified capture.py bytes it executes only the CaptureError, Halt, table_rows and history_files definitions with the stdlib names they use, never that module's top-level imports (which load the project package). features.py imports only the standard library and is executed whole. The same digests are bound under code. They are loaded only for a real audit, after the declaration and input checks pass; --preflight never loads them."
+  "reused_modules": "audit.py hard-codes the SHA256 of the reused capture and features modules and refuses to execute changed bytes. From the verified capture.py bytes it executes only the CaptureError, Halt, table_rows and history_files definitions with the stdlib names they use, never that module's top-level imports (which load the project package). features.py imports only the standard library and is executed whole. The same digests are bound under code. They are loaded only for a real audit, after the declaration and input checks pass; --preflight never loads them.",
+  "tzdata": "2026.4",
+  "timezone_data": "Before the reused clock module loads, a real run resets zoneinfo's search path so America/New_York resolves only from the uv.lock-pinned tzdata package (2026.4), never from system TZif files. The installed package version must equal this value, and each attempt records the SHA256 of the exact America/New_York TZif bytes used. The recomputed 10-Q sessions must also equal the completed study's saved sessions."
  },
  "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking.",
  "outputs": "Every attempt JSON/CSV record is written through a sibling temporary file, flushed and fsynced, then atomically replaced, so an interruption never truncates attempt.json or a result file.",
@@ -146,9 +148,14 @@
    "id": "amendment-07",
    "supersedes_definition_sha256": "8712883a85e034d03bb384d72c011ac7377236895c29e7c7f53c8b9a59abe0d4",
    "record": "amendment-07.json"
+  },
+  {
+   "id": "amendment-08",
+   "supersedes_definition_sha256": "f7e3d8c49188ec9ffd149f2704fbe9a8d5d5a9767f9596171a9e48c1daf99eba",
+   "record": "amendment-08.json"
   }
  ],
- "declared_at_utc": "2026-10-01T19:04:45.592906+00:00",
+ "declared_at_utc": "2026-10-01T19:15:28.234543+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -366,7 +373,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "bbed6eaf7e70f1fa1b37ce2c7b9a49e9fc0b86a1ee357c9443438fe46f190093",
+  ".qualification/disclosure-timing20261001/audit.py": "77259fbd42066bbb3720f46d348b32c5d682d79f1e99c1481130987a0c0c130b",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

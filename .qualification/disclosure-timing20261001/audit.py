@@ -13,6 +13,7 @@ import ast
 import csv
 import hashlib
 import importlib.metadata
+import importlib.resources
 import importlib.util
 import io
 import json
@@ -114,8 +115,27 @@ _CAPTURE, _FEATURES = FROZEN_MODULES
 base = features = None
 
 
+def use_locked_tzdata():
+    """Resolve time zones only from the uv.lock-pinned tzdata package, never system TZif files."""
+    zoneinfo.reset_tzpath(to=[])
+    zoneinfo.ZoneInfo.clear_cache()
+
+
+def tz_identity():
+    """The tzdata package version and the exact America/New_York TZif bytes ZoneInfo will use."""
+    try:
+        version = importlib.metadata.version("tzdata")
+        data = (
+            importlib.resources.files("tzdata.zoneinfo").joinpath("America/New_York").read_bytes()
+        )
+    except (importlib.metadata.PackageNotFoundError, ModuleNotFoundError, FileNotFoundError):
+        return {"tzdata_package": None, "new_york_tzif_sha256": None}
+    return {"tzdata_package": version, "new_york_tzif_sha256": sha(data)}
+
+
 def load_frozen(repo=REPO):
     global base, features
+    use_locked_tzdata()
     if base is None:
         base = load_verified_definitions(
             repo / _CAPTURE,
@@ -129,17 +149,13 @@ def load_frozen(repo=REPO):
 
 
 def runtime_identity():
-    try:
-        tzdata = importlib.metadata.version("tzdata")
-    except importlib.metadata.PackageNotFoundError:
-        tzdata = None
     return {
         "python": platform.python_version(),
         "implementation": platform.python_implementation(),
         "platform": platform.platform(),
         "sqlite": sqlite3.sqlite_version,
-        "tzdata_package": tzdata,
         "zoneinfo_tzpath": list(zoneinfo.TZPATH),
+        **tz_identity(),
     }
 
 
@@ -207,6 +223,9 @@ def definition_problems(definition_path, freeze_path):
     declared = definition.get("runtime", {}).get("python")
     if "%d.%d" % sys.version_info[:2] != declared:
         problems.append("Python runtime differs from the declared " + str(declared))
+    tz = definition.get("runtime", {}).get("tzdata")
+    if tz_identity()["tzdata_package"] != tz:
+        problems.append("tzdata package differs from the declared " + str(tz))
     if any(FROZEN_MODULES[rel] != definition.get("code", {}).get(rel) for rel in FROZEN_MODULES):
         problems.append("Reused module identities differ from the definition")
     return definition, sha(raw), problems
@@ -595,8 +614,14 @@ def locks(source_root, root):
     """Own exclusive lock plus a read transaction on the capture lock, like the collector."""
     lock = source_root / "capture.lock.sqlite"
     if not lock.is_file():
-        raise AuditError("Source worker lock is missing: " + lock.as_posix())
-    own = sqlite3.connect(root / "audit.lock.sqlite", timeout=0)
+        raise AuditError("Source worker lock is missing or not a file: " + lock.as_posix())
+    own_path = root / "audit.lock.sqlite"
+    if own_path.exists() and not own_path.is_file():
+        raise AuditError("Audit lock is invalid: not a regular file")
+    try:
+        own = sqlite3.connect(own_path, timeout=0)
+    except sqlite3.DatabaseError as exc:
+        raise AuditError("Audit lock is invalid: " + str(exc)) from exc
     reader = None
     try:
         try:
@@ -839,7 +864,7 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
         write_json(attempt / "attempt.json", meta)
         try:
             issuers, rows, summary = audit(definition, repo)
-            if input_state(repo, definition) != state:
+            if input_state(repo, definition) != state or check_inputs(repo, definition):
                 raise AuditError("Bound inputs appeared, disappeared or changed during the audit")
             files = {
                 "issuers.json": write_json(attempt / "issuers.json", issuers),
@@ -868,8 +893,10 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
 
 def lock_busy(path):
     """Read-only probe: a problem string when the SQLite lock file is held or not a database."""
-    if not path.is_file():
+    if not path.exists():
         return None
+    if not path.is_file():
+        return "not a valid SQLite lock file: not a regular file"
     try:
         probe = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
     except sqlite3.DatabaseError as exc:

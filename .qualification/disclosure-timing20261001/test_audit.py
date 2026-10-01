@@ -679,3 +679,50 @@ def test_invalid_lock_files_are_reported_not_raised(tmp_path):
     with pytest.raises(m.AuditError, match="invalid"):
         m.run(study / "definition.json", study / "freeze.json", repo, study)
     assert not (study / "attempts").exists()
+
+
+def test_manifest_change_during_audit_fails_the_attempt(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.audit
+
+    def audit_then_change_manifest(definition, root):
+        result = original(definition, root)
+        manifest = next((root / E / "source/filings/AAA").glob("*.json"))
+        manifest.write_bytes(manifest.read_bytes() + b" ")
+        return result
+
+    monkeypatch.setattr(m, "audit", audit_then_change_manifest)
+    with pytest.raises(m.AuditError, match="changed during the audit"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    assert json.loads((failed / "attempt.json").read_text())["status"] == "failed"
+
+
+def test_clock_uses_only_the_locked_tzdata_package(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    assert m.zoneinfo.TZPATH == ()
+    runtime = json.loads((attempt / "attempt.json").read_text())["runtime"]
+    assert runtime["tzdata_package"] == FROZEN["runtime"]["tzdata"]
+    assert runtime["new_york_tzif_sha256"] and runtime["zoneinfo_tzpath"] == []
+    repo, study = build(tmp_path / "other")
+    definition = json.loads((study / "definition.json").read_text())
+    definition["runtime"] = dict(definition["runtime"], tzdata="0000.0")
+    raw = write(study / "definition.json", definition)
+    freeze = json.loads((study / "freeze.json").read_text())
+    write(study / "freeze.json", dict(freeze, definition_sha256=sha(raw)))
+    with pytest.raises(m.AuditError, match="tzdata package differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_non_file_audit_lock_is_invalid(tmp_path):
+    repo, study = build(tmp_path)
+    (study / "audit.lock.sqlite").mkdir()
+    result = pre(repo, study)
+    assert not result["ready"]
+    assert {
+        "path": "audit.lock.sqlite",
+        "problem": "not a valid SQLite lock file: not a regular file",
+    } in result["blocking"]
+    with pytest.raises(m.AuditError, match="Audit lock is invalid"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
