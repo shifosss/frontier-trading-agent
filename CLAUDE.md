@@ -27,13 +27,15 @@ npm --prefix frontend run dev                                 # Vite on loopback
 
 `scripts/verify.ps1` (ruff + pytest + frontend build) is the repository's required check. It is PowerShell-only and hardcodes `.venv\Scripts\python.exe` and `npm.cmd`. `Launch Frontier.cmd` → `scripts/start.ps1` starts or reuses the local server.
 
-Baseline in a Linux container (2026-10-01): ruff reports 11 pre-existing E501 errors (`conditional_policy.py`, `short_horizon_study.py`, `tests/test_conditional_policy.py`). pytest: 525 pass, 2 fail. The failures are `tests/test_providers.py::test_timeout_terminates_owned_child[*]`; the Windows path uses job objects, and here the timed-out child PID still answers `os.kill(pid, 0)`. The frontend builds cleanly.
+Baseline in a Linux container (2026-10-01): ruff passes. `pyproject.toml` exempts `short_horizon_study.py` from E501 because completed studies and saved replay journals record its exact bytes, so don't reformat it. pytest: 525 pass, 2 fail. The failures are `tests/test_providers.py::test_timeout_terminates_owned_child[*]`; the Windows path uses job objects, and here the timed-out child PID still answers `os.kill(pid, 0)`. The frontend builds cleanly.
 
 Tests in `tests/` are synthetic and offline: the broker uses `httpx.MockTransport`, `winreg` is monkeypatched, and workspaces live in `tmp_path`. Keep it that way. Verification must never trigger source capture, model refits or a paper order cycle.
 
 Research tests under `.qualification/` are **not** a suite. Never run `pytest .qualification` (preserved older snapshots cause duplicate-module collection errors). Never run `run_*` scripts there either; they need retained raw inputs that a clone does not have. Each study records its focused command in a `verification.json`, e.g. `pytest .qualification/earnings-quality20260928/economic/test_run_study.py -q -p no:cacheprovider`.
 
 Ruff config: py313, line length 100, rules E/F/I.
+
+Open pull requests as ready for review, not as drafts (owner preference).
 
 ## Architecture
 
