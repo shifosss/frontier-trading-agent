@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "E:\Alex's Local Codebases\One_Person-Trading_Agent\.qualification\disclosure-novelty20261001\independent_check.py", line 699, in <module>
+    main()
+    ~~~~^^
+  File "E:\Alex's Local Codebases\One_Person-Trading_Agent\.qualification\disclosure-novelty20261001\independent_check.py", line 691, in main
+    result = verify(repo, args.definition.resolve(), args.attempt.resolve())
+  File "E:\Alex's Local Codebases\One_Person-Trading_Agent\.qualification\disclosure-novelty20261001\independent_check.py", line 314, in verify
+    assert Counter(map(canonical, variants[identity]["origins"])) == Counter(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        map(canonical, original["origins"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError

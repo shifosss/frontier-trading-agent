@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "declared_at_utc": "2026-10-01T21:44:58.760001+00:00",
+  "definition_sha256": "3946aac2f8f4bd0ab697ae36ba9ce41ee117fb2d05b4e40d0fe0a6485902b9a3",
+  "scope": "Pre-extraction timestamp terminology clarification. No candidate prevalence or economic outcomes have been extracted.",
+  "window_units": "The declared45*86400 and7*86400 seconds are elapsed UTC durations. Calendar days in definition prose means24-hour units here, not America/New_York civil-day subtraction across DST. Exact numeric parameters and interval inclusions govern.",
+  "q_clock_annotation": "Original manifest status/error/clock is retained separately. This audit does not requalify a10-Q public clock or establish an8-K public clock.",
+  "boundary_coverage": "Any requested window that reaches beyond2012-01-01 through2025-12-31 filing-date envelope carries explicit out-of-envelope coverage flag even if incidental cached rows exist. No-observed candidate never means no earnings disclosure.",
+  "forbidden_inputs": "No cash features/S/Q, financial fact values, price/return outcomes, model predictions, or account ledgers are extracted or used. No HTTP transport is instantiated.",
+  "definition_not_modified": true
+}

@@ -22,3 +22,7 @@ Start with the [standalone project handbook](../project-handbook.md). It carries
 | [GitHub encrypted-secret metadata](github-secrets-status.json) | Two repository Actions-secret names/update times only |
 
 Large original raw/model/row-level files can remain in separately controlled storage. Code and these summaries stay in GitHub. A clone is not a full research-workspace or paper-journal migration. See the handbook's recovery chapter before attempting worker operations or historical reproduction.
+
+## Subsequent research — October 1 evening
+
+The [cached disclosure-timing audit](../disclosure-novelty-results.md) completed after the original handover snapshot. It retains all 4,057 original filings and found preceding Item 2.02 metadata candidates for 3,732; independent source and exact timing checks passed. Matching fiscal periods/components remain unverified, and no strategy was promoted. Read its [source-only design](../disclosure-novelty-research.md), [decision addendum](../../.qualification/disclosure-novelty20261001/decision-register.json) and [new local artifact inventory](../../.qualification/disclosure-novelty20261001/artifact-inventory.json). The original 150-decision/28-lane registers and 31.8GB inventory remain dated handover snapshots; this supplement does not silently rewrite them. New large row files stay in the local study directory for the separate research backup.

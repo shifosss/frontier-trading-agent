@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "status": "complete",
+  "definition_sha256": "3946aac2f8f4bd0ab697ae36ba9ce41ee117fb2d05b4e40d0fe0a6485902b9a3",
+  "implementation_sha256": "8bb12faf676ce9136a1b06552a67b60bae6a73ed65d28f7dd6c1a478dee6a628",
+  "clarification_sha256": "b02bad1b52da722e8885e2d0e6f97453afca6a95d320979c682f51ef474511d1",
+  "requested_issuers": 100,
+  "requested_originals": 4057,
+  "original_discovery_sources": 179,
+  "metadata_groups": 27327,
+  "conflicting_metadata_groups": 0,
+  "metadata_raw_occurrences": 27327,
+  "event_status_counts": {
+    "preceding_candidate_observed": 3531,
+    "no_observed_candidate": 77,
+    "multiple_preceding_candidates": 201,
+    "same_or_late_only": 248
+  },
+  "manifest_status_counts": {
+    "captured": 3867,
+    "incomplete": 190
+  },
+  "q_api_clock_status_counts": {
+    "aware": 4057
+  },
+  "k_item_status_counts": {
+    "qualified_token": 8115,
+    "valid_nonmatching": 17406,
+    "invalid_encoding": 1806
+  },
+  "k_api_clock_status_counts": {
+    "aware": 27327
+  },
+  "pair_timing_counts": {
+    "preceding": 7759,
+    "late": 1213,
+    "same_clock": 1
+  },
+  "original_preceding_candidate_pairs": 3941,
+  "events_with_preceding_candidates": 3732,
+  "events_with_multiple_preceding_candidates": 201,
+  "before_source_envelope_events": 13,
+  "after_source_envelope_events": 0,
+  "source_envelope_unknown_events": 0,
+  "issuer_year_rows": 1400,
+  "network_requests": 0,
+  "documents_requested": 0,
+  "financial_facts_extracted": false,
+  "prices_or_returns_read": false,
+  "economic_paths": 0,
+  "fiscal_period_verified": false,
+  "disclosed_components_verified": false,
+  "limitations": [
+    "Current-member/classification cohort and current SEC submissions snapshots, not historically observed release vintages.",
+    "Original capture history-page selection targeted2012\u20132025 filings;45-day lookback and7-day later boundary coverage are not assumed complete.",
+    "Same CIK and earlier acceptance metadata are candidates only; original exhibit/header, fiscal-period and component linkage remain unverified.",
+    "Unknown undiscovered releases are retained as unknown; original complete flag is scoped to the existing discovery procedure."
+  ],
+  "outside_pair_retention": "All groups/origins retained once; exhaustive per-Q timing counts preserve outside-window evidence without Cartesian serialization."
+}

@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "reviewed_at_utc": "2026-10-01T22:23:04.169049+00:00",
+  "repository": "https://github.com/shifosss/frontier-trading-agent",
+  "repository_visibility_verified": "private via GitHub connector immediately before preparation",
+  "status": "passed_for_explicit_publication",
+  "explicit_file_count": 37,
+  "credential_shape_matches": 0,
+  "available_local_paper_values_checked": 0,
+  "credential_values_output": false,
+  "private_journals_included": false,
+  "source_raw_responses_duplicated": false,
+  "omitted_files": [
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/events.json",
+      "bytes": 13496897,
+      "sha256": "b477a49b09c80870dd9dd9bf86d8ff7da2c3aaee6918bcceeb50960e29d3627c"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/metadata-records.jsonl",
+      "bytes": 42732624,
+      "sha256": "04f1fcd475c1f2459de41cb4545017a38fcdd681a79195c173993a4309cb0fc1"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/pairs.jsonl",
+      "bytes": 5956464,
+      "sha256": "87304d7ab99b72ecb5b1f41dd8006731d9fbd3f87147da64c305194af98a54bf"
+    }
+  ],
+  "payload_identity_manifest_sha256": "150feef048f5efb359732fa077557ecdbe20307bb2e593da646bca02455d39a8",
+  "allowlist_sha256": "6ca233a00c1f0f1ca850e53ae6dbc520bf4c2f88dcde30a18e86d5ba012e12ef",
+  "limitation": "Exact-value checking covers local paper credentials available to this process; prior full publication/history review remains separate. No encrypted Actions secret is downloaded."
+}

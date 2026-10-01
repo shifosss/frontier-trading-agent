@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "declared_at_utc": "2026-10-01T22:08:32.657940+00:00",
+  "purpose": "Supplementary descriptive timing readout from all already-declared primary metadata pairs; no candidate rule/selection/economic change.",
+  "known_before_diagnostic": "Actual audit complete:4057requestedQ,3732withprecedingcandidate,3941primarypairs. Independent origin representation review is in progress; no lead-time distribution or source-component results have been read.",
+  "actual_attempt": "f6326cbd442d4ba08594221006e338eb",
+  "inputs": {
+    ".qualification\\disclosure-novelty20261001\\attempts\\f6326cbd442d4ba08594221006e338eb\\pairs.jsonl": "87304d7ab99b72ecb5b1f41dd8006731d9fbd3f87147da64c305194af98a54bf",
+    ".qualification\\disclosure-novelty20261001\\attempts\\f6326cbd442d4ba08594221006e338eb\\events.json": "b477a49b09c80870dd9dd9bf86d8ff7da2c3aaee6918bcceeb50960e29d3627c",
+    ".qualification\\disclosure-novelty20261001\\attempts\\f6326cbd442d4ba08594221006e338eb\\metadata-records.jsonl": "04f1fcd475c1f2459de41cb4545017a38fcdd681a79195c173993a4309cb0fc1"
+  },
+  "metrics": [
+    "All primary pair elapsed lead seconds: minimum,median,maximum and mean. No nearest/earliest candidate selected perQ.",
+    "All primary pairs classified same ET acceptance civil date versus earlier ET date.",
+    "Per requestedQ any same-date primary and any earlier-date primary; overlapping categories explicit,zero/multiple retained.",
+    "Distribution of primary pair counts perQ including zero."
+  ],
+  "timezone": "America/New_York for date classes; UTC elapsed seconds for duration",
+  "fiscal_period_and_components_verified": false,
+  "financial_facts_prices_returns_read": false,
+  "network_requests": 0,
+  "no_new_strategy_accounts": true
+}

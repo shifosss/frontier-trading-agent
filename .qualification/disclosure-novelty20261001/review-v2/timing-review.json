@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "actual_attempt": "f6326cbd442d4ba08594221006e338eb",
+  "timing_definition_sha256": "f44fdb786e594f6bf33a8a776aebc745579477c50a7270da5ab0d79e81a94408",
+  "timing_diagnostics_sha256": "a72ab85b4933a539bf36763eef6200c3298fdc572be6492deff56542605a60cf",
+  "main_v2_verification_sha256": "a0f21e09ee45713c7480508451dc86eac7644532f8e5c3e0a9665cc7121ec3b1",
+  "source_output_identities": {
+    ".qualification\\disclosure-novelty20261001\\attempts\\f6326cbd442d4ba08594221006e338eb\\pairs.jsonl": "87304d7ab99b72ecb5b1f41dd8006731d9fbd3f87147da64c305194af98a54bf",
+    ".qualification\\disclosure-novelty20261001\\attempts\\f6326cbd442d4ba08594221006e338eb\\events.json": "b477a49b09c80870dd9dd9bf86d8ff7da2c3aaee6918bcceeb50960e29d3627c",
+    ".qualification\\disclosure-novelty20261001\\attempts\\f6326cbd442d4ba08594221006e338eb\\metadata-records.jsonl": "04f1fcd475c1f2459de41cb4545017a38fcdd681a79195c173993a4309cb0fc1"
+  },
+  "primary_pairs_verified": 3941,
+  "requested_q_verified": 4057,
+  "lead_exact_rationals": {
+    "minimum": {
+      "numerator": 5,
+      "denominator": 1,
+      "decimal_28": "5"
+    },
+    "median": {
+      "numerator": 88098,
+      "denominator": 1,
+      "decimal_28": "88098"
+    },
+    "maximum": {
+      "numerator": 3848692,
+      "denominator": 1,
+      "decimal_28": "3848692"
+    },
+    "mean": {
+      "numerator": 1694277551,
+      "denominator": 3941,
+      "decimal_28": "429910.5686374016747018523217"
+    }
+  },
+  "pair_et_date_counts": {
+    "earlier_et_date": 2621,
+    "same_et_date": 1320
+  },
+  "event_et_date_counts": {
+    "any_same_et_date": 1316,
+    "any_earlier_et_date": 2484,
+    "both_date_classes": 68,
+    "no_primary": 325
+  },
+  "primary_pairs_per_q_distribution": {
+    "1": 3531,
+    "0": 325,
+    "2": 193,
+    "3": 8
+  },
+  "events_with_primary": 3732,
+  "candidate_prevalence_exact_rational": {
+    "numerator": 3732,
+    "denominator": 4057
+  },
+  "overlap_arithmetic_verified": true,
+  "scope": "Independent exact Fraction duration arithmetic from raw Q/K API timestamps, all primary pairs, ET civil dates and every requested Q including zero/multiple candidates. Decimal report values compared at28 significant digits. No financial facts/prices/returns/network/new audit run."
+}

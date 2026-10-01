@@ -1,0 +1,13 @@
+{
+  "started_at_utc": "2026-10-01T22:12:14.061810+00:00",
+  "actual_attempt": "f6326cbd442d4ba08594221006e338eb",
+  "checker_sha256": "8109b68ed116bd22b52c2bf123645badcb36b9cd0f04e9e1cd5720d109d0428e",
+  "prior_checker_sha256": "e49032b1ee619c5bac3ca46f88c9093fad563c7e003f7293d15da0420985bf39",
+  "prior_failure_identities": {
+    "attempt.json": "e40d0d00c9cd7e7c105decdabaf8b23bac812d6155bcb9e9d24749d8c9afe046",
+    "failure.json": "d17d16d35703b7ca632d53f00938d792fc341b8c719cd89e8849695d19f13994",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "435efe74f7c376ea64593e94d8752d99a7dc1d1d500ec984f15677f095cf2d46"
+  },
+  "rationale": "V1 reconstructed five of eight saved origin fields. V2 independently reconstructs verified raw byte length, source table kind and exact ordered history descriptor; full eight-field equality preserved. No source/audit/model/account rerun or mutation."
+}

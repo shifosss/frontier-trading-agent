@@ -1,0 +1,242 @@
+{
+  "schema": 1,
+  "inventoried_at_utc": "2026-10-01T22:23:04.168168+00:00",
+  "scope": "Files in this new source-only audit directory; original handover/corpus inventory remains a dated snapshot. Generated inventory/allowlist/publication-review are not self-hashed. Entry documentation is listed separately.",
+  "actual_attempt": "f6326cbd442d4ba08594221006e338eb",
+  "existing_source_corpus": "Reuse bound .qualification/earnings-quality20260928/source discovery roots/history; not copied here.",
+  "files": [
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/attempt.json",
+      "bytes": 560,
+      "sha256": "81bc82c5bb6f0923d201a8053bdc85359cf726aeaee9abe3a78e025cb8296cd5",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/completion.json",
+      "bytes": 1397,
+      "sha256": "20572292cbb7eb1eef0aea6f3c131b4ed2d1eab698c8f84a22988dd3ff7aecb9",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/events.json",
+      "bytes": 13496897,
+      "sha256": "b477a49b09c80870dd9dd9bf86d8ff7da2c3aaee6918bcceeb50960e29d3627c",
+      "publish_to_git": false,
+      "role": "local_row_evidence"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/input-identities.json",
+      "bytes": 684602,
+      "sha256": "dce7de116568efa45a1d9e52407b52548ae0984438e40153ea87a5c7eb34483e",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/issuer-year-denominators.json",
+      "bytes": 907166,
+      "sha256": "75bb1a191bd193c2e819999cec5e06ceb178c21be2f9d3e6f7dfa428266d9339",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/metadata-records.jsonl",
+      "bytes": 42732624,
+      "sha256": "04f1fcd475c1f2459de41cb4545017a38fcdd681a79195c173993a4309cb0fc1",
+      "publish_to_git": false,
+      "role": "local_row_evidence"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/pairs.jsonl",
+      "bytes": 5956464,
+      "sha256": "87304d7ab99b72ecb5b1f41dd8006731d9fbd3f87147da64c305194af98a54bf",
+      "publish_to_git": false,
+      "role": "local_row_evidence"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/report.json",
+      "bytes": 2421,
+      "sha256": "4384491e2b4490c8f618a0435e8129b97b6173109ded5ec2e9834e21bc466d80",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/attempts/f6326cbd442d4ba08594221006e338eb/report.md",
+      "bytes": 1461,
+      "sha256": "4136e990ac4167105e0bc04b717eebb7144c85eee25ece84a50506d77a66ec95",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/audit.py",
+      "bytes": 36396,
+      "sha256": "cc0b25cf4530cc5b8eb30d1dd1424aa0c69cc1c1a64b514ea19fd276f05364bd",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/clarification.json",
+      "bytes": 1210,
+      "sha256": "b02bad1b52da722e8885e2d0e6f97453afca6a95d320979c682f51ef474511d1",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/decision-register.json",
+      "bytes": 4275,
+      "sha256": "cfb94d4699cedfbc7bc3d8fc727ec8f218f9b40a15b1005b8c95e77771ae58c5",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/definition.json",
+      "bytes": 1519094,
+      "sha256": "3946aac2f8f4bd0ab697ae36ba9ce41ee117fb2d05b4e40d0fe0a6485902b9a3",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/final-review.json",
+      "bytes": 1056,
+      "sha256": "308035f20286b32822bac33aea19bc5a6d6ff6cf073f4d5544e35046e6df2fb2",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/implementation.json",
+      "bytes": 2079,
+      "sha256": "8bb12faf676ce9136a1b06552a67b60bae6a73ed65d28f7dd6c1a478dee6a628",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/independent_check.py",
+      "bytes": 30540,
+      "sha256": "e49032b1ee619c5bac3ca46f88c9093fad563c7e003f7293d15da0420985bf39",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/independent_check_v2.py",
+      "bytes": 34641,
+      "sha256": "8109b68ed116bd22b52c2bf123645badcb36b9cd0f04e9e1cd5720d109d0428e",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/README.md",
+      "bytes": 3184,
+      "sha256": "aa1853884beddbc5d9d204fa0d8e60f2d498d14ecfa1a0c4ecba5be5c0ebfde0",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review/attempt.json",
+      "bytes": 353,
+      "sha256": "e40d0d00c9cd7e7c105decdabaf8b23bac812d6155bcb9e9d24749d8c9afe046",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review/failure.json",
+      "bytes": 91,
+      "sha256": "d17d16d35703b7ca632d53f00938d792fc341b8c719cd89e8849695d19f13994",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review/stderr.txt",
+      "bytes": 837,
+      "sha256": "435efe74f7c376ea64593e94d8752d99a7dc1d1d500ec984f15677f095cf2d46",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review-v2/attempt.json",
+      "bytes": 962,
+      "sha256": "a074d5c349b91114dbdcff0459a79efe74c44ad92f1008b8989a51690a01a577",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review-v2/completion.json",
+      "bytes": 180,
+      "sha256": "32a311c3e0c104ab91b8071b0a3e7887e2a4f3e4bc94e942f177e7f14875b3e8",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review-v2/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review-v2/stdout.txt",
+      "bytes": 1798,
+      "sha256": "bcf74efb35660cd91ab278fac46ae6c602f805311aa6be8401afe1526799cad7",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review-v2/timing-review.json",
+      "bytes": 2288,
+      "sha256": "4a56f1e31379bc2b3348fa1219ed758a4ae545bbe07c03e51759fcb95b7785af",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/review-v2/verification.json",
+      "bytes": 1861,
+      "sha256": "a0f21e09ee45713c7480508451dc86eac7644532f8e5c3e0a9665cc7121ec3b1",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/test_audit.py",
+      "bytes": 21102,
+      "sha256": "b08a3aa8d357b5fd236e012e11eb1baac17bda2b6094cba73bd9969c910e6ed1",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/timing-diagnostics-definition.json",
+      "bytes": 1749,
+      "sha256": "f44fdb786e594f6bf33a8a776aebc745579477c50a7270da5ab0d79e81a94408",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    },
+    {
+      "path": ".qualification/disclosure-novelty20261001/timing-diagnostics.json",
+      "bytes": 1073,
+      "sha256": "a72ab85b4933a539bf36763eef6200c3298fdc572be6492deff56542605a60cf",
+      "publish_to_git": true,
+      "role": "authored_code_definition_compact_evidence_or_review"
+    }
+  ],
+  "entry_documentation": [
+    "AGENTS.md",
+    "README.md",
+    "docs/project-handbook.md",
+    "docs/handover/README.md",
+    "docs/disclosure-novelty-research.md",
+    "docs/disclosure-novelty-results.md"
+  ],
+  "summary": {
+    "payload_files": 31,
+    "payload_bytes": 65448361,
+    "published_payload_files": 28,
+    "published_payload_bytes": 3262376,
+    "omitted_row_files": 3,
+    "omitted_row_bytes": 62185985
+  }
+}

@@ -4,7 +4,7 @@ Start with [the project handbook](docs/project-handbook.md), then `config/mandat
 
 ## Current priority
 
-Complete the October1 comprehensive handover and verified private GitHub publication before any new strategy research. Repository: `https://github.com/shifosss/frontier-trading-agent`. After completion, reuse retained inputs for the predeclared source-only disclosure novelty/timing audit. Do not refit/restart completed earnings, ETF, conditional, multi-model or intraday studies unchanged.
+The October1 handover/publication and cached disclosure timing audit are complete. Read `docs/disclosure-novelty-results.md` and its frozen definition/reviews before continuing. Next: declare a bounded, source-only original 8-K document/exhibit probe to verify candidate filer identity, fiscal period and components actually disclosed. Metadata timing alone does not qualify an earlier financial signal. Do not rerun the unchanged cached audit or completed earnings, ETF, conditional, multi-model or intraday studies. Repository: `https://github.com/shifosss/frontier-trading-agent`.
 
 ## Governing constraints
 
