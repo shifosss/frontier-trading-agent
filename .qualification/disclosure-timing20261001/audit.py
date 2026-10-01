@@ -14,7 +14,9 @@ import csv
 import hashlib
 import importlib.metadata
 import importlib.util
+import io
 import json
+import os
 import platform
 import re
 import sqlite3
@@ -107,16 +109,23 @@ def load_verified_definitions(path, digest, names, namespace):
 # Reuse the frozen submissions parser and 10-Q event clock unchanged. capture.py imports the
 # project package at top level, so only its four needed definitions are executed, with the
 # stdlib names they use. features.py imports only the standard library and runs whole.
+# They are loaded only for a real audit, after its identity checks, never for --preflight.
 _CAPTURE, _FEATURES = FROZEN_MODULES
-base = load_verified_definitions(
-    REPO / _CAPTURE,
-    FROZEN_MODULES[_CAPTURE],
-    ["CaptureError", "Halt", "table_rows", "history_files"],
-    {"re": re, "datetime": datetime},
-)
-features = load_verified_module(
-    REPO / _FEATURES, FROZEN_MODULES[_FEATURES], "timing_audit_event_clock"
-)
+base = features = None
+
+
+def load_frozen(repo=REPO):
+    global base, features
+    if base is None:
+        base = load_verified_definitions(
+            repo / _CAPTURE,
+            FROZEN_MODULES[_CAPTURE],
+            ["CaptureError", "Halt", "table_rows", "history_files"],
+            {"re": re, "datetime": datetime},
+        )
+        features = load_verified_module(
+            repo / _FEATURES, FROZEN_MODULES[_FEATURES], "timing_audit_event_clock"
+        )
 
 
 def runtime_identity():
@@ -347,7 +356,26 @@ def entry_session(acceptance, filing_date, calendar):
     return clock["entry_session"], clock["execution_status"]
 
 
-def classify(q_row, canonical, coverage, calendar, positions, rules):
+def window_end(report, next_report, rules):
+    """Last filing date in the window: day 83, and strictly before the issuer's next 10-Q
+    period end, so a later period's results release can never enter."""
+    end = report + timedelta(days=rules["window_days_after_report_date"])
+    return end if next_report is None else min(end, next_report - timedelta(days=1))
+
+
+def next_report_dates(manifests):
+    """Each frozen 10-Q reportDate mapped to the issuer's next later frozen reportDate."""
+    dates = set()
+    for manifest in manifests:
+        try:
+            dates.add(day(manifest["registry_row"]["reportDate"]))
+        except (KeyError, TypeError, ValueError):
+            continue
+    ordered = sorted(dates)
+    return {a: b for a, b in zip(ordered, ordered[1:])}
+
+
+def classify(q_row, canonical, coverage, calendar, positions, rules, next_report=None):
     """Classify one original 10-Q against same-CIK in-window 8-K Item 2.02 metadata."""
     result = {
         "status": None,
@@ -383,7 +411,7 @@ def classify(q_row, canonical, coverage, calendar, positions, rules):
         result.update(status="q_session_unavailable", reasons=["10-Q clock: " + q_clock])
         return result
     result["q_entry_session"] = q_session
-    end = report + timedelta(days=rules["window_days_after_report_date"])
+    end = window_end(report, next_report, rules)
     result["late_10q_beyond_window"] = day(q_row["filingDate"]) > end
     if not covered(coverage, report + timedelta(days=1), end):
         result.update(
@@ -679,6 +707,7 @@ def audit(definition, repo):
             record.update(status="unavailable", error=str(exc))
             canonical = None
         issuers.append(record)
+        following = next_report_dates(own)
         for manifest in own:
             # The 10-Q clock comes from its frozen manifest, so it exists even when sources do not.
             q_row = manifest["registry_row"]
@@ -686,11 +715,10 @@ def audit(definition, repo):
                 q_row.get("acceptanceDateTime"), q_row.get("filingDate"), calendar
             )[0]
             try:
-                late = day(q_row["filingDate"]) > day(q_row["reportDate"]) + timedelta(
-                    days=rules["window_days_after_report_date"]
-                )
+                report = day(q_row["reportDate"])
+                late = day(q_row["filingDate"]) > window_end(report, following.get(report), rules)
             except (KeyError, TypeError, ValueError):
-                late = None
+                report, late = None, None
             if canonical is None:
                 result = {
                     "status": "issuer_unavailable",
@@ -710,6 +738,7 @@ def audit(definition, repo):
                     calendar,
                     positions,
                     rules,
+                    following.get(report),
                 )
             if result["q_entry_session"] not in (None, q_session) or result[
                 "late_10q_beyond_window"
@@ -776,13 +805,24 @@ CSV_FIELDS = [
 ]
 
 
+def write_atomic(path, data):
+    """Write through a sibling temporary file and replace, so a crash never truncates a record."""
+    temporary = path.with_name(f"{path.name}.{uuid.uuid4().hex}.tmp")
+    with temporary.open("wb") as handle:
+        handle.write(data)
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, path)
+    return sha(data)
+
+
 def write_json(path, value):
-    path.write_text(json.dumps(value, indent=1, sort_keys=False) + "\n", encoding="utf-8")
-    return sha(path.read_bytes())
+    return write_atomic(path, (json.dumps(value, indent=1) + "\n").encode("utf-8"))
 
 
 def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=ROOT):
     definition, definition_sha, state = verify_definition(definition_path, freeze_path, repo)
+    load_frozen(repo)
     with locks(repo / definition["paths"]["source_root"], output_root) as guard:
         attempt = output_root / "attempts" / uuid.uuid4().hex
         attempt.mkdir(parents=True, exist_ok=False)
@@ -805,11 +845,13 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
                 "issuers.json": write_json(attempt / "issuers.json", issuers),
                 "events.json": write_json(attempt / "events.json", rows),
             }
-            with (attempt / "events.csv").open("w", newline="", encoding="utf-8") as handle:
-                writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, extrasaction="ignore")
-                writer.writeheader()
-                writer.writerows(rows)
-            files["events.csv"] = sha((attempt / "events.csv").read_bytes())
+            table = io.StringIO(newline="")
+            writer = csv.DictWriter(table, fieldnames=CSV_FIELDS, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(rows)
+            files["events.csv"] = write_atomic(
+                attempt / "events.csv", table.getvalue().encode("utf-8")
+            )
             summary.update(source_lock=guard, network_requests=0, prices_or_returns_read=False)
             files["summary.json"] = write_json(attempt / "summary.json", summary)
             meta.update(status="complete", finished_at_utc=now(), files=files)

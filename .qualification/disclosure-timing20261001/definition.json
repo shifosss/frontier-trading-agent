@@ -56,9 +56,10 @@
    "zoneinfo TZPATH",
    "every bound input SHA256 or absence"
   ],
-  "reused_modules": "audit.py hard-codes the SHA256 of the reused capture and features modules and refuses to execute changed bytes. From the verified capture.py bytes it executes only the CaptureError, Halt, table_rows and history_files definitions with the stdlib names they use, never that module's top-level imports (which load the project package). features.py imports only the standard library and is executed whole. The same digests are bound under code."
+  "reused_modules": "audit.py hard-codes the SHA256 of the reused capture and features modules and refuses to execute changed bytes. From the verified capture.py bytes it executes only the CaptureError, Halt, table_rows and history_files definitions with the stdlib names they use, never that module's top-level imports (which load the project package). features.py imports only the standard library and is executed whole. The same digests are bound under code. They are loaded only for a real audit, after the declaration and input checks pass; --preflight never loads them."
  },
  "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking.",
+ "outputs": "Every attempt JSON/CSV record is written through a sibling temporary file, flushed and fsynced, then atomically replaced, so an interruption never truncates attempt.json or a result file.",
  "matching": {
   "candidate_form": "8-K",
   "amendment_form": "8-K/A",
@@ -66,7 +67,7 @@
   "items_rule": "Split the submissions items string on commas, strip whitespace, require an exact 2.02 token. Missing/empty items on an in-window 8-K make the 10-Q ambiguous.",
   "window_field": "filingDate",
   "window_days_after_report_date": 83,
-  "window_rule": "Same-issuer rows with 10-Q reportDate < filingDate <= reportDate + 83 calendar days. The shortest 12-week next quarter ends at reportDate + 84 days, and its results cannot be filed before it ends, so the next period's results release cannot enter the window. 10-Qs filed after the window end are flagged late_10q_beyond_window, not re-windowed.",
+  "window_rule": "Same-issuer rows with 10-Q reportDate < filingDate <= window end, where window end is the earlier of reportDate + 83 calendar days and the day before the issuer's next later frozen 10-Q reportDate. The shortest 12-week next quarter ends at reportDate + 84 days, and three frozen issuers (EFOR, TKR, ITGR) have consecutive 10-Q period ends only 52, 60 or 81 days apart; results for a later period cannot be filed before it ends, so they cannot enter the window. 10-Qs filed after the window end are flagged late_10q_beyond_window, not re-windowed.",
   "amendments": "In-window 8-K/A rows with Item 2.02 are reported and never candidates."
  },
  "clock": {
@@ -135,9 +136,14 @@
    "id": "amendment-05",
    "supersedes_definition_sha256": "3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc",
    "record": "amendment-05.json"
+  },
+  {
+   "id": "amendment-06",
+   "supersedes_definition_sha256": "5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7",
+   "record": "amendment-06.json"
   }
  ],
- "declared_at_utc": "2026-10-01T18:43:43.153572+00:00",
+ "declared_at_utc": "2026-10-01T18:54:15.545217+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -355,7 +361,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "9100c7e310c373d8e194173bcf7aba1bc51768966d815b9cf84e44cf4bc6e56c",
+  ".qualification/disclosure-timing20261001/audit.py": "94a5badef610f11ec79abeff01ff197b10609b34eb0b7a950d499cdf3aa2179b",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

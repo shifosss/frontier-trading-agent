@@ -577,3 +577,74 @@ def test_preflight_reports_definition_drift(tmp_path):
     result = pre(repo, study)
     drift = {"path": "definition", "problem": "Definition bytes differ from the frozen declaration"}
     assert not result["ready"] and drift in result["blocking"]
+
+
+def test_window_stops_before_next_frozen_report_date():
+    rules = FROZEN["matching"]
+    report = date(2012, 5, 9)
+    assert m.window_end(report, date(2012, 6, 30), rules) == date(2012, 6, 29)
+    assert m.window_end(report, None, rules) == report + timedelta(days=83)
+    assert m.window_end(report, report + timedelta(days=200), rules) == report + timedelta(days=83)
+    manifests = [
+        {"registry_row": {"reportDate": r}} for r in ["2012-06-30", "2012-05-09", "2012-05-09", ""]
+    ]
+    assert m.next_report_dates(manifests) == {date(2012, 5, 9): date(2012, 6, 30)}
+    # A release filed after the next period end is not a candidate for the earlier 10-Q.
+    m.load_frozen()
+    sessions = []
+    d = date(2012, 4, 2)
+    while d <= date(2012, 9, 28):
+        if d.weekday() < 5:
+            s = d.isoformat()
+            sessions.append(
+                {"session": s, "open": s + "T13:30:00+00:00", "close": s + "T20:00:00+00:00"}
+            )
+        d += timedelta(days=1)
+    q = row("0000000009-12-000010", "10-Q", "2012-06-20", "2012-06-20T21:00:00.000Z", "2012-05-09")
+    k = row(
+        "0000000009-12-000011",
+        "8-K",
+        "2012-07-10",
+        "2012-07-10T21:00:00.000Z",
+        "2012-07-10",
+        "2.02",
+    )
+    canonical = m.canonicalize(
+        [{"row": r, "source_index": 0, "row_index": i} for i, r in enumerate([q, k])]
+    )
+    positions = {x["session"]: i for i, x in enumerate(sessions)}
+    coverage = [("0001-01-01", "9999-12-31")]
+    capped = m.classify(q, canonical, coverage, sessions, positions, rules, date(2012, 6, 30))
+    uncapped = m.classify(q, canonical, coverage, sessions, positions, rules, None)
+    assert capped["status"] == "no_candidate"
+    assert uncapped["status"] == "single_after"
+
+
+def test_preflight_reports_drifted_reused_module_without_loading_it(tmp_path):
+    repo, study = build(tmp_path)
+    capture = repo / ".qualification/filing-source20260928/capture.py"
+    capture.write_bytes(capture.read_bytes() + b"\nraise SystemExit('must not run')\n")
+    result = pre(repo, study)
+    assert not result["ready"]
+    assert any(
+        b["path"] == ".qualification/filing-source20260928/capture.py"
+        and b["problem"] == "sha256_mismatch"
+        for b in result["blocking"]
+    )
+    with pytest.raises(m.AuditError, match="missing or changed"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_json_records_are_replaced_atomically(tmp_path, monkeypatch):
+    path = tmp_path / "attempt.json"
+    m.write_json(path, {"status": "running"})
+    before = path.read_bytes()
+
+    def crash(*args, **kwargs):
+        raise OSError("simulated crash before replace")
+
+    monkeypatch.setattr(m.os, "replace", crash)
+    with pytest.raises(OSError):
+        m.write_json(path, {"status": "complete"})
+    assert path.read_bytes() == before

@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Five amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`8712883a85e034d03bb384d72c011ac7377236895c29e7c7f53c8b9a59abe0d4`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Six amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
 
 - It hash-checks the reused modules before executing them.
 - It binds Python 3.13, `pyproject.toml` and `uv.lock`, and records the runtime with each attempt.
@@ -21,9 +21,15 @@ Declared October 1, 2026 and frozen before any 8-K submissions row was read. `de
 - Held locks are probed read-only and reported as blocking.
 - Inputs whose bytes changed are reported, not parsed.
 
+`amendment-06.json` makes three changes:
+
+- It also ends the window before the issuer's next frozen 10-Q period end.
+- It loads the reused modules only for a real run.
+- It writes every record atomically.
+
 ## What it does
 
-For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls in (10-Q `reportDate`, `reportDate` + 83 days]. The shortest possible next quarter ends on day 84, so its results release cannot fall in the window. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
+For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls after the 10-Q `reportDate`. The window closes at day 83 or the day before the issuer's next frozen 10-Q `reportDate`, whichever comes first. A later period's results cannot be filed before that period ends, so they cannot fall in the window; three issuers have consecutive period ends only 52–81 days apart. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
 
 Provenance is rebuilt from the retained raw submissions bytes. Reused sources resolve repository-relative and must match the frozen request reuse catalog. Captured sources resolve under `source/`. The re-parsed concatenation must equal each saved `discovery.json` row list. Changed bytes in any bound or recorded file stop the attempt. A missing per-issuer file (a `discovery.json`, a root or a history page) makes only that issuer unavailable, and its 10-Qs stay in every denominator. Global inputs, code and the 4,057 manifests must all be present and unchanged. The input state must be identical at the start and end of the run.
 

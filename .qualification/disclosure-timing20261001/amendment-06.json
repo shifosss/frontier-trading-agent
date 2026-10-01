@@ -1,0 +1,24 @@
+{
+ "id": "amendment-06",
+ "recorded_at_utc": "2026-10-01T18:54:15.596079+00:00",
+ "supersedes_definition_sha256": "5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7",
+ "new_definition_sha256": "8712883a85e034d03bb384d72c011ac7377236895c29e7c7f53c8b9a59abe0d4",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run. The frozen 10-Q manifests (already in the clone) were read to confirm the short report-date gaps.",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, three P2 findings on commit ce09b12f",
+ "changes": [
+  {
+   "field": "matching.window_rule; audit.py window_end/next_report_dates",
+   "reason": "The frozen 10-Q manifests contain consecutive report dates 52 (EFOR 2012-05-09 to 2012-06-30), 60 (TKR) and 81 (ITGR) days apart, so a fixed 83-day end could admit a later period's release. The window now also ends the day before the issuer's next later frozen 10-Q reportDate."
+  },
+  {
+   "field": "runtime.reused_modules; audit.py load_frozen",
+   "reason": "The reused modules loaded at import, so a missing or drifted capture.py crashed --preflight instead of being reported. They now load only for a real audit after its checks pass."
+  },
+  {
+   "field": "outputs; audit.py write_atomic",
+   "reason": "write_text truncated a record before writing it, so an interruption could destroy attempt.json. Records are now written to a temporary file, fsynced and atomically replaced."
+  }
+ ],
+ "unchanged": "Denominators, candidate form/token, clock, classification order, inputs, locks, bounds and verdict thresholds."
+}
