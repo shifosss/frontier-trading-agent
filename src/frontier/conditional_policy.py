@@ -20,9 +20,12 @@ def _projection(forecast, quantity, price, cost_bps, cost_model):
     if not all(map(isfinite, (notional, sale))) or min(notional, sale) <= 0:
         return {"reason": "invalid_forecast"}
     half_cost = cost_bps / 20000
-    entry_fee = notional * half_cost if cost_model is None else cost_model.fee(quantity, notional, "buy")
+    entry_fee = (
+        notional * half_cost if cost_model is None else cost_model.fee(quantity, notional, "buy")
+    )
     exit_fee = sale * half_cost if cost_model is None else cost_model.fee(quantity, sale, "sell")
-    utility = notional * mu - entry_fee - exit_fee - POLICY["predicted_downside_penalty"] * notional * downside
+    penalty = POLICY["predicted_downside_penalty"] * notional * downside
+    utility = notional * mu - entry_fee - exit_fee - penalty
     if not isfinite(utility):
         return {"reason": "invalid_forecast"}
     return {
@@ -82,13 +85,20 @@ class ConditionalPolicy:
             if reason != "eligible":
                 rejects[reason] += 1
             if audit or reason == "correlation":
-                decisions.append({"symbol": symbols[j], "symbol_index": j, "reason": reason, **details})
+                decisions.append(
+                    {"symbol": symbols[j], "symbol_index": j, "reason": reason, **details}
+                )
 
         for raw_index in ranking:
             j = int(raw_index)
             if j != raw_index or not 0 <= j < len(symbols):
                 raise ValueError("Ranking contains an invalid symbol index")
-            reason = "duplicate" if j in seen else "held" if symbols[j] in held else "reserved" if symbols[j] in reserved else None
+            reason = (
+                "duplicate" if j in seen
+                else "held" if symbols[j] in held
+                else "reserved" if symbols[j] in reserved
+                else None
+            )
             seen.add(j)
             if reason:
                 record(j, reason)
@@ -116,16 +126,22 @@ class ConditionalPolicy:
                         record(j, reason)
                     else:
                         order = {**singleton["orders"][0], "symbol_index": j}
-                        projection = _projection(candidates[j], order["quantity"], order["reference_price"], cost_bps, cost_model)
+                        projection = _projection(
+                            candidates[j], order["quantity"], order["reference_price"],
+                            cost_bps, cost_model,
+                        )
                         proposals[j] = (order, projection)
-                        record(j, projection["reason"], **{k: v for k, v in projection.items() if k != "reason"})
+                        details = {k: v for k, v in projection.items() if k != "reason"}
+                        record(j, projection["reason"], **details)
                 order, projection = proposals[j]
                 if projection["reason"] != "eligible":
                     continue
                 if correlation_allowed is not None and not correlation_allowed(j, peers):
                     record(j, "correlation")
                     continue
-                score = projection["utility_fraction"] if self.ranking_mode == "fraction" else projection["utility"]
+                score = projection[
+                    "utility_fraction" if self.ranking_mode == "fraction" else "utility"
+                ]
                 eligible.append((score, symbols[j], j, order, projection))
             if not eligible:
                 break
@@ -143,7 +159,9 @@ class ConditionalPolicy:
     def check_fill(self, order, quantity, price, cost_bps, cost_model):
         """Use the original forecast at the engine's affordable, never-increased quantity."""
         original = order["projection"]
-        projection = _projection((original["mu"], original["downside"]), quantity, price, cost_bps, cost_model)
+        projection = _projection(
+            (original["mu"], original["downside"]), quantity, price, cost_bps, cost_model
+        )
         return {
             "accepted": projection["reason"] == "eligible",
             "reason": "filled" if projection["reason"] == "eligible" else projection["reason"],
