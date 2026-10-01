@@ -1,0 +1,21 @@
+{
+  "verified_at_utc": "2026-10-01T16:28:29.428520+00:00",
+  "repository_url": "https://github.com/shifosss/frontier-trading-agent",
+  "visibility": "private",
+  "branch": "main",
+  "reviewed_handover_commit": "0cad3f86",
+  "published_merge_commit": "7f6c42ae0abc57a1b0d3340c64f652fd7fc006d6",
+  "preserved_original_local_tip": "5d9043d",
+  "preserved_original_remote_tip": "81148c2",
+  "owner_created_license": "GNU General Public License version 3",
+  "decisions": 150,
+  "study_lanes": 28,
+  "original_markdown_documents": 137,
+  "retained_artifact_files": 83641,
+  "retained_artifact_bytes": 31764902437,
+  "release_metadata": "published-release.json",
+  "credentials": "Two encrypted GitHub Actions repository secrets. No credential values in Git or release archive; local-machine configuration remains separate.",
+  "paper_journal": "Not uploaded. Cloning and changing credentials does not migrate the initialized operator.",
+  "whitespace_review": "New documentation/helper passed Git whitespace review with CRLF recognized. Immutable historical evidence retains original whitespace and exact bytes.",
+  "strategy_status": "No economically qualified promotion. Documentation and software verification do not establish profitability."
+}

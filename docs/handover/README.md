@@ -1,5 +1,7 @@
 # Handover index — October 1, 2026
 
+Published in the [private GitHub repository](https://github.com/shifosss/frontier-trading-agent). The unchanged earnings evidence bundle is available in the [handover release](https://github.com/shifosss/frontier-trading-agent/releases/tag/handover-2026-10-01); its remote size and SHA-256 match the reviewed local archive.
+
 Start with the [standalone project handbook](../project-handbook.md). It carries the owner mandate, all recorded decision rationales, technical implementation, full strategy-study findings, failed hypotheses and exact continuation rules. A fresh-reader review checks whether an agent with no conversation history can understand it.
 
 | Record | Purpose |
@@ -14,6 +16,7 @@ Start with the [standalone project handbook](../project-handbook.md). It carries
 | [Git history](git-history.tsv) | Original35 local commits before handover |
 | [Publication secret review](publication-secret-review.json) | Current candidates/history checked without outputting any values |
 | [Fresh-reader review](fresh-reader-review.md) | Independent zero-context review and resolved findings |
+| [Publication status](publication-status.json) / [verified release metadata](published-release.json) | Published commit, preserved histories, exclusions and verified remote archive identity |
 | [Release notes](release-notes.md) | Scope and exact identity of the separate earnings evidence bundle |
 | [Archive review](archive-publication-review.json) | Unchanged latest earnings bundle verified before private-release distribution |
 | [GitHub encrypted-secret metadata](github-secrets-status.json) | Two repository Actions-secret names/update times only |

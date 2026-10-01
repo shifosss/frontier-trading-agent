@@ -1,0 +1,14 @@
+{
+  "release_url": "https://github.com/shifosss/frontier-trading-agent/releases/tag/handover-2026-10-01",
+  "tag": "handover-2026-10-01",
+  "target": "7f6c42ae0abc57a1b0d3340c64f652fd7fc006d6",
+  "asset_count": 1,
+  "asset": {
+    "name": "earnings-comparison-20260929.zip",
+    "size": 155043133,
+    "state": "uploaded",
+    "digest": "sha256:51a620b50b7462d04887d6317fc9b8a6b68ebafc8fb07e2e8386510c3f122c97",
+    "browser_download_url": "https://github.com/shifosss/frontier-trading-agent/releases/download/handover-2026-10-01/earnings-comparison-20260929.zip"
+  },
+  "local_verified_sha256": "51a620b50b7462d04887d6317fc9b8a6b68ebafc8fb07e2e8386510c3f122c97"
+}
