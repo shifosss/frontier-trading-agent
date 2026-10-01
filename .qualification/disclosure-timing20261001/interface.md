@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`1edc4ee9a2bd39e9a5377519cbf30d05b7243342dc5ced42c2046b52dec7fa0b`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Eight amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Nine amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
 
 - It hash-checks the reused modules before executing them.
 - It binds Python 3.13, `pyproject.toml` and `uv.lock`, and records the runtime with each attempt.
@@ -34,6 +34,11 @@ Declared October 1, 2026 and frozen before any 8-K submissions row was read. `de
 - The final check also rechecks the 4,057 manifests.
 - Time zones resolve only from the `uv.lock`-pinned `tzdata` 2026.4 package, never from system files. Each attempt records the America/New_York TZif SHA256.
 - A non-file lock path is treated as invalid.
+
+`amendment-09.json` makes two changes:
+
+- It records every resolved raw source (root and history page) and re-hashes them before completing.
+- The preflight inspects sources under the capture read lock and reports whether its inspection was guarded.
 
 ## What it does
 

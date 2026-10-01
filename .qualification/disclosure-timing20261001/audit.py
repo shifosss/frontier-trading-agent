@@ -25,7 +25,7 @@ import sys
 import uuid
 import zoneinfo
 from collections import Counter
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -234,8 +234,9 @@ def definition_problems(definition_path, freeze_path):
 # ---------------------------------------------------------------- provenance
 
 
-def resolve_source(meta, source_root, repo, reuse):
-    """Locate one retained raw submissions source with the capture's own path rule and verify it."""
+def resolve_source(meta, source_root, repo, reuse, observed=None):
+    """Locate one retained raw submissions source with the capture's own path rule and verify it.
+    Every resolved path's observed SHA256 (None when absent) is added to `observed`."""
     if meta.get("status") != 200:
         raise IssuerUnavailable("discovery source was not HTTP200: " + str(meta.get("url")))
     digest, size, rel = meta.get("sha256"), meta.get("bytes"), meta.get("path")
@@ -249,9 +250,14 @@ def resolve_source(meta, source_root, repo, reuse):
                 + str(meta.get("url"))
             )
     path = (repo if meta.get("reused") else source_root) / rel
+    key = path.relative_to(repo).as_posix()
     if not path.is_file():
-        raise IssuerUnavailable("retained raw source not present: " + path.as_posix())
+        if observed is not None:
+            observed[key] = None
+        raise IssuerUnavailable("retained raw source not present: " + key)
     data = path.read_bytes()
+    if observed is not None:
+        observed[key] = sha(data)
     if sha(data) != digest or (size is not None and len(data) != size):
         raise AuditError(
             "Retained raw source bytes do not match recorded identity: " + path.as_posix()
@@ -259,7 +265,7 @@ def resolve_source(meta, source_root, repo, reuse):
     return path, data
 
 
-def reconstruct_issuer(issuer, discovery, request, source_root, repo):
+def reconstruct_issuer(issuer, discovery, request, source_root, repo, observed=None):
     """Re-parse root/history bytes, keep every row occurrence with its source and row index."""
     if not discovery.get("complete"):
         raise IssuerUnavailable("discovery incomplete: " + str(discovery.get("error")))
@@ -270,7 +276,7 @@ def reconstruct_issuer(issuer, discovery, request, source_root, repo):
     occurrences, identities, coverage = [], [], []
     root_body = None
     for index, meta in enumerate(sources):
-        path, data = resolve_source(meta, source_root, repo, reuse)
+        path, data = resolve_source(meta, source_root, repo, reuse, observed)
         body = json.loads(data)
         if index == 0:
             expected = "https://data.sec.gov/submissions/CIK" + issuer["cik"] + ".json"
@@ -610,6 +616,31 @@ def flatten(issuer, manifest, result, qualified):
 
 
 @contextmanager
+def read_guard(lock):
+    """Read transaction on the capture lock: a capture writer cannot start while it is held."""
+    if not lock.is_file():
+        raise AuditError("Source worker lock is missing or not a file: " + lock.as_posix())
+    try:
+        reader = sqlite3.connect(lock.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
+    except sqlite3.DatabaseError as exc:
+        raise AuditError("The capture lock is invalid: " + str(exc)) from exc
+    try:
+        try:
+            reader.execute("BEGIN")
+            reader.execute("SELECT count(*) FROM sqlite_master").fetchone()
+        except sqlite3.DatabaseError as exc:
+            raise AuditError(
+                "A source capture worker holds the capture lock, or it is invalid"
+            ) from exc
+        yield
+    finally:
+        try:
+            reader.rollback()
+        finally:
+            reader.close()
+
+
+@contextmanager
 def locks(source_root, root):
     """Own exclusive lock plus a read transaction on the capture lock, like the collector."""
     lock = source_root / "capture.lock.sqlite"
@@ -622,33 +653,24 @@ def locks(source_root, root):
         own = sqlite3.connect(own_path, timeout=0)
     except sqlite3.DatabaseError as exc:
         raise AuditError("Audit lock is invalid: " + str(exc)) from exc
-    reader = None
     try:
         try:
             own.execute("BEGIN EXCLUSIVE")
             own.execute("SELECT count(*) FROM sqlite_master").fetchone()
         except sqlite3.DatabaseError as exc:
             raise AuditError("Another timing audit holds the lock, or it is invalid") from exc
-        try:
-            reader = sqlite3.connect(lock.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
-            reader.execute("BEGIN")
-            reader.execute("SELECT count(*) FROM sqlite_master").fetchone()
-        except sqlite3.DatabaseError as exc:
-            raise AuditError(
-                "A source capture worker holds the capture lock, or it is invalid"
-            ) from exc
-        yield "read_guard_held"
+        with read_guard(lock):
+            yield "read_guard_held"
     finally:
-        for connection in (reader, own):
-            if connection:
-                try:
-                    connection.rollback()
-                finally:
-                    connection.close()
+        try:
+            own.rollback()
+        finally:
+            own.close()
 
 
-def audit(definition, repo):
-    """Pure computation over bound inputs; returns per-issuer, per-10-Q and summary records."""
+def audit(definition, repo, observed=None):
+    """Pure computation over bound inputs; returns per-issuer, per-10-Q and summary records.
+    `observed` collects the SHA256 (or absence) of every raw source path it resolves."""
     paths = definition["paths"]
     source_root = repo / paths["source_root"]
     request = load(repo / paths["source_request"])
@@ -687,7 +709,7 @@ def audit(definition, repo):
                 m["registry_row"]["accessionNumber"] for m in own
             ]:
                 raise IssuerUnavailable("registered 10-Q set differs from discovery originals")
-            rebuilt = reconstruct_issuer(issuer, discovery, request, source_root, repo)
+            rebuilt = reconstruct_issuer(issuer, discovery, request, source_root, repo, observed)
             canonical = canonicalize(rebuilt["occurrences"])
             form_counts = Counter(o["row"].get("form") for o in rebuilt["occurrences"])
             # Conflicting accessions are never counted as one variant; they are listed instead.
@@ -823,6 +845,13 @@ CSV_FIELDS = [
 ]
 
 
+def observed_state(observed, repo):
+    """Re-hash every repository-relative raw source path the audit resolved (None when absent)."""
+    return {
+        rel: sha((repo / rel).read_bytes()) if (repo / rel).is_file() else None for rel in observed
+    }
+
+
 def write_atomic(path, data):
     """Write through a sibling temporary file and replace, so a crash never truncates a record."""
     temporary = path.with_name(f"{path.name}.{uuid.uuid4().hex}.tmp")
@@ -863,9 +892,15 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
         }
         write_json(attempt / "attempt.json", meta)
         try:
-            issuers, rows, summary = audit(definition, repo)
-            if input_state(repo, definition) != state or check_inputs(repo, definition):
+            observed = {}
+            issuers, rows, summary = audit(definition, repo, observed)
+            if (
+                input_state(repo, definition) != state
+                or check_inputs(repo, definition)
+                or observed_state(observed, repo) != observed
+            ):
                 raise AuditError("Bound inputs appeared, disappeared or changed during the audit")
+            meta["raw_source_identities"] = observed
             files = {
                 "issuers.json": write_json(attempt / "issuers.json", issuers),
                 "events.json": write_json(attempt / "events.json", rows),
@@ -920,48 +955,65 @@ def lock_busy(path):
 
 def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_root=ROOT):
     """What a real run would meet, without writing: blocking problems stop the run, while
-    issuer_unavailable lists absent per-issuer files the run keeps in every denominator."""
+    issuer_unavailable lists absent per-issuer files the run keeps in every denominator.
+    Source files are inspected under the capture read guard whenever the lock exists."""
     definition, _, declaration = definition_problems(definition_path, freeze_path)
     blocking = [{"path": "definition", "problem": p} for p in declaration]
-    blocking += check_inputs(repo, definition)
-    state = input_state(repo, definition)
-    unavailable = [
-        {"path": rel, "problem": "missing"}
-        for rel in definition["issuer_inputs"]
-        if state[rel] is None
-    ]
+    unavailable = []
+    busy = lock_busy(output_root / "audit.lock.sqlite")
+    if busy:
+        blocking.append({"path": "audit.lock.sqlite", "problem": busy})
     source_root = repo / definition["paths"]["source_root"]
     capture_lock = source_root / "capture.lock.sqlite"
     rel_lock = capture_lock.relative_to(repo).as_posix()
-    if not capture_lock.is_file():
-        blocking.append({"path": rel_lock, "problem": "missing"})
-    for path, rel in [
-        (capture_lock, rel_lock),
-        (output_root / "audit.lock.sqlite", "audit.lock.sqlite"),
-    ]:
-        busy = lock_busy(path)
-        if busy:
-            blocking.append({"path": rel, "problem": busy})
-    request_rel = definition["paths"]["source_request"]
-    if state.get(request_rel) != definition["inputs"].get(request_rel):
-        return {"ready": False, "blocking": blocking, "issuer_unavailable": unavailable}
-    reuse = {r["url"]: r for r in load(repo / request_rel)["reuse"]}
-    for rel, digest in definition["issuer_inputs"].items():
-        # Only discovery files whose bytes match their bound identity are parsed.
-        if not rel.endswith("/discovery.json") or state[rel] != digest:
-            continue
-        for meta in load(repo / rel).get("sources", []):
-            try:
-                resolve_source(meta, source_root, repo, reuse)
-            except IssuerUnavailable as exc:
-                unavailable.append(
-                    {"path": meta.get("path"), "problem": str(exc), "url": meta.get("url")}
-                )
-            except AuditError as exc:
-                blocking.append(
-                    {"path": meta.get("path"), "problem": str(exc), "url": meta.get("url")}
-                )
-    return {"ready": not blocking, "blocking": blocking, "issuer_unavailable": unavailable}
+    with ExitStack() as stack:
+        if not capture_lock.exists():
+            blocking.append({"path": rel_lock, "problem": "missing"})
+            inspection = "unguarded: capture lock missing, so no capture worker can hold it"
+        else:
+            problem = lock_busy(capture_lock)
+            if problem is None:
+                try:
+                    stack.enter_context(read_guard(capture_lock))
+                except AuditError:
+                    problem = "held by another process"
+            if problem:
+                blocking.append({"path": rel_lock, "problem": problem})
+                return {
+                    "ready": False,
+                    "blocking": blocking,
+                    "issuer_unavailable": unavailable,
+                    "source_inspection": "skipped: capture lock " + problem,
+                }
+            inspection = "guarded by the capture read lock"
+        blocking += check_inputs(repo, definition)
+        state = input_state(repo, definition)
+        unavailable += [
+            {"path": rel, "problem": "missing"}
+            for rel in definition["issuer_inputs"]
+            if state[rel] is None
+        ]
+        request_rel = definition["paths"]["source_request"]
+        if state.get(request_rel) == definition["inputs"].get(request_rel):
+            reuse = {r["url"]: r for r in load(repo / request_rel)["reuse"]}
+            for rel, digest in definition["issuer_inputs"].items():
+                # Only discovery files whose bytes match their bound identity are parsed.
+                if not rel.endswith("/discovery.json") or state[rel] != digest:
+                    continue
+                for meta in load(repo / rel).get("sources", []):
+                    entry = {"path": meta.get("path"), "url": meta.get("url")}
+                    try:
+                        resolve_source(meta, source_root, repo, reuse)
+                    except IssuerUnavailable as exc:
+                        unavailable.append(dict(entry, problem=str(exc)))
+                    except AuditError as exc:
+                        blocking.append(dict(entry, problem=str(exc)))
+    return {
+        "ready": not blocking,
+        "blocking": blocking,
+        "issuer_unavailable": unavailable,
+        "source_inspection": inspection,
+    }
 
 
 if __name__ == "__main__":

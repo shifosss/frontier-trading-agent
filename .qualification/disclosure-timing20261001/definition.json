@@ -34,7 +34,7 @@
  },
  "provenance": {
   "row_reconstruction": "Re-parse every discovery source in saved order with the frozen capture table_rows parser: source 0 is the root filings.recent table, later sources are bare history arrays. Keep every occurrence with (source index, row index). The concatenation must equal discovery.json rows exactly, else the issuer is unavailable.",
-  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt. The final check also recomputes the 4,057-manifest count and digest.",
+  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt. The final check also recomputes the 4,057-manifest count and digest. Every raw source path the audit resolves (roots and captured history pages, or their absence) is recorded repository-relative with its SHA256 in attempt.json and re-hashed in the final check.",
   "history_pages": "Fetched history URLs must equal, in order, the frozen capture's selection of declared history files overlapping 2012-01-01..2025-12-31.",
   "coverage": "Filing-date coverage is the union of [earliest root recent filingDate, open end] and each fetched history page's declared [filingFrom, filingTo]; an issuer with no declared history files is fully covered.",
   "canonicalization": "Group occurrences by accessionNumber within an issuer. Identical occurrences form one canonical row; differing occurrences are a retained conflict and are never used as a candidate.",
@@ -60,7 +60,7 @@
   "tzdata": "2026.4",
   "timezone_data": "Before the reused clock module loads, a real run resets zoneinfo's search path so America/New_York resolves only from the uv.lock-pinned tzdata package (2026.4), never from system TZif files. The installed package version must equal this value, and each attempt records the SHA256 of the exact America/New_York TZif bytes used. The recomputed 10-Q sessions must also equal the completed study's saved sessions."
  },
- "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking.",
+ "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking. When the capture lock exists, all source inspection runs while preflight holds the same read transaction as a run; a held or invalid lock skips inspection and is blocking. When the lock is absent the inspection is reported as unguarded. The result states which applied in source_inspection.",
  "outputs": "Every attempt JSON/CSV record is written through a sibling temporary file, flushed and fsynced, then atomically replaced, so an interruption never truncates attempt.json or a result file.",
  "matching": {
   "candidate_form": "8-K",
@@ -153,9 +153,14 @@
    "id": "amendment-08",
    "supersedes_definition_sha256": "f7e3d8c49188ec9ffd149f2704fbe9a8d5d5a9767f9596171a9e48c1daf99eba",
    "record": "amendment-08.json"
+  },
+  {
+   "id": "amendment-09",
+   "supersedes_definition_sha256": "1edc4ee9a2bd39e9a5377519cbf30d05b7243342dc5ced42c2046b52dec7fa0b",
+   "record": "amendment-09.json"
   }
  ],
- "declared_at_utc": "2026-10-01T19:15:28.234543+00:00",
+ "declared_at_utc": "2026-10-01T19:25:03.173726+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -373,7 +378,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "77259fbd42066bbb3720f46d348b32c5d682d79f1e99c1481130987a0c0c130b",
+  ".qualification/disclosure-timing20261001/audit.py": "1fdd28e6ce82b84a10c082e2090bbd637a202ca4159269049b836a8e6ca61fc7",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

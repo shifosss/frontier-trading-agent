@@ -685,8 +685,8 @@ def test_manifest_change_during_audit_fails_the_attempt(tmp_path, monkeypatch):
     repo, study = build(tmp_path)
     original = m.audit
 
-    def audit_then_change_manifest(definition, root):
-        result = original(definition, root)
+    def audit_then_change_manifest(definition, root, observed=None):
+        result = original(definition, root, observed)
         manifest = next((root / E / "source/filings/AAA").glob("*.json"))
         manifest.write_bytes(manifest.read_bytes() + b" ")
         return result
@@ -726,3 +726,50 @@ def test_non_file_audit_lock_is_invalid(tmp_path):
     with pytest.raises(m.AuditError, match="Audit lock is invalid"):
         m.run(study / "definition.json", study / "freeze.json", repo, study)
     assert not (study / "attempts").exists()
+
+
+def test_history_page_change_during_audit_fails_the_attempt(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.audit
+
+    def audit_then_change_history(definition, root, observed=None):
+        result = original(definition, root, observed)
+        page = next((root / E / "source/raw").glob("*.bin"))
+        page.write_bytes(page.read_bytes() + b" ")
+        return result
+
+    monkeypatch.setattr(m, "audit", audit_then_change_history)
+    with pytest.raises(m.AuditError, match="changed during the audit"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_completed_attempt_records_raw_source_identities(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    observed = json.loads((attempt / "attempt.json").read_text())["raw_source_identities"]
+    missing = [p for p, digest in observed.items() if digest is None]
+    assert len(missing) == 1 and missing[0].endswith(".bin")  # CCC's absent history page
+    assert all(digest for p, digest in observed.items() if p not in missing)
+
+
+def test_preflight_holds_capture_read_guard_while_inspecting(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    lock = repo / E / "source/capture.lock.sqlite"
+    writer_blocked = []
+    original = m.check_inputs
+
+    def check_while_probing_writer(*args, **kwargs):
+        writer = sqlite3.connect(lock, timeout=0)
+        try:
+            writer.execute("BEGIN EXCLUSIVE")
+            writer_blocked.append(False)
+            writer.rollback()
+        except sqlite3.OperationalError:
+            writer_blocked.append(True)
+        finally:
+            writer.close()
+        return original(*args, **kwargs)
+
+    monkeypatch.setattr(m, "check_inputs", check_while_probing_writer)
+    result = pre(repo, study)
+    assert writer_blocked == [True]
+    assert result["ready"] and result["source_inspection"].startswith("guarded")
