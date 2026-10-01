@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any candidate matching, timing or outcome was computed. An earlier schema-only inspection, recorded in the handbook, counted 26,712 raw 8-K occurrences; `definition.json` discloses it. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Ten amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
+Declared October 1, 2026 and frozen before any candidate matching, timing or outcome was computed. An earlier schema-only inspection, recorded in the handbook, counted 26,712 raw 8-K occurrences; `definition.json` discloses it. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`47b14c3b771a67747bb09eba63ea29d636c862712f5ccdfd70a807c5946cba4e`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Eleven amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
 
 - It hash-checks the reused modules before executing them.
 - It binds Python 3.13, `pyproject.toml` and `uv.lock`, and records the runtime with each attempt.
@@ -48,6 +48,13 @@ Declared October 1, 2026 and frozen before any candidate matching, timing or out
 - It stops the preflight at declaration drift.
 - It corrects the earlier "no 8-K row read" claim.
 
+`amendment-11.json` makes four changes:
+
+- It also requires and guards the shared `sec-source.lock.sqlite`.
+- It allows one attempt per frozen definition and requires unfinished attempts to be reconciled first.
+- It parses only accession, status and session from the qualification events, never S, Q or u.
+- It stops the declaration check at the first mismatch with the frozen SHA.
+
 ## What it does
 
 For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls after the 10-Q `reportDate`. The window closes at day 83 or the day before the issuer's next period end, whichever comes first. The next period end is the next frozen 10-Q, or an original 10-K/10-KT/10-QT in the issuer's submissions. A later period's results cannot be filed before that period ends, so they cannot fall in the window. Three issuers have consecutive 10-Q period ends only 52–81 days apart, and ROP has a 10-K period end 61 days after a 10-Q. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
@@ -70,10 +77,10 @@ The clone already contains `source/request.json`, `source/completion.json`, all 
 2. The 100 reused root submissions sources under `.qualification/earnings-quality20260928/discovery/profiles/raw/`, named in `definition.json` `inputs`.
 3. `.qualification/post-filing-strategy20260928/calendar.json`.
 4. `.qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json`.
-5. `.qualification/earnings-quality20260928/source/capture.lock.sqlite`, the capture's empty SQLite lock file.
+5. `.qualification/earnings-quality20260928/source/capture.lock.sqlite` and `.qualification/earnings-quality20260928/sec-source.lock.sqlite`, the two empty SQLite source lock files.
 6. The 79 history pages under `.qualification/earnings-quality20260928/source/raw/`. Each `discovery.json` names its pages, so run the preflight after step 1 to list them.
 
-The full 31.8 GB corpus is not needed. The preflight reports `ready` once nothing is `blocking`. In this clone, the calendar, the qualification events and the lock block a run. Absent per-issuer files are listed under `issuer_unavailable`; a run keeps those issuers as unavailable rows that widen the bounds. As of this clone every issuer lacks at least one source, so restore the per-issuer files too, or every row is unavailable and the verdict can only be `inconclusive`.
+The full 31.8 GB corpus is not needed. The preflight reports `ready` once nothing is `blocking`. In this clone, the calendar, the qualification events and both lock files block a run. Absent per-issuer files are listed under `issuer_unavailable`; a run keeps those issuers as unavailable rows that widen the bounds. As of this clone every issuer lacks at least one source, so restore the per-issuer files too, or every row is unavailable and the verdict can only be `inconclusive`.
 
 ## Commands
 
@@ -83,4 +90,4 @@ The full 31.8 GB corpus is not needed. The preflight reports `ready` once nothin
 .venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider
 ```
 
-On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit requires `source/capture.lock.sqlite`. Before reading any source input, it takes a read transaction on that lock and its own exclusive `audit.lock.sqlite`, and holds both through the final identity check. A held or invalid lock is refused. If the lock file is missing or a writer holds it, the run is refused before any attempt is created.
+On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit requires both source writer locks, `source/capture.lock.sqlite` and the shared `sec-source.lock.sqlite`. Before reading any source input, it takes a read transaction on each of them and its own exclusive `audit.lock.sqlite`, and holds all three through the final identity check. A missing, held or invalid lock refuses the run before any attempt is created. Each frozen definition runs once; a rerun needs a new declared amendment.

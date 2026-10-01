@@ -128,6 +128,7 @@ def build(tmp, drop_history_for=("CCC",), events_override=None):
     source = repo / E / "source"
     issuers, reuse = [], []
     write(source / "capture.lock.sqlite", b"")
+    write(repo / FROZEN["paths"]["shared_source_lock"], b"")
     for symbol, number, root_rows, history in ISSUERS:
         cik = f"{number:010d}"
         issuers.append({"symbol": symbol, "cik": cik})
@@ -456,8 +457,10 @@ def test_no_network_and_append_only(tmp_path, monkeypatch):
     repo, study = build(tmp_path)
     first = m.run(study / "definition.json", study / "freeze.json", repo, study)
     before = {p.name: p.read_bytes() for p in first.iterdir()}
-    second = m.run(study / "definition.json", study / "freeze.json", repo, study)
-    assert first != second
+    # One attempt per frozen definition: a repeat is refused and the first is untouched.
+    with pytest.raises(m.AuditError, match="already used this definition"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert [p.name for p in (study / "attempts").iterdir()] == [first.name]
     assert {p.name: p.read_bytes() for p in first.iterdir()} == before
 
 
@@ -486,15 +489,15 @@ def test_frozen_declaration_identity():
 def test_missing_issuer_discovery_keeps_denominator(tmp_path):
     repo, study = build(tmp_path)
     (repo / E / "source/issuers/DDD/discovery.json").unlink()
+    result = pre(repo, study)
+    assert result["ready"]
+    missing = [p["path"] for p in result["issuer_unavailable"] if p["problem"] == "missing"]
+    assert E + "/source/issuers/DDD/discovery.json" in missing
     attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
     rows = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows[acc(4, 10)]["status"] == "issuer_unavailable"
     assert rows[acc(4, 10)]["reasons"] == ["retained discovery.json not present"]
     assert len(rows) == 8
-    result = pre(repo, study)
-    assert result["ready"]
-    missing = [p["path"] for p in result["issuer_unavailable"] if p["problem"] == "missing"]
-    assert E + "/source/issuers/DDD/discovery.json" in missing
 
 
 def test_conflicts_excluded_from_issuer_counts(tmp_path):
@@ -851,3 +854,78 @@ def test_preflight_stops_at_structural_declaration_drift(tmp_path):
         "path": "definition",
         "problem": "Definition bytes differ from the frozen declaration",
     } in result["blocking"]
+
+
+def refreeze(study, **changes):
+    definition = json.loads((study / "definition.json").read_text())
+    definition.update(changes)
+    raw = write(study / "definition.json", definition)
+    freeze = json.loads((study / "freeze.json").read_text())
+    write(study / "freeze.json", dict(freeze, definition_sha256=sha(raw)))
+
+
+def test_shared_sec_source_lock_is_required_and_guarded(tmp_path):
+    repo, study = build(tmp_path)
+    shared = repo / FROZEN["paths"]["shared_source_lock"]
+    writer = sqlite3.connect(shared, timeout=0)
+    writer.execute("BEGIN EXCLUSIVE")
+    try:
+        with pytest.raises(m.AuditError, match="shared SEC source lock"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+        result = pre(repo, study)
+        assert {
+            "path": FROZEN["paths"]["shared_source_lock"],
+            "problem": "held by another process",
+        } in result["blocking"]
+    finally:
+        writer.rollback()
+        writer.close()
+    shared.unlink()
+    with pytest.raises(m.AuditError, match="lock is missing"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_unfinished_prior_attempt_must_be_reconciled(tmp_path):
+    repo, study = build(tmp_path)
+    stale = study / "attempts" / "interrupted0"
+    stale.mkdir(parents=True)
+    write(stale / "attempt.json", {"definition_sha256": "0" * 64, "status": "running"})
+    with pytest.raises(m.AuditError, match="unfinished or unreadable"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert any(b["path"] == "attempts" for b in pre(repo, study)["blocking"])
+    refreeze(study, reconciled_attempts=["interrupted0"])
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_qualification_events_keep_only_status_fields(tmp_path):
+    path = tmp_path / "events.json"
+    write(
+        path,
+        [
+            {
+                "accession": "a",
+                "strategy_source_status": "qualified",
+                "entry_session": "s",
+                "S": 1.5,
+                "Q": -2,
+                "u": "3",
+                "history": [{"S": 9, "accession": "old"}],
+            }
+        ],
+    )
+    assert m.load_event_fields(path) == [
+        {"accession": "a", "strategy_source_status": "qualified", "entry_session": "s"}
+    ]
+
+
+def test_drifted_definition_with_malformed_amendments_is_reported(tmp_path):
+    repo, study = build(tmp_path)
+    definition = json.loads((study / "definition.json").read_text())
+    definition["amendments"] = [{"id": "no-record-key"}]
+    write(study / "definition.json", definition)
+    result = pre(repo, study)
+    assert not result["ready"] and result["source_inspection"].startswith("skipped")
+    with pytest.raises(m.AuditError, match="frozen declaration"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)

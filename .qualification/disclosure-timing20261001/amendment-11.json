@@ -1,0 +1,28 @@
+{
+ "id": "amendment-11",
+ "recorded_at_utc": "2026-10-01T19:49:14.429545+00:00",
+ "supersedes_definition_sha256": "321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516",
+ "new_definition_sha256": "47b14c3b771a67747bb09eba63ea29d636c862712f5ccdfd70a807c5946cba4e",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "No candidate matching, window, timing or outcome has been computed; the audit has never run.",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, four P2 findings on commit 1f6ef6dc",
+ "changes": [
+  {
+   "field": "paths.shared_source_lock, locks; audit.py source_locks/locks/preflight",
+   "reason": "The reused roots under discovery/profiles/raw are published under the shared sec-source.lock.sqlite, which the audit did not guard. Both source writer locks are now required, held read-only for the whole run, and probed by preflight."
+  },
+  {
+   "field": "audit.py definition_problems",
+   "reason": "A drifted definition with a malformed amendment entry raised KeyError. A frozen-SHA mismatch now returns immediately without parsing the untrusted definition."
+  },
+  {
+   "field": "attempts, reconciled_attempts; audit.py prior_attempt_problems",
+   "reason": "A run created a new attempt regardless of earlier ones. A repeat of the same definition is now refused (a rerun needs a new amendment), and unfinished or unreadable attempts must be listed as reconciled before a new attempt."
+  },
+  {
+   "field": "scope.reads; audit.py load_event_fields",
+   "reason": "The qualification events file also holds S, Q and u values. Only accession, strategy_source_status and entry_session now survive parsing, and the scope says exactly that."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate rules, clock, classification, outputs, bounds and verdict thresholds."
+}

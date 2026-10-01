@@ -72,6 +72,18 @@ def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+# The qualification events also carry S, Q and u; only these keys survive parsing.
+EVENT_FIELDS = {"events", "accession", "strategy_source_status", "entry_session"}
+
+
+def load_event_fields(path):
+    """Parse the bound qualification events, dropping every field except EVENT_FIELDS."""
+    return json.loads(
+        Path(path).read_text(encoding="utf-8"),
+        object_pairs_hook=lambda pairs: {k: v for k, v in pairs if k in EVENT_FIELDS},
+    )
+
+
 def now():
     return datetime.now(timezone.utc).isoformat()
 
@@ -208,10 +220,11 @@ def definition_problems(definition_path, freeze_path):
     """Read-only identity checks of the frozen declaration; empty means the declaration holds."""
     raw = Path(definition_path).read_bytes()
     frozen = load(freeze_path)
+    if sha(raw) != frozen["definition_sha256"]:
+        # A drifted declaration is untrusted; nothing in it is parsed further.
+        return None, sha(raw), ["Definition bytes differ from the frozen declaration"]
     definition = json.loads(raw)
     problems = []
-    if sha(raw) != frozen["definition_sha256"]:
-        problems.append("Definition bytes differ from the frozen declaration")
     if definition.get("schema") != 1 or definition.get("study") != ROOT.name:
         problems.append("Unexpected definition schema/study")
     if {a["record"] for a in definition.get("amendments", [])} != set(frozen.get("amendments", {})):
@@ -624,23 +637,31 @@ def flatten(issuer, manifest, result, qualified):
 # ---------------------------------------------------------------- run
 
 
+def source_locks(repo, definition):
+    """(path, repository-relative path, label) for both SEC source writer locks."""
+    capture = repo / definition["paths"]["source_root"] / "capture.lock.sqlite"
+    shared = repo / definition["paths"]["shared_source_lock"]
+    return [
+        (shared, shared.relative_to(repo).as_posix(), "shared SEC source lock"),
+        (capture, capture.relative_to(repo).as_posix(), "capture lock"),
+    ]
+
+
 @contextmanager
-def read_guard(lock):
-    """Read transaction on the capture lock: a capture writer cannot start while it is held."""
+def read_guard(lock, label="capture lock"):
+    """Read transaction on a source lock: its writer cannot start while it is held."""
     if not lock.is_file():
         raise AuditError("Source worker lock is missing or not a file: " + lock.as_posix())
     try:
         reader = sqlite3.connect(lock.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
     except sqlite3.DatabaseError as exc:
-        raise AuditError("The capture lock is invalid: " + str(exc)) from exc
+        raise AuditError("The " + label + " is invalid: " + str(exc)) from exc
     try:
         try:
             reader.execute("BEGIN")
             reader.execute("SELECT count(*) FROM sqlite_master").fetchone()
         except sqlite3.DatabaseError as exc:
-            raise AuditError(
-                "A source capture worker holds the capture lock, or it is invalid"
-            ) from exc
+            raise AuditError("A source worker holds the " + label + ", or it is invalid") from exc
         yield
     finally:
         try:
@@ -650,11 +671,12 @@ def read_guard(lock):
 
 
 @contextmanager
-def locks(source_root, root):
-    """Own exclusive lock plus a read transaction on the capture lock, like the collector."""
-    lock = source_root / "capture.lock.sqlite"
-    if not lock.is_file():
-        raise AuditError("Source worker lock is missing or not a file: " + lock.as_posix())
+def locks(repo, definition, root):
+    """Own exclusive lock plus read transactions on both SEC source writer locks."""
+    guarded = source_locks(repo, definition)
+    for lock, _, _ in guarded:
+        if not lock.is_file():
+            raise AuditError("Source worker lock is missing or not a file: " + lock.as_posix())
     own_path = root / "audit.lock.sqlite"
     if own_path.exists() and not own_path.is_file():
         raise AuditError("Audit lock is invalid: not a regular file")
@@ -668,8 +690,10 @@ def locks(source_root, root):
             own.execute("SELECT count(*) FROM sqlite_master").fetchone()
         except sqlite3.DatabaseError as exc:
             raise AuditError("Another timing audit holds the lock, or it is invalid") from exc
-        with read_guard(lock):
-            yield "read_guard_held"
+        with ExitStack() as stack:
+            for lock, _, label in guarded:
+                stack.enter_context(read_guard(lock, label))
+            yield "read_guards_held"
     finally:
         try:
             own.rollback()
@@ -686,7 +710,7 @@ def audit(definition, repo, observed=None):
     calendar_doc = load(repo / paths["calendar"])
     calendar = calendar_doc["sessions"] if isinstance(calendar_doc, dict) else calendar_doc
     positions = {row["session"]: i for i, row in enumerate(calendar)}
-    events = load(repo / paths["qualification_events"])
+    events = load_event_fields(repo / paths["qualification_events"])
     events = events["events"] if isinstance(events, dict) else events
     qualified = {e["accession"] for e in events if e.get("strategy_source_status") == "qualified"}
     if len(qualified) != definition["denominators"]["strategy_source_qualified"]:
@@ -854,6 +878,29 @@ CSV_FIELDS = [
 ]
 
 
+def prior_attempt_problems(output_root, definition_sha, reconciled):
+    """One attempt per frozen definition; an interrupted attempt must be reconciled first."""
+    problems = []
+    for folder in sorted((output_root / "attempts").glob("*")):
+        if not folder.is_dir():
+            continue
+        try:
+            meta = load(folder / "attempt.json")
+        except (OSError, ValueError):
+            meta = {}
+        if meta.get("definition_sha256") == definition_sha:
+            problems.append(
+                f"attempt {folder.name} already used this definition ({meta.get('status')}); "
+                "a rerun needs a new declared amendment"
+            )
+        elif meta.get("status") not in ("complete", "failed") and folder.name not in reconciled:
+            problems.append(
+                f"attempt {folder.name} is unfinished or unreadable; "
+                "list it in reconciled_attempts after reconciling it"
+            )
+    return problems
+
+
 def observed_state(observed, repo):
     """Re-hash every repository-relative raw source path the audit resolved (None when absent)."""
     return {
@@ -881,7 +928,12 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
     definition, definition_sha, problems = definition_problems(definition_path, freeze_path)
     if problems:
         raise AuditError(problems[0])
-    with locks(repo / definition["paths"]["source_root"], output_root) as guard:
+    with locks(repo, definition, output_root) as guard:
+        prior = prior_attempt_problems(
+            output_root, definition_sha, definition.get("reconciled_attempts", [])
+        )
+        if prior:
+            raise AuditError(prior[0])
         state = input_state(repo, definition)
         problems = check_inputs(repo, definition, state)
         if problems:
@@ -974,7 +1026,7 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
     """What a real run would meet, without writing: blocking problems stop the run, while
     issuer_unavailable lists absent per-issuer files the run keeps in every denominator.
     Source files are inspected under the capture read guard whenever the lock exists."""
-    definition, _, declaration = definition_problems(definition_path, freeze_path)
+    definition, definition_sha, declaration = definition_problems(definition_path, freeze_path)
     blocking = [{"path": "definition", "problem": p} for p in declaration]
     unavailable = []
     if declaration:
@@ -988,18 +1040,24 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
     busy = lock_busy(output_root / "audit.lock.sqlite")
     if busy:
         blocking.append({"path": "audit.lock.sqlite", "problem": busy})
+    blocking += [
+        {"path": "attempts", "problem": problem}
+        for problem in prior_attempt_problems(
+            output_root, definition_sha, definition.get("reconciled_attempts", [])
+        )
+    ]
     source_root = repo / definition["paths"]["source_root"]
-    capture_lock = source_root / "capture.lock.sqlite"
-    rel_lock = capture_lock.relative_to(repo).as_posix()
     with ExitStack() as stack:
-        if not capture_lock.exists():
-            blocking.append({"path": rel_lock, "problem": "missing"})
-            inspection = "unguarded: capture lock missing, so no capture worker can hold it"
-        else:
-            problem = lock_busy(capture_lock)
+        missing = []
+        for lock, rel_lock, label in source_locks(repo, definition):
+            if not lock.exists():
+                blocking.append({"path": rel_lock, "problem": "missing"})
+                missing.append(label)
+                continue
+            problem = lock_busy(lock)
             if problem is None:
                 try:
-                    stack.enter_context(read_guard(capture_lock))
+                    stack.enter_context(read_guard(lock, label))
                 except AuditError:
                     problem = "held by another process"
             if problem:
@@ -1008,9 +1066,16 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
                     "ready": False,
                     "blocking": blocking,
                     "issuer_unavailable": unavailable,
-                    "source_inspection": "skipped: capture lock " + problem,
+                    "source_inspection": "skipped: " + label + " " + problem,
                 }
-            inspection = "guarded by the capture read lock"
+        if missing:
+            inspection = (
+                "unguarded by the missing "
+                + " and ".join(missing)
+                + ", so no worker can hold it; any present source lock is held"
+            )
+        else:
+            inspection = "guarded by both source read locks"
         blocking += check_inputs(repo, definition)
         state = input_state(repo, definition)
         unavailable += [

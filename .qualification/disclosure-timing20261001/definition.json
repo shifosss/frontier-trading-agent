@@ -9,7 +9,7 @@
    "retained submissions root/history raw bytes for the 100 frozen CIKs, resolved through each issuer's saved discovery.json with the capture's own path rule",
    "the 4,057 frozen original 10-Q manifests",
    "the retained XNYS calendar used by the completed study",
-   "the terminal qualification events (strategy_source_status and entry_session only)"
+   "the terminal qualification events: the bound file is hashed, and only accession, strategy_source_status and entry_session survive parsing; every other field, including S, Q and u, is dropped while parsing and never used, compared or written"
   ],
   "never": [
    "network requests",
@@ -30,7 +30,8 @@
   "source_root": ".qualification/earnings-quality20260928/source",
   "source_request": ".qualification/earnings-quality20260928/source/request.json",
   "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
-  "qualification_events": ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json"
+  "qualification_events": ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json",
+  "shared_source_lock": ".qualification/earnings-quality20260928/sec-source.lock.sqlite"
  },
  "provenance": {
   "row_reconstruction": "Re-parse every discovery source in saved order with the frozen capture table_rows parser: source 0 is the root filings.recent table, later sources are bare history arrays. Keep every occurrence with (source index, row index). The concatenation must equal discovery.json rows exactly, else the issuer is unavailable.",
@@ -41,7 +42,9 @@
   "registered_set": "Each issuer's discovery original_accessions must equal its frozen 10-Q manifests exactly, else the issuer is unavailable.",
   "conflict_evidence": "Every conflicting accession's differing row variants and per-occurrence (source index, row index) provenance are written to issuers.json, and to each affected 10-Q's events.json entry."
  },
- "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite. A real run checks only its own study-directory declaration (definition, freeze, amendments, runtime, module identities) before taking its exclusive audit.lock.sqlite and a read-only transaction on the capture lock, as the terminal qualification collector does; every source input, manifest and code file is hashed and read only while both locks are held, through the final identity check. A missing, write-held or invalid (non-SQLite) lock refuses the run before any attempt is created; preflight reports the same conditions as blocking. A lock path that exists but is not a regular file is invalid.",
+ "locks": "Requires both SEC source writer locks: .qualification/earnings-quality20260928/sec-source.lock.sqlite (shared by the profile and capture workers) and .qualification/earnings-quality20260928/source/capture.lock.sqlite. A real run checks only its own study-directory declaration before taking its exclusive audit.lock.sqlite and a read-only transaction on each source lock; every source input, manifest and code file is hashed and read only while all three are held, through the final identity check. A missing, write-held, invalid or non-file lock refuses the run before any attempt is created; preflight reports the same conditions as blocking.",
+ "attempts": "One attempt per frozen definition: a run is refused when any prior attempt used the same definition SHA256, whatever its status, so a rerun needs a new declared amendment that records why. A run is also refused while any prior attempt is unfinished or unreadable unless that attempt id is listed in reconciled_attempts after its reconciliation. Existing attempts are never rewritten.",
+ "reconciled_attempts": [],
  "runtime": {
   "python": "3.13",
   "bound_files": [
@@ -169,9 +172,14 @@
    "id": "amendment-10",
    "supersedes_definition_sha256": "be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903",
    "record": "amendment-10.json"
+  },
+  {
+   "id": "amendment-11",
+   "supersedes_definition_sha256": "321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516",
+   "record": "amendment-11.json"
   }
  ],
- "declared_at_utc": "2026-10-01T19:36:17.347526+00:00",
+ "declared_at_utc": "2026-10-01T19:49:02.281249+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -389,7 +397,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "ad2675a4592b0120692fd173ed07b9b1019f8e82c000395197c5110967670473",
+  ".qualification/disclosure-timing20261001/audit.py": "c89fddaca3475177b16baebde0b1af301030aefe31d72922414c8dcd7a3d92c3",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }
