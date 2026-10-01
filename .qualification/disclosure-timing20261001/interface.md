@@ -1,0 +1,39 @@
+# Source-only 8-K Item 2.02 timing audit
+
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd`) and the three code files it relies on. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten.
+
+## What it does
+
+For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls in (10-Q `reportDate`, `reportDate` + 84 days]. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
+
+Provenance is rebuilt from the retained raw submissions bytes. Reused sources resolve repository-relative and must match the frozen request reuse catalog. Captured sources resolve under `source/`. The re-parsed concatenation must equal each saved `discovery.json` row list. A raw-hash mismatch stops the attempt. A missing retained file makes only that issuer unavailable, and its 10-Qs stay in every denominator.
+
+It never makes a network request. It never reads prices, returns, S/Q values, models or 8-K documents. An earlier Item 2.02 filing is a timing candidate, not evidence of what was disclosed. Later 10-Q facts are never backdated.
+
+## Outputs
+
+`attempts/<uuid>/` holds `attempt.json`, `issuers.json` (source identities, coverage, occurrence/duplicate/conflict counts), `events.json` (every 10-Q with all candidates, amendments, unknown-items and conflict accessions), `events.csv` and `summary.json`. The summary reports per-stratum status counts, the lower and upper prior-candidate shares, lead-session quantiles and the predeclared verdict. A failure keeps `failure.json`.
+
+The primary stratum is the 2,010 strategy-source-qualified events. The verdict is `supported_at_metadata_level` if the lower share is at least 0.5. It is `not_supported_at_metadata_level` if the upper share is below 0.2, and `inconclusive` otherwise. No verdict changes the completed earnings comparison or promotes a strategy.
+
+## Inputs to restore before the real run
+
+The clone already contains `source/request.json`, `source/completion.json`, all 4,057 `source/filings/*/*.json` manifests and 31 of the 100 `source/issuers/<SYM>/discovery.json` files. Restore these from the retained workspace at the same repository-relative paths, about 110 MB plus the history pages:
+
+1. The other 69 `.qualification/earnings-quality20260928/source/issuers/<SYM>/discovery.json` files.
+2. The 100 reused root submissions sources under `.qualification/earnings-quality20260928/discovery/profiles/raw/`, named in `definition.json` `inputs`.
+3. `.qualification/post-filing-strategy20260928/calendar.json`.
+4. `.qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json`.
+5. The 79 history pages under `.qualification/earnings-quality20260928/source/raw/`. Each `discovery.json` names its pages, so run the preflight after step 1 to list them.
+
+The full 31.8 GB corpus is not needed.
+
+## Commands
+
+```
+.venv/bin/python -B .qualification/disclosure-timing20261001/audit.py --preflight   # lists missing/changed inputs, writes nothing
+.venv/bin/python -B .qualification/disclosure-timing20261001/audit.py               # one new attempt; refuses changed definition/inputs
+.venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider
+```
+
+On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit takes a read-only guard on `source/capture.lock.sqlite` when that file exists, and its own exclusive `audit.lock.sqlite`.

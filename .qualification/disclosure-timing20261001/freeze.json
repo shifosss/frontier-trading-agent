@@ -1,0 +1,11 @@
+{
+ "definition_sha256": "67bb1e3100ac9e1e48c1f7676891d750f5bd0b8f227119f72b93996a885d4fdd",
+ "frozen_at_utc": "2026-10-01T17:54:11.373018+00:00",
+ "code": {
+  ".qualification/disclosure-timing20261001/audit.py": "4d8bf19499aa48a18209220cd16d579e2494d370fe7d8465e234908c4c40effb",
+  ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+  ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
+ },
+ "outcome_access_before_freeze": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read",
+ "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten."
+}
