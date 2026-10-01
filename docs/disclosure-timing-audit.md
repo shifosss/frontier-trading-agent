@@ -1,6 +1,6 @@
 # Earnings disclosure timing: declared 8-K Item 2.02 audit
 
-**October 1, 2026: declared, frozen and tested offline. Not yet run.** The audit needs retained SEC metadata that is not in a fresh clone. No 8-K row, price, return, S/Q value or exhibit has been read.
+**October 1, 2026: declared, frozen and tested offline. Not yet run.** The audit needs retained SEC metadata that is not in a fresh clone. No candidate matching, timing or outcome has been computed, and no price, return, S/Q value or exhibit has been read. An earlier schema-only inspection, recorded in the handbook, counted 26,712 raw 8-K occurrences and their field completeness without matching any of them.
 
 ## Why this is next
 
@@ -8,10 +8,10 @@ The [cash-backed earnings comparison](earnings-quality-results.md) decided at 09
 
 ## What is frozen
 
-The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903`.
+The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516`.
 
 - **Denominators:** all 100 issuers and 4,057 registered original 10-Qs, including the 190 failed captures. The 3,867 captured originals and the 2,010 strategy-source-qualified events are reported as separate strata, and each filing year is also reported. No issuer is replaced or dropped.
-- **Candidate:** a same-CIK original `8-K` whose `items` field holds the exact token `2.02`, filed after the 10-Q period end. The window closes at day 83 or the day before the issuer's next frozen 10-Q period end, whichever comes first, so a later period's results release cannot fall in it. The shortest 12-week quarter ends on day 84, and three issuers have consecutive period ends only 52–81 days apart. Review made both of these changes before any run; see `amendment-01.json` and `amendment-06.json`. `8-K/A` rows are counted but are never candidates.
+- **Candidate:** a same-CIK original `8-K` whose `items` field holds the exact token `2.02`, filed after the 10-Q period end. The window closes at day 83 or the day before the issuer's next period end, whichever comes first, so a later period's results release cannot fall in it. The next period end is the next frozen 10-Q, or an original 10-K/10-KT/10-QT in the issuer's submissions. The shortest 12-week quarter ends on day 84. Three issuers have consecutive 10-Q period ends only 52–81 days apart, and ROP has a 10-K period end 61 days after a 10-Q. Review made these changes before any run; see `amendment-01.json`, `amendment-06.json` and `amendment-10.json`. `8-K/A` rows are counted but are never candidates.
 - **Clock:** the completed study's `event_clock` is reused unchanged for both filings. A candidate is `prior` only if its decision session is strictly earlier than the 10-Q's. Every 10-Q session is recomputed from its frozen manifest and must match the completed study's saved session, including for issuers whose sources are unavailable, or the attempt stops.
 - **Ambiguity:** conflicting duplicate accessions, in-window 8-Ks without items metadata and unclockable candidates are kept as `ambiguous_metadata`. A window outside the retained submissions date ranges is kept as `window_coverage_incomplete`. Both stay in the denominator.
 - **Verdict (2,010 qualified events):** `supported_at_metadata_level` if at least 50% have an unambiguous prior candidate. `not_supported_at_metadata_level` if fewer than 20% could possibly have one, counting every unavailable, uncovered or ambiguous row as possible. Otherwise `inconclusive`.

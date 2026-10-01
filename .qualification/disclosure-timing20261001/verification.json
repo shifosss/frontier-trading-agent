@@ -1,18 +1,18 @@
 {
  "status": "passed",
- "checked_at": "2026-10-01T19:25:18.046758+00:00",
+ "checked_at": "2026-10-01T19:37:13.919306+00:00",
  "platform": "Linux container, Python 3.13.14, uv sync --frozen",
  "command": ".venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider",
- "result": "33 passed",
+ "result": "37 passed",
  "synthetic_only": true,
  "actual_8k_rows_read": false,
  "network_requests": 0,
- "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed. Amendment-03: before amendment-03.json existed, 15 of 17 failed at fixture setup (expected); one new assertion had a test-side type error, which was corrected; then all 17 passed. The amendment-03 tests target APIs that did not exist in the previous code, so they were not run against it. Amendment-04: the import-isolation and conflict-evidence tests failed on the previous code; after the change and re-freeze all 20 passed. Amendment-05: after the preflight change only the frozen-identity test failed until the re-freeze; then all 22 passed. The changed preflight return shape means the new preflight tests were not run against the previous code. Amendment-06: after the change only the frozen-identity test failed until the re-freeze; then all 25 passed. The new window, lazy-loading and atomic-write tests use APIs absent from the previous code; the uncapped classify call in the window test shows the earlier fixed-83-day behaviour admitting the later release. Amendment-07: the lock-ordering and invalid-lock tests failed on the previous code and pass now; all 27 passed after the re-freeze. Amendment-08: the manifest-recheck, locked-tzdata and non-file-lock tests failed on the previous code and pass now; all 30 passed after the re-freeze. Amendment-09: the history-page recheck and guarded-preflight tests failed on the previous code and pass now; all 33 passed after the re-freeze.",
+ "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed. Amendment-03: before amendment-03.json existed, 15 of 17 failed at fixture setup (expected); one new assertion had a test-side type error, which was corrected; then all 17 passed. The amendment-03 tests target APIs that did not exist in the previous code, so they were not run against it. Amendment-04: the import-isolation and conflict-evidence tests failed on the previous code; after the change and re-freeze all 20 passed. Amendment-05: after the preflight change only the frozen-identity test failed until the re-freeze; then all 22 passed. The changed preflight return shape means the new preflight tests were not run against the previous code. Amendment-06: after the change only the frozen-identity test failed until the re-freeze; then all 25 passed. The new window, lazy-loading and atomic-write tests use APIs absent from the previous code; the uncapped classify call in the window test shows the earlier fixed-83-day behaviour admitting the later release. Amendment-07: the lock-ordering and invalid-lock tests failed on the previous code and pass now; all 27 passed after the re-freeze. Amendment-08: the manifest-recheck, locked-tzdata and non-file-lock tests failed on the previous code and pass now; all 30 passed after the re-freeze. Amendment-09: the history-page recheck and guarded-preflight tests failed on the previous code and pass now; all 33 passed after the re-freeze. Amendment-10: the four new 10-K-boundary, failed-attempt-identity, post-write-recheck and declaration-drift tests failed on the previous code; one older window assertion was updated for the new mapping that includes the last period (None); all 37 passed after the re-freeze.",
  "files": {
-  "audit.py": "1fdd28e6ce82b84a10c082e2090bbd637a202ca4159269049b836a8e6ca61fc7",
-  "test_audit.py": "08072dd063c7a9fb71f07067fd384a4ca5be01149127160f2d882084423f4d6b",
-  "definition.json": "be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903",
-  "freeze.json": "12d90ee48a1bc3f3d6872765d290bfd5bf4dada1d9362356150fa4c7e4eccc41",
+  "audit.py": "ad2675a4592b0120692fd173ed07b9b1019f8e82c000395197c5110967670473",
+  "test_audit.py": "5a25a4dee125bb8c0b5de7b306cfd57663543019a3bac6a744e8387e10303722",
+  "definition.json": "321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516",
+  "freeze.json": "6c0cc683418a5d4c6af7d44ec73e9a8e64a907e7165d54955425b22b8546c7e8",
   "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
   "amendment-02.json": "906a70495713610e7d4d10bb55c80ef2a1cbdee93afad38b5fa11beb6735d858",
   "amendment-03.json": "d8bbe0b8c58a55e3a4c80436c59fe8b389a32efd3ede918b3c256f0e8fd99ddb",
@@ -22,7 +22,8 @@
   "amendment-07.json": "2a8d73e7c677cffa2c624d82150c1582b796a1b4839f48ea5396e9178f18133a",
   "amendment-08.json": "966b7ded25a0c8be116cd295bac4a1835ee5ac01a66a91384660b1692c036339",
   "amendment-09.json": "65e67d6019449f3ad2de276da715ea29b2dd24ec62751a6801f839236ce9d3cd",
-  "interface.md": "147a809fc9c0cc33ff92c22a36c300a6308e26fa109b94db8516be5bb8cc7b5e"
+  "amendment-10.json": "719b961df1e378bdb6b63941040cef83355f3d0c01a2d5cf113dbb92aea0be04",
+  "interface.md": "20b8e34b03cb122714a64808b752ea225b03b3e38d996436c8044f2a7c92bdd2"
  },
  "scope": [
   "single prior / same-session / after / multiple candidate classification and XNYS-session leads",
@@ -58,7 +59,10 @@
   "time zones resolved only from the locked tzdata package; installed version required; America/New_York TZif SHA256 recorded",
   "non-file audit lock path reported as blocking and refused by a run",
   "every resolved raw source (root/history page, or absence) recorded repository-relative and re-hashed before completion",
-  "preflight inspects sources while holding the capture read guard; held/invalid lock skips inspection; inspection mode reported"
+  "preflight inspects sources while holding the capture read guard; held/invalid lock skips inspection; inspection mode reported",
+  "window also capped at the next original 10-Q/10-QT/10-K/10-KT period end from submissions rows",
+  "final identity check after all result files are written; failed attempts keep raw-source identities",
+  "preflight returns only declaration blockers when the definition differs from the freeze"
  ],
  "real_preflight": "Not ready in this clone: 3 blocking (calendar, qualification events, capture lock), 207 absent per-issuer files listed as issuer_unavailable; inspection reported as unguarded because the capture lock is absent. A real run refuses before creating any attempt.",
  "qualification": "Software checks only; no economic or source result."

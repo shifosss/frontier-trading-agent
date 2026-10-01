@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "study": "disclosure-timing20261001",
- "status": "Declared and frozen before any 8-K submissions row was read. At declaration, 31 of the 100 discovery.json files are in the clone; the preflight parsed only their sources lists, and no row was inspected or counted. The other 69 discovery files, all 100 root and 79 history raw sources, the retained calendar and the terminal qualification events are absent. No prices, returns, S/Q values or exhibits were read.",
+ "status": "Declared and frozen before any candidate matching, window, timing classification or outcome was computed. Prior access is disclosed: before this declaration, an earlier read-only schema inspection recorded in docs/project-handbook.md counted 26,712 raw 8-K occurrences across the saved submissions arrays, confirmed which structural fields were non-empty and found 475 empty primaryDocument values; it matched nothing to any 10-Q and computed no timing. In this session, 31 of the 100 discovery.json files were present in the clone; the preflight parsed only their sources lists, and during review only ROP's 10-Q/10-K period-end rows were read to confirm a 10-K boundary. No 8-K row was matched, timed or counted here, and no prices, returns, S/Q values or exhibits were read.",
  "question": "For the fixed 100-issuer original 10-Q corpus of the completed cash-backed earnings comparison, how often does a same-CIK original 8-K whose items include Item 2.02 become public at least one XNYS session before the 10-Q's frozen decision session?",
  "hypothesis": "If most strategy-qualified 10-Q events have an earlier Item 2.02 8-K, the completed study's S/Q signals were timed after an earlier earnings disclosure and may have been partly stale. This is a timing candidate only: Item 2.02 metadata does not show which financial components the release disclosed.",
  "scope": {
@@ -34,7 +34,7 @@
  },
  "provenance": {
   "row_reconstruction": "Re-parse every discovery source in saved order with the frozen capture table_rows parser: source 0 is the root filings.recent table, later sources are bare history arrays. Keep every occurrence with (source index, row index). The concatenation must equal discovery.json rows exactly, else the issuer is unavailable.",
-  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt. The final check also recomputes the 4,057-manifest count and digest. Every raw source path the audit resolves (roots and captured history pages, or their absence) is recorded repository-relative with its SHA256 in attempt.json and re-hashed in the final check.",
+  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt. The final check also recomputes the 4,057-manifest count and digest. Every raw source path the audit resolves (roots and captured history pages, or their absence) is recorded repository-relative with its SHA256 in attempt.json and re-hashed in the final check, which runs after every result file is written and immediately before the attempt is marked complete; a failed attempt also records them.",
   "history_pages": "Fetched history URLs must equal, in order, the frozen capture's selection of declared history files overlapping 2012-01-01..2025-12-31.",
   "coverage": "Filing-date coverage is the union of [earliest root recent filingDate, open end] and each fetched history page's declared [filingFrom, filingTo]; an issuer with no declared history files is fully covered.",
   "canonicalization": "Group occurrences by accessionNumber within an issuer. Identical occurrences form one canonical row; differing occurrences are a retained conflict and are never used as a candidate.",
@@ -60,7 +60,7 @@
   "tzdata": "2026.4",
   "timezone_data": "Before the reused clock module loads, a real run resets zoneinfo's search path so America/New_York resolves only from the uv.lock-pinned tzdata package (2026.4), never from system TZif files. The installed package version must equal this value, and each attempt records the SHA256 of the exact America/New_York TZif bytes used. The recomputed 10-Q sessions must also equal the completed study's saved sessions."
  },
- "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking. When the capture lock exists, all source inspection runs while preflight holds the same read transaction as a run; a held or invalid lock skips inspection and is blocking. When the lock is absent the inspection is reported as unguarded. The result states which applied in source_inspection.",
+ "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking. When the capture lock exists, all source inspection runs while preflight holds the same read transaction as a run; a held or invalid lock skips inspection and is blocking. When the lock is absent the inspection is reported as unguarded. The result states which applied in source_inspection. If the declaration differs from the freeze, preflight returns only the declaration blockers and follows none of its paths.",
  "outputs": "Every attempt JSON/CSV record is written through a sibling temporary file, flushed and fsynced, then atomically replaced, so an interruption never truncates attempt.json or a result file.",
  "matching": {
   "candidate_form": "8-K",
@@ -69,8 +69,14 @@
   "items_rule": "Split the submissions items string on commas, strip whitespace, require an exact 2.02 token. Missing/empty items on an in-window 8-K make the 10-Q ambiguous.",
   "window_field": "filingDate",
   "window_days_after_report_date": 83,
-  "window_rule": "Same-issuer rows with 10-Q reportDate < filingDate <= window end, where window end is the earlier of reportDate + 83 calendar days and the day before the issuer's next later frozen 10-Q reportDate. The shortest 12-week next quarter ends at reportDate + 84 days, and three frozen issuers (EFOR, TKR, ITGR) have consecutive 10-Q period ends only 52, 60 or 81 days apart; results for a later period cannot be filed before it ends, so they cannot enter the window. 10-Qs filed after the window end are flagged late_10q_beyond_window, not re-windowed.",
-  "amendments": "In-window 8-K/A rows with Item 2.02 are reported and never candidates."
+  "window_rule": "Same-issuer rows with 10-Q reportDate < filingDate <= window end, where window end is the earlier of reportDate + 83 calendar days and the day before the issuer's next later period end. Period ends are the frozen 10-Q reportDates plus, when the issuer's sources are available, the reportDates of non-conflicting original rows whose form is in period_boundary_forms (amendments excluded). The shortest 12-week next quarter ends at reportDate + 84 days; EFOR, TKR and ITGR have consecutive 10-Q period ends only 52, 60 or 81 days apart, and ROP has a 10-K period end 61 days after its 2012-10-31 10-Q. Results for a later period cannot be filed before it ends, so they cannot enter the window. For an unavailable issuer only the frozen 10-Q manifests bound its late flag. 10-Qs filed after the window end are flagged late_10q_beyond_window, not re-windowed.",
+  "amendments": "In-window 8-K/A rows with Item 2.02 are reported and never candidates.",
+  "period_boundary_forms": [
+   "10-Q",
+   "10-QT",
+   "10-K",
+   "10-KT"
+  ]
  },
  "clock": {
   "rule": "Both the 10-Q and every candidate use the frozen filing-features event_clock unchanged: availability floor 01:00 ET on the calendar day after max(ET acceptance date, filingDate); decision session is the first XNYS session whose 09:00 ET is at or after the floor.",
@@ -158,9 +164,14 @@
    "id": "amendment-09",
    "supersedes_definition_sha256": "1edc4ee9a2bd39e9a5377519cbf30d05b7243342dc5ced42c2046b52dec7fa0b",
    "record": "amendment-09.json"
+  },
+  {
+   "id": "amendment-10",
+   "supersedes_definition_sha256": "be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903",
+   "record": "amendment-10.json"
   }
  ],
- "declared_at_utc": "2026-10-01T19:25:03.173726+00:00",
+ "declared_at_utc": "2026-10-01T19:36:17.347526+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -378,7 +389,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "1fdd28e6ce82b84a10c082e2090bbd637a202ca4159269049b836a8e6ca61fc7",
+  ".qualification/disclosure-timing20261001/audit.py": "ad2675a4592b0120692fd173ed07b9b1019f8e82c000395197c5110967670473",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }

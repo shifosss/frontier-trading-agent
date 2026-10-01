@@ -1,0 +1,33 @@
+{
+ "id": "amendment-10",
+ "recorded_at_utc": "2026-10-01T19:36:29.552717+00:00",
+ "supersedes_definition_sha256": "be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903",
+ "new_definition_sha256": "321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "No candidate matching, window, timing or outcome has been computed; the audit has never run. To verify the review finding, only ROP's 10-Q/10-K period-end rows were read from its in-clone discovery.json.",
+ "correction": "Earlier status lines and amendment records 01-09 say no 8-K submissions row was read. That overstated it: before the declaration, a read-only schema inspection recorded in docs/project-handbook.md counted 26,712 raw 8-K occurrences and their field completeness. The definition status now discloses it. The earlier records are left unchanged.",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, five P2 findings on commit 20857906",
+ "changes": [
+  {
+   "field": "matching.period_boundary_forms, matching.window_rule; audit.py next_report_dates",
+   "reason": "ROP's retained submissions have a 2012-10-31 10-Q followed by a 2012-12-31 10-K period end 61 days later, which the 10-Q-only cap missed. When sources are available the window also stops before the next original 10-Q/10-QT/10-K/10-KT period end."
+  },
+  {
+   "field": "provenance.source_location; audit.py run",
+   "reason": "The last identity check ran before the result files were written. It now runs after all result files are written and immediately before the attempt is marked complete."
+  },
+  {
+   "field": "status",
+   "reason": "Discloses the earlier 8-K schema inspection instead of claiming no 8-K row was read."
+  },
+  {
+   "field": "audit.py run exception path",
+   "reason": "A failed attempt now also records the raw source identities it resolved."
+  },
+  {
+   "field": "preflight",
+   "reason": "Preflight now returns only the declaration blockers when the definition differs from the freeze, instead of following an untrusted definition's paths or raising on a missing key."
+  }
+ ],
+ "unchanged": "Denominators, candidate form/token, clock, classification order, inputs, bounds and verdict thresholds."
+}

@@ -588,7 +588,10 @@ def test_window_stops_before_next_frozen_report_date():
     manifests = [
         {"registry_row": {"reportDate": r}} for r in ["2012-06-30", "2012-05-09", "2012-05-09", ""]
     ]
-    assert m.next_report_dates(manifests) == {date(2012, 5, 9): date(2012, 6, 30)}
+    assert m.next_report_dates(manifests) == {
+        date(2012, 5, 9): date(2012, 6, 30),
+        date(2012, 6, 30): None,
+    }
     # A release filed after the next period end is not a candidate for the earlier 10-Q.
     m.load_frozen()
     sessions = []
@@ -773,3 +776,78 @@ def test_preflight_holds_capture_read_guard_while_inspecting(tmp_path, monkeypat
     result = pre(repo, study)
     assert writer_blocked == [True]
     assert result["ready"] and result["source_inspection"].startswith("guarded")
+
+
+def test_window_stops_at_an_intervening_10k_period_end():
+    forms = FROZEN["matching"]["period_boundary_forms"]
+    manifests = [
+        {"registry_row": {"reportDate": "2012-10-31"}},
+        {"registry_row": {"reportDate": "2013-03-31"}},
+    ]
+    canonical = {
+        "a": {"row": {"form": "10-K", "reportDate": "2012-12-31"}, "conflict": False},
+        "b": {"row": {"form": "10-K/A", "reportDate": "2012-11-30"}, "conflict": False},
+        "c": {"row": {"form": "10-K", "reportDate": "2012-11-15"}, "conflict": True},
+        "d": {"row": {"form": "8-K", "reportDate": "2012-11-01"}, "conflict": False},
+    }
+    following = m.next_report_dates(manifests, canonical, forms)
+    assert following == {date(2012, 10, 31): date(2012, 12, 31), date(2013, 3, 31): None}
+    # Without the submissions rows only the next frozen 10-Q bounds the window.
+    assert m.next_report_dates(manifests)[date(2012, 10, 31)] == date(2013, 3, 31)
+
+
+def test_failed_attempt_keeps_raw_source_identities(tmp_path):
+    events = [
+        {
+            "accession": acc(1, 10),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-05-05",
+        },
+        {
+            "accession": acc(1, 20),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-07-31",
+        },
+        {
+            "accession": acc(2, 31),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-08-06",
+        },
+    ]
+    repo, study = build(tmp_path, events_override=events)
+    with pytest.raises(m.AuditError, match="entry session differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    observed = json.loads((failed / "failure.json").read_text())["raw_source_identities"]
+    assert observed and any(digest is None for digest in observed.values())
+
+
+def test_inputs_rechecked_after_result_files_are_written(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.write_json
+
+    def write_then_change_manifest(path, value):
+        digest = original(path, value)
+        if path.name == "summary.json":
+            manifest = next((repo / E / "source/filings/AAA").glob("*.json"))
+            manifest.write_bytes(manifest.read_bytes() + b" ")
+        return digest
+
+    monkeypatch.setattr(m, "write_json", write_then_change_manifest)
+    with pytest.raises(m.AuditError, match="changed during the audit"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    assert json.loads((failed / "attempt.json").read_text())["status"] == "failed"
+
+
+def test_preflight_stops_at_structural_declaration_drift(tmp_path):
+    repo, study = build(tmp_path)
+    definition = json.loads((study / "definition.json").read_text())
+    del definition["paths"]
+    write(study / "definition.json", definition)
+    result = pre(repo, study)
+    assert not result["ready"] and result["source_inspection"].startswith("skipped")
+    assert {
+        "path": "definition",
+        "problem": "Definition bytes differ from the frozen declaration",
+    } in result["blocking"]

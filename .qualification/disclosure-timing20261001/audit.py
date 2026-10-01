@@ -377,16 +377,25 @@ def window_end(report, next_report, rules):
     return end if next_report is None else min(end, next_report - timedelta(days=1))
 
 
-def next_report_dates(manifests):
-    """Each frozen 10-Q reportDate mapped to the issuer's next later frozen reportDate."""
-    dates = set()
+def next_report_dates(manifests, canonical=None, period_forms=()):
+    """Each frozen 10-Q reportDate mapped to the issuer's next later period end: another frozen
+    10-Q, or an original periodic report (e.g. a 10-K) in the re-parsed submissions rows."""
+    reports, boundaries = set(), set()
     for manifest in manifests:
         try:
-            dates.add(day(manifest["registry_row"]["reportDate"]))
+            reports.add(day(manifest["registry_row"]["reportDate"]))
         except (KeyError, TypeError, ValueError):
             continue
-    ordered = sorted(dates)
-    return {a: b for a, b in zip(ordered, ordered[1:])}
+    boundaries |= reports
+    for entry in (canonical or {}).values():
+        if entry["conflict"] or entry["row"].get("form") not in period_forms:
+            continue
+        try:
+            boundaries.add(day(entry["row"]["reportDate"]))
+        except (KeyError, TypeError, ValueError):
+            continue
+    ordered = sorted(boundaries)
+    return {r: next((b for b in ordered if b > r), None) for r in reports}
 
 
 def classify(q_row, canonical, coverage, calendar, positions, rules, next_report=None):
@@ -747,7 +756,7 @@ def audit(definition, repo, observed=None):
             record.update(status="unavailable", error=str(exc))
             canonical = None
         issuers.append(record)
-        following = next_report_dates(own)
+        following = next_report_dates(own, canonical, rules["period_boundary_forms"])
         for manifest in own:
             # The 10-Q clock comes from its frozen manifest, so it exists even when sources do not.
             q_row = manifest["registry_row"]
@@ -891,16 +900,9 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
             "status": "running",
         }
         write_json(attempt / "attempt.json", meta)
+        observed = {}
         try:
-            observed = {}
             issuers, rows, summary = audit(definition, repo, observed)
-            if (
-                input_state(repo, definition) != state
-                or check_inputs(repo, definition)
-                or observed_state(observed, repo) != observed
-            ):
-                raise AuditError("Bound inputs appeared, disappeared or changed during the audit")
-            meta["raw_source_identities"] = observed
             files = {
                 "issuers.json": write_json(attempt / "issuers.json", issuers),
                 "events.json": write_json(attempt / "events.json", rows),
@@ -914,12 +916,27 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
             )
             summary.update(source_lock=guard, network_requests=0, prices_or_returns_read=False)
             files["summary.json"] = write_json(attempt / "summary.json", summary)
-            meta.update(status="complete", finished_at_utc=now(), files=files)
+            # Last identity check, after every result file is written and before completion.
+            if (
+                input_state(repo, definition) != state
+                or check_inputs(repo, definition)
+                or observed_state(observed, repo) != observed
+            ):
+                raise AuditError("Bound inputs appeared, disappeared or changed during the audit")
+            meta.update(
+                status="complete",
+                finished_at_utc=now(),
+                files=files,
+                raw_source_identities=observed,
+            )
             write_json(attempt / "attempt.json", meta)
             return attempt
         except Exception as exc:
             meta.update(
-                status="failed", finished_at_utc=now(), error=type(exc).__name__ + ": " + str(exc)
+                status="failed",
+                finished_at_utc=now(),
+                error=type(exc).__name__ + ": " + str(exc),
+                raw_source_identities=observed,
             )
             write_json(attempt / "attempt.json", meta)
             write_json(attempt / "failure.json", meta)
@@ -960,6 +977,14 @@ def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_
     definition, _, declaration = definition_problems(definition_path, freeze_path)
     blocking = [{"path": "definition", "problem": p} for p in declaration]
     unavailable = []
+    if declaration:
+        # A drifted declaration is untrusted: never follow its paths, as a run would not.
+        return {
+            "ready": False,
+            "blocking": blocking,
+            "issuer_unavailable": unavailable,
+            "source_inspection": "skipped: declaration differs from the freeze",
+        }
     busy = lock_busy(output_root / "audit.lock.sqlite")
     if busy:
         blocking.append({"path": "audit.lock.sqlite", "problem": busy})

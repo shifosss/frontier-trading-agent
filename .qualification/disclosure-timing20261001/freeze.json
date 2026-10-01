@@ -1,12 +1,12 @@
 {
- "definition_sha256": "be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903",
- "frozen_at_utc": "2026-10-01T19:25:03.227287+00:00",
+ "definition_sha256": "321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516",
+ "frozen_at_utc": "2026-10-01T19:36:29.552717+00:00",
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "1fdd28e6ce82b84a10c082e2090bbd637a202ca4159269049b836a8e6ca61fc7",
+  ".qualification/disclosure-timing20261001/audit.py": "ad2675a4592b0120692fd173ed07b9b1019f8e82c000395197c5110967670473",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  },
- "outcome_access_before_freeze": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read",
+ "outcome_access_before_freeze": "no candidate matching, timing or outcome; an earlier schema-only 8-K inspection is disclosed in definition status",
  "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten.",
  "amendments": {
   "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
@@ -17,6 +17,7 @@
   "amendment-06.json": "02513b83b87528ba03e419ce81938fcb0dfff9df7b970860c0a15c23b8dbc07a",
   "amendment-07.json": "2a8d73e7c677cffa2c624d82150c1582b796a1b4839f48ea5396e9178f18133a",
   "amendment-08.json": "966b7ded25a0c8be116cd295bac4a1835ee5ac01a66a91384660b1692c036339",
-  "amendment-09.json": "65e67d6019449f3ad2de276da715ea29b2dd24ec62751a6801f839236ce9d3cd"
+  "amendment-09.json": "65e67d6019449f3ad2de276da715ea29b2dd24ec62751a6801f839236ce9d3cd",
+  "amendment-10.json": "719b961df1e378bdb6b63941040cef83355f3d0c01a2d5cf113dbb92aea0be04"
  }
 }

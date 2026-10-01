@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Nine amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
+Declared October 1, 2026 and frozen before any candidate matching, timing or outcome was computed. An earlier schema-only inspection, recorded in the handbook, counted 26,712 raw 8-K occurrences; `definition.json` discloses it. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`321021fe8c51186e9a0ab0ecf125948721c7e412ab0dcd9cd9bd39e88dd42516`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Ten amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
 
 - It hash-checks the reused modules before executing them.
 - It binds Python 3.13, `pyproject.toml` and `uv.lock`, and records the runtime with each attempt.
@@ -40,9 +40,17 @@ Declared October 1, 2026 and frozen before any 8-K submissions row was read. `de
 - It records every resolved raw source (root and history page) and re-hashes them before completing.
 - The preflight inspects sources under the capture read lock and reports whether its inspection was guarded.
 
+`amendment-10.json` makes five changes:
+
+- It also ends the window at the issuer's next original 10-K or 10-KT period end.
+- It runs the last identity check after the result files are written.
+- It keeps raw-source identities on failed attempts.
+- It stops the preflight at declaration drift.
+- It corrects the earlier "no 8-K row read" claim.
+
 ## What it does
 
-For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls after the 10-Q `reportDate`. The window closes at day 83 or the day before the issuer's next frozen 10-Q `reportDate`, whichever comes first. A later period's results cannot be filed before that period ends, so they cannot fall in the window; three issuers have consecutive period ends only 52–81 days apart. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
+For each of the 4,057 frozen original 10-Qs it lists same-CIK original `8-K` rows whose `items` contain the exact token `2.02` and whose filing date falls after the 10-Q `reportDate`. The window closes at day 83 or the day before the issuer's next period end, whichever comes first. The next period end is the next frozen 10-Q, or an original 10-K/10-KT/10-QT in the issuer's submissions. A later period's results cannot be filed before that period ends, so they cannot fall in the window. Three issuers have consecutive 10-Q period ends only 52–81 days apart, and ROP has a 10-K period end 61 days after a 10-Q. Each candidate gets a decision session from the completed study's unchanged `event_clock` and is classed as `prior`, `same_session` or `after` relative to the 10-Q's own decision session. Each 10-Q then gets exactly one status, in this order: `issuer_unavailable`, `q_metadata_unavailable`, `q_session_unavailable`, `window_coverage_incomplete`, `ambiguous_metadata`, `no_candidate`, `single_prior`, `single_same_session`, `single_after`, `multiple`.
 
 Provenance is rebuilt from the retained raw submissions bytes. Reused sources resolve repository-relative and must match the frozen request reuse catalog. Captured sources resolve under `source/`. The re-parsed concatenation must equal each saved `discovery.json` row list. Changed bytes in any bound or recorded file stop the attempt. A missing per-issuer file (a `discovery.json`, a root or a history page) makes only that issuer unavailable, and its 10-Qs stay in every denominator. Global inputs, code and the 4,057 manifests must all be present and unchanged. The input state must be identical at the start and end of the run.
 
