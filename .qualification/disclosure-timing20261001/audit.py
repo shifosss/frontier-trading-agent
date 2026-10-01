@@ -212,17 +212,6 @@ def definition_problems(definition_path, freeze_path):
     return definition, sha(raw), problems
 
 
-def verify_definition(definition_path, freeze_path, repo):
-    definition, definition_sha, problems = definition_problems(definition_path, freeze_path)
-    if problems:
-        raise AuditError(problems[0])
-    state = input_state(repo, definition)
-    problems = check_inputs(repo, definition, state)
-    if problems:
-        raise AuditError("Bound inputs are missing or changed: " + json.dumps(problems[:20]))
-    return definition, definition_sha, state
-
-
 # ---------------------------------------------------------------- provenance
 
 
@@ -612,21 +601,25 @@ def locks(source_root, root):
     try:
         try:
             own.execute("BEGIN EXCLUSIVE")
-        except sqlite3.OperationalError as exc:
-            raise AuditError("Another timing audit holds the lock") from exc
+            own.execute("SELECT count(*) FROM sqlite_master").fetchone()
+        except sqlite3.DatabaseError as exc:
+            raise AuditError("Another timing audit holds the lock, or it is invalid") from exc
         try:
             reader = sqlite3.connect(lock.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
             reader.execute("BEGIN")
             reader.execute("SELECT count(*) FROM sqlite_master").fetchone()
-        except sqlite3.OperationalError as exc:
-            raise AuditError("A source capture worker holds the capture lock") from exc
+        except sqlite3.DatabaseError as exc:
+            raise AuditError(
+                "A source capture worker holds the capture lock, or it is invalid"
+            ) from exc
         yield "read_guard_held"
     finally:
-        if reader:
-            reader.rollback()
-            reader.close()
-        own.rollback()
-        own.close()
+        for connection in (reader, own):
+            if connection:
+                try:
+                    connection.rollback()
+                finally:
+                    connection.close()
 
 
 def audit(definition, repo):
@@ -821,9 +814,16 @@ def write_json(path, value):
 
 
 def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=ROOT):
-    definition, definition_sha, state = verify_definition(definition_path, freeze_path, repo)
-    load_frozen(repo)
+    # The declaration lives in this study directory; every source input is read under the lock.
+    definition, definition_sha, problems = definition_problems(definition_path, freeze_path)
+    if problems:
+        raise AuditError(problems[0])
     with locks(repo / definition["paths"]["source_root"], output_root) as guard:
+        state = input_state(repo, definition)
+        problems = check_inputs(repo, definition, state)
+        if problems:
+            raise AuditError("Bound inputs are missing or changed: " + json.dumps(problems[:20]))
+        load_frozen(repo)
         attempt = output_root / "attempts" / uuid.uuid4().hex
         attempt.mkdir(parents=True, exist_ok=False)
         meta = {
@@ -867,19 +867,28 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
 
 
 def lock_busy(path):
-    """Read-only probe: a problem string when another process holds the SQLite lock file."""
+    """Read-only probe: a problem string when the SQLite lock file is held or not a database."""
     if not path.is_file():
         return None
-    probe = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
+    try:
+        probe = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
+    except sqlite3.DatabaseError as exc:
+        return "not a valid SQLite lock file: " + str(exc)
     try:
         probe.execute("BEGIN")
         probe.execute("SELECT count(*) FROM sqlite_master").fetchone()
         return None
-    except sqlite3.OperationalError:
-        return "held by another process"
+    except sqlite3.OperationalError as exc:
+        if "locked" in str(exc):
+            return "held by another process"
+        return "not a valid SQLite lock file: " + str(exc)
+    except sqlite3.DatabaseError as exc:
+        return "not a valid SQLite lock file: " + str(exc)
     finally:
-        probe.rollback()
-        probe.close()
+        try:
+            probe.rollback()
+        finally:
+            probe.close()
 
 
 def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_root=ROOT):

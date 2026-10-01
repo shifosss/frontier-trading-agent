@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`8712883a85e034d03bb384d72c011ac7377236895c29e7c7f53c8b9a59abe0d4`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Six amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`f7e3d8c49188ec9ffd149f2704fbe9a8d5d5a9767f9596171a9e48c1daf99eba`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Seven amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
 
 - It hash-checks the reused modules before executing them.
 - It binds Python 3.13, `pyproject.toml` and `uv.lock`, and records the runtime with each attempt.
@@ -26,6 +26,8 @@ Declared October 1, 2026 and frozen before any 8-K submissions row was read. `de
 - It also ends the window before the issuer's next frozen 10-Q period end.
 - It loads the reused modules only for a real run.
 - It writes every record atomically.
+
+`amendment-07.json` takes the locks before any source input is hashed or read. It also reports an invalid, non-SQLite lock file instead of crashing.
 
 ## What it does
 
@@ -62,4 +64,4 @@ The full 31.8 GB corpus is not needed. The preflight reports `ready` once nothin
 .venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider
 ```
 
-On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit requires `source/capture.lock.sqlite` and holds a read transaction on it, plus its own exclusive `audit.lock.sqlite`. If the lock file is missing or a writer holds it, the run is refused before any attempt is created.
+On Windows use `.venv/Scripts/python.exe`. Check for a live source worker before running, as for every SEC-corpus reader. The audit requires `source/capture.lock.sqlite`. Before reading any source input, it takes a read transaction on that lock and its own exclusive `audit.lock.sqlite`, and holds both through the final identity check. A held or invalid lock is refused. If the lock file is missing or a writer holds it, the run is refused before any attempt is created.

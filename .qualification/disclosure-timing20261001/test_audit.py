@@ -648,3 +648,34 @@ def test_json_records_are_replaced_atomically(tmp_path, monkeypatch):
     with pytest.raises(OSError):
         m.write_json(path, {"status": "complete"})
     assert path.read_bytes() == before
+
+
+def test_capture_lock_is_taken_before_any_input_is_verified(tmp_path):
+    repo, study = build(tmp_path)
+    discovery = repo / E / "source/issuers/AAA/discovery.json"
+    discovery.write_bytes(discovery.read_bytes() + b" ")
+    writer = sqlite3.connect(repo / E / "source/capture.lock.sqlite", timeout=0)
+    writer.execute("BEGIN EXCLUSIVE")
+    try:
+        # The held lock is met first; inputs are never inspected while a writer is active.
+        with pytest.raises(m.AuditError, match="holds the capture lock"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+    finally:
+        writer.rollback()
+        writer.close()
+    with pytest.raises(m.AuditError, match="missing or changed"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_invalid_lock_files_are_reported_not_raised(tmp_path):
+    repo, study = build(tmp_path)
+    (repo / E / "source/capture.lock.sqlite").write_bytes(b"this is not an sqlite database" * 10)
+    (study / "audit.lock.sqlite").write_bytes(b"also not a database" * 10)
+    result = pre(repo, study)
+    assert not result["ready"]
+    invalid = {b["path"] for b in result["blocking"] if b["problem"].startswith("not a valid")}
+    assert invalid == {E + "/source/capture.lock.sqlite", "audit.lock.sqlite"}
+    with pytest.raises(m.AuditError, match="invalid"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()

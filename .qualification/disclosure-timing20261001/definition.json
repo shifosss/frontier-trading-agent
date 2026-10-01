@@ -41,7 +41,7 @@
   "registered_set": "Each issuer's discovery original_accessions must equal its frozen 10-Q manifests exactly, else the issuer is unavailable.",
   "conflict_evidence": "Every conflicting accession's differing row variants and per-occurrence (source index, row index) provenance are written to issuers.json, and to each affected 10-Q's events.json entry."
  },
- "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite and holds a read-only transaction on it, plus its own exclusive audit.lock.sqlite, for the whole audit, as the terminal qualification collector does. A missing lock or a writer holding it refuses the run before any attempt is created.",
+ "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite. A real run checks only its own study-directory declaration (definition, freeze, amendments, runtime, module identities) before taking its exclusive audit.lock.sqlite and a read-only transaction on the capture lock, as the terminal qualification collector does; every source input, manifest and code file is hashed and read only while both locks are held, through the final identity check. A missing, write-held or invalid (non-SQLite) lock refuses the run before any attempt is created; preflight reports the same conditions as blocking.",
  "runtime": {
   "python": "3.13",
   "bound_files": [
@@ -141,9 +141,14 @@
    "id": "amendment-06",
    "supersedes_definition_sha256": "5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7",
    "record": "amendment-06.json"
+  },
+  {
+   "id": "amendment-07",
+   "supersedes_definition_sha256": "8712883a85e034d03bb384d72c011ac7377236895c29e7c7f53c8b9a59abe0d4",
+   "record": "amendment-07.json"
   }
  ],
- "declared_at_utc": "2026-10-01T18:54:15.545217+00:00",
+ "declared_at_utc": "2026-10-01T19:04:45.592906+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -361,7 +366,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "94a5badef610f11ec79abeff01ff197b10609b34eb0b7a950d499cdf3aa2179b",
+  ".qualification/disclosure-timing20261001/audit.py": "bbed6eaf7e70f1fa1b37ce2c7b9a49e9fc0b86a1ee357c9443438fe46f190093",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }
