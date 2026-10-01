@@ -3,8 +3,10 @@
 import hashlib
 import importlib.util
 import json
+import re
 import socket
 import sqlite3
+import sys
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -257,7 +259,10 @@ def test_classifications_and_leads(tmp_path):
     assert events[acc(2, 40)]["items_unknown"] == [acc(2, 39)]
     assert events[acc(3, 10)]["status"] == "issuer_unavailable"
     assert events[acc(4, 10)]["status"] == "ambiguous_metadata"
-    assert events[acc(4, 10)]["conflicts"] == [acc(4, 9)]
+    (conflict,) = events[acc(4, 10)]["conflicts"]
+    assert conflict["accession"] == acc(4, 9)
+    assert [v["items"] for v in conflict["variants"]] == ["2.02", "8.01"]
+    assert [x["source_index"] for x in conflict["provenance"]] == [0, 1]
     assert len(events) == 8
     meta = json.loads((attempt / "attempt.json").read_text())
     assert meta["status"] == "complete" and meta["network_requests"] == 0
@@ -391,13 +396,13 @@ def test_missing_or_held_source_lock_refused(tmp_path):
         m.run(study / "definition.json", study / "freeze.json", repo, study)
     assert not (study / "attempts").exists()
     assert {"path": E + "/source/capture.lock.sqlite", "problem": "missing"} in m.preflight(
-        study / "definition.json", repo
+        study / "definition.json", repo, study / "freeze.json"
     )
 
 
 def test_preflight_names_missing_retained_source(tmp_path):
     repo, study = build(tmp_path)
-    problems = m.preflight(study / "definition.json", repo)
+    problems = m.preflight(study / "definition.json", repo, study / "freeze.json")
     assert [p["url"] for p in problems] == [
         "https://data.sec.gov/submissions/CIK0000000003-submissions-001.json"
     ]
@@ -447,7 +452,7 @@ def test_missing_issuer_discovery_keeps_denominator(tmp_path):
     assert rows[acc(4, 10)]["status"] == "issuer_unavailable"
     assert rows[acc(4, 10)]["reasons"] == ["retained discovery.json not present"]
     assert len(rows) == 8
-    problems = m.preflight(study / "definition.json", repo)
+    problems = m.preflight(study / "definition.json", repo, study / "freeze.json")
     missing = [p["path"] for p in problems if p["problem"] == "missing"]
     assert E + "/source/issuers/DDD/discovery.json" in missing
 
@@ -455,6 +460,8 @@ def test_missing_issuer_discovery_keeps_denominator(tmp_path):
 def test_conflicts_excluded_from_issuer_counts(tmp_path):
     attempt, _, _ = run(tmp_path)
     issuers = {i["issuer"]["symbol"]: i for i in json.loads((attempt / "issuers.json").read_text())}
+    evidence = issuers["DDD"]["conflict_evidence"][acc(4, 9)]
+    assert len(evidence["variants"]) == 2 and len(evidence["provenance"]) == 2
     assert issuers["DDD"]["unique_item_2_02_8k"] == 0
     assert issuers["DDD"]["conflicting_8k_family_accessions"] == [acc(4, 9)]
     assert issuers["AAA"]["unique_item_2_02_8k"] == 5
@@ -497,3 +504,37 @@ def test_attempt_records_runtime_and_input_identities(tmp_path):
     assert meta["runtime"]["python"].startswith("3.13")
     assert set(meta["runtime"]) >= {"tzdata_package", "zoneinfo_tzpath", "sqlite", "platform"}
     assert meta["input_identities"][E + "/source/issuers/AAA/discovery.json"]
+
+
+def test_reused_definitions_run_without_module_imports(tmp_path):
+    module = tmp_path / "frozen.py"
+    module.write_text(
+        "import module_that_does_not_exist\n"
+        "raise SystemExit('top level must not run')\n"
+        "class Oops(Exception): pass\n"
+        "def pick(x):\n    return re.sub('a', 'b', x)\n"
+    )
+    digest = sha(module.read_bytes())
+    loaded = m.load_verified_definitions(module, digest, ["Oops", "pick"], {"re": re})
+    assert loaded.pick("aa") == "bb" and issubclass(loaded.Oops, Exception)
+    with pytest.raises(m.AuditError, match="missing or duplicated"):
+        m.load_verified_definitions(module, digest, ["absent"], {})
+    with pytest.raises(m.AuditError, match="not executed"):
+        m.load_verified_definitions(module, "0" * 64, ["pick"], {"re": re})
+
+
+def test_loading_audit_does_not_import_the_project_package():
+    # capture.py's top-level `from frontier.historical_lab import _save` is never executed.
+    assert "frontier.historical_lab" not in sys.modules
+
+
+def test_preflight_reports_definition_drift(tmp_path):
+    repo, study = build(tmp_path)
+    before = m.preflight(study / "definition.json", repo, study / "freeze.json")
+    assert not [p for p in before if p["path"] == "definition"]
+    definition = json.loads((study / "definition.json").read_text())
+    definition["interpretation"]["supported_if_lower_share_at_least"] = 0.1
+    write(study / "definition.json", definition)
+    problems = m.preflight(study / "definition.json", repo, study / "freeze.json")
+    drift = {"path": "definition", "problem": "Definition bytes differ from the frozen declaration"}
+    assert drift in problems

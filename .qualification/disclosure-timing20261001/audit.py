@@ -9,12 +9,14 @@ never evidence of what it disclosed.
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
 import hashlib
 import importlib.metadata
 import importlib.util
 import json
 import platform
+import re
 import sqlite3
 import sys
 import uuid
@@ -86,10 +88,31 @@ def load_verified_module(path, digest, name):
     return module
 
 
-# Reuse the frozen submissions-table parser and the frozen 10-Q event clock unchanged.
+def load_verified_definitions(path, digest, names, namespace):
+    """Execute only the named top-level definitions of verified bytes, not the module's imports."""
+    data = Path(path).read_bytes()
+    if sha(data) != digest:
+        raise AuditError("Reused module bytes changed; not executed: " + Path(path).as_posix())
+    tree = ast.parse(data, filename=str(path))
+    nodes = [
+        n for n in tree.body if isinstance(n, (ast.FunctionDef, ast.ClassDef)) and n.name in names
+    ]
+    if sorted(n.name for n in nodes) != sorted(names):
+        raise AuditError("Reused definitions missing or duplicated in " + Path(path).as_posix())
+    namespace = dict(namespace)
+    exec(compile(ast.Module(body=nodes, type_ignores=[]), str(path), "exec"), namespace)
+    return type("VerifiedDefinitions", (), {name: namespace[name] for name in names})
+
+
+# Reuse the frozen submissions parser and 10-Q event clock unchanged. capture.py imports the
+# project package at top level, so only its four needed definitions are executed, with the
+# stdlib names they use. features.py imports only the standard library and runs whole.
 _CAPTURE, _FEATURES = FROZEN_MODULES
-base = load_verified_module(
-    REPO / _CAPTURE, FROZEN_MODULES[_CAPTURE], "timing_audit_submissions_parser"
+base = load_verified_definitions(
+    REPO / _CAPTURE,
+    FROZEN_MODULES[_CAPTURE],
+    ["CaptureError", "Halt", "table_rows", "history_files"],
+    {"re": re, "datetime": datetime},
 )
 features = load_verified_module(
     REPO / _FEATURES, FROZEN_MODULES[_FEATURES], "timing_audit_event_clock"
@@ -156,32 +179,39 @@ def check_inputs(repo, definition, state=None, allow_missing_issuer_inputs=True)
     return problems
 
 
-def verify_definition(definition_path, freeze_path, repo):
+def definition_problems(definition_path, freeze_path):
+    """Read-only identity checks of the frozen declaration; empty means the declaration holds."""
     raw = Path(definition_path).read_bytes()
     frozen = load(freeze_path)
-    if sha(raw) != frozen["definition_sha256"]:
-        raise AuditError("Definition bytes differ from the frozen declaration")
     definition = json.loads(raw)
+    problems = []
+    if sha(raw) != frozen["definition_sha256"]:
+        problems.append("Definition bytes differ from the frozen declaration")
     if definition.get("schema") != 1 or definition.get("study") != ROOT.name:
-        raise AuditError("Unexpected definition schema/study")
-    records = {a["record"] for a in definition.get("amendments", [])}
-    if records != set(frozen.get("amendments", {})):
-        raise AuditError("Amendment records differ between definition and freeze")
+        problems.append("Unexpected definition schema/study")
+    if {a["record"] for a in definition.get("amendments", [])} != set(frozen.get("amendments", {})):
+        problems.append("Amendment records differ between definition and freeze")
     for name, digest in frozen.get("amendments", {}).items():
         path = Path(definition_path).parent / name
         if not path.is_file() or sha(path.read_bytes()) != digest:
-            raise AuditError("Amendment record missing or changed: " + name)
-    if "%d.%d" % sys.version_info[:2] != definition["runtime"]["python"]:
-        raise AuditError(
-            "Python runtime differs from the declared " + definition["runtime"]["python"]
-        )
-    if any(FROZEN_MODULES[rel] != definition["code"].get(rel) for rel in FROZEN_MODULES):
-        raise AuditError("Reused module identities differ from the definition")
+            problems.append("Amendment record missing or changed: " + name)
+    declared = definition.get("runtime", {}).get("python")
+    if "%d.%d" % sys.version_info[:2] != declared:
+        problems.append("Python runtime differs from the declared " + str(declared))
+    if any(FROZEN_MODULES[rel] != definition.get("code", {}).get(rel) for rel in FROZEN_MODULES):
+        problems.append("Reused module identities differ from the definition")
+    return definition, sha(raw), problems
+
+
+def verify_definition(definition_path, freeze_path, repo):
+    definition, definition_sha, problems = definition_problems(definition_path, freeze_path)
+    if problems:
+        raise AuditError(problems[0])
     state = input_state(repo, definition)
     problems = check_inputs(repo, definition, state)
     if problems:
         raise AuditError("Bound inputs are missing or changed: " + json.dumps(problems[:20]))
-    return definition, sha(raw), state
+    return definition, definition_sha, state
 
 
 # ---------------------------------------------------------------- provenance
@@ -282,7 +312,9 @@ def canonicalize(occurrences):
             "occurrences": len(group),
             "conflict": len(variants) > 1,
             "variants": variants if len(variants) > 1 else [],
-            "provenance": [(o["source_index"], o["row_index"]) for o in group],
+            "provenance": [
+                {"source_index": o["source_index"], "row_index": o["row_index"]} for o in group
+            ],
         }
     return canonical
 
@@ -370,7 +402,13 @@ def classify(q_row, canonical, coverage, calendar, positions, rules):
         ):
             continue
         if other["conflict"]:
-            result["conflicts"].append(other_accession)
+            result["conflicts"].append(
+                {
+                    "accession": other_accession,
+                    "variants": other["variants"],
+                    "provenance": other["provenance"],
+                }
+            )
             continue
         tokens = items_tokens(row.get("items"))
         if tokens is None:
@@ -623,6 +661,11 @@ def audit(definition, repo):
                 unique_accessions=len(canonical),
                 duplicate_occurrences=len(rebuilt["occurrences"]) - len(canonical),
                 conflicting_accessions=sorted(a for a, c in canonical.items() if c["conflict"]),
+                conflict_evidence={
+                    a: {"variants": c["variants"], "provenance": c["provenance"]}
+                    for a, c in sorted(canonical.items())
+                    if c["conflict"]
+                },
                 raw_8k_occurrences=form_counts.get(rules["candidate_form"], 0),
                 unique_item_2_02_8k=len(item_rows),
                 empty_primary_document_8k=sum(not r.get("primaryDocument") for r in clean_8k),
@@ -781,10 +824,11 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
             raise
 
 
-def preflight(definition_path=DEFINITION, repo=REPO):
-    """List missing/changed inputs, including raw sources named by discovery files. No writes."""
-    definition = load(definition_path)
-    problems = check_inputs(repo, definition, allow_missing_issuer_inputs=False)
+def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE):
+    """List declaration, input and raw-source problems a real run would meet. No writes."""
+    definition, _, declaration = definition_problems(definition_path, freeze_path)
+    problems = [{"path": "definition", "problem": p} for p in declaration]
+    problems += check_inputs(repo, definition, allow_missing_issuer_inputs=False)
     source_root = repo / definition["paths"]["source_root"]
     if not (source_root / "capture.lock.sqlite").is_file():
         problems.append(

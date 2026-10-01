@@ -1,0 +1,24 @@
+{
+ "id": "amendment-04",
+ "recorded_at_utc": "2026-10-01T18:35:07.272076+00:00",
+ "supersedes_definition_sha256": "891da3a2466f3dd10f725987a4fbd2f6ce0893b562cdaf9c433a4bb610a31c5d",
+ "new_definition_sha256": "3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, three P2 findings on commit fbbbaf7c",
+ "changes": [
+  {
+   "field": "runtime.reused_modules; audit.py load_verified_definitions",
+   "reason": "Executing the verified capture.py also ran its top-level import of the unbound project package (frontier.historical_lab and pandas). Only the four needed definitions are now executed from the verified bytes. A test confirmed the package was imported by the previous code and is not imported now."
+  },
+  {
+   "field": "preflight; audit.py definition_problems",
+   "reason": "Preflight could report ready for a definition that no longer matched the freeze. It now runs the same read-only declaration checks as a real run."
+  },
+  {
+   "field": "provenance.conflict_evidence",
+   "reason": "Ambiguity caused by a conflicting accession kept only the accession string. Variants and occurrence provenance are now written to issuers.json and events.json."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate form/token, clock function, classification, locks, inputs, bounds and verdict thresholds."
+}
