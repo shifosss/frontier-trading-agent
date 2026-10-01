@@ -1,6 +1,6 @@
 # Source-only 8-K Item 2.02 timing audit
 
-Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Four amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
+Declared October 1, 2026 and frozen before any 8-K submissions row was read. `definition.json` holds the question, denominators, matching window, clock, ambiguity rules and interpretation thresholds. `freeze.json` binds its SHA256 (`5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7`), the three code files it relies on and the amendment records. Changing either needs a new dated amendment and freeze. Existing attempts are never rewritten. Five amendments were made after review and before any run. `amendment-01.json` ends the window on day 83 and requires the source lock. `amendment-02.json` recomputes every 10-Q clock from its frozen manifest, so the consistency check also covers events whose issuer sources are unavailable. `amendment-03.json` makes six changes:
 
 - It hash-checks the reused modules before executing them.
 - It binds Python 3.13, `pyproject.toml` and `uv.lock`, and records the runtime with each attempt.
@@ -14,6 +14,12 @@ Declared October 1, 2026 and frozen before any 8-K submissions row was read. `de
 - It executes only the four needed definitions from the verified `capture.py`, so that module's top-level import of the project package never runs.
 - It makes the preflight run the same declaration checks as a real run.
 - It writes the variants and provenance of conflicting accessions to the outputs.
+
+`amendment-05.json` changes three things in the preflight:
+
+- Absent per-issuer files are reported separately instead of blocking.
+- Held locks are probed read-only and reported as blocking.
+- Inputs whose bytes changed are reported, not parsed.
 
 ## What it does
 
@@ -40,12 +46,12 @@ The clone already contains `source/request.json`, `source/completion.json`, all 
 5. `.qualification/earnings-quality20260928/source/capture.lock.sqlite`, the capture's empty SQLite lock file.
 6. The 79 history pages under `.qualification/earnings-quality20260928/source/raw/`. Each `discovery.json` names its pages, so run the preflight after step 1 to list them.
 
-The full 31.8 GB corpus is not needed.
+The full 31.8 GB corpus is not needed. The preflight reports `ready` once nothing is `blocking`. In this clone, the calendar, the qualification events and the lock block a run. Absent per-issuer files are listed under `issuer_unavailable`; a run keeps those issuers as unavailable rows that widen the bounds. As of this clone every issuer lacks at least one source, so restore the per-issuer files too, or every row is unavailable and the verdict can only be `inconclusive`.
 
 ## Commands
 
 ```
-.venv/bin/python -B .qualification/disclosure-timing20261001/audit.py --preflight   # lists missing/changed inputs, writes nothing
+.venv/bin/python -B .qualification/disclosure-timing20261001/audit.py --preflight   # ready / blocking / issuer_unavailable; writes nothing
 .venv/bin/python -B .qualification/disclosure-timing20261001/audit.py               # one new attempt; refuses changed definition/inputs
 .venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider
 ```

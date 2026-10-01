@@ -1,0 +1,24 @@
+{
+ "id": "amendment-05",
+ "recorded_at_utc": "2026-10-01T18:43:43.203011+00:00",
+ "supersedes_definition_sha256": "3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc",
+ "new_definition_sha256": "5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, three P2 findings on commit c662ef9b",
+ "changes": [
+  {
+   "field": "preflight result",
+   "reason": "Absent per-issuer files kept ready false although a real run treats them as issuer_unavailable. Preflight now separates blocking problems from expected issuer unavailability."
+  },
+  {
+   "field": "preflight lock probe",
+   "reason": "Preflight checked only that the capture lock file existed. It now probes the capture and audit locks read-only and reports a lock held by another process as blocking."
+  },
+  {
+   "field": "preflight raw-source inspection",
+   "reason": "A corrupted bound request raised instead of being reported. Raw-source inspection now runs only for a request and discovery files that match their bound identities."
+  }
+ ],
+ "unchanged": "The audit run itself, denominators, window, candidate rules, clock, classification, inputs, bounds and verdict thresholds."
+}

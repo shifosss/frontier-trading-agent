@@ -1,23 +1,24 @@
 {
  "status": "passed",
- "checked_at": "2026-10-01T18:35:21.876727+00:00",
+ "checked_at": "2026-10-01T18:44:08.622168+00:00",
  "platform": "Linux container, Python 3.13.14, uv sync --frozen",
  "command": ".venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider",
- "result": "20 passed",
+ "result": "22 passed",
  "synthetic_only": true,
  "actual_8k_rows_read": false,
  "network_requests": 0,
- "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed. Amendment-03: before amendment-03.json existed, 15 of 17 failed at fixture setup (expected); one new assertion had a test-side type error, which was corrected; then all 17 passed. The amendment-03 tests target APIs that did not exist in the previous code, so they were not run against it. Amendment-04: the import-isolation and conflict-evidence tests failed on the previous code; after the change and re-freeze all 20 passed.",
+ "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed. Amendment-03: before amendment-03.json existed, 15 of 17 failed at fixture setup (expected); one new assertion had a test-side type error, which was corrected; then all 17 passed. The amendment-03 tests target APIs that did not exist in the previous code, so they were not run against it. Amendment-04: the import-isolation and conflict-evidence tests failed on the previous code; after the change and re-freeze all 20 passed. Amendment-05: after the preflight change only the frozen-identity test failed until the re-freeze; then all 22 passed. The changed preflight return shape means the new preflight tests were not run against the previous code.",
  "files": {
-  "audit.py": "52cb0b40ed70c9a7b3ab958512bb186009fa631a90f2bac155991b06c0eed98d",
-  "test_audit.py": "74c43a01a4586ed4e166a9df9b7b7628fb71b1e8dbea1cd729d3f86a9844c486",
-  "definition.json": "3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc",
-  "freeze.json": "0627434d47b7cb9d1857b8fa3202c6a4575092fd21df8de97cdde84de62af485",
+  "audit.py": "9100c7e310c373d8e194173bcf7aba1bc51768966d815b9cf84e44cf4bc6e56c",
+  "test_audit.py": "0204ab349dc2240355ef6c9943876f9f259bb045e824c9b297273aa60c64a99e",
+  "definition.json": "5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7",
+  "freeze.json": "2ea54d7b786a5370ba6dfb2e76766f46e3690e44c030a7e8dfcac569bba4586f",
   "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
   "amendment-02.json": "906a70495713610e7d4d10bb55c80ef2a1cbdee93afad38b5fa11beb6735d858",
   "amendment-03.json": "d8bbe0b8c58a55e3a4c80436c59fe8b389a32efd3ede918b3c256f0e8fd99ddb",
   "amendment-04.json": "00f62e46ad32307d0d74a585fffc2266b1137a8448419fe44be098b36ff4fd50",
-  "interface.md": "01ee959e5691347da8597d73cc13cf5ed19f0be75b2bd3dcd93c4d2b410b7f4b"
+  "amendment-05.json": "310e5afc92f89344ade998a32fa68dec13c1b49e8c97f9f733dd7ccb04d30a30",
+  "interface.md": "d3b929af8960ea57a6046de670dcd2fbbca66e00925bac04e071bdafb20af88d"
  },
  "scope": [
   "single prior / same-session / after / multiple candidate classification and XNYS-session leads",
@@ -40,8 +41,11 @@
   "amendment records and Python runtime verified before any attempt; runtime and input identities recorded per attempt",
   "only the four needed capture.py definitions execute; loading the audit does not import the project package",
   "preflight reports frozen-definition drift with the same checks as a real run",
-  "conflicting accession variants and source/row provenance written to issuers.json and events.json"
+  "conflicting accession variants and source/row provenance written to issuers.json and events.json",
+  "preflight separates blocking problems from expected issuer unavailability",
+  "preflight probes capture and audit locks read-only and reports a held lock as blocking",
+  "preflight reports a corrupted bound request without raising"
  ],
- "real_preflight": "Not ready in this clone (172 missing bound inputs plus raw sources named by the 31 present discovery files). A real run refuses before creating any attempt.",
+ "real_preflight": "Not ready in this clone: 3 blocking (calendar, qualification events, capture lock) and 207 absent per-issuer files listed as issuer_unavailable. A real run refuses before creating any attempt.",
  "qualification": "Software checks only; no economic or source result."
 }

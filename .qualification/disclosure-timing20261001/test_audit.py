@@ -238,6 +238,10 @@ def build(tmp, drop_history_for=("CCC",), events_override=None):
     return repo, study
 
 
+def pre(repo, study):
+    return m.preflight(study / "definition.json", repo, study / "freeze.json", study)
+
+
 def run(tmp, **kwargs):
     repo, study = build(tmp, **kwargs)
     attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
@@ -388,6 +392,12 @@ def test_missing_or_held_source_lock_refused(tmp_path):
     try:
         with pytest.raises(m.AuditError, match="holds the capture lock"):
             m.run(study / "definition.json", study / "freeze.json", repo, study)
+        held = pre(repo, study)
+        assert not held["ready"]
+        assert {
+            "path": E + "/source/capture.lock.sqlite",
+            "problem": "held by another process",
+        } in held["blocking"]
     finally:
         writer.rollback()
         writer.close()
@@ -395,15 +405,44 @@ def test_missing_or_held_source_lock_refused(tmp_path):
     with pytest.raises(m.AuditError, match="lock is missing"):
         m.run(study / "definition.json", study / "freeze.json", repo, study)
     assert not (study / "attempts").exists()
-    assert {"path": E + "/source/capture.lock.sqlite", "problem": "missing"} in m.preflight(
-        study / "definition.json", repo, study / "freeze.json"
+    assert {"path": E + "/source/capture.lock.sqlite", "problem": "missing"} in pre(repo, study)[
+        "blocking"
+    ]
+
+
+def test_preflight_sees_another_audit_lock(tmp_path):
+    repo, study = build(tmp_path)
+    other = sqlite3.connect(study / "audit.lock.sqlite", timeout=0)
+    other.execute("BEGIN EXCLUSIVE")
+    try:
+        result = pre(repo, study)
+        assert {"path": "audit.lock.sqlite", "problem": "held by another process"} in result[
+            "blocking"
+        ]
+        with pytest.raises(m.AuditError, match="Another timing audit"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+    finally:
+        other.rollback()
+        other.close()
+
+
+def test_preflight_reports_corrupt_request_without_raising(tmp_path):
+    repo, study = build(tmp_path)
+    (repo / E / "source/request.json").write_bytes(b"not json")
+    result = pre(repo, study)
+    assert not result["ready"]
+    assert any(
+        b["path"] == E + "/source/request.json" and b["problem"] == "sha256_mismatch"
+        for b in result["blocking"]
     )
 
 
 def test_preflight_names_missing_retained_source(tmp_path):
     repo, study = build(tmp_path)
-    problems = m.preflight(study / "definition.json", repo, study / "freeze.json")
-    assert [p["url"] for p in problems] == [
+    result = pre(repo, study)
+    # A missing retained history page is expected issuer unavailability, not a blocker.
+    assert result["ready"] and result["blocking"] == []
+    assert [p["url"] for p in result["issuer_unavailable"]] == [
         "https://data.sec.gov/submissions/CIK0000000003-submissions-001.json"
     ]
 
@@ -452,8 +491,9 @@ def test_missing_issuer_discovery_keeps_denominator(tmp_path):
     assert rows[acc(4, 10)]["status"] == "issuer_unavailable"
     assert rows[acc(4, 10)]["reasons"] == ["retained discovery.json not present"]
     assert len(rows) == 8
-    problems = m.preflight(study / "definition.json", repo, study / "freeze.json")
-    missing = [p["path"] for p in problems if p["problem"] == "missing"]
+    result = pre(repo, study)
+    assert result["ready"]
+    missing = [p["path"] for p in result["issuer_unavailable"] if p["problem"] == "missing"]
     assert E + "/source/issuers/DDD/discovery.json" in missing
 
 
@@ -530,11 +570,10 @@ def test_loading_audit_does_not_import_the_project_package():
 
 def test_preflight_reports_definition_drift(tmp_path):
     repo, study = build(tmp_path)
-    before = m.preflight(study / "definition.json", repo, study / "freeze.json")
-    assert not [p for p in before if p["path"] == "definition"]
+    assert pre(repo, study)["ready"]
     definition = json.loads((study / "definition.json").read_text())
     definition["interpretation"]["supported_if_lower_share_at_least"] = 0.1
     write(study / "definition.json", definition)
-    problems = m.preflight(study / "definition.json", repo, study / "freeze.json")
+    result = pre(repo, study)
     drift = {"path": "definition", "problem": "Definition bytes differ from the frozen declaration"}
-    assert drift in problems
+    assert not result["ready"] and drift in result["blocking"]

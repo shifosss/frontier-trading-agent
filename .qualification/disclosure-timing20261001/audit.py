@@ -824,30 +824,66 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
             raise
 
 
-def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE):
-    """List declaration, input and raw-source problems a real run would meet. No writes."""
+def lock_busy(path):
+    """Read-only probe: a problem string when another process holds the SQLite lock file."""
+    if not path.is_file():
+        return None
+    probe = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True, timeout=0)
+    try:
+        probe.execute("BEGIN")
+        probe.execute("SELECT count(*) FROM sqlite_master").fetchone()
+        return None
+    except sqlite3.OperationalError:
+        return "held by another process"
+    finally:
+        probe.rollback()
+        probe.close()
+
+
+def preflight(definition_path=DEFINITION, repo=REPO, freeze_path=FREEZE, output_root=ROOT):
+    """What a real run would meet, without writing: blocking problems stop the run, while
+    issuer_unavailable lists absent per-issuer files the run keeps in every denominator."""
     definition, _, declaration = definition_problems(definition_path, freeze_path)
-    problems = [{"path": "definition", "problem": p} for p in declaration]
-    problems += check_inputs(repo, definition, allow_missing_issuer_inputs=False)
+    blocking = [{"path": "definition", "problem": p} for p in declaration]
+    blocking += check_inputs(repo, definition)
+    state = input_state(repo, definition)
+    unavailable = [
+        {"path": rel, "problem": "missing"}
+        for rel in definition["issuer_inputs"]
+        if state[rel] is None
+    ]
     source_root = repo / definition["paths"]["source_root"]
-    if not (source_root / "capture.lock.sqlite").is_file():
-        problems.append(
-            {
-                "path": (source_root / "capture.lock.sqlite").relative_to(repo).as_posix(),
-                "problem": "missing",
-            }
-        )
-    reuse = {r["url"]: r for r in load(repo / definition["paths"]["source_request"])["reuse"]}
-    for rel in definition["issuer_inputs"]:
-        if rel.endswith("/discovery.json") and (repo / rel).is_file():
-            for meta in load(repo / rel).get("sources", []):
-                try:
-                    resolve_source(meta, source_root, repo, reuse)
-                except (IssuerUnavailable, AuditError) as exc:
-                    problems.append(
-                        {"path": meta.get("path"), "problem": str(exc), "url": meta.get("url")}
-                    )
-    return problems
+    capture_lock = source_root / "capture.lock.sqlite"
+    rel_lock = capture_lock.relative_to(repo).as_posix()
+    if not capture_lock.is_file():
+        blocking.append({"path": rel_lock, "problem": "missing"})
+    for path, rel in [
+        (capture_lock, rel_lock),
+        (output_root / "audit.lock.sqlite", "audit.lock.sqlite"),
+    ]:
+        busy = lock_busy(path)
+        if busy:
+            blocking.append({"path": rel, "problem": busy})
+    request_rel = definition["paths"]["source_request"]
+    if state.get(request_rel) != definition["inputs"].get(request_rel):
+        return {"ready": False, "blocking": blocking, "issuer_unavailable": unavailable}
+    reuse = {r["url"]: r for r in load(repo / request_rel)["reuse"]}
+    for rel, digest in definition["issuer_inputs"].items():
+        # Only discovery files whose bytes match their bound identity are parsed.
+        if not rel.endswith("/discovery.json") or state[rel] != digest:
+            continue
+        for meta in load(repo / rel).get("sources", []):
+            try:
+                resolve_source(meta, source_root, repo, reuse)
+            except IssuerUnavailable as exc:
+                unavailable.append(
+                    {"path": meta.get("path"), "problem": str(exc), "url": meta.get("url")}
+                )
+            except AuditError as exc:
+                blocking.append(
+                    {"path": meta.get("path"), "problem": str(exc), "url": meta.get("url")}
+                )
+    return {"ready": not blocking, "blocking": blocking, "issuer_unavailable": unavailable}
 
 
 if __name__ == "__main__":
@@ -857,7 +893,6 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     if args.preflight:
-        found = preflight()
-        print(json.dumps({"ready": not found, "problems": found}, indent=1))
+        print(json.dumps(preflight(), indent=1))
     else:
         print(json.dumps({"attempt": str(run())}))

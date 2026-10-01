@@ -8,7 +8,7 @@ The [cash-backed earnings comparison](earnings-quality-results.md) decided at 09
 
 ## What is frozen
 
-The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc`.
+The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `5cd7ce8cee475743f49a73d95d9351874376ca55c50a4d6e13d56ef6c04e8fd7`.
 
 - **Denominators:** all 100 issuers and 4,057 registered original 10-Qs, including the 190 failed captures. The 3,867 captured originals and the 2,010 strategy-source-qualified events are reported as separate strata, and each filing year is also reported. No issuer is replaced or dropped.
 - **Candidate:** a same-CIK original `8-K` whose `items` field holds the exact token `2.02`, filed after the 10-Q period end and within 83 days of it. The shortest 12-week next quarter ends on day 84, so its results release cannot fall in the window. Review moved this bound from 84 to 83 days before any run; see `amendment-01.json`. `8-K/A` rows are counted but are never candidates.
@@ -22,4 +22,4 @@ Item 2.02 metadata says an earnings-related release was furnished. It does not s
 
 ## To run it
 
-Restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and the empty capture lock file, not the 31.8 GB corpus. Then run `audit.py --preflight` until it reports `ready: true`, and run `audit.py` once. Record the attempt and summary in a dated `*-results.md` next to this file.
+Restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and the empty capture lock file, not the 31.8 GB corpus. Then run `audit.py --preflight` until it reports `ready: true` with an empty or accepted `issuer_unavailable` list, and run `audit.py` once. Record the attempt and summary in a dated `*-results.md` next to this file.

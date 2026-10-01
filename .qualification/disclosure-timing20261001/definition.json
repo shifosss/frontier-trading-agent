@@ -58,7 +58,7 @@
   ],
   "reused_modules": "audit.py hard-codes the SHA256 of the reused capture and features modules and refuses to execute changed bytes. From the verified capture.py bytes it executes only the CaptureError, Halt, table_rows and history_files definitions with the stdlib names they use, never that module's top-level imports (which load the project package). features.py imports only the standard library and is executed whole. The same digests are bound under code."
  },
- "preflight": "audit.py --preflight runs the same read-only declaration checks as a real run (frozen definition SHA, amendment records, Python runtime, reused module identities) plus every bound and raw-source input check, and writes nothing.",
+ "preflight": "audit.py --preflight writes nothing and returns ready, blocking and issuer_unavailable. Blocking problems are what would stop a real run: declaration drift (frozen definition SHA, amendment records, Python runtime, reused module identities), any absent or changed global input, code or manifest, changed per-issuer bytes, a missing capture lock, or a capture or audit lock held by another process (probed read-only). issuer_unavailable lists absent per-issuer discovery, root and history files, which a real run keeps as issuer_unavailable rows in every denominator. Raw-source inspection runs only when the request and the discovery file match their bound identities. ready is true when nothing is blocking.",
  "matching": {
   "candidate_form": "8-K",
   "amendment_form": "8-K/A",
@@ -130,9 +130,14 @@
    "id": "amendment-04",
    "supersedes_definition_sha256": "891da3a2466f3dd10f725987a4fbd2f6ce0893b562cdaf9c433a4bb610a31c5d",
    "record": "amendment-04.json"
+  },
+  {
+   "id": "amendment-05",
+   "supersedes_definition_sha256": "3a1a56ed26239442fd20d11055cf020fe0c1443136df7f3fdc1d2df254dc11dc",
+   "record": "amendment-05.json"
   }
  ],
- "declared_at_utc": "2026-10-01T18:35:07.213161+00:00",
+ "declared_at_utc": "2026-10-01T18:43:43.153572+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -350,7 +355,7 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "52cb0b40ed70c9a7b3ab958512bb186009fa631a90f2bac155991b06c0eed98d",
+  ".qualification/disclosure-timing20261001/audit.py": "9100c7e310c373d8e194173bcf7aba1bc51768966d815b9cf84e44cf4bc6e56c",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }
