@@ -1,0 +1,43 @@
+{
+  "at": "2026-09-18T19:28:37.762949+00:00",
+  "owned_workers": [
+    {
+      "ProcessId": 9256,
+      "ParentProcessId": 44552,
+      "ExecutablePath": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+      "CommandLine": "\"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe\" -X utf8 -u -m frontier.cli --workspace \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\" serve --port 8765",
+      "CreationDate": "/Date(1789759321411)/"
+    },
+    {
+      "ProcessId": 45332,
+      "ParentProcessId": 32468,
+      "ExecutablePath": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+      "CommandLine": "\"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe\" -X utf8 -u -m frontier.cli --workspace \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\" paper-watch --interval-seconds 300",
+      "CreationDate": "/Date(1789759337975)/"
+    },
+    {
+      "ProcessId": 44932,
+      "ParentProcessId": 31168,
+      "ExecutablePath": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+      "CommandLine": "\"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe\" -u -m frontier.cli --workspace \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\" research-run",
+      "CreationDate": "/Date(1789759454511)/"
+    }
+  ],
+  "recent_paper_cycles": [
+    {
+      "at": "2026-09-18T19:22:19.791283+00:00",
+      "message": "Paper cycle reconciled; saved decisions await execution.",
+      "orders": 0,
+      "status": "ready"
+    },
+    {
+      "at": "2026-09-18T19:27:20.572657+00:00",
+      "message": "Paper cycle reconciled; saved decisions await execution.",
+      "orders": 0,
+      "status": "ready"
+    }
+  ],
+  "paper_status": "ready",
+  "orders": 0,
+  "launch_commands_exited": true
+}

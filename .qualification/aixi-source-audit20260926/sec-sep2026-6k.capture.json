@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "url": "https://www.sec.gov/Archives/edgar/data/1935172/000121390026096964/ea0304260-6k_xiao1.htm",
+  "params": null,
+  "captured_at": "2026-09-28T18:39:25.465918+00:00",
+  "status_code": 200,
+  "sha256": "7c78b677bf021161f9ea0a1f87071d6947c08df512a26f05b8650c519ffcca3f",
+  "bytes": 13585,
+  "content_type": "text/html",
+  "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+  "raw_file": "sec-sep2026-6k.7c78b677bf021161f9ea0a1f87071d6947c08df512a26f05b8650c519ffcca3f.raw"
+}

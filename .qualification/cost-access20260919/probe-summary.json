@@ -1,0 +1,43 @@
+{
+  "requests": [
+    {
+      "page": 1,
+      "status_code": 200,
+      "sha256": "279bfabfd175f89924f3b44dccc68acec54c5e212eb9634d8b6783c47f0236df",
+      "bytes": 1132406,
+      "counts": {
+        "MSFT": 1979,
+        "AAPL": 7814,
+        "F": 207
+      },
+      "first_timestamp": {
+        "MSFT": "2024-11-29T17:59:00.003286187Z",
+        "AAPL": "2024-11-29T17:59:00.001479179Z",
+        "F": "2024-11-29T17:59:00.002465792Z"
+      },
+      "last_timestamp": {
+        "MSFT": "2024-11-29T17:59:30.208706932Z",
+        "AAPL": "2024-11-29T17:59:59.997251897Z",
+        "F": "2024-11-29T17:59:59.995285504Z"
+      }
+    },
+    {
+      "page": 2,
+      "status_code": 200,
+      "sha256": "24672da7049153da3aba71aceb5bce0d47150a37074e4d5f39dd81a9cfd8543d",
+      "bytes": 263756,
+      "counts": {
+        "MSFT": 2338
+      },
+      "first_timestamp": {
+        "MSFT": "2024-11-29T17:59:30.208834326Z"
+      },
+      "last_timestamp": {
+        "MSFT": "2024-11-29T17:59:59.991333247Z"
+      }
+    }
+  ],
+  "stopped_on_error": false,
+  "pagination_incomplete": false,
+  "completed_at": "2026-09-19T19:24:08.589761+00:00"
+}

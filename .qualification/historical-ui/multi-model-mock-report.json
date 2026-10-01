@@ -1,0 +1,341 @@
+{
+  "kind": "synthetic multi-model UI integration fixture",
+  "widths": [
+    {
+      "width": 1440,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        }
+      ],
+      "diagnostics_verified": true,
+      "roster_families": 20,
+      "zero_trade_verified": true,
+      "incomplete_verified": true,
+      "forecast_verified": true,
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        }
+      ],
+      "diagnostics_verified": true,
+      "roster_families": 20,
+      "zero_trade_verified": true,
+      "incomplete_verified": true,
+      "forecast_verified": true,
+      "page_errors": []
+    },
+    {
+      "width": 390,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        }
+      ],
+      "diagnostics_verified": true,
+      "roster_families": 20,
+      "zero_trade_verified": true,
+      "incomplete_verified": true,
+      "forecast_verified": true,
+      "page_errors": []
+    },
+    {
+      "width": 320,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40,
+          "selected_model": "calibrated_ensemble:3"
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100,
+          "selected_model": "calibrated_ensemble:3"
+        }
+      ],
+      "diagnostics_verified": true,
+      "roster_families": 20,
+      "zero_trade_verified": true,
+      "incomplete_verified": true,
+      "forecast_verified": true,
+      "page_errors": []
+    }
+  ],
+  "states": [
+    "default model-mode request reuses prior capture and retains prior published baseline",
+    "actual mode/fitting fold progress shown without stale budget"
+  ]
+}

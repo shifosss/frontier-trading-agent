@@ -1,0 +1,97 @@
+{
+  "verified_at_utc": "2026-09-28T22:33:43.741920+00:00",
+  "reuse": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000062/0000320193-20-000062-index.html",
+      "path": ".qualification/filing-feasibility20260928/raw/aapl_2020q3_index.bin",
+      "sha256": "b7a36be235890fa93f8d07fec0d2db40b96430d48c379fefa613dbcd73813245",
+      "bytes": 11607,
+      "retrieved_at_utc": "2026-09-28T21:57:46.689386+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000062/aapl-20200627.htm",
+      "path": ".qualification/filing-feasibility20260928/raw/aapl_2020q3_original.bin",
+      "sha256": "af280db54b418fac7a0acf769d7a8ca3a5422dcb93d8567b9739debb7283ace9",
+      "bytes": 2356073,
+      "retrieved_at_utc": "2026-09-28T21:57:47.768857+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000062/0000320193-20-000062.hdr.sgml",
+      "path": ".qualification/filing-feasibility20260928/raw/aapl_2020q3_header.bin",
+      "sha256": "5302363137c787a960eb86cbbd999309e6456eefea7a4f668ba071487b7f87c2",
+      "bytes": 952,
+      "retrieved_at_utc": "2026-09-28T21:57:48.942442+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/0000950170-24-048288-index.htm",
+      "path": ".qualification/filing-feasibility20260928/raw/msft_2024q3_index.bin",
+      "sha256": "98681683a06aad92ab2a9c8c7de6be6e760df99b2b87f4c137fa371937384348",
+      "bytes": 10401,
+      "retrieved_at_utc": "2026-09-28T21:57:50.141003+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331.htm",
+      "path": ".qualification/filing-feasibility20260928/raw/msft_2024q3_original.bin",
+      "sha256": "65f218a11d5c35016bf7c0f992ac7c28cb44ee0f436fbefb6f82ef290d827085",
+      "bytes": 5699022,
+      "retrieved_at_utc": "2026-09-28T21:57:51.271467+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/0000037996-24-000144-index.htm",
+      "path": ".qualification/filing-feasibility20260928/raw/f_2024q2_index.bin",
+      "sha256": "b0ca131f757cbbef83bd737f84287e1dad2b0045a6b33fc768c674613fae8722",
+      "bytes": 11594,
+      "retrieved_at_utc": "2026-09-28T21:57:52.404643+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000144/f-20240630.htm",
+      "path": ".qualification/filing-feasibility20260928/raw/f_2024q2_original.bin",
+      "sha256": "c2d4f9ab1bbef3feae8e2e2abe2c144b94823a73a55b6cd7c58a8809ce02a8e3",
+      "bytes": 3028539,
+      "retrieved_at_utc": "2026-09-28T21:57:53.561919+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "path": ".qualification/filing-feasibility20260928/raw/aapl_submissions.bin",
+      "sha256": "dabb28a7c4af8fac408a72345ec959c1a08255a6c5c1af99c4f22b2beacfc77f",
+      "bytes": 163991,
+      "retrieved_at_utc": "2026-09-28T21:57:57.885585+00:00",
+      "source_manifest": ".qualification/filing-feasibility20260928/requests.json"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000732717.json",
+      "path": ".qualification/filing-source20260928/identity-raw/T-submissions.bin",
+      "sha256": "84eccf0171172ec4fe29525f0b3c7338b8268677e7ea36781301a1d912c7c56f",
+      "bytes": 159868,
+      "retrieved_at_utc": "2026-09-28T22:20:43.926162+00:00",
+      "source_manifest": ".qualification/filing-source20260928/identity-requests.json"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000048465.json",
+      "path": ".qualification/filing-source20260928/identity-raw/HRL-submissions.bin",
+      "sha256": "2ba0992e6944335be8c69c4bf7bcf7adc986e92a6f2f9f559a3f34a76b0d55f4",
+      "bytes": 156119,
+      "retrieved_at_utc": "2026-09-28T22:20:45.011997+00:00",
+      "source_manifest": ".qualification/filing-source20260928/identity-requests.json"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000760498.json",
+      "path": ".qualification/filing-source20260928/identity-raw/BANF-submissions.bin",
+      "sha256": "f27388aa6fa8b032567dbc890d36835ae208ff8d8b192ea9d56f8356d29eb5ef",
+      "bytes": 162327,
+      "retrieved_at_utc": "2026-09-28T22:20:46.111347+00:00",
+      "source_manifest": ".qualification/filing-source20260928/identity-requests.json"
+    }
+  ],
+  "strategy_memo": {
+    "path": ".qualification/filing-feasibility20260928/strategy-memo.md",
+    "sha256": "de1e7474f339d5de3c8a0f882072f8ede8d37e0e52a6de2022afbf1e44f874f1"
+  }
+}

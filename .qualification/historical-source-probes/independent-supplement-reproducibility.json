@@ -1,0 +1,201 @@
+{
+  "supplement_id": "20260918-wjx-issuer-bridge-02",
+  "model_identity_matches": true,
+  "script_hash_matches": true,
+  "base_hashes_unchanged": {
+    "artifacts\\historical-lab\\runs\\577a24e71a844022b3ac86ca66e32c34\\definition.json": true,
+    "artifacts\\historical-lab\\runs\\577a24e71a844022b3ac86ca66e32c34\\capture-index.json": true,
+    "artifacts\\historical-lab\\runs\\577a24e71a844022b3ac86ca66e32c34\\summary.json": true
+  },
+  "evidence_hashes_unchanged": {
+    "evidence\\wjx-2005-economic-bridge.json": true,
+    "evidence\\wjx-2005-gap-evidence.json": true,
+    "evidence\\wjx-issuer-daily-quotes.json": true,
+    "evidence\\wjx-issuer-2005-06-15.html": true,
+    "evidence\\wjx-issuer-2005-06-16.html": true,
+    "evidence\\wjx-issuer-2005-06-17.html": true,
+    "evidence\\wjx-issuer-2005-06-20.html": true,
+    "evidence\\wjx-2006-annual-report.pdf": true,
+    "evidence\\empire-2005-annual-report.pdf": true,
+    "evidence\\wjx-economic-bridge-sources.json": true
+  },
+  "main_latest_still_base_run": true,
+  "input_audit": {
+    "original_rows": 8821064,
+    "augmented_rows": 8821067,
+    "original_prefix_unchanged": true,
+    "added_rows": 3,
+    "overridden_existing_rows": 0,
+    "declared_cad_instruments": 2759,
+    "captured_cad_histories": 2570,
+    "as_of": "2026-09-18T20:43:15.256344+00:00",
+    "factor_before": 0.19485979124879063,
+    "factor_after": 0.19485973533476056
+  },
+  "counts": {
+    "portfolios": {
+      "complete": 287,
+      "incomplete": 73
+    },
+    "walk_forward": {
+      "complete": 10,
+      "incomplete": 2
+    },
+    "benchmarks": {
+      "complete": 24
+    }
+  },
+  "benchmark_results_unchanged": true,
+  "complete_rows_recomputed": 321,
+  "issues": [],
+  "walk_forward_views": [
+    {
+      "budget": 500.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 773.8444597764168,
+      "total_return": 0.5476889195528336,
+      "max_drawdown": 0.2635579619563633,
+      "cagr": 0.01924920799396057,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 500.0,
+      "cost_bps": 40,
+      "status": "incomplete",
+      "ending_equity": null,
+      "total_return": null,
+      "max_drawdown": null,
+      "cagr": null,
+      "first_session": "2003-10-22",
+      "last_session": "2018-11-07",
+      "missing": [
+        "CRON.TO:2018-05-24:mark"
+      ]
+    },
+    {
+      "budget": 500.0,
+      "cost_bps": 100,
+      "status": "incomplete",
+      "ending_equity": null,
+      "total_return": null,
+      "max_drawdown": null,
+      "cagr": null,
+      "first_session": "2003-10-22",
+      "last_session": "2018-11-07",
+      "missing": [
+        "CRON.TO:2018-05-24:mark"
+      ]
+    },
+    {
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 3032.938967841195,
+      "total_return": 0.5164694839205974,
+      "max_drawdown": 0.3461027328078379,
+      "cagr": 0.018342919336904018,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 2615.7123988106537,
+      "total_return": 0.3078561994053268,
+      "max_drawdown": 0.3479005321613582,
+      "cagr": 0.011785073180336836,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 1831.6200313262864,
+      "total_return": -0.08418998433685676,
+      "max_drawdown": 0.4695755871866646,
+      "cagr": -0.0038318176829076345,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 12198.726628860617,
+      "total_return": 0.21987266288606166,
+      "max_drawdown": 0.3941690729553594,
+      "cagr": 0.00871375272001007,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 10720.024437901167,
+      "total_return": 0.07200244379011678,
+      "max_drawdown": 0.44110223737683685,
+      "cagr": 0.0030397759532072577,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 7185.202109858134,
+      "total_return": -0.2814797890141867,
+      "max_drawdown": 0.560571073068657,
+      "cagr": -0.01432659358132815,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 100000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 144689.0764388349,
+      "total_return": 0.44689076438834885,
+      "max_drawdown": 0.35357576000726587,
+      "cagr": 0.01625712654672351,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 100000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 126147.27487479849,
+      "total_return": 0.2614727487479849,
+      "max_drawdown": 0.35556871022277603,
+      "cagr": 0.010191444989867682,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    },
+    {
+      "budget": 100000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 83441.9244452505,
+      "total_return": -0.16558075554749507,
+      "max_drawdown": 0.507597132842905,
+      "cagr": -0.007871011817594531,
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "missing": []
+    }
+  ]
+}

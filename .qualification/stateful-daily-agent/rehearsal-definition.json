@@ -1,0 +1,21 @@
+{
+  "declared_at": "2026-09-26",
+  "candidate_id": "a46d3876559b4374924e884c712e1ed7",
+  "first_signal": "2025-09-17",
+  "last_session": "2026-09-18",
+  "starting_usd": 2000,
+  "strategy": "calibrated_ensemble",
+  "hold_sessions": 5,
+  "round_trip_bps": 40,
+  "cost_profiles": [
+    "proportional",
+    "moomoo_ca_us"
+  ],
+  "method": "First proportional invocation commits one 21-session chunk, resume same journal, compare exact curves/trades/final state with one-shot. Current broker tariff comparison uses the same saved forecasts; no refit.",
+  "limitations": [
+    "Reused historical period, not untouched holdout",
+    "Atomic synthetic next-close fills, not broker partial fills",
+    "Current broker tariff counterfactual excludes unverified charges",
+    "No economic promotion or active paper migration"
+  ]
+}

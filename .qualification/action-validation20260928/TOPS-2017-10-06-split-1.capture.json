@@ -1,0 +1,28 @@
+{
+  "symbol": "TOPS",
+  "effective_session": "2017-10-06",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/TOPS/bars?timeframe=1Day&start=2017-09-26T04%3A00%3A00%2B00%3A00&end=2017-10-17T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=split&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2017-09-26T04:00:00+00:00",
+    "end": "2017-10-17T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "split",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.631057+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "TOPS-2017-10-06-split-1.35b0c3876e82dd351b461d883ad119d31fbb814618047b1572877fb495053153.raw.json",
+  "sha256": "35b0c3876e82dd351b461d883ad119d31fbb814618047b1572877fb495053153",
+  "bytes": 1578,
+  "captured_at": "2026-09-28T19:04:30.671219+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 15,
+  "response_symbol": "TOPS",
+  "pagination_complete": true
+}

@@ -1,0 +1,2134 @@
+{
+  "schema": "frontier-research-decision-register/v1",
+  "snapshot_date": "2026-10-01",
+  "scope": "Research, academic, strategy, economic-source and execution-model decisions. Technical/owner handover supplied separately. No research executed in this documentation task.",
+  "reasoning_policy": "Do not invent private historical reasoning. Recorded requirements/declarations/results are identified; synthesis is labelled. Future hypotheses are not adopted policies.",
+  "decisions": [
+    {
+      "id": "R001",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "US and Canadian stocks/ETFs are the first proving ground.",
+      "rationale": "The owner chose these markets and hours-to-weeks workflows.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json",
+        "docs/trading-cadence.md"
+      ],
+      "limitation_or_rejected_inference": "A generic multi-asset architecture does not prove these markets are executable.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R002",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "Keep the reserved ETF portfolios separate from active cash.",
+      "rationale": "The owner excluded XGRO and described a distinct regular allocation.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json"
+      ],
+      "limitation_or_rejected_inference": "Owner-reported balances are not broker reconciliation.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R003",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "Use existing authorized access and free resources; request authority before new spending.",
+      "rationale": "The owner explicitly set this spending scope.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json",
+        "docs/historical-research-sources.md"
+      ],
+      "limitation_or_rejected_inference": "Do not purchase premium data to fill an inconvenient gap.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R004",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "USD funding is acceptable but not presumed executed.",
+      "rationale": "The owner accepts CAD-to-USD trading opportunities.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/usd-funding-study.md",
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "No funding transfer was made.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R005",
+      "category": "mandate",
+      "date_or_period": "2026-09-28",
+      "decision": "USD10,000 is primary simulated research capital; USD2,000 remains a comparison.",
+      "rationale": "The owner expanded research capital before the new outcomes.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        "config/mandate.json"
+      ],
+      "limitation_or_rejected_inference": "These are not reconciled broker balances.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R006",
+      "category": "mandate",
+      "date_or_period": "2026-09-28",
+      "decision": "Measure 5/10/15% weekly targets on whole account after costs.",
+      "rationale": "The owner specified the earning ratio, and idle cash belongs to account performance.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "Targets are aspirational, not a guaranteed minimum.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R007",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "Cash-only, no borrowing and roughly30% drawdown remain constraints.",
+      "rationale": "Owner authority does not include margin or a risk relaxation to chase weekly targets.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json",
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "Qualification limits and automatic halt implementations differ by study.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R008",
+      "category": "mandate",
+      "date_or_period": "2026-09-18",
+      "decision": "Treat five-year history as repeated short trades, not five-year individual-stock holdings.",
+      "rationale": "The owner clarified hourly/daily decisions and approximately one-week maximum holdings.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cadence.md"
+      ],
+      "limitation_or_rejected_inference": "Annual training is not annual holding.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R009",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Keep software, source, exploratory history, prospective evidence and profitability claims separate.",
+      "rationale": "Different checks support different conclusions.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/design-review.md",
+        "docs/historical-research.md"
+      ],
+      "limitation_or_rejected_inference": "Arithmetic review alone does not validate alpha or fills.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R010",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Retain every trial, failed path, warning and access refusal.",
+      "rationale": "Selection history is necessary to assess overfitting and source completeness.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/multi-model-research.md"
+      ],
+      "limitation_or_rejected_inference": "Renaming campaigns does not restore an untouched test.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R011",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Use fit-only preprocessing and purged causal partitions.",
+      "rationale": "Outcomes must not leak across fitting, calibration and test windows.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md",
+        "docs/earnings-quality-research.md"
+      ],
+      "limitation_or_rejected_inference": "Timestamped retrieval alone cannot prove LLM historical ignorance.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R012",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Do not loosen thresholds solely to force trades.",
+      "rationale": "Trading activity is not evidence of positive utility.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/forecast-calibration-diagnostics.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Abstention is reported, not presented as alpha.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R013",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Do not rerun unchanged completed grids without a reproducibility reason.",
+      "rationale": "Completed negative evidence should guide a new hypothesis instead of repeated identical work.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/short-hold-research-results.md",
+        "docs/multi-model-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Historical development continues without waiting solely for forward data.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R014",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Expand the41-instrument starter into official uncapped listing capture.",
+      "rationale": "The owner requested broader useful discovery.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md",
+        "docs/broad-research.md"
+      ],
+      "limitation_or_rejected_inference": "Large membership is not complete historical tradability.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R015",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Keep source classifications and exclusions explicit.",
+      "rationale": "Stock-labelled directories contain ADRs, funds, units and other instruments.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md"
+      ],
+      "limitation_or_rejected_inference": "Do not silently call every label a common share.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R016",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Preserve current-membership and revised-vintage limitations.",
+      "rationale": "Current listings omit past delisted names and later revisions may alter prices.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-sources.md",
+        "docs/historical-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "No complete free US/Canadian delisted panel was obtained.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R017",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Retain all200 extended-capture failures.",
+      "rationale": "Missing histories are part of the requested denominator.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md",
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Invalid accounts are not quietly dropped from success rates.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R018",
+      "category": "universe",
+      "date_or_period": "2026-09",
+      "decision": "Do not infer Canadian securities count from the owner's estimate.",
+      "rationale": "Official issuer/issue counts differ and include funds/security classes.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md"
+      ],
+      "limitation_or_rejected_inference": "Hundreds of thousands of Canadian stocks is not supported.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R019",
+      "category": "sources",
+      "date_or_period": "2026-09",
+      "decision": "Keep tested delisted-source failures instead of paying or fabricating terminal histories.",
+      "rationale": "Alpha Vantage entitlement and other tested mappings did not yield complete histories.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-sources.md"
+      ],
+      "limitation_or_rejected_inference": "Aggregate French factors cannot substitute for individual-stock histories.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R020",
+      "category": "sources",
+      "date_or_period": "2026-09-18",
+      "decision": "Reconstruct nominal historical prices only under declared source conventions.",
+      "rationale": "Adjusted historical prices can falsely make high-price old stocks affordable.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/aixi-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "Nominal reconstruction is not complete action accounting.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R021",
+      "category": "sources",
+      "date_or_period": "2026-09-18",
+      "decision": "Use a separately declared WJX issuer bridge sensitivity.",
+      "rationale": "Three missing rows had specific issuer evidence; the original attempt remains preserved.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "The bridge was not silently applied to later frozen captures.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R022",
+      "category": "sources",
+      "date_or_period": "2026-09",
+      "decision": "Preserve TPX merger uncertainty rather than inventing a split or deleting a winner.",
+      "rationale": "Conversion classes, dates, fractions and cash terms remain unresolved.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/tpx-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "Subtracting one P&L does not recreate the account cash path.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R023",
+      "category": "sources",
+      "date_or_period": "2026-09-26",
+      "decision": "Treat AIXI's ADS conversion as a material source/label issue.",
+      "rationale": "Independent prices and depositary terms contradict an apparent large gain.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/aixi-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "A common-unit diagnostic is not a corrected full broker ledger.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R024",
+      "category": "sources",
+      "date_or_period": "2026-09-28",
+      "decision": "Review deterministic upward/downward action cases without return selection.",
+      "rationale": "Provider-labelled splits include complex actions and missing boundaries.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/action-source-validation-plan.md",
+        "docs/action-source-validation-results.md"
+      ],
+      "limitation_or_rejected_inference": "Price-factor agreement does not qualify cash/share actions.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R025",
+      "category": "sources",
+      "date_or_period": "2026-09-28",
+      "decision": "Attribute known action crossings without rewriting results.",
+      "rationale": "This identifies whether known issues plausibly dominate losing account paths.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/strategy-action-attribution-results.md"
+      ],
+      "limitation_or_rejected_inference": "Clean held intervals do not establish clean features or dividends.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R026",
+      "category": "execution",
+      "date_or_period": "2026-09-18",
+      "decision": "Use daily signal at close t, entry next close, independent1/3/5-session exits.",
+      "rationale": "The cadence needs causal every-session short-hold decisions.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cadence.md",
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "The old5/10/20-session lane remains a baseline.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R027",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Use whole shares, five positions, fee-inclusive20% caps and ATR-based quantity limits.",
+      "rationale": "The owner has a small cash account with constrained tickets.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/execution-cost-model.md"
+      ],
+      "limitation_or_rejected_inference": "ATR is not a guaranteed maximum loss.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R028",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Freeze selected candidate, quantity and reservation before fill.",
+      "rationale": "Fill-time future prices must not rerank or replace candidates.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/candidate-replay.md",
+        "docs/conditional-strategy-selection-plan.md"
+      ],
+      "limitation_or_rejected_inference": "A simulated contingent utility guard is not an auction fill guarantee.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R029",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Invalidate a path when a required price is missing.",
+      "rationale": "A guessed held/exit price can manufacture account performance.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Retain the prefix and null final profitability.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R030",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Use dated settlement calendars and settled cash.",
+      "rationale": "Selling does not make proceeds immediately reusable throughout historical eras.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/execution-cost-model.md",
+        "docs/trading-cadence.md"
+      ],
+      "limitation_or_rejected_inference": "Bank/calendar conventions remain a conservative approximation.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R031",
+      "category": "execution",
+      "date_or_period": "2026-09-28",
+      "decision": "Carry positions and settlements through later refits.",
+      "rationale": "Account resets or year-stitching can erase funded execution constraints.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-plan.md",
+        "docs/earnings-quality-research.md"
+      ],
+      "limitation_or_rejected_inference": "Earlier broad-model fold flattening remains disclosed.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R032",
+      "category": "metrics",
+      "date_or_period": "2026-09-28",
+      "decision": "Report every calendar week, including idle/losing weeks and tail.",
+      "rationale": "Weekly aspirations concern the account, not selected favorable trades.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Deposits are not strategy gains.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R033",
+      "category": "metrics",
+      "date_or_period": "2026-09",
+      "decision": "Report concentration, yearly stability, costs, exposure and drawdown together.",
+      "rationale": "A small cumulative gain may depend on one issuer or long inactivity.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research-results.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "A costless SPY reference has different execution conventions.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R034",
+      "category": "costs",
+      "date_or_period": "2026-09-19",
+      "decision": "Keep20/40/100bps as sensitivities, not universal broker tariffs.",
+      "rationale": "They expose friction dependence without claiming calibrated fills.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cost-evidence.md",
+        "docs/execution-cost-model.md"
+      ],
+      "limitation_or_rejected_inference": "Do not select a cheaper value after seeing losses.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R035",
+      "category": "costs",
+      "date_or_period": "2026-09-28",
+      "decision": "Apply independently checked Moomoo current tariffs with Decimal component rounding.",
+      "rationale": "Fixed minima and share-based charges matter to small tickets.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/execution-cost-model.md"
+      ],
+      "limitation_or_rejected_inference": "Current tariffs are counterfactual historical scenarios.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R036",
+      "category": "costs",
+      "date_or_period": "2026-09-28",
+      "decision": "Separate Wealthsimple existing-USD execution from CAD-funded conversion.",
+      "rationale": "FX funding and subscriptions are different from share execution fees.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/execution-cost-model.md",
+        "docs/usd-funding-study.md"
+      ],
+      "limitation_or_rejected_inference": "Waivers, variable spread and tax are separate.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R037",
+      "category": "costs",
+      "date_or_period": "2026-09",
+      "decision": "Compare Norbert's Gambit costs/delay without executing it.",
+      "rationale": "A fixed journal fee can dominate a small contribution.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/usd-funding-study.md",
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "No universally cheapest transfer was established.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R038",
+      "category": "costs",
+      "date_or_period": "2026-09-19",
+      "decision": "Use historical duration-weighted full spreads and retain uncovered/crossed intervals.",
+      "rationale": "A snapshot or invented stale fill would misstate quoted liquidity.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cost-evidence.md"
+      ],
+      "limitation_or_rejected_inference": "Quotes are not slippage, fills or capacity.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R039",
+      "category": "costs",
+      "date_or_period": "2026-09-28",
+      "decision": "Freeze the ETF15bps allowance before account outcomes.",
+      "rationale": "The rule ceil(maximum weighted full spread)+10bps was independently quote-informed.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "The extra10bps is a sensitivity, not calibrated slippage or a stock/option bound.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R040",
+      "category": "starter",
+      "date_or_period": "2026-09",
+      "decision": "Treat scanner cohorts as reference-budget observations, not compounded profit.",
+      "rationale": "The starter study resets capital and can stay in cash.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/scanner-study.md",
+        "docs/usd-funding-study.md"
+      ],
+      "limitation_or_rejected_inference": "Selected-cohort means cannot be called account CAGR.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R041",
+      "category": "legacy",
+      "date_or_period": "2026-09-18",
+      "decision": "Retain the legacy720 fixed/24 rolling/48 reference study.",
+      "rationale": "It supplies a documented baseline and failures.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "A20-session winner does not fulfill one-week holdings.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R042",
+      "category": "legacy",
+      "date_or_period": "2026-09-18",
+      "decision": "Select rolling rules only from stressed training scores or cash.",
+      "rationale": "Test outcomes must not determine the next selected strategy.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md"
+      ],
+      "limitation_or_rejected_inference": "Training activity and drawdown filters do not guarantee future performance.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R043",
+      "category": "short-hold",
+      "date_or_period": "2026-09-18",
+      "decision": "Do not promote the versioned short-hold grid.",
+      "rationale": "509 paths completed,211 were invalid, and economically acceptable winners were sparse/cost-sensitive.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "18 of24 rolling paths remained entirely in cash.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R044",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Compare four fixed learned families plus three ensembles against13 controls.",
+      "rationale": "The owner explicitly broadened scope beyond simple rules.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md",
+        "docs/superpowers/plans/2026-09-19-multi-model-study.md"
+      ],
+      "limitation_or_rejected_inference": "Complexity itself is not evidence of better economics.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R045",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Predict return and daily-close downside at1/3/5 horizons.",
+      "rationale": "Different outputs support utility and risk-aware ranking.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md"
+      ],
+      "limitation_or_rejected_inference": "The MLP is shared-hidden multi-output, not transformer attention.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R046",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Retain fixed presets, seeds, sample identities and all MLP convergence warnings.",
+      "rationale": "A controlled family comparison should not retune on test outcomes.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md",
+        "docs/multi-model-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Warnings do not become a favorable-family selection rule.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R047",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Weight adaptive ensembles from calibration error improvement over fit mean.",
+      "rationale": "Weights should use calibration evidence, not final account profit.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md"
+      ],
+      "limitation_or_rejected_inference": "Small estimated improvements can be unstable; fallback is fixed equal weights.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R048",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Do not promote broad learned models.",
+      "rationale": "All21 learned USD2,00040bps variants lost; the CAD gain has stability/source issues.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research-results.md",
+        "docs/tpx-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "The only USD10,00040bps gain is cumulative over decades.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R049",
+      "category": "bridge",
+      "date_or_period": "2026-09-19",
+      "decision": "Save fitted preprocessing, model, calibration and deterministic forecasts.",
+      "rationale": "Reusable decisions need exact replay without accidental refits.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/daily-model-bridge.md"
+      ],
+      "limitation_or_rejected_inference": "The isolated preview is not active-paper migration.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R050",
+      "category": "bridge",
+      "date_or_period": "2026-09-19",
+      "decision": "Explain zero entries through a declared diagnostic, not a threshold reduction.",
+      "rationale": "Saved return estimates were small relative to cost and downside.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/forecast-calibration-diagnostics.md"
+      ],
+      "limitation_or_rejected_inference": "Positive MLP scores do not qualify it after observing alternatives.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R051",
+      "category": "replay",
+      "date_or_period": "2026-09-28",
+      "decision": "Rehearse the saved policy through persistent positions/orders/settlement.",
+      "rationale": "Stateful execution is required before daily operator integration.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/candidate-replay.md",
+        "docs/candidate-replay-results.md"
+      ],
+      "limitation_or_rejected_inference": "Paper partial-fill broker handling remains separate.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R052",
+      "category": "replay",
+      "date_or_period": "2026-09-28",
+      "decision": "Keep proportional and fixed-fee rehearsal losses visible.",
+      "rationale": "Both gross P&L and minimum-fee effects were unfavorable.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/candidate-replay-results.md"
+      ],
+      "limitation_or_rejected_inference": "Small tickets explain costs but do not explain away negative gross results.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R053",
+      "category": "interactions",
+      "date_or_period": "2026-09-28",
+      "decision": "Test residual, trend, compression, blend and regime additions in a fixed54-account grid.",
+      "rationale": "These are economically motivated changes to the observed setup controls.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/strategy-experiment-2026-09-28.md",
+        "docs/strategy-interaction-results.md"
+      ],
+      "limitation_or_rejected_inference": "All54 paths lost; favorable subcells cannot be pruned into a claimed winner.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R054",
+      "category": "timing",
+      "date_or_period": "2026-09-28",
+      "decision": "Compare next open/close timing before building an earlier-entry account rescue.",
+      "rationale": "A common-exit diagnostic isolates entry timing.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/strategy-timing-study-2026-09-28.md",
+        "docs/strategy-timing-results.md"
+      ],
+      "limitation_or_rejected_inference": "All nine primary stock differences disfavored earlier open; this is not a fill backtest.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R055",
+      "category": "conditional",
+      "date_or_period": "2026-09-28",
+      "decision": "Compare static percentile, utility-per-dollar and dollar utility with continuous accounts.",
+      "rationale": "Unequal ticket sizes can make average percentage trades misleading.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-plan.md",
+        "docs/conditional-strategy-selection-results.md"
+      ],
+      "limitation_or_rejected_inference": "All18 accounts lost.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R056",
+      "category": "conditional",
+      "date_or_period": "2026-09-28",
+      "decision": "Use nested fit-only model selection and calibration-only bins.",
+      "rationale": "Final test P&L must not select Ridge versus boosted trees.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-plan.md"
+      ],
+      "limitation_or_rejected_inference": "Model failures abstain without alternate-family rescue.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R057",
+      "category": "conditional",
+      "date_or_period": "2026-09-28",
+      "decision": "Retain writer interruptions and resume only the scoped writer change.",
+      "rationale": "Windows operational errors did not authorize changing frozen economics.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-results.md"
+      ],
+      "limitation_or_rejected_inference": "58 frozen economic files stayed unchanged.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R058",
+      "category": "calibration",
+      "date_or_period": "2026-09-28",
+      "decision": "Test a single declared calibration attenuation rule without refitting.",
+      "rationale": "Overestimated return bins motivated a calibration-only correction.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/calibration-shrinkage-results.md"
+      ],
+      "limitation_or_rejected_inference": "A three-trade early gain followed by abstention is not repeatable alpha.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R059",
+      "category": "intraday",
+      "date_or_period": "2026-09-28",
+      "decision": "Use actual minutes and a fixed six-stock pilot.",
+      "rationale": "Daily bars cannot manufacture hourly observations.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/intraday-opening-study.md",
+        "docs/hourly-data-access.md"
+      ],
+      "limitation_or_rejected_inference": "BANF gaps and absent Canadian hourly coverage remain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R060",
+      "category": "intraday",
+      "date_or_period": "2026-09-28",
+      "decision": "Allow the free SIP delay before10:46 entry and12:46 exit.",
+      "rationale": "Observed data must be available before simulated decisions.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/intraday-opening-study.md"
+      ],
+      "limitation_or_rejected_inference": "Vendor09:00 hourly buckets mix premarket and regular activity.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R061",
+      "category": "intraday",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not promote opening continuation/reversal.",
+      "rationale": "All four funded accounts lost before/after costs and exceeded30% drawdown.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/intraday-opening-results.md"
+      ],
+      "limitation_or_rejected_inference": "Tiny unfunded event means do not establish an account edge.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R062",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Use exact original filing facts instead of revised company-facts values.",
+      "rationale": "Historical EPS and concept differences demonstrated revision/unit contamination.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-research.md",
+        ".qualification/filing-feasibility20260928/strategy-memo.md"
+      ],
+      "limitation_or_rejected_inference": "Ford ProfitLoss and split-adjusted later EPS are not silently substituted.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R063",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Define S from seasonal quarterly income innovation over prior-fiscal-year assets and prior eight innovations.",
+      "rationale": "The pilot declares an income surprise proxy without consensus data.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-research.md"
+      ],
+      "limitation_or_rejected_inference": "It is not a centered z-score; Q4 and missing scheduled history are not fabricated.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R064",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Keep the six-issuer source supplement separate from its original failures.",
+      "rationale": "Bounded original-document recovery is auditable only if failed original attempts survive.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-results.md"
+      ],
+      "limitation_or_rejected_inference": "One early2012 MSFT original remained unavailable.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R065",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not promote the tiny positive six-issuer income account.",
+      "rationale": "Only27 selected events fell below the sample floor; USD2.53 gain is economically weak.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-results.md"
+      ],
+      "limitation_or_rejected_inference": "Lower activity/fees does not by itself establish earnings alpha.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R066",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Fix100 issuers in deterministic source-only order without refilling.",
+      "rationale": "The cohort must not be selected by extraction success or future returns.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "Current membership and profile-classification biases remain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R067",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Require exact matching original FILER-header nonfinancial SIC for every recipe.",
+      "rationale": "The signal definition excludes financial-company accounting differences causally.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/qualification/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Current SIC cannot fill missing historical header evidence.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R068",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Append current-event industry eligibility without rewriting the original S history.",
+      "rationale": "A new eligibility gate must not silently change previously declared seasonal innovations.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/qualification/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Older industry changes remain a history caveat.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R069",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Define Q as change in original YTD CFO-minus-NI over prior-fiscal-year assets.",
+      "rationale": "The cash-backing hypothesis is distinct from the income-only recipe.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "Continuing-operations CFO is not an allowed silent substitute.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R070",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Freeze original filing/request/storage/pacing envelope and source identities.",
+      "rationale": "Large acquisition must remain bounded and reproducible.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md"
+      ],
+      "limitation_or_rejected_inference": "Global STOP requires reconciliation, not identity/endpoint substitution.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R071",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Resume only unfinished CNMD request under its declared second-attempt allowance.",
+      "rationale": "Absent processes/free locks and unfinished journal state justified a narrow recovery.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/milestone-20260929-preparation.json"
+      ],
+      "limitation_or_rejected_inference": "Completed failures were not retried.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R072",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Treat terminal incomplete as finished with190 retained failures.",
+      "rationale": "All4057 registered originals and100 registries reached terminal processing.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md",
+        ".qualification/earnings-quality20260928/milestone-20260929-results.json"
+      ],
+      "limitation_or_rejected_inference": "Do not restart the completed source worker.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R073",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Bind original discovery roots/history and all issuer/event denominators in the collector.",
+      "rationale": "A transient registry snapshot cannot establish terminal completeness.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/qualification/interface.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Eleven issuers with no eligible event remain without replacements.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R074",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Use original same-row vendor close and volume for dollar activity.",
+      "rationale": "Nominal reconstruction differs from original quotes on71057 rows.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/model-inputs/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Mixing reconstructed price with original volume would change units.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R075",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Use five causal inputs and two explicit model outputs.",
+      "rationale": "S/Q and prior price/activity/market context implement the declared hypothesis.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/cohort/model-specification.json",
+        ".qualification/earnings-quality20260928/models/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Daily-close downside is not intraday guaranteed loss.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R076",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Use fixed Ridge and shallow boosted trees, annual expanding fit/calibration/test chronology.",
+      "rationale": "A controlled pair avoids an outcome-selected preset search.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "Minimum256/25 and64/16 samples must pass or abstain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R077",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Save both families' eligible test forecasts before reading test labels.",
+      "rationale": "The chronology barrier prevents test outcomes from influencing fitted forecasts.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/models/interface.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "One forecast is shared across both costs and balances.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R078",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Run all20 accounts continuously without a retrospective drawdown halt.",
+      "rationale": "The frozen design uses30% as a qualification limit only.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/accounts/interface.md",
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "The large fixed-fee drawdown remains a failed qualification.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R079",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Do not promote any earnings recipe.",
+      "rationale": "No path reached5/10/15% weekly; learned pooled errors were worse than simple fitting means.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md",
+        ".qualification/earnings-quality20260928/economic/actual-analysis/report.md"
+      ],
+      "limitation_or_rejected_inference": "Six cumulative gains do not establish repeatable weekly profit.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R080",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Interpret Q filter failure and issuer concentration descriptively.",
+      "rationale": "Q reduced candidates without improved economics; VSH dominated boosted gains.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Do not retune thresholds or remove issuers around these outcomes.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R081",
+      "category": "earnings",
+      "date_or_period": "2026-10-01",
+      "decision": "Propose a cached source-only8-K Item2.02 novelty/timing audit before more acquisitions/outcomes.",
+      "rationale": "Later10-Q information may already have been public, but that explanation is unverified.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Proposed, not yet declared/extracted/executed in this handover.",
+      "status": "Proposed and unexecuted"
+    },
+    {
+      "id": "R082",
+      "category": "earnings",
+      "date_or_period": "2026-10-01",
+      "decision": "Never backdate later10-Q S/Q to an earlier earnings release.",
+      "rationale": "Only original earlier document/exhibit facts and fiscal-period linkage can support an earlier-time decision.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Same CIK, date proximity and Item2.02 alone are only candidates.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R083",
+      "category": "etf",
+      "date_or_period": "2026-09-28",
+      "decision": "Compare residual reversal, trend-gated reversal and date/count hash control.",
+      "rationale": "Fixed ETF structure tests a distinct economic hypothesis rather than the failed stock grid.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/etf-reversal20260928/strategy/research-note.md",
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "Control matching does not match dollar exposure.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R084",
+      "category": "etf",
+      "date_or_period": "2026-09-28",
+      "decision": "Use a fixed three-session hold and explicitly declared30% halt.",
+      "rationale": "The ETF account specification freezes exit/risk behavior before returns.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "Gap overshoot and subsequent idle years remain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R085",
+      "category": "etf",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not promote ETF reversal or retrospectively select DIA.",
+      "rationale": "All eight reversal accounts lost; one control's small gain was concentrated.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "No account met any weekly5/10/15% target.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R086",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Stop the Alpha Vantage probe after a premium error and do not send the second request.",
+      "rationale": "Existing/free access did not entitle the requested chain.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        ".qualification/options-access20260928/broker-feasibility.md"
+      ],
+      "limitation_or_rejected_inference": "No purchase or replacement success was invented.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R087",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Treat36 Alpaca option bars as a bounded feasibility result.",
+      "rationale": "Six contracts/six days show access to those aggregates only.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "Bars do not establish chain membership or executable bid/ask.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R088",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Preserve literal multiplier0 in inactive-contract metadata.",
+      "rationale": "size100 and100-share deliverables do not resolve this field's cash semantics.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-evidence20260928/findings.md",
+        "docs/capital-and-return-objective.md",
+        ".qualification/options-evidence20260928/summary.json"
+      ],
+      "limitation_or_rejected_inference": "Do not silently substitute100 or date current T+1 terms to2024.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R089",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not invent a historical option quote endpoint or derive quotes from bars.",
+      "rationale": "Checked documentation did not expose the required historical quote source.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        ".qualification/options-access20260928/strategy-proposal.md"
+      ],
+      "limitation_or_rejected_inference": "Latest/indicative quotes are not historical OPRA.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R090",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not treat a debit spread payoff as cash-account permission.",
+      "rationale": "Checked Canadian broker pages require a margin account type for spreads.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-access20260928/broker-feasibility.md"
+      ],
+      "limitation_or_rejected_inference": "No account change or option order is authorized.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R091",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Model exercise/expiry cash and deliverables before option economics.",
+      "rationale": "Premium alone can understate funding needs at exercise.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-access20260928/strategy-proposal.md"
+      ],
+      "limitation_or_rejected_inference": "Proposed premium limits are hypotheses, not adopted live policy.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R092",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Keep directional options and event straddles as proposals until dated sources qualify.",
+      "rationale": "Underlying signals and attractive payoff shapes do not establish option fills/performance.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-access20260928/strategy-proposal.md"
+      ],
+      "limitation_or_rejected_inference": "Abstain on an unaffordable unit; do not force far-OTM selection.",
+      "status": "Proposed and unexecuted"
+    },
+    {
+      "id": "R093",
+      "category": "operations-boundary",
+      "date_or_period": "2026-09",
+      "decision": "Keep the existing eleven-stock USD100000 paper baseline separate.",
+      "rationale": "The owner authorized this fixed paper account, not automatic winner migration.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/paper-operator.md",
+        "docs/daily-model-bridge.md"
+      ],
+      "limitation_or_rejected_inference": "Daily broker partial fills and reservations remain unfinished.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R094",
+      "category": "handover",
+      "date_or_period": "2026-10-01",
+      "decision": "Document before continuing research and retain original sources/history.",
+      "rationale": "The owner explicitly requested every decision for no-context readers and agents.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/handover/context-and-decisions.md"
+      ],
+      "limitation_or_rejected_inference": "Documentation is not permission for a new experiment or live operation.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    }
+  ],
+  "source_index": [
+    {
+      "path": ".qualification/action-inventory20260928/definition.json",
+      "bytes": 2562,
+      "sha256": "1edf1d072ad11a9e2e57100c0a65771135a96fd775a13f1104922133905b257f"
+    },
+    {
+      "path": ".qualification/action-inventory20260928/summary.json",
+      "bytes": 1255,
+      "sha256": "b874ee05329748fd4ab89a49d725092f0d7cbcaf9e91ecc9cdddde176d8813b9"
+    },
+    {
+      "path": ".qualification/action-validation20260928/definition.json",
+      "bytes": 9459,
+      "sha256": "428ef4f1121c28aba4c359849bfc87bd8a19967416c38ae649aedfb521278edb"
+    },
+    {
+      "path": ".qualification/action-validation20260928/independent-verification/report.md",
+      "bytes": 2372,
+      "sha256": "1c21f0dec0cccb3fb7fb333ce990571a666eaeaf1535af77e2899f34862344ed"
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/definition.json",
+      "bytes": 7013,
+      "sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc"
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/forecast-readout.md",
+      "bytes": 7019,
+      "sha256": "081387b60993197f45b5c1e5aab44c39403b6766487e64952a0e4e4b0c1a9713"
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/next-alpha-research.md",
+      "bytes": 10956,
+      "sha256": "0de26d3bc938a95886c771874f2ac2b993fbb2ef01168a6c1d9238203a821a84"
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/progress.md",
+      "bytes": 2265,
+      "sha256": "dc891f2b5b9e6b38f195fd70f8980b5075a50ee6f3e4ad0a1b41c79fff6906eb"
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/request.json",
+      "bytes": 9671,
+      "sha256": "29990f75388e7b09419f2b4c375bcd798d83e0616abdc3a0d81e788d4dfd0407"
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/universe-scope-review.md",
+      "bytes": 4904,
+      "sha256": "a08c0f64e32f6184f84e0046049d45de324f74f232163d47cd7da4f5363ca421"
+    },
+    {
+      "path": ".qualification/conditional-shrinkage20260928/declaration-draft.md",
+      "bytes": 6744,
+      "sha256": "dbd8766a36625d63729dcb001293923bbcdc6261afaf6efec2d87296532a1598"
+    },
+    {
+      "path": ".qualification/conditional-shrinkage20260928/definition.json",
+      "bytes": 34796,
+      "sha256": "31302c331559629deccc4f324b0efa5edb6cf355fcc6a3827a43229a19631755"
+    },
+    {
+      "path": ".qualification/conditional-shrinkage20260928/request.json",
+      "bytes": 7787,
+      "sha256": "8f0c4d6f691b49ebe84c12ee5cf0ab9f1dcb510fb2435fb35cd7c46880897c31"
+    },
+    {
+      "path": ".qualification/cost-access20260919/source-review.md",
+      "bytes": 3899,
+      "sha256": "69a9a174f64ee95c4d6bb3305f7c86d3b0e1909f0068c6c7b3f04941422656ad"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/candidate-report.md",
+      "bytes": 2128,
+      "sha256": "5eefc27d4f756f09b498db7530c1bffe942a2b4c9059c3f91a9276075a3037aa"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/core-review.md",
+      "bytes": 4891,
+      "sha256": "ce22f4add261b23a60745817ac0bacf1a68a83ccc2f6b64a447f36949a3e3246"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/cost-all-cells.md",
+      "bytes": 6262,
+      "sha256": "bd5a5bdc0fc243181b5af358df5dbab4d958726f6652547b96faa196e247c54f"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/cost-report.md",
+      "bytes": 2551,
+      "sha256": "d8ea3015247434e5c4673dbdbe244246b8e0288a5ef92f4b3aea918a22ee748f"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/final-review.md",
+      "bytes": 8928,
+      "sha256": "aa998c3e44434cc626deeef80e862c4634ce35d9036f39795486cbbd66169484"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/model-report.md",
+      "bytes": 2331,
+      "sha256": "23e1dc1b0fd96f9e0b706586784eebe174caed0a13f86b96c6e1a8a30529761d"
+    },
+    {
+      "path": ".qualification/daily-model-bridge/progress.md",
+      "bytes": 1495,
+      "sha256": "eab91ff880d0a415903f5090ec62178f7a2bcf8b291cb75c51f405b486516c42"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/accounts/account_adapter.py",
+      "bytes": 18832,
+      "sha256": "f1a67cd923188891c93514601fa210b5183d11c60b8d69a64389bdc421351aa7"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/accounts/interface.md",
+      "bytes": 6854,
+      "sha256": "70e87674d00c6226efeb6120fc9515abf4c4228ca4b52c40d636f91f49bf5fca"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/cohort/README.md",
+      "bytes": 3000,
+      "sha256": "27a730fcb3c2e10664c345a00eea72db6a4c40cb9ac5145e9ee9ea8cae018bcf"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/cohort/criteria.json",
+      "bytes": 4520,
+      "sha256": "e16af5da1b8df311b053a9aca0ccbc198d6c44ab87dedabdca8b1be8022b9260"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/cohort/model-reasoning.md",
+      "bytes": 6022,
+      "sha256": "691618035c9c838a0d9bede18f4702f10d9708352e1827cee8673c30242b1fce"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/cohort/model-specification.json",
+      "bytes": 14929,
+      "sha256": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/discovery/profiles/README.md",
+      "bytes": 1072,
+      "sha256": "c2d773d69b116f616b7bce942eb42baa8f326525c322d97c13439998b1d69b0c"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/economic/actual-analysis/report.md",
+      "bytes": 18158,
+      "sha256": "7a572c7bd6c220a0c3eeebf01e67d552b2e0d9d7f9cd6726c06915d5b7e20e3d"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/economic/interface.md",
+      "bytes": 3753,
+      "sha256": "b89f04e5a27065243064273824b81d2c3ee52a5bfac5d08c76656805d0d1a224"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/economic/run_study.py",
+      "bytes": 27279,
+      "sha256": "fe88ccd61666643b0344bb435368839bf78b17fe90325178c0e850230655e200"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/features/interface.md",
+      "bytes": 2698,
+      "sha256": "822062012d90f6f42b158b57bb0c4d831377ccb7361252e8567a72f530ef369a"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/milestone-20260929-preparation.json",
+      "bytes": 3701,
+      "sha256": "87b9f287a498e2d560282186f7b6be179ca8c77ee7a32329c8d947c40a313ff3"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/milestone-20260929-results.json",
+      "bytes": 4343,
+      "sha256": "3970f0d8f466d490627c517e0afbf1b05cc201caa169a36bc6ede6ed41bf31fa"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/model-inputs/event_inputs.py",
+      "bytes": 8545,
+      "sha256": "4a1854ed9ea31b5a95e1a4c7a3c512be87ccba5bc0890de083c35801afb939ed"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/model-inputs/interface.md",
+      "bytes": 2899,
+      "sha256": "579bc9c6aeb8c8ea92ff592e7f14139b3397fa8c43c8ea459a10b3cdc048a987"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/account-review/review.md",
+      "bytes": 1883,
+      "sha256": "5694b5f8cdd4d942aebd2ef2793d05dccb9433b51ce6f300c394883a2d9e488e"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/earnings_models.py",
+      "bytes": 19789,
+      "sha256": "0d6ecc98a92368ef7bd8bf8802979790a539636adb769f9e9f4b49fa8a38b4de"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/interface.md",
+      "bytes": 6472,
+      "sha256": "86c74f27b339103b6bdb0884367f354d96f52a852ebba39680d539cf9e32edc3"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/review-before-causal-disposition/interface.md",
+      "bytes": 6342,
+      "sha256": "1be305e6311e7de148a81f29beb483174d5b84ac08a9aa6f224882916ad9ce4f"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/review-before-row-binding/interface.md",
+      "bytes": 5702,
+      "sha256": "9146bc6da0079ebfffa034bba38f579c439598c082a9943e3656d2c9a9e20997"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/qualification/interface.md",
+      "bytes": 4179,
+      "sha256": "04a308a5374a6f470102e31dbf2f8b30aaa5b7c89b618144329d09b194998f6f"
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/source/source-plan.md",
+      "bytes": 7663,
+      "sha256": "f3d211d9fc3aba9354c14a4c54956288ce00c9f2bdff403040d1fabcd6620dee"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/account-verification/report.md",
+      "bytes": 3758,
+      "sha256": "2c0b34f115f7b58441da1002751c62fa7409cc3af03f85c1b82c500ebff721c0"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/costs/README.md",
+      "bytes": 2618,
+      "sha256": "937c66353e2372cbc6b090e1366fb07eea8d12d1fb172280d33f5d8fee559394"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/costs/cost-all-cells.md",
+      "bytes": 3907,
+      "sha256": "c2a653d18482a01a55e49b45c10cc33ce34333ea7d566060506da452c71875de"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/costs/independent-verification/report.md",
+      "bytes": 2851,
+      "sha256": "30f28aa0f4ab3d87674e54f5551d469989a45d421bbf2c92ff9f1dcad77b59a9"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/definition.json",
+      "bytes": 21493,
+      "sha256": "c3cf9398debf716a0796f03b863c1c483c9356f5738053704efeb0cee692a6e4"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/strategy/interpretation.md",
+      "bytes": 7411,
+      "sha256": "646d5ee2a040fd2647ddd1284bdf06773ef9b1d3c2d2219f49cb9fe8860f2757"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/strategy/reasoning.md",
+      "bytes": 5537,
+      "sha256": "af56960235621ee5e76febba1cbdf87c2d37da50c0c6c0932c052d88c3e8fabf"
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/strategy/research-note.md",
+      "bytes": 3702,
+      "sha256": "0cafa30d6f68f674e7efd9c639ec5e89856cc455ec8138c1f7e152f2176a9d43"
+    },
+    {
+      "path": ".qualification/filing-feasibility20260928/results.md",
+      "bytes": 10375,
+      "sha256": "fe613972d1b5d7b3bbc2933a8008ac657576bd2fa83e2ec4e12b4fa623db6551"
+    },
+    {
+      "path": ".qualification/filing-feasibility20260928/strategy-memo.md",
+      "bytes": 16609,
+      "sha256": "de1e7474f339d5de3c8a0f882072f8ede8d37e0e52a6de2022afbf1e44f874f1"
+    },
+    {
+      "path": ".qualification/filing-features20260928/interface.md",
+      "bytes": 1949,
+      "sha256": "341061414fd82b3d893fd5ac199f07e711dbad1d67625f3af8fcd4ff436824c6"
+    },
+    {
+      "path": ".qualification/filing-source-supplement20260928/preflight-v1/report.md",
+      "bytes": 3642,
+      "sha256": "efe814f7018d2faebe1655a3d59e33bc3d7cd7587c41a1f53121b32a8dfc975f"
+    },
+    {
+      "path": ".qualification/filing-source-supplement20260928/report.md",
+      "bytes": 4946,
+      "sha256": "4b0d9190199330204351f774a1278c6acdcbac936b4ab3ac36f1b45bba5c250d"
+    },
+    {
+      "path": ".qualification/filing-source20260928/README.md",
+      "bytes": 5098,
+      "sha256": "ba3c335b700cb5af5fcb7c8ccb9571338cfbd4fe8c464872ce8d5afcdb06da5e"
+    },
+    {
+      "path": ".qualification/hourly-expansion20260919/source-review.md",
+      "bytes": 5963,
+      "sha256": "015b87291d66169733ee92f46b7a4cb19ddd0855b82a06b2619f825766a9c448"
+    },
+    {
+      "path": ".qualification/intraday-cost-windows20260928/cost-all-cells.md",
+      "bytes": 16172,
+      "sha256": "122cb84ed1e669dde80676f0fc4a8e780b4db8abf59ad0b53056f29535d60099"
+    },
+    {
+      "path": ".qualification/intraday-cost-windows20260928/independent-verification/report.md",
+      "bytes": 2820,
+      "sha256": "9b2b1c69bdb6339c0a52657716a968bbe9ce44f2167652b4c725a79fea686681"
+    },
+    {
+      "path": ".qualification/intraday-opening-strategy20260928/definition.json",
+      "bytes": 7351,
+      "sha256": "d9c539e611076c9d2a18c56aa2e9f9e0a702411dcb0fcb9f96ea08b7568f3463"
+    },
+    {
+      "path": ".qualification/intraday-opening-strategy20260928/design-draft.md",
+      "bytes": 7436,
+      "sha256": "aecbd59993d5c5aa160c35b9bd22fff45794bcf472d7a7a95a697292a2a7d1f6"
+    },
+    {
+      "path": ".qualification/intraday-opening-strategy20260928/request.json",
+      "bytes": 5434,
+      "sha256": "17bbf306dcc44de9642834f561bd31e258f9d62a150cec168b4d9334022890a0"
+    },
+    {
+      "path": ".qualification/intraday-opening20260928/README.md",
+      "bytes": 5135,
+      "sha256": "1cef53a40b99b7c7c27bdfd4d70082e10bb0917a3e0f07a97afbb67209808cfd"
+    },
+    {
+      "path": ".qualification/intraday-opening20260928/request.json",
+      "bytes": 5731,
+      "sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447"
+    },
+    {
+      "path": ".qualification/options-access20260928/broker-feasibility.md",
+      "bytes": 12159,
+      "sha256": "4094a9ac2748bd44a3318d81a2d9214f9a68262f723b9b2d7f8b93bb27f98c64"
+    },
+    {
+      "path": ".qualification/options-access20260928/strategy-proposal.md",
+      "bytes": 7534,
+      "sha256": "02be5c2c54f6d8f02eee5671e9e2265d712e85719e39e1092f7d4f059e330893"
+    },
+    {
+      "path": ".qualification/options-evidence20260928/findings.md",
+      "bytes": 1735,
+      "sha256": "fdbed98e4353fbec8daad80297dc326c94c7c015a0defb6f19281720ec8d7fc4"
+    },
+    {
+      "path": ".qualification/options-evidence20260928/independent-verification.json",
+      "bytes": 6828,
+      "sha256": "e239151e00a20484453d797d96c822101af535bc91947d8f884e90b2b9dc8d20"
+    },
+    {
+      "path": ".qualification/options-evidence20260928/rationale.md",
+      "bytes": 3833,
+      "sha256": "d7129ab135853f7b2a673df1f9c6d9b2d6ea2517540c84e3d5d2ed988c286afb"
+    },
+    {
+      "path": ".qualification/options-evidence20260928/request-definition.json",
+      "bytes": 12860,
+      "sha256": "10726a45ec026cb023e248b303908575496fc837afb838823e09b042a3d56766"
+    },
+    {
+      "path": ".qualification/options-evidence20260928/summary.json",
+      "bytes": 8888,
+      "sha256": "da88ff92a77f955f8283422ae2d594c25be898844c8accb75c5d8a213754dc6a"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/definition.json",
+      "bytes": 223887,
+      "sha256": "ca842ce2c901b5ea3ae9e21bb0501ae4b1c8271804780c6292bab3846d81b5dc"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/final-review/report.md",
+      "bytes": 1626,
+      "sha256": "f84dfeb79f71b29a4fc0952c4826caa2ce2da0509ed4c2b2d24dd4957baa0820"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/next-stage-design.md",
+      "bytes": 7823,
+      "sha256": "11f25c514e6bd8e75f00e5e4e27ba8a366dd02360a1efbdc1e063bbc6f17ae44"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/plan.md",
+      "bytes": 4291,
+      "sha256": "34ad74b877de8bbe11492d84c4832cadff8e67fa01ecaadc49566dcc90a1bb4b"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/price-audit/report.md",
+      "bytes": 2858,
+      "sha256": "b3ab7c53ce90726a88de4e14ca73ef1235eeaf7f7e40ee1e7f03b5327b86ce90"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/reference-audit/report.md",
+      "bytes": 2491,
+      "sha256": "813018a87dda57cece0705a1901e5736d819a2300623fa3184940637f70797bb"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/request.json",
+      "bytes": 2624,
+      "sha256": "5bc86722a1fa3d18bbb59327efec30aa17d3da54aa6c705ee0d2ba237042fa13"
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/runner-review/report.md",
+      "bytes": 940,
+      "sha256": "a6b9bb7354b973b51863f4415354117aeea6431a788bc022ec523926b5034cf7"
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/cost-report.md",
+      "bytes": 2367,
+      "sha256": "f4f2dc1fc9434eb5b7a70854b3609b6914dbf8bba507477aac854b44fd3d9d69"
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/diagnostics-report.md",
+      "bytes": 2785,
+      "sha256": "c324e3842fd114ae9223d4563d21f4d9c4844c3a699659ae3df88875d57c72a0"
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/independent-ledger-report.md",
+      "bytes": 7877,
+      "sha256": "a7aceb2a8452b23e7ee0cc4790e8c10b8bf4c3d0cce50fc85c6e997f5abbdc25"
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/progress.md",
+      "bytes": 11849,
+      "sha256": "eb42946bba0e5012d407e1b540e4e554236fd6426514d23654695412a7d87fd6"
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/replay-report.md",
+      "bytes": 1801,
+      "sha256": "de37d1385ca025385dd3de03b04287e0460ed3237ccde59bfdf9119559d965fe"
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/review.md",
+      "bytes": 5220,
+      "sha256": "4f8622201002a4f4b4c0d74bca7779959c3dd53a7ac94abf632ace6e2bd173f4"
+    },
+    {
+      "path": ".qualification/strategy-action-attribution20260928/definition.json",
+      "bytes": 4213,
+      "sha256": "402114d7cbae08dc271777c977a0839e0fff67af9415a8b3d0328743286a0871"
+    },
+    {
+      "path": ".qualification/strategy-interactions20260928/definition.json",
+      "bytes": 4778,
+      "sha256": "4c367273acf7c401e09c27f4ab65e8e927c805953f01d288dd61e6a83bec29a7"
+    },
+    {
+      "path": ".qualification/strategy-interactions20260928/request.json",
+      "bytes": 2675,
+      "sha256": "b978285712d9cac7d3c62cb93199941da8fe8573a27485767e1336b606f2427b"
+    },
+    {
+      "path": ".qualification/strategy-timing20260928/request.json",
+      "bytes": 4670,
+      "sha256": "7db88d9df5d37aa9385a001e023d245233cc302558039bd2c7d434fb31e22ffe"
+    },
+    {
+      "path": "config/mandate.json",
+      "bytes": 5714,
+      "sha256": "b94efafe9db33fff53eb72b1391bbd772683939d9de1879a2e06576d82c98560"
+    },
+    {
+      "path": "docs/action-source-validation-plan.md",
+      "bytes": 6118,
+      "sha256": "15f627e224462de4c1c88283210800207320b3e5621e94a40bc5fa4e1061a1a2"
+    },
+    {
+      "path": "docs/action-source-validation-results.md",
+      "bytes": 12528,
+      "sha256": "0042336ef778dc1ad31f39912f69731035758126c81aace335572949bd8ad6b7"
+    },
+    {
+      "path": "docs/active-account-readiness.md",
+      "bytes": 10597,
+      "sha256": "9191c8e37a41a1d3bc5d0b055e0cb2f99c21afdd96b1e0c867fbe4cabd8800e2"
+    },
+    {
+      "path": "docs/aixi-source-continuity.md",
+      "bytes": 6729,
+      "sha256": "7edba45f86a57a4aa1ffeef5b6df75fb167f3dc536a784cb3334ec7c900ee568"
+    },
+    {
+      "path": "docs/automated-trading-plan.md",
+      "bytes": 12575,
+      "sha256": "ff7bbf3fd9756db725fac228e0e3e7c92df9b5d3faa78a68affa74827f387c23"
+    },
+    {
+      "path": "docs/broad-research-results.md",
+      "bytes": 4723,
+      "sha256": "d4da80b819deaf7c03a96a5fa614265993eb4b75cd0dc56c93f84a41208dc984"
+    },
+    {
+      "path": "docs/broad-research.md",
+      "bytes": 7190,
+      "sha256": "1974f1e66aadf7cb2e33ffe90e1118d9369583780b318b19954bcb723c76cf8c"
+    },
+    {
+      "path": "docs/calibration-shrinkage-results.md",
+      "bytes": 7487,
+      "sha256": "0fd64d451dd9bab8b689e0b0f7d046b45d3034626695ff16188bc0d8a054e63d"
+    },
+    {
+      "path": "docs/candidate-replay-results.md",
+      "bytes": 6592,
+      "sha256": "5ecf8ecbc02777149cf9fcf24295247d62a95a580c51d06194c5e9c5a62e0983"
+    },
+    {
+      "path": "docs/candidate-replay.md",
+      "bytes": 4988,
+      "sha256": "661bfda325b99273174fcf6d839e36b9ef5fcfcdcf0f6df6ffdf2043a424bee0"
+    },
+    {
+      "path": "docs/capital-and-return-objective.md",
+      "bytes": 9350,
+      "sha256": "46c7065664d248d4d392e143aa03fe4301b5c2ea4023a6892ba101461a15225d"
+    },
+    {
+      "path": "docs/code-quality-review.md",
+      "bytes": 34297,
+      "sha256": "454876f825931773cc4df138ea595f2cebc703258c3e4a12cadbcbda20782313"
+    },
+    {
+      "path": "docs/conditional-strategy-selection-plan.md",
+      "bytes": 9737,
+      "sha256": "1b7a797ac044cf8ded124d8597390a53419c9207e18799f081f6c9cae56cd939"
+    },
+    {
+      "path": "docs/conditional-strategy-selection-results.md",
+      "bytes": 13954,
+      "sha256": "391ac89e5927699ce09c2d519129c582f055585e7d1976436758ba80886951c6"
+    },
+    {
+      "path": "docs/daily-model-bridge.md",
+      "bytes": 6939,
+      "sha256": "bdc5ada60f093cda98c07d1ca14aea4824c2e6185d9cf535dedd97cf3a679d02"
+    },
+    {
+      "path": "docs/data-access.md",
+      "bytes": 3532,
+      "sha256": "8ebcd0acfdda756bc965ec14e5ee151573cf1f3b632f8b5643146de7cbb6806a"
+    },
+    {
+      "path": "docs/design-review.md",
+      "bytes": 8989,
+      "sha256": "9dd27661746696f028d3f90ecb3cd14236b742064a9daf887288be294f9e5c16"
+    },
+    {
+      "path": "docs/earnings-quality-research.md",
+      "bytes": 11169,
+      "sha256": "84ff8b415fcae0bc39ea87c53d831a6910635b02d76a624a17c9062a85b4076e"
+    },
+    {
+      "path": "docs/earnings-quality-results.md",
+      "bytes": 10666,
+      "sha256": "a67c53c6f6b6f59604666fe21e0ca0e5e3737ad683a7026aaea0b265bf339bb5"
+    },
+    {
+      "path": "docs/engine-qualification.md",
+      "bytes": 13417,
+      "sha256": "43fd367756cf5d5a657dc507731bae7bef44e553122d940cec050cecd491b64d"
+    },
+    {
+      "path": "docs/etf-reversal-results.md",
+      "bytes": 9812,
+      "sha256": "cf0a03fc531345611204109d10237ad81002146524f5d20e45977dfa1d7fc6eb"
+    },
+    {
+      "path": "docs/execution-cost-model.md",
+      "bytes": 4092,
+      "sha256": "4c635099509f7f3a802d8c26c5670b84fdd2fe3f54fcaaae835b4b69c3ec9d52"
+    },
+    {
+      "path": "docs/existing-connectors.md",
+      "bytes": 5583,
+      "sha256": "d6e021a1845e6c2e308133cc3d0c301cf6c78f481e7908f067456859d7fad502"
+    },
+    {
+      "path": "docs/forecast-calibration-diagnostics.md",
+      "bytes": 12555,
+      "sha256": "15c014bc354092f2ed8c97c75ce4512fcc73bf357d19c9cea815001604c8d066"
+    },
+    {
+      "path": "docs/handover/context-and-decisions.md",
+      "bytes": 15651,
+      "sha256": "9a6ed4814c2ca96efaf8f18977e34d5b506ea34ec186ef13ade5e4afbff4802d"
+    },
+    {
+      "path": "docs/historical-research-results.md",
+      "bytes": 13913,
+      "sha256": "46462025897ab62fb8066dfa32c1600f6d5af95b0cc4009f5595aff922d7c663"
+    },
+    {
+      "path": "docs/historical-research-sources.md",
+      "bytes": 19796,
+      "sha256": "cab8d9bc70c3e4140234f7971860c3f4e36b2104969f6dbee7b19b7c91b61496"
+    },
+    {
+      "path": "docs/historical-research.md",
+      "bytes": 11475,
+      "sha256": "2dc18f6e660f1f2d82df3a688101e19e7a0fdb303050ce0adc978fd3b29fed59"
+    },
+    {
+      "path": "docs/hourly-data-access.md",
+      "bytes": 6264,
+      "sha256": "31fbde9d68bd2497903dc8e253abf412737767df4bf49792457108abbef51d05"
+    },
+    {
+      "path": "docs/interface-design.md",
+      "bytes": 1926,
+      "sha256": "a866c020849abf757e4f7b2340bf886680d111a042242b51cee31a074cc2fde3"
+    },
+    {
+      "path": "docs/intraday-opening-results.md",
+      "bytes": 7152,
+      "sha256": "f8d450747d5da6c746a1a702f86893cb02e68fcb3d42fdfb8522fcb1aa4aeadd"
+    },
+    {
+      "path": "docs/intraday-opening-study.md",
+      "bytes": 5984,
+      "sha256": "28f169c28db17971ab5c4401b68fb4d5bfba34d4e1cda8b20d71325951b6e584"
+    },
+    {
+      "path": "docs/multi-model-research-results.md",
+      "bytes": 21581,
+      "sha256": "b25b540dc7ff0c6e14b7fc2392434168c9a9742ab458916dde1948ec6a3353e8"
+    },
+    {
+      "path": "docs/multi-model-research.md",
+      "bytes": 6107,
+      "sha256": "3bfe75baad2c19652fae6111088ca4ce787a645cbd9f153ba17408dbba29ce17"
+    },
+    {
+      "path": "docs/paper-operator.md",
+      "bytes": 7646,
+      "sha256": "38356b15e7efb89830fa7cdb19cbd45024531beee380d70a666b52e873025f70"
+    },
+    {
+      "path": "docs/post-filing-research.md",
+      "bytes": 7356,
+      "sha256": "370e573a26bf8b11c687f758f298ad1aec2d7b142de4855d8ab4ba78315b6a1f"
+    },
+    {
+      "path": "docs/post-filing-results.md",
+      "bytes": 8167,
+      "sha256": "87e48d726717b7c6dfb5419b281b27a072f5445e22ea853bbf4867f104784ab6"
+    },
+    {
+      "path": "docs/progress.md",
+      "bytes": 9311,
+      "sha256": "ed9c553be197b333a4e3b77b344d9e538a645c23a4cfff85d4bd025b7d727004"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "bytes": 21697,
+      "sha256": "73462c3546130b605c234c0aba63d4fc12f58945b613ec37764b139d0c54bc6f"
+    },
+    {
+      "path": "docs/scanner-study.md",
+      "bytes": 11118,
+      "sha256": "13a12a7e842d94e1eb655871551063963181c9763399d55aea93c76b2ac4c178"
+    },
+    {
+      "path": "docs/short-hold-research-results.md",
+      "bytes": 12431,
+      "sha256": "b8308a42eed40a43c35dff7c6c478874e3c5a5d40d6a1867305751db3df34fcd"
+    },
+    {
+      "path": "docs/strategy-action-attribution-results.md",
+      "bytes": 6021,
+      "sha256": "548bd81614e62692b0fe2143fe78cee311be38fd955f3a0a669ac15f316117a6"
+    },
+    {
+      "path": "docs/strategy-experiment-2026-09-28.md",
+      "bytes": 10638,
+      "sha256": "9338edbdf7bb65266e8fe3b30ec0d7885dc4f675441dc64817c485f14179a74d"
+    },
+    {
+      "path": "docs/strategy-interaction-results.md",
+      "bytes": 14857,
+      "sha256": "3c0eba31301ecad9190535f55ec8be1866930623cbd6b48321a1f80a65f3667d"
+    },
+    {
+      "path": "docs/strategy-timing-results.md",
+      "bytes": 7694,
+      "sha256": "3fd0af86c6b64e6b77b9d294f1d56af9a7c5a9381b81ca3b8c5d9e7452a0d2e1"
+    },
+    {
+      "path": "docs/strategy-timing-study-2026-09-28.md",
+      "bytes": 7188,
+      "sha256": "76c1ec7b5fd845089134836cc8030aebffd74b604c6a587ec789c3c2f07d128e"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-broad-research.md",
+      "bytes": 4336,
+      "sha256": "1f20e81566701175980f8b846cdd84a99914b06bd1775c1a6b7790836927f689"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-historical-first.md",
+      "bytes": 5601,
+      "sha256": "490e8a50515206d703f4b82554d3bb58ef2211abb19d3fe61195c7fda3ea55f5"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-research-kernel.md",
+      "bytes": 4263,
+      "sha256": "0657dfdd796388841ce0b74031c3e4a3234ad3f5cfe26498b3d37d8ea6f2f532"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-short-hold-study.md",
+      "bytes": 3414,
+      "sha256": "8606716e04531dd3df9fc838dfdb03869a04c8717db9ff848e5c8ad74f6afff0"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-short-term-signal-study.md",
+      "bytes": 8872,
+      "sha256": "345fd6f6bcb365d9fc9351850ec2c36721e6aa0a6bdac78ac270674daaca5240"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-19-daily-model-bridge.md",
+      "bytes": 3870,
+      "sha256": "99c953e4e17349d9881bb0e909b583dbfe7ac138261d3e532e56b4a838729cb1"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-19-multi-model-study.md",
+      "bytes": 8268,
+      "sha256": "7067b57edced92ccc1992050ce0701dd8c68a9bfa44757300f2b10845bc1928e"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-19-stateful-daily-agent.md",
+      "bytes": 1908,
+      "sha256": "c25069d5b4cac6542a072bef87a394f4260daca314a7a42347be5a8081ec4093"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-18-frontier-trading-system-design.md",
+      "bytes": 32845,
+      "sha256": "9693fa9e4b8ee6adaca2de19d568b73759f40ecfcdd49016248dfe650c78f54e"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-19-daily-model-bridge-design.md",
+      "bytes": 5281,
+      "sha256": "b2f332d70d7dc01e4340d0bdefd9093382d91bb33199212059f5a148e79752fa"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-19-stateful-daily-agent-design.md",
+      "bytes": 5262,
+      "sha256": "f02e4188e1010282b73cf38d04ed49bcf26e3e854093449e36dbca7ec0b23a3a"
+    },
+    {
+      "path": "docs/tasks/01-engine-qualification-report.md",
+      "bytes": 2964,
+      "sha256": "f93b8dcfdca4889213db153e35ab9f6d32bc2a80fed90b75014ab66ed0f9bf04"
+    },
+    {
+      "path": "docs/tasks/01-engine-qualification.md",
+      "bytes": 3485,
+      "sha256": "ec03da25ab7787e07d0f875d703a4390efd4e6015ce29b3ac45fdc04782dae13"
+    },
+    {
+      "path": "docs/tasks/02-data-evidence-report.md",
+      "bytes": 8190,
+      "sha256": "eb84123f49aeefa370c599dd4ebaa7c43dfa9dd0c60e9fe8aa5fee0c3373ad96"
+    },
+    {
+      "path": "docs/tasks/02-data-evidence.md",
+      "bytes": 6577,
+      "sha256": "8f1bd53d8384cc6c1e35867aa742ac72c340477fb7bd9b8c7ab7020599daa57c"
+    },
+    {
+      "path": "docs/tasks/03-replay-report.md",
+      "bytes": 9178,
+      "sha256": "c332e9d8ca89b045b0bb609349da4273c3b3d66882e7e2fa5ebd2180e7c16b61"
+    },
+    {
+      "path": "docs/tasks/03-replay.md",
+      "bytes": 9054,
+      "sha256": "fad56dac4a55e2dd1fdbebedcbe3549112e3d8e431c22c0a3503c1268ecd75e1"
+    },
+    {
+      "path": "docs/tasks/04-interface-report.md",
+      "bytes": 3999,
+      "sha256": "cf3bf9e8f411a9f9cdcdb26715021394e62ce5a096b1a14e94c9ce8e3fde9948"
+    },
+    {
+      "path": "docs/tasks/04-interface.md",
+      "bytes": 6765,
+      "sha256": "eb38b761a815162ca100fca1ae8cf4aa15c8147669004e4f7cd93ab8eaf7be0f"
+    },
+    {
+      "path": "docs/tasks/05-research-report.md",
+      "bytes": 4531,
+      "sha256": "f60dea0b15db20a26fc64bc96e30e4dd2f199473f7dee0a7bc9f965c808becb4"
+    },
+    {
+      "path": "docs/tasks/05-research.md",
+      "bytes": 6230,
+      "sha256": "c033411ab883b53efde67152c4e6b8ab74c2d705c4a817398d5bd78ab3e4c58f"
+    },
+    {
+      "path": "docs/tasks/05a-provider-report.md",
+      "bytes": 2624,
+      "sha256": "cd1b1a89abf67127558ee74e9744877933708186e1583f0bd9cd003df463b033"
+    },
+    {
+      "path": "docs/tasks/06-sources-report.md",
+      "bytes": 3452,
+      "sha256": "10f04cae86471e6ff2650b95664641e77294a69ad129f6e6ad3daf3a63a8157a"
+    },
+    {
+      "path": "docs/tpx-source-continuity.md",
+      "bytes": 4244,
+      "sha256": "764d0163ee93ce85d2b042d3bf23da2df1a2f1bf11ee641d77624295365b0a0f"
+    },
+    {
+      "path": "docs/trading-cadence.md",
+      "bytes": 8372,
+      "sha256": "0c0b654d7a4552cac497239fb0a6a61e109dafbd136ac216a04e63e775ef2db8"
+    },
+    {
+      "path": "docs/trading-cost-evidence.md",
+      "bytes": 18522,
+      "sha256": "9e3af254c7e8f5ce2aea302fcc0c16e40bcc849152a691bf2ea412e72b134463"
+    },
+    {
+      "path": "docs/universe-coverage.md",
+      "bytes": 6921,
+      "sha256": "539188192d5e350118e53734bbb9a3ee2b9148f2a77e1347410f14fcef25d1e6"
+    },
+    {
+      "path": "docs/usd-funding-study.md",
+      "bytes": 6829,
+      "sha256": "ddeab2d82c39c9c593007353d7bcf326f3a157482d3d78d471845385ae8d5984"
+    },
+    {
+      "path": "docs/validation.md",
+      "bytes": 7452,
+      "sha256": "823cf4c215d30554a449bfb820b9a714c92dabcf863c83518e993e910e37cce3"
+    },
+    {
+      "path": "docs/weekly-data-refresh.md",
+      "bytes": 6562,
+      "sha256": "12b9c8b18b801423d5160d9dbe8c08f5537d56a955b7f64145172eb8e575c22e"
+    },
+    {
+      "path": "src/frontier/conditional_features.py",
+      "bytes": 4384,
+      "sha256": "33c183271f1c18aa03f2e1502af5fe72130af41875f305613dd4a5b355a50c05"
+    },
+    {
+      "path": "src/frontier/ensemble_features.py",
+      "bytes": 9957,
+      "sha256": "f1ae31e1c5ad506f5a32a7323e407653265f2155554600e7b7a5c61172702076"
+    },
+    {
+      "path": "src/frontier/historical_study.py",
+      "bytes": 26825,
+      "sha256": "9c22a45569d36c5a79c9607ffcc5e65b529d16a17af6b3643618647c6d4534dd"
+    }
+  ],
+  "unresolved_evidence_paths": []
+}

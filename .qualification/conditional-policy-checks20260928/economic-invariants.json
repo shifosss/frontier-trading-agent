@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "economic_cases": 160,
+  "profiles": [
+    "proportional40",
+    "moomoo_ca_us40"
+  ],
+  "modes": [
+    "fraction",
+    "dollars"
+  ],
+  "method": "Independent uncached all-candidate reselection after every reservation, original risk/cap/cash formulas and separately computed projected fees/utility.",
+  "code_hashes": {
+    "src/frontier/conditional_policy.py": "ca36d080c9dde07ebbed45d93c21cd3710b6588ce9a86d653a6850a88527e41e",
+    "src/frontier/short_horizon_study.py": "9105cce590c0165e37c2add71be7daf0b0b4db12eef0c52182f629c811d04cd0",
+    "tests/test_conditional_policy.py": "1d6074fa10a1b138856a3b019fe5e923d7a0e217f7dfd8811d3465b3e86deef7"
+  },
+  "declaration_sha256": "aaec51e2766b141adf5bca2263525ade38c8ad1ecfb4d4203d41dcb5f69f36ff",
+  "existing_tests": "515 passed;96 dependency/pandas deprecation warnings;15 new behavioral tests included",
+  "scope": "No model fitting, broker operation, source edit, account rerun or economic-result selection."
+}

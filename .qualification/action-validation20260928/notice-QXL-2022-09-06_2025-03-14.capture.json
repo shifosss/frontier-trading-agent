@@ -1,0 +1,16 @@
+{
+  "symbol": "QXL",
+  "effective_sessions": "2022-09-06_2025-03-14",
+  "url": "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:04.717257+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+  "redirects": [],
+  "sha256": "df065bca83857f7efc61ddfc7a4318590d2e009c6346b657dc3ca039af8cc2f4",
+  "raw_file": "notice-QXL-2022-09-06_2025-03-14.df065bca83857f7efc61ddfc7a4318590d2e009c6346b657dc3ca039af8cc2f4.raw.html",
+  "bytes": 1599615,
+  "captured_at": "2026-09-28T19:14:05.165271+00:00",
+  "text_file": "notice-QXL-2022-09-06_2025-03-14.text.txt"
+}

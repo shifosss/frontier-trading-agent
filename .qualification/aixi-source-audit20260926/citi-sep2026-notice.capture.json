@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "url": "https://depositaryreceipts.citi.com/adr/common/file.aspx?idf=7973",
+  "params": null,
+  "captured_at": "2026-09-28T18:39:25.797813+00:00",
+  "status_code": 200,
+  "sha256": "f3fb264ab64263ea0aca909efdb37be8741b1a75caae8fa2f76b9599bffc7a17",
+  "bytes": 162756,
+  "content_type": "application/pdf",
+  "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+  "raw_file": "citi-sep2026-notice.f3fb264ab64263ea0aca909efdb37be8741b1a75caae8fa2f76b9599bffc7a17.pdf"
+}

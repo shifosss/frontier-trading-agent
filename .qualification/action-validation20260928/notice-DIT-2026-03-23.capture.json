@@ -1,0 +1,16 @@
+{
+  "symbol": "DIT",
+  "effective_sessions": "2026-03-23",
+  "url": "https://www.sec.gov/Archives/edgar/data/928465/000110465926045515/dit-20260331x10q.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:01.680002+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/928465/000110465926045515/dit-20260331x10q.htm",
+  "redirects": [],
+  "sha256": "ec10413bcec41e5c642520f97c96a653ba1e13f1c7bf1a1f0cb0ee59a4142f7d",
+  "raw_file": "notice-DIT-2026-03-23.ec10413bcec41e5c642520f97c96a653ba1e13f1c7bf1a1f0cb0ee59a4142f7d.raw.html",
+  "bytes": 1498623,
+  "captured_at": "2026-09-28T19:14:02.092972+00:00",
+  "text_file": "notice-DIT-2026-03-23.text.txt"
+}

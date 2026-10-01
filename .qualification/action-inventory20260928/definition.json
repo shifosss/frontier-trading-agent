@@ -1,0 +1,29 @@
+{
+  "declared_at": "2026-09-28T18:48:17.824262+00:00",
+  "run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "capture_index_sha256": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966",
+  "scope": "All8234 immutable usable source records and every provider-reported split/ADS event, including invalid or unavailable boundaries. No trading P&L, models or account output read. No network, correction or production edit.",
+  "audit_rules": {
+    "timezone": "America/Toronto, matching existing historical normalization",
+    "nominal_convention": "Replicate existing reported-future-split multiplier for OHLC and inverse for volume, independent of whether provider actually follows that convention; reconstructed values are not certified raw prices.",
+    "boundary": "Latest source bar strictly before effective session; exact effective-session bar when present; first source bar on/after separately retained if event-session bar absent. No price forward-fill.",
+    "liquidity_proxy": "Median of provider close*provider volume over20 pre-event bars; at least10 finite positive observations. Native currency. Proxy relies on consistent provider price/volume conventions and is not verified liquidity.",
+    "large_adjusted_move_triage": "abs(log(adj_effective/adj_prev)) >= log(1.5)",
+    "ratio_alignment_triage": "large move plus abs(log((adj_effective/adj_prev)*(new_shares/old_shares))) <= log(1.2). Triage only; no diagnosis, exclusion, repair or economic threshold."
+  },
+  "followup_sample": {
+    "design": "One minimum SHA256 rank per populated metadata stratum; return values and triage flags excluded from sample selection. No replacement based on future source success or profitability.",
+    "seed": "frontier-action-audit-v1-20260928",
+    "strata": [
+      "currency USD/CAD",
+      "forward/reverse",
+      "effective year <=2009/2010-2019/2020-2023/2024-2026",
+      "factor magnitude <=2 or >2",
+      "pre-event native-dollar-volume <1000000 / >=1000000 / unavailable"
+    ],
+    "maximum_cells": 96,
+    "eligibility": "Valid positive nonneutral provider factor, event effective by frozen cutoff, currencyUSD/CAD; missing price boundaries remain eligible and visible.",
+    "purpose": "Independent issuer/exchange/depositary and raw/split price validation candidates, not statistical proof or correction authority. No automatic download in this task."
+  },
+  "preservation": "Raw bytes and existing artifacts unchanged. All failures, event directions, missing boundaries and source identities retained."
+}

@@ -1,0 +1,77 @@
+F
+Frontier
+Research
+◷
+Study
+▤
+Data
+⤨
+Experiments
+◇
+Research
+⚙
+Operations
+Local workspace
+Research only
+No broker connection
+Research study
+
+From an explicit hypothesis to an inspectable result.
+
+Local service ready
+Nautilus 1.231.0
+Portfolio equity
+
+Net asset value
+
+Your first study starts here
+
+Select a dataset and run a study to inspect actual equity,
+decisions and fills from the replay engine.
+
+No result has been generated.
+Net return
+—
+Max drawdown
+—
+Fills
+—
+Final NAV
+—
+A result you can retrace
+
+Every study saves the exact dataset, settings, signals, native-currency fills and an offline report.
+
+Study setup
+Daily bars
+Dataset
+Fictional US and Canada engineering fixture
+SPY + XIU retained daily observations (2026-06-22_2026-09-17)
+SPY + XIU historical observation prefix through 2026-09-16
+SPY retained Longbridge hourly snapshot (exploratory)
+SPY + XIU retained daily observations (full)
+Synthetic fixture
+
+United States / USD + Canada / CAD
+2025-01-02 to 2025-08-29
+332 bars · 2 instruments
+
+Strategy
+Passive allocation
+Cash only
+Trend following
+Mean reversion
+Starting USD
+Starting CAD
+Execution costs
+1.00 native currency / order
+5.0 bps slippage
+Advanced settings
+Run study
+Ctrl + Enter
+Compare baselines
+
+Baseline comparison runs 11 declared trials: cash, passive, trend/reversion at 10/20/40 sessions, plus 3 cost-stress trials. USD 10,000 + CAD 10,000 each; fee 1 / order and 5 bps, doubled for stress trials. Long only. Whole shares. At most 20% per exposure group at sizing. Separate USD/CAD funding. Signals execute at the next eligible opening.
+
+Frontier Research
+Local snapshots. Explicit assumptions. Inspectable evidence.

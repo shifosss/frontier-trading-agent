@@ -1,0 +1,28 @@
+{
+  "symbol": "ENOV",
+  "effective_session": "2022-04-05",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/ENOV/bars?timeframe=1Day&start=2022-03-26T04%3A00%3A00%2B00%3A00&end=2022-04-16T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2022-03-26T04:00:00+00:00",
+    "end": "2022-04-16T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.742429+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "ENOV-2022-04-05-raw-1.88abd3d5d5dfe83bd64942670900ba76f4ed629101bcd7a03bfee149766ab4f3.raw.json",
+  "sha256": "88abd3d5d5dfe83bd64942670900ba76f4ed629101bcd7a03bfee149766ab4f3",
+  "bytes": 1515,
+  "captured_at": "2026-09-28T19:04:30.769648+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 14,
+  "response_symbol": "ENOV",
+  "pagination_complete": true
+}

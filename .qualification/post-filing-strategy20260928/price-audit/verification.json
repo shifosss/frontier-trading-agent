@@ -1,0 +1,277 @@
+{
+  "status": "passed",
+  "audited_at": "2026-09-28T23:08:02.062390+00:00",
+  "script_sha256": "d18a236c73531d164b183c5de0a6016219ad80279c9a8f25af3e3a302b268943",
+  "page_evidence": [
+    {
+      "raw": "raw-00-7f1b8840a107fc5f39e1bc67edcf9cac2072d7dc4f3dbf0b41e7e88f6c5c3613.json",
+      "sha256": "7f1b8840a107fc5f39e1bc67edcf9cac2072d7dc4f3dbf0b41e7e88f6c5c3613",
+      "bytes": 289045,
+      "requested_at": "2026-09-28T22:50:26.882631+00:00",
+      "received_at": "2026-09-28T22:50:27.038894+00:00",
+      "adjustment": "raw",
+      "bar_count": 2693,
+      "next_page_token": null
+    },
+    {
+      "raw": "all-00-57e8a0b2fdcca85320d662957e659b337d2378236a259bc02ca852262c518e18.json",
+      "sha256": "57e8a0b2fdcca85320d662957e659b337d2378236a259bc02ca852262c518e18",
+      "bytes": 277644,
+      "requested_at": "2026-09-28T22:50:28.042184+00:00",
+      "received_at": "2026-09-28T22:50:28.171510+00:00",
+      "adjustment": "all",
+      "bar_count": 2693,
+      "next_page_token": null
+    }
+  ],
+  "T_observed_sessions": 2693,
+  "source_bounds": [
+    "2016-01-04",
+    "2026-09-18"
+  ],
+  "T_missing_requested_sessions": [],
+  "market_sessions": 4203,
+  "calendar_identity": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+  "exchange_calendar_package": "4.13.2",
+  "all_T_close_and_adjusted_values_match_source": true,
+  "independent_Decimal_ATR_finite_count": 2679,
+  "ATR_unavailable_initial_source_rows": 14,
+  "max_ATR_absolute_error_USD": "3.9059500811636954859578441E-15",
+  "ATR_samples": [
+    {
+      "session": "2016-01-25",
+      "raw_close": "35",
+      "adjusted_close": "14.52",
+      "independent_ATR_raw_USD": "0.6781266937537677262374396343089481587103",
+      "array_ATR_raw_USD": "0.6781266937537703"
+    },
+    {
+      "session": "2016-02-03",
+      "raw_close": "36.72",
+      "adjusted_close": "15.23",
+      "independent_ATR_raw_USD": "0.7227774330275685633567717358372675618208",
+      "array_ATR_raw_USD": "0.7227774330275691"
+    },
+    {
+      "session": "2016-05-25",
+      "raw_close": "38.62",
+      "adjusted_close": "16.22",
+      "independent_ATR_raw_USD": "0.4276501497236314372894631388300440201740",
+      "array_ATR_raw_USD": "0.4276501497236296"
+    },
+    {
+      "session": "2016-11-15",
+      "raw_close": "36.77",
+      "adjusted_close": "15.81",
+      "independent_ATR_raw_USD": "0.5395717290592909543369122708739575374755",
+      "array_ATR_raw_USD": "0.5395717290592915"
+    },
+    {
+      "session": "2017-11-08",
+      "raw_close": "33.44",
+      "adjusted_close": "15.1",
+      "independent_ATR_raw_USD": "0.6907512041926287849078744385003428014603",
+      "array_ATR_raw_USD": "0.6907512041926289"
+    },
+    {
+      "session": "2018-06-28",
+      "raw_close": "32.19",
+      "adjusted_close": "14.93",
+      "independent_ATR_raw_USD": "0.7598347727280265950756567685833645526610",
+      "array_ATR_raw_USD": "0.7598347727280261"
+    },
+    {
+      "session": "2019-10-11",
+      "raw_close": "37.58",
+      "adjusted_close": "19.1",
+      "independent_ATR_raw_USD": "0.4345303246679271856829914930118944272821",
+      "array_ATR_raw_USD": "0.4345303246679264"
+    },
+    {
+      "session": "2021-07-07",
+      "raw_close": "28.93",
+      "adjusted_close": "16.26",
+      "independent_ATR_raw_USD": "0.2969049577923109216198674289331856107759",
+      "array_ATR_raw_USD": "0.2969049577923109"
+    },
+    {
+      "session": "2022-04-08",
+      "raw_close": "24.14",
+      "adjusted_close": "14.37",
+      "independent_ATR_raw_USD": "0.4195659770995501635052499965045299200261",
+      "array_ATR_raw_USD": "0.41956597709955007"
+    },
+    {
+      "session": "2022-04-11",
+      "raw_close": "19.63",
+      "adjusted_close": "15.3",
+      "independent_ATR_raw_USD": "0.3976415135074285039855455870127068460190",
+      "array_ATR_raw_USD": "0.3976415135074286"
+    },
+    {
+      "session": "2022-07-12",
+      "raw_close": "20.6",
+      "adjusted_close": "16.5",
+      "independent_ATR_raw_USD": "0.4457620705457034456602575752885752407811",
+      "array_ATR_raw_USD": "0.4457620705457032"
+    },
+    {
+      "session": "2022-10-20",
+      "raw_close": "16.74",
+      "adjusted_close": "13.65",
+      "independent_ATR_raw_USD": "0.5043528895709285872655181809107235670578",
+      "array_ATR_raw_USD": "0.5043528895709287"
+    },
+    {
+      "session": "2023-04-27",
+      "raw_close": "17.61",
+      "adjusted_close": "14.77",
+      "independent_ATR_raw_USD": "0.4893203706794062915438467068791480784733",
+      "array_ATR_raw_USD": "0.4893203706794049"
+    },
+    {
+      "session": "2023-08-18",
+      "raw_close": "14.05",
+      "adjusted_close": "12",
+      "independent_ATR_raw_USD": "0.2214660212281399093199600168120164064888",
+      "array_ATR_raw_USD": "0.22146602122813977"
+    },
+    {
+      "session": "2023-09-08",
+      "raw_close": "14.4",
+      "adjusted_close": "12.29",
+      "independent_ATR_raw_USD": "0.2671021176179802565787260134704133037697",
+      "array_ATR_raw_USD": "0.2671021176179805"
+    },
+    {
+      "session": "2023-10-26",
+      "raw_close": "15.12",
+      "adjusted_close": "13.16",
+      "independent_ATR_raw_USD": "0.4735453808037330250364751507166661959514",
+      "array_ATR_raw_USD": "0.47354538080373293"
+    },
+    {
+      "session": "2023-12-04",
+      "raw_close": "16.66",
+      "adjusted_close": "14.5",
+      "independent_ATR_raw_USD": "0.2059363257286434622388307411901340480649",
+      "array_ATR_raw_USD": "0.20593632572864387"
+    },
+    {
+      "session": "2025-06-11",
+      "raw_close": "28.34",
+      "adjusted_close": "26.79",
+      "independent_ATR_raw_USD": "0.4288326974984542284592714548781703678475",
+      "array_ATR_raw_USD": "0.4288326974984545"
+    },
+    {
+      "session": "2025-06-27",
+      "raw_close": "28.08",
+      "adjusted_close": "26.55",
+      "independent_ATR_raw_USD": "0.3983674985231972501402949801873663686786",
+      "array_ATR_raw_USD": "0.3983674985231971"
+    },
+    {
+      "session": "2025-08-12",
+      "raw_close": "28.48",
+      "adjusted_close": "27.2",
+      "independent_ATR_raw_USD": "0.4784704460934566177557429472929939412944",
+      "array_ATR_raw_USD": "0.4784704460934569"
+    },
+    {
+      "session": "2026-01-22",
+      "raw_close": "23.58",
+      "adjusted_close": "23.02",
+      "independent_ATR_raw_USD": "0.4104281602825230877444323484843158998483",
+      "array_ATR_raw_USD": "0.41042816028252255"
+    },
+    {
+      "session": "2026-02-13",
+      "raw_close": "28.69",
+      "adjusted_close": "28.01",
+      "independent_ATR_raw_USD": "0.7650871791828883579633076084829180580798",
+      "array_ATR_raw_USD": "0.765087179182888"
+    },
+    {
+      "session": "2026-08-18",
+      "raw_close": "24.9",
+      "adjusted_close": "24.9",
+      "independent_ATR_raw_USD": "0.5571428571428571428571428571428571428571",
+      "array_ATR_raw_USD": "0.5571428571428575"
+    },
+    {
+      "session": "2026-09-18",
+      "raw_close": "25.4",
+      "adjusted_close": "25.4",
+      "independent_ATR_raw_USD": "0.6121428571428571428571428571428571428571",
+      "array_ATR_raw_USD": "0.6121428571428574"
+    }
+  ],
+  "unchanged_columns": [
+    "AAPL",
+    "BANF",
+    "F",
+    "HRL",
+    "MSFT",
+    "SPY"
+  ],
+  "settlement_index_unchanged": true,
+  "source_by_symbol_verified": true,
+  "retained_six_source_provenance": {
+    "AAPL": {
+      "path": "data/scanner/raw/AAPL.189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9.json",
+      "sha256": "189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9",
+      "captured_at": "2026-09-18T20:06:20.060117+00:00",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?period1=946684800&period2=1789761977&interval=1d&events=div%2Csplits",
+      "capture_path_root": "data/historical/capture-workspace"
+    },
+    "BANF": {
+      "path": "data/scanner/raw/BANF.f6bc75656a92d68364cee2cb9a7f60070a82b843d74974d270a4d92868ab6f3f.json",
+      "sha256": "f6bc75656a92d68364cee2cb9a7f60070a82b843d74974d270a4d92868ab6f3f",
+      "captured_at": "2026-09-18T20:08:12.464795+00:00",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BANF?period1=946684800&period2=1789761977&interval=1d&events=div%2Csplits",
+      "capture_path_root": "data/historical/capture-workspace"
+    },
+    "F": {
+      "path": "data/scanner/raw/F.8a92537d367ea9af515dba4959a73a903ea7c68311986a41ee736e9126040908.json",
+      "sha256": "8a92537d367ea9af515dba4959a73a903ea7c68311986a41ee736e9126040908",
+      "captured_at": "2026-09-18T20:12:29.240657+00:00",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/F?period1=946684800&period2=1789761977&interval=1d&events=div%2Csplits",
+      "capture_path_root": "data/historical/capture-workspace"
+    },
+    "HRL": {
+      "path": "data/scanner/raw/HRL.6e1f6f5b14f5f95a610bf80a960a881a420bb1f44773115e52bca9b4334d971e.json",
+      "sha256": "6e1f6f5b14f5f95a610bf80a960a881a420bb1f44773115e52bca9b4334d971e",
+      "captured_at": "2026-09-18T20:14:38.583255+00:00",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/HRL?period1=946684800&period2=1789761977&interval=1d&events=div%2Csplits",
+      "capture_path_root": "data/historical/capture-workspace"
+    },
+    "MSFT": {
+      "path": "data/scanner/raw/MSFT.645938fe948c8c1654bd490a0a1143993649b3d568d0a3972c8b907243a80388.json",
+      "sha256": "645938fe948c8c1654bd490a0a1143993649b3d568d0a3972c8b907243a80388",
+      "captured_at": "2026-09-18T20:17:47.707567+00:00",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?period1=946684800&period2=1789761977&interval=1d&events=div%2Csplits",
+      "capture_path_root": "data/historical/capture-workspace"
+    },
+    "SPY": {
+      "path": "data/scanner/raw/SPY.de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66.json",
+      "sha256": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66",
+      "captured_at": "2026-09-18T20:28:27.432092+00:00",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=946684800&interval=1d&events=div%2Csplits&period2=1789763306",
+      "capture_path_root": "data/historical/capture-workspace"
+    }
+  },
+  "source_cache_sha256": "257362db0f5f2eeb5c1ff07ebc0a0f8aadc360740f5bcd0ee1da4caa9c79e27b",
+  "cache_manifest_sha256": "aa6488a63eedc735ffda6839580bfb48c3dc3b7eb4daf53855bca3309ebe960e",
+  "market_arrays_sha256": "f351f1cb73fe73ecb954905ad8847302fee5d08c4e9cf7b4ca0b1172c76b64d8",
+  "prepare_market_sha256": "5b2fdd8d23785a52dd0df22df65af620c9bb59cdd28958b2a2685388f9df0b3d",
+  "credential_amendment_verified": true,
+  "network_requests_by_auditor": 0,
+  "outcome_files_read": 0,
+  "limitations": [
+    "Raw and adjusted source consistency does not establish full corporate-action cash accounting or security lineage.",
+    "Mixed retrospective provider revisions remain; all-adjusted factors are not point-in-time public information.",
+    "T history begins2016; earlier source absence remains explicit, no manufactured prices.",
+    "Retained initial attempt plus unchanged code places credential environment lookup before HTTPclient creation; this is a code/provenance check, not independent network packet evidence."
+  ]
+}

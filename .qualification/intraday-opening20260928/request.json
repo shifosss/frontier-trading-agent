@@ -1,0 +1,139 @@
+{
+  "study": "intraday-opening-source-20260928-v1",
+  "declared_at": "2026-09-28T21:10:21.751129+00:00",
+  "scope": "Historical source capture and coverage only; no strategy outcomes, account calls, orders or new spending",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "F",
+    "T",
+    "HRL",
+    "BANF",
+    "SPY"
+  ],
+  "first_session": "2016-01-04",
+  "last_session": "2025-12-31",
+  "warmup_year": 2016,
+  "evaluation_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "endpoint": "https://data.alpaca.markets/v2/stocks/bars",
+  "method": "GET",
+  "params": {
+    "timeframe": "1Min",
+    "feed": "sip",
+    "adjustment": "raw",
+    "currency": "USD",
+    "sort": "asc",
+    "limit": 10000
+  },
+  "cell": "One exchange session, all seven symbols except explicitly reused fixture symbols",
+  "start": "Inclusive actual exchange open UTC",
+  "end": "Inclusive actual exchange close minus one second UTC",
+  "entity_mapping": "Explicit asof=each session date; vendor underlying-entity mapping, not independently verified issuer ID, dated membership or information vintage",
+  "calendar": {
+    "name": "XNYS",
+    "path": "calendar.json",
+    "sha256": "5ffb2d9814b1f4505586103a60a4336a14689cb3a18e8baa75e43be3319cdcc4",
+    "sessions": 2514,
+    "symbol_sessions": 17598,
+    "expected_minute_slots": 6836760,
+    "provenance": "Installed exchange_calendars US equity schedule with independently checked closure/early-close/DST anchors",
+    "independent_anchors": [
+      "2018-12-05 closed",
+      "2025-01-09 closed",
+      "2024-11-29 closes13:00ET",
+      "2016-03-11/14 UTC open moves14:30 to13:30"
+    ]
+  },
+  "reused": [
+    {
+      "session": "2024-11-29",
+      "symbols": [
+        "AAPL",
+        "MSFT"
+      ],
+      "metadata": ".qualification/hourly-expansion20260919/sip-minute-20241129-regular-early-close.capture.json",
+      "metadata_sha256": "d368fa406910d606dba22d516fb9943b8467a8506392613caa3770a6906659b4",
+      "raw": ".qualification/hourly-expansion20260919/sip-minute-20241129-regular-early-close.53be89a5212a3c9fedf49b98c1e0d00547f74d4e6de52755ae444fbd539cab0f.json",
+      "raw_sha256": "53be89a5212a3c9fedf49b98c1e0d00547f74d4e6de52755ae444fbd539cab0f",
+      "currency": "USD default in original request",
+      "captured_at": "2026-09-19T19:09:30.629042+00:00"
+    }
+  ],
+  "transport": {
+    "minimum_request_interval_seconds": 0.6,
+    "timeout_seconds": 30,
+    "maximum_attempts_per_page": 3,
+    "maximum_pages_per_session": 10,
+    "maximum_total_new_requests": 8000,
+    "retry_http_status": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "retry_wait_seconds": [
+      5,
+      15
+    ],
+    "stop_all_http_status": [
+      401,
+      403
+    ],
+    "resume": "Verify cached successful page bytes/parameters and continue next token; retain every failed/interrupted attempt; never refetch a successful page",
+    "redirects": false,
+    "pagination": "Continue until null token, independent of page row count; repeated token fails cell"
+  },
+  "coverage": {
+    "timestamp_tolerance_seconds": 0,
+    "ohlc_order_tolerance": 0,
+    "missing_minute_tolerance_for_complete_opening_hour": 0,
+    "opening_range": "[session open, session open+60min)",
+    "entry_offset_minutes": 76,
+    "exit_offset_minutes": 196,
+    "required_signal_delay_minutes": 15,
+    "processing_latency_minutes": 1,
+    "all_minutes": "Retain [open,close); exact closing-auction minute excluded; no claim equal to official daily OHLCV",
+    "checks": [
+      "All seven symbol/session cells retained, including empty/error cells",
+      "Unique UTC minute starts and increasing per-symbol source order",
+      "Finite positive OHLC; low<=open,close<=high; nonnegative finite volume and integer trade count",
+      "Separate missing/invalid/duplicate/unaligned/out-of-window records; no fill, interpolation or invented bars",
+      "Report full-session and opening-hour coverage independently, plus exact10:46/12:46 source-bar presence",
+      "Every missing interval retained; absence can reflect no eligible trade, a halt or source failure, never automatically a vendor outage",
+      "Raw hashes, page tokens, request bounds/asof, response dates, captured times and all failures retained"
+    ],
+    "qualification": "Transport completion alone is not usable coverage. Later strategy must abstain on incomplete observed opening hours; entry/exit missingness must not screen earlier signals. No strategy PnL is computed here."
+  },
+  "vintage_limits": [
+    "Today-retrieved provider revisions, not historical publication timestamps",
+    "15-minute restriction plus processing latency implies opening hour cannot act before10:46ET; no real-time SIP entitlement assumed",
+    "Raw same-session units avoid overnight action returns; cross-session volume comparisons still require action-aware research declaration",
+    "Seven surviving names are purposive pilot, not broad historical membership"
+  ],
+  "dependencies": {
+    "exchange-calendars": "4.13.2",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "httpx": "0.28.1",
+    "tzdata": "2026.4"
+  },
+  "primary_source_urls": [
+    "https://docs.alpaca.markets/us/reference/stockbars",
+    "https://docs.alpaca.markets/us/docs/market-data-faq",
+    "https://docs.alpaca.markets/us/docs/about-market-data-api",
+    "https://www.nasdaqtrader.com/TraderNews.aspx?id=UTP2024-16",
+    "https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-announces-closure-its-us-markets-honor-national-day",
+    "https://ir.nasdaq.com/node/108411/pdf"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-29T00:41:26.543517+00:00",
+  "status": "passed_no_material_finding",
+  "reviewer": "independent finish_replay_audit agent",
+  "scope": "ETF prepared sources and causal signals, account adapter economic semantics, focused synthetic verification; no actual account evaluation or outcomes read",
+  "preparation_attempt": ".qualification/etf-reversal20260928/strategy/attempts/a53c9b644fad4734be469fa6854c2e23",
+  "preparation_pointer_sha256": "b719c80c76d89afce864a46e668ec4c60150b8f3d94b1b0214f1a5d29bf8fdb8",
+  "checked_preparation_artifacts": {
+    "definition.json": "9da18db4a982779369a4f3002f03d3fda7f865e236a88e8b494747dc01528e76",
+    "market-arrays.npz": "5bbce6e93eeeb65520e33904ce579653dbd3b59ab1e7db21fa65595458a6c3a4",
+    "market-inputs.json": "0b1fb403c39722557cc6c3633305741e77407f9e259e3f0961fdb1c7b904e59c",
+    "signals.npz": "6097f95a3cfa70c3f0be7a86e91716b50c346bb588734cca9f8f244e313812d8",
+    "source-audits.json": "369aa8051564d8a3f416bd920db0500dbbc1bd76640a8e8fa82a147d323a00c0"
+  },
+  "checked_preparation_inputs": {
+    ".qualification/etf-reversal20260928/strategy/definition.json": "60fb844f622b2513533dc197d813d892a88c109ea16bf9ab447d561ce85ebbd8",
+    ".qualification/etf-reversal20260928/strategy/reasoning.md": "af56960235621ee5e76febba1cbdf87c2d37da50c0c6c0932c052d88c3e8fabf",
+    ".qualification/etf-reversal20260928/strategy/prepare_market.py": "81d38abe41ad2ae1eb271cc44efb9008136e899fa82415c34888fdece1ec9c54",
+    ".qualification/etf-reversal20260928/strategy/signals.py": "24a41e260460743885516df9d62a1ba9bef9f01317cd76bab2b2d219ab5aff2d",
+    ".qualification/etf-reversal20260928/strategy/test_signals.py": "2ee10b3bd506e4f99a6a0a8ddde8d2773bc192c1f2be5bc22469f1b20da1a7dd",
+    ".qualification/etf-reversal20260928/strategy/test_preparation.py": "d37b54fada1c07ed38cf0169dea68e798a37655b456975ae84ed4b6afe5d9936",
+    ".qualification/options-access20260928/etf-source-inventory.json": "bdd3c383214c6a409f095be2c38311e0d3b2e3cda89c17e3cd2ae060ffcfbcd3",
+    "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966",
+    "data/research/universe/snapshots/20260918T201012673731Z-2da49ecfd9bb.json": "d426bedf1b9bdce6ded0adab036d52e7f8bddec9bb1603630b64773f0dac43cc",
+    ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    "src/frontier/historical_data.py": "930923cbbab8c7152b769f76034a7ef502a0fbc163c9c0344be2702a2a19379d",
+    "src/frontier/historical_settlement.py": "fbaaec13818dc3fa5393f4ca94247edee58d642dd50d7eed8ce83565f88d52a8",
+    "src/frontier/scan_data.py": "390b7edc3803961ef241aaa2bb7ad3e83aa46c259c038c0bef3a73733b03633c",
+    "data/historical/capture-workspace/data/scanner/raw/DIA.4ee19a0541c58706473ede35483a7968a70d41b90c66afe1c22b41e0018833d3.json": "4ee19a0541c58706473ede35483a7968a70d41b90c66afe1c22b41e0018833d3",
+    "data/historical/capture-workspace/data/scanner/raw/IWM.da56415aa1422be61183d89d792fba69d2845dc95f0bfe3db949677f025d490e.json": "da56415aa1422be61183d89d792fba69d2845dc95f0bfe3db949677f025d490e",
+    "data/historical/capture-workspace/data/scanner/raw/QQQ.beb06a982b711c116940ebfd228fafb643484ea5bcf4a9c0077622a5e75915db.json": "beb06a982b711c116940ebfd228fafb643484ea5bcf4a9c0077622a5e75915db",
+    "data/historical/capture-workspace/data/scanner/raw/SPY.de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66.json": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66",
+    "data/historical/capture-workspace/data/scanner/raw/XLE.11eb1550373e007725cdf7661d4d44d37b0bdb09b5e69469c0109af747d1499f.json": "11eb1550373e007725cdf7661d4d44d37b0bdb09b5e69469c0109af747d1499f",
+    "data/historical/capture-workspace/data/scanner/raw/XLF.1feb1c5710e9d4c2593439b1e0e1714125957eb9927349824b970bfc4f96cbdb.json": "1feb1c5710e9d4c2593439b1e0e1714125957eb9927349824b970bfc4f96cbdb",
+    "data/historical/capture-workspace/data/scanner/raw/XLI.e65dffe43eda4544df0b29aaf9a8da5908fd6204d1015fbd895641dca1a7f395.json": "e65dffe43eda4544df0b29aaf9a8da5908fd6204d1015fbd895641dca1a7f395",
+    "data/historical/capture-workspace/data/scanner/raw/XLK.0864d0b0441dfa324773ad7484b63ee30736084fe7508a084c70a7fac5b0774f.json": "0864d0b0441dfa324773ad7484b63ee30736084fe7508a084c70a7fac5b0774f",
+    "data/historical/capture-workspace/data/scanner/raw/XLP.14089213eb9c68dda2d4565301e1e0399b26f0fc3446f67027af908d949ad0ed.json": "14089213eb9c68dda2d4565301e1e0399b26f0fc3446f67027af908d949ad0ed",
+    "data/historical/capture-workspace/data/scanner/raw/XLU.4601f1e4d8e17449b1fb46063b7bf3598d511683f191feb8bd7a4ff7bd81ae69.json": "4601f1e4d8e17449b1fb46063b7bf3598d511683f191feb8bd7a4ff7bd81ae69",
+    "data/historical/capture-workspace/data/scanner/raw/XLV.1a526d9a7cc7a5614f00d9cf01a8dad504239f59fc5f264b99661f37a9ec11b9.json": "1a526d9a7cc7a5614f00d9cf01a8dad504239f59fc5f264b99661f37a9ec11b9"
+  },
+  "reviewed_code_sha256": {
+    ".qualification/etf-reversal20260928/strategy/definition.json": "60fb844f622b2513533dc197d813d892a88c109ea16bf9ab447d561ce85ebbd8",
+    ".qualification/etf-reversal20260928/strategy/signals.py": "24a41e260460743885516df9d62a1ba9bef9f01317cd76bab2b2d219ab5aff2d",
+    ".qualification/etf-reversal20260928/strategy/prepare_market.py": "81d38abe41ad2ae1eb271cc44efb9008136e899fa82415c34888fdece1ec9c54",
+    ".qualification/etf-reversal20260928/strategy/test_signals.py": "2ee10b3bd506e4f99a6a0a8ddde8d2773bc192c1f2be5bc22469f1b20da1a7dd",
+    ".qualification/etf-reversal20260928/strategy/test_preparation.py": "d37b54fada1c07ed38cf0169dea68e798a37655b456975ae84ed4b6afe5d9936",
+    ".qualification/etf-reversal20260928/adapter.py": "90c0d37e6b2a995162d4265b20b5ebc5ffe6bf0081d07e3d8615ff187b9150d7",
+    ".qualification/etf-reversal20260928/test_adapter.py": "11042d0e9f7c14e182021883bd4aaa11edc15c7a44a313b4b2946c2f1993cf29",
+    ".qualification/etf-reversal20260928/test_reporting.py": "16f2de3b0aee55cf45f1e830d5ee30546f6915cc520988f3d2e1a3feeb16957c"
+  },
+  "independent_source_checks": {
+    "sessions": 2525,
+    "symbols": 11,
+    "raw_price_volume_values": 138875,
+    "atr_values": 27775,
+    "atr_max_absolute_error": 0.0,
+    "artifact_hashes": 5,
+    "input_hashes": 24,
+    "calendar_signal_clock_values": 2525,
+    "settlement_indices": 2525,
+    "method": "Direct original JSON OHLC/adjusted/volume mapping with independently multiplied reported split factors; explicit true-range rolling arithmetic; original calendar close plus one minute; independently counted T+3/T+2/T+1 exchange sessions excluding bank-only Columbus/Veterans closures."
+  },
+  "independent_signal_checks": {
+    "eligible_OLS_rows": 24630,
+    "method": "Independent two-column numpy least-squares solve of 60 lagged log returns ending two sessions before signal; independent formation residual, trend, hash-control membership and every rank/count comparison. No future labels or account path evaluated.",
+    "max_absolute_errors": {
+      "alpha": 9.942133921692076e-17,
+      "beta": 6.328271240363392e-14,
+      "sigma": 2.5153490401663703e-16,
+      "z": 9.125478150906474e-13
+    },
+    "candidate_counts": {
+      "residual_reversal": 789,
+      "residual_reversal_trend": 595,
+      "matched_count_control": 789
+    }
+  },
+  "focused_tests": {
+    "passed": 17,
+    "seconds": 1.08,
+    "command": "rtk proxy .venv/Scripts/python.exe -B -X utf8 -m pytest .qualification/etf-reversal20260928/strategy/test_signals.py .qualification/etf-reversal20260928/strategy/test_preparation.py .qualification/etf-reversal20260928/test_adapter.py .qualification/etf-reversal20260928/test_reporting.py -q -p no:cacheprovider",
+    "prior_collection_attempt": "Incorrect test_report.py path caused no tests collected; corrected to existing test_reporting.py. No source or test changes."
+  },
+  "additional_independent_synthetic_checks": {
+    "partial_entry_failure": "Second of two required fills missing: incomplete account preserves first filled position and USD1600 cash/settled cash from USD2000; no invented cancellation or liquidation.",
+    "missing_halt_exit": "Missing required mark on accelerated exit session: incomplete account retains five positions and zero cash, preserving the halt and unresolved holdings."
+  },
+  "adapter_review": [
+    "Next-close fill and three-session holding clock agree with the declaration.",
+    "Original fee-inclusive reservation caps future quantity; price decline cannot increase shares.",
+    "Settled cash and receivables are carried continuously across every daily engine chunk.",
+    "Drawdown trigger is observed after close fills and marks; pending reservations are canceled without a cash refund, future signals are disabled locally, and held exits advance to next close.",
+    "The drawdown halt does not guarantee a 30 percent maximum realized loss; adverse next-close gaps and missing prices remain reported.",
+    "No frozen shared signal arrays are mutated by account-local halt state."
+  ],
+  "material_findings": [],
+  "limitations": [
+    "Raw mapping verifies consistency with the retained Yahoo vintage and reported actions, not independently complete corporate-action treatment.",
+    "Adjusted-notional marks remain the declared exploratory convention, not an action-complete broker share/dividend cash ledger.",
+    "The ten-ETF universe is a fixed current-member sample; matched-count control is not exposure-matched.",
+    "Source revisions and close-plus-one-minute availability are declared assumptions, not archival publication proof.",
+    "This review did not independently re-review the cost quote corpus; its separate audit and frozen cost qualification govern fees.",
+    "No actual account performance, source network access, live orders, paper changes or strategy reruns occurred."
+  ],
+  "actual_account_runs": 0,
+  "production_or_frozen_file_edits": 0,
+  "hashed_only_not_scientifically_reviewed": {
+    ".qualification/etf-reversal20260928/run_study.py": "f1043e38a8cea3d4077ec182a6e84f63f6fb27f958f1c027be56f26d93a5f7f9"
+  }
+}

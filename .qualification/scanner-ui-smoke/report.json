@@ -1,0 +1,134 @@
+{
+  "fixture": true,
+  "errors": [],
+  "pages": [
+    {
+      "page": "Scanner",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Study",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Research",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Data",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Experiments",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Operations",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Scanner",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "Study",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "Research",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "Data",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "Experiments",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "Operations",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "Scanner",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Study",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Research",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Data",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Experiments",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Operations",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Scanner",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "Study",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "Research",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "Data",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "Experiments",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "Operations",
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "submitted": [
+    {
+      "refresh": true,
+      "initial_cash_usd": 0,
+      "initial_cash_cad": 700
+    }
+  ],
+  "deep_link_study": "68a78af964aa40b89e6e841d37c793bb"
+}

@@ -1,0 +1,1076 @@
+{
+  "at": "2026-09-29T21:58:39.270437+00:00",
+  "status": "passed",
+  "attempt": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\attempts\\7487019bf15a4eb89e1a3702f5a0f7fb",
+  "definition_sha256": "518039219b5b7be3935fb788f14ffacc23b90cb73033411414d7fb1d70a1859f",
+  "audit_code_sha256": "30855ad34b320e3a3c7e74a4332b1b48b0f0e71026ccde9ffc8cbc2c5d198928",
+  "reused_checker_sha256": "dc6da52f915368c4ebb5f7259d90a53175ff81086eb1978b2dcc51aad5ef872d",
+  "bound_inputs_checked": 18223,
+  "outputs_checked": 111,
+  "declared_accounts": 20,
+  "passed_accounts": 20,
+  "failures": [],
+  "accounts": [
+    {
+      "recipe": "filing_control",
+      "capital": 10000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.022482423759654147,
+        "longest_losing_streak": 5,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.026467855746874047,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 477,
+      "intents": 492,
+      "zero_fill_intents": 15,
+      "daily_rows": 1267,
+      "held_marks": 2385,
+      "source_price_checks": 1938,
+      "period_rows": 333,
+      "net_pnl": -264.6785574687296,
+      "gross_pnl": 1122.6050781917431,
+      "fees": 1387.2836356604728,
+      "ending_equity": 9735.32144253127,
+      "max_drawdown": 0.07549490489043198,
+      "mean_exposure_fraction": 0.13854899897307132,
+      "minimum_settled_cash": 28.457760459560582,
+      "maximum_daily_cash_difference": 1.6370904631912708e-11,
+      "maximum_daily_equity_difference": 1.6370904631912708e-11,
+      "account_sha256": "fa745db3fd8ee55cd4670ee088e5eac5b05c85596a0f670b40926e90edccf794"
+    },
+    {
+      "recipe": "filing_control",
+      "capital": 10000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": -0.00017858686010663316,
+        "worst_return": -0.023086946058541225,
+        "longest_losing_streak": 7,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.20802701170700444,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 469,
+      "intents": 490,
+      "zero_fill_intents": 21,
+      "daily_rows": 1267,
+      "held_marks": 2345,
+      "source_price_checks": 1918,
+      "period_rows": 333,
+      "net_pnl": -2080.2701170700593,
+      "gross_pnl": 1032.9529503450628,
+      "fees": 3113.2230674151224,
+      "ending_equity": 7919.729882929941,
+      "max_drawdown": 0.22563547587819988,
+      "mean_exposure_fraction": 0.1352126448365431,
+      "minimum_settled_cash": 77.4278708976124,
+      "maximum_daily_cash_difference": 1.8189894035458565e-11,
+      "maximum_daily_equity_difference": 1.8189894035458565e-11,
+      "account_sha256": "1a9141f37112d0bda113225c4aaaf84a08b7e5d75587a9e3834c8fe3eff98ae7"
+    },
+    {
+      "recipe": "filing_control",
+      "capital": 2000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.024152893267241238,
+        "longest_losing_streak": 6,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": 0.027925136746653756,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 354,
+      "intents": 433,
+      "zero_fill_intents": 79,
+      "daily_rows": 1267,
+      "held_marks": 1770,
+      "source_price_checks": 1574,
+      "period_rows": 333,
+      "net_pnl": 55.85027349330822,
+      "gross_pnl": 236.51809805735812,
+      "fees": 180.6678245640499,
+      "ending_equity": 2055.850273493308,
+      "max_drawdown": 0.0495672931257497,
+      "mean_exposure_fraction": 0.08736656977495648,
+      "minimum_settled_cash": 232.82312522116086,
+      "maximum_daily_cash_difference": 1.3642420526593924e-12,
+      "maximum_daily_equity_difference": 1.3642420526593924e-12,
+      "account_sha256": "0db8b4da5127f805281cabd34e713685466e923b1647c9c79fdc0f0b341d009d"
+    },
+    {
+      "recipe": "filing_control",
+      "capital": 2000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": -0.0015224821107417408,
+        "worst_return": -0.029230650694030302,
+        "longest_losing_streak": 8,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.5970633690352933,
+      "drawdown_qualification_exceeded": true,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 309,
+      "intents": 403,
+      "zero_fill_intents": 94,
+      "daily_rows": 1267,
+      "held_marks": 1545,
+      "source_price_checks": 1424,
+      "period_rows": 333,
+      "net_pnl": -1194.1267380705883,
+      "gross_pnl": 150.71193318981383,
+      "fees": 1344.8386712604022,
+      "ending_equity": 805.8732619294116,
+      "max_drawdown": 0.5981467179201396,
+      "mean_exposure_fraction": 0.07702280084460716,
+      "minimum_settled_cash": 271.61597930183865,
+      "maximum_daily_cash_difference": 1.8189894035458565e-12,
+      "maximum_daily_equity_difference": 1.8189894035458565e-12,
+      "account_sha256": "29434b74f03de445a8a675315231782d1f71b065d3a73259ba47965032476ab5"
+    },
+    {
+      "recipe": "income_surprise",
+      "capital": 10000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.012577634337366361,
+        "longest_losing_streak": 4,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": 0.028625031733826578,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 185,
+      "intents": 189,
+      "zero_fill_intents": 4,
+      "daily_rows": 1267,
+      "held_marks": 925,
+      "source_price_checks": 748,
+      "period_rows": 333,
+      "net_pnl": 286.2503173382692,
+      "gross_pnl": 858.9532650477471,
+      "fees": 572.7029477094778,
+      "ending_equity": 10286.250317338268,
+      "max_drawdown": 0.04482808230058788,
+      "mean_exposure_fraction": 0.05554218097717335,
+      "minimum_settled_cash": 789.5185117316432,
+      "maximum_daily_cash_difference": 7.275957614183426e-12,
+      "maximum_daily_equity_difference": 7.275957614183426e-12,
+      "account_sha256": "3acef6466c1048484f860966762fc81ce6ead9921d6862ea7e7bd667952d5c62"
+    },
+    {
+      "recipe": "income_surprise",
+      "capital": 10000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.014299720551743778,
+        "longest_losing_streak": 6,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.04628304348837209,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 183,
+      "intents": 189,
+      "zero_fill_intents": 6,
+      "daily_rows": 1267,
+      "held_marks": 915,
+      "source_price_checks": 744,
+      "period_rows": 333,
+      "net_pnl": -462.8304348837223,
+      "gross_pnl": 819.9942509613094,
+      "fees": 1282.8246858450318,
+      "ending_equity": 9537.169565116277,
+      "max_drawdown": 0.07326412145672467,
+      "mean_exposure_fraction": 0.055194739146705446,
+      "minimum_settled_cash": 872.2693941779323,
+      "maximum_daily_cash_difference": 5.4569682106375694e-12,
+      "maximum_daily_equity_difference": 5.4569682106375694e-12,
+      "account_sha256": "f443b5ac77a6fd5caa89f340ace8d2e5e0cf718e1b8cd69b276b957616c00d78"
+    },
+    {
+      "recipe": "income_surprise",
+      "capital": 2000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.010129680634364924,
+        "longest_losing_streak": 5,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": 0.04609544704904689,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 119,
+      "intents": 149,
+      "zero_fill_intents": 30,
+      "daily_rows": 1267,
+      "held_marks": 595,
+      "source_price_checks": 536,
+      "period_rows": 333,
+      "net_pnl": 92.19089409809405,
+      "gross_pnl": 154.14594075982612,
+      "fees": 61.955046661732055,
+      "ending_equity": 2092.190894098094,
+      "max_drawdown": 0.02608955007376046,
+      "mean_exposure_fraction": 0.030170647084798895,
+      "minimum_settled_cash": 670.0240416458503,
+      "maximum_daily_cash_difference": 6.821210263296962e-13,
+      "maximum_daily_equity_difference": 6.821210263296962e-13,
+      "account_sha256": "7006f72f54cca13d3c22ed28b90bdd266556e2aa1e9891db85c9ae85d5a7858a"
+    },
+    {
+      "recipe": "income_surprise",
+      "capital": 2000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.013646872333764493,
+        "longest_losing_streak": 6,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.18583932456832086,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 115,
+      "intents": 148,
+      "zero_fill_intents": 33,
+      "daily_rows": 1267,
+      "held_marks": 575,
+      "source_price_checks": 526,
+      "period_rows": 333,
+      "net_pnl": -371.6786491366413,
+      "gross_pnl": 140.5612240083664,
+      "fees": 512.2398731450077,
+      "ending_equity": 1628.3213508633587,
+      "max_drawdown": 0.18583932456832064,
+      "mean_exposure_fraction": 0.02902679133073409,
+      "minimum_settled_cash": 710.9852578694308,
+      "maximum_daily_cash_difference": 9.094947017729282e-13,
+      "maximum_daily_equity_difference": 1.1368683772161603e-12,
+      "account_sha256": "dd34d0677136253174c414f5ac177b4bd45bd9d5798807595e2455588ae19ab8"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "capital": 10000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.012214222719954981,
+        "longest_losing_streak": 4,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.008403064955953998,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 64,
+      "intents": 66,
+      "zero_fill_intents": 2,
+      "daily_rows": 1267,
+      "held_marks": 320,
+      "source_price_checks": 260,
+      "period_rows": 333,
+      "net_pnl": -84.03064955953722,
+      "gross_pnl": 113.09798755861588,
+      "fees": 197.1286371181531,
+      "ending_equity": 9915.969350440462,
+      "max_drawdown": 0.037952940648120714,
+      "mean_exposure_fraction": 0.01959960347582512,
+      "minimum_settled_cash": 4841.543232672132,
+      "maximum_daily_cash_difference": 5.4569682106375694e-12,
+      "maximum_daily_equity_difference": 5.4569682106375694e-12,
+      "account_sha256": "b4bee715508beac4a5ad391010629adc6cccc53841bc6b99baf10bd5f422677c"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "capital": 10000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.012497132322426552,
+        "longest_losing_streak": 4,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.03885042959272467,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 63,
+      "intents": 66,
+      "zero_fill_intents": 3,
+      "daily_rows": 1267,
+      "held_marks": 315,
+      "source_price_checks": 258,
+      "period_rows": 333,
+      "net_pnl": -388.5042959272394,
+      "gross_pnl": 55.32415347758565,
+      "fees": 443.82844940482505,
+      "ending_equity": 9611.49570407276,
+      "max_drawdown": 0.05323465664792848,
+      "mean_exposure_fraction": 0.01932794495442196,
+      "minimum_settled_cash": 4743.505305470222,
+      "maximum_daily_cash_difference": 7.275957614183426e-12,
+      "maximum_daily_equity_difference": 7.275957614183426e-12,
+      "account_sha256": "8ef7062948de6f9af35b768909858db355b0ba8ab4821bd83e158bf055b1af6f"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "capital": 2000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.005867711384990648,
+        "longest_losing_streak": 4,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.0018916411382029485,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 33,
+      "intents": 44,
+      "zero_fill_intents": 11,
+      "daily_rows": 1267,
+      "held_marks": 165,
+      "source_price_checks": 154,
+      "period_rows": 333,
+      "net_pnl": -3.783282276405732,
+      "gross_pnl": 13.75971726065464,
+      "fees": 17.54299953706037,
+      "ending_equity": 1996.2167177235942,
+      "max_drawdown": 0.01958418860125022,
+      "mean_exposure_fraction": 0.008709330652642937,
+      "minimum_settled_cash": 1307.371097616083,
+      "maximum_daily_cash_difference": 4.547473508864641e-13,
+      "maximum_daily_equity_difference": 4.547473508864641e-13,
+      "account_sha256": "258addcb20504660d0a38144a83a03e46fe8838bddf95f021a6d17cc2f1dd022"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "capital": 2000,
+      "planner_projections_checked": 0,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.009574813827896489,
+        "longest_losing_streak": 3,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.06227952241976442,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 32,
+      "intents": 44,
+      "zero_fill_intents": 12,
+      "daily_rows": 1267,
+      "held_marks": 160,
+      "source_price_checks": 152,
+      "period_rows": 333,
+      "net_pnl": -124.55904483952807,
+      "gross_pnl": 20.02973471122372,
+      "fees": 144.58877955075178,
+      "ending_equity": 1875.440955160472,
+      "max_drawdown": 0.06317311100708078,
+      "mean_exposure_fraction": 0.008649384590291295,
+      "minimum_settled_cash": 1232.5423552060065,
+      "maximum_daily_cash_difference": 9.094947017729282e-13,
+      "maximum_daily_equity_difference": 9.094947017729282e-13,
+      "account_sha256": "960eca372629ceb8a7b8e01059e90c19d43af95b9f819192f9ed0a45ed44ae52"
+    },
+    {
+      "recipe": "ridge",
+      "capital": 10000,
+      "planner_projections_checked": 1068,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.011667044535200066,
+        "longest_losing_streak": 3,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.0016670836118771737,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 63,
+      "intents": 65,
+      "zero_fill_intents": 2,
+      "daily_rows": 1267,
+      "held_marks": 315,
+      "source_price_checks": 256,
+      "period_rows": 333,
+      "net_pnl": -16.670836118783612,
+      "gross_pnl": 171.86697903218746,
+      "fees": 188.53781515097108,
+      "ending_equity": 9983.329163881217,
+      "max_drawdown": 0.04503718348886909,
+      "mean_exposure_fraction": 0.018709784325204464,
+      "minimum_settled_cash": 1899.3238802237909,
+      "maximum_daily_cash_difference": 1.0913936421275139e-11,
+      "maximum_daily_equity_difference": 1.2732925824820995e-11,
+      "account_sha256": "a1a66f589c59acf6cc8a04c68f93da68e2fd26ca437bc116f4e3c967ed49543a"
+    },
+    {
+      "recipe": "ridge",
+      "capital": 10000,
+      "planner_projections_checked": 1071,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.01203021800906856,
+        "longest_losing_streak": 3,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.0008520625417862693,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 20,
+      "intents": 21,
+      "zero_fill_intents": 1,
+      "daily_rows": 1267,
+      "held_marks": 100,
+      "source_price_checks": 82,
+      "period_rows": 333,
+      "net_pnl": -8.520625417873015,
+      "gross_pnl": 147.60201832880657,
+      "fees": 156.12264374667959,
+      "ending_equity": 9991.479374582126,
+      "max_drawdown": 0.021733887980693978,
+      "mean_exposure_fraction": 0.007507803017366774,
+      "minimum_settled_cash": 3659.0951682548,
+      "maximum_daily_cash_difference": 1.0913936421275139e-11,
+      "maximum_daily_equity_difference": 1.0913936421275139e-11,
+      "account_sha256": "610510ec073e157f1e47c64be46655c9481cd26ad23295c919f3ce6b9bf40ccd"
+    },
+    {
+      "recipe": "ridge",
+      "capital": 2000,
+      "planner_projections_checked": 836,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.010956688732194575,
+        "longest_losing_streak": 3,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": 0.012008194218405821,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 52,
+      "intents": 56,
+      "zero_fill_intents": 4,
+      "daily_rows": 1267,
+      "held_marks": 260,
+      "source_price_checks": 216,
+      "period_rows": 333,
+      "net_pnl": 24.016388436810598,
+      "gross_pnl": 48.68167191192616,
+      "fees": 24.66528347511556,
+      "ending_equity": 2024.0163884368105,
+      "max_drawdown": 0.02898547537309526,
+      "mean_exposure_fraction": 0.012134809911173048,
+      "minimum_settled_cash": 853.6943293622692,
+      "maximum_daily_cash_difference": 9.094947017729282e-13,
+      "maximum_daily_equity_difference": 1.1368683772161603e-12,
+      "account_sha256": "4b1ec3abdcc4508976e0747549acfdfd99057844949cec54c76fd440e41bb701"
+    },
+    {
+      "recipe": "ridge",
+      "capital": 2000,
+      "planner_projections_checked": 841,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.0013338790817261081,
+        "longest_losing_streak": 2,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.002462339080810616,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 1,
+      "intents": 4,
+      "zero_fill_intents": 3,
+      "daily_rows": 1267,
+      "held_marks": 5,
+      "source_price_checks": 10,
+      "period_rows": 333,
+      "net_pnl": -4.924678161621091,
+      "gross_pnl": -0.41999816894531,
+      "fees": 4.504679992675781,
+      "ending_equity": 1995.0753218383788,
+      "max_drawdown": 0.004866701459884326,
+      "mean_exposure_fraction": 0.00025617338586595226,
+      "minimum_settled_cash": 1868.8722427520752,
+      "maximum_daily_cash_difference": 0.0,
+      "maximum_daily_equity_difference": 0.0,
+      "account_sha256": "e2466cc5779382ac18ec6a9e8baca58a705ab5713ea530290fe110a7bcedf8ed"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "capital": 10000,
+      "planner_projections_checked": 993,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.015143220102973642,
+        "longest_losing_streak": 6,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": 0.013825794669579228,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 150,
+      "intents": 156,
+      "zero_fill_intents": 6,
+      "daily_rows": 1267,
+      "held_marks": 750,
+      "source_price_checks": 612,
+      "period_rows": 333,
+      "net_pnl": 138.25794669578585,
+      "gross_pnl": 598.9324918037169,
+      "fees": 460.67454510793095,
+      "ending_equity": 10138.257946695785,
+      "max_drawdown": 0.052788967833216294,
+      "mean_exposure_fraction": 0.0457251054299548,
+      "minimum_settled_cash": 870.394035794261,
+      "maximum_daily_cash_difference": 7.275957614183426e-12,
+      "maximum_daily_equity_difference": 7.275957614183426e-12,
+      "account_sha256": "a824863726cc43eac5929fca5a7e6f36f0304c173585a108445c9e45d15eadc8"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "capital": 10000,
+      "planner_projections_checked": 1039,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.01432245655508868,
+        "longest_losing_streak": 6,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.06920048854312044,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 89,
+      "intents": 97,
+      "zero_fill_intents": 8,
+      "daily_rows": 1267,
+      "held_marks": 445,
+      "source_price_checks": 372,
+      "period_rows": 333,
+      "net_pnl": -692.0048854312053,
+      "gross_pnl": -41.3802054424676,
+      "fees": 650.6246799887376,
+      "ending_equity": 9307.995114568796,
+      "max_drawdown": 0.07133572920786702,
+      "mean_exposure_fraction": 0.029983398473320665,
+      "minimum_settled_cash": 849.5678608904263,
+      "maximum_daily_cash_difference": 5.4569682106375694e-12,
+      "maximum_daily_equity_difference": 5.4569682106375694e-12,
+      "account_sha256": "432e2abc62feaf02261dc9254c0dd17f4d9a4af8f4c2bede09cb20ce57766e3d"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "capital": 2000,
+      "planner_projections_checked": 819,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.009610226168450975,
+        "longest_losing_streak": 4,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": 0.011126206471701261,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "proportional",
+      "status": "passed",
+      "completed_trades": 105,
+      "intents": 127,
+      "zero_fill_intents": 22,
+      "daily_rows": 1267,
+      "held_marks": 525,
+      "source_price_checks": 464,
+      "period_rows": 333,
+      "net_pnl": 22.252412943400255,
+      "gross_pnl": 74.85716728545306,
+      "fees": 52.6047543420528,
+      "ending_equity": 2022.2524129434003,
+      "max_drawdown": 0.03365618542741711,
+      "mean_exposure_fraction": 0.026069096697995307,
+      "minimum_settled_cash": 389.37274376488494,
+      "maximum_daily_cash_difference": 2.2737367544323206e-12,
+      "maximum_daily_equity_difference": 2.2737367544323206e-12,
+      "account_sha256": "d547d9f326443f22848d024d15791c5908e90be9da88f37568e34f12f1c7bd74"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "capital": 2000,
+      "planner_projections_checked": 840,
+      "weekly_objective": {
+        "status": "complete",
+        "count": 264,
+        "targets": {
+          "0.05": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.1": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          },
+          "0.15": {
+            "hits": 0,
+            "denominator": 264,
+            "fraction": 0.0
+          }
+        },
+        "median_return": 0.0,
+        "worst_return": -0.004383787782235471,
+        "longest_losing_streak": 2,
+        "all_idle_and_losing_weeks_retained": true
+      },
+      "account_total_return": -0.0054323773940123665,
+      "drawdown_qualification_exceeded": false,
+      "cost_profile": "moomoo_ca_us",
+      "status": "passed",
+      "completed_trades": 2,
+      "intents": 7,
+      "zero_fill_intents": 5,
+      "daily_rows": 1267,
+      "held_marks": 10,
+      "source_price_checks": 18,
+      "period_rows": 333,
+      "net_pnl": -10.8647547880247,
+      "gross_pnl": -0.25999480173706,
+      "fees": 10.60475998628764,
+      "ending_equity": 1989.1352452119752,
+      "max_drawdown": 0.005528458752494192,
+      "mean_exposure_fraction": 0.0012997459166005567,
+      "minimum_settled_cash": 1622.6936150901752,
+      "maximum_daily_cash_difference": 2.2737367544323206e-13,
+      "maximum_daily_equity_difference": 2.2737367544323206e-13,
+      "account_sha256": "3a3f5ade626d5b357d26f68f27475b5a3d4c1ae75c66ab0df96a3deb0934001b"
+    }
+  ],
+  "total_trades_checked": 2885,
+  "daily_rows_checked": 25340,
+  "reference_checks": [
+    {
+      "capital": 10000,
+      "total_return": 0.9817875491260253,
+      "daily_rows": 1267,
+      "convention": "Costless fully invested SPY adjusted-price reference; fractional notional, no broker cash/dividend ledger or tax/FX/fees"
+    },
+    {
+      "capital": 2000,
+      "total_return": 0.9817875491260255,
+      "daily_rows": 1267,
+      "convention": "Costless fully invested SPY adjusted-price reference; fractional notional, no broker cash/dividend ledger or tax/FX/fees"
+    }
+  ],
+  "mutation_probes": [
+    {
+      "mutation": "entry_fee",
+      "detected": true
+    },
+    {
+      "mutation": "reserved_cash",
+      "detected": true
+    },
+    {
+      "mutation": "quantity",
+      "detected": true
+    },
+    {
+      "mutation": "removed idle week",
+      "detected": true
+    }
+  ],
+  "limits": [
+    "No simulator/policy/model fitting imports. Reused prior independent Decimal fee sizing and banking calendar routines.",
+    "Source-price check uses previously independently checked frozen market arrays; every bound input identity checked afresh.",
+    "Recorded candidate/planner proposals checked, but full omitted-candidate completeness is not independently rerun.",
+    "40bps is a sensitivity plus current tariff counterfactual, not verified fills; taxes, FX and full corporate-action cash ledger excluded.",
+    "Account drawdown is a qualification limit, not an automatic halt in this frozen design. Passing arithmetic is not economic qualification."
+  ]
+}

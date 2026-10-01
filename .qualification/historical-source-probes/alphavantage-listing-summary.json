@@ -1,0 +1,41 @@
+{
+  "source_url": "https://cdn.alphavantage.co/mcp-responses/1789761864-87c4e8f3.csv",
+  "requested_date": "2020-01-01",
+  "requested_state": "delisted",
+  "rows": 3762,
+  "sha256": "87c4e8f33411ee725e83fc3ec191b896b60a00ecc1a855681ce19ead99e126fc",
+  "headers": [
+    "symbol",
+    "name",
+    "exchange",
+    "assetType",
+    "ipoDate",
+    "delistingDate",
+    "status"
+  ],
+  "status_counts": {
+    "Delisted": 3762
+  },
+  "max_delisting_date": "2019-12-31",
+  "first_rows": [
+    {
+      "symbol": "AA-W",
+      "name": "Alcoa Corporation When Issued",
+      "exchange": "NYSE",
+      "assetType": "Stock",
+      "ipoDate": "2016-10-18",
+      "delistingDate": "2016-11-08",
+      "status": "Delisted"
+    },
+    {
+      "symbol": "AAAP",
+      "name": "Advanced Accelerator Applications S.A.",
+      "exchange": "NASDAQ",
+      "assetType": "Stock",
+      "ipoDate": "2015-11-11",
+      "delistingDate": "2018-02-20",
+      "status": "Delisted"
+    }
+  ],
+  "path": ".qualification\\historical-source-probes\\alphavantage-delisted-asof-2020-01-01.csv"
+}

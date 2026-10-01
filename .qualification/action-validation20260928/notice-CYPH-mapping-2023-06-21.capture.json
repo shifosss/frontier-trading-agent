@@ -1,0 +1,16 @@
+{
+  "symbol": "CYPH-mapping",
+  "effective_sessions": "2023-06-21",
+  "url": "https://www.sec.gov/Archives/edgar/data/1509745/000110465925109820/tm2530735d1_8k.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:04.329479+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1509745/000110465925109820/tm2530735d1_8k.htm",
+  "redirects": [],
+  "sha256": "74abc634791a0a0f47be2753f08c2801978a35032e10d9876cb623ed6c4d32d6",
+  "raw_file": "notice-CYPH-mapping-2023-06-21.74abc634791a0a0f47be2753f08c2801978a35032e10d9876cb623ed6c4d32d6.raw.html",
+  "bytes": 67585,
+  "captured_at": "2026-09-28T19:14:04.712246+00:00",
+  "text_file": "notice-CYPH-mapping-2023-06-21.text.txt"
+}

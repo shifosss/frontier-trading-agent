@@ -1,0 +1,39 @@
+{
+  "commit": "6c2ac7f",
+  "full_suite": {
+    "passed": 497,
+    "warnings": 96,
+    "seconds": 138.37
+  },
+  "focused_tests_passed": 117,
+  "cross_api_cli_tests_failed_before": 6,
+  "lint": "passed",
+  "format": "passed for five new or modified replay/cost/test files",
+  "review": "No important defects; inaccurate fee docstring corrected without arithmetic changes.",
+  "model_dependencies_unchanged": {
+    "candidate_daily.py": true,
+    "daily_policy.py": true,
+    "ensemble_features.py": true,
+    "ensemble_models.py": true,
+    "ensemble_study.py": true,
+    "historical_data.py": true,
+    "historical_lab.py": true,
+    "historical_study.py": true,
+    "model_artifact.py": true,
+    "short_horizon_study.py": true,
+    "strategy_study.py": true
+  },
+  "paper_sources_unchanged": {
+    "operator.py": true,
+    "operator_store.py": true,
+    "paper_risk.py": true,
+    "paper_broker.py": true,
+    "swing_policy.py": true,
+    "scan_data.py": true,
+    "sources.py": true
+  },
+  "equivalent_numeric_identities": "40 and40.0;0 and-0.0 verified across3profiles",
+  "archive_sha256": "60a351cd3331d7c23ba64129fce68db8646be14fb9780d0070422647b7cddcc7",
+  "research_automation": "ACTIVE; weekdays09:35/17:35Toronto",
+  "economic_promotion": false
+}

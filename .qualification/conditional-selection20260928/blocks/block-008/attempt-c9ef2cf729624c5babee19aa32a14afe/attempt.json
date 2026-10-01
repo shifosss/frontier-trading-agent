@@ -1,0 +1,11 @@
+{
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "bounds": {
+    "fit_start": 2770,
+    "calibration_start": 3274,
+    "test_start": 3526,
+    "test_end": 3777
+  },
+  "at": "2026-09-28T20:36:56.545336+00:00",
+  "status": "started"
+}

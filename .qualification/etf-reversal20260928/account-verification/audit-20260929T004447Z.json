@@ -1,0 +1,826 @@
+{
+  "at": "2026-09-29T00:44:47.659424+00:00",
+  "status": "passed",
+  "attempt": ".qualification/etf-reversal20260928/attempts/42a36d81473b47e89fafe5d8a5ce38ec",
+  "definition_sha256": "c3cf9398debf716a0796f03b863c1c483c9356f5738053704efeb0cee692a6e4",
+  "planned_accounts": 12,
+  "passed_accounts": 12,
+  "failures": [],
+  "accounts": [
+    {
+      "status": "passed",
+      "arm": "residual_reversal",
+      "capital": 10000,
+      "cost_profile": "wealthsimple_usd",
+      "trades": 535,
+      "intents": 538,
+      "daily_rows": 2274,
+      "held_marks_checked": 1605,
+      "source_price_checks": 1608,
+      "gross_pnl": 1016.9266196804883,
+      "net_pnl": -91.03666963985523,
+      "fees": 1107.9632893203436,
+      "ending_equity": 9908.963330360144,
+      "max_drawdown": 0.1022086858042226,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05631295137240122,
+        "longest_losing_week_streak": 6
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05631295137240122,
+        "longest_losing_week_streak": 6
+      },
+      "maximum_daily_absolute_error": 1.6370904631912708e-11,
+      "account_sha256": "4431bdae6d47ae8fcb38227fc8aad10e12d2c2cc1281f87b73c6c134a9986e5c"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal",
+      "capital": 10000,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 534,
+      "intents": 538,
+      "daily_rows": 2274,
+      "held_marks_checked": 1602,
+      "source_price_checks": 1606,
+      "gross_pnl": 881.6585786009117,
+      "net_pnl": -2238.255164572007,
+      "fees": 3119.9137431729187,
+      "ending_equity": 7761.744835427993,
+      "max_drawdown": 0.22603395433788498,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05879837523277631,
+        "longest_losing_week_streak": 7
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05879837523277631,
+        "longest_losing_week_streak": 7
+      },
+      "maximum_daily_absolute_error": 1.7280399333685637e-11,
+      "account_sha256": "462ba066e5560ee67d68e61dd270cab843d7641622270756e3b4b263e0579240"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal",
+      "capital": 2000,
+      "cost_profile": "wealthsimple_usd",
+      "trades": 415,
+      "intents": 479,
+      "daily_rows": 2274,
+      "held_marks_checked": 1245,
+      "source_price_checks": 1309,
+      "gross_pnl": 93.57863988622012,
+      "net_pnl": -53.34269890555368,
+      "fees": 146.9213387917738,
+      "ending_equity": 1946.6573010944462,
+      "max_drawdown": 0.08413543895091613,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.050753515659125004,
+        "longest_losing_week_streak": 4
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.050753515659125004,
+        "longest_losing_week_streak": 4
+      },
+      "maximum_daily_absolute_error": 5.002220859751105e-12,
+      "account_sha256": "0cdeea6b3d2278107bf025f25a41cf9d9d5b12b5614c9a643c45411dda2ce56f"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal",
+      "capital": 2000,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 132,
+      "intents": 164,
+      "daily_rows": 2274,
+      "held_marks_checked": 395,
+      "source_price_checks": 428,
+      "gross_pnl": -27.106124678950955,
+      "net_pnl": -598.8679449772951,
+      "fees": 571.7618202983441,
+      "ending_equity": 1401.132055022705,
+      "max_drawdown": 0.3000950095450782,
+      "halt_session": "2019-06-26",
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0196083140353136,
+        "longest_losing_week_streak": 18
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0196083140353136,
+        "longest_losing_week_streak": 18
+      },
+      "maximum_daily_absolute_error": 1.3642420526593924e-12,
+      "account_sha256": "ef15589870fe5d4b2195efb6524120532263b756cff542122a2e26554a88123d"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal_trend",
+      "capital": 10000,
+      "cost_profile": "wealthsimple_usd",
+      "trades": 427,
+      "intents": 428,
+      "daily_rows": 2274,
+      "held_marks_checked": 1281,
+      "source_price_checks": 1282,
+      "gross_pnl": 434.0899984984583,
+      "net_pnl": -523.975518364124,
+      "fees": 958.0655168625823,
+      "ending_equity": 9476.024481635875,
+      "max_drawdown": 0.0924544775137921,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05593881245934662,
+        "longest_losing_week_streak": 6
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05593881245934662,
+        "longest_losing_week_streak": 6
+      },
+      "maximum_daily_absolute_error": 1.0913936421275139e-11,
+      "account_sha256": "60536e2965afb90876985fb7770e9b27a1c8997564b4c623842c4accf49370f0"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal_trend",
+      "capital": 10000,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 427,
+      "intents": 428,
+      "daily_rows": 2274,
+      "held_marks_checked": 1281,
+      "source_price_checks": 1282,
+      "gross_pnl": 444.02315532663226,
+      "net_pnl": -2142.3216614316093,
+      "fees": 2586.3448167582414,
+      "ending_equity": 7857.678338568391,
+      "max_drawdown": 0.2165001202895772,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05865273693557349,
+        "longest_losing_week_streak": 6
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05865273693557349,
+        "longest_losing_week_streak": 6
+      },
+      "maximum_daily_absolute_error": 1.4551915228366852e-11,
+      "account_sha256": "9d12839ab8fcf7ca84173aa5add6af35811c37f4c49bd3d35348abf07505ac36"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal_trend",
+      "capital": 2000,
+      "cost_profile": "wealthsimple_usd",
+      "trades": 339,
+      "intents": 385,
+      "daily_rows": 2274,
+      "held_marks_checked": 1017,
+      "source_price_checks": 1063,
+      "gross_pnl": 16.03091960751024,
+      "net_pnl": -113.21867342358028,
+      "fees": 129.2495930310905,
+      "ending_equity": 1886.7813265764198,
+      "max_drawdown": 0.07796976430181979,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.050858706112199004,
+        "longest_losing_week_streak": 4
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.050858706112199004,
+        "longest_losing_week_streak": 4
+      },
+      "maximum_daily_absolute_error": 3.410605131648481e-12,
+      "account_sha256": "1859b6b6df93f588dfbba77592868fbd1e3a83f0e085e7290c9964e4233a083b"
+    },
+    {
+      "status": "passed",
+      "arm": "residual_reversal_trend",
+      "capital": 2000,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 136,
+      "intents": 163,
+      "daily_rows": 2274,
+      "held_marks_checked": 406,
+      "source_price_checks": 435,
+      "gross_pnl": -8.45257309371638,
+      "net_pnl": -599.8591536019835,
+      "fees": 591.4065805082672,
+      "ending_equity": 1400.1408463980165,
+      "max_drawdown": 0.30023318208450844,
+      "halt_session": "2020-01-31",
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0196083140353136,
+        "longest_losing_week_streak": 18
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0196083140353136,
+        "longest_losing_week_streak": 18
+      },
+      "maximum_daily_absolute_error": 1.3642420526593924e-12,
+      "account_sha256": "b7c58882293594ea859eaa8cbd2bc02d98d06e1669e2ba8b7b35be64261e8b8f"
+    },
+    {
+      "status": "passed",
+      "arm": "matched_count_control",
+      "capital": 10000,
+      "cost_profile": "wealthsimple_usd",
+      "trades": 643,
+      "intents": 645,
+      "daily_rows": 2274,
+      "held_marks_checked": 1929,
+      "source_price_checks": 1931,
+      "gross_pnl": 1783.818713289331,
+      "net_pnl": 415.40892918180845,
+      "fees": 1368.4097841075225,
+      "ending_equity": 10415.408929181809,
+      "max_drawdown": 0.0892427918254256,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0480293796972836,
+        "longest_losing_week_streak": 5
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0480293796972836,
+        "longest_losing_week_streak": 5
+      },
+      "maximum_daily_absolute_error": 1.6370904631912708e-11,
+      "account_sha256": "9e4d7fc9300623d3a0304fff8d7f093e6e4cce7b6c9b34e3f58eed99d61210a9"
+    },
+    {
+      "status": "passed",
+      "arm": "matched_count_control",
+      "capital": 10000,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 641,
+      "intents": 646,
+      "daily_rows": 2274,
+      "held_marks_checked": 1923,
+      "source_price_checks": 1928,
+      "gross_pnl": 1531.2760151654786,
+      "net_pnl": -2218.068866975786,
+      "fees": 3749.3448821412644,
+      "ending_equity": 7781.9311330242135,
+      "max_drawdown": 0.23795266537430182,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0501347924282034,
+        "longest_losing_week_streak": 8
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0501347924282034,
+        "longest_losing_week_streak": 8
+      },
+      "maximum_daily_absolute_error": 1.1823431123048067e-11,
+      "account_sha256": "e33e1e31f9b72a43370c38d572b3259ffd7414e84a141d9bfd589185bf9b10cc"
+    },
+    {
+      "status": "passed",
+      "arm": "matched_count_control",
+      "capital": 2000,
+      "cost_profile": "wealthsimple_usd",
+      "trades": 486,
+      "intents": 575,
+      "daily_rows": 2274,
+      "held_marks_checked": 1458,
+      "source_price_checks": 1547,
+      "gross_pnl": 137.96385681158654,
+      "net_pnl": -36.41999600102796,
+      "fees": 174.3838528126145,
+      "ending_equity": 1963.580003998972,
+      "max_drawdown": 0.07481851483446456,
+      "halt_session": null,
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.04477554880485468,
+        "longest_losing_week_streak": 5
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.04477554880485468,
+        "longest_losing_week_streak": 5
+      },
+      "maximum_daily_absolute_error": 2.9558577807620168e-12,
+      "account_sha256": "0eac859f6f17549decdb6ea622458aa6f9c30e44503966bd3326fb72f94978ae"
+    },
+    {
+      "status": "passed",
+      "arm": "matched_count_control",
+      "capital": 2000,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 147,
+      "intents": 166,
+      "daily_rows": 2274,
+      "held_marks_checked": 441,
+      "source_price_checks": 460,
+      "gross_pnl": 37.00484787413197,
+      "net_pnl": -600.9039357567382,
+      "fees": 637.9087836308702,
+      "ending_equity": 1399.0960642432617,
+      "max_drawdown": 0.30045196787836914,
+      "halt_session": "2019-03-19",
+      "weekly_targets": {
+        "weeks": 473,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.024074997899536266,
+        "longest_losing_week_streak": 16
+      },
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.024074997899536266,
+        "longest_losing_week_streak": 16
+      },
+      "maximum_daily_absolute_error": 1.5916157281026244e-12,
+      "account_sha256": "cd62d012f398b0517da79e4c11de9fda3c0bbf021efe91c8d9d7546ad997f3db"
+    }
+  ],
+  "trades_checked": 4862,
+  "daily_rows_checked": 27288,
+  "frozen_input_files_checked": 146,
+  "frozen_output_files_checked": 15,
+  "independence": "No simulator/policy/strategy imports; prior independent banking-date helpers reused; Decimal fee, quantity, cash, mark and reservation arithmetic.",
+  "limits": [
+    "Source panel and causal signal derivation reviewed separately; this auditor binds their frozen arrays/rankings.",
+    "Adjusted-notional marks preserve synthetic action convention, not actual broker share/cash action accounting.",
+    "Current tariff counterfactual plus15bps scenario excludes fixed account/funding/personal tax and unverified execution costs.",
+    "Passing ledger arithmetic does not qualify profitability or any live/paper promotion."
+  ]
+}

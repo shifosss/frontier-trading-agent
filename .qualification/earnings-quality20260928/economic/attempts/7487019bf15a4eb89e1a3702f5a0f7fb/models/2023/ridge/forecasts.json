@@ -1,0 +1,6966 @@
+{
+  "family": "ridge",
+  "test_decision_year": 2023,
+  "model_attempt_id": "2fdd9ea5a4a44a438df30327ef84dfbf",
+  "forecasts": [
+    {
+      "event_id": "0000016918:0000016918-23-000006",
+      "cik": "0000016918",
+      "prepared_row_sha256": "ffeccad19be850de7b72223c057ca9a0a2b88f8e6673074f9f0bd3f5c7a6a35c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.004646367372877406,
+        0.034818433146738034
+      ],
+      "uncalibrated": [
+        -0.004646367372877406,
+        0.034818433146738034
+      ],
+      "corrected": [
+        0.004841979176012529,
+        0.031111356938467248
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          3
+        ],
+        "corrected": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "event_id": "0000023217:0001437749-23-000496",
+      "cik": "0000023217",
+      "prepared_row_sha256": "c6d946ca335178db1eccfb6b8eef83d983bde22697b45862d9c423437f988493",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0009851149037277394,
+        0.03323164245742919
+      ],
+      "uncalibrated": [
+        -0.0009851149037277394,
+        0.03323164245742919
+      ],
+      "corrected": [
+        0.008503231645162196,
+        0.029524566249158404
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          1
+        ],
+        "corrected": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0001013237:0001013237-23-000006",
+      "cik": "0001013237",
+      "prepared_row_sha256": "0517aedc24e40d29e9dc97dea4ccae2c2e98bfe5db50ad75db1fda7837524f5d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00154908881457594,
+        0.030484713714391688
+      ],
+      "uncalibrated": [
+        0.00154908881457594,
+        0.030484713714391688
+      ],
+      "corrected": [
+        0.011037435363465875,
+        0.026777637506120902
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000066382:0000066382-23-000005",
+      "cik": "0000066382",
+      "prepared_row_sha256": "75abbbabd73a245278c10c0bf812fe67dedbde144b83946034bb0c06979120e7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003430962435782752,
+        0.028798050122684753
+      ],
+      "uncalibrated": [
+        0.003430962435782752,
+        0.028798050122684753
+      ],
+      "corrected": [
+        0.012919308984672688,
+        0.025090973914413967
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000896156:0001437749-23-001774",
+      "cik": "0000896156",
+      "prepared_row_sha256": "ac289c98522f40f5c960c57d2cc2f75a1c98f4397bd902d945591e11590c92e6",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000707549:0000707549-23-000008",
+      "cik": "0000707549",
+      "prepared_row_sha256": "86c9182ca4734404f7a2afdaff2b399dd47e6200308a14cc33087bd7cbcafc8d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0023337825694790745,
+        0.026797260165918123
+      ],
+      "uncalibrated": [
+        0.0023337825694790745,
+        0.026797260165918123
+      ],
+      "corrected": [
+        0.01182212911836901,
+        0.023090183957647337
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001126956:0001437749-23-002213",
+      "cik": "0001126956",
+      "prepared_row_sha256": "fc7f1865b42df828f9671777cb5bd5cd1303652768f85aba95b61f6b559e7eaf",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000057515:0000057515-23-000005",
+      "cik": "0000057515",
+      "prepared_row_sha256": "2a4779bc8028d135c3a14147754b35ed2eaa8f674daa62d889400847d2c317e0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0031452738268928555,
+        0.025765905608926325
+      ],
+      "uncalibrated": [
+        0.0031452738268928555,
+        0.025765905608926325
+      ],
+      "corrected": [
+        0.01263362037578279,
+        0.02205882940065554
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000772406:0000772406-23-000006",
+      "cik": "0000772406",
+      "prepared_row_sha256": "c6a49bc54443a2d90b1a933d17254c4a234c09f5fe7475ffd36a3d96a02bbb8f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.010297870707095048,
+        0.025090652048107596
+      ],
+      "uncalibrated": [
+        0.010297870707095048,
+        0.025090652048107596
+      ],
+      "corrected": [
+        0.019786217255984985,
+        0.02138357583983681
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000106040:0000106040-23-000010",
+      "cik": "0000106040",
+      "prepared_row_sha256": "e52641ecd211b507a1aa1dc5631f9bf86d0600cfe23e2fb99dedbcce4e4b069b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.008722145706449287,
+        0.025495806111530572
+      ],
+      "uncalibrated": [
+        0.008722145706449287,
+        0.025495806111530572
+      ],
+      "corrected": [
+        0.018210492255339224,
+        0.021788729903259786
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001530950:0001530950-23-000057",
+      "cik": "0001530950",
+      "prepared_row_sha256": "38d1cbd6b621717dd7ffb78030a84bd3879e86c5f33dc48ecec13d4c3ea08d65",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0006839929918314889,
+        0.027728913810849423
+      ],
+      "uncalibrated": [
+        0.0006839929918314889,
+        0.027728913810849423
+      ],
+      "corrected": [
+        0.010172339540721425,
+        0.024021837602578637
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000733269:0000733269-23-000012",
+      "cik": "0000733269",
+      "prepared_row_sha256": "1110b64c1f8a8bac96a30f21a7abbfafe796f25a70f2965e09d6d6981a248e96",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000868857:0001104659-23-011748",
+      "cik": "0000868857",
+      "prepared_row_sha256": "4713832684e96ad77482f3b85e3b9f04b8f1eb8cd94b1dd7a4e21864980a1d42",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0016146094541938162,
+        0.02892988556372423
+      ],
+      "uncalibrated": [
+        -0.0016146094541938162,
+        0.02892988556372423
+      ],
+      "corrected": [
+        0.00787373709469612,
+        0.025222809355453443
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001227654:0001227654-23-000022",
+      "cik": "0001227654",
+      "prepared_row_sha256": "9ddaf32e19177858239ce5924b5d9b9a353be8101a6691d11d16cb43eae4fd16",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000032604:0000032604-23-000010",
+      "cik": "0000032604",
+      "prepared_row_sha256": "deca9b38cd5bbc667f1a22ca254f899a548a6572b9b797377cba98b7b9a07c14",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.00353304893844754,
+        0.02449390601015676
+      ],
+      "uncalibrated": [
+        -0.00353304893844754,
+        0.02449390601015676
+      ],
+      "corrected": [
+        0.005955297610442395,
+        0.020786829801885974
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000896878:0000896878-23-000010",
+      "cik": "0000896878",
+      "prepared_row_sha256": "b7eab304cc43bae5684aea8e96b9d80dc51fb89fb305da6f2f49877db28e4278",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0029297141405008466,
+        0.02824788728143021
+      ],
+      "uncalibrated": [
+        0.0029297141405008466,
+        0.02824788728143021
+      ],
+      "corrected": [
+        0.012418060689390782,
+        0.024540811073159422
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000866787:0001558370-23-004115",
+      "cik": "0000866787",
+      "prepared_row_sha256": "6b6f9309cea784c952fde9ad6d57e60323fbd52afeb5ac0aedcb1f400ca33d40",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0037404544112160194,
+        0.028249637723437117
+      ],
+      "uncalibrated": [
+        0.0037404544112160194,
+        0.028249637723437117
+      ],
+      "corrected": [
+        0.013228800960105955,
+        0.02454256151516633
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000796343:0000796343-23-000055",
+      "cik": "0000796343",
+      "prepared_row_sha256": "c11fc7f27994cdc3bc353ef234933f2ec9351a780371f155c84eff6761f7bdf3",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005234481654665347,
+        0.02662976159330765
+      ],
+      "uncalibrated": [
+        0.005234481654665347,
+        0.02662976159330765
+      ],
+      "corrected": [
+        0.014722828203555282,
+        0.022922685385036865
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001013237:0001013237-23-000044",
+      "cik": "0001013237",
+      "prepared_row_sha256": "80c3efd8271ceffaaf40a9ea4915a982cb5e095ccf249ceb18a2e749803b224b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004376884683097501,
+        0.024992335475063507
+      ],
+      "uncalibrated": [
+        0.004376884683097501,
+        0.024992335475063507
+      ],
+      "corrected": [
+        0.013865231231987435,
+        0.02128525926679272
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000023217:0001437749-23-009534",
+      "cik": "0000023217",
+      "prepared_row_sha256": "c0ff0d1de95c5e100160a3fa46a941851e9502b5cc179e38aecffebc269dc75e",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0007710368592480491,
+        0.027686642346232356
+      ],
+      "uncalibrated": [
+        0.0007710368592480491,
+        0.027686642346232356
+      ],
+      "corrected": [
+        0.010259383408137984,
+        0.02397956613796157
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000795266:0000795266-23-000036",
+      "cik": "0000795266",
+      "prepared_row_sha256": "eef626a8aeedf036b4aab8a07a7a3c2206fed58aa6272c0d68ed22dc6b42e91d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006993141169867784,
+        0.024789750115995206
+      ],
+      "uncalibrated": [
+        0.006993141169867784,
+        0.024789750115995206
+      ],
+      "corrected": [
+        0.01648148771875772,
+        0.02108267390772442
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000066382:0000066382-23-000021",
+      "cik": "0000066382",
+      "prepared_row_sha256": "e2e0930fdbea7c392543a08ca593fe5497b3eb6035fac41a2c0a379f186bf5ba",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005388070285828633,
+        0.02552177863097179
+      ],
+      "uncalibrated": [
+        0.005388070285828633,
+        0.02552177863097179
+      ],
+      "corrected": [
+        0.014876416834718569,
+        0.021814702422701004
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000040987:0000040987-23-000015",
+      "cik": "0000040987",
+      "prepared_row_sha256": "2a07da1a289e47e7ef01aa2c06f3de0d8ea7af74f5ed1e4017e5b6fce0212871",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0029985457558524236,
+        0.02682234642422344
+      ],
+      "uncalibrated": [
+        0.0029985457558524236,
+        0.02682234642422344
+      ],
+      "corrected": [
+        0.01248689230474236,
+        0.023115270215952655
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000350698:0000350698-23-000078",
+      "cik": "0000350698",
+      "prepared_row_sha256": "9b811c28e9d11635e00efb337841e9e823f20a4973bad7cbf86a9c92b344e997",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0030352867187186023,
+        0.027195510927956967
+      ],
+      "uncalibrated": [
+        0.0030352867187186023,
+        0.027195510927956967
+      ],
+      "corrected": [
+        0.012523633267608537,
+        0.02348843471968618
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001418819:0001628280-23-012131",
+      "cik": "0001418819",
+      "prepared_row_sha256": "de81e3691a86a22c441979f5378ae63189eb7ea5d99da1c3f34c278a87f496ac",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.004169454717725516,
+        0.03128346042631979
+      ],
+      "uncalibrated": [
+        -0.004169454717725516,
+        0.03128346042631979
+      ],
+      "corrected": [
+        0.0053188918311644195,
+        0.027576384218049005
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000079879:0000079879-23-000026",
+      "cik": "0000079879",
+      "prepared_row_sha256": "285eac2791ec51de39124dd6a80ee0d37cbb963c92402d32b28e8c598fa22ed9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0007974588951454604,
+        0.027222658807110806
+      ],
+      "uncalibrated": [
+        0.0007974588951454604,
+        0.027222658807110806
+      ],
+      "corrected": [
+        0.010285805444035396,
+        0.02351558259884002
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001506307:0001506307-23-000036",
+      "cik": "0001506307",
+      "prepared_row_sha256": "7921139cb276e955a24ac550d0157ba256a5cefd6697d8c01c860b27a4430961",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00571319928171702,
+        0.024870011526743337
+      ],
+      "uncalibrated": [
+        0.00571319928171702,
+        0.024870011526743337
+      ],
+      "corrected": [
+        0.015201545830606955,
+        0.02116293531847255
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000707549:0000707549-23-000081",
+      "cik": "0000707549",
+      "prepared_row_sha256": "875378fc8e8f72089c784a47389b7ed2c2f74039f2c39c3410fd2c9d36d4b18f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.009616267542514836,
+        0.025010972991992206
+      ],
+      "uncalibrated": [
+        0.009616267542514836,
+        0.025010972991992206
+      ],
+      "corrected": [
+        0.01910461409140477,
+        0.02130389678372142
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000066740:0000066740-23-000028",
+      "cik": "0000066740",
+      "prepared_row_sha256": "06e12cbd93b78adaa35eb16050d57d20dcc6f9a53a721e5daa944675403bedfd",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003675423907615474,
+        0.02764927516140045
+      ],
+      "uncalibrated": [
+        0.003675423907615474,
+        0.02764927516140045
+      ],
+      "corrected": [
+        0.013163770456505408,
+        0.023942198953129663
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000077476:0000077476-23-000023",
+      "cik": "0000077476",
+      "prepared_row_sha256": "d142dff9eea03f6d4eda8db467afe7e8895ff152ed618ece84805607fa1adfdf",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005783359508332149,
+        0.029120292079951662
+      ],
+      "uncalibrated": [
+        0.005783359508332149,
+        0.029120292079951662
+      ],
+      "corrected": [
+        0.015271706057222084,
+        0.025413215871680876
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000106640:0000106640-23-000089",
+      "cik": "0000106640",
+      "prepared_row_sha256": "1bca013eda1bc80719db3338420e3c88bd5fc6bad94c2231cf461d33535e6fc9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0005623057535410598,
+        0.03127474426782452
+      ],
+      "uncalibrated": [
+        -0.0005623057535410598,
+        0.03127474426782452
+      ],
+      "corrected": [
+        0.008926040795348875,
+        0.027567668059553734
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001552033:0001552033-23-000022",
+      "cik": "0001552033",
+      "prepared_row_sha256": "b995145c499a574785584218051d1aae0e173f0a77fd5bf8b339b806b7d5d6d7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0026131015367222977,
+        0.02796473802003292
+      ],
+      "uncalibrated": [
+        0.0026131015367222977,
+        0.02796473802003292
+      ],
+      "corrected": [
+        0.012101448085612233,
+        0.024257661811762133
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000798354:0000798354-23-000008",
+      "cik": "0000798354",
+      "prepared_row_sha256": "c56fd1fac1ebeef15ae3ab0e34acbf65a24f2f2acf324425b60184d91595ab54",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004284502317294402,
+        0.027913779066632283
+      ],
+      "uncalibrated": [
+        0.004284502317294402,
+        0.027913779066632283
+      ],
+      "corrected": [
+        0.013772848866184337,
+        0.024206702858361497
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000812074:0001558370-23-006862",
+      "cik": "0000812074",
+      "prepared_row_sha256": "3679b43ade0d6f6a6a1cf03d8faba688b46e56e57f3d4dd23e09dfe438b8013d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0011634014946420744,
+        0.02947499004032797
+      ],
+      "uncalibrated": [
+        -0.0011634014946420744,
+        0.02947499004032797
+      ],
+      "corrected": [
+        0.00832494505424786,
+        0.025767913832057183
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000896156:0001437749-23-011153",
+      "cik": "0000896156",
+      "prepared_row_sha256": "8dfc6eedab8e076ac33542909338dd28fd007207a537f4177f4ce2615bb987d0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006730242575297474,
+        0.02605624013126822
+      ],
+      "uncalibrated": [
+        0.006730242575297474,
+        0.02605624013126822
+      ],
+      "corrected": [
+        0.01621858912418741,
+        0.022349163922997434
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001410636:0001410636-23-000064",
+      "cik": "0001410636",
+      "prepared_row_sha256": "8a68efada6f3aa1fe3f6328caa659bd6d0cac4698982d09dd2c545f954663642",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003596039572755603,
+        0.02629942202630656
+      ],
+      "uncalibrated": [
+        0.003596039572755603,
+        0.02629942202630656
+      ],
+      "corrected": [
+        0.013084386121645537,
+        0.022592345818035774
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001808834:0001808834-23-000056",
+      "cik": "0001808834",
+      "prepared_row_sha256": "b2a632a1755290630d995cd8a77c30b49553a1496f1ec8626bcab6f4e148fe7e",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000010456:0001628280-23-013357",
+      "cik": "0000010456",
+      "prepared_row_sha256": "5f7ef6fdf2850d70b1e3270077c101ceb7fc1fe750000d6002da9177de2f58d8",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0026307305168522385,
+        0.028032379788263718
+      ],
+      "uncalibrated": [
+        0.0026307305168522385,
+        0.028032379788263718
+      ],
+      "corrected": [
+        0.012119077065742175,
+        0.02432530357999293
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000732712:0000732712-23-000029",
+      "cik": "0000732712",
+      "prepared_row_sha256": "028d7f593045c70300af40b76eb99a13573d3fa7caa5fd8ebe06193890ad465d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003319574046701702,
+        0.026831056538761708
+      ],
+      "uncalibrated": [
+        0.003319574046701702,
+        0.026831056538761708
+      ],
+      "corrected": [
+        0.012807920595591637,
+        0.02312398033049092
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000816956:0000816956-23-000007",
+      "cik": "0000816956",
+      "prepared_row_sha256": "07270a88a9dc15c8ddba1ebc4fe483eaf4be99229b68319987c433ed0803d650",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0037159273098837744,
+        0.03245480855398797
+      ],
+      "uncalibrated": [
+        -0.0037159273098837744,
+        0.03245480855398797
+      ],
+      "corrected": [
+        0.005772419239006161,
+        0.028747732345717182
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          1
+        ],
+        "corrected": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0001093557:0001093557-23-000118",
+      "cik": "0001093557",
+      "prepared_row_sha256": "17c9e3905df59d2a09ed3785073ddc984fdf36c458237a421ab345576b548b36",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0036431004430625765,
+        0.028013011021273362
+      ],
+      "uncalibrated": [
+        0.0036431004430625765,
+        0.028013011021273362
+      ],
+      "corrected": [
+        0.013131446991952511,
+        0.024305934813002576
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001114483:0001114483-23-000016",
+      "cik": "0001114483",
+      "prepared_row_sha256": "189423d0a82736e2a0e230435551e1f9565e44c49c9efc367bbfed4f854b95a5",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000009326:0001628280-23-014088",
+      "cik": "0000009326",
+      "prepared_row_sha256": "63a19bdd3bb98e4c405fe2cf55467cbb7d00f6b0b9f09ca111a124c5edb1a280",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006954114149086104,
+        0.02651501217486342
+      ],
+      "uncalibrated": [
+        0.006954114149086104,
+        0.02651501217486342
+      ],
+      "corrected": [
+        0.016442460697976037,
+        0.022807935966592634
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000318154:0000318154-23-000029",
+      "cik": "0000318154",
+      "prepared_row_sha256": "e348d17697e7cdbc93536bcb2d50d2408d6cbfa818424316e1b85e34b345ce7a",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0005706356023143246,
+        0.024905682339415685
+      ],
+      "uncalibrated": [
+        0.0005706356023143246,
+        0.024905682339415685
+      ],
+      "corrected": [
+        0.01005898215120426,
+        0.0211986061311449
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000790051:0000790051-23-000068",
+      "cik": "0000790051",
+      "prepared_row_sha256": "612f7c96c879362781c00f55fd6cfd8306ee32575530993dfa9cd0685530e077",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005323364144977743,
+        0.02611086736256336
+      ],
+      "uncalibrated": [
+        0.005323364144977743,
+        0.02611086736256336
+      ],
+      "corrected": [
+        0.014811710693867677,
+        0.022403791154292575
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000891014:0000891014-23-000031",
+      "cik": "0000891014",
+      "prepared_row_sha256": "ea1bb087d6e0cbf06fc8117326367a7fce9ae5a0a366bedccc4153f36b051148",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.00011354737110251534,
+        0.029084805266838293
+      ],
+      "uncalibrated": [
+        -0.00011354737110251534,
+        0.029084805266838293
+      ],
+      "corrected": [
+        0.00937479917778742,
+        0.025377729058567507
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000893538:0000893538-23-000034",
+      "cik": "0000893538",
+      "prepared_row_sha256": "c168fafb767078abe851a20f08f536a7b1d687dc6c0c84d2425ef44f2a9b28ce",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0017769969067614525,
+        0.02652012323957543
+      ],
+      "uncalibrated": [
+        0.0017769969067614525,
+        0.02652012323957543
+      ],
+      "corrected": [
+        0.011265343455651387,
+        0.022813047031304642
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001035201:0001035201-23-000006",
+      "cik": "0001035201",
+      "prepared_row_sha256": "507d2d2e6d1d4682173428aeb58e0b901d4b93fc82f493f2682999d3e5f2b29c",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000030625:0000030625-23-000090",
+      "cik": "0000030625",
+      "prepared_row_sha256": "2360625566c688e6e673cd37171581fbc67197f127218a698e79d50abdf5ac2c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.003210452779026094,
+        0.028643276352728484
+      ],
+      "uncalibrated": [
+        -0.003210452779026094,
+        0.028643276352728484
+      ],
+      "corrected": [
+        0.006277893769863841,
+        0.024936200144457698
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000037785:0000037785-23-000099",
+      "cik": "0000037785",
+      "prepared_row_sha256": "710acfe999397dc638f3746a24997dd7ff77c921f56e668fd761004b0af38676",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000310764:0000310764-23-000067",
+      "cik": "0000310764",
+      "prepared_row_sha256": "980ac93834fce1996029494ad8f18759874e0ef987bc54cbbba833a2fc466567",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0006265062266815702,
+        0.02758950860319367
+      ],
+      "uncalibrated": [
+        0.0006265062266815702,
+        0.02758950860319367
+      ],
+      "corrected": [
+        0.010114852775571505,
+        0.023882432394922885
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000746838:0000746838-23-000019",
+      "cik": "0000746838",
+      "prepared_row_sha256": "2a5792aa007526bcc266a0bfda73e9c674edc4431eae3fbe2ec2722ce5ac46c6",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007638423716493339,
+        0.026151777661106986
+      ],
+      "uncalibrated": [
+        0.007638423716493339,
+        0.026151777661106986
+      ],
+      "corrected": [
+        0.017126770265383274,
+        0.0224447014528362
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001587732:0001587732-23-000030",
+      "cik": "0001587732",
+      "prepared_row_sha256": "3de82fc73e8c6d2bf15add5fca7d65e36339a0ec369bfbb7afdfcbb5d9ee1150",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0035400909543876415,
+        0.025137172989446427
+      ],
+      "uncalibrated": [
+        0.0035400909543876415,
+        0.025137172989446427
+      ],
+      "corrected": [
+        0.013028437503277576,
+        0.02143009678117564
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000032604:0000032604-23-000030",
+      "cik": "0000032604",
+      "prepared_row_sha256": "91dd137dcb640e1bcb8c54eb3a9ed8f7059d38d5e5fbcaae5ece7e0c58351be2",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0009452122686510042,
+        0.029169520022528338
+      ],
+      "uncalibrated": [
+        -0.0009452122686510042,
+        0.029169520022528338
+      ],
+      "corrected": [
+        0.00854313428023893,
+        0.02546244381425755
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000046080:0000046080-23-000042",
+      "cik": "0000046080",
+      "prepared_row_sha256": "aa747036fb76a84a633f71d7912820d025025f5efb795909ec683997e29a5641",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004001471826133208,
+        0.029510196268359067
+      ],
+      "uncalibrated": [
+        0.004001471826133208,
+        0.029510196268359067
+      ],
+      "corrected": [
+        0.013489818375023143,
+        0.02580312006008828
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000095029:0001174947-23-000706",
+      "cik": "0000095029",
+      "prepared_row_sha256": "fab203b605827dce98263f01da6c63dfc368652a99f16c83affa579f8cc47086",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005418342612405487,
+        0.02673034561399359
+      ],
+      "uncalibrated": [
+        0.005418342612405487,
+        0.02673034561399359
+      ],
+      "corrected": [
+        0.014906689161295422,
+        0.023023269405722805
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000098362:0000098362-23-000057",
+      "cik": "0000098362",
+      "prepared_row_sha256": "56ddff7cfc74cf867af9babc60b203142b5f0ce73889677fdea7f8242dc5c93d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003492410493326964,
+        0.0271580294393476
+      ],
+      "uncalibrated": [
+        0.003492410493326964,
+        0.0271580294393476
+      ],
+      "corrected": [
+        0.0129807570422169,
+        0.023450953231076814
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000882835:0000882835-23-000025",
+      "cik": "0000882835",
+      "prepared_row_sha256": "56051a9e3f9f14423087af275b9a431fb609864be66fdb3e9436f7724dfd70ff",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.010513467538952404,
+        0.02677169795459049
+      ],
+      "uncalibrated": [
+        0.010513467538952404,
+        0.02677169795459049
+      ],
+      "corrected": [
+        0.020001814087842337,
+        0.023064621746319704
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001005284:0000950170-23-017150",
+      "cik": "0001005284",
+      "prepared_row_sha256": "8fbb5595b5294b67b0656cc366dde4cd0d4681cb50efa811fd19b10771912bd0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0004881988182635563,
+        0.029693274987832766
+      ],
+      "uncalibrated": [
+        -0.0004881988182635563,
+        0.029693274987832766
+      ],
+      "corrected": [
+        0.009000147730626379,
+        0.02598619877956198
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001396814:0001396814-23-000022",
+      "cik": "0001396814",
+      "prepared_row_sha256": "5756f8ba468ffadc4fcd5799e50e8b0d700f7aacb4f1358b4b1b4a9f2b238881",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0009832027889834327,
+        0.030059076784058007
+      ],
+      "uncalibrated": [
+        -0.0009832027889834327,
+        0.030059076784058007
+      ],
+      "corrected": [
+        0.008505143759906502,
+        0.02635200057578722
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000057515:0000057515-23-000010",
+      "cik": "0000057515",
+      "prepared_row_sha256": "5049cf1bf78aefbd405872c196d036feaf5273f3cb5b0efb72d7e9395ffd79ed",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00458972459408688,
+        0.02555440648413188
+      ],
+      "uncalibrated": [
+        0.00458972459408688,
+        0.02555440648413188
+      ],
+      "corrected": [
+        0.014078071142976815,
+        0.021847330275861093
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000890564:0000890564-23-000011",
+      "cik": "0000890564",
+      "prepared_row_sha256": "fe741972a7c0f440f38cd296a6983918172b8ff5a726421786d3269078545430",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004331327815714772,
+        0.026623636108291382
+      ],
+      "uncalibrated": [
+        0.004331327815714772,
+        0.026623636108291382
+      ],
+      "corrected": [
+        0.013819674364604708,
+        0.022916559900020596
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001192448:0001558370-23-008148",
+      "cik": "0001192448",
+      "prepared_row_sha256": "d36730e94b6f6674eb6712415bda92a22630415a2c656349df6dc4d4e345bd9d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00015204453775134307,
+        0.03200524257616533
+      ],
+      "uncalibrated": [
+        0.00015204453775134307,
+        0.03200524257616533
+      ],
+      "corrected": [
+        0.009640391086641279,
+        0.02829816636789454
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          1
+        ],
+        "corrected": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0001237831:0001562762-23-000210",
+      "cik": "0001237831",
+      "prepared_row_sha256": "600be3722a7af37dd6b0bae3c6a1fe46e5c17a36bef3e875617f3ef87769d780",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.001340196356855387,
+        0.028584227415691266
+      ],
+      "uncalibrated": [
+        0.001340196356855387,
+        0.028584227415691266
+      ],
+      "corrected": [
+        0.010828542905745323,
+        0.02487715120742048
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001370637:0001370637-23-000049",
+      "cik": "0001370637",
+      "prepared_row_sha256": "395708ac09f603b969cf74013d0800448d1fb716722feef2231099f0110bcf71",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.000707791365957315,
+        0.028758939159649447
+      ],
+      "uncalibrated": [
+        0.000707791365957315,
+        0.028758939159649447
+      ],
+      "corrected": [
+        0.010196137914847251,
+        0.02505186295137866
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001420800:0001420800-23-000014",
+      "cik": "0001420800",
+      "prepared_row_sha256": "0d1daece35f47bfb079c3a494e52564ca8ddf5f0299e825393a1c4af06770726",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001590955:0000950170-23-017840",
+      "cik": "0001590955",
+      "prepared_row_sha256": "a8e742f3e122780c6230aa5276c64e1143d8441cf826a62ef3d67ae3a98fa13c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.00031933431306987396,
+        0.028492489267857798
+      ],
+      "uncalibrated": [
+        -0.00031933431306987396,
+        0.028492489267857798
+      ],
+      "corrected": [
+        0.009169012235820062,
+        0.02478541305958701
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001122904:0000950170-23-018363",
+      "cik": "0001122904",
+      "prepared_row_sha256": "7404612c785b60446be3bcf5d4afe65270390299164d7ba08810760396f7d407",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0012332824591600874,
+        0.025846221041793613
+      ],
+      "uncalibrated": [
+        0.0012332824591600874,
+        0.025846221041793613
+      ],
+      "corrected": [
+        0.010721629008050022,
+        0.022139144833522827
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001530950:0001530950-23-000143",
+      "cik": "0001530950",
+      "prepared_row_sha256": "c34d7ea0884a6e93b6017cc228275cdee74577b464e632f6fd3424a9a1d77616",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00526402514716268,
+        0.029067654859189745
+      ],
+      "uncalibrated": [
+        0.00526402514716268,
+        0.029067654859189745
+      ],
+      "corrected": [
+        0.014752371696052615,
+        0.02536057865091896
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000878927:0000950170-23-018765",
+      "cik": "0000878927",
+      "prepared_row_sha256": "6a6a67d156567b947003772ef6025becb9a56a2e3d6eda4c54d4bad1da796364",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001013488:0000950170-23-018921",
+      "cik": "0001013488",
+      "prepared_row_sha256": "0c909e05b28efddfb5e43477968b0a3fb1f54600c5091c8dd80af0c75c727617",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00701703106155261,
+        0.023964585147308672
+      ],
+      "uncalibrated": [
+        0.00701703106155261,
+        0.023964585147308672
+      ],
+      "corrected": [
+        0.016505377610442545,
+        0.020257508939037886
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001419612:0001178913-23-001734",
+      "cik": "0001419612",
+      "prepared_row_sha256": "7ebb959bf1283e9ffec1d1fc4d0d435d5bcb566b840c31e16eb8c336e8509780",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000078128:0001562762-23-000230",
+      "cik": "0000078128",
+      "prepared_row_sha256": "3e64e91a161b8471905ee4516eddf3bd4c15830ad22b200bf71b5a863f0a19cd",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000868857:0001104659-23-057746",
+      "cik": "0000868857",
+      "prepared_row_sha256": "b5fb80396c8348f4e79ed60d0f8b4feabcd239b6ae56dc44a45d57e3d80a02a6",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        4.873828438945035e-05,
+        0.02787886285725725
+      ],
+      "uncalibrated": [
+        4.873828438945035e-05,
+        0.02787886285725725
+      ],
+      "corrected": [
+        0.009537084833279386,
+        0.024171786648986462
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000949157:0000949157-23-000035",
+      "cik": "0000949157",
+      "prepared_row_sha256": "34791f52bcda0e924b72d1fba17944e81b664f63a7ffe711854a2ad94ea9edb8",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004282902400123398,
+        0.026655810581028172
+      ],
+      "uncalibrated": [
+        0.004282902400123398,
+        0.026655810581028172
+      ],
+      "corrected": [
+        0.013771248949013333,
+        0.022948734372757386
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001046311:0001046311-23-000021",
+      "cik": "0001046311",
+      "prepared_row_sha256": "6152a1332e738ed9602b7aba8de0d17d229da842886c1bef8f2933f724ff03ad",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0008477380824426966,
+        0.02942965567667267
+      ],
+      "uncalibrated": [
+        -0.0008477380824426966,
+        0.02942965567667267
+      ],
+      "corrected": [
+        0.00864060846644724,
+        0.025722579468401882
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001116942:0000950170-23-019634",
+      "cik": "0001116942",
+      "prepared_row_sha256": "9ab42e9cb9d05016ed96de7c4d3f5568798d03e86413cdb6a454c5eecd7bd244",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005662010239929507,
+        0.025811583767035805
+      ],
+      "uncalibrated": [
+        0.005662010239929507,
+        0.025811583767035805
+      ],
+      "corrected": [
+        0.015150356788819442,
+        0.02210450755876502
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001227654:0001227654-23-000114",
+      "cik": "0001227654",
+      "prepared_row_sha256": "8cb18c03c9781a3cd2a655c003c19f590d8d5af8e09626dd5e6e4b8caedc02ec",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001356576:0001356576-23-000034",
+      "cik": "0001356576",
+      "prepared_row_sha256": "1a5cb0a40b0339ab41edea5e4b80c5fa63b0d85d0c3fd8cf01d40ff102177221",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006566971531317882,
+        0.025552395578382448
+      ],
+      "uncalibrated": [
+        0.006566971531317882,
+        0.025552395578382448
+      ],
+      "corrected": [
+        0.01605531808020782,
+        0.021845319370111662
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001609809:0000950170-23-019222",
+      "cik": "0001609809",
+      "prepared_row_sha256": "ca94f320cd855a4f59d911ebee7548e5ccaa68f719dd38f7206d7598e8a6279c",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000103730:0000103730-23-000040",
+      "cik": "0000103730",
+      "prepared_row_sha256": "038c27b71df72606632f672ff0ad68c80502a7a05062b3c61997b3326c07677b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.005737496328249802,
+        0.03399784167538241
+      ],
+      "uncalibrated": [
+        -0.005737496328249802,
+        0.03399784167538241
+      ],
+      "corrected": [
+        0.003750850220640133,
+        0.030290765467111624
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          2
+        ],
+        "corrected": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "event_id": "0000106040:0000106040-23-000017",
+      "cik": "0000106040",
+      "prepared_row_sha256": "7e3f659637e2ded291ebc324395a4b32bc8508278071173fe562a444e999ec69",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006342724648566174,
+        0.0259997986204649
+      ],
+      "uncalibrated": [
+        0.006342724648566174,
+        0.0259997986204649
+      ],
+      "corrected": [
+        0.01583107119745611,
+        0.022292722412194113
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000906709:0000906709-23-000008",
+      "cik": "0000906709",
+      "prepared_row_sha256": "7d25b921543e500b2b7e3381b663ddcbd28de518063de779df44818c91091607",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.012523083582111837,
+        0.02384451804596537
+      ],
+      "uncalibrated": [
+        0.012523083582111837,
+        0.02384451804596537
+      ],
+      "corrected": [
+        0.02201143013100177,
+        0.020137441837694583
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001061219:0001061219-23-000012",
+      "cik": "0001061219",
+      "prepared_row_sha256": "5c874e2d70147c637f53b42ee68abfe5fae390d6969442a8800f06a3d824908f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004118731330277529,
+        0.0253701524079472
+      ],
+      "uncalibrated": [
+        0.004118731330277529,
+        0.0253701524079472
+      ],
+      "corrected": [
+        0.013607077879167463,
+        0.021663076199676414
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001109354:0000950170-23-020404",
+      "cik": "0001109354",
+      "prepared_row_sha256": "a585309d7fd717fc7f32ae815902ed310d2bbc408baff9826056ddaf027675f4",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0056217153975746574,
+        0.02397824417401359
+      ],
+      "uncalibrated": [
+        0.0056217153975746574,
+        0.02397824417401359
+      ],
+      "corrected": [
+        0.015110061946464592,
+        0.020271167965742805
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001158172:0001158172-23-000027",
+      "cik": "0001158172",
+      "prepared_row_sha256": "dcb49b1fad95285ac4b03c906dd3ecb168f0568d1bcd9c3da14809b2fba9e71f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0006665022669498206,
+        0.027672526988494053
+      ],
+      "uncalibrated": [
+        0.0006665022669498206,
+        0.027672526988494053
+      ],
+      "corrected": [
+        0.010154848815839756,
+        0.023965450780223267
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001206264:0001206264-23-000115",
+      "cik": "0001206264",
+      "prepared_row_sha256": "5aa52f63425582ba73a213d37a2c36b64c0cbff47c87121bd01f912809daf117",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004669688522582423,
+        0.026674139604518678
+      ],
+      "uncalibrated": [
+        0.004669688522582423,
+        0.026674139604518678
+      ],
+      "corrected": [
+        0.014158035071472359,
+        0.02296706339624789
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001490281:0001490281-23-000053",
+      "cik": "0001490281",
+      "prepared_row_sha256": "fd72daf5e88e2a882efd1730af024ecdc41f72b7f114d3173df23759a0d1d611",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000769520:0000769520-23-000009",
+      "cik": "0000769520",
+      "prepared_row_sha256": "85abc3148ee82bde72186ae1915103ac7c64c6d77c9eaed609b4c8e9d78069b1",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0042982242201388375,
+        0.02593992462639677
+      ],
+      "uncalibrated": [
+        0.0042982242201388375,
+        0.02593992462639677
+      ],
+      "corrected": [
+        0.013786570769028773,
+        0.022232848418125985
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001564708:0001564708-23-000190",
+      "cik": "0001564708",
+      "prepared_row_sha256": "e224f35b773b9297e045c57d34cb01167246eeb770ac801c17d8f9d93fd4cc9c",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000896878:0000896878-23-000020",
+      "cik": "0000896878",
+      "prepared_row_sha256": "b0e65e4dc915ac5ec8d9716fbdd256bf61eb5dafbf6c2700d3ea5c1e05c3b9b0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002710791321553689,
+        0.027096173865283645
+      ],
+      "uncalibrated": [
+        0.002710791321553689,
+        0.027096173865283645
+      ],
+      "corrected": [
+        0.012199137870443624,
+        0.02338909765701286
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000039911:0000039911-23-000043",
+      "cik": "0000039911",
+      "prepared_row_sha256": "46eb9b19576104d531933ee78eebcb7b427b11a7a8df2d71fbe8b71853040858",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0011402381687385817,
+        0.02932754603590868
+      ],
+      "uncalibrated": [
+        -0.0011402381687385817,
+        0.02932754603590868
+      ],
+      "corrected": [
+        0.008348108380151353,
+        0.025620469827637892
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000719955:0001628280-23-019968",
+      "cik": "0000719955",
+      "prepared_row_sha256": "d973d2c101784f143fc9e7fd0c779171e6f59301530c84bd74a80ff5be2862c6",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001397187:0001397187-23-000027",
+      "cik": "0001397187",
+      "prepared_row_sha256": "defdd4289ae03a4176715efad71b8cbcc12bf66d2f35d8e49ca1b7fa28372e48",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002017541642693539,
+        0.024645718472521824
+      ],
+      "uncalibrated": [
+        0.002017541642693539,
+        0.024645718472521824
+      ],
+      "corrected": [
+        0.011505888191583474,
+        0.020938642264251038
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001177609:0001177609-23-000015",
+      "cik": "0001177609",
+      "prepared_row_sha256": "3dd4993fb0a62e4cb6d3a0ab3e439047ab3de0fa0523c2c86efa11fd47aa38a0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0005921184593502935,
+        0.02743602385921609
+      ],
+      "uncalibrated": [
+        -0.0005921184593502935,
+        0.02743602385921609
+      ],
+      "corrected": [
+        0.008896228089539642,
+        0.023728947650945305
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001393052:0001393052-23-000034",
+      "cik": "0001393052",
+      "prepared_row_sha256": "837456f0906e7181415deb1af4116e6a843508623c4e9a74c6c0b9fe4e3ec283",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001318008:0000950170-23-026346",
+      "cik": "0001318008",
+      "prepared_row_sha256": "e920958ab8a06380ce7537ce6edb98263906ead899565b8b543a02a015c10f4c",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000088941:0000088941-23-000016",
+      "cik": "0000088941",
+      "prepared_row_sha256": "f1897b227f1549f1429decf341b03c1351349b6c9e6677a016e346fc9ba8741a",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001639300:0001140361-23-028795",
+      "cik": "0001639300",
+      "prepared_row_sha256": "45c7cd4129f2d6864b099db4d000c621ffdcb27c03ce61e41bce816b60be7378",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0004621365205833936,
+        0.027733220945407495
+      ],
+      "uncalibrated": [
+        0.0004621365205833936,
+        0.027733220945407495
+      ],
+      "corrected": [
+        0.00995048306947333,
+        0.02402614473713671
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001319947:0001319947-23-000032",
+      "cik": "0001319947",
+      "prepared_row_sha256": "3d4d751e5b263facf24419de721cc9b84930a436f211ce3e0e7e53fe5d8ca6e9",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000866787:0001558370-23-010958",
+      "cik": "0000866787",
+      "prepared_row_sha256": "77848892934103695059bd16cfeae1e31ca6a0773bce0bc97c9b8d449dc4a542",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00583972097646928,
+        0.022349237220708633
+      ],
+      "uncalibrated": [
+        0.00583972097646928,
+        0.022349237220708633
+      ],
+      "corrected": [
+        0.015328067525359215,
+        0.018642161012437847
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000912615:0000950170-23-027275",
+      "cik": "0000912615",
+      "prepared_row_sha256": "975c829b767a002dedeacaceec094174a9125b85f6dced2c73f02ed1766a71b0",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000796343:0000796343-23-000153",
+      "cik": "0000796343",
+      "prepared_row_sha256": "1545d536ad6cdbfcf7d0bf262fe33b03e866d5b11cf9979f3cca3618925fa1b0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006159022963588619,
+        0.02157638320272007
+      ],
+      "uncalibrated": [
+        0.006159022963588619,
+        0.02157638320272007
+      ],
+      "corrected": [
+        0.015647369512478554,
+        0.017869306994449285
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000016918:0000016918-23-000103",
+      "cik": "0000016918",
+      "prepared_row_sha256": "287df2948e90d98cf5d5311bba4d993bcacb9df03d4c56e98afcc2e6689986d6",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0023396730342240954,
+        0.024415027242131345
+      ],
+      "uncalibrated": [
+        0.0023396730342240954,
+        0.024415027242131345
+      ],
+      "corrected": [
+        0.011828019583114031,
+        0.02070795103386056
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001013237:0001013237-23-000070",
+      "cik": "0001013237",
+      "prepared_row_sha256": "dfc9462e62e00113b34841422dd46103807492d0f0d4a630f0c712f44a2e065c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00543476737550196,
+        0.01886182437295759
+      ],
+      "uncalibrated": [
+        0.00543476737550196,
+        0.01886182437295759
+      ],
+      "corrected": [
+        0.014923113924391895,
+        0.015154748164686805
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000795266:0000795266-23-000080",
+      "cik": "0000795266",
+      "prepared_row_sha256": "eab8065684224ce74887ec1a4bb52574152b488e637a26fdf6baa638db40bb41",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.015066373249032787,
+        0.018851858153652958
+      ],
+      "uncalibrated": [
+        0.015066373249032787,
+        0.018851858153652958
+      ],
+      "corrected": [
+        0.024554719797922724,
+        0.015144781945382171
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000077476:0000077476-23-000046",
+      "cik": "0000077476",
+      "prepared_row_sha256": "8a4310019de1984c0e39def0b01ab5e52c2b66d28032d2910a38de82809b8d86",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005142168834465815,
+        0.02077593250902891
+      ],
+      "uncalibrated": [
+        0.005142168834465815,
+        0.02077593250902891
+      ],
+      "corrected": [
+        0.01463051538335575,
+        0.017068856300758124
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000040987:0000040987-23-000057",
+      "cik": "0000040987",
+      "prepared_row_sha256": "681ec8ccad576ff15908ea3440b96ed5212a348ebd5324916b8716f757626bfd",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002154021677464637,
+        0.02304662035170334
+      ],
+      "uncalibrated": [
+        0.002154021677464637,
+        0.02304662035170334
+      ],
+      "corrected": [
+        0.011642368226354572,
+        0.019339544143432554
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000350698:0000350698-23-000098",
+      "cik": "0000350698",
+      "prepared_row_sha256": "7bef908c5d3fa6135cb5feb9c9a92b143c0a5eb48df064e2ab18b09f574a7b3c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0004482686638693635,
+        0.024768012057415977
+      ],
+      "uncalibrated": [
+        -0.0004482686638693635,
+        0.024768012057415977
+      ],
+      "corrected": [
+        0.009040077885020571,
+        0.02106093584914519
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001506307:0001506307-23-000081",
+      "cik": "0001506307",
+      "prepared_row_sha256": "ee11731a5693967a21efa6e0efb8cdac74067b83176c4164be7d45b4ef9267cf",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005920546274239906,
+        0.021858822078889773
+      ],
+      "uncalibrated": [
+        0.005920546274239906,
+        0.021858822078889773
+      ],
+      "corrected": [
+        0.01540889282312984,
+        0.018151745870618987
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000066740:0000066740-23-000058",
+      "cik": "0000066740",
+      "prepared_row_sha256": "c3ce6e14c96bb6c658022f7026276762e0e72c94a67b37dfba8731bf271f3ef4",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.016900911293370065,
+        0.024134706357331587
+      ],
+      "uncalibrated": [
+        0.016900911293370065,
+        0.024134706357331587
+      ],
+      "corrected": [
+        0.02638925784226,
+        0.0204276301490608
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000106640:0000106640-23-000116",
+      "cik": "0000106640",
+      "prepared_row_sha256": "3d986116ea1d363396a7db5ee134aadbf27d85ddfb5d0c564e8cd5cc5fe275a1",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0007125818444117093,
+        0.022535630220035154
+      ],
+      "uncalibrated": [
+        0.0007125818444117093,
+        0.022535630220035154
+      ],
+      "corrected": [
+        0.010200928393301644,
+        0.018828554011764368
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001418819:0001628280-23-025521",
+      "cik": "0001418819",
+      "prepared_row_sha256": "298535b47ca2978f5dcfe453dadc8a4fdb8a20421d0856a9eb794797c34fa372",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00107075640247122,
+        0.028282909476722993
+      ],
+      "uncalibrated": [
+        0.00107075640247122,
+        0.028282909476722993
+      ],
+      "corrected": [
+        0.010559102951361156,
+        0.024575833268452207
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001552033:0001552033-23-000040",
+      "cik": "0001552033",
+      "prepared_row_sha256": "dfd3366766b976e5f0c58dd5bca02872b2f74f1e29b6670df00b7f9d4338a191",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004638014326159417,
+        0.02329902098327818
+      ],
+      "uncalibrated": [
+        0.004638014326159417,
+        0.02329902098327818
+      ],
+      "corrected": [
+        0.014126360875049353,
+        0.019591944775007395
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001410636:0001410636-23-000116",
+      "cik": "0001410636",
+      "prepared_row_sha256": "a950a50a1e27bc118197abe6a2accf36764ccc86fa1009ee3171245ed414cab4",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0012214572745635887,
+        0.016920394698263928
+      ],
+      "uncalibrated": [
+        0.0012214572745635887,
+        0.016920394698263928
+      ],
+      "corrected": [
+        0.010709803823453524,
+        0.013213318489993141
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001808834:0001808834-23-000094",
+      "cik": "0001808834",
+      "prepared_row_sha256": "2fe61e851272ca0d1fb140f5a317da6be16678ab653ad9dc6d84ff501e3478c7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.007095719106226268,
+        0.030976540517627563
+      ],
+      "uncalibrated": [
+        -0.007095719106226268,
+        0.030976540517627563
+      ],
+      "corrected": [
+        0.0023926274426636675,
+        0.027269464309356777
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000010456:0001628280-23-025825",
+      "cik": "0000010456",
+      "prepared_row_sha256": "c489725d9162637e0f8f860a64384d74d9889fef8264fe9d032fcb4f9569fb74",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0049486331503341046,
+        0.02226188349539273
+      ],
+      "uncalibrated": [
+        0.0049486331503341046,
+        0.02226188349539273
+      ],
+      "corrected": [
+        0.014436979699224039,
+        0.018554807287121944
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000790051:0000790051-23-000134",
+      "cik": "0000790051",
+      "prepared_row_sha256": "765e373adac7363781c6966e08e7057d8018c935f4200dce7ff384f10ce7e361",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006600287632979878,
+        0.02328694554173783
+      ],
+      "uncalibrated": [
+        0.006600287632979878,
+        0.02328694554173783
+      ],
+      "corrected": [
+        0.016088634181869815,
+        0.019579869333467045
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000798354:0000798354-23-000014",
+      "cik": "0000798354",
+      "prepared_row_sha256": "a878f490b767d2d4412fdc66f5134d5952de821d2f343eeb12a946211bef5a73",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005337399313095886,
+        0.0211125845641252
+      ],
+      "uncalibrated": [
+        0.005337399313095886,
+        0.0211125845641252
+      ],
+      "corrected": [
+        0.01482574586198582,
+        0.017405508355854415
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000816956:0000816956-23-000016",
+      "cik": "0000816956",
+      "prepared_row_sha256": "0e6d18460d40a868800dc4fff10c0fcedb2169860c25bb8a4acbe5cd895c9573",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.001287281308929229,
+        0.022121852294198018
+      ],
+      "uncalibrated": [
+        -0.001287281308929229,
+        0.022121852294198018
+      ],
+      "corrected": [
+        0.008201065239960706,
+        0.01841477608592723
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001035201:0001035201-23-000009",
+      "cik": "0001035201",
+      "prepared_row_sha256": "b12f29298277e5b6e3df4f02b04dbeb5a855f2f7252faece1fdb8cd4c497bb63",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001093557:0001093557-23-000174",
+      "cik": "0001093557",
+      "prepared_row_sha256": "c929596947a4d2ef64ff8c2953139d263c5ef21d60a8152c5a290e4d349c00f0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004704712243610973,
+        0.020432067372666916
+      ],
+      "uncalibrated": [
+        0.004704712243610973,
+        0.020432067372666916
+      ],
+      "corrected": [
+        0.014193058792500908,
+        0.01672499116439613
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001114483:0001114483-23-000024",
+      "cik": "0001114483",
+      "prepared_row_sha256": "4324a78cfe52f45b66edb9a5e30485fbaf342a305922d882650142305b4e1800",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.004510307756749517,
+        0.028984064320351586
+      ],
+      "uncalibrated": [
+        -0.004510307756749517,
+        0.028984064320351586
+      ],
+      "corrected": [
+        0.004978038792140418,
+        0.0252769881120808
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000009326:0001628280-23-026088",
+      "cik": "0000009326",
+      "prepared_row_sha256": "08f32cd8946b36071d5ec03463c8ebc9cdae5cf158c75d48f03f22b071ab9c88",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007717234593389683,
+        0.01997232246663703
+      ],
+      "uncalibrated": [
+        0.007717234593389683,
+        0.01997232246663703
+      ],
+      "corrected": [
+        0.017205581142279616,
+        0.016265246258366242
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000732712:0000732712-23-000055",
+      "cik": "0000732712",
+      "prepared_row_sha256": "f4cba5dc05c598356652349f94930e851fea2546d3445d03c3c44f88deb0e560",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007217058454084994,
+        0.02080039813253459
+      ],
+      "uncalibrated": [
+        0.007217058454084994,
+        0.02080039813253459
+      ],
+      "corrected": [
+        0.01670540500297493,
+        0.017093321924263803
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000891014:0000891014-23-000074",
+      "cik": "0000891014",
+      "prepared_row_sha256": "ced05434b3a01ba579da326604d53b9117c8d46478c855dec6bb6a20be7f9f7e",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.008419031203573879,
+        0.021620469678866022
+      ],
+      "uncalibrated": [
+        0.008419031203573879,
+        0.021620469678866022
+      ],
+      "corrected": [
+        0.017907377752463816,
+        0.017913393470595236
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000030625:0000030625-23-000123",
+      "cik": "0000030625",
+      "prepared_row_sha256": "35079602757667ed331c602472258398c8631fde6f2629ac41da81822972f440",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0019543813531375637,
+        0.02376597124706556
+      ],
+      "uncalibrated": [
+        0.0019543813531375637,
+        0.02376597124706556
+      ],
+      "corrected": [
+        0.0114427279020275,
+        0.020058895038794773
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000032604:0000032604-23-000037",
+      "cik": "0000032604",
+      "prepared_row_sha256": "2c88d1b613ad55236e1fb8eb59d55574d5cf418b77b71ace8dad7e6a07f32b8f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.034436459817180486,
+        0.02347930165649581
+      ],
+      "uncalibrated": [
+        -0.034436459817180486,
+        0.02347930165649581
+      ],
+      "corrected": [
+        -0.02494811326829055,
+        0.019772225448225024
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000095029:0001174947-23-000966",
+      "cik": "0000095029",
+      "prepared_row_sha256": "df5a8944e3f90f84a254698d4f861a3caa2368eec854e43de581f364e497ab9f",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000746838:0000746838-23-000039",
+      "cik": "0000746838",
+      "prepared_row_sha256": "503e3d0264a9c3ab77d77a1ab4d71a225c76e5436a165e24e0d5d50803f00dc7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.01321886143375425,
+        0.018583231268921915
+      ],
+      "uncalibrated": [
+        0.01321886143375425,
+        0.018583231268921915
+      ],
+      "corrected": [
+        0.022707207982644185,
+        0.014876155060651128
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000812074:0001558370-23-012937",
+      "cik": "0000812074",
+      "prepared_row_sha256": "eeade803d8271f21a9233a0864f1a67f78e85f459a2fbdb6178d79534251b8ad",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0005675062817414845,
+        0.02568180681521142
+      ],
+      "uncalibrated": [
+        -0.0005675062817414845,
+        0.02568180681521142
+      ],
+      "corrected": [
+        0.00892084026714845,
+        0.021974730606940635
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001192448:0001558370-23-012950",
+      "cik": "0001192448",
+      "prepared_row_sha256": "57e511f582eafc38cc25f28e8d7f8aaf8d5c4b3a6045f112fdecf4760c8b145f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004063301337652422,
+        0.02273393866311708
+      ],
+      "uncalibrated": [
+        0.004063301337652422,
+        0.02273393866311708
+      ],
+      "corrected": [
+        0.013551647886542357,
+        0.019026862454846295
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001396814:0001396814-23-000037",
+      "cik": "0001396814",
+      "prepared_row_sha256": "b560d8d846484cd271f21f88936a17e5bdec7694ad6bcb1f0a15418a068c96a9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002399445619903218,
+        0.024763117360813394
+      ],
+      "uncalibrated": [
+        0.002399445619903218,
+        0.024763117360813394
+      ],
+      "corrected": [
+        0.011887792168793153,
+        0.021056041152542608
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000037785:0000037785-23-000153",
+      "cik": "0000037785",
+      "prepared_row_sha256": "2ac5983decb4b3ae3177a2a69a643cb9ca04e22f48ea6454d49a45cb1670fd1c",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000098362:0000098362-23-000107",
+      "cik": "0000098362",
+      "prepared_row_sha256": "423bf24166af070ca1473760d6745db5d1d2c12ba15d9fd5eab79b5cef85858e",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.003302680363639555,
+        0.026583774469602077
+      ],
+      "uncalibrated": [
+        -0.003302680363639555,
+        0.026583774469602077
+      ],
+      "corrected": [
+        0.00618566618525038,
+        0.02287669826133129
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000772406:0000772406-23-000048",
+      "cik": "0000772406",
+      "prepared_row_sha256": "bae70096ba0cc739a801e156b47f7bbc40e2f5e54c84c930ac61c73b7b555a60",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002569034148243331,
+        0.025204995599313995
+      ],
+      "uncalibrated": [
+        0.002569034148243331,
+        0.025204995599313995
+      ],
+      "corrected": [
+        0.012057380697133266,
+        0.02149791939104321
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000882835:0000882835-23-000045",
+      "cik": "0000882835",
+      "prepared_row_sha256": "fe8fa81ee7eb83f1bc444aca95146753177ec96805aab1ecf7e23da292a3ba87",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.010788467287957626,
+        0.02007733837871038
+      ],
+      "uncalibrated": [
+        0.010788467287957626,
+        0.02007733837871038
+      ],
+      "corrected": [
+        0.02027681383684756,
+        0.016370262170439593
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000890564:0000890564-23-000015",
+      "cik": "0000890564",
+      "prepared_row_sha256": "3f7dfbeb6474ea833185603c4612e2c0b694e95a967231331c77e10be7c88f11",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007362828111200615,
+        0.022124436034898158
+      ],
+      "uncalibrated": [
+        0.007362828111200615,
+        0.022124436034898158
+      ],
+      "corrected": [
+        0.016851174660090548,
+        0.018417359826627372
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000893538:0000893538-23-000088",
+      "cik": "0000893538",
+      "prepared_row_sha256": "18ac66e2e7a5ca3bfd464127d3c7283dbe680937594a53456ce8ed91a7a0c9e8",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00328214890099665,
+        0.025408132827235384
+      ],
+      "uncalibrated": [
+        0.00328214890099665,
+        0.025408132827235384
+      ],
+      "corrected": [
+        0.012770495449886586,
+        0.021701056618964598
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001005284:0000950170-23-037976",
+      "cik": "0001005284",
+      "prepared_row_sha256": "b9f8a46fcf4127e137aa6e3f83a57427d0c13aa3184d41b66e4c8f58cca8151f",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004633380481174499,
+        0.02229415515258767
+      ],
+      "uncalibrated": [
+        0.004633380481174499,
+        0.02229415515258767
+      ],
+      "corrected": [
+        0.014121727030064434,
+        0.018587078944316885
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001237831:0001562762-23-000307",
+      "cik": "0001237831",
+      "prepared_row_sha256": "82d27163c3159b2b5d28397e60c1b2112cb5fd94175aa5a86b7a20232d16bab7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00548010522154258,
+        0.022068621424809972
+      ],
+      "uncalibrated": [
+        0.00548010522154258,
+        0.022068621424809972
+      ],
+      "corrected": [
+        0.014968451770432515,
+        0.018361545216539186
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001370637:0001370637-23-000071",
+      "cik": "0001370637",
+      "prepared_row_sha256": "8fc73210b6af6b8111d9a2834a4ba00d7b43925913c4e595ae75080af12bbed2",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00015260560214731302,
+        0.025007569433527433
+      ],
+      "uncalibrated": [
+        0.00015260560214731302,
+        0.025007569433527433
+      ],
+      "corrected": [
+        0.009640952151037248,
+        0.021300493225256647
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001420800:0001420800-23-000023",
+      "cik": "0001420800",
+      "prepared_row_sha256": "ea358f680234d9052a7504412292ac74de398d7a1b0006e69070bcef45d3e60e",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001590955:0000950170-23-037954",
+      "cik": "0001590955",
+      "prepared_row_sha256": "16efb62e2c5ff140314b533fefb9dccbbc9a0447c8e7feadd97017c3e6c0c0e9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0018571658431678557,
+        0.0230189025199591
+      ],
+      "uncalibrated": [
+        0.0018571658431678557,
+        0.0230189025199591
+      ],
+      "corrected": [
+        0.011345512392057791,
+        0.019311826311688315
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000012208:0000012208-23-000063",
+      "cik": "0000012208",
+      "prepared_row_sha256": "ac235533a9fce213de8e786e32f0c64d85c6955f5ff4a90e5c248b9f7f2c4dbe",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000046080:0000046080-23-000083",
+      "cik": "0000046080",
+      "prepared_row_sha256": "683d30624ded3e44909cdba61e5f64be0ebb5f81c2e27c58616ce053e6a0f4a5",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.010223332091374614,
+        0.025280625601085117
+      ],
+      "uncalibrated": [
+        0.010223332091374614,
+        0.025280625601085117
+      ],
+      "corrected": [
+        0.01971167864026455,
+        0.02157354939281433
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000310764:0000310764-23-000106",
+      "cik": "0000310764",
+      "prepared_row_sha256": "43d7ef42d721052c53c54bb2ab384d6d9e5ac87d0039f26e2e792d7dc9dc3594",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0031327448776588456,
+        0.02441516376115847
+      ],
+      "uncalibrated": [
+        0.0031327448776588456,
+        0.02441516376115847
+      ],
+      "corrected": [
+        0.01262109142654878,
+        0.020708087552887684
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000318154:0000318154-23-000053",
+      "cik": "0000318154",
+      "prepared_row_sha256": "6e8071cbb3be4467eba45f74b2e05c8fe5d05766bd9ee409dba03ac62203c79a",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0017065270147524703,
+        0.025730225816051003
+      ],
+      "uncalibrated": [
+        0.0017065270147524703,
+        0.025730225816051003
+      ],
+      "corrected": [
+        0.011194873563642405,
+        0.022023149607780217
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000878927:0000950170-23-038553",
+      "cik": "0000878927",
+      "prepared_row_sha256": "1462f1b0f5564ae8fa5c114b28a4567c517f10b312e83fa37e96e7387043a74f",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001122904:0000950170-23-038556",
+      "cik": "0001122904",
+      "prepared_row_sha256": "0e6c87818f72473c113e8e35089ba5d47150ebfabb8834ba4e24e20829d84d53",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.001730656171471346,
+        0.02514782515848841
+      ],
+      "uncalibrated": [
+        0.001730656171471346,
+        0.02514782515848841
+      ],
+      "corrected": [
+        0.011219002720361282,
+        0.021440748950217622
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001530950:0001530950-23-000236",
+      "cik": "0001530950",
+      "prepared_row_sha256": "c0b4127e0c3d656baf7b04d9e5ad1d7157afca19277d4c0b2235812d2af5f495",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0056110627791352684,
+        0.02440268675462336
+      ],
+      "uncalibrated": [
+        0.0056110627791352684,
+        0.02440268675462336
+      ],
+      "corrected": [
+        0.015099409328025204,
+        0.020695610546352574
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001013488:0000950170-23-039023",
+      "cik": "0001013488",
+      "prepared_row_sha256": "912558b5e1c77a533f8bb1934083fdb1ae2988ab8aa084059df0828a946efd9d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006323171432282379,
+        0.020705616307860386
+      ],
+      "uncalibrated": [
+        0.006323171432282379,
+        0.020705616307860386
+      ],
+      "corrected": [
+        0.015811517981172314,
+        0.0169985400995896
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001419612:0001178913-23-002728",
+      "cik": "0001419612",
+      "prepared_row_sha256": "191ec139227e769f36d3560e5c9a536a30725a445de939001bd2c84c4ca95d38",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000078128:0001562762-23-000321",
+      "cik": "0000078128",
+      "prepared_row_sha256": "32690f267dc0910802069c56b4e80de0e458d2e0918d24e000c01a9716331fc2",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001046311:0001046311-23-000031",
+      "cik": "0001046311",
+      "prepared_row_sha256": "0eb8c71f46559ac79f52d55f23bb0c1a75ee1b9b5bc25b59845ec88c35c4159b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0019937296029302527,
+        0.025675657137338142
+      ],
+      "uncalibrated": [
+        0.0019937296029302527,
+        0.025675657137338142
+      ],
+      "corrected": [
+        0.011482076151820187,
+        0.021968580929067356
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001227654:0001227654-23-000163",
+      "cik": "0001227654",
+      "prepared_row_sha256": "829b16cf6cdc3a166ac0f9d3937fe591e48dae9d191a8a28d9746736288ca879",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001356576:0001356576-23-000050",
+      "cik": "0001356576",
+      "prepared_row_sha256": "233bb0fdca80e75cea58a51e6adba77bf5be3b8383bed341a246596e1d3b0f12",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0027411127391283783,
+        0.02557866285290823
+      ],
+      "uncalibrated": [
+        0.0027411127391283783,
+        0.02557866285290823
+      ],
+      "corrected": [
+        0.012229459288018314,
+        0.021871586644637443
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001609809:0000950170-23-039439",
+      "cik": "0001609809",
+      "prepared_row_sha256": "d466b2ae47f672d006dff51426371051f0af46a1fd28dcbcf39e19884585b871",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000103730:0000103730-23-000067",
+      "cik": "0000103730",
+      "prepared_row_sha256": "4d501628f5ea61b0771718e191350726553eacf2399a1eacfde154696d686403",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006312725946471006,
+        0.023689631398691263
+      ],
+      "uncalibrated": [
+        0.006312725946471006,
+        0.023689631398691263
+      ],
+      "corrected": [
+        0.01580107249536094,
+        0.019982555190420477
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000733269:0000733269-23-000032",
+      "cik": "0000733269",
+      "prepared_row_sha256": "a6b9825dca520b01df34f4039f4269ebdaa282fc3dbd96bc72b632144b2d37ea",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002878527172459609,
+        0.02365327320557381
+      ],
+      "uncalibrated": [
+        0.002878527172459609,
+        0.02365327320557381
+      ],
+      "corrected": [
+        0.012366873721349545,
+        0.019946196997303024
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000868857:0001104659-23-089320",
+      "cik": "0000868857",
+      "prepared_row_sha256": "903ea28e8ae9e693b7a50c601721ac6e24a543a85545293c14c6d7b44d0217ef",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.01070326921569446,
+        0.025001385052881152
+      ],
+      "uncalibrated": [
+        0.01070326921569446,
+        0.025001385052881152
+      ],
+      "corrected": [
+        0.020191615764584395,
+        0.021294308844610366
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000906709:0000906709-23-000012",
+      "cik": "0000906709",
+      "prepared_row_sha256": "2230753b9b337ca0c30887df6c3613f55033ae9867f18666355f74efd91fad72",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.04470190414939584,
+        0.05822679906150702
+      ],
+      "uncalibrated": [
+        -0.04470190414939584,
+        0.05822679906150702
+      ],
+      "corrected": [
+        -0.0352135576005059,
+        0.05451972285323623
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          4
+        ],
+        "corrected": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "event_id": "0000949157:0000949157-23-000065",
+      "cik": "0000949157",
+      "prepared_row_sha256": "4322a7b8d236dbbc657be44c6dc6694750aae42a004dbd04b84c7d86fd2ee771",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006541478280737459,
+        0.02344099712895977
+      ],
+      "uncalibrated": [
+        0.006541478280737459,
+        0.02344099712895977
+      ],
+      "corrected": [
+        0.016029824829627393,
+        0.019733920920688985
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001061219:0001061219-23-000017",
+      "cik": "0001061219",
+      "prepared_row_sha256": "8e722246f031ba63417323260cf75a6dcfed5dc2ffac6aacdda17e43a7a8d9f2",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0069190334480596135,
+        0.023951538664549434
+      ],
+      "uncalibrated": [
+        0.0069190334480596135,
+        0.023951538664549434
+      ],
+      "corrected": [
+        0.01640737999694955,
+        0.020244462456278648
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001109354:0000950170-23-040491",
+      "cik": "0001109354",
+      "prepared_row_sha256": "8755e5e66fa7634023af326ff435e26c0be8602a75ef72b5f1a4e759a398a9ac",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007706969911923562,
+        0.020969336557425132
+      ],
+      "uncalibrated": [
+        0.007706969911923562,
+        0.020969336557425132
+      ],
+      "corrected": [
+        0.017195316460813497,
+        0.017262260349154346
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001158172:0001158172-23-000086",
+      "cik": "0001158172",
+      "prepared_row_sha256": "ddd7c90c16478115b1e09d414ee05e835fc05f3a27a3ebe090bc296e02d2d2a9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0030858160126645703,
+        0.03159519080536211
+      ],
+      "uncalibrated": [
+        -0.0030858160126645703,
+        0.03159519080536211
+      ],
+      "corrected": [
+        0.0064025305362253645,
+        0.027888114597091326
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          1
+        ],
+        "corrected": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0001206264:0001206264-23-000177",
+      "cik": "0001206264",
+      "prepared_row_sha256": "9bf908fab4009d5a05475233ff40e7fe4c8053ae72c0365886db8fb744aa3710",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.008915379527299833,
+        0.02225511298608869
+      ],
+      "uncalibrated": [
+        0.008915379527299833,
+        0.02225511298608869
+      ],
+      "corrected": [
+        0.01840372607618977,
+        0.018548036777817904
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001490281:0001490281-23-000090",
+      "cik": "0001490281",
+      "prepared_row_sha256": "c546779063b6f3d97c95ef5b4e0b20f87a9630caaa92f810c8aa77f29cd6a367",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000769520:0000769520-23-000014",
+      "cik": "0000769520",
+      "prepared_row_sha256": "1e0d68c61fe9d056430680b4ad4732d69d0d2e383118ca6009f7d5c317729601",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005970040225780021,
+        0.023519238582875152
+      ],
+      "uncalibrated": [
+        0.005970040225780021,
+        0.023519238582875152
+      ],
+      "corrected": [
+        0.015458386774669956,
+        0.019812162374604366
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001116942:0000950170-23-041297",
+      "cik": "0001116942",
+      "prepared_row_sha256": "e1f33a22d35e36cc43a65567cacbd532003dcfeb763a7b8f1022f3fc0e499979",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004253804609187324,
+        0.024282740984080637
+      ],
+      "uncalibrated": [
+        0.004253804609187324,
+        0.024282740984080637
+      ],
+      "corrected": [
+        0.013742151158077259,
+        0.02057566477580985
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000039911:0000039911-23-000110",
+      "cik": "0000039911",
+      "prepared_row_sha256": "d30387e902d69a34ef0f531a0611d7d1e6d349db61a4b8d2b292771605f4f669",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0023466142103902615,
+        0.02611442499977726
+      ],
+      "uncalibrated": [
+        0.0023466142103902615,
+        0.02611442499977726
+      ],
+      "corrected": [
+        0.011834960759280196,
+        0.022407348791506475
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001177609:0001177609-23-000022",
+      "cik": "0001177609",
+      "prepared_row_sha256": "540088d9469a1633b0ba70fbbff38af9c07d2f3d8cb02cc1a12478296f2ed725",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.000417401768557189,
+        0.026377984904820694
+      ],
+      "uncalibrated": [
+        0.000417401768557189,
+        0.026377984904820694
+      ],
+      "corrected": [
+        0.009905748317447125,
+        0.022670908696549908
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001397187:0001397187-23-000044",
+      "cik": "0001397187",
+      "prepared_row_sha256": "bd10aa84dd98ea4c7646036565a82512cfe23d181764b600d2044baff96a1f94",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002883329027391856,
+        0.025040850054782276
+      ],
+      "uncalibrated": [
+        0.002883329027391856,
+        0.025040850054782276
+      ],
+      "corrected": [
+        0.012371675576281792,
+        0.02133377384651149
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001639300:0001140361-23-042063",
+      "cik": "0001639300",
+      "prepared_row_sha256": "5e59561f447a9a8826e67dd8d688bb1fb6e81bfb20a1ef4fd50d9e7adebc2373",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0027182428424351707,
+        0.028487738432297457
+      ],
+      "uncalibrated": [
+        -0.0027182428424351707,
+        0.028487738432297457
+      ],
+      "corrected": [
+        0.006770103706454764,
+        0.02478066222402667
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000719955:0001628280-23-031270",
+      "cik": "0000719955",
+      "prepared_row_sha256": "3166f460b00fd78d41b13f95928bc9e096f3b9ea377c6637336dc95ff6d5cce0",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001393052:0001393052-23-000051",
+      "cik": "0001393052",
+      "prepared_row_sha256": "1ede98de548356e7dce47fd4516d4ef658034dcd1d444052d24174d01707f275",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001318008:0000950170-23-046995",
+      "cik": "0001318008",
+      "prepared_row_sha256": "1ee637d0df83345dc903529a2039a77240d5ed29b54535e7e0a47ce836d75d44",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00496689422110231,
+        0.02597525428416818
+      ],
+      "uncalibrated": [
+        0.00496689422110231,
+        0.02597525428416818
+      ],
+      "corrected": [
+        0.014455240769992245,
+        0.022268178075897392
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001319947:0001319947-23-000043",
+      "cik": "0001319947",
+      "prepared_row_sha256": "5bf78e2173c718c3d2c821e1b264b6cf3a84c8ca5387508014dbb6d3c8403424",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000912615:0000950170-23-047479",
+      "cik": "0000912615",
+      "prepared_row_sha256": "d759ecaa3f18c37de2b0b5368fb654ec601e3474edeeda5736bfddd1e114e9f9",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000088941:0000088941-23-000022",
+      "cik": "0000088941",
+      "prepared_row_sha256": "1c74c8d7741655d7f1a900ed7cbe65f668472f5a81704e513202131c71025383",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.014597793043258511,
+        0.031003099651313336
+      ],
+      "uncalibrated": [
+        0.014597793043258511,
+        0.031003099651313336
+      ],
+      "corrected": [
+        0.024086139592148448,
+        0.02729602344304255
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000796343:0000796343-23-000205",
+      "cik": "0000796343",
+      "prepared_row_sha256": "5e4876d1b1dbf77bf5292b57093ae73dfebe7b3b95c97957902f41c6148f9c9b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002038505851588255,
+        0.02618482691974096
+      ],
+      "uncalibrated": [
+        0.002038505851588255,
+        0.02618482691974096
+      ],
+      "corrected": [
+        0.01152685240047819,
+        0.022477750711470172
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000016918:0000016918-23-000190",
+      "cik": "0000016918",
+      "prepared_row_sha256": "a75b8f9c30cb5c9cde0fdcbc61a9867e6db820101bf72971ca57356811ff582b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.006914800741910537,
+        0.03097998128330102
+      ],
+      "uncalibrated": [
+        -0.006914800741910537,
+        0.03097998128330102
+      ],
+      "corrected": [
+        0.0025735458069793982,
+        0.027272905075030236
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000023217:0001437749-23-027773",
+      "cik": "0000023217",
+      "prepared_row_sha256": "514f9d0e21aba50bd089d521dd5a30626de8afc03fad7af069747c8893f491a8",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.001008605160220998,
+        0.027323103907603275
+      ],
+      "uncalibrated": [
+        -0.001008605160220998,
+        0.027323103907603275
+      ],
+      "corrected": [
+        0.008479741388668936,
+        0.02361602769933249
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000795266:0000795266-23-000103",
+      "cik": "0000795266",
+      "prepared_row_sha256": "59e5d892dd0079f61cb22b9425261b48d2b388bd470246b69ff8020961275ad2",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.015250420224319031,
+        0.023513334924961004
+      ],
+      "uncalibrated": [
+        0.015250420224319031,
+        0.023513334924961004
+      ],
+      "corrected": [
+        0.024738766773208964,
+        0.019806258716690218
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000077476:0000077476-23-000058",
+      "cik": "0000077476",
+      "prepared_row_sha256": "44b1efced51d5e66bab08a0efb4e295dfd640ca216f11930ea82b0a89938824c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0025812648590711855,
+        0.027001129144866128
+      ],
+      "uncalibrated": [
+        0.0025812648590711855,
+        0.027001129144866128
+      ],
+      "corrected": [
+        0.01206961140796112,
+        0.023294052936595342
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000066382:0000066382-23-000081",
+      "cik": "0000066382",
+      "prepared_row_sha256": "132b75fa78a9a6e9e78fbdddd025f1bc11d0f3891b1c9148d36b7c73156b64e7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007056701350927322,
+        0.025688009000737914
+      ],
+      "uncalibrated": [
+        0.007056701350927322,
+        0.025688009000737914
+      ],
+      "corrected": [
+        0.016545047899817256,
+        0.02198093279246713
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000040987:0000040987-23-000086",
+      "cik": "0000040987",
+      "prepared_row_sha256": "77fd1d06267c864c1ab7c4fea9dcfc80c3f8f6d58e7596e398daa64cd0a6f99d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0003141468310211412,
+        0.028872961267949485
+      ],
+      "uncalibrated": [
+        0.0003141468310211412,
+        0.028872961267949485
+      ],
+      "corrected": [
+        0.009802493379911077,
+        0.0251658850596787
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000079879:0000079879-23-000065",
+      "cik": "0000079879",
+      "prepared_row_sha256": "8fe88b47744d5405a67d5e446d385cfaccc76c0e84c3651d5b26caf7555e7f7b",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001418819:0001418819-23-000033",
+      "cik": "0001418819",
+      "prepared_row_sha256": "0793733c85df6a1fb00ab0b92e80bc50c9236e9c3f8a9c10d3007a08d47ae5d6",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0005139392457115381,
+        0.03062219764131403
+      ],
+      "uncalibrated": [
+        -0.0005139392457115381,
+        0.03062219764131403
+      ],
+      "corrected": [
+        0.008974407303178398,
+        0.026915121433043244
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000707549:0000707549-23-000115",
+      "cik": "0000707549",
+      "prepared_row_sha256": "5d84d36d90ce978c95822a04dc6cb687a97e602bafd134e760b08c64c53d42e9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007615362024297832,
+        0.028161609301292558
+      ],
+      "uncalibrated": [
+        0.007615362024297832,
+        0.028161609301292558
+      ],
+      "corrected": [
+        0.017103708573187767,
+        0.02445453309302177
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001506307:0001506307-23-000118",
+      "cik": "0001506307",
+      "prepared_row_sha256": "146a4a3467d83d5edf53f4c2e8c650ddf891ff251b0f9a07c5f32ce3dcad2615",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004733065873971303,
+        0.028398051594791536
+      ],
+      "uncalibrated": [
+        0.004733065873971303,
+        0.028398051594791536
+      ],
+      "corrected": [
+        0.014221412422861238,
+        0.02469097538652075
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000066740:0000066740-23-000092",
+      "cik": "0000066740",
+      "prepared_row_sha256": "d6ad774a26c8a263860f13ff6d485512a60515f1dac6accf0d2674a9308709db",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.01884463982251821,
+        0.024833682596688264
+      ],
+      "uncalibrated": [
+        0.01884463982251821,
+        0.024833682596688264
+      ],
+      "corrected": [
+        0.028332986371408145,
+        0.021126606388417478
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001552033:0001552033-23-000050",
+      "cik": "0001552033",
+      "prepared_row_sha256": "e22fb684ae1f27fd7d11453d46f3320459057d081981f66248c82f51e4752757",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.003502000888407591,
+        0.04052084419289505
+      ],
+      "uncalibrated": [
+        -0.003502000888407591,
+        0.04052084419289505
+      ],
+      "corrected": [
+        0.005986345660482345,
+        0.03681376798462426
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          4
+        ],
+        "corrected": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "event_id": "0000030625:0000030625-23-000136",
+      "cik": "0000030625",
+      "prepared_row_sha256": "ce1863a70e53d370713670c20ec90c593712591bbdb81429a3721a6edacc4f05",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0029233746272721837,
+        0.029268518656347074
+      ],
+      "uncalibrated": [
+        0.0029233746272721837,
+        0.029268518656347074
+      ],
+      "corrected": [
+        0.012411721176162118,
+        0.025561442448076288
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000798354:0000798354-23-000018",
+      "cik": "0000798354",
+      "prepared_row_sha256": "5d82f326a8f7eed2425691f82cd60a5f502b7b0a85bf12d7e6f7c208a6f2ef1b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.001490464159391814,
+        0.030007193687094334
+      ],
+      "uncalibrated": [
+        -0.001490464159391814,
+        0.030007193687094334
+      ],
+      "corrected": [
+        0.00799788238949812,
+        0.026300117478823548
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000896156:0001437749-23-028947",
+      "cik": "0000896156",
+      "prepared_row_sha256": "f3810d3817c6133bea090ec7cd7a2f4f8f81129c75eb5e4a4a9dbc045707ac61",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0012589383008106605,
+        0.03301842003715769
+      ],
+      "uncalibrated": [
+        0.0012589383008106605,
+        0.03301842003715769
+      ],
+      "corrected": [
+        0.010747284849700596,
+        0.029311343828886907
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          1
+        ],
+        "corrected": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0001808834:0001808834-23-000106",
+      "cik": "0001808834",
+      "prepared_row_sha256": "796b977e96394f1049551dbffbb80cb6006a6bbbb3f647a4ea25e7d88ccf369e",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.003322612942013244,
+        0.033140475897172006
+      ],
+      "uncalibrated": [
+        -0.003322612942013244,
+        0.033140475897172006
+      ],
+      "corrected": [
+        0.006165733606876691,
+        0.02943339968890122
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          1
+        ],
+        "corrected": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0000106640:0000106640-23-000131",
+      "cik": "0000106640",
+      "prepared_row_sha256": "4e42df159d7c9a834ab6a7e50d7c73b71a98608866dfd60f970c1017eed46499",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.012782782378212707,
+        0.038487783376935675
+      ],
+      "uncalibrated": [
+        -0.012782782378212707,
+        0.038487783376935675
+      ],
+      "corrected": [
+        -0.003294435829322772,
+        0.03478070716866489
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          4
+        ],
+        "corrected": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "event_id": "0000732712:0000732712-23-000063",
+      "cik": "0000732712",
+      "prepared_row_sha256": "9280d6f7339cedc57f0dbed09a27e2326dac835936f6372a294db9014166f8c5",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0012797257943799943,
+        0.03254647066144801
+      ],
+      "uncalibrated": [
+        0.0012797257943799943,
+        0.03254647066144801
+      ],
+      "corrected": [
+        0.01076807234326993,
+        0.028839394453177222
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          1
+        ],
+        "corrected": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0000816956:0000816956-23-000019",
+      "cik": "0000816956",
+      "prepared_row_sha256": "f66d6ae3e94cb228ab1168b256bcb379d3ca798672b0210454e00ae710013f39",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.005219284551346346,
+        0.03553504454698338
+      ],
+      "uncalibrated": [
+        -0.005219284551346346,
+        0.03553504454698338
+      ],
+      "corrected": [
+        0.004269061997543589,
+        0.03182796833871259
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          3
+        ],
+        "corrected": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "event_id": "0001035201:0001035201-23-000012",
+      "cik": "0001035201",
+      "prepared_row_sha256": "2cb5ccaca7663d448e15fcb36ff05ff60dd31a5eca7220d330af2a7c3b86ce65",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001093557:0001093557-23-000220",
+      "cik": "0001093557",
+      "prepared_row_sha256": "9b30b71133fad0a394ff56ab7331ef1a1b3670a4085115bf8d9fee94f1c6baa0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003073371933526223,
+        0.029275143134875704
+      ],
+      "uncalibrated": [
+        0.003073371933526223,
+        0.029275143134875704
+      ],
+      "corrected": [
+        0.012561718482416159,
+        0.025568066926604918
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001114483:0001114483-23-000031",
+      "cik": "0001114483",
+      "prepared_row_sha256": "ad6ecd2e37a500b48861279b5acd58ea0dd6c1a98556d2fe21863d8b6f5c8c98",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.005830078755338973,
+        0.036387896844164144
+      ],
+      "uncalibrated": [
+        -0.005830078755338973,
+        0.036387896844164144
+      ],
+      "corrected": [
+        0.0036582677935509626,
+        0.03268082063589336
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          4
+        ],
+        "corrected": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "event_id": "0000009326:0001628280-23-035389",
+      "cik": "0000009326",
+      "prepared_row_sha256": "708cb259b78c9db17b25ac38f711220f345dc53b8b572e7b2b37e41402c00de7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0018480650216239694,
+        0.029937289933508124
+      ],
+      "uncalibrated": [
+        0.0018480650216239694,
+        0.029937289933508124
+      ],
+      "corrected": [
+        0.011336411570513905,
+        0.026230213725237338
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000012208:0000012208-23-000072",
+      "cik": "0000012208",
+      "prepared_row_sha256": "207d9501bfa56454b08debbbb03a7835aced722d01f407157b5839f1c032122a",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000350698:0000350698-23-000143",
+      "cik": "0000350698",
+      "prepared_row_sha256": "d45cfef04a77db94871e4684addf78bc7c52f0f2c9b821841467d0daa0088485",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0005064184404361299,
+        0.032147562004691106
+      ],
+      "uncalibrated": [
+        0.0005064184404361299,
+        0.032147562004691106
+      ],
+      "corrected": [
+        0.009994764989326065,
+        0.02844048579642032
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          1
+        ],
+        "corrected": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0000790051:0000790051-23-000180",
+      "cik": "0000790051",
+      "prepared_row_sha256": "e1ae3c3a19854c411bf5fd366069ad031ef1afd6a45bc956c71a9a5ab7626b61",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0041407768441494,
+        0.03043297989402018
+      ],
+      "uncalibrated": [
+        0.0041407768441494,
+        0.03043297989402018
+      ],
+      "corrected": [
+        0.013629123393039335,
+        0.026725903685749394
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000891014:0000891014-23-000103",
+      "cik": "0000891014",
+      "prepared_row_sha256": "52e346b32ded75a1df6fc6ad6b730ee6835d3abf0dae4b8ca932e33fbfd6dc76",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0034656848026989643,
+        0.032863625632482914
+      ],
+      "uncalibrated": [
+        0.0034656848026989643,
+        0.032863625632482914
+      ],
+      "corrected": [
+        0.0129540313515889,
+        0.029156549424212128
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          1
+        ],
+        "corrected": [
+          4,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0000318154:0000318154-23-000064",
+      "cik": "0000318154",
+      "prepared_row_sha256": "fa4bbb72534b18822d171c5a4f7d15fb48b70d6058b73708e48b8fe010922c73",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00274678328508408,
+        0.029612789252178306
+      ],
+      "uncalibrated": [
+        0.00274678328508408,
+        0.029612789252178306
+      ],
+      "corrected": [
+        0.012235129833974016,
+        0.02590571304390752
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001587732:0001587732-23-000054",
+      "cik": "0001587732",
+      "prepared_row_sha256": "ba1b5afbf96d795cbff2ed0715db5a34dcfe1a4fb4427c516f3022bd215b0b84",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000046080:0000046080-23-000095",
+      "cik": "0000046080",
+      "prepared_row_sha256": "a2a8da679754b98ac7ef9a7df09eeb8860f963ff0dd2101f774f2c47a69e78d5",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.01109715399911183,
+        0.02531386828264862
+      ],
+      "uncalibrated": [
+        0.01109715399911183,
+        0.02531386828264862
+      ],
+      "corrected": [
+        0.020585500548001765,
+        0.021606792074377833
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000095029:0001174947-23-001274",
+      "cik": "0000095029",
+      "prepared_row_sha256": "5db35b5d8d3a63c63d7cf36b477b0ed18463eb56f816a6f86c68709fd4dc59be",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002736003199418257,
+        0.029642103306100495
+      ],
+      "uncalibrated": [
+        0.002736003199418257,
+        0.029642103306100495
+      ],
+      "corrected": [
+        0.012224349748308192,
+        0.02593502709782971
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000098362:0000098362-23-000135",
+      "cik": "0000098362",
+      "prepared_row_sha256": "83d3bdb04de2308d6b7d0e3f90c348a29a9d0e1900f8a40373315e0c3b148223",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002912492717156278,
+        0.02921276349013193
+      ],
+      "uncalibrated": [
+        0.002912492717156278,
+        0.02921276349013193
+      ],
+      "corrected": [
+        0.012400839266046213,
+        0.025505687281861145
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000812074:0001558370-23-017248",
+      "cik": "0000812074",
+      "prepared_row_sha256": "f1ef19f873e0edafa59e0ef3ef6b3c77329e5effa8ab98ef540b548613fec720",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00553485365558597,
+        0.02930709683481177
+      ],
+      "uncalibrated": [
+        0.00553485365558597,
+        0.02930709683481177
+      ],
+      "corrected": [
+        0.015023200204475905,
+        0.025600020626540983
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001192448:0001558370-23-017253",
+      "cik": "0001192448",
+      "prepared_row_sha256": "061be76350c6623271dfb815ec370265643c561b04d4cedd9bf4d357f396bafc",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0031617437589122168,
+        0.029657415175666738
+      ],
+      "uncalibrated": [
+        0.0031617437589122168,
+        0.029657415175666738
+      ],
+      "corrected": [
+        0.012650090307802151,
+        0.02595033896739595
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001410636:0001410636-23-000122",
+      "cik": "0001410636",
+      "prepared_row_sha256": "dfd4b66ac4115e7776e11833d8f9e71236f72657d43ad433e6c1955209e37c38",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003126838607143647,
+        0.027477293391916294
+      ],
+      "uncalibrated": [
+        0.003126838607143647,
+        0.027477293391916294
+      ],
+      "corrected": [
+        0.012615185156033583,
+        0.023770217183645508
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000010456:0001628280-23-036195",
+      "cik": "0000010456",
+      "prepared_row_sha256": "e46f4f13f914d4c3250a7227156bfc026721d90561276d9860d83f0be4be1c23",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.010215457271477898,
+        0.0285869300426203
+      ],
+      "uncalibrated": [
+        -0.010215457271477898,
+        0.0285869300426203
+      ],
+      "corrected": [
+        -0.000727110722587963,
+        0.024879853834349513
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000057515:0000057515-23-000028",
+      "cik": "0000057515",
+      "prepared_row_sha256": "61a10e3f53be6b80a29b7c375099f8954775320080e75d47cd2ce8be35902243",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002157755781951745,
+        0.02753081782394847
+      ],
+      "uncalibrated": [
+        0.002157755781951745,
+        0.02753081782394847
+      ],
+      "corrected": [
+        0.01164610233084168,
+        0.023823741615677685
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000772406:0000772406-23-000055",
+      "cik": "0000772406",
+      "prepared_row_sha256": "55523da1e27beee9ecae6b2d1fed5263349690d19985c364f53a020e8c2c5072",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0019360450966442564,
+        0.031056599298351056
+      ],
+      "uncalibrated": [
+        -0.0019360450966442564,
+        0.031056599298351056
+      ],
+      "corrected": [
+        0.007552301452245679,
+        0.02734952309008027
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000882835:0000882835-23-000052",
+      "cik": "0000882835",
+      "prepared_row_sha256": "5cc12888908bd4e9e862ccaca0253c1c20b42b5fa4ee58e92d9d68853bd8065c",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007183891724592117,
+        0.026259512094139154
+      ],
+      "uncalibrated": [
+        0.007183891724592117,
+        0.026259512094139154
+      ],
+      "corrected": [
+        0.016672238273482052,
+        0.022552435885868367
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000890564:0000890564-23-000020",
+      "cik": "0000890564",
+      "prepared_row_sha256": "c2c3fb8d16384b991e55bf3fcd6ccb85b632550bd3e26e469cb54ce58d23ff16",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005566354229114253,
+        0.027329054112632794
+      ],
+      "uncalibrated": [
+        0.005566354229114253,
+        0.027329054112632794
+      ],
+      "corrected": [
+        0.015054700778004188,
+        0.023621977904362008
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001005284:0000950170-23-058202",
+      "cik": "0001005284",
+      "prepared_row_sha256": "8bb89ab39d2159558b06179a8a17ed9ea271e8107c73df0ec6dd0ae71ab9ddf3",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.001664232162993379,
+        0.028470218099730826
+      ],
+      "uncalibrated": [
+        0.001664232162993379,
+        0.028470218099730826
+      ],
+      "corrected": [
+        0.011152578711883314,
+        0.02476314189146004
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001370637:0001370637-23-000080",
+      "cik": "0001370637",
+      "prepared_row_sha256": "bb8c31abc458de3628f3c07f24595099de98a2fec21dac0918bc67da07a7b103",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.02309796994017295,
+        0.03544837460947164
+      ],
+      "uncalibrated": [
+        -0.02309796994017295,
+        0.03544837460947164
+      ],
+      "corrected": [
+        -0.013609623391283014,
+        0.03174129840120085
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          3
+        ],
+        "corrected": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "event_id": "0001396814:0001396814-23-000079",
+      "cik": "0001396814",
+      "prepared_row_sha256": "7511be40fcab057911e20ecb1b86d85738acd63dca80718868093892324e2567",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0011763300298648824,
+        0.029395743514155144
+      ],
+      "uncalibrated": [
+        0.0011763300298648824,
+        0.029395743514155144
+      ],
+      "corrected": [
+        0.010664676578754818,
+        0.025688667305884358
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001590955:0000950170-23-058167",
+      "cik": "0001590955",
+      "prepared_row_sha256": "264d97cd408d5a3f28318c02d45a414e42c5fe2ea17aaa74b776817097e4059b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.011807540777289948,
+        0.03209643935231543
+      ],
+      "uncalibrated": [
+        -0.011807540777289948,
+        0.03209643935231543
+      ],
+      "corrected": [
+        -0.0023191942284000126,
+        0.028389363144044645
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          1
+        ],
+        "corrected": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0001609809:0000950170-23-057805",
+      "cik": "0001609809",
+      "prepared_row_sha256": "b91fbd2b5085c5ebac94427f82f8bc6db070eaf7951cf1ed3fd73d6fa39c4278",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000310764:0000310764-23-000116",
+      "cik": "0000310764",
+      "prepared_row_sha256": "a79e3d41b24d7f6e979e7c8dabe61fc1ccc3defbfcae0cabc390deea8d4c729e",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00414958273650088,
+        0.02752454784074846
+      ],
+      "uncalibrated": [
+        0.00414958273650088,
+        0.02752454784074846
+      ],
+      "corrected": [
+        0.013637929285390815,
+        0.023817471632477674
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000893538:0000893538-23-000108",
+      "cik": "0000893538",
+      "prepared_row_sha256": "fdd5f6a626ea5703d00e3f236b3982154ddfb3ee3174bc3a456eae8191c5dd09",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.003860109263935551,
+        0.027689875736967726
+      ],
+      "uncalibrated": [
+        0.003860109263935551,
+        0.027689875736967726
+      ],
+      "corrected": [
+        0.013348455812825486,
+        0.02398279952869694
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001122904:0000950170-23-058796",
+      "cik": "0001122904",
+      "prepared_row_sha256": "f162617ccb4b724501c0393c28193de1908cd8f908fb3accc176f9bf1136c0c3",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.009372390328455446,
+        0.026385593438490895
+      ],
+      "uncalibrated": [
+        0.009372390328455446,
+        0.026385593438490895
+      ],
+      "corrected": [
+        0.01886073687734538,
+        0.02267851723022011
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000878927:0000950170-23-059408",
+      "cik": "0000878927",
+      "prepared_row_sha256": "d0e87c665b75fd155bff1e825d12c889426831d7601535af3b1f47ea9da1ae3d",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001013488:0000950170-23-059349",
+      "cik": "0001013488",
+      "prepared_row_sha256": "1ac1d24cbaf9525e429123197d29a6a1a0e7f3bf565ea3101443415945102d50",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005710110339711239,
+        0.026796047917446685
+      ],
+      "uncalibrated": [
+        0.005710110339711239,
+        0.026796047917446685
+      ],
+      "corrected": [
+        0.015198456888601174,
+        0.0230889717091759
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001419612:0001178913-23-003538",
+      "cik": "0001419612",
+      "prepared_row_sha256": "f69021773099467ab2034f4e5904c80734333f73cf1f517ec30dc3681524e6c8",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000037785:0000037785-23-000178",
+      "cik": "0000037785",
+      "prepared_row_sha256": "4de60517e284f3ae3560dc0c9a439b6c1841e891ace6fade3b5ef75fc184c004",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000078128:0001562762-23-000401",
+      "cik": "0000078128",
+      "prepared_row_sha256": "b7a00408ed21701bbfb22884c1488c9a53fd2f0b7373c0aa45203f7ef78a0a14",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000106040:0000106040-23-000034",
+      "cik": "0000106040",
+      "prepared_row_sha256": "cfbaa9f38c9838338367b41a5daafff785e131f589a49252662bb727b89847c0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005062185770332768,
+        0.02803465856669364
+      ],
+      "uncalibrated": [
+        0.005062185770332768,
+        0.02803465856669364
+      ],
+      "corrected": [
+        0.014550532319222704,
+        0.024327582358422854
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000746838:0000746838-23-000050",
+      "cik": "0000746838",
+      "prepared_row_sha256": "d05cd9a13263f57a7e210d6f64622f3f93fb1aab35c3c38c461f54a22bb2ba45",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002796955897011466,
+        0.030919936484969768
+      ],
+      "uncalibrated": [
+        0.002796955897011466,
+        0.030919936484969768
+      ],
+      "corrected": [
+        0.0122853024459014,
+        0.02721286027669898
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001046311:0001046311-23-000036",
+      "cik": "0001046311",
+      "prepared_row_sha256": "ab362a4ac5858e8a7d4235a198dfc5e7936bf3196515a8f313332bc91f4fcd20",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00411885929996836,
+        0.02717080225956084
+      ],
+      "uncalibrated": [
+        0.00411885929996836,
+        0.02717080225956084
+      ],
+      "corrected": [
+        0.013607205848858295,
+        0.023463726051290053
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001116942:0000950170-23-060227",
+      "cik": "0001116942",
+      "prepared_row_sha256": "95d86e532df7851b4b02c44720a30cbb598b46b59b0b16679c61eb796097f290",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004409754246963146,
+        0.029890192257678923
+      ],
+      "uncalibrated": [
+        0.004409754246963146,
+        0.029890192257678923
+      ],
+      "corrected": [
+        0.013898100795853081,
+        0.026183116049408137
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001237831:0001562762-23-000407",
+      "cik": "0001237831",
+      "prepared_row_sha256": "a764770aca5315c4bfa71c84e337cff86189d7376b0bb211288420b5561b9596",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.008359434717024447,
+        0.026103450996066323
+      ],
+      "uncalibrated": [
+        0.008359434717024447,
+        0.026103450996066323
+      ],
+      "corrected": [
+        0.01784778126591438,
+        0.022396374787795537
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001420800:0001420800-23-000030",
+      "cik": "0001420800",
+      "prepared_row_sha256": "f18b6a7b051c4d3ac0b13d93b005f199537ca01df005eb43cd3ae114bd5c3e09",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000103730:0000103730-23-000086",
+      "cik": "0000103730",
+      "prepared_row_sha256": "f02c3fc8e51cf8075db934759a6a403a636cffccddf534e12e0b93038414299d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007217808776205594,
+        0.02731738445803423
+      ],
+      "uncalibrated": [
+        0.007217808776205594,
+        0.02731738445803423
+      ],
+      "corrected": [
+        0.016706155325095527,
+        0.023610308249763443
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000733269:0000733269-23-000039",
+      "cik": "0000733269",
+      "prepared_row_sha256": "0a9ff172359927b3432ca84e42c0e5173453c822f0ddfbf095293f2b5c949f3c",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000906709:0000950170-23-060475",
+      "cik": "0000906709",
+      "prepared_row_sha256": "5a3264b227f42fea81f691236d25d501bd5841570008b0cdbbbd20eacacbb08b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.007234859778733796,
+        0.024776020551498953
+      ],
+      "uncalibrated": [
+        0.007234859778733796,
+        0.024776020551498953
+      ],
+      "corrected": [
+        0.01672320632762373,
+        0.021068944343228167
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000949157:0000949157-23-000071",
+      "cik": "0000949157",
+      "prepared_row_sha256": "c47f5444f02cf3af26bba624d942d8f6ebfcaf9e169be3bb565755ddeb09165d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.010773822622571204,
+        0.02453132680312365
+      ],
+      "uncalibrated": [
+        0.010773822622571204,
+        0.02453132680312365
+      ],
+      "corrected": [
+        0.02026216917146114,
+        0.020824250594852864
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001158172:0001158172-23-000111",
+      "cik": "0001158172",
+      "prepared_row_sha256": "77af516000da5fa9faf2762fa9ed1fc30a59be9c9a82c1f84d1a89c1a523b0a1",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.0021389222808162957,
+        0.027551380129596455
+      ],
+      "uncalibrated": [
+        -0.0021389222808162957,
+        0.027551380129596455
+      ],
+      "corrected": [
+        0.00734942426807364,
+        0.02384430392132567
+      ],
+      "quantile_bins": {
+        "raw": [
+          1,
+          0
+        ],
+        "corrected": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001206264:0001206264-23-000208",
+      "cik": "0001206264",
+      "prepared_row_sha256": "60ea3ec006b634d85ee21afd4f83d679528585c4541fc73d0ca8302fd090dad5",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001356576:0001356576-23-000072",
+      "cik": "0001356576",
+      "prepared_row_sha256": "38eb50ab51fceab4732999d7c078ff575c71cf28049ab53ae5adb58d813f94a9",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0066144576795116265,
+        0.02634874883284496
+      ],
+      "uncalibrated": [
+        0.0066144576795116265,
+        0.02634874883284496
+      ],
+      "corrected": [
+        0.01610280422840156,
+        0.022641672624574175
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000769520:0000769520-23-000019",
+      "cik": "0000769520",
+      "prepared_row_sha256": "cd4af1df7d6b85efd0fc443a7fc49c4527665b536692c93d46abe197d1e44689",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.004657883027890077,
+        0.027426667619267323
+      ],
+      "uncalibrated": [
+        0.004657883027890077,
+        0.027426667619267323
+      ],
+      "corrected": [
+        0.014146229576780012,
+        0.023719591410996537
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001061219:0001061219-23-000022",
+      "cik": "0001061219",
+      "prepared_row_sha256": "22b5f69fb9ddc3f44195040ec13914cba74ac4a6be90df4e18568ffcf1f29b01",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005172914291121874,
+        0.026625243268378708
+      ],
+      "uncalibrated": [
+        0.005172914291121874,
+        0.026625243268378708
+      ],
+      "corrected": [
+        0.014661260840011809,
+        0.022918167060107922
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001109354:0000950170-23-062192",
+      "cik": "0001109354",
+      "prepared_row_sha256": "473370752d7134457394cf130c01b023130d62f4b37d27344f777d9f11db1ac7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.005352450780798226,
+        0.026557299321614776
+      ],
+      "uncalibrated": [
+        0.005352450780798226,
+        0.026557299321614776
+      ],
+      "corrected": [
+        0.014840797329688162,
+        0.02285022311334399
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001490281:0001490281-23-000112",
+      "cik": "0001490281",
+      "prepared_row_sha256": "98e45a368607fb6187897cfe30e84275b89a83ca56a973e2c2cda7e9da9b4e31",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "q_status:unavailable",
+        "strategy_source_status:unavailable",
+        "Q:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001564708:0001564708-23-000547",
+      "cik": "0001564708",
+      "prepared_row_sha256": "095c0e88af6e81f08e1c5a14a3530f93819c7c7955163f5ece97b9f480b17f4d",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000039911:0000039911-23-000132",
+      "cik": "0000039911",
+      "prepared_row_sha256": "f6fd842d5962b52086f1d37aa20e467380fd6f931819382308a9a3ea808f787d",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        -0.00014275350093077887,
+        0.03239993808444596
+      ],
+      "uncalibrated": [
+        -0.00014275350093077887,
+        0.03239993808444596
+      ],
+      "corrected": [
+        0.009345593047959157,
+        0.028692861876175174
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          1
+        ],
+        "corrected": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "event_id": "0000719955:0001628280-23-040136",
+      "cik": "0000719955",
+      "prepared_row_sha256": "3627c5169de9acaf091c3bd34352f8f2004800acd4e986465c542b768ab919f0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.011341706033016723,
+        0.022275087621976903
+      ],
+      "uncalibrated": [
+        0.011341706033016723,
+        0.022275087621976903
+      ],
+      "corrected": [
+        0.020830052581906656,
+        0.018568011413706117
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000896878:0000896878-23-000041",
+      "cik": "0000896878",
+      "prepared_row_sha256": "a843e64f5927440e6f297377e618ce7a5b64fcb0bfa9d59454d5e5f1cc0d43cf",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.002991150538371262,
+        0.02517257239948251
+      ],
+      "uncalibrated": [
+        0.002991150538371262,
+        0.02517257239948251
+      ],
+      "corrected": [
+        0.012479497087261197,
+        0.021465496191211724
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001177609:0001177609-23-000028",
+      "cik": "0001177609",
+      "prepared_row_sha256": "5e5adbe0ce813aaa1cd03538950e6cd775346d5f6f3a3647ea7c37dca41cea06",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.001872312346594644,
+        0.026823412551265996
+      ],
+      "uncalibrated": [
+        0.001872312346594644,
+        0.026823412551265996
+      ],
+      "corrected": [
+        0.01136065889548458,
+        0.02311633634299521
+      ],
+      "quantile_bins": {
+        "raw": [
+          3,
+          0
+        ],
+        "corrected": [
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001318008:0000950170-23-067730",
+      "cik": "0001318008",
+      "prepared_row_sha256": "73cdc82358dd1e96c75ddf6faa23558376d2409b3850758b9097cd74fb9cd179",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006010029491267298,
+        0.026128732301527246
+      ],
+      "uncalibrated": [
+        0.006010029491267298,
+        0.026128732301527246
+      ],
+      "corrected": [
+        0.015498376040157233,
+        0.02242165609325646
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001319947:0001319947-23-000052",
+      "cik": "0001319947",
+      "prepared_row_sha256": "4dcf3f245880a6f046e64436c3f02438f975a51a051b0b06cd4c7507158e1de3",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000088941:0000088941-23-000029",
+      "cik": "0000088941",
+      "prepared_row_sha256": "84f45c3595d58b13c2460e6b0282a6f8994196276df3e59053eb37be7b2c059e",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.0062297354448164356,
+        0.0260199076864244
+      ],
+      "uncalibrated": [
+        0.0062297354448164356,
+        0.0260199076864244
+      ],
+      "corrected": [
+        0.01571808199370637,
+        0.022312831478153612
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001639300:0001140361-23-056505",
+      "cik": "0001639300",
+      "prepared_row_sha256": "f836a4349011489c0d7723061c09f5b96a614273336cf7329f6cbd8fc96cde3b",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.00039382735618336017,
+        0.02787829968488366
+      ],
+      "uncalibrated": [
+        0.00039382735618336017,
+        0.02787829968488366
+      ],
+      "corrected": [
+        0.009882173905073295,
+        0.024171223476612873
+      ],
+      "quantile_bins": {
+        "raw": [
+          2,
+          0
+        ],
+        "corrected": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0001393052:0001393052-23-000066",
+      "cik": "0001393052",
+      "prepared_row_sha256": "7428cbe34a8e4de006451358200f4fccaa78ca3fdfe7da2e148e262c6393c4d3",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0001397187:0001397187-23-000052",
+      "cik": "0001397187",
+      "prepared_row_sha256": "865526ee05e787383db8b898b8a525e63997ceba965d1f51b01a98840d15c369",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.008465825820045937,
+        0.024473163149970636
+      ],
+      "uncalibrated": [
+        0.008465825820045937,
+        0.024473163149970636
+      ],
+      "corrected": [
+        0.017954172368935872,
+        0.02076608694169985
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000912615:0000950170-23-069407",
+      "cik": "0000912615",
+      "prepared_row_sha256": "8b336b7dc32db50a0e6d89ecaf319ab25ebb8b55549095261185980996559c86",
+      "status": "unavailable",
+      "reasons": [
+        "Causal input population unavailable",
+        "feature_status:unavailable",
+        "strategy_source_status:unavailable",
+        "S:unavailable_or_nonfinite",
+        "five_finite_inputs:unavailable"
+      ],
+      "raw": null,
+      "uncalibrated": null,
+      "corrected": null
+    },
+    {
+      "event_id": "0000866787:0001558370-23-019871",
+      "cik": "0000866787",
+      "prepared_row_sha256": "2b5c698d0a50f36383e3b029e3ef0b5fab778504740df8f1fa1502c481bc1c41",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.006720433236538533,
+        0.021125003292948766
+      ],
+      "uncalibrated": [
+        0.006720433236538533,
+        0.021125003292948766
+      ],
+      "corrected": [
+        0.01620877978542847,
+        0.01741792708467798
+      ],
+      "quantile_bins": {
+        "raw": [
+          4,
+          0
+        ],
+        "corrected": [
+          4,
+          0
+        ]
+      }
+    }
+  ],
+  "warnings": []
+}

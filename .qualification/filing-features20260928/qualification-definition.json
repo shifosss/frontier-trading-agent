@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "registry": ".qualification/filing-source20260928/registry.json",
+  "baseline_root": ".qualification/filing-source20260928",
+  "overlay_roots": [
+    ".qualification/filing-source-supplement20260928"
+  ],
+  "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
+  "expected_original_records": 252,
+  "inputs": {
+    ".qualification/filing-source20260928/registry.json": "6dfe1c248a1d28fe368232ce94caa10c734325b7c5b43924c7ac2dab6b9713e2",
+    ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    "src/frontier/historical_lab.py": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+    ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+    ".qualification/filing-features20260928/test_features.py": "c6a61ff756f88e6a1b53a6937cd9b0886ac5bf4eb5dbdcb1b336ec3b11a38732",
+    ".qualification/filing-features20260928/extraction-definition.json": "0fec227994f1508ed433cdbcea42b5f338be1d5e3d498ed63b0506c552db137e",
+    ".qualification/filing-features20260928/extraction-amendment1.json": "2912dec67722f6331287829ed097270f5c82a9e6ac36a96ec508900edb329182",
+    ".qualification/filing-features20260928/interface.md": "341061414fd82b3d893fd5ac199f07e711dbad1d67625f3af8fcd4ff436824c6",
+    ".qualification/filing-features20260928/run_qualification.py": "aad34ce7a15d8984a6c5cdf66d5e17b312bc58289c5cc43458fe836c4235cc4b",
+    ".qualification/filing-features20260928/test_qualification.py": "d5a2b3ea7bf5512bc288ebc4677d1e936cdb4189397feebc1d66980223a5736f",
+    ".qualification/filing-features20260928/independent-collector-review.json": "e8a35e161d06292966d9f034eab729ca5a424d57d24c60c7756f762ca0d2ce16",
+    ".qualification/filing-features20260928/parser-verification.json": "d54d3b19df316ce968c5eb0e5abf1ff99bae198b1958bdb0236fabc4fd9acd3f",
+    ".qualification/filing-source20260928/request.json": "dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764",
+    ".qualification/filing-source20260928/implementation.json": "f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5",
+    ".qualification/filing-source20260928/completion.json": "06011fd85bd28b3c2eb6fc4c7285a9685c8684a0fef54905cc84d00d4aa81fec",
+    ".qualification/filing-source-supplement20260928/request.json": "469baa8fd32deb8d8dab0ffc117f85628c36f30a5b6eabcb58fdbd2253f50526",
+    ".qualification/filing-source-supplement20260928/implementation.json": "39d267077833d7b2d1d1c8490ae781c991bd6efa1b7f3183ff509d9188af2b67",
+    ".qualification/filing-source-supplement20260928/completion.json": "c5029a161e7c8a31bcead60053d8c47b287662efd3f6d5409a63b557de398d63"
+  }
+}

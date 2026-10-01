@@ -1,0 +1,505 @@
+{
+  "reviewed_at": "2026-09-28T21:27:25.263127+00:00",
+  "planned_accounts": 6,
+  "snapshot_accounts": 6,
+  "definition_sha256": "31302c331559629deccc4f324b0efa5edb6cf355fcc6a3827a43229a19631755",
+  "original_definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "script_sha256": "a8f13fd91e266eaefeb5e4dee804a679c1df53d5bab20d56cd04bdb4fd7188ac",
+  "original_checker_sha256": "eae4dd99299b0b5c2e361dcc2eca040a64e04e04efbbb882c23f22d0ec339482",
+  "forecast_identity": "2cb067f2828cea9f755ed7e52d525fa0baef72fb1406cf76088cbbc001dea6e9",
+  "records": [
+    {
+      "account_path": ".qualification/conditional-shrinkage20260928/accounts/conditional_shrinkage_dollars-1-moomoo_ca_us.json",
+      "account_sha256": "47ec6626c30f724a83b975621943c5e094480d7b0a24615dc818f5be14eef576",
+      "manifest_sha256": "f8df5432ec36164085905fa2dc630d02fdef98ba46b84e38e6107314b7bef0b6",
+      "control_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-1-moomoo_ca_us.json",
+      "control_sha256": "24caeeb414dbb56007812e2dc98cf51ed523e3ddc876d8446848b1b906e4f440",
+      "control_manifest_sha256": "270f1a4fadef15139090f14baa49e8fe65b44b449dc274e1dc292345435d933b",
+      "status": "passed",
+      "policy": "conditional_shrinkage_dollars",
+      "horizon": 1,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "ending_equity": 2000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "fees": 0.0,
+      "minimum_settled_cash": 2000.0,
+      "maximum_positions": 0,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "paired_control_deltas": {
+        "ending_equity": 243.00326276552937,
+        "total_return": 0.12150163138276471,
+        "max_drawdown": -0.12150163138276471,
+        "fees": -181.225913965807,
+        "trades": -37
+      }
+    },
+    {
+      "account_path": ".qualification/conditional-shrinkage20260928/accounts/conditional_shrinkage_dollars-1-proportional.json",
+      "account_sha256": "127fb09d7d91815b62e095db97fb25f0b69ec2a9957d648aeb4fcb83e8e2c7b9",
+      "manifest_sha256": "bd4f3c88d54c1d9f1c9fa34b8038895798714f70af1f0f00da1511877076fd69",
+      "control_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-1-proportional.json",
+      "control_sha256": "a5d0a7dc476be583ff7b4dc416345790652b30a4cee60b14e2d7bb5d382f8c72",
+      "control_manifest_sha256": "1aa611f470e5886e9c2f09f9be2aab4231f5cbc0e0b8363082302116a6b39950",
+      "status": "passed",
+      "policy": "conditional_shrinkage_dollars",
+      "horizon": 1,
+      "cost_profile": "proportional",
+      "trades": 812,
+      "net_pnl": -113.41144297675221,
+      "ending_equity": 1886.5885570232422,
+      "total_return": -0.056705721488378935,
+      "max_drawdown": 0.0937794419129665,
+      "fees": 212.36888970597965,
+      "minimum_settled_cash": 0.05742572449457839,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 1,
+          "pending_entries": 4
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 812,
+      "forecast_row_subset_sha256": "a89d7768560ab9c62a142f1091ab777846f1731518f12109ab6742e03624a8cf",
+      "paired_control_deltas": {
+        "ending_equity": 664.8955234492807,
+        "total_return": 0.3324477617246403,
+        "max_drawdown": -0.32056962070366646,
+        "fees": -816.6184813929929,
+        "trades": -3714
+      }
+    },
+    {
+      "account_path": ".qualification/conditional-shrinkage20260928/accounts/conditional_shrinkage_dollars-3-moomoo_ca_us.json",
+      "account_sha256": "7d693925ec3417dbc88eb847c72ba9b01fa3d96799c86693744ca28feb41e6cb",
+      "manifest_sha256": "216156b76a9e06a072cee6a98a5734a43e8b0f16446efd7d6a2345db0dc4f10c",
+      "control_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-3-moomoo_ca_us.json",
+      "control_sha256": "2e9d0454c1d6f05554b746de3754e6809e1b64e379680639101bdfc32ea8dea4",
+      "control_manifest_sha256": "fc8b84aafcbfbf64d0d5730c982147e724e4f1bbc56966360773106c705e5f9b",
+      "status": "passed",
+      "policy": "conditional_shrinkage_dollars",
+      "horizon": 3,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 0,
+      "net_pnl": 0.0,
+      "ending_equity": 2000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "fees": 0.0,
+      "minimum_settled_cash": 2000.0,
+      "maximum_positions": 0,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "paired_control_deltas": {
+        "ending_equity": 923.9076326684301,
+        "total_return": 0.46195381633421506,
+        "max_drawdown": -0.4628797592872703,
+        "fees": -800.1245465444346,
+        "trades": -165
+      }
+    },
+    {
+      "account_path": ".qualification/conditional-shrinkage20260928/accounts/conditional_shrinkage_dollars-3-proportional.json",
+      "account_sha256": "f1b2f13b38c5654c8dd5961893af7500d8364d28adbb18676fce143fb11daa24",
+      "manifest_sha256": "8fe45e4312283dd6bf05b4c50f597cb939e60271c10b8d4495292cea60637b83",
+      "control_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-3-proportional.json",
+      "control_sha256": "6d7a9d1a1c7cadf787473e8a00749506783a42b145da9929078278828d47f386",
+      "control_manifest_sha256": "fd03faee6c3c17ddda5d0741856c81b802a286b6260387d6d055ab2485f96645",
+      "status": "passed",
+      "policy": "conditional_shrinkage_dollars",
+      "horizon": 3,
+      "cost_profile": "proportional",
+      "trades": 3,
+      "net_pnl": 10.05358839545298,
+      "ending_equity": 2010.0535883954528,
+      "total_return": 0.005026794197726447,
+      "max_drawdown": 0.0019445595186597942,
+      "fees": 0.5063999755212454,
+      "minimum_settled_cash": 1957.6555868212545,
+      "maximum_positions": 1,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 3,
+      "forecast_row_subset_sha256": "ddbda9f312f6278214ef8cabf5bea8fc7d28abde61282e7b7e525a20a93cb864",
+      "paired_control_deltas": {
+        "ending_equity": 752.9905395582525,
+        "total_return": 0.3764952697791263,
+        "max_drawdown": -0.37122689619102844,
+        "fees": -845.4990927756022,
+        "trades": -1928
+      }
+    },
+    {
+      "account_path": ".qualification/conditional-shrinkage20260928/accounts/conditional_shrinkage_dollars-5-moomoo_ca_us.json",
+      "account_sha256": "40741a3c7d924211472c2b9f604759359b773ca0c8e84b346de00fd242957f36",
+      "manifest_sha256": "1b5190cbb186c0acc46f150dcfaec4db51c47fb07a06db30bce190626417d975",
+      "control_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-5-moomoo_ca_us.json",
+      "control_sha256": "324a1b27753f1e7c30f8e422b533236c3baecb2ced0c966c8f2de57339484447",
+      "control_manifest_sha256": "61e08bd284c7abe6164c699b3564fbd8227963c7d6731d91393118a95c3b8f86",
+      "status": "passed",
+      "policy": "conditional_shrinkage_dollars",
+      "horizon": 5,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 125,
+      "net_pnl": -647.0623300555109,
+      "ending_equity": 1352.9376699444883,
+      "total_return": -0.3235311650277558,
+      "max_drawdown": 0.34403972411876105,
+      "fees": 583.8126611260849,
+      "minimum_settled_cash": 6.309744324543999,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 125,
+      "forecast_row_subset_sha256": "df238658e26eb9141b35ac71ccf1a8e1b77d9c2bae77cc99e8aa634444a899cb",
+      "paired_control_deltas": {
+        "ending_equity": 640.2732056935299,
+        "total_return": 0.32013660284676504,
+        "max_drawdown": -0.2996280437557598,
+        "fees": -603.4137581144018,
+        "trades": -134
+      }
+    },
+    {
+      "account_path": ".qualification/conditional-shrinkage20260928/accounts/conditional_shrinkage_dollars-5-proportional.json",
+      "account_sha256": "d3e09fdb32e7a40d8abcd0b830cbadd59cc44883876e29e3efece56f0c3a107e",
+      "manifest_sha256": "ecaf730853029b38f301a73c554220242d3708615583f5ec8ed8aa5afd154a86",
+      "control_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-5-proportional.json",
+      "control_sha256": "df9645e6fb8d04f40311aa25495c596b82cfa35e1ef6ad1e4d3ebc664b74c650",
+      "control_manifest_sha256": "4f3499400e82340ae53735d09930eeb748d87b0a87008e470d6759219720217d",
+      "status": "passed",
+      "policy": "conditional_shrinkage_dollars",
+      "horizon": 5,
+      "cost_profile": "proportional",
+      "trades": 240,
+      "net_pnl": -172.75340076714474,
+      "ending_equity": 1827.246599232852,
+      "total_return": -0.08637670038357392,
+      "max_drawdown": 0.15753486701774888,
+      "fees": 129.62158974044442,
+      "minimum_settled_cash": 0.13577434956232537,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 240,
+      "forecast_row_subset_sha256": "f6abbdc7a73d71bc7be78461561177c46112c2f8b20ab9345f8ddee49fc30ebe",
+      "paired_control_deltas": {
+        "ending_equity": 353.03190397833623,
+        "total_return": 0.17651595198916814,
+        "max_drawdown": -0.18354679109108607,
+        "fees": -468.5118876974914,
+        "trades": -1338
+      }
+    }
+  ],
+  "qualification": [
+    "Full source-price/cash/settlement/fee reconstruction reuses the independently verified arithmetic checker.",
+    "Every executed learned forecast matches the new frozen signal-date map exactly.",
+    "Original dollar controls are hash-bound; failed accounts remain visible in the six-path denominator.",
+    "Source consistency and declared fee arithmetic do not establish action completeness or real execution.",
+    "No account replay, model fitting, broker operations or live status-file reads."
+  ]
+}

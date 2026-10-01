@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-09-18T22:21:54.723324+00:00",
+  "research_status": "next hypotheses declared; no new economic run",
+  "historical_run": "90af4c840aad48f7ab58fba7a682f96a",
+  "historical_status": "completed",
+  "worker_lock_held": false,
+  "frozen_source_matches": true,
+  "paper": {
+    "status": "ready",
+    "observed_at": "2026-09-18T18:17:55.065444009-04:00",
+    "broker_position_count": 0,
+    "broker_order_count": 0,
+    "saved_order_states": [
+      "PLANNED",
+      "PLANNED"
+    ],
+    "halted": false
+  },
+  "fee_examples": [
+    {
+      "notional_usd": "100",
+      "shares_at_10": "10",
+      "commission": "1.98",
+      "platform": "2",
+      "total": "3.98",
+      "bps": "398.0000",
+      "sec_unrounded": "0.01"
+    },
+    {
+      "notional_usd": "400",
+      "shares_at_10": "40",
+      "commission": "1.98",
+      "platform": "2",
+      "total": "3.98",
+      "bps": "99.50000",
+      "sec_unrounded": "0.01"
+    },
+    {
+      "notional_usd": "2000",
+      "shares_at_10": "200",
+      "commission": "1.98",
+      "platform": "2",
+      "total": "3.98",
+      "bps": "19.90000",
+      "sec_unrounded": "0.0412000"
+    }
+  ],
+  "wealthsimple_notional_fx_bps": "302.2842639593908629441624400",
+  "declaration_sha256": "345fd6f6bcb365d9fc9351850ec2c36721e6aa0a6bdac78ac270674daaca5240",
+  "fixed_attempts": 216,
+  "rolling_accounts": 24
+}

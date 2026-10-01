@@ -1,0 +1,18 @@
+{
+  "at": "2026-09-29T14:05:58.961470+00:00",
+  "scope": "Independent synthetic model contract review; no original-cohort fit or account",
+  "observed_results": {
+    "passed": 4,
+    "failed": 1
+  },
+  "failing_test": "test_prediction_cannot_readmit_saved_causally_unavailable_test_row",
+  "reproduction": "Take fixture test-0002, set planned_label_end_session=2021-01-05 (absent calendar). Saved row disposition is unavailable, but predict_events emitted predicted for the same unchanged source row.",
+  "failure": "assert output['status'] == 'unavailable'; actual 'predicted'",
+  "passed_checks": [
+    "Full prepared-source identity agrees with account digest including Unicode",
+    "Decimal calibration reconstruction with negative raw downside",
+    "Purging before label lookup and sample gate",
+    "Reload rejects changed running implementation identity"
+  ],
+  "resolution": "Model implementer acknowledged; pending rerun after saved-disposition gate fix."
+}

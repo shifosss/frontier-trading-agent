@@ -1,0 +1,235 @@
+{
+  "completed_at": "2026-09-28T18:41:29.229291+00:00",
+  "status": "confirmed inconsistent ADS units at September 8 reverse exchange; no corrected dataset or strategy result produced",
+  "source_record": {
+    "symbol": "AIXI",
+    "path": "data/scanner/raw/AIXI.78718566befb39a31c0bd12742a0a8c1d64bbe0dd7cfa456703b564cff37207e.json",
+    "sha256": "78718566befb39a31c0bd12742a0a8c1d64bbe0dd7cfa456703b564cff37207e",
+    "captured_at": "2026-09-18T20:19:16.462741+00:00",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/AIXI?period1=946684800&interval=1d&events=div%2Csplits&period2=1789762756",
+    "rows": 886,
+    "first_session": "2023-03-09",
+    "last_session": "2026-09-18",
+    "requested_start": "2000-01-01",
+    "requested_as_of": "2026-09-18T20:19:04.714042+00:00",
+    "split_events_requested_through": "2026-09-18T20:19:16.077356+00:00",
+    "split_reconstruction": {
+      "method": "nominal OHLC = provider OHLC * later reported split ratios; volume inverse",
+      "reported_effective_events": 3,
+      "last_reported_split_session": "2026-09-08",
+      "minimum_factor": 0.0007936507936507937,
+      "maximum_factor": 1.0,
+      "event_completeness": "Provider-reported events; independently complete history unverified"
+    },
+    "spec": {
+      "source_id": "nasdaq",
+      "source_symbol": "AIXI",
+      "symbol": "AIXI",
+      "name": "XIAO-I Corporation - American Depositary Shares",
+      "currency": "USD",
+      "calendar": "XNYS",
+      "exchange": "Nasdaq",
+      "is_test": false,
+      "is_etf": false,
+      "financial_status": "D",
+      "next_shares": false,
+      "symbol_identity": "exchange_security_symbol",
+      "asset_type": "stock",
+      "group": "unclassified-us-equity",
+      "security_type": "common_ordinary_or_equity_depositary_shares"
+    }
+  },
+  "capture_index_sha256": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966",
+  "frozen_payload_verified": true,
+  "frozen_yahoo_meta": {
+    "currency": "USD",
+    "symbol": "AIXI",
+    "exchangeName": "NGM",
+    "fullExchangeName": "NasdaqGM",
+    "instrumentType": "EQUITY",
+    "firstTradeDate": 1678372200,
+    "regularMarketTime": 1789761601,
+    "hasPrePostMarketData": true,
+    "gmtoffset": -14400,
+    "timezone": "EDT",
+    "exchangeTimezoneName": "America/New_York",
+    "regularMarketPrice": 2.09,
+    "regularMarketChangePercent": -0.239,
+    "fulldayPrice": 2.09,
+    "fulldayChange": -0.005,
+    "fulldayChangePercent": -0.243,
+    "fiftyTwoWeekHigh": 379.4,
+    "fiftyTwoWeekLow": 1.98,
+    "regularMarketDayHigh": 2.43,
+    "regularMarketDayLow": 2.05,
+    "regularMarketVolume": 527437,
+    "longName": "Xiao-I Corporation",
+    "shortName": "XIAO-I Corporation",
+    "chartPreviousClose": 1224.0,
+    "priceHint": 4,
+    "currentTradingPeriod": {
+      "pre": {
+        "timezone": "EDT",
+        "end": 1789738200,
+        "start": 1789718400,
+        "gmtoffset": -14400
+      },
+      "regular": {
+        "timezone": "EDT",
+        "end": 1789761600,
+        "start": 1789738200,
+        "gmtoffset": -14400
+      },
+      "post": {
+        "timezone": "EDT",
+        "end": 1789776000,
+        "start": 1789761600,
+        "gmtoffset": -14400
+      }
+    },
+    "dataGranularity": "1d",
+    "range": "",
+    "validRanges": [
+      "1d",
+      "5d",
+      "1mo",
+      "3mo",
+      "6mo",
+      "1y",
+      "2y",
+      "5y",
+      "ytd",
+      "max"
+    ]
+  },
+  "frozen_events": {
+    "splits": {
+      "1724419800": {
+        "date": 1724419800,
+        "numerator": 1.0,
+        "denominator": 9.0,
+        "splitRatio": "1:9"
+      },
+      "1778506200": {
+        "date": 1778506200,
+        "numerator": 1.0,
+        "denominator": 20.0,
+        "splitRatio": "1:20"
+      },
+      "1788874200": {
+        "date": 1788874200,
+        "numerator": 1.0,
+        "denominator": 7.0,
+        "splitRatio": "1:7"
+      }
+    }
+  },
+  "independent_sources": [
+    {
+      "method": "GET",
+      "url": "https://data.alpaca.markets/v2/stocks/AIXI/bars?timeframe=1Day&start=2023-03-09T00%3A00%3A00Z&end=2026-09-18T23%3A59%3A59Z&feed=sip&asof=2026-09-18&currency=USD&limit=10000&sort=asc&adjustment=raw",
+      "params": {
+        "timeframe": "1Day",
+        "start": "2023-03-09T00:00:00Z",
+        "end": "2026-09-18T23:59:59Z",
+        "feed": "sip",
+        "asof": "2026-09-18",
+        "currency": "USD",
+        "limit": 10000,
+        "sort": "asc",
+        "adjustment": "raw"
+      },
+      "captured_at": "2026-09-28T18:39:26.340875+00:00",
+      "status_code": 200,
+      "sha256": "757d119ebbe757d0e851fb11bfe4629471be7f135c65966f3827b77dd060e46e",
+      "bytes": 88179,
+      "content_type": "application/json",
+      "response_date": "Mon, 28 Sep 2026 18:39:26 GMT",
+      "raw_file": "alpaca-raw-1.757d119ebbe757d0e851fb11bfe4629471be7f135c65966f3827b77dd060e46e.raw"
+    },
+    {
+      "method": "GET",
+      "url": "https://data.alpaca.markets/v2/stocks/AIXI/bars?timeframe=1Day&start=2023-03-09T00%3A00%3A00Z&end=2026-09-18T23%3A59%3A59Z&feed=sip&asof=2026-09-18&currency=USD&limit=10000&sort=asc&adjustment=split",
+      "params": {
+        "timeframe": "1Day",
+        "start": "2023-03-09T00:00:00Z",
+        "end": "2026-09-18T23:59:59Z",
+        "feed": "sip",
+        "asof": "2026-09-18",
+        "currency": "USD",
+        "limit": 10000,
+        "sort": "asc",
+        "adjustment": "split"
+      },
+      "captured_at": "2026-09-28T18:39:26.385673+00:00",
+      "status_code": 200,
+      "sha256": "ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608",
+      "bytes": 86853,
+      "content_type": "application/json",
+      "response_date": "Mon, 28 Sep 2026 18:39:26 GMT",
+      "raw_file": "alpaca-split-1.ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608.raw"
+    }
+  ],
+  "all_three_sources_session_count": 886,
+  "first_session": "2023-03-09",
+  "last_session": "2026-09-18",
+  "label": {
+    "signal_session": "2026-08-28",
+    "entry_session": "2026-08-31",
+    "exit_session": "2026-09-08",
+    "five_post_entry_sessions": [
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-08"
+    ],
+    "frozen_entry_adjusted_close": 0.503000020980835,
+    "frozen_exit_adjusted_close": 3.259999990463257,
+    "frozen_float32_return": 5.481112957000732,
+    "saved_diagnostic_rows": [
+      {
+        "horizon": 5,
+        "session": "2026-08-28",
+        "symbol": "AIXI",
+        "actual_return": 5.481112957000732,
+        "actual_downside": 0.06361835449934
+      }
+    ],
+    "independent_raw_entry": 0.503,
+    "independent_raw_exit": 3.26,
+    "independent_split_entry": 3.521,
+    "independent_split_exit": 3.26,
+    "common_unit_gross_price_return_decimal": "-0.0741266685600681624538483385",
+    "qualification": "Price-unit arithmetic only. Not a corrected account: fees, actual cash in lieu, fractional positions, settlement and execution omitted."
+  },
+  "unit_ratio_comparison": {
+    "before_sep8": {
+      "rows": 877,
+      "adjusted_to_independent_split_median": 0.14285714285714285,
+      "adjusted_to_independent_split_min": 0.14233576120251284,
+      "adjusted_to_independent_split_max": 0.14316939265350173,
+      "normalized_to_independent_raw_median": 0.14285714285714285
+    },
+    "on_after_sep8": {
+      "rows": 9,
+      "adjusted_to_independent_split_median": 0.9999999970746187,
+      "adjusted_to_independent_split_min": 0.999999958932685,
+      "adjusted_to_independent_split_max": 1.0000000438929602,
+      "normalized_to_independent_raw_median": 0.9999999970746187
+    }
+  },
+  "yahoo_reported_close_equals_adjclose_all_rows": true,
+  "retained_tails": {
+    "selection": "12 largest and 12 smallest frozen adjusted daily returns, selected before independent-bar comparison; all 886 rows also retained",
+    "up_count": 12,
+    "down_count": 12
+  },
+  "limitations": [
+    "Alpaca data downloaded later and may contain revisions; source close/volume differences remain in full table",
+    "Provider raw and split daily bars are aggregate data, not proof of closing-auction fills",
+    "No primary trade tape or broker-specific depositary fee and cash-in-lieu posting obtained",
+    "No complete all-company action registry; this is one issuer audit",
+    "No automatic deletion, rescaling, model refit, portfolio rerun or promotion"
+  ]
+}

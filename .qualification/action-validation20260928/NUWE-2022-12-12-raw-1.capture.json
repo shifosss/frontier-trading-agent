@@ -1,0 +1,28 @@
+{
+  "symbol": "NUWE",
+  "effective_session": "2022-12-12",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/NUWE/bars?timeframe=1Day&start=2022-12-02T05%3A00%3A00%2B00%3A00&end=2022-12-23T04%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2022-12-02T05:00:00+00:00",
+    "end": "2022-12-23T04:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.866631+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "NUWE-2022-12-12-raw-1.d8836a7435cd6c6c4fd0e036bb07b85add6a4fcfb6180f5d18b4aea6dd087c34.raw.json",
+  "sha256": "d8836a7435cd6c6c4fd0e036bb07b85add6a4fcfb6180f5d18b4aea6dd087c34",
+  "bytes": 1593,
+  "captured_at": "2026-09-28T19:04:30.894326+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 15,
+  "response_symbol": "NUWE",
+  "pagination_complete": true
+}

@@ -1,0 +1,33 @@
+{
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    ".qualification\\earnings-quality20260928\\models\\test_earnings_models.py"
+  ],
+  "completed_utc": "2026-09-29T14:06:40.144546+00:00",
+  "exit_code": 0,
+  "files": {
+    ".qualification/earnings-quality20260928/cohort/model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    ".qualification/earnings-quality20260928/models/earnings_models.py": "0d6ecc98a92368ef7bd8bf8802979790a539636adb769f9e9f4b49fa8a38b4de",
+    ".qualification/earnings-quality20260928/models/interface.md": "86c74f27b339103b6bdb0884367f354d96f52a852ebba39680d539cf9e32edc3",
+    ".qualification/earnings-quality20260928/models/synthetic-tests-reviewed.txt": "1fa074b37d61f3de6537bfecafce087248754d4c7f36fc11b8c4294db9d9ae7e",
+    ".qualification/earnings-quality20260928/models/test_earnings_models.py": "bc0d996f620b9ac48bcaca58ed28ef20f279e9e00805e9664b3c18b4bcd1eb38",
+    "src/frontier/conditional_models.py": "3b5c1c31c6d6b9bbb424838071c0f80ef9603f8fc6df5ce9103c829d71b72d4f",
+    "src/frontier/ensemble_models.py": "c2627c0b33fc9cb3c3c6158f2d51fe7bc14fbe49cceddcdafe124b64499c265f"
+  },
+  "prior_evidence_preserved": [
+    "review-before-row-binding",
+    "review-before-causal-disposition"
+  ],
+  "review_changes": [
+    "Exact forecast row membership and per-row digest",
+    "Current implementation identity verified on model load",
+    "Saved causal eligibility reused at prediction"
+  ],
+  "scope": "Synthetic fixtures only; zero original-cohort fits, source requests or account runs",
+  "started_utc": "2026-09-29T14:06:37.423067+00:00",
+  "status": "passed",
+  "tests": 20
+}

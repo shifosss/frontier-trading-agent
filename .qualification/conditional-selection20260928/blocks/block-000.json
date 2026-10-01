@@ -1,0 +1,31 @@
+{
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "block": 0,
+  "bounds": {
+    "fit_start": 754,
+    "calibration_start": 1258,
+    "test_start": 1510,
+    "test_end": 1761
+  },
+  "model_directory": "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model",
+  "forecast_path": "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/forecasts.npz",
+  "family": "ridge",
+  "available": true,
+  "candidates": 195553,
+  "invalid_feature_rows": 0,
+  "finite_corrected_rows": 195553,
+  "fit_rows": 47808,
+  "calibration_rows": 23616,
+  "files": {
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/attempt.json": "d7851aa1a842d9733a37638ce993772bdb4d568a5d032987705181e5136e3b43",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/forecasts.npz": "43c64df883346954c92e4911684378edb79c1c9fb8ca304d98bdd02591c60e92",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model/attempt.json": "cb40379b20e27dcb579bde8a24458e4a56d90a7d00ee821b0085e6d1b81de87a",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model/calibration-predictions.npz": "b919efc7bc1a48166d29ee35cae80f8706c10591b98c43b4501ff219cfb07da6",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model/diagnostics.json": "35e8e2cca65576989b614a4993f33898c007bf08db17c048207182d3fb29780e",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model/manifest.json": "1f3616e83626d4b40fa66ec2b8ccb8d90640204434d5f167a3fd93b912c0a10e",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model/model.joblib": "bdf77f3714a29246fa5034a40e965d50fd43fee5f67068a2166f772a82fd5076",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/model/samples.json": "a689d3eb82893e75ea5bf42e68bd95d5793156edbdc732ee3f2fa90d03fca8da",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/sample-arrays.npz": "befad6290b5150904f0b540924b93acc9b10e1ca6855f33ed053ddd4e13809db",
+    "blocks/block-000/attempt-2faadf7d1ed04ee8a74f6602b8d43895/test-diagnostics.json": "ae15c462a56d3393c82544eb65b2e7a1edf6f2e319826d1ee7c7df4de5b0032f"
+  }
+}

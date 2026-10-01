@@ -1,0 +1,56 @@
+{
+  "phase": "after",
+  "errors": [],
+  "pages": [
+    {
+      "page": "Study",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Research",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Data",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Experiments",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Operations",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "Study",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Research",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Data",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Experiments",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "Operations",
+      "width": 390,
+      "overflow": false
+    }
+  ]
+}

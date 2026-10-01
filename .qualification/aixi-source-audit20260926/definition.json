@@ -1,0 +1,31 @@
+{
+  "declared_at": "2026-09-28T18:39:24.976515+00:00",
+  "frozen_run": "90af4c840aad48f7ab58fba7a682f96a",
+  "frozen_symbol": "AIXI",
+  "selection": "Diagnose independently flagged extreme label, inspect all surrounding returns in both directions; no profit-based corrections or fitting",
+  "sources": {
+    "nasdaq-sep2026": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-643",
+    "sec-sep2026-6k": "https://www.sec.gov/Archives/edgar/data/1935172/000121390026096964/ea0304260-6k_xiao1.htm",
+    "sec-sep2026-release": "https://www.sec.gov/Archives/edgar/data/1935172/000121390026096964/ea030426001ex99-1.htm",
+    "citi-sep2026-notice": "https://depositaryreceipts.citi.com/adr/common/file.aspx?idf=7973",
+    "nasdaq-may2026": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-312",
+    "nasdaq-aug2024": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2024-396"
+  },
+  "bar_request": {
+    "endpoint": "https://data.alpaca.markets/v2/stocks/AIXI/bars",
+    "timeframe": "1Day",
+    "start": "2023-03-09T00:00:00Z",
+    "end": "2026-09-18T23:59:59Z",
+    "feed": "sip",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "adjustments": [
+    "raw",
+    "split"
+  ],
+  "max_pages_per_adjustment": 2,
+  "no_mutations": "No raw capture, model, policy, journal, broker, orders or funds changed"
+}

@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "reviewer": "strategy_design independent of root runner/adapter implementation",
+  "scope": "Economically material account execution, frozen inputs, failure preservation and weekly-return denominators",
+  "findings": [],
+  "verified_code_sha256": {
+    ".qualification/etf-reversal20260928/run_study.py": "f1043e38a8cea3d4077ec182a6e84f63f6fb27f958f1c027be56f26d93a5f7f9",
+    ".qualification/etf-reversal20260928/adapter.py": "90c0d37e6b2a995162d4265b20b5ebc5ffe6bf0081d07e3d8615ff187b9150d7",
+    ".qualification/etf-reversal20260928/test_adapter.py": "11042d0e9f7c14e182021883bd4aaa11edc15c7a44a313b4b2946c2f1993cf29",
+    ".qualification/etf-reversal20260928/test_reporting.py": "16f2de3b0aee55cf45f1e830d5ee30546f6915cc520988f3d2e1a3feeb16957c"
+  },
+  "tests": {
+    "command": ".venv/Scripts/python.exe -B -X utf8 -m unittest discover -s .qualification/etf-reversal20260928 -p test_*.py -v",
+    "independently_passed": 9,
+    "failed": 0,
+    "duration_seconds": 0.020,
+    "coverage": [
+      "Fee-inclusive original reservations and quantity reductions",
+      "Next-close entries, independent three-session exits and settlement",
+      "Missing required fill remains an incomplete account",
+      "Drawdown halt cancels reservations without a cash refund, advances exits and retains gap overshoot",
+      "Unchanged engine equivalence with tolerance for floating-point fee accumulation",
+      "Idle/loss weeks, target counts, losing streaks and continuous calendar-year equity"
+    ]
+  },
+  "source_verification": {
+    "preparation_definition": ".qualification/etf-reversal20260928/strategy/attempts/a53c9b644fad4734be469fa6854c2e23/definition.json",
+    "preparation_definition_sha256": "9da18db4a982779369a4f3002f03d3fda7f865e236a88e8b494747dc01528e76",
+    "all_declared_preparation_inputs_rehashed": true,
+    "preparation_input_mismatches": [],
+    "cost_verification": ".qualification/etf-reversal20260928/costs/independent-verification/verification.json",
+    "cost_qualification_sha256": "9b6f099a6b5fadd99b195392c47fd92cc3bf1de08d97636eb620a41feb874eb6",
+    "verification_binds_exact_qualification_bytes": true,
+    "independently_derived_round_trip_bps_matches_runner_input": 15
+  },
+  "independent_calendar_check": {
+    "method": "Run reporting over an artificial flat USD10000 account using only the prepared session calendar; independently count distinct ISO year/week pairs",
+    "first_session": "2016-12-30",
+    "last_session": "2026-01-16",
+    "full_week_denominator": 473,
+    "initialization_weeks": 1,
+    "entry_only_weeks": 469,
+    "entry_and_liquidation_boundary_weeks": 1,
+    "tail_only_weeks": 2,
+    "entry_period_week_denominator": 470,
+    "all_flat_week_returns_zero": true,
+    "flat_account_losing_streak": 0
+  },
+  "review_conclusions": [
+    "All twelve account combinations remain in the loop, including incomplete and failed outcomes",
+    "An existing declared attempt refuses automatic rerun rather than silently overwriting results",
+    "Invalid accounts suppress weekly target claims",
+    "Annual returns use each prior year-end account equity without capital resets",
+    "Root corrected and bound the independent cost-verification path before final reviewed code hash"
+  ],
+  "actual_strategy_accounts_run_by_reviewer": 0,
+  "actual_strategy_outcomes_read": false,
+  "network_requests": 0,
+  "root_or_frozen_strategy_files_modified": false,
+  "qualification": "Implementation/reporting review only; this does not establish profitable ETF trading or calibrated execution costs"
+}

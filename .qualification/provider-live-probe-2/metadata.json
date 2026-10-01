@@ -1,0 +1,21 @@
+{
+  "status": "succeeded",
+  "requested_model": "gpt-6-astra",
+  "auth_method": "ChatGPT",
+  "cli_version": "codex-cli 0.154.0",
+  "prompt_sha256": "9c4af26978214c73abff3cbaeada29a289c8cc9d647c3dd2f46d306fd5fd6f29",
+  "schema_sha256": "2efb043e6d6d5a75d8a9324f4837aaf80dae3fc2f6c6f51b19a46a8a0605cd14",
+  "output_sha256": "a1083e582ff0fd1fb466bc4bee835a1783a42c1eef155014e8a63bbb37a19fa0",
+  "charge_usd": null,
+  "usage": {
+    "input_tokens": 13492,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 16,
+    "reasoning_output_tokens": 0
+  },
+  "elapsed_seconds": 7.0541239000012865,
+  "timed_out": false,
+  "event_log": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\provider-live-probe-2\\events.jsonl",
+  "exit_code": 0
+}

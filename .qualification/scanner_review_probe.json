@@ -1,0 +1,10 @@
+{
+  "late_benchmark": {
+    "entry": "2025-04-04",
+    "benchmark_available": "2025-04-06 20:01:00+00:00",
+    "benchmark_return_before": 0.009913930991290789,
+    "benchmark_return_after": null,
+    "excess_return_after": null
+  },
+  "provider_wrong_symbol_accepted_as": "AAA"
+}

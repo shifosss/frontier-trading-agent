@@ -1,0 +1,16 @@
+{
+  "symbol": "CRVO",
+  "effective_sessions": "2023-08-17",
+  "url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774923024064/ex_562007.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:03.537289+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774923024064/ex_562007.htm",
+  "redirects": [],
+  "sha256": "747aefa78c31f451277e5b21113e928e003891364e34d761312d3eb45479b7cb",
+  "raw_file": "notice-CRVO-2023-08-17.747aefa78c31f451277e5b21113e928e003891364e34d761312d3eb45479b7cb.raw.html",
+  "bytes": 23322,
+  "captured_at": "2026-09-28T19:14:03.985094+00:00",
+  "text_file": "notice-CRVO-2023-08-17.text.txt"
+}

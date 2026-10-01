@@ -1,0 +1,42 @@
+{
+  "run_id": "6af796bf858547b2839e09edac1d1fdf",
+  "status": "verified",
+  "members": 8437,
+  "captured": 8387,
+  "failed": 50,
+  "coverage": {
+    "USD:usable": 5673,
+    "USD:rows": 56640,
+    "USD:full_10_sessions": 5650,
+    "USD:current_at_cutoff": 5672,
+    "CAD:usable": 2714,
+    "CAD:rows": 27037,
+    "CAD:full_10_sessions": 2695,
+    "CAD:current_at_cutoff": 2709,
+    "CAD:partial_window": 19,
+    "CAD:stale_at_cutoff": 5,
+    "USD:partial_window": 23,
+    "USD:stale_at_cutoff": 1
+  },
+  "failure_reasons": {
+    "Invalid OHLCV in daily history": 12,
+    "HTTP 404": 24,
+    "'close'": 10,
+    "Daily history is empty or contains duplicate sessions": 4
+  },
+  "http_status_counts": {
+    "200": 8413,
+    "404": 24
+  },
+  "capture_observation_dates": {
+    "2026-09-26": 3627,
+    "2026-09-28": 4760
+  },
+  "responses": 8437,
+  "duplicate_symbol_requests": 0,
+  "failed_without_http_response": [],
+  "membership_partition_exact": true,
+  "record_raw_hashes_verified": true,
+  "main_state_unchanged": true,
+  "scope": "Request accounting and bounded coverage only; not complete corporate-action, security-identity, liquidity or performance qualification."
+}

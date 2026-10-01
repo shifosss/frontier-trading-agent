@@ -1,0 +1,635 @@
+[
+  {
+    "symbol": "DHR",
+    "effective_session": "2016-07-05",
+    "notice_status": "contradicted_split_only",
+    "ratio_status": "distribution_not_DHR_share_split",
+    "session_status": "regular_way_July5_explicit",
+    "dated_entity_mapping": "Danaher/FTV",
+    "findings": "One FTV share per two DHR shares; distributed July2, regular-way FTV trading and expected DTC credit July5. Provider1.319 is not a DHR share-quantity ratio.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Fractional FTV rights sold and proceeds distributed; exact sale proceeds and broker credit unverified.",
+    "primary_evidence": [
+      {
+        "url": "https://investors.danaher.com/2016-07-02-Danaher-Corporation-Completes-Separation-of-Fortive-Corporation",
+        "raw_file": "notice-DHR-2016-07-05.a891fcc6396ad24572ff4fd98552f8208e9671c0c64fd47bbba746dfdb1e60ca.raw.html",
+        "sha256": "a891fcc6396ad24572ff4fd98552f8208e9671c0c64fd47bbba746dfdb1e60ca",
+        "captured_at": "2026-09-28T19:13:59.773102+00:00",
+        "text_file": "notice-DHR-2016-07-05.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "LINK",
+    "effective_session": "2016-04-04",
+    "notice_status": "unresolved",
+    "ratio_status": "unverified",
+    "session_status": "unverified",
+    "dated_entity_mapping": "Interlink Electronics",
+    "findings": "Retained proxy identifies Interlink and shares outstanding April4; it does not verify this1.25 split. Both independent windows empty.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Action rights and settlement unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/828146/000155837016004899/link-20160620xdef14a.htm",
+        "raw_file": "notice-LINK-2016-04-04.fda56edeecc49282750b3c670b41bef97f94baab7717dcdc5c0e0698c2a204a6.raw.html",
+        "sha256": "fda56edeecc49282750b3c670b41bef97f94baab7717dcdc5c0e0698c2a204a6",
+        "captured_at": "2026-09-28T19:14:06.239388+00:00",
+        "text_file": "notice-LINK-2016-04-04.text.txt"
+      }
+    ],
+    "price_factor_status": "unresolved_missing_boundary",
+    "volume_factor_status": "unresolved_missing_boundary",
+    "nominal_status": {}
+  },
+  {
+    "symbol": "MRBK",
+    "effective_session": "2023-03-21",
+    "notice_status": "partial_notice",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "next_session_inferred_from_after_close_March20",
+    "dated_entity_mapping": "Meridian Corporation",
+    "findings": "Two-for-one via100% stock dividend, recordMarch14, distribution after closeMarch20. March21 is the next-session inference, not a separately stated exchange ex-date.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Stock distribution terms found; complete broker credit handling unverified.",
+    "primary_evidence": [
+      {
+        "url": "https://investor.meridianbanker.com/documents/meridian-corporation-declares-two-for-one-stock-split/",
+        "raw_file": "notice-MRBK-2023-03-21.3c03b1ce98f6d29e7d3d86ce65f80d095cd78ec8ec3afde4b2cee1befa80a4ec.raw.html",
+        "sha256": "3c03b1ce98f6d29e7d3d86ce65f80d095cd78ec8ec3afde4b2cee1befa80a4ec",
+        "captured_at": "2026-09-28T19:14:00.037586+00:00",
+        "text_file": "notice-MRBK-2023-03-21.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "IP",
+    "effective_session": "2021-10-01",
+    "notice_status": "contradicted_split_only",
+    "ratio_status": "distribution_not_IP_share_split",
+    "session_status": "October1_completion_explicit",
+    "dated_entity_mapping": "International Paper/SLVM",
+    "findings": "October1 Sylvamo spin-off, one SLVM share per11 IP shares; provider1.056 is not an IP share-quantity ratio.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Distribution value, fractional handling and broker credit not reconciled.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/51434/000005143422000040/ip-20220630.htm",
+        "raw_file": "notice-IP-2021-10-01.865b02ac6f3af96479f2b77ae302c24e45e37206e37741f3fbec3a14bfb3d704.raw.html",
+        "sha256": "865b02ac6f3af96479f2b77ae302c24e45e37206e37741f3fbec3a14bfb3d704",
+        "captured_at": "2026-09-28T19:14:00.164030+00:00",
+        "text_file": "notice-IP-2021-10-01.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "inconsistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "OLOX",
+    "effective_session": "2023-09-28",
+    "notice_status": "contradicted_split_only",
+    "ratio_status": "distribution_not_same_security_split",
+    "session_status": "September27_distribution;September28_market_boundary_unverified",
+    "dated_entity_mapping": "Safe & Green -> Olenox January20,2026",
+    "findings": "Issuer10-K reports September27,2023 SGDevCorp distribution of0.930886 shares perfive parent shares. Provider2.133 is not a same-security share-quantity ratio. Current name changed January20,2026.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Cash in lieu stated; proceeds, exact ex-session and historical share-class mapping remain incomplete.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1023994/000121390026073749/ea0295463-10k_olenox.htm",
+        "raw_file": "notice-OLOX-2023-09-28.a71655aafa502be8f5f358051475d42a3394b03dead35bf1169581958c13dbed.raw.html",
+        "sha256": "a71655aafa502be8f5f358051475d42a3394b03dead35bf1169581958c13dbed",
+        "captured_at": "2026-09-28T19:14:00.565342+00:00",
+        "text_file": "notice-OLOX-2023-09-28.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "inconsistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "NTES",
+    "effective_session": "2020-10-02",
+    "notice_status": "partial_notice",
+    "ratio_status": "ADS_ratio_corroborated",
+    "session_status": "next_session_inferred_from_after_close_October1",
+    "dated_entity_mapping": "NetEase ADS",
+    "findings": "ADS underlying shares25->5, economically five ADS perold ADS; effective October1 close, giving next-session October2. Ordinary shares unchanged.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Existing ADS remain valid and no exchange required; actual broker credit timing unverified.",
+    "primary_evidence": [
+      {
+        "url": "https://ir.netease.com/node/12531",
+        "raw_file": "notice-NTES-2020-10-02.c6319e07d98bb9b52fec2a363709a84334f56b2e2d1b3524adea70a89466d0cc.raw.html",
+        "sha256": "c6319e07d98bb9b52fec2a363709a84334f56b2e2d1b3524adea70a89466d0cc",
+        "captured_at": "2026-09-28T19:14:01.009480+00:00",
+        "text_file": "notice-NTES-2020-10-02.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "EVO",
+    "effective_session": "2021-10-20",
+    "notice_status": "unresolved",
+    "ratio_status": "unverified",
+    "session_status": "unverified",
+    "dated_entity_mapping": "Evotec current ADS; earlier representation unresolved",
+    "findings": "Annual report confirms November2021 IPO ADS each represents0.5 ordinary share. It does not establish the alleged October20 four-for-one boundary. Independent boundary bars both12.62 with zero volume disagree with frozen nominal prices.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Earlier security/share units and source entity mapping unresolved; cannot choose either series as truth.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1412558/000110465922049929/evo-20211231x20f.htm",
+        "raw_file": "notice-EVO-2021-10-20.9dc81147a616fe02bacb215efbe0135cfa7ec2e5605c743899de952a21033af5.raw.html",
+        "sha256": "9dc81147a616fe02bacb215efbe0135cfa7ec2e5605c743899de952a21033af5",
+        "captured_at": "2026-09-28T19:14:01.342501+00:00",
+        "text_file": "notice-EVO-2021-10-20.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "unresolved_zero_volume",
+    "nominal_status": {
+      "prior": "discrepancy",
+      "effective": "discrepancy"
+    }
+  },
+  {
+    "symbol": "CZFS",
+    "effective_session": "2024-06-14",
+    "notice_status": "partial_notice",
+    "ratio_status": "one_percent_stock_dividend_corroborated",
+    "session_status": "record_date_verified;ex_session_unverified",
+    "dated_entity_mapping": "Citizens Financial Services (CZFS)",
+    "findings": "Issuer release confirms1% stock dividend payableJune28 to June14 record holders, with separate0.49 cash dividend. It does not explicitly establish June14 as ex-session. Independent split factor unchanged at requested boundary.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Separate stock/cash entitlement and broker settlement unverified.",
+    "primary_evidence": [
+      {
+        "url": "https://www.nasdaq.com/press-release/citizens-financial-services-inc-reports-unaudited-second-quarter-2024-financial",
+        "raw_file": "notice-CZFS-2024-06-14.f82cb38809d1e73620ba6abc5cb073d9fb61d69e6bd8c93610589a82f55b5abc.raw.html",
+        "sha256": "f82cb38809d1e73620ba6abc5cb073d9fb61d69e6bd8c93610589a82f55b5abc",
+        "captured_at": "2026-09-28T19:14:01.643338+00:00",
+        "text_file": "notice-CZFS-2024-06-14.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "inconsistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "ODFL",
+    "effective_session": "2024-03-28",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "split_adjusted_trading_March28_explicit",
+    "dated_entity_mapping": "Old Dominion Freight Line",
+    "findings": "SEC proxy explicitly confirms two-for-one and adjusted trading March28. Numeric test remains outside the original strict precision interval.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Fractional/broker mechanics not audited.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017024040017/odfl-20240402.htm",
+        "raw_file": "notice-ODFL-2024-03-28.b641eb84b9e0dce67546df86cd8f835c9c1ad4cd76c4ff4699298d30f266686c.raw.html",
+        "sha256": "b641eb84b9e0dce67546df86cd8f835c9c1ad4cd76c4ff4699298d30f266686c",
+        "captured_at": "2026-09-28T19:14:02.607134+00:00",
+        "text_file": "notice-ODFL-2024-03-28.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "DIT",
+    "effective_session": "2026-03-23",
+    "notice_status": "partial_notice",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "March20_effective;March23_market_session_unverified",
+    "dated_entity_mapping": "AMCON Distributing",
+    "findings": "SEC10-Q says3-for-2 through50% stock dividend effectedMarch20, recordMarch6. Exact March23 market ex-session not explicitly established.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Broker credit and fractional mechanics unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/928465/000110465926045515/dit-20260331x10q.htm",
+        "raw_file": "notice-DIT-2026-03-23.ec10413bcec41e5c642520f97c96a653ba1e13f1c7bf1a1f0cb0ee59a4142f7d.raw.html",
+        "sha256": "ec10413bcec41e5c642520f97c96a653ba1e13f1c7bf1a1f0cb0ee59a4142f7d",
+        "captured_at": "2026-09-28T19:14:02.092972+00:00",
+        "text_file": "notice-DIT-2026-03-23.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "BRAI",
+    "effective_session": "2026-04-29",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "April29_split_adjusted_trading_announced",
+    "dated_entity_mapping": "Braiin Limited",
+    "findings": "Issuer SEC exhibit declares3-for-1, after-closeApril28 distribution, adjusted trading expectedApril29; bar factor consistent.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Broker credit/fractional mechanics not audited.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/2076975/000149315226016061/ex99-1.htm",
+        "raw_file": "notice-BRAI-2026-04-29.f1b3275ab436aef7910f7fc51773a7956bb7e7b7c0a3d30d1a41b7c20a730cdd.raw.html",
+        "sha256": "f1b3275ab436aef7910f7fc51773a7956bb7e7b7c0a3d30d1a41b7c20a730cdd",
+        "captured_at": "2026-09-28T19:14:02.532657+00:00",
+        "text_file": "notice-BRAI-2026-04-29.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "WMT",
+    "effective_session": "2024-02-26",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "February26_split_adjusted_trading_explicit",
+    "dated_entity_mapping": "Walmart",
+    "findings": "Three-for-one with two additional shares; payable after closeFebruary23, adjusted tradingFebruary26.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Actual broker credit not audited.",
+    "primary_evidence": [
+      {
+        "url": "https://corporate.walmart.com/news/2024/01/30/walmart-announces-3-for-1-stock-split",
+        "raw_file": "notice-WMT-2024-02-26.d153cd1f13fa2fd32168ec5f9f5c6351910e4e11de1a912da93cbee9849f669c.raw.html",
+        "sha256": "d153cd1f13fa2fd32168ec5f9f5c6351910e4e11de1a912da93cbee9849f669c",
+        "captured_at": "2026-09-28T19:14:03.530499+00:00",
+        "text_file": "notice-WMT-2024-02-26.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "TOPS",
+    "effective_session": "2017-10-06",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "October6_effective_explicit",
+    "dated_entity_mapping": "TOP Ships",
+    "findings": "SEC annual report confirms one-for-two effectiveOctober6. Split factor agrees, but effective nominal source close0.53 vs raw0.5325 exceeds declared price precision; volume factor is also inconsistent after extreme later adjustment.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Price/volume conventions unresolved; ratio agreement does not qualify full history.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1296484/000091957419002626/d8214366_20-f.htm",
+        "raw_file": "notice-TOPS-2017-10-06.c2969b64632ac666acd88701579708da3636fd9033ba66a83ccfe8948312785d.raw.html",
+        "sha256": "c2969b64632ac666acd88701579708da3636fd9033ba66a83ccfe8948312785d",
+        "captured_at": "2026-09-28T19:14:03.729783+00:00",
+        "text_file": "notice-TOPS-2017-10-06.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "inconsistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "discrepancy"
+    }
+  },
+  {
+    "symbol": "CRVO",
+    "effective_session": "2023-08-17",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "August17_split_adjusted_trading_explicit",
+    "dated_entity_mapping": "Diffusion Pharmaceuticals/DFFN -> CervoMed/CRVO August17,2023",
+    "findings": "Issuer announces completed EIP merger and1-for-1.5 reverse-adjusted CRVO tradingAugust17. New ticker/name and merger coincide.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Merger share-class entitlements, fractional/cash settlement not fully reconciled.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1053691/000143774923024064/ex_562007.htm",
+        "raw_file": "notice-CRVO-2023-08-17.747aefa78c31f451277e5b21113e928e003891364e34d761312d3eb45479b7cb.raw.html",
+        "sha256": "747aefa78c31f451277e5b21113e928e003891364e34d761312d3eb45479b7cb",
+        "captured_at": "2026-09-28T19:14:03.985094+00:00",
+        "text_file": "notice-CRVO-2023-08-17.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "ENOV",
+    "effective_session": "2022-04-05",
+    "notice_status": "contradicted_split_only",
+    "ratio_status": "actual_reverse_ratio_one_third_not_0.581",
+    "session_status": "April5_regular_way_trading_explicit",
+    "dated_entity_mapping": "Colfax/CFX -> Enovis/ENOV plus ESAB",
+    "findings": "Issuer confirms one ESAB share perthree old parent shares distributedApril4, followed by1-for-3 reverse split; both regular-way tradingApril5. Independent split factor3 agrees with actual reverse, not reciprocal0.581.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Distribution valuation, fractional proceeds and broker credit unverified; do not replace composite vendor factor blindly.",
+    "primary_evidence": [
+      {
+        "url": "https://ir.enovis.com/news-releases/news-release-details/enovis-formerly-colfax-completes-spin-esab-corporation",
+        "raw_file": "notice-ENOV-2022-04-05.13cc13616e77d020c66f45b82ce502e5347709c76be681f7c2c1ad82fd82a369.raw.html",
+        "sha256": "13cc13616e77d020c66f45b82ce502e5347709c76be681f7c2c1ad82fd82a369",
+        "captured_at": "2026-09-28T19:14:04.662002+00:00",
+        "text_file": "notice-ENOV-2022-04-05.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "inconsistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "CYPH",
+    "effective_session": "2023-06-21",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "June21_split_adjusted_trading_explicit",
+    "dated_entity_mapping": "Leap Therapeutics/LPTX -> Cypherpunk/CYPH November13,2025",
+    "findings": "Issuer explicitly reclassifies tenold shares intoone at June20 5pm, tradingJune21; later SEC filing maps name/ticker inNovember2025.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Proportional cash instead of fractional shares stated; actual cash and broker settlement unverified.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1509745/000110465923072982/tm2319198d1_ex99-1.htm",
+        "raw_file": "notice-CYPH-2023-06-21.efaca0867118818004b4fa30fb032ce6e3f40bcc2aaa083bdd3dd73fd27affb1.raw.html",
+        "sha256": "efaca0867118818004b4fa30fb032ce6e3f40bcc2aaa083bdd3dd73fd27affb1",
+        "captured_at": "2026-09-28T19:14:04.328217+00:00",
+        "text_file": "notice-CYPH-2023-06-21.text.txt"
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1509745/000110465925109820/tm2530735d1_8k.htm",
+        "raw_file": "notice-CYPH-mapping-2023-06-21.74abc634791a0a0f47be2753f08c2801978a35032e10d9876cb623ed6c4d32d6.raw.html",
+        "sha256": "74abc634791a0a0f47be2753f08c2801978a35032e10d9876cb623ed6c4d32d6",
+        "captured_at": "2026-09-28T19:14:04.712246+00:00",
+        "text_file": "notice-CYPH-mapping-2023-06-21.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "NUWE",
+    "effective_session": "2022-12-12",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "December12_exchange_effective_explicit",
+    "dated_entity_mapping": "Nuwellis; new CUSIP67113Y405",
+    "findings": "Nasdaq notice confirms one-for-100 and December12 effective date; independent factor agrees.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Exchange notice alone does not reconcile fractions, cash or broker settlement.",
+    "primary_evidence": [
+      {
+        "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2022-421",
+        "raw_file": "notice-NUWE-2022-12-12.3c24c02bb696aa641ddf5f6f8daf72b18c227c6f70fe8413f7eecf9773caae51.raw.html",
+        "sha256": "3c24c02bb696aa641ddf5f6f8daf72b18c227c6f70fe8413f7eecf9773caae51",
+        "captured_at": "2026-09-28T19:14:05.126930+00:00",
+        "text_file": "notice-NUWE-2022-12-12.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "QXL",
+    "effective_session": "2022-09-06",
+    "notice_status": "partial_notice",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "August31_legal_effective;September6_market_session_unverified",
+    "dated_entity_mapping": "Viewbix/VBIX -> Quantum X/QXL April30,2026",
+    "findings": "SEC report confirms1-for-28 concurrent with certificate effectiveAugust31,2022; September6 is referenced filing date, not established market ex-session. Both independent requested windows empty.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Legal/market date distinction and historical data mapping unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+        "raw_file": "notice-QXL-2022-09-06_2025-03-14.df065bca83857f7efc61ddfc7a4318590d2e009c6346b657dc3ca039af8cc2f4.raw.html",
+        "sha256": "df065bca83857f7efc61ddfc7a4318590d2e009c6346b657dc3ca039af8cc2f4",
+        "captured_at": "2026-09-28T19:14:05.165271+00:00",
+        "text_file": "notice-QXL-2022-09-06_2025-03-14.text.txt"
+      },
+      {
+        "url": "https://www.globenewswire.com/news-release/2026/04/30/3284966/0/en/after-successful-acquisition-quantum-x-labs-commences-trading-under-new-name-and-new-nasdaq-ticker-symbol-qxl-today.html",
+        "raw_file": "notice-QXL-mapping-2022-09-06_2025-03-14.a1199f1d3f60c8cd00ccb401e50ae751381f86cdd6c357155bd40af9ef26fb1a.raw.html",
+        "sha256": "a1199f1d3f60c8cd00ccb401e50ae751381f86cdd6c357155bd40af9ef26fb1a",
+        "captured_at": "2026-09-28T19:14:05.940212+00:00",
+        "text_file": "notice-QXL-mapping-2022-09-06_2025-03-14.text.txt"
+      }
+    ],
+    "price_factor_status": "unresolved_missing_boundary",
+    "volume_factor_status": "unresolved_missing_boundary",
+    "nominal_status": {}
+  },
+  {
+    "symbol": "ALM",
+    "effective_session": "2025-07-07",
+    "notice_status": "partial_notice",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "July7_TSX_verified;USD_market_session_unverified",
+    "dated_entity_mapping": "Almonty common shares; USD listing path unresolved",
+    "findings": "Issuer filing confirms1.5old->1, legalJuly3 and TSX adjusted tradingJuly7. Selected source isUSD; independent response has onlyfour later bars and neither boundary.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "US predecessor/venue mapping, fractions and broker handling unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1670061/000149315226037264/ex99-3.htm",
+        "raw_file": "notice-ALM-2025-07-07.801d13638de3b3e379a4e790e9b07b64e2c7731ee3cca5593254156739a17e68.raw.html",
+        "sha256": "801d13638de3b3e379a4e790e9b07b64e2c7731ee3cca5593254156739a17e68",
+        "captured_at": "2026-09-28T19:14:05.733004+00:00",
+        "text_file": "notice-ALM-2025-07-07.text.txt"
+      }
+    ],
+    "price_factor_status": "unresolved_missing_boundary",
+    "volume_factor_status": "unresolved_missing_boundary",
+    "nominal_status": {}
+  },
+  {
+    "symbol": "HON",
+    "effective_session": "2026-06-29",
+    "notice_status": "contradicted_split_only",
+    "ratio_status": "actual_reverse_ratio_one_half_not_0.9535",
+    "session_status": "June29_effective_explicit",
+    "dated_entity_mapping": "Honeywell Technologies/HON plus Honeywell Aerospace/HONA",
+    "findings": "Issuer confirms one HONA pertwo old HON shares plus1-for-2 HON reverse effectiveJune29. Independent factor2 agrees with reverse ratio, not reciprocal0.9535.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Spin-off and reverse fractions sold for cash; actual proceeds/credits unverified. Composite factor is not a quantity multiplier.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000084/exhibit991-pressrelease629.htm",
+        "raw_file": "notice-HON-2026-06-29.2e4527e8b5da89ea0c5551e17cb5278ca4e5c992f1c414a0bc4749634f032883.raw.html",
+        "sha256": "2e4527e8b5da89ea0c5551e17cb5278ca4e5c992f1c414a0bc4749634f032883",
+        "captured_at": "2026-09-28T19:14:06.184736+00:00",
+        "text_file": "notice-HON-2026-06-29.text.txt"
+      }
+    ],
+    "price_factor_status": "inconsistent",
+    "volume_factor_status": "inconsistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "WHLR",
+    "effective_session": "2024-11-19",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "November19_exchange_effective_explicit",
+    "dated_entity_mapping": "Wheeler REIT; new CUSIP963025846",
+    "findings": "Nasdaq confirms1-for-2 November19. Price factor agrees; zero-volume boundary prevents volume-factor conclusion.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Fractional/cash and broker mechanics unverified.",
+    "primary_evidence": [
+      {
+        "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2024-561",
+        "raw_file": "notice-WHLR-2024-11-19.5f2e433fdb97e16425b08c322726b631fe187989bc656e65e2f6e33e208a0389.raw.html",
+        "sha256": "5f2e433fdb97e16425b08c322726b631fe187989bc656e65e2f6e33e208a0389",
+        "captured_at": "2026-09-28T19:14:06.446298+00:00",
+        "text_file": "notice-WHLR-2024-11-19.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "unresolved_zero_volume",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "STKH",
+    "effective_session": "2025-04-28",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ADS_ratio_corroborated",
+    "session_status": "April28_effective_explicit",
+    "dated_entity_mapping": "Steakholder Foods ADS;100->500ordinary perADS",
+    "findings": "SEC annual report confirms everyfiveADS intoone onApril28; ordinary shares perADS100->500.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Underlying ordinary shares must not be confused with ADS quantity; depositary charges, fractions and broker settlement unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1828098/000121390026050174/ea0287480-20f_steakholder.htm",
+        "raw_file": "notice-STKH-2025-04-28.6def2c03d5a95df849c1ef9eb9ef570f9b80e2e21c59c06875126e1c2ab8bada.raw.html",
+        "sha256": "6def2c03d5a95df849c1ef9eb9ef570f9b80e2e21c59c06875126e1c2ab8bada",
+        "captured_at": "2026-09-28T19:14:06.714812+00:00",
+        "text_file": "notice-STKH-2025-04-28.text.txt"
+      }
+    ],
+    "price_factor_status": "consistent",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "WOK",
+    "effective_session": "2025-12-29",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "December29_exchange_effective_explicit",
+    "dated_entity_mapping": "WORK Medical ClassA; CUSIPG9767H125",
+    "findings": "Nasdaq confirms1-for-100 and par0.05->5 effectiveDecember29. Observed price factor100, but propagated interval width3.67% exceeds predeclared2% maximum, so not numerically accepted.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "No assumption about fractional rounding/cash from price evidence; full terms and broker settlement unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2025-708",
+        "raw_file": "notice-WOK-2025-12-29.74aeb96fedd6a046e45416cdab3f2de2916d0bfec0ae9f2eedbf78dc737831f3.raw.html",
+        "sha256": "74aeb96fedd6a046e45416cdab3f2de2916d0bfec0ae9f2eedbf78dc737831f3",
+        "captured_at": "2026-09-28T19:14:06.680029+00:00",
+        "text_file": "notice-WOK-2025-12-29.text.txt"
+      }
+    ],
+    "price_factor_status": "unresolved_precision_insufficient",
+    "volume_factor_status": "consistent",
+    "nominal_status": {
+      "prior": "agrees_within_precision",
+      "effective": "agrees_within_precision"
+    }
+  },
+  {
+    "symbol": "QXL",
+    "effective_session": "2025-03-14",
+    "notice_status": "basic_terms_corroborated",
+    "ratio_status": "ratio_corroborated",
+    "session_status": "March14_effective_explicit",
+    "dated_entity_mapping": "Viewbix/VBIX -> Quantum X/QXL April30,2026",
+    "findings": "SEC report explicitly confirms1-for-4 effectiveMarch14,2025. Both requested independent windows empty despite dated mapping evidence.",
+    "full_action_accounting_status": "unresolved",
+    "limits": "Historical market-data entity path and broker/action settlement unresolved.",
+    "primary_evidence": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+        "raw_file": "notice-QXL-2022-09-06_2025-03-14.df065bca83857f7efc61ddfc7a4318590d2e009c6346b657dc3ca039af8cc2f4.raw.html",
+        "sha256": "df065bca83857f7efc61ddfc7a4318590d2e009c6346b657dc3ca039af8cc2f4",
+        "captured_at": "2026-09-28T19:14:05.165271+00:00",
+        "text_file": "notice-QXL-2022-09-06_2025-03-14.text.txt"
+      },
+      {
+        "url": "https://www.globenewswire.com/news-release/2026/04/30/3284966/0/en/after-successful-acquisition-quantum-x-labs-commences-trading-under-new-name-and-new-nasdaq-ticker-symbol-qxl-today.html",
+        "raw_file": "notice-QXL-mapping-2022-09-06_2025-03-14.a1199f1d3f60c8cd00ccb401e50ae751381f86cdd6c357155bd40af9ef26fb1a.raw.html",
+        "sha256": "a1199f1d3f60c8cd00ccb401e50ae751381f86cdd6c357155bd40af9ef26fb1a",
+        "captured_at": "2026-09-28T19:14:05.940212+00:00",
+        "text_file": "notice-QXL-mapping-2022-09-06_2025-03-14.text.txt"
+      }
+    ],
+    "price_factor_status": "unresolved_missing_boundary",
+    "volume_factor_status": "unresolved_missing_boundary",
+    "nominal_status": {}
+  }
+]

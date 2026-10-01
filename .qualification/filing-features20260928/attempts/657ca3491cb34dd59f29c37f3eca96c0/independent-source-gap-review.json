@@ -1,0 +1,3041 @@
+{
+  "at": "2026-09-28T23:17:29.703293+00:00",
+  "status": "passed_raw_exact_tag_counts_and_metadata_spans",
+  "records_sha256": "15c7ba84f4c8f8de7462c2c5a04fc07022d16e32c445d6cd048a0a44f189d598",
+  "source_unavailable_record_count": 1,
+  "source_available_financial_failures_reviewed": 28,
+  "ford_exact_tag_absence_count": 19,
+  "all_cases": [
+    {
+      "symbol": "F",
+      "accession": "0000037996-12-000036",
+      "report_date": "2012-06-30",
+      "reasons": [
+        "invalid_fiscal_YTD_period"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\46233ab2f6a6962637ba9b2acd29f75c1b4e80c5e5de7a3066c065d23f6ecb71.bin",
+      "source_sha256": "46233ab2f6a6962637ba9b2acd29f75c1b4e80c5e5de7a3066c065d23f6ecb71",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2012-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 14,
+      "recorded_exact_net_income_fact_count": 14,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            3670883,
+            3671032
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2\" decimals=\"-6\" id=\"Fact-EA34F3E20601E187A427CC532885157C\" unitRef=\"usd\">2398000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3671035,
+            3671187
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2YTD\" decimals=\"-6\" id=\"Fact-6E7108B42DE9A5F9BA40CC5328A3A1A6\" unitRef=\"usd\">4949000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3671190,
+            3671339
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2\" decimals=\"-6\" id=\"Fact-9DAEF2770A1B23444BF1CC5328A3F55F\" unitRef=\"usd\">1040000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3671342,
+            3671494
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2YTD\" decimals=\"-6\" id=\"Fact-5392B337B6800F89961DCC5328A36A7A\" unitRef=\"usd\">2436000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3671497,
+            3671728
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AccumulatedOtherComprehensiveIncomeMember\" decimals=\"-6\" id=\"Fact-25816A64FC3E5F6CE937CC532899D288\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3671731,
+            3671940
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_TreasuryStockMember\" decimals=\"-6\" id=\"Fact-77A33AF203D7E6A005D9CC5328A372AE\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3671943,
+            3672150
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_CommonStockMember\" decimals=\"-6\" id=\"Fact-A2A42D5C1B8CC3062048CC532899AC44\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3672153,
+            3672374
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_RetainedEarningsMember\" decimals=\"-6\" id=\"Fact-8CC35D1D43BA175E563DCC53289924F8\" unitRef=\"usd\">2436000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3672377,
+            3672598
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_RetainedEarningsMember\" decimals=\"-6\" id=\"Fact-21B2859624C6C823708ACC5328996D85\" unitRef=\"usd\">4949000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3672601,
+            3672808
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_CommonStockMember\" decimals=\"-6\" id=\"Fact-359BA3B6D99A57801452CC5328996C44\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3672811,
+            3673020
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_TreasuryStockMember\" decimals=\"-6\" id=\"Fact-1B7AC4ED3BA9F6E7F6C3CC532899CA37\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3673023,
+            3673242
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AdditionalPaidInCapitalMember\" decimals=\"-6\" id=\"Fact-82246858E319771CD3AACC5328A36D32\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3673245,
+            3673476
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AccumulatedOtherComprehensiveIncomeMember\" decimals=\"-6\" id=\"Fact-811AEE961976B54D5B48CC5328A3F2F9\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3673479,
+            3673698
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q2YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AdditionalPaidInCapitalMember\" decimals=\"-6\" id=\"Fact-49E84A83553C697F97FBCC5328993E97\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-04-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": true,
+          "value": "2398000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": true,
+          "value": "4949000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-04-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": true,
+          "value": "1040000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": true,
+          "value": "2436000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": false,
+          "value": "2436000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": false,
+          "value": "4949000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8,
+        "us-gaap:ProfitLoss": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-04-01",
+            "endDate": "2012-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"D2012Q2\" id=\"Fact-E21EADF26BD6D4519DF9F151155D66F0\">Q2</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q2\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2012-04-01</xbrli:startDate>\n      <xbrli:endDate>2012-06-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            7596910,
+            7597039
+          ],
+          "context_span": [
+            89074,
+            89385
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2012",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-04-01",
+            "endDate": "2012-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"D2012Q2\" id=\"Fact-1604E7E708E2CF1784BEF151155DF664\">2012</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q2\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2012-04-01</xbrli:startDate>\n      <xbrli:endDate>2012-06-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            7597042,
+            7597169
+          ],
+          "context_span": [
+            89074,
+            89385
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-12-000049",
+      "report_date": "2012-09-30",
+      "reasons": [
+        "invalid_fiscal_YTD_period"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\2fec4d6a3f726ac616c7df3847bf09120d4b3217862e28b54d3c1a8cf998b574.bin",
+      "source_sha256": "2fec4d6a3f726ac616c7df3847bf09120d4b3217862e28b54d3c1a8cf998b574",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2012-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 14,
+      "recorded_exact_net_income_fact_count": 14,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            3705749,
+            3705901
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3YTD\" decimals=\"-6\" id=\"Fact-BA506E6A1093E0B6019E2684E127DB43\" unitRef=\"usd\">6598000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3705904,
+            3706053
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3\" decimals=\"-6\" id=\"Fact-F39F62F3F9A5869544F62684E1B3014E\" unitRef=\"usd\">1649000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3706056,
+            3706208
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3YTD\" decimals=\"-6\" id=\"Fact-DE3623D4C4C1892601192684E19F7D05\" unitRef=\"usd\">4067000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3706211,
+            3706360
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3\" decimals=\"-6\" id=\"Fact-275B22B64E1E451F0C802684E145309A\" unitRef=\"usd\">1631000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3706363,
+            3706594
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AccumulatedOtherComprehensiveIncomeMember\" decimals=\"-6\" id=\"Fact-A7DA633F11E6BBFF648B2684E0A50193\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3706597,
+            3706818
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_RetainedEarningsMember\" decimals=\"-6\" id=\"Fact-C2391F44C02C97241A8C2684E18B55C2\" unitRef=\"usd\">4067000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3706821,
+            3707040
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AdditionalPaidInCapitalMember\" decimals=\"-6\" id=\"Fact-F5319653452D552649132684E18BFD27\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3707043,
+            3707250
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_CommonStockMember\" decimals=\"-6\" id=\"Fact-645370E302073FFBE84F2684E091FAD3\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3707253,
+            3707474
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_RetainedEarningsMember\" decimals=\"-6\" id=\"Fact-8F38D271AE06313DE03E2684E177C027\" unitRef=\"usd\">6598000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3707477,
+            3707686
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2012Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_TreasuryStockMember\" decimals=\"-6\" id=\"Fact-855EE85C864C38B040B52684E0C3D0B2\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3707689,
+            3707908
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AdditionalPaidInCapitalMember\" decimals=\"-6\" id=\"Fact-FF5A0CE91D657E6C15E52684E18BDA4D\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3707911,
+            3708142
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_AccumulatedOtherComprehensiveIncomeMember\" decimals=\"-6\" id=\"Fact-D7E44FB5DBC9CEACEA7C2684E16DF613\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3708145,
+            3708354
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_TreasuryStockMember\" decimals=\"-6\" id=\"Fact-9CE0FC7D58FC4E0ED70B2684E1F90BE2\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            3708357,
+            3708564
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss contextRef=\"D2011Q3YTD_us-gaap_StatementEquityComponentsAxis_us-gaap_CommonStockMember\" decimals=\"-6\" id=\"Fact-06EC96406E16AD5B98312684E0B9F488\" unitRef=\"usd\">0</us-gaap:NetIncomeLoss>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": true,
+          "value": "6598000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-07-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": true,
+          "value": "1649000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": true,
+          "value": "4067000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-07-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": true,
+          "value": "1631000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": false,
+          "value": "4067000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": false,
+          "value": "6598000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-01-01",
+            "endDate": "2012-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2011-01-01",
+            "endDate": "2011-09-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8,
+        "us-gaap:ProfitLoss": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-07-01",
+            "endDate": "2012-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"D2012Q3\" id=\"Fact-8F6BDA044FA12A74832D2684E1C73B94\">Q3</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q3\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2012-07-01</xbrli:startDate>\n      <xbrli:endDate>2012-09-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            7670247,
+            7670376
+          ],
+          "context_span": [
+            90389,
+            90700
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2012",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2012-07-01",
+            "endDate": "2012-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"D2012Q3\" id=\"Fact-3790C36FF0DCDEDEC71D2684E1C7C472\">2012</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q3\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2012-07-01</xbrli:startDate>\n      <xbrli:endDate>2012-09-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            7670379,
+            7670506
+          ],
+          "context_span": [
+            90389,
+            90700
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-17-000036",
+      "report_date": "2017-03-31",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\3cba7b8b92dd9b0040dfc770e454b8033495e76e01dc29bebfcb6851511e1dfa.bin",
+      "source_sha256": "3cba7b8b92dd9b0040dfc770e454b8033495e76e01dc29bebfcb6851511e1dfa",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2016-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4,
+        "us-gaap:ProfitLoss": 20
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2017-01-01",
+            "endDate": "2017-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2017Q1YTD\" id=\"Fact-C70116B0A3464E45CA323940945325F2\">Q1</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2017Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2017-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2017-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            292249,
+            292382
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2017",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2017-01-01",
+            "endDate": "2017-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2017Q1YTD\" id=\"Fact-939F22D02517D79E09AB394094537145\">2017</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2017Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2017-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2017-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            292384,
+            292515
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-17-000068",
+      "report_date": "2017-06-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\b7a8532e20bc1c401d157aa84b5c22db2079cd2127ac835d96c4efde8f97f7ea.bin",
+      "source_sha256": "b7a8532e20bc1c401d157aa84b5c22db2079cd2127ac835d96c4efde8f97f7ea",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2016-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8,
+        "us-gaap:ProfitLoss": 28
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2017-01-01",
+            "endDate": "2017-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2017Q2YTD\" id=\"Fact-52CF303F5CCD54938DE18BCA428EE632\">Q2</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2017Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2017-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2017-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            363336,
+            363469
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2017",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2017-01-01",
+            "endDate": "2017-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2017Q2YTD\" id=\"Fact-EEED01D12D9C5C39837F0D6D4BC71D41\">2017</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2017Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2017-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2017-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            363471,
+            363602
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-17-000092",
+      "report_date": "2017-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\697f6e0e365304475198936bcf214e2f182b39456f43dbf8c1c334e8aa72419c.bin",
+      "source_sha256": "697f6e0e365304475198936bcf214e2f182b39456f43dbf8c1c334e8aa72419c",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2016-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8,
+        "us-gaap:ProfitLoss": 28
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2017-01-01",
+            "endDate": "2017-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2017Q3YTD\" id=\"Fact-B9B92B20125C99172D9CA35CC4931AA4\">Q3</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2017Q3YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2017-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2017-09-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            365444,
+            365577
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2017",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2017-01-01",
+            "endDate": "2017-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2017Q3YTD\" id=\"Fact-BD92F646185559E96CC6A35CC4946C25\">2017</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2017Q3YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2017-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2017-09-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            365579,
+            365710
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-18-000036",
+      "report_date": "2018-03-31",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\30bce52a98ec20fce9600433a409114480ce980b4c9a123485541d4214a1cdac.bin",
+      "source_sha256": "30bce52a98ec20fce9600433a409114480ce980b4c9a123485541d4214a1cdac",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2017-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4,
+        "us-gaap:ProfitLoss": 20
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2018-01-01",
+            "endDate": "2018-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2018Q1YTD\" id=\"Fact-94EC76AC93DBC65E39DDAFC00502AB4D\">Q1</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2018Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2018-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2018-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            313688,
+            313821
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2018",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2018-01-01",
+            "endDate": "2018-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2018Q1YTD\" id=\"Fact-CA5ECC64BDF2BC57972DAFC0050274E3\">2018</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2018Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2018-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2018-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            313823,
+            313954
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-18-000063",
+      "report_date": "2018-06-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\99764d9a08789105807670c56027514068d20cc78523c14a6f57a84a3551ce0f.bin",
+      "source_sha256": "99764d9a08789105807670c56027514068d20cc78523c14a6f57a84a3551ce0f",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2017-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 16,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8,
+        "us-gaap:ProfitLoss": 28
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2018-01-01",
+            "endDate": "2018-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2018Q2YTD\" id=\"Fact-764C3BC2A62675AC0236509F4F3A38AE\">Q2</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2018Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2018-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2018-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            404397,
+            404530
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2018",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2018-01-01",
+            "endDate": "2018-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2018Q2YTD\" id=\"Fact-E7D17902661EF56F58E0509F4F3A6794\">2018</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2018Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2018-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2018-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            404532,
+            404663
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-18-000084",
+      "report_date": "2018-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\raw\\2dd56fe116169abd70cc1471829c05a5f3b2b3c3e117346087af77ec0f4504d4.bin",
+      "source_sha256": "2dd56fe116169abd70cc1471829c05a5f3b2b3c3e117346087af77ec0f4504d4",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2017-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 16,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8,
+        "us-gaap:ProfitLoss": 28
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2018-01-01",
+            "endDate": "2018-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2018Q3YTD\" id=\"Fact-3F3D87EE91245AD6A565EB89DF026F2F\">Q3</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2018Q3YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2018-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2018-09-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            403528,
+            403661
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2018",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2018-01-01",
+            "endDate": "2018-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2018Q3YTD\" id=\"Fact-68ECA62361E450F9A36351BDB14CFE0D\">2018</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2018Q3YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2018-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2018-09-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            403663,
+            403794
+          ],
+          "context_span": [
+            1419,
+            1716
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-19-000026",
+      "report_date": "2019-03-31",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\cf68e3f647b9af1830eba4d7f3dc75a96a374f30881d5313a604ce2291596a96.bin",
+      "source_sha256": "cf68e3f647b9af1830eba4d7f3dc75a96a374f30881d5313a604ce2291596a96",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2018-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4,
+        "us-gaap:ProfitLoss": 16
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2019-01-01",
+            "endDate": "2019-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"FD2019Q1YTD\" id=\"Fact-3F6E31DB07D7D73DE4B7346DCE3C0A86\">Q1</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FD2019Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2019-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2019-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            335659,
+            335792
+          ],
+          "context_span": [
+            9892,
+            10189
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2019",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2019-01-01",
+            "endDate": "2019-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"FD2019Q1YTD\" id=\"Fact-E62B3D3D2EA4B517F742346DCE3C73A5\">2019</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FD2019Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2019-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2019-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            335794,
+            335925
+          ],
+          "context_span": [
+            9892,
+            10189
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-19-000067",
+      "report_date": "2019-06-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\77d21e2383d7551d94f9ec4a52097fd62643a1971cc2d937af3469b079b63c2a.bin",
+      "source_sha256": "77d21e2383d7551d94f9ec4a52097fd62643a1971cc2d937af3469b079b63c2a",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2018-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 40,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2019-01-01",
+            "endDate": "2019-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2019Q2YTD\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"Fact-D6958201EDFBA85174C0D1AEEE38D61D-wk-Fact-D6958201EDFBA85174C0D1AEEE38D61D\">Q2</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2019Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2019-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2019-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            10837,
+            11016
+          ],
+          "context_span": [
+            21588,
+            21885
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2019",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2019-01-01",
+            "endDate": "2019-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2019Q2YTD\" name=\"dei:DocumentFiscalYearFocus\" id=\"Fact-41205379171F47AC2AD6D1AEEE3622BF-wk-Fact-41205379171F47AC2AD6D1AEEE3622BF\">2019</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2019Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2019-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2019-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            11016,
+            11195
+          ],
+          "context_span": [
+            21588,
+            21885
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-19-000078",
+      "report_date": "2019-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\0e18659fcb06eb17b9d3b165a66d905cb602e17888de9a4c04692043e16c1e2e.bin",
+      "source_sha256": "0e18659fcb06eb17b9d3b165a66d905cb602e17888de9a4c04692043e16c1e2e",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2018-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 58,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2019-01-01",
+            "endDate": "2019-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2019Q3YTD\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"Fact-629C65BD235D5AFCB58CA8806C8D2C92-wk-Fact-629C65BD235D5AFCB58CA8806C8D2C92\">Q3</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2019Q3YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2019-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2019-09-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            10837,
+            11016
+          ],
+          "context_span": [
+            22531,
+            22828
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2019",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2019-01-01",
+            "endDate": "2019-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2019Q3YTD\" name=\"dei:DocumentFiscalYearFocus\" id=\"Fact-15DFFD9AD1815CE1960E7D0FCAC3B466-wk-Fact-15DFFD9AD1815CE1960E7D0FCAC3B466\">2019</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2019Q3YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2019-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2019-09-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            11016,
+            11195
+          ],
+          "context_span": [
+            22531,
+            22828
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-20-000041",
+      "report_date": "2020-03-31",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\7c949d2f534fcd5deb132a106a35c0860b3820d40533e110bc82584acb289bb5.bin",
+      "source_sha256": "7c949d2f534fcd5deb132a106a35c0860b3820d40533e110bc82584acb289bb5",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2019-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 22,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 2,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 2
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2020-01-01",
+            "endDate": "2020-03-31"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2020Q1YTD\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"Fact-843E8E81B6BCEB6E6542D5495659F28A-wk-Fact-843E8E81B6BCEB6E6542D5495659F28A\">Q1</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2020Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2020-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2020-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            10888,
+            11067
+          ],
+          "context_span": [
+            23361,
+            23658
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2020",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2020-01-01",
+            "endDate": "2020-03-31"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2020Q1YTD\" name=\"dei:DocumentFiscalYearFocus\" id=\"Fact-ABB0D11342D1A7E548B6D549565CE500-wk-Fact-ABB0D11342D1A7E548B6D549565CE500\">2020</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2020Q1YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2020-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2020-03-31</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            11067,
+            11246
+          ],
+          "context_span": [
+            23361,
+            23658
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-20-000057",
+      "report_date": "2020-06-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\bf5a7d2d012b89f47c4e02a986a80551ecbfae09cf359974db4b7b1cacb734b8.bin",
+      "source_sha256": "bf5a7d2d012b89f47c4e02a986a80551ecbfae09cf359974db4b7b1cacb734b8",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2019-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 42,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2020-01-01",
+            "endDate": "2020-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2020Q2YTD\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"Fact-F12E72C962975597ABFB8B02C10B1657-wk-Fact-F12E72C962975597ABFB8B02C10B1657\">Q2</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2020Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2020-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2020-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            10888,
+            11067
+          ],
+          "context_span": [
+            24144,
+            24441
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2020",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2020-01-01",
+            "endDate": "2020-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"FD2020Q2YTD\" name=\"dei:DocumentFiscalYearFocus\" id=\"Fact-7FC1EA3AFB795F50A7E02D330AC697F9-wk-Fact-7FC1EA3AFB795F50A7E02D330AC697F9\">2020</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"FD2020Q2YTD\">\n\t\t<xbrli:entity>\n\t\t\t<xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier>\n\t\t</xbrli:entity>\n\t\t<xbrli:period>\n\t\t\t<xbrli:startDate>2020-01-01</xbrli:startDate>\n\t\t\t<xbrli:endDate>2020-06-30</xbrli:endDate>\n\t\t</xbrli:period>\n\t</xbrli:context>",
+          "fact_span": [
+            11067,
+            11246
+          ],
+          "context_span": [
+            24144,
+            24441
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-20-000071",
+      "report_date": "2020-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\3faab6ba61c931f0d579f7a2000f9b69af6ff1ab34d6a65024a1ca4d851a74dd.bin",
+      "source_sha256": "3faab6ba61c931f0d579f7a2000f9b69af6ff1ab34d6a65024a1ca4d851a74dd",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2020-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 58,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2020",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2020-01-01",
+            "endDate": "2020-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i0e1ae56360e94ddf8f987797e0ec0516_D20200101-20200930\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjVkMDkyMDQxNDU1MDRkODM4NTc3N2EwNDE2ZGNiMjU4L3NlYzo1ZDA5MjA0MTQ1NTA0ZDgzODU3NzdhMDQxNmRjYjI1OF8xL2ZyYWc6NDAyNzkxNjJmOWNiNDEwNzlkZDJjN2Q4ZTA5M2Q5NTAvdGFibGU6ZjdmYzYwYzdiNDExNGVkYzhlNDRjYzQ5ZDlmYTVkZWMvdGFibGVyYW5nZTpmN2ZjNjBjN2I0MTE0ZWRjOGU0NGNjNDlkOWZhNWRlY18xMS0xLTEtMS0xODI1_eab2646a-10a1-4ac0-9d35-6e2ae3c19c3c\">2020</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i0e1ae56360e94ddf8f987797e0ec0516_D20200101-20200930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2020-01-01</xbrli:startDate><xbrli:endDate>2020-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            2757,
+            3237
+          ],
+          "context_span": [
+            5429,
+            5741
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2020-01-01",
+            "endDate": "2020-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i0e1ae56360e94ddf8f987797e0ec0516_D20200101-20200930\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjVkMDkyMDQxNDU1MDRkODM4NTc3N2EwNDE2ZGNiMjU4L3NlYzo1ZDA5MjA0MTQ1NTA0ZDgzODU3NzdhMDQxNmRjYjI1OF8xL2ZyYWc6NDAyNzkxNjJmOWNiNDEwNzlkZDJjN2Q4ZTA5M2Q5NTAvdGFibGU6ZjdmYzYwYzdiNDExNGVkYzhlNDRjYzQ5ZDlmYTVkZWMvdGFibGVyYW5nZTpmN2ZjNjBjN2I0MTE0ZWRjOGU0NGNjNDlkOWZhNWRlY18xMi0xLTEtMS0xODIz_93b1c111-a80d-42f7-80f2-3df51183204e\">Q3</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i0e1ae56360e94ddf8f987797e0ec0516_D20200101-20200930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2020-01-01</xbrli:startDate><xbrli:endDate>2020-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3237,
+            3717
+          ],
+          "context_span": [
+            5429,
+            5741
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-21-000026",
+      "report_date": "2021-03-31",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\647f06b79fad132eeabae55541959d375379cbca409366518510b98fc489c3fb.bin",
+      "source_sha256": "647f06b79fad132eeabae55541959d375379cbca409366518510b98fc489c3fb",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2020-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 22,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 2,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2021",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2021-01-01",
+            "endDate": "2021-03-31"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i9f34e41ec66747cfb5834cd96d8db3b4_D20210101-20210331\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjVlZTAwMGU1NjRiYjQxYjNhMTIzZjMwZWU3MzAxNzNjL3NlYzo1ZWUwMDBlNTY0YmI0MWIzYTEyM2YzMGVlNzMwMTczY18xL2ZyYWc6MDRlNWQ5NjhiYWIyNGM1NmEzYzQyNjIyMTRmY2Y2MzQvdGFibGU6ZTdjMDY1OGI2ZGE3NGY2MzljN2U5ZWYxODg3NTQ0MDcvdGFibGVyYW5nZTplN2MwNjU4YjZkYTc0ZjYzOWM3ZTllZjE4ODc1NDQwN18xMS0xLTEtMS0w_5945565d-6920-4267-8dff-020332bef0ee\">2021</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i9f34e41ec66747cfb5834cd96d8db3b4_D20210101-20210331\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-03-31</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            2792,
+            3268
+          ],
+          "context_span": [
+            6450,
+            6762
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2021-01-01",
+            "endDate": "2021-03-31"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i9f34e41ec66747cfb5834cd96d8db3b4_D20210101-20210331\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjVlZTAwMGU1NjRiYjQxYjNhMTIzZjMwZWU3MzAxNzNjL3NlYzo1ZWUwMDBlNTY0YmI0MWIzYTEyM2YzMGVlNzMwMTczY18xL2ZyYWc6MDRlNWQ5NjhiYWIyNGM1NmEzYzQyNjIyMTRmY2Y2MzQvdGFibGU6ZTdjMDY1OGI2ZGE3NGY2MzljN2U5ZWYxODg3NTQ0MDcvdGFibGVyYW5nZTplN2MwNjU4YjZkYTc0ZjYzOWM3ZTllZjE4ODc1NDQwN18xMi0xLTEtMS0w_cba3e9af-4c39-4a4e-acbb-1b69839bc635\">Q1</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i9f34e41ec66747cfb5834cd96d8db3b4_D20210101-20210331\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-03-31</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3268,
+            3744
+          ],
+          "context_span": [
+            6450,
+            6762
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-21-000058",
+      "report_date": "2021-06-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\0ae2f5906160620fe837a061479225f3eb6535e4a639940a6c480f43db428cbd.bin",
+      "source_sha256": "0ae2f5906160620fe837a061479225f3eb6535e4a639940a6c480f43db428cbd",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2020-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 42,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2021",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2021-01-01",
+            "endDate": "2021-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i0f155e8bbec446e492258a572f37891d_D20210101-20210630\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjUzMWI1M2QyMjQxMjRjYjk4MzBhZjJhZDE1ZjEwNWYzL3NlYzo1MzFiNTNkMjI0MTI0Y2I5ODMwYWYyYWQxNWYxMDVmM18xL2ZyYWc6YWU3MzY2ZTdiMWQxNGVmMWEwZjZiYzBlNDU0ODA5YzIvdGFibGU6ZGE1YjNhNGNkOTAxNDcwNWIyYTY4MTZlZmMwM2EyYjAvdGFibGVyYW5nZTpkYTViM2E0Y2Q5MDE0NzA1YjJhNjgxNmVmYzAzYTJiMF8xMS0xLTEtMS0w_63bd2ee7-178f-42e6-ad3c-6333db25258e\">2021</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i0f155e8bbec446e492258a572f37891d_D20210101-20210630\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-06-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3305,
+            3781
+          ],
+          "context_span": [
+            5969,
+            6281
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2021-01-01",
+            "endDate": "2021-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i0f155e8bbec446e492258a572f37891d_D20210101-20210630\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjUzMWI1M2QyMjQxMjRjYjk4MzBhZjJhZDE1ZjEwNWYzL3NlYzo1MzFiNTNkMjI0MTI0Y2I5ODMwYWYyYWQxNWYxMDVmM18xL2ZyYWc6YWU3MzY2ZTdiMWQxNGVmMWEwZjZiYzBlNDU0ODA5YzIvdGFibGU6ZGE1YjNhNGNkOTAxNDcwNWIyYTY4MTZlZmMwM2EyYjAvdGFibGVyYW5nZTpkYTViM2E0Y2Q5MDE0NzA1YjJhNjgxNmVmYzAzYTJiMF8xMi0xLTEtMS0w_c43fe0b9-fbbf-45fa-8a52-7fea82a23cc3\">Q2</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i0f155e8bbec446e492258a572f37891d_D20210101-20210630\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-06-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3781,
+            4257
+          ],
+          "context_span": [
+            5969,
+            6281
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-21-000086",
+      "report_date": "2021-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\f19a07f782146e2493221dc2dc800283351f593f4d0f70b3e57de2e5ae80ffb9.bin",
+      "source_sha256": "f19a07f782146e2493221dc2dc800283351f593f4d0f70b3e57de2e5ae80ffb9",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2021-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 58,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2021",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2021-01-01",
+            "endDate": "2021-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"ibbed379c1a1840c9930fbff39c2cd4a5_D20210101-20210930\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOmE4OWMxMjY5NzI2NDRhODQ5MmNhNDUxYzBkOTlkNjVmL3NlYzphODljMTI2OTcyNjQ0YTg0OTJjYTQ1MWMwZDk5ZDY1Zl8xL2ZyYWc6OTFmYTNlOWNmNDc4NDdhNDk5MGUwYjEyZDkyZDIzMTMvdGFibGU6YzAyMTJmNTM2MDAxNDVlNGFjMDI1NjBjNjk2ZDA5N2EvdGFibGVyYW5nZTpjMDIxMmY1MzYwMDE0NWU0YWMwMjU2MGM2OTZkMDk3YV8xMS0xLTEtMS0w_44af49ed-5118-423f-8dbd-57c32b583ed1\">2021</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"ibbed379c1a1840c9930fbff39c2cd4a5_D20210101-20210930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3293,
+            3769
+          ],
+          "context_span": [
+            5957,
+            6269
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2021-01-01",
+            "endDate": "2021-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"ibbed379c1a1840c9930fbff39c2cd4a5_D20210101-20210930\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOmE4OWMxMjY5NzI2NDRhODQ5MmNhNDUxYzBkOTlkNjVmL3NlYzphODljMTI2OTcyNjQ0YTg0OTJjYTQ1MWMwZDk5ZDY1Zl8xL2ZyYWc6OTFmYTNlOWNmNDc4NDdhNDk5MGUwYjEyZDkyZDIzMTMvdGFibGU6YzAyMTJmNTM2MDAxNDVlNGFjMDI1NjBjNjk2ZDA5N2EvdGFibGVyYW5nZTpjMDIxMmY1MzYwMDE0NWU0YWMwMjU2MGM2OTZkMDk3YV8xMi0xLTEtMS0w_301ab95e-b3c6-48d5-aa07-9afdfe80b55c\">Q3</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"ibbed379c1a1840c9930fbff39c2cd4a5_D20210101-20210930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3769,
+            4245
+          ],
+          "context_span": [
+            5957,
+            6269
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-22-000024",
+      "report_date": "2022-03-31",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\bc248b25f7dec1ce05856425b69587215a936457dd86f6b51ad6d28dbeb81678.bin",
+      "source_sha256": "bc248b25f7dec1ce05856425b69587215a936457dd86f6b51ad6d28dbeb81678",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2021-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 22,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 2,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2022",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"ic6d8652d3e284533b3c0a4b3f02ebe45_D20220101-20220331\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjFkZjIzZGJkYTZhOTQyNjRiNmM5NDg5NTdiOThhNmE2L3NlYzoxZGYyM2RiZGE2YTk0MjY0YjZjOTQ4OTU3Yjk4YTZhNl8xL2ZyYWc6ZDA1MTQ4YmI5ZjczNGI5NjkxYWU0ZjNjYmRhMDVjOGMvdGFibGU6MDgzNjgyMWUwOWE4NDc3YTgxY2E0ZjNkOGZjNWYyNDAvdGFibGVyYW5nZTowODM2ODIxZTA5YTg0NzdhODFjYTRmM2Q4ZmM1ZjI0MF8xMS0xLTEtMS03MTA4Mw_4bea4260-8b53-4012-a8ae-113ebb60bc96\">2022</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"ic6d8652d3e284533b3c0a4b3f02ebe45_D20220101-20220331\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2022-01-01</xbrli:startDate><xbrli:endDate>2022-03-31</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3273,
+            3755
+          ],
+          "context_span": [
+            5967,
+            6279
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"ic6d8652d3e284533b3c0a4b3f02ebe45_D20220101-20220331\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjFkZjIzZGJkYTZhOTQyNjRiNmM5NDg5NTdiOThhNmE2L3NlYzoxZGYyM2RiZGE2YTk0MjY0YjZjOTQ4OTU3Yjk4YTZhNl8xL2ZyYWc6ZDA1MTQ4YmI5ZjczNGI5NjkxYWU0ZjNjYmRhMDVjOGMvdGFibGU6MDgzNjgyMWUwOWE4NDc3YTgxY2E0ZjNkOGZjNWYyNDAvdGFibGVyYW5nZTowODM2ODIxZTA5YTg0NzdhODFjYTRmM2Q4ZmM1ZjI0MF8xMi0xLTEtMS03MTA4Mw_f6eed7a6-de4d-43d0-95e7-75ac8b9b26db\">Q1</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"ic6d8652d3e284533b3c0a4b3f02ebe45_D20220101-20220331\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2022-01-01</xbrli:startDate><xbrli:endDate>2022-03-31</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3755,
+            4237
+          ],
+          "context_span": [
+            5967,
+            6279
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-22-000048",
+      "report_date": "2022-06-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\fa38cbe80ec4ce8cd6d71969d3df3de9615d782754ad82813c2a9b56f3c38737.bin",
+      "source_sha256": "fa38cbe80ec4ce8cd6d71969d3df3de9615d782754ad82813c2a9b56f3c38737",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2021-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 42,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2022",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"id462518e54094432ad6535bf06361aa3_D20220101-20220630\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOmRkNzJmM2JkMDJjYjQ5NjE5YzZmZTFhYmY0YjFhZjY2L3NlYzpkZDcyZjNiZDAyY2I0OTYxOWM2ZmUxYWJmNGIxYWY2Nl8xL2ZyYWc6NjgwYTZiZjk2OGMxNDA1ODg3OWFiMzkyZjk5MDFhOWQvdGFibGU6ZmJiOGM3YmJjZDkwNGM4ZmI5YjIxNzVlMTZlN2QwZTkvdGFibGVyYW5nZTpmYmI4YzdiYmNkOTA0YzhmYjliMjE3NWUxNmU3ZDBlOV8xMS0xLTEtMS04NTg1MA_3f67a403-93c7-41e1-bd28-a61ddae1dab5\">2022</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"id462518e54094432ad6535bf06361aa3_D20220101-20220630\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2022-01-01</xbrli:startDate><xbrli:endDate>2022-06-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3273,
+            3755
+          ],
+          "context_span": [
+            8009,
+            8321
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"id462518e54094432ad6535bf06361aa3_D20220101-20220630\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOmRkNzJmM2JkMDJjYjQ5NjE5YzZmZTFhYmY0YjFhZjY2L3NlYzpkZDcyZjNiZDAyY2I0OTYxOWM2ZmUxYWJmNGIxYWY2Nl8xL2ZyYWc6NjgwYTZiZjk2OGMxNDA1ODg3OWFiMzkyZjk5MDFhOWQvdGFibGU6ZmJiOGM3YmJjZDkwNGM4ZmI5YjIxNzVlMTZlN2QwZTkvdGFibGVyYW5nZTpmYmI4YzdiYmNkOTA0YzhmYjliMjE3NWUxNmU3ZDBlOV8xMi0xLTEtMS04NTg1MA_b145b52b-d2cc-4956-b773-e3ef9375cf38\">Q2</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"id462518e54094432ad6535bf06361aa3_D20220101-20220630\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2022-01-01</xbrli:startDate><xbrli:endDate>2022-06-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3755,
+            4237
+          ],
+          "context_span": [
+            8009,
+            8321
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-22-000073",
+      "report_date": "2022-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\448133a4c6ef59b4df0961854cfb53c373a12780c0751db577701256a91a1d08.bin",
+      "source_sha256": "448133a4c6ef59b4df0961854cfb53c373a12780c0751db577701256a91a1d08",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2022"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 58,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2022",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"ice6d95c5ab974b8bb52ae388e14ecbc3_D20220101-20220930\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjlkYmJmMmRiYmUyMDQ1MGFiMDU3Mzg4ZTVhYmM2NmFiL3NlYzo5ZGJiZjJkYmJlMjA0NTBhYjA1NzM4OGU1YWJjNjZhYl8xL2ZyYWc6MzY2MWNiNjIxNzAyNDBmNGFkZTdlMzA3OWZlYTZjOWIvdGFibGU6YTczYWRhNjFhNWEzNGQ2ZjgwOThjODgwOTQ4MDUyOTkvdGFibGVyYW5nZTphNzNhZGE2MWE1YTM0ZDZmODA5OGM4ODA5NDgwNTI5OV8xMS0xLTEtMS05OTc5MQ_214d9741-382f-4a66-bc05-a5ca93ea25c0\">2022</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"ice6d95c5ab974b8bb52ae388e14ecbc3_D20220101-20220930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2022-01-01</xbrli:startDate><xbrli:endDate>2022-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3261,
+            3743
+          ],
+          "context_span": [
+            8067,
+            8379
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"ice6d95c5ab974b8bb52ae388e14ecbc3_D20220101-20220930\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOjlkYmJmMmRiYmUyMDQ1MGFiMDU3Mzg4ZTVhYmM2NmFiL3NlYzo5ZGJiZjJkYmJlMjA0NTBhYjA1NzM4OGU1YWJjNjZhYl8xL2ZyYWc6MzY2MWNiNjIxNzAyNDBmNGFkZTdlMzA3OWZlYTZjOWIvdGFibGU6YTczYWRhNjFhNWEzNGQ2ZjgwOThjODgwOTQ4MDUyOTkvdGFibGVyYW5nZTphNzNhZGE2MWE1YTM0ZDZmODA5OGM4ODA5NDgwNTI5OV8xMi0xLTEtMS05OTc5MQ_a0f870e5-06d4-4163-b4dd-51e2b5ee0055\">Q3</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"ice6d95c5ab974b8bb52ae388e14ecbc3_D20220101-20220930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2022-01-01</xbrli:startDate><xbrli:endDate>2022-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            3743,
+            4225
+          ],
+          "context_span": [
+            8067,
+            8379
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-23-000050",
+      "report_date": "2023-06-30",
+      "reasons": [
+        "missing_or_ambiguous_prior_year_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\ce3f702b2ec9ef86e56da4f6c057170abee50a4f6f250c4bef00f74b445e061c.bin",
+      "source_sha256": "ce3f702b2ec9ef86e56da4f6c057170abee50a4f6f250c4bef00f74b445e061c",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2023"
+      ],
+      "independent_exact_net_income_fact_count": 17,
+      "recorded_exact_net_income_fact_count": 17,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            620025,
+            620185
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-37\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-332\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            620590,
+            620750
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-38\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-333\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            621156,
+            621328
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-39\" decimals=\"-6\" sign=\"-\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:num-dot-decimal\" scale=\"6\" id=\"f-334\">3,110</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            621728,
+            621888
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-40\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-335\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            622293,
+            622453
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-41\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-336\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            622859,
+            623031
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-42\" decimals=\"-6\" sign=\"-\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:num-dot-decimal\" scale=\"6\" id=\"f-337\">3,110</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            653698,
+            653858
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-55\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-385\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            694206,
+            694366
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-70\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-438\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            694771,
+            694931
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-71\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-439\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            695336,
+            695499
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-72\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:num-dot-decimal\" scale=\"6\" id=\"f-440\">1,757</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            695904,
+            696064
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-73\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-441\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            696469,
+            696629
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-74\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-442\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            697034,
+            697197
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-75\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:num-dot-decimal\" scale=\"6\" id=\"f-443\">1,757</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            727222,
+            727385
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-86\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:num-dot-decimal\" scale=\"6\" id=\"f-489\">1,917</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            727903,
+            728063
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-87\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-490\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            728581,
+            728741
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-88\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:fixed-zero\" scale=\"6\" id=\"f-491\">&#8212;</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            729259,
+            729422
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"c-21\" decimals=\"-6\" name=\"us-gaap:NetIncomeLoss\" format=\"ixt:num-dot-decimal\" scale=\"6\" id=\"f-492\">1,917</ix:nonFraction>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "entity_wide": false,
+          "value": "-3110000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-01-01",
+            "endDate": "2022-03-31"
+          },
+          "entity_wide": true,
+          "value": "-3110000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2022-04-01",
+            "endDate": "2022-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "entity_wide": false,
+          "value": "1757000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "entity_wide": true,
+          "value": "1757000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-04-01",
+            "endDate": "2023-06-30"
+          },
+          "entity_wide": false,
+          "value": "1917000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-04-01",
+            "endDate": "2023-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-04-01",
+            "endDate": "2023-06-30"
+          },
+          "entity_wide": false,
+          "value": "0",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-04-01",
+            "endDate": "2023-06-30"
+          },
+          "entity_wide": true,
+          "value": "1917000000",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 23,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 6,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2023",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"c-1\" name=\"dei:DocumentFiscalYearFocus\" id=\"f-5\">2023</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"c-1\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2023-01-01</xbrli:startDate><xbrli:endDate>2023-06-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            1766,
+            1862
+          ],
+          "context_span": [
+            5712,
+            5975
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2023-01-01",
+            "endDate": "2023-06-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"c-1\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"f-6\">Q2</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"c-1\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2023-01-01</xbrli:startDate><xbrli:endDate>2023-06-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            1862,
+            1958
+          ],
+          "context_span": [
+            5712,
+            5975
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-25-000186",
+      "report_date": "2025-09-30",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\3ed2d813664f63e65ddd05b142f32cdb152c8e1640a42c98bc723178d00078bb.bin",
+      "source_sha256": "3ed2d813664f63e65ddd05b142f32cdb152c8e1640a42c98bc723178d00078bb",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2025"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 34,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2025",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2025-01-01",
+            "endDate": "2025-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"c-1\" name=\"dei:DocumentFiscalYearFocus\" id=\"f-4\">2025</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"c-1\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            1654,
+            1750
+          ],
+          "context_span": [
+            4375,
+            4638
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000037996",
+            "startDate": "2025-01-01",
+            "endDate": "2025-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"c-1\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"f-5\">Q3</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"c-1\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000037996</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            1750,
+            1846
+          ],
+          "context_span": [
+            4375,
+            4638
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-14-000022",
+      "report_date": "2014-03-31",
+      "reasons": [
+        "not_Q1_Q2_Q3"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\050f8883fe9f6fde1de1125b49ad63a9f5a0cee212d577330730224ad514f2cd.bin",
+      "source_sha256": "050f8883fe9f6fde1de1125b49ad63a9f5a0cee212d577330730224ad514f2cd",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2013-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 3,
+      "recorded_exact_net_income_fact_count": 3,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            91390,
+            91534
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_23\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Mar31_2014\" unitRef=\"USDollar\">3652000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            94120,
+            94264
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_38\" decimals=\"-6\" contextRef=\"FROM_Jan01_2013_TO_Mar31_2013\" unitRef=\"USDollar\">3700000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            136993,
+            137199
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_242\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Mar31_2014_us-gaap_StatementEquityComponentsAxis_RetainedEarningsMember\" unitRef=\"USDollar\">3652000000</us-gaap:NetIncomeLoss>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-03-31"
+          },
+          "entity_wide": true,
+          "value": "3652000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2013-01-01",
+            "endDate": "2013-03-31"
+          },
+          "entity_wide": true,
+          "value": "3700000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-03-31"
+          },
+          "entity_wide": false,
+          "value": "3652000000",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 4,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 6,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "FY",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus id=\"ID_1\" contextRef=\"FROM_Jan01_2014_TO_Mar31_2014\">FY</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FROM_Jan01_2014_TO_Mar31_2014\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2014-01-01</xbrli:startDate>\n      <xbrli:endDate>2014-03-31</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            87917,
+            88035
+          ],
+          "context_span": [
+            1265,
+            1598
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2014",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-03-31"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus id=\"ID_2\" contextRef=\"FROM_Jan01_2014_TO_Mar31_2014\">2014</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FROM_Jan01_2014_TO_Mar31_2014\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2014-01-01</xbrli:startDate>\n      <xbrli:endDate>2014-03-31</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            88038,
+            88154
+          ],
+          "context_span": [
+            1265,
+            1598
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-14-000129",
+      "report_date": "2014-09-30",
+      "reasons": [
+        "invalid_fiscal_YTD_period"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\3ed454de6b7fe205f02d183543e43b6a7ca1f6c1c0718ad23e846cf19787205c.bin",
+      "source_sha256": "3ed454de6b7fe205f02d183543e43b6a7ca1f6c1c0718ad23e846cf19787205c",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2014-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 5,
+      "recorded_exact_net_income_fact_count": 5,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            126391,
+            126535
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_26\" decimals=\"-6\" contextRef=\"FROM_Apr01_2014_TO_Jun30_2014\" unitRef=\"USDollar\">3547000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            126841,
+            126985
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_28\" decimals=\"-6\" contextRef=\"FROM_Apr01_2013_TO_Jun30_2013\" unitRef=\"USDollar\">3822000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            130334,
+            130478
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_48\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Jun30_2014\" unitRef=\"USDollar\">7199000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            133916,
+            134060
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_68\" decimals=\"-6\" contextRef=\"FROM_Jan01_2013_TO_Jun30_2013\" unitRef=\"USDollar\">7522000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            194852,
+            195058
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_338\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Jun30_2014_us-gaap_StatementEquityComponentsAxis_RetainedEarningsMember\" unitRef=\"USDollar\">7199000000</us-gaap:NetIncomeLoss>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-04-01",
+            "endDate": "2014-06-30"
+          },
+          "entity_wide": true,
+          "value": "3547000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2013-04-01",
+            "endDate": "2013-06-30"
+          },
+          "entity_wide": true,
+          "value": "3822000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-06-30"
+          },
+          "entity_wide": true,
+          "value": "7199000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2013-01-01",
+            "endDate": "2013-06-30"
+          },
+          "entity_wide": true,
+          "value": "7522000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-06-30"
+          },
+          "entity_wide": false,
+          "value": "7199000000",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 8,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 10,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus id=\"ID_2\" contextRef=\"FROM_Jan01_2014_TO_Jun30_2014\">Q2</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FROM_Jan01_2014_TO_Jun30_2014\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2014-01-01</xbrli:startDate>\n      <xbrli:endDate>2014-06-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            122588,
+            122706
+          ],
+          "context_span": [
+            1265,
+            1598
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2014",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-06-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus id=\"ID_3\" contextRef=\"FROM_Jan01_2014_TO_Jun30_2014\">2014</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FROM_Jan01_2014_TO_Jun30_2014\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2014-01-01</xbrli:startDate>\n      <xbrli:endDate>2014-06-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            122709,
+            122825
+          ],
+          "context_span": [
+            1265,
+            1598
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-15-000121",
+      "report_date": "2015-10-28",
+      "reasons": [
+        "invalid_fiscal_YTD_period"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\77d895344d5badf976c1af96965340bf30d6ee679ae7368feb661a255e11cd60.bin",
+      "source_sha256": "77d895344d5badf976c1af96965340bf30d6ee679ae7368feb661a255e11cd60",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2015-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 13,
+      "recorded_exact_net_income_fact_count": 13,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            201943,
+            202087
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_26\" decimals=\"-6\" contextRef=\"FROM_Jul01_2015_TO_Sep30_2015\" unitRef=\"USDollar\">2994000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            203542,
+            203686
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_35\" decimals=\"-6\" contextRef=\"FROM_Jul01_2014_TO_Sep30_2014\" unitRef=\"USDollar\">3130000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            207672,
+            207816
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_58\" decimals=\"-6\" contextRef=\"FROM_Jan01_2015_TO_Sep30_2015\" unitRef=\"USDollar\">9339000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            211153,
+            211298
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_78\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Sep30_2014\" unitRef=\"USDollar\">10441000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            272191,
+            272397
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_352\" decimals=\"-6\" contextRef=\"FROM_Jan01_2015_TO_Sep30_2015_us-gaap_StatementEquityComponentsAxis_RetainedEarningsMember\" unitRef=\"USDollar\">9339000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            461140,
+            461341
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_366\" decimals=\"-6\" contextRef=\"FROM_Jul01_2015_TO_Sep30_2015_us-gaap_StatementScenarioAxis_RestatementAdjustmentMember\" unitRef=\"USDollar\">47000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            461989,
+            462197
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_370\" decimals=\"-6\" contextRef=\"FROM_Jul01_2015_TO_Sep30_2015_us-gaap_StatementScenarioAxis_ScenarioPreviouslyReportedMember\" unitRef=\"USDollar\">2947000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            463748,
+            463956
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_378\" decimals=\"-6\" contextRef=\"FROM_Jan01_2015_TO_Sep30_2015_us-gaap_StatementScenarioAxis_ScenarioPreviouslyReportedMember\" unitRef=\"USDollar\">9191000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            465253,
+            465455
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_385\" decimals=\"-6\" contextRef=\"FROM_Jan01_2015_TO_Sep30_2015_us-gaap_StatementScenarioAxis_RestatementAdjustmentMember\" unitRef=\"USDollar\">148000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            469453,
+            469661
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_404\" decimals=\"-6\" contextRef=\"FROM_Jul01_2014_TO_Sep30_2014_us-gaap_StatementScenarioAxis_ScenarioPreviouslyReportedMember\" unitRef=\"USDollar\">3002000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            469664,
+            469866
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_405\" decimals=\"-6\" contextRef=\"FROM_Jul01_2014_TO_Sep30_2014_us-gaap_StatementScenarioAxis_RestatementAdjustmentMember\" unitRef=\"USDollar\">128000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            472058,
+            472267
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_416\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Sep30_2014_us-gaap_StatementScenarioAxis_ScenarioPreviouslyReportedMember\" unitRef=\"USDollar\">10201000000</us-gaap:NetIncomeLoss>"
+        },
+        {
+          "source_span": [
+            472270,
+            472472
+          ],
+          "raw_fact": "<us-gaap:NetIncomeLoss id=\"ID_417\" decimals=\"-6\" contextRef=\"FROM_Jan01_2014_TO_Sep30_2014_us-gaap_StatementScenarioAxis_RestatementAdjustmentMember\" unitRef=\"USDollar\">240000000</us-gaap:NetIncomeLoss>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-07-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": true,
+          "value": "2994000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-07-01",
+            "endDate": "2014-09-30"
+          },
+          "entity_wide": true,
+          "value": "3130000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": true,
+          "value": "9339000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-09-30"
+          },
+          "entity_wide": true,
+          "value": "10441000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": false,
+          "value": "9339000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-07-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": false,
+          "value": "47000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-07-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": false,
+          "value": "2947000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": false,
+          "value": "9191000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "entity_wide": false,
+          "value": "148000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-07-01",
+            "endDate": "2014-09-30"
+          },
+          "entity_wide": false,
+          "value": "3002000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-07-01",
+            "endDate": "2014-09-30"
+          },
+          "entity_wide": false,
+          "value": "128000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-09-30"
+          },
+          "entity_wide": false,
+          "value": "10201000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2014-01-01",
+            "endDate": "2014-09-30"
+          },
+          "entity_wide": false,
+          "value": "240000000",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 24,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 10,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2015",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus id=\"ID_3\" contextRef=\"FROM_Jan01_2015_TO_Sep30_2015\">2015</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"FROM_Jan01_2015_TO_Sep30_2015\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2015-01-01</xbrli:startDate>\n      <xbrli:endDate>2015-09-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            198345,
+            198461
+          ],
+          "context_span": [
+            1062,
+            1395
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus id=\"ID_4\" contextRef=\"FROM_Jan01_2015_TO_Sep30_2015\">Q3</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"FROM_Jan01_2015_TO_Sep30_2015\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2015-01-01</xbrli:startDate>\n      <xbrli:endDate>2015-09-30</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            198464,
+            198582
+          ],
+          "context_span": [
+            1062,
+            1395
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-21-000080",
+      "report_date": "2021-09-30",
+      "reasons": [
+        "invalid_fiscal_YTD_period"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\868dffeb1379002d3f6902b4ccf378867eb1a51522e4c3ac66ea96c058b5d583.bin",
+      "source_sha256": "868dffeb1379002d3f6902b4ccf378867eb1a51522e4c3ac66ea96c058b5d583",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2021-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 8,
+      "recorded_exact_net_income_fact_count": 8,
+      "exact_net_income_facts": [
+        {
+          "source_span": [
+            812704,
+            813766
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"i61857695c29f4357a38de9e10bafef49_D20210701-20210930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtMS0xLTEtMA_38cfad0e-086c-4d96-86b0-8cf2b9e70d69\"><ix:nonFraction unitRef=\"usd\" contextRef=\"i61857695c29f4357a38de9e10bafef49_D20210701-20210930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtMS0xLTEtMA_91eca36e-b137-428e-aa2a-5d88242cf344\">5,918</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            814640,
+            815702
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"i496ff6001dca44b78b2b28526948c56a_D20200701-20200930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtMy0xLTEtMA_0ab4a1ad-cdf9-43e4-9df3-8c7ab5fdfc08\"><ix:nonFraction unitRef=\"usd\" contextRef=\"i496ff6001dca44b78b2b28526948c56a_D20200701-20200930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtMy0xLTEtMA_96ff64df-1490-48c3-a795-bb5a9b6f171a\">2,816</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            816455,
+            817518
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"i9ece9036e98e46d19ba48b06b4e4ab83_D20210101-20210930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtNS0xLTEtMA_520a6d45-3caa-4bfe-8b47-3514ccf7ab67\"><ix:nonFraction unitRef=\"usd\" contextRef=\"i9ece9036e98e46d19ba48b06b4e4ab83_D20210101-20210930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtNS0xLTEtMA_b201b1ce-58d0-4928-9cc3-54ea7b4ec4bd\">15,038</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            818392,
+            819454
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"if4a912b1829848f1be5a67834e561f66_D20200101-20200930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtNy0xLTEtMA_67aa2024-7f34-45ee-9809-57fb9e67da87\"><ix:nonFraction unitRef=\"usd\" contextRef=\"if4a912b1829848f1be5a67834e561f66_D20200101-20200930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8xNi9mcmFnOjZjZDkzZDZlYzllNzRkYmJiMGFhNzliNTQ4YmI0YThmL3RhYmxlOjNmMGRlYTgzZTI2MjQxNGM5MWM4YWEyZmZkZTE2N2ZkL3RhYmxlcmFuZ2U6M2YwZGVhODNlMjYyNDE0YzkxYzhhYTJmZmRlMTY3ZmRfMzEtNy0xLTEtMA_eb70467c-c397-4a09-b681-f43efac1dd0a\">8,707</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            1366329,
+            1366871
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"i627bcdf7b8dc4509a38a1bea50277ee3_D20210701-20210930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8zNy9mcmFnOmU1ZDU0YTEyMTgzYzQ1ZGFhYWY3ZjNmMjBhYjk5MTdkL3RhYmxlOjZkMmNkMGUyOTM0NzQ5NTM4MDlkMmY1MGZkZjhjNDllL3RhYmxlcmFuZ2U6NmQyY2QwZTI5MzQ3NDk1MzgwOWQyZjUwZmRmOGM0OWVfMzUtMy0xLTEtMA_c8e9cf84-eeee-4912-97ef-40763b1fc685\">5,918</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            1367547,
+            1368089
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"ia9c479adefd845ea954063c9ae578f6a_D20200701-20200930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8zNy9mcmFnOmU1ZDU0YTEyMTgzYzQ1ZGFhYWY3ZjNmMjBhYjk5MTdkL3RhYmxlOjZkMmNkMGUyOTM0NzQ5NTM4MDlkMmY1MGZkZjhjNDllL3RhYmxlcmFuZ2U6NmQyY2QwZTI5MzQ3NDk1MzgwOWQyZjUwZmRmOGM0OWVfMzUtNy0xLTEtMA_bd411234-3e7f-40a9-be69-29a6a13c8220\">2,816</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            1368641,
+            1369185
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"ie7cbe1d896984ac1b62e7a608bce833a_D20210101-20210930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8zNy9mcmFnOmU1ZDU0YTEyMTgzYzQ1ZGFhYWY3ZjNmMjBhYjk5MTdkL3RhYmxlOjZkMmNkMGUyOTM0NzQ5NTM4MDlkMmY1MGZkZjhjNDllL3RhYmxlcmFuZ2U6NmQyY2QwZTI5MzQ3NDk1MzgwOWQyZjUwZmRmOGM0OWVfMzUtMTEtMS0xLTA_b8f9f550-454d-42de-8db3-fdc647062877\">15,038</ix:nonFraction>"
+        },
+        {
+          "source_span": [
+            1369861,
+            1370404
+          ],
+          "raw_fact": "<ix:nonFraction unitRef=\"usd\" contextRef=\"if1c901df50d847358e1f003f2d6e28d2_D20200101-20200930\" decimals=\"-6\" format=\"ixt:num-dot-decimal\" name=\"us-gaap:NetIncomeLoss\" scale=\"6\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl8zNy9mcmFnOmU1ZDU0YTEyMTgzYzQ1ZGFhYWY3ZjNmMjBhYjk5MTdkL3RhYmxlOjZkMmNkMGUyOTM0NzQ5NTM4MDlkMmY1MGZkZjhjNDllL3RhYmxlcmFuZ2U6NmQyY2QwZTI5MzQ3NDk1MzgwOWQyZjUwZmRmOGM0OWVfMzUtMTUtMS0xLTA_16b76933-eda0-4ea6-be89-8c359762ec64\">8,707</ix:nonFraction>"
+        }
+      ],
+      "recorded_net_income_contexts": [
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2021-07-01",
+            "endDate": "2021-09-30"
+          },
+          "entity_wide": true,
+          "value": "5918000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2020-07-01",
+            "endDate": "2020-09-30"
+          },
+          "entity_wide": true,
+          "value": "2816000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2021-01-01",
+            "endDate": "2021-09-30"
+          },
+          "entity_wide": true,
+          "value": "15038000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2020-01-01",
+            "endDate": "2020-09-30"
+          },
+          "entity_wide": true,
+          "value": "8707000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2021-07-01",
+            "endDate": "2021-09-30"
+          },
+          "entity_wide": false,
+          "value": "5918000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2020-07-01",
+            "endDate": "2020-09-30"
+          },
+          "entity_wide": false,
+          "value": "2816000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2021-01-01",
+            "endDate": "2021-09-30"
+          },
+          "entity_wide": false,
+          "value": "15038000000",
+          "errors": []
+        },
+        {
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2020-01-01",
+            "endDate": "2020-09-30"
+          },
+          "entity_wide": false,
+          "value": "8707000000",
+          "errors": []
+        }
+      ],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 26,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 12,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 16,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersDiluted": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2021-01-01",
+            "endDate": "2021-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i9ece9036e98e46d19ba48b06b4e4ab83_D20210101-20210930\" name=\"dei:DocumentFiscalPeriodFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl83L2ZyYWc6MmRlMDkyYjNiNzBmNGQ0N2FhMzY3YTJmMTk5ZDFmYzMvdGFibGU6OTJlYWMxNDVmY2UxNGEwZGIyY2M2YTA1MTkwYjJlYWIvdGFibGVyYW5nZTo5MmVhYzE0NWZjZTE0YTBkYjJjYzZhMDUxOTBiMmVhYl8zLTEtMS0xLTA_e30b6045-c4d4-4790-91ff-47ea8b5c4c6e\">Q2</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i9ece9036e98e46d19ba48b06b4e4ab83_D20210101-20210930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            1726,
+            2201
+          ],
+          "context_span": [
+            9447,
+            9759
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2021",
+          "context": {
+            "identifier": "0000732717",
+            "startDate": "2021-01-01",
+            "endDate": "2021-09-30"
+          },
+          "raw_fact": "<ix:nonNumeric contextRef=\"i9ece9036e98e46d19ba48b06b4e4ab83_D20210101-20210930\" name=\"dei:DocumentFiscalYearFocus\" id=\"id3VybDovL2RvY3MudjEvZG9jOmVhMzI1ZmJhYzBiNzQxNTBhODczYjkzZDQ2ZWYzZTMyL3NlYzplYTMyNWZiYWMwYjc0MTUwYTg3M2I5M2Q0NmVmM2UzMl83L2ZyYWc6MmRlMDkyYjNiNzBmNGQ0N2FhMzY3YTJmMTk5ZDFmYzMvdGFibGU6OTJlYWMxNDVmY2UxNGEwZGIyY2M2YTA1MTkwYjJlYWIvdGFibGVyYW5nZTo5MmVhYzE0NWZjZTE0YTBkYjJjYzZhMDUxOTBiMmVhYl80LTEtMS0xLTA_e267ff18-0357-499f-8559-f907ef804001\">2021</ix:nonNumeric>",
+          "raw_context": "<xbrli:context id=\"i9ece9036e98e46d19ba48b06b4e4ab83_D20210101-20210930\"><xbrli:entity><xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000732717</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2021-01-01</xbrli:startDate><xbrli:endDate>2021-09-30</xbrli:endDate></xbrli:period></xbrli:context>",
+          "fact_span": [
+            2201,
+            2676
+          ],
+          "context_span": [
+            9447,
+            9759
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-12-017006",
+      "report_date": "2012-01-29",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\d321e7033b96f59064b1888c8efcbc65f268b56e337e2957d808442ef6f3a676.bin",
+      "source_sha256": "d321e7033b96f59064b1888c8efcbc65f268b56e337e2957d808442ef6f3a676",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2011-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 18,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 4,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 4
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2012",
+          "context": {
+            "identifier": "0000048465",
+            "startDate": "2011-10-31",
+            "endDate": "2012-01-29"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"D2012Q1\">2012</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q1\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000048465</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2011-10-31</xbrli:startDate>\n      <xbrli:endDate>2012-01-29</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            858877,
+            858961
+          ],
+          "context_span": [
+            24872,
+            25183
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q1",
+          "context": {
+            "identifier": "0000048465",
+            "startDate": "2011-10-31",
+            "endDate": "2012-01-29"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"D2012Q1\">Q1</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q1\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000048465</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2011-10-31</xbrli:startDate>\n      <xbrli:endDate>2012-01-29</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            858964,
+            859050
+          ],
+          "context_span": [
+            24872,
+            25183
+          ]
+        }
+      ]
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-12-042534",
+      "report_date": "2012-04-29",
+      "reasons": [
+        "missing_or_ambiguous_current_quarter"
+      ],
+      "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\raw\\47bda88082092e6ba205a568ab555ed71d3445f87b3cb7d03caf6acfb29f34d9.bin",
+      "source_sha256": "47bda88082092e6ba205a568ab555ed71d3445f87b3cb7d03caf6acfb29f34d9",
+      "namespace_declarations": [
+        "http://fasb.org/us-gaap/2011-01-31"
+      ],
+      "independent_exact_net_income_fact_count": 0,
+      "recorded_exact_net_income_fact_count": 0,
+      "exact_net_income_facts": [],
+      "recorded_net_income_contexts": [],
+      "other_raw_income_name_occurrences": {
+        "us-gaap:ProfitLoss": 22,
+        "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest": 8,
+        "us-gaap:NetIncomeLossAvailableToCommonStockholdersBasic": 8
+      },
+      "metadata": [
+        {
+          "concept": "dei:DocumentFiscalYearFocus",
+          "value": "2012",
+          "context": {
+            "identifier": "0000048465",
+            "startDate": "2011-10-31",
+            "endDate": "2012-04-29"
+          },
+          "raw_fact": "<dei:DocumentFiscalYearFocus contextRef=\"D2012Q2YTD\">2012</dei:DocumentFiscalYearFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q2YTD\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000048465</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2011-10-31</xbrli:startDate>\n      <xbrli:endDate>2012-04-29</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            1189767,
+            1189854
+          ],
+          "context_span": [
+            31017,
+            31331
+          ]
+        },
+        {
+          "concept": "dei:DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "context": {
+            "identifier": "0000048465",
+            "startDate": "2011-10-31",
+            "endDate": "2012-04-29"
+          },
+          "raw_fact": "<dei:DocumentFiscalPeriodFocus contextRef=\"D2012Q2YTD\">Q2</dei:DocumentFiscalPeriodFocus>",
+          "raw_context": "<xbrli:context id=\"D2012Q2YTD\">\n    <xbrli:entity>\n      <xbrli:identifier scheme=\"http://www.sec.gov/CIK\">0000048465</xbrli:identifier>\n    </xbrli:entity>\n    <xbrli:period>\n      <xbrli:startDate>2011-10-31</xbrli:startDate>\n      <xbrli:endDate>2012-04-29</xbrli:endDate>\n    </xbrli:period>\n  </xbrli:context>",
+          "fact_span": [
+            1189857,
+            1189946
+          ],
+          "context_span": [
+            31017,
+            31331
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "Ford": "19 original sources have no exact NetIncomeLoss fact at all: all eighteen 2017-2022 quarterly originals plus2025Q3. Alternative ProfitLoss/common-stockholder tags exist but are not substituted.2012Q2/Q3 DEI uses true-quarter context, outside the frozen DEI-YTD requirement.2023Q2 has current exact NetIncomeLoss but lacks prior-year corresponding quarter in that concept.",
+    "HRL": "Two2012 originals lack exact NetIncomeLoss; alternative income tags are not substituted.",
+    "AT&T": "Four original metadata/registry consistency failures retained.2014Q1 DEI saysFY;2014Q3 registry record instance saysQ2 and endsJun30;2015Q3 registry reportDateOct28 conflicts with Sep30 contexts;2021Q3 DEI saysQ2 on nine-month context. Same-accession source binding review requested separately."
+  },
+  "limitations": [
+    "Raw tag census is independent of the selected fact parser but not a full XBRL semantic processor.",
+    "Frozen definition excludes legitimate alternative tags/metadata conventions; unavailable means unqualified under this declaration, not that the issuer lacks income data.",
+    "No source corrections, return labels or account performance accessed."
+  ]
+}

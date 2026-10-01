@@ -1,0 +1,29 @@
+{
+  "reviewed_at": "2026-09-28T23:15:17.384184+00:00",
+  "scope": "Read-only material strategy-integrity review of new run_study.py against existing plan/adapter; no corpus run or outcome files read",
+  "status": "No material runner finding; final definition/request identity review pending their creation",
+  "reviewed_hashes": {
+    ".qualification/post-filing-strategy20260928/run_study.py": "08305b00521e711ad34e77744340e9951ddda2253d1e6095bd85c48c32aeaeb8",
+    ".qualification/post-filing-strategy20260928/adapter.py": "2439d00a971c9288186a038e69c78572b686fb9085ed87f771b265229d05143c",
+    ".qualification/post-filing-strategy20260928/plan.md": "34ad74b877de8bbe11492d84c4832cadff8e67fa01ecaadc49566dcc90a1bb4b",
+    ".qualification/filing-feasibility20260928/strategy-memo.md": "de1e7474f339d5de3c8a0f882072f8ede8d37e0e52a6de2022afbf1e44f874f1"
+  },
+  "checked": [
+    "Exact treatment/control by proportional/moomoo_ca_us enumeration yields four accounts atUSD2000,40bps,five-session hold.",
+    "Account interval starts2016-12-30 for first2017 morning decisions and ends2026-01-16; every eligible control event prior-price row and scheduled exit is explicitly checked inside bounds.",
+    "One shared frozen event/market load for all variants; no account outcome selection or threshold sweep.",
+    "Reference output is descriptive and saved separately; funded accounts stay in continuous adapter cash paths.",
+    "Per-account exceptions are retained with traceback and remaining variants still attempted; incomplete engine results remain visible and counted separately.",
+    "Historic worker exclusive lock prevents concurrent experiment; previous attempt requires reconciliation, completed pointer requires exact definition and artifact hashes.",
+    "Input/dependency definitions are verified before work and rechecked before completion; attempt stores full request and definition identity.",
+    "Completion status denotes finished evaluation, with complete versus invalid/failed account counts explicit."
+  ],
+  "pending_freeze_requirements": [
+    "definition.json and request.json were absent at review. Required frozen files must include request/events, market-inputs/arrays/calendar, run_study/adapter/event_reference and imported engine/cost/dependency source identities.",
+    "The arriving event_reference.py was not part of this runner-only review; its separate assigned review remains required.",
+    "Source-feature audit and frozen definition are required before actual account execution."
+  ],
+  "executions": 0,
+  "network_requests": 0,
+  "outcome_files_read": 0
+}

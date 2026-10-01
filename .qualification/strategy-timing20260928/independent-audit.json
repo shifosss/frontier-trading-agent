@@ -1,0 +1,223 @@
+{
+  "status": "passed",
+  "primary_policies_checked": 10,
+  "all_event_horizon_csv_rows": 370377,
+  "sampled_policy_horizon_cells": 30,
+  "independent_raw_sources": 28,
+  "maximum_primary_aggregation_error": 4.336808689942018e-19,
+  "maximum_decimal_log_error": 7.771561172376096e-16,
+  "maximum_decimal_simple_return_error": 8.049116928532385e-16,
+  "sample": [
+    {
+      "policy": "relative_reversal_2",
+      "horizon": 1,
+      "signal_session": "2021-06-07",
+      "symbol": "FISV",
+      "source_sha256": "51db57815d77f1cd0599ceb82bf538c0f0bc091a1b41d3b524b23da7d6825be8"
+    },
+    {
+      "policy": "relative_reversal_2",
+      "horizon": 3,
+      "signal_session": "2018-11-15",
+      "symbol": "PCG",
+      "source_sha256": "5fc8518d9f8be37feec8d1dd465a4e8cce4eae6903e3a8e53d820664d1d7cdeb"
+    },
+    {
+      "policy": "relative_reversal_2",
+      "horizon": 5,
+      "signal_session": "2023-03-22",
+      "symbol": "ALT",
+      "source_sha256": "2d5cdfd7b920cd43fdc126f62d292c2662e238cc0f919b9078a1c44d98cfa76e"
+    },
+    {
+      "policy": "relative_reversal_5",
+      "horizon": 1,
+      "signal_session": "2017-11-01",
+      "symbol": "PBI",
+      "source_sha256": "133aa137854a86dc305b61f0436893abe857ff779244d49fd167a3ab5d407efb"
+    },
+    {
+      "policy": "relative_reversal_5",
+      "horizon": 3,
+      "signal_session": "2023-05-26",
+      "symbol": "PPG",
+      "source_sha256": "8bea07d4a6936d9d315e01426328ccabfc39bdfe382628afed896086cc0b0904"
+    },
+    {
+      "policy": "relative_reversal_5",
+      "horizon": 5,
+      "signal_session": "2018-05-22",
+      "symbol": "DY",
+      "source_sha256": "bfc09f7a96af751626944a5f881b8ad97290770564e004982eccf921dc59c0ed"
+    },
+    {
+      "policy": "trend_pullback",
+      "horizon": 1,
+      "signal_session": "2020-06-16",
+      "symbol": "SLGN",
+      "source_sha256": "ce93a99c604e8e656ca2be53dc99158b41936bc5080d8152800864f1acf91389"
+    },
+    {
+      "policy": "trend_pullback",
+      "horizon": 3,
+      "signal_session": "2019-10-21",
+      "symbol": "MANH",
+      "source_sha256": "0c6b5af9031b1a2217d7beb6267696eeb3a626da36ece2544d537758cf3d66f8"
+    },
+    {
+      "policy": "trend_pullback",
+      "horizon": 5,
+      "signal_session": "2017-01-19",
+      "symbol": "BNY",
+      "source_sha256": "cdb7cd0c20415d1c8b5a345a9383bbf7790e21dfabf2e7beb70beac799b4b889"
+    },
+    {
+      "policy": "relative_volume_continuation_5",
+      "horizon": 1,
+      "signal_session": "2022-11-17",
+      "symbol": "PDSB",
+      "source_sha256": "95ccca5e8f60e8c0465370daf4601c85f49098f7fde7f8d157c135ef65a3e6f6"
+    },
+    {
+      "policy": "relative_volume_continuation_5",
+      "horizon": 3,
+      "signal_session": "2017-08-04",
+      "symbol": "CALY",
+      "source_sha256": "eda8fd57b510188fff5778cc9ca8d34b36ae8152b947aa6fa2f3d25fbf3aab5a"
+    },
+    {
+      "policy": "relative_volume_continuation_5",
+      "horizon": 5,
+      "signal_session": "2016-04-11",
+      "symbol": "WB",
+      "source_sha256": "d1d2d01ade5608d83259f742731c6092069254fa13d5cfc9ac69c768fbf15cfc"
+    },
+    {
+      "policy": "beta_residual_reversal_2",
+      "horizon": 1,
+      "signal_session": "2017-02-28",
+      "symbol": "PRGO",
+      "source_sha256": "6c06dbbfea96b6ab5e3de3ad581e28e6992e92047d6571c3662fa1ffad198213"
+    },
+    {
+      "policy": "beta_residual_reversal_2",
+      "horizon": 3,
+      "signal_session": "2018-04-27",
+      "symbol": "FHI",
+      "source_sha256": "9a5ad3fd4bef4efc3c21dd199abd2f7bd4bdfd1d2870a17bd71c8a2a01db25b4"
+    },
+    {
+      "policy": "beta_residual_reversal_2",
+      "horizon": 5,
+      "signal_session": "2019-11-26",
+      "symbol": "MOV",
+      "source_sha256": "7be518695bcfcdb52043648dc66ea93712f934319ee9fdd0be24ef3ec4936e90"
+    },
+    {
+      "policy": "trend_conditioned_reversal_5",
+      "horizon": 1,
+      "signal_session": "2024-03-21",
+      "symbol": "GOF",
+      "source_sha256": "c69c73a62f45c41bb6ffccef5513ec0fb3aae78e40b28313375ebb4045bc84cf"
+    },
+    {
+      "policy": "trend_conditioned_reversal_5",
+      "horizon": 3,
+      "signal_session": "2020-08-18",
+      "symbol": "AHCO",
+      "source_sha256": "e5a43d016a7889536bcaef58aff8190d2577256c667b1bbbfd3a68bcaab813bf"
+    },
+    {
+      "policy": "trend_conditioned_reversal_5",
+      "horizon": 5,
+      "signal_session": "2025-03-05",
+      "symbol": "APG",
+      "source_sha256": "e155a44fd03519e63ee34ac33d5ae8db073c54c43f2a5c888dcd7a3a64e16a1a"
+    },
+    {
+      "policy": "compression_continuation_5",
+      "horizon": 1,
+      "signal_session": "2022-04-18",
+      "symbol": "CRK",
+      "source_sha256": "4013e068ab3a52c7086d148e494852edaea1beebe18547f4b8af670598599c2f"
+    },
+    {
+      "policy": "compression_continuation_5",
+      "horizon": 3,
+      "signal_session": "2025-06-27",
+      "symbol": "WOR",
+      "source_sha256": "54b2563ac006f990a2bf030d98498a21ed3213e4d023b4dd980eca59f2b1c9ba"
+    },
+    {
+      "policy": "compression_continuation_5",
+      "horizon": 5,
+      "signal_session": "2017-01-30",
+      "symbol": "NOW",
+      "source_sha256": "8f5f3cd0262fa0ec74e61d8c6f495f1f19eacac4e781e6badcab933d74840b10"
+    },
+    {
+      "policy": "equal_percentile_blend",
+      "horizon": 1,
+      "signal_session": "2021-12-31",
+      "symbol": "MFIN",
+      "source_sha256": "4a489141a0a98e58f8bab86ef42e7e7307b527861609803eda2530d583f4a82c"
+    },
+    {
+      "policy": "equal_percentile_blend",
+      "horizon": 3,
+      "signal_session": "2024-05-24",
+      "symbol": "IMCR",
+      "source_sha256": "abadfe5b85802909f48d51070b3b91e42602f22e2c4783aa9c0a369ce7bcab44"
+    },
+    {
+      "policy": "equal_percentile_blend",
+      "horizon": 5,
+      "signal_session": "2026-06-25",
+      "symbol": "BABA",
+      "source_sha256": "5e1b0a189b477bc5f980a52b3ba2fffc703893e4b5ec9f7869abbd4256fd0891"
+    },
+    {
+      "policy": "volatility_regime_selector",
+      "horizon": 1,
+      "signal_session": "2016-04-07",
+      "symbol": "RPM",
+      "source_sha256": "d8e3eb8b073d02d1ebeb70e77a776eeca06212dc0e4da1c7ff0299b998cf253e"
+    },
+    {
+      "policy": "volatility_regime_selector",
+      "horizon": 3,
+      "signal_session": "2018-09-07",
+      "symbol": "SFM",
+      "source_sha256": "f314033b2df324df0103fedc911bbdb354446fcd01ee2b05b3b87ab39ef8ac66"
+    },
+    {
+      "policy": "volatility_regime_selector",
+      "horizon": 5,
+      "signal_session": "2017-01-03",
+      "symbol": "CFFN",
+      "source_sha256": "bcc10a1b1cabf9816d39e37d34e788a167c48d2bb049ea7f1d01771ad62e418f"
+    },
+    {
+      "policy": "SPY_reference",
+      "horizon": 1,
+      "signal_session": "2020-04-14",
+      "symbol": "SPY",
+      "source_sha256": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66"
+    },
+    {
+      "policy": "SPY_reference",
+      "horizon": 3,
+      "signal_session": "2025-12-11",
+      "symbol": "SPY",
+      "source_sha256": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66"
+    },
+    {
+      "policy": "SPY_reference",
+      "horizon": 5,
+      "signal_session": "2016-05-11",
+      "symbol": "SPY",
+      "source_sha256": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66"
+    }
+  ],
+  "qualification": "Arithmetic validation of saved source observations,not source-action completeness or executable profitability."
+}

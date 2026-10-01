@@ -1,0 +1,28 @@
+{
+  "symbol": "WOK",
+  "effective_session": "2025-12-29",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/WOK/bars?timeframe=1Day&start=2025-12-19T05%3A00%3A00%2B00%3A00&end=2026-01-09T04%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2025-12-19T05:00:00+00:00",
+    "end": "2026-01-09T04:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:31.420000+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "WOK-2025-12-29-raw-1.fc20f6e04c7502fc9ae6efd5edd278380dd3e1e133d920fb468fbbdf709d6c1b.raw.json",
+  "sha256": "fc20f6e04c7502fc9ae6efd5edd278380dd3e1e133d920fb468fbbdf709d6c1b",
+  "bytes": 1399,
+  "captured_at": "2026-09-28T19:04:31.451947+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:31 GMT",
+  "bar_count": 13,
+  "response_symbol": "WOK",
+  "pagination_complete": true
+}

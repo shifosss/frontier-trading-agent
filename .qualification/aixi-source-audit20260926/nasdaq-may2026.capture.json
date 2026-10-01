@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-312",
+  "params": null,
+  "captured_at": "2026-09-28T18:39:25.881817+00:00",
+  "status_code": 200,
+  "sha256": "e0531dcb213e747b75e0238acd00f631755b3129347172bd53717a6d171fa30e",
+  "bytes": 59059,
+  "content_type": "text/html; charset=utf-8",
+  "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+  "raw_file": "nasdaq-may2026.e0531dcb213e747b75e0238acd00f631755b3129347172bd53717a6d171fa30e.raw"
+}

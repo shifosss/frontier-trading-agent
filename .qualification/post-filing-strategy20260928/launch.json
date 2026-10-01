@@ -1,0 +1,6 @@
+{
+  "pid": 5380,
+  "definition_sha256": "ca842ce2c901b5ea3ae9e21bb0501ae4b1c8271804780c6292bab3846d81b5dc",
+  "command": "python -B -X utf8 .qualification/post-filing-strategy20260928/run_study.py",
+  "transport": "offline historical simulation only"
+}

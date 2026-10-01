@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-18",
+  "alpha_delisted": {
+    "requested_date": "2020-01-01",
+    "state": "delisted",
+    "saved_rows": 3762,
+    "full_data_true_result": {},
+    "preview_false_result": "CSV link, downloaded full file"
+  },
+  "alpha_daily_adjusted_bbbyq": {
+    "error": {
+      "type": "rate_limit",
+      "message": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints",
+      "detail": "Alpha Vantage rate limit reached. Wait and retry, or use a premium API key for higher limits."
+    }
+  },
+  "alpha_raw_full_leh": {
+    "error": {
+      "type": "rate_limit",
+      "message": "Thank you for using Alpha Vantage! The outputsize=full parameter value is a premium feature for the TIME_SERIES_DAILY endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium features",
+      "detail": "Alpha Vantage rate limit reached. Wait and retry, or use a premium API key for higher limits."
+    }
+  },
+  "alpha_raw_compact_bbbyq": {
+    "rows": 100,
+    "latest": "2023-09-29"
+  },
+  "longbridge_leh": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"error_code\":301600,\"message\":\"invalid symbol\",\"recoverable\":\"fix_params\",\"hint\":null,\"data\":null}"
+      }
+    ],
+    "structuredContent": {
+      "error_code": "INVALID_ARGUMENT"
+    },
+    "isError": true
+  },
+  "longbridge_bbbyq": "invalid symbol",
+  "longbridge_aapl_2000_01": {
+    "rows": 20,
+    "first": {
+      "close": "111.938",
+      "open": "104.875",
+      "low": "101.688",
+      "high": "112.5",
+      "volume": 4784100,
+      "turnover": "0",
+      "timestamp": "2000-01-03T05:00:00Z",
+      "trade_session": "Intraday",
+      "open_updated": true
+    }
+  }
+}

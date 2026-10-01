@@ -1,0 +1,625 @@
+{
+  "at": "2026-09-28T23:22:26.003337+00:00",
+  "status": "Saved original index/registry/instance bindings verified; period inconsistencies remain source gaps",
+  "checks": [
+    {
+      "accession": "0000732717-14-000129",
+      "registry_reportDate": "2014-09-30",
+      "registry_primaryDocument": "q3_10q.htm",
+      "manifest_sha256": "f07048acf067c0eeffe7270caf6fba1f60060cd363289cf9050e6e554f5381a6",
+      "index_primary_row": {
+        "sequence": "1",
+        "document": "q3_10q.htm",
+        "type": "10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000129/q3_10q.htm"
+      },
+      "index_instance_row": {
+        "sequence": "7",
+        "document": "t-20140930.xml",
+        "type": "EX-101.INS",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000129/t-20140930.xml"
+      },
+      "fact_source_exact_same_accession": true,
+      "header_fields": {
+        "ACCESSION-NUMBER": "0000732717-14-000129",
+        "PERIOD": "20140930",
+        "FILING-DATE": "20141110",
+        "ACCEPTANCE-DATETIME": "20141110075148",
+        "TYPE": "10-Q"
+      },
+      "DEI": [
+        {
+          "concept": "DocumentFiscalPeriodFocus",
+          "value": "Q2",
+          "contextRef": "FROM_Jan01_2014_TO_Jun30_2014"
+        },
+        {
+          "concept": "DocumentFiscalYearFocus",
+          "value": "2014",
+          "contextRef": "FROM_Jan01_2014_TO_Jun30_2014"
+        },
+        {
+          "concept": "DocumentPeriodEndDate",
+          "value": "2014-09-30",
+          "contextRef": "FROM_Jan01_2014_TO_Jun30_2014"
+        },
+        {
+          "concept": "EntityCentralIndexKey",
+          "value": "0000732717",
+          "contextRef": "FROM_Jan01_2014_TO_Jun30_2014"
+        },
+        {
+          "concept": "EntityRegistrantName",
+          "value": "AT&T Inc.",
+          "contextRef": "FROM_Jan01_2014_TO_Jun30_2014"
+        }
+      ],
+      "entity_wide_NetIncomeLoss": [
+        {
+          "contextRef": "FROM_Apr01_2014_TO_Jun30_2014",
+          "value": "3547000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2014-04-01",
+            "endDate": "2014-06-30"
+          }
+        },
+        {
+          "contextRef": "FROM_Apr01_2013_TO_Jun30_2013",
+          "value": "3822000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2013-04-01",
+            "endDate": "2013-06-30"
+          }
+        },
+        {
+          "contextRef": "FROM_Jan01_2014_TO_Jun30_2014",
+          "value": "7199000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-06-30"
+          }
+        },
+        {
+          "contextRef": "FROM_Jan01_2013_TO_Jun30_2013",
+          "value": "7522000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2013-01-01",
+            "endDate": "2013-06-30"
+          }
+        }
+      ],
+      "primary_HTML_cover_span": "quarterly period ended September 30, 2014 or TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ",
+      "instance_context_periods": [
+        {
+          "period": {
+            "instant": "2012-12-31"
+          },
+          "count": 5
+        },
+        {
+          "period": {
+            "instant": "2013-06-30"
+          },
+          "count": 5
+        },
+        {
+          "period": {
+            "instant": "2013-12-31"
+          },
+          "count": 37
+        },
+        {
+          "period": {
+            "instant": "2014-03-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "instant": "2014-06-27"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "instant": "2014-06-30"
+          },
+          "count": 38
+        },
+        {
+          "period": {
+            "instant": "2014-07-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "instant": "2014-09-30"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2013-01-01",
+            "endDate": "2013-06-30"
+          },
+          "count": 14
+        },
+        {
+          "period": {
+            "startDate": "2013-04-01",
+            "endDate": "2013-06-30"
+          },
+          "count": 10
+        },
+        {
+          "period": {
+            "startDate": "2013-09-08",
+            "endDate": "2013-09-09"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2013-12-01",
+            "endDate": "2013-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-06-30"
+          },
+          "count": 29
+        },
+        {
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-07-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-03-12",
+            "endDate": "2014-03-13"
+          },
+          "count": 6
+        },
+        {
+          "period": {
+            "startDate": "2014-04-01",
+            "endDate": "2014-04-02"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-04-01",
+            "endDate": "2014-06-30"
+          },
+          "count": 11
+        },
+        {
+          "period": {
+            "startDate": "2014-05-01",
+            "endDate": "2014-05-30"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-06-26",
+            "endDate": "2014-06-27"
+          },
+          "count": 3
+        },
+        {
+          "period": {
+            "startDate": "2014-06-29",
+            "endDate": "2014-06-30"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-07-01",
+            "endDate": "2014-07-31"
+          },
+          "count": 2
+        },
+        {
+          "period": {
+            "startDate": "2014-07-24",
+            "endDate": "2014-07-25"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-10-01",
+            "endDate": "2014-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-05-17",
+            "endDate": "2015-05-18"
+          },
+          "count": 2
+        },
+        {
+          "period": {
+            "startDate": "2015-11-12",
+            "endDate": "2015-11-13"
+          },
+          "count": 1
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000129/0000732717-14-000129-index.html",
+          "path": "raw/a6d17cfad1e511c2f80cce0e1873cc82c808ed0b962a987a712e04a4218baeef.bin",
+          "sha256": "a6d17cfad1e511c2f80cce0e1873cc82c808ed0b962a987a712e04a4218baeef",
+          "bytes": 11596,
+          "retrieved_at_utc": "2026-09-28T22:41:14.414608+00:00"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000129/0000732717-14-000129.hdr.sgml",
+          "path": "raw/6020654c910705aa0dffc9cca99b8b4b18747d1a05db4e32676d5cb714189570.bin",
+          "sha256": "6020654c910705aa0dffc9cca99b8b4b18747d1a05db4e32676d5cb714189570",
+          "bytes": 1006,
+          "retrieved_at_utc": "2026-09-28T22:41:15.485865+00:00"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000129/q3_10q.htm",
+          "path": "raw/fca5aa6233a2d60c030760f619cbb366d4193e8d13e0f8fea96d590caba2301b.bin",
+          "sha256": "fca5aa6233a2d60c030760f619cbb366d4193e8d13e0f8fea96d590caba2301b",
+          "bytes": 1340658,
+          "retrieved_at_utc": "2026-09-28T22:41:17.118527+00:00"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000129/t-20140930.xml",
+          "path": "raw/3ed454de6b7fe205f02d183543e43b6a7ca1f6c1c0718ad23e846cf19787205c.bin",
+          "sha256": "3ed454de6b7fe205f02d183543e43b6a7ca1f6c1c0718ad23e846cf19787205c",
+          "bytes": 1212607,
+          "retrieved_at_utc": "2026-09-28T22:41:17.371703+00:00"
+        }
+      ]
+    },
+    {
+      "accession": "0000732717-15-000121",
+      "registry_reportDate": "2015-10-28",
+      "registry_primaryDocument": "q3_10q.htm",
+      "manifest_sha256": "dc72bbd82bdcad64a4c70ae29bfb4fdb7526a765d500e2d50aa52d5169bacdc2",
+      "index_primary_row": {
+        "sequence": "1",
+        "document": "q3_10q.htm",
+        "type": "10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271715000121/q3_10q.htm"
+      },
+      "index_instance_row": {
+        "sequence": "13",
+        "document": "t-20150930.xml",
+        "type": "EX-101.INS",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271715000121/t-20150930.xml"
+      },
+      "fact_source_exact_same_accession": true,
+      "header_fields": {
+        "ACCESSION-NUMBER": "0000732717-15-000121",
+        "PERIOD": "20151028",
+        "FILING-DATE": "20151106",
+        "ACCEPTANCE-DATETIME": "20151105184354",
+        "TYPE": "10-Q"
+      },
+      "DEI": [
+        {
+          "concept": "DocumentFiscalYearFocus",
+          "value": "2015",
+          "contextRef": "FROM_Jan01_2015_TO_Sep30_2015"
+        },
+        {
+          "concept": "DocumentFiscalPeriodFocus",
+          "value": "Q3",
+          "contextRef": "FROM_Jan01_2015_TO_Sep30_2015"
+        },
+        {
+          "concept": "DocumentPeriodEndDate",
+          "value": "2015-09-30",
+          "contextRef": "FROM_Jan01_2015_TO_Sep30_2015"
+        },
+        {
+          "concept": "EntityCentralIndexKey",
+          "value": "0000732717",
+          "contextRef": "FROM_Jan01_2015_TO_Sep30_2015"
+        },
+        {
+          "concept": "EntityRegistrantName",
+          "value": "AT&T Inc.",
+          "contextRef": "FROM_Jan01_2015_TO_Sep30_2015"
+        }
+      ],
+      "entity_wide_NetIncomeLoss": [
+        {
+          "contextRef": "FROM_Jul01_2015_TO_Sep30_2015",
+          "value": "2994000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-09-30"
+          }
+        },
+        {
+          "contextRef": "FROM_Jul01_2014_TO_Sep30_2014",
+          "value": "3130000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2014-07-01",
+            "endDate": "2014-09-30"
+          }
+        },
+        {
+          "contextRef": "FROM_Jan01_2015_TO_Sep30_2015",
+          "value": "9339000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          }
+        },
+        {
+          "contextRef": "FROM_Jan01_2014_TO_Sep30_2014",
+          "value": "10441000000",
+          "unitRef": "USDollar",
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-09-30"
+          }
+        }
+      ],
+      "primary_HTML_cover_span": "quarterly period ended September 30, 2015 or o TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANG",
+      "instance_context_periods": [
+        {
+          "period": {
+            "instant": "2013-12-31"
+          },
+          "count": 11
+        },
+        {
+          "period": {
+            "instant": "2014-01-01"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "instant": "2014-09-30"
+          },
+          "count": 5
+        },
+        {
+          "period": {
+            "instant": "2014-12-31"
+          },
+          "count": 53
+        },
+        {
+          "period": {
+            "instant": "2015-01-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "instant": "2015-07-24"
+          },
+          "count": 8
+        },
+        {
+          "period": {
+            "instant": "2015-09-30"
+          },
+          "count": 56
+        },
+        {
+          "period": {
+            "instant": "2015-10-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "instant": "2015-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2013-01-01",
+            "endDate": "2013-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-09-30"
+          },
+          "count": 29
+        },
+        {
+          "period": {
+            "startDate": "2014-01-01",
+            "endDate": "2014-12-31"
+          },
+          "count": 7
+        },
+        {
+          "period": {
+            "startDate": "2014-06-07",
+            "endDate": "2015-09-30"
+          },
+          "count": 4
+        },
+        {
+          "period": {
+            "startDate": "2014-06-27",
+            "endDate": "2014-06-27"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-07-01",
+            "endDate": "2014-09-30"
+          },
+          "count": 25
+        },
+        {
+          "period": {
+            "startDate": "2014-10-01",
+            "endDate": "2014-10-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2014-12-01",
+            "endDate": "2014-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-01-01",
+            "endDate": "2015-01-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-01-01",
+            "endDate": "2015-03-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-01-01",
+            "endDate": "2015-06-30"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-01-01",
+            "endDate": "2015-09-30"
+          },
+          "count": 44
+        },
+        {
+          "period": {
+            "startDate": "2015-01-01",
+            "endDate": "2015-12-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-01-16",
+            "endDate": "2015-01-16"
+          },
+          "count": 6
+        },
+        {
+          "period": {
+            "startDate": "2015-03-31",
+            "endDate": "2015-03-31"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-04-30",
+            "endDate": "2015-04-30"
+          },
+          "count": 5
+        },
+        {
+          "period": {
+            "startDate": "2015-06-01",
+            "endDate": "2015-06-30"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-06-30",
+            "endDate": "2015-06-30"
+          },
+          "count": 1
+        },
+        {
+          "period": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-09-30"
+          },
+          "count": 27
+        },
+        {
+          "period": {
+            "startDate": "2015-07-24",
+            "endDate": "2015-07-24"
+          },
+          "count": 1
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271715000121/0000732717-15-000121-index.html",
+          "path": "raw/2345143e76566201d59f65317d2194dec4e5fda33abbccfd00ba43533ac9125e.bin",
+          "sha256": "2345143e76566201d59f65317d2194dec4e5fda33abbccfd00ba43533ac9125e",
+          "bytes": 14062,
+          "retrieved_at_utc": "2026-09-28T22:41:26.429599+00:00"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271715000121/0000732717-15-000121.hdr.sgml",
+          "path": "raw/2d2a6b9daa879ba80032d68ff5460848e2dab6002afe68b467479c604aba25d3.bin",
+          "sha256": "2d2a6b9daa879ba80032d68ff5460848e2dab6002afe68b467479c604aba25d3",
+          "bytes": 1006,
+          "retrieved_at_utc": "2026-09-28T22:41:27.504820+00:00"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271715000121/q3_10q.htm",
+          "path": "raw/bb1bfceee55979f1548172cc8dd3d6e7b8a6bd90c00228947e674165d39750b3.bin",
+          "sha256": "bb1bfceee55979f1548172cc8dd3d6e7b8a6bd90c00228947e674165d39750b3",
+          "bytes": 2151005,
+          "retrieved_at_utc": "2026-09-28T22:41:28.439240+00:00"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271715000121/t-20150930.xml",
+          "path": "raw/77d895344d5badf976c1af96965340bf30d6ee679ae7368feb661a255e11cd60.bin",
+          "sha256": "77d895344d5badf976c1af96965340bf30d6ee679ae7368feb661a255e11cd60",
+          "bytes": 1867868,
+          "retrieved_at_utc": "2026-09-28T22:41:29.420944+00:00"
+        }
+      ]
+    }
+  ],
+  "network_requests": 0,
+  "source_changes": 0,
+  "outcomes_read": 0
+}

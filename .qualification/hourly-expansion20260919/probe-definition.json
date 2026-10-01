@@ -1,0 +1,50 @@
+{
+  "url": "https://data.alpaca.markets/v2/stocks/bars",
+  "maximum_requests": 3,
+  "requests": [
+    {
+      "name": "sip-hourly-20160104-20160108",
+      "params": {
+        "symbols": "AAPL,MSFT",
+        "adjustment": "raw",
+        "sort": "asc",
+        "limit": 10000,
+        "feed": "sip",
+        "timeframe": "1Hour",
+        "start": "2016-01-04T00:00:00Z",
+        "end": "2016-01-08T23:59:59Z",
+        "asof": "2016-01-08"
+      }
+    },
+    {
+      "name": "iex-hourly-20160104-20160108",
+      "params": {
+        "symbols": "AAPL,MSFT",
+        "adjustment": "raw",
+        "sort": "asc",
+        "limit": 10000,
+        "feed": "iex",
+        "timeframe": "1Hour",
+        "start": "2016-01-04T00:00:00Z",
+        "end": "2016-01-08T23:59:59Z",
+        "asof": "2016-01-08"
+      }
+    },
+    {
+      "name": "sip-minute-20241129-regular-early-close",
+      "params": {
+        "symbols": "AAPL,MSFT",
+        "adjustment": "raw",
+        "sort": "asc",
+        "limit": 10000,
+        "feed": "sip",
+        "timeframe": "1Min",
+        "start": "2024-11-29T14:30:00Z",
+        "end": "2024-11-29T17:59:59Z",
+        "asof": "2024-11-29"
+      }
+    }
+  ],
+  "scope": "historical stock market data only; no account/order endpoint; no pagination or retries",
+  "declared_at": "2026-09-19T19:09:30.093188+00:00"
+}

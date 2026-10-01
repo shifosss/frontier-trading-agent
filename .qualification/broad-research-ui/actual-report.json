@@ -1,0 +1,75 @@
+{
+  "fixture": false,
+  "errors": [],
+  "http_errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/operator/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/datasets"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/runs"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/campaigns"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    }
+  ],
+  "widths": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "saved_status": {
+    "status": "running",
+    "phase": "capture",
+    "discovered": 5640,
+    "requested": 5640,
+    "attempted": 1550,
+    "cached": 2513,
+    "usable": 4027,
+    "failed": 36
+  }
+}

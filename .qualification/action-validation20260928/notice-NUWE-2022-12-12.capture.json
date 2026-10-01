@@ -1,0 +1,16 @@
+{
+  "symbol": "NUWE",
+  "effective_sessions": "2022-12-12",
+  "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2022-421",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:04.667071+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2022-421",
+  "redirects": [],
+  "sha256": "3c24c02bb696aa641ddf5f6f8daf72b18c227c6f70fe8413f7eecf9773caae51",
+  "raw_file": "notice-NUWE-2022-12-12.3c24c02bb696aa641ddf5f6f8daf72b18c227c6f70fe8413f7eecf9773caae51.raw.html",
+  "bytes": 58338,
+  "captured_at": "2026-09-28T19:14:05.126930+00:00",
+  "text_file": "notice-NUWE-2022-12-12.text.txt"
+}

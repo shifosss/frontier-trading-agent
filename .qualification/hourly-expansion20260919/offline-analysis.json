@@ -1,0 +1,176 @@
+{
+  "capture_integrity": [
+    {
+      "name": "iex-hourly-20160104-20160108",
+      "sha256": "c700148960d500511ad0040f8b1c3c6ebbac07572176aff49cfc66b69eec9aee",
+      "bytes": 34
+    },
+    {
+      "name": "sip-hourly-20160104-20160108",
+      "sha256": "5105426c917fccd4b8e4137ec5c7c79f456720bfdc4e2fe693ad989df401b266",
+      "bytes": 16004
+    },
+    {
+      "name": "sip-minute-20241129-regular-early-close",
+      "sha256": "53be89a5212a3c9fedf49b98c1e0d00547f74d4e6de52755ae444fbd539cab0f",
+      "bytes": 45621
+    }
+  ],
+  "hourly": {
+    "AAPL": {
+      "rows": 79,
+      "timestamp_minute_values": [
+        0
+      ],
+      "fully_regular_session": 30,
+      "crosses_regular_open": 5,
+      "outside_regular_session": 44
+    },
+    "MSFT": {
+      "rows": 73,
+      "timestamp_minute_values": [
+        0
+      ],
+      "fully_regular_session": 30,
+      "crosses_regular_open": 5,
+      "outside_regular_session": 38
+    }
+  },
+  "minute": {
+    "AAPL": {
+      "rows": 210,
+      "missing_regular_minutes": 0,
+      "session_open_utc": "2024-11-29T14:30:00+00:00",
+      "session_close_utc": "2024-11-29T18:00:00+00:00",
+      "session_aligned_hours": [
+        {
+          "symbol": "AAPL",
+          "start": "2024-11-29T14:30:00+00:00",
+          "end": "2024-11-29T15:30:00+00:00",
+          "duration_minutes": 60,
+          "source_minutes": 60,
+          "open": 234.84,
+          "high": 235.89,
+          "low": 233.97,
+          "close": 235.345,
+          "volume": 5284869.0,
+          "trade_count": 82789,
+          "vwap": 235.2105830028115
+        },
+        {
+          "symbol": "AAPL",
+          "start": "2024-11-29T15:30:00+00:00",
+          "end": "2024-11-29T16:30:00+00:00",
+          "duration_minutes": 60,
+          "source_minutes": 60,
+          "open": 235.35,
+          "high": 236.5999,
+          "low": 235.34,
+          "close": 236.4,
+          "volume": 4000061.0,
+          "trade_count": 57103,
+          "vwap": 235.96945190838963
+        },
+        {
+          "symbol": "AAPL",
+          "start": "2024-11-29T16:30:00+00:00",
+          "end": "2024-11-29T17:30:00+00:00",
+          "duration_minutes": 60,
+          "source_minutes": 60,
+          "open": 236.38,
+          "high": 237.15,
+          "low": 236.29,
+          "close": 236.36,
+          "volume": 3843071.0,
+          "trade_count": 58374,
+          "vwap": 236.75252611951586
+        },
+        {
+          "symbol": "AAPL",
+          "start": "2024-11-29T17:30:00+00:00",
+          "end": "2024-11-29T18:00:00+00:00",
+          "duration_minutes": 30,
+          "source_minutes": 30,
+          "open": 236.37,
+          "high": 237.81,
+          "low": 236.37,
+          "close": 237.34,
+          "volume": 4532354.0,
+          "trade_count": 55882,
+          "vwap": 237.19644588447372
+        }
+      ],
+      "volume_reconciles": true
+    },
+    "MSFT": {
+      "rows": 210,
+      "missing_regular_minutes": 0,
+      "session_open_utc": "2024-11-29T14:30:00+00:00",
+      "session_close_utc": "2024-11-29T18:00:00+00:00",
+      "session_aligned_hours": [
+        {
+          "symbol": "MSFT",
+          "start": "2024-11-29T14:30:00+00:00",
+          "end": "2024-11-29T15:30:00+00:00",
+          "duration_minutes": 60,
+          "source_minutes": 60,
+          "open": 420.1,
+          "high": 421.65,
+          "low": 417.8,
+          "close": 421.5334,
+          "volume": 4354633.0,
+          "trade_count": 84768,
+          "vwap": 419.880754022632
+        },
+        {
+          "symbol": "MSFT",
+          "start": "2024-11-29T15:30:00+00:00",
+          "end": "2024-11-29T16:30:00+00:00",
+          "duration_minutes": 60,
+          "source_minutes": 60,
+          "open": 421.56,
+          "high": 423.54,
+          "low": 421.45,
+          "close": 423.04,
+          "volume": 1613066.0,
+          "trade_count": 42082,
+          "vwap": 422.41827424087234
+        },
+        {
+          "symbol": "MSFT",
+          "start": "2024-11-29T16:30:00+00:00",
+          "end": "2024-11-29T17:30:00+00:00",
+          "duration_minutes": 60,
+          "source_minutes": 60,
+          "open": 423.11,
+          "high": 424.7831,
+          "low": 422.725,
+          "close": 424.28,
+          "volume": 1446888.0,
+          "trade_count": 36285,
+          "vwap": 423.7027167967638
+        },
+        {
+          "symbol": "MSFT",
+          "start": "2024-11-29T17:30:00+00:00",
+          "end": "2024-11-29T18:00:00+00:00",
+          "duration_minutes": 30,
+          "source_minutes": 30,
+          "open": 424.24,
+          "high": 424.8849,
+          "low": 423.36,
+          "close": 423.46,
+          "volume": 1762994.0,
+          "trade_count": 36218,
+          "vwap": 424.08826264243214
+        }
+      ],
+      "volume_reconciles": true
+    }
+  },
+  "notes": [
+    "Raw feed captures are current retrieved vintages, not historical availability snapshots.",
+    "Provider hourly timestamps denote clock-hour starts; opening-crossing bars cannot be cropped into session-aligned OHLC.",
+    "Minute aggregation is an offline derived source fixture, not an imported trading dataset or strategy test."
+  ]
+}

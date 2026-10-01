@@ -1,0 +1,32 @@
+{
+  "at": "2026-09-28T23:04:46.588622+00:00",
+  "stage": "Reviewed source parser; full corpus not yet processed",
+  "files": {
+    "features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+    "test_features.py": "c6a61ff756f88e6a1b53a6937cd9b0886ac5bf4eb5dbdcb1b336ec3b11a38732",
+    "extraction-definition.json": "0fec227994f1508ed433cdbcea42b5f338be1d5e3d498ed63b0506c552db137e",
+    "extraction-amendment1.json": "2912dec67722f6331287829ed097270f5c82a9e6ac36a96ec508900edb329182",
+    "interface.md": "341061414fd82b3d893fd5ac199f07e711dbad1d67625f3af8fcd4ff436824c6"
+  },
+  "focused_tests": {
+    "passed": 28,
+    "command": ".venv/Scripts/python.exe -B -X utf8 -m pytest -q .qualification/filing-features20260928/test_features.py",
+    "initial_red": "18 tests failed with feature parser not implemented before code existed",
+    "review_regressions": "Nested Microsoft DEI, original_xbrl_instance integration, future metadata perturbation, excluded footnote, missing reportDate retention, exact accession and calendar boundaries each failed before their fixes"
+  },
+  "repository_suite": {
+    "passed": 527,
+    "failed": 0,
+    "seconds": 120.39,
+    "warnings": 96,
+    "warning_families": [
+      "Starlette httpx testclient deprecation",
+      "AnyIO BlockingPortal alias deprecation",
+      "Pandas Timestamp.utcnow deprecation"
+    ]
+  },
+  "independent_review": "strategy_design repeated28tests and found no remaining material parser/chronology findings",
+  "real_price_outcomes_read": false,
+  "full_corpus_extracted": false,
+  "pending": "Source collector and final31-record overlay review/completion; preserve252baseline outcomes and exclude unqualified MSFT originalHTML mapping"
+}

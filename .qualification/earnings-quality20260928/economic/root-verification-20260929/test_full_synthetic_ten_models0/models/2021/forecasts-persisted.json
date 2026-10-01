@@ -1,0 +1,15 @@
+{
+  "fold": {
+    "fit_decision_years": [
+      2017,
+      2018,
+      2019
+    ],
+    "calibration_decision_year": 2020,
+    "test_decision_year": 2021
+  },
+  "forecast_sha256": {
+    "ridge": "1c1184166760dda7c90d479efe930669eecd3f441a0e268c3d5129d98df4be4b",
+    "hist_gradient_boosting": "c7fa5673e77f5620a0f0196fc8e988b647a5dcc45f6b4b6e3c08787d8a0d6f3f"
+  }
+}

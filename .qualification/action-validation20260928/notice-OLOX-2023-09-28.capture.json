@@ -1,0 +1,16 @@
+{
+  "symbol": "OLOX",
+  "effective_sessions": "2023-09-28",
+  "url": "https://www.sec.gov/Archives/edgar/data/1023994/000121390026073749/ea0295463-10k_olenox.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:00.040386+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1023994/000121390026073749/ea0295463-10k_olenox.htm",
+  "redirects": [],
+  "sha256": "a71655aafa502be8f5f358051475d42a3394b03dead35bf1169581958c13dbed",
+  "raw_file": "notice-OLOX-2023-09-28.a71655aafa502be8f5f358051475d42a3394b03dead35bf1169581958c13dbed.raw.html",
+  "bytes": 3764083,
+  "captured_at": "2026-09-28T19:14:00.565342+00:00",
+  "text_file": "notice-OLOX-2023-09-28.text.txt"
+}

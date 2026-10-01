@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-29T13:59:26.054815+00:00",
+  "status": "passed",
+  "test_command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    ".qualification\\earnings-quality20260928\\accounts\\test_account_adapter.py"
+  ],
+  "returncode": 0,
+  "stdout": ".........................                                                [100%]\n25 passed in 3.65s\n",
+  "stderr": "",
+  "files": {
+    ".qualification\\earnings-quality20260928\\accounts\\account_adapter.py": "40f5d5233b9bad8b495e96dc534c95a388925a5b42828957eda245fd79c99e2e",
+    ".qualification\\earnings-quality20260928\\accounts\\test_account_adapter.py": "7f85ce8a6a71c4950fb521fda27b5978992007d2cdf4b50a2edd0eea70c74887",
+    ".qualification\\earnings-quality20260928\\accounts\\interface.md": "73d8effd5eb765901ea07d8fbfde13dfd8ef029717e654bdb3d01738d213be96",
+    ".qualification\\earnings-quality20260928\\cohort\\model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    "src\\frontier\\short_horizon_study.py": "9105cce590c0165e37c2add71be7daf0b0b4db12eef0c52182f629c811d04cd0",
+    "src\\frontier\\conditional_policy.py": "a1ac07371bc981b7f56623860c157eabf6ed2bafe10322bb66d1158b1aa16041",
+    "src\\frontier\\daily_policy.py": "5f76545cb738f8c6326cece3aec2905e2c611af1e4af16c6af6f89b0392ac98c",
+    "src\\frontier\\execution_costs.py": "5563f6eb14196f4b12d1a7b103e9bfced733976fd0b93f197dafd795e2381483",
+    "src\\frontier\\historical_settlement.py": "fbaaec13818dc3fa5393f4ca94247edee58d642dd50d7eed8ce83565f88d52a8"
+  },
+  "actual_study_accounts_run": 0,
+  "new_study_model_fits": 0,
+  "network_requests": 0,
+  "shared_modules_changed": false,
+  "qualification": "Synthetic cash and policy behavior only; not economic validation"
+}

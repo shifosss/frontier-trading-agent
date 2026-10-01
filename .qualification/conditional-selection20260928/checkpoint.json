@@ -1,0 +1,16 @@
+{
+  "at": "2026-09-28T20:39:57.794307+00:00",
+  "phase": "account_evaluation",
+  "all_model_blocks": 11,
+  "available_model_blocks": 11,
+  "candidate_forecasts": 3133575,
+  "distinct_eligible_stocks": 4434,
+  "completed_accounts": 7,
+  "active_entrypoint": "resume_with_persistence.py",
+  "launcher_pid": 32440,
+  "observed_worker_pid": 46460,
+  "scientific_definition": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "operational_amendment": "a366297336023eab8be26674cdcb4222a5fba2b263a94ffcd2835bba8195e03b",
+  "automatic_readout": "economic_analysis.py after fullstudy",
+  "economic_promotion": "none"
+}

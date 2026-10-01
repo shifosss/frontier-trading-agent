@@ -1,0 +1,30 @@
+{
+  "declared_at_utc": "2026-09-28T22:20:43.498482+00:00",
+  "purpose": "Verify remaining issuer/current security associations from official metadata; not historical membership proof",
+  "max_requests": 3,
+  "min_interval_seconds": 1,
+  "max_bytes_per_response": 5000000,
+  "attempts_per_url": 1,
+  "stop_status": [
+    403,
+    429
+  ],
+  "user_agent": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
+  "sources": [
+    {
+      "symbol": "T",
+      "cik": "0000732717",
+      "url": "https://data.sec.gov/submissions/CIK0000732717.json"
+    },
+    {
+      "symbol": "HRL",
+      "cik": "0000048465",
+      "url": "https://data.sec.gov/submissions/CIK0000048465.json"
+    },
+    {
+      "symbol": "BANF",
+      "cik": "0000760498",
+      "url": "https://data.sec.gov/submissions/CIK0000760498.json"
+    }
+  ]
+}

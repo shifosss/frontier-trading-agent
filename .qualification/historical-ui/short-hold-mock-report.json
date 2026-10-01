@@ -1,0 +1,518 @@
+{
+  "kind": "synthetic short-hold UI contract tests",
+  "widths": [
+    {
+      "width": 1440,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 100
+        }
+      ],
+      "page_errors": [],
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 100
+        }
+      ],
+      "page_errors": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 100
+        }
+      ],
+      "page_errors": [],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost": 100
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 20
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 40
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost": 100
+        }
+      ],
+      "page_errors": [],
+      "overflow": false
+    }
+  ],
+  "states": [
+    "incomplete financial metrics and benchmark suppressed; actual count retained",
+    "short-hold request, explicit capture reuse, retained old result, publication swap, legacy fresh-capture request",
+    "first-run default short-hold request without nonexistent source"
+  ]
+}

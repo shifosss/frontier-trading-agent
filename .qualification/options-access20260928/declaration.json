@@ -1,0 +1,15 @@
+{
+  "declared_on": "2026-09-28",
+  "purpose": "Bounded read-only verification of existing historical option-chain access, not a strategy result or permission to purchase service.",
+  "provider": "Existing Alpha Vantage connector",
+  "tool": "mcp__codex_apps__alpha_vantage_historical_options",
+  "maximum_calls": 2,
+  "requests": [
+    {"symbol": "SPY", "date": "2017-01-17", "expiration": "2017-02-17", "datatype": "json", "return_full_data": true},
+    {"symbol": "SPY", "date": "2024-01-16", "expiration": "2024-02-16", "datatype": "json", "return_full_data": true}
+  ],
+  "selection_reason": "Two predetermined January sessions, one old and one recent, and the following standard monthly expiry. SPY is a broad-market ETF; dates were not selected from option outcomes.",
+  "stop": "Stop after any access, entitlement or rate-limit failure. Do not purchase access or retry. Preserve the complete connector response and request identity.",
+  "qualification": "Check actual dates, symbols, contracts, strikes, expiries, bid/ask fields and source timing. Historical chain snapshots are not verified executable fills, synchronized quotes, corporate-action-complete contracts or performance evidence.",
+  "documentation": "https://www.alphavantage.co/documentation/#historical-options"
+}

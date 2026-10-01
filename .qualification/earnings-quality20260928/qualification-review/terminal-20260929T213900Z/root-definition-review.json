@@ -1,0 +1,14 @@
+{
+  "reviewed_at_utc": "2026-09-29T21:44:27.808714+00:00",
+  "definition_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\qualification\\terminal-definition-20260929.json",
+  "definition_sha256": "0d949837d8e12fe69e2255383cc7aa8a0a06b501d0c6e54c57d7067fabf06e1c",
+  "bound_inputs_verified": 43,
+  "expected_retained_original_records": 4057,
+  "required_collector_inputs_present": true,
+  "source_root": ".qualification/earnings-quality20260928/source",
+  "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
+  "no_material_prelaunch_blocker": true,
+  "terminal_incomplete_failures_must_remain_unavailable": 190,
+  "network_requests": 0,
+  "source_mutations": 0
+}

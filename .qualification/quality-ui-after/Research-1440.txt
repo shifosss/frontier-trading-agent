@@ -1,0 +1,308 @@
+F
+Frontier
+Research
+◷
+Study
+▤
+Data
+⤨
+Experiments
+◇
+Research
+⚙
+Operations
+Local workspace
+Research only
+No broker connection
+Research
+
+Bounded proposals, replay feedback and frozen observations.
+
+Local service ready
+Nautilus 1.231.0
+Bounded model research
+
+Two proposal calls. Typed strategies. Actual replay feedback.
+
+Refresh saved research
+Research dataset
+Fictional US and Canada engineering fixture
+SPY + XIU retained daily observations (2026-06-22_2026-09-17)
+SPY + XIU historical observation prefix through 2026-09-16
+SPY retained Longbridge hourly snapshot (exploratory)
+SPY + XIU retained daily observations (full)
+
+Synthetic engineering fixture Daily bars, 2025-01-02 to 2025-08-29
+
+Explore with Codex
+
+Uses the existing Codex ChatGPT login and its usage allowance. At most two calls, including rejected proposals and repairs.
+
+The model selects parameters for the built-in trend or reversion rule. Accepted proposals run through the same replay engine; the next call receives the previous attempt’s feedback.
+
+Fixed funding: USD 10,000 + CAD 10,000. Commission: 1 native currency unit per order. Slippage: 5 bps.
+
+Historical evaluation is exploratory and adaptively selected. No automatic promotion or proof of future performance.
+
+Saved model campaigns 2
+Campaign
+2026-09-18 15:02 / COMPLETED / 2 attempts
+2026-09-18 15:01 / COMPLETED / 2 attempts
+COMPLETED
+2 / 2 calls used
+2 accepted replays
+SPY + XIU retained daily observations (2026-06-22_2026-09-17)
+
+Exposed evaluation interval: 2026-06-22 to 2026-09-17. 28 earlier overlapping access record(s).
+
+Attempt 1: 20-Day Mean Trend, Five-Day Rebalance
+
+2026-09-18 15:02:59 UTC
+
+accepted
+Proposed mechanism
+
+The built-in close-above-trailing-mean template tests whether gradual incorporation of information produces persistent price trends. This is an exploratory hypothesis, not an alpha claim.
+
+Failure condition
+
+Sideways markets or abrupt reversals can cause whipsaw losses exceeding commissions and slippage. Unknown corporate actions can distort raw-price signals; inferred availability and missing or misaligned dated USD/CAD rates can invalidate results. The short sample cannot establish robustness.
+
+Rule
+trend
+Lookback
+20 bars
+Rebalance
+Every 5 bars
+Max group weight
+20.00%
+Required inputs
+dated usd cad fx, raw close, raw open
+Simulated raw-price return
+-1.15%
+Max drawdown
+-2.07%
+Fills
+11
+Native fees
+4 USD / 7 CAD
+Inspect replay
+Model gpt-6-astra; 11.5s
+Recorded model usage
+Inspect saved record
+Attempt 2: Exploratory 20-day trend with 10-day rebalancing
+
+2026-09-18 15:03:11 UTC
+
+accepted
+Proposed mechanism
+
+Hold exposure when the available close exceeds its trailing 20-observation mean, seeking persistence in price movements. Rebalancing every 10 observations limits trading frequency and associated costs.
+
+Failure condition
+
+Sideways prices or abrupt reversals can cause losses, and commissions and slippage can exceed gains. Unknown corporate actions may distort raw-price signals; this proposal is exploratory and has no holdout validation.
+
+Rule
+trend
+Lookback
+20 bars
+Rebalance
+Every 10 bars
+Max group weight
+10.00%
+Required inputs
+dated usd cad fx, raw close, raw open
+Simulated raw-price return
+-0.62%
+Max drawdown
+-1.55%
+Fills
+5
+Native fees
+2 USD / 3 CAD
+Inspect replay
+Model gpt-6-astra; 14.0s
+Recorded model usage
+Inspect saved record
+All model-driven historical research is exploratory and adaptively selected
+No untouched outer holdout, hidden isolation, DSR, or proof of alpha
+No generated code, broker execution, or automatic strategy promotion
+Inspect saved record
+Frozen configurations and observations
+
+Keep a configuration fixed, then inspect signals from a distinct dataset version.
+
+Observation only
+
+Observations do not infer positions, broker orders, fills or performance. A prospective record may remain pending; historical records do not become prospective evidence.
+
+Freeze a completed study
+Completed study
+20-Day Mean Trend, Five-Day Rebalance / 2026-09-18 15:31 / Historical snapshot
+passive / 2026-09-18 15:31 / Synthetic fixture
+passive / 2026-09-18 15:31 / Synthetic fixture
+passive / 2026-09-18 15:30 / Historical snapshot
+Exploratory 20-day trend with 10-day rebalancing / 2026-09-18 15:30 / Historical snapshot
+20-Day Mean Trend, Five-Day Rebalance / 2026-09-18 15:30 / Historical snapshot
+Exploratory 20-Bar Trend with 10-Bar Rebalancing / 2026-09-18 15:30 / Synthetic fixture
+Exploratory 20-Bar Trend Fixture / 2026-09-18 15:30 / Synthetic fixture
+historical_hourly final validation / 2026-09-18 15:30 / Historical snapshot
+reversion-cost-stress / 2026-09-18 15:30 / Historical snapshot
+trend-cost-stress / 2026-09-18 15:30 / Historical snapshot
+passive-cost-stress / 2026-09-18 15:30 / Historical snapshot
+reversion-40 / 2026-09-18 15:30 / Historical snapshot
+reversion-20 / 2026-09-18 15:30 / Historical snapshot
+reversion-10 / 2026-09-18 15:30 / Historical snapshot
+trend-40 / 2026-09-18 15:30 / Historical snapshot
+trend-20 / 2026-09-18 15:30 / Historical snapshot
+trend-10 / 2026-09-18 15:30 / Historical snapshot
+passive / 2026-09-18 15:30 / Historical snapshot
+cash / 2026-09-18 15:30 / Historical snapshot
+historical_daily final validation / 2026-09-18 15:29 / Historical snapshot
+reversion-cost-stress / 2026-09-18 15:29 / Synthetic fixture
+trend-cost-stress / 2026-09-18 15:29 / Synthetic fixture
+passive-cost-stress / 2026-09-18 15:29 / Synthetic fixture
+reversion-40 / 2026-09-18 15:29 / Synthetic fixture
+reversion-20 / 2026-09-18 15:29 / Synthetic fixture
+reversion-10 / 2026-09-18 15:29 / Synthetic fixture
+trend-40 / 2026-09-18 15:29 / Synthetic fixture
+trend-20 / 2026-09-18 15:29 / Synthetic fixture
+trend-10 / 2026-09-18 15:29 / Synthetic fixture
+passive / 2026-09-18 15:29 / Synthetic fixture
+cash / 2026-09-18 15:29 / Synthetic fixture
+synthetic final validation / 2026-09-18 15:29 / Synthetic fixture
+passive / 2026-09-18 15:22 / Synthetic fixture
+passive / 2026-09-18 15:22 / Synthetic fixture
+passive / 2026-09-18 15:21 / Synthetic fixture
+passive / 2026-09-18 15:17 / Historical snapshot
+Exploratory 20-day trend with 10-day rebalancing / 2026-09-18 15:17 / Historical snapshot
+20-Day Mean Trend, Five-Day Rebalance / 2026-09-18 15:17 / Historical snapshot
+Exploratory 20-Bar Trend with 10-Bar Rebalancing / 2026-09-18 15:17 / Synthetic fixture
+Exploratory 20-Bar Trend Fixture / 2026-09-18 15:17 / Synthetic fixture
+historical_hourly final validation / 2026-09-18 15:17 / Historical snapshot
+reversion-cost-stress / 2026-09-18 15:17 / Historical snapshot
+trend-cost-stress / 2026-09-18 15:17 / Historical snapshot
+passive-cost-stress / 2026-09-18 15:17 / Historical snapshot
+reversion-40 / 2026-09-18 15:17 / Historical snapshot
+reversion-20 / 2026-09-18 15:17 / Historical snapshot
+reversion-10 / 2026-09-18 15:17 / Historical snapshot
+trend-40 / 2026-09-18 15:17 / Historical snapshot
+trend-20 / 2026-09-18 15:17 / Historical snapshot
+trend-10 / 2026-09-18 15:17 / Historical snapshot
+passive / 2026-09-18 15:17 / Historical snapshot
+cash / 2026-09-18 15:17 / Historical snapshot
+historical_daily final validation / 2026-09-18 15:17 / Historical snapshot
+reversion-cost-stress / 2026-09-18 15:17 / Synthetic fixture
+trend-cost-stress / 2026-09-18 15:17 / Synthetic fixture
+passive-cost-stress / 2026-09-18 15:17 / Synthetic fixture
+reversion-40 / 2026-09-18 15:17 / Synthetic fixture
+reversion-20 / 2026-09-18 15:17 / Synthetic fixture
+reversion-10 / 2026-09-18 15:17 / Synthetic fixture
+trend-40 / 2026-09-18 15:17 / Synthetic fixture
+trend-20 / 2026-09-18 15:17 / Synthetic fixture
+trend-10 / 2026-09-18 15:17 / Synthetic fixture
+passive / 2026-09-18 15:17 / Synthetic fixture
+cash / 2026-09-18 15:17 / Synthetic fixture
+synthetic final validation / 2026-09-18 15:16 / Synthetic fixture
+Hourly trend validation / 2026-09-18 15:09 / Historical snapshot
+passive / 2026-09-18 15:03 / Synthetic fixture
+Exploratory 20-day trend with 10-day rebalancing / 2026-09-18 15:03 / Historical snapshot
+passive / 2026-09-18 15:03 / Synthetic fixture
+20-Day Mean Trend, Five-Day Rebalance / 2026-09-18 15:03 / Historical snapshot
+Exploratory 20-Bar Trend with 10-Bar Rebalancing / 2026-09-18 15:02 / Synthetic fixture
+Exploratory 20-Bar Trend Fixture / 2026-09-18 15:01 / Synthetic fixture
+reversion-cost-stress / 2026-09-18 14:59 / Historical snapshot
+trend-cost-stress / 2026-09-18 14:59 / Historical snapshot
+passive-cost-stress / 2026-09-18 14:59 / Historical snapshot
+reversion-40 / 2026-09-18 14:59 / Historical snapshot
+reversion-20 / 2026-09-18 14:59 / Historical snapshot
+reversion-10 / 2026-09-18 14:59 / Historical snapshot
+trend-40 / 2026-09-18 14:59 / Historical snapshot
+trend-20 / 2026-09-18 14:59 / Historical snapshot
+trend-10 / 2026-09-18 14:59 / Historical snapshot
+passive / 2026-09-18 14:59 / Historical snapshot
+cash / 2026-09-18 14:59 / Historical snapshot
+passive / 2026-09-18 14:59 / Historical snapshot
+reversion-cost-stress / 2026-09-18 14:59 / Synthetic fixture
+trend-cost-stress / 2026-09-18 14:59 / Synthetic fixture
+passive-cost-stress / 2026-09-18 14:59 / Synthetic fixture
+reversion-40 / 2026-09-18 14:59 / Synthetic fixture
+reversion-20 / 2026-09-18 14:59 / Synthetic fixture
+reversion-10 / 2026-09-18 14:59 / Synthetic fixture
+trend-40 / 2026-09-18 14:59 / Synthetic fixture
+trend-20 / 2026-09-18 14:59 / Synthetic fixture
+trend-10 / 2026-09-18 14:59 / Synthetic fixture
+passive / 2026-09-18 14:59 / Synthetic fixture
+cash / 2026-09-18 14:58 / Synthetic fixture
+passive / 2026-09-18 14:58 / Synthetic fixture
+passive / 2026-09-18 14:57 / Synthetic fixture
+reversion-cost-stress / 2026-09-18 14:57 / Synthetic fixture
+trend-cost-stress / 2026-09-18 14:57 / Synthetic fixture
+passive-cost-stress / 2026-09-18 14:57 / Synthetic fixture
+reversion-40 / 2026-09-18 14:57 / Synthetic fixture
+reversion-20 / 2026-09-18 14:57 / Synthetic fixture
+reversion-10 / 2026-09-18 14:57 / Synthetic fixture
+trend-40 / 2026-09-18 14:57 / Synthetic fixture
+trend-20 / 2026-09-18 14:57 / Synthetic fixture
+trend-10 / 2026-09-18 14:57 / Synthetic fixture
+passive / 2026-09-18 14:57 / Synthetic fixture
+cash / 2026-09-18 14:57 / Synthetic fixture
+passive / 2026-09-18 14:57 / Synthetic fixture
+passive / 2026-09-18 14:56 / Synthetic fixture
+reversion-cost-stress / 2026-09-18 14:55 / Historical snapshot
+trend-cost-stress / 2026-09-18 14:55 / Historical snapshot
+passive-cost-stress / 2026-09-18 14:55 / Historical snapshot
+reversion-40 / 2026-09-18 14:55 / Historical snapshot
+reversion-20 / 2026-09-18 14:55 / Historical snapshot
+reversion-10 / 2026-09-18 14:55 / Historical snapshot
+trend-40 / 2026-09-18 14:55 / Historical snapshot
+trend-20 / 2026-09-18 14:55 / Historical snapshot
+trend-10 / 2026-09-18 14:55 / Historical snapshot
+passive / 2026-09-18 14:55 / Historical snapshot
+cash / 2026-09-18 14:55 / Historical snapshot
+passive / 2026-09-18 14:55 / Historical snapshot
+reversion-cost-stress / 2026-09-18 14:55 / Synthetic fixture
+trend-cost-stress / 2026-09-18 14:55 / Synthetic fixture
+passive-cost-stress / 2026-09-18 14:55 / Synthetic fixture
+reversion-40 / 2026-09-18 14:55 / Synthetic fixture
+reversion-20 / 2026-09-18 14:55 / Synthetic fixture
+reversion-10 / 2026-09-18 14:55 / Synthetic fixture
+trend-40 / 2026-09-18 14:55 / Synthetic fixture
+trend-20 / 2026-09-18 14:55 / Synthetic fixture
+trend-10 / 2026-09-18 14:55 / Synthetic fixture
+passive / 2026-09-18 14:55 / Synthetic fixture
+cash / 2026-09-18 14:55 / Synthetic fixture
+passive / 2026-09-18 14:55 / Synthetic fixture
+passive / 2026-09-18 14:48 / Synthetic fixture
+Freeze configuration
+
+The completed run and original dataset stay attached to the frozen configuration.
+
+Record an observation
+Frozen configuration
+passive / 2026-09-18 15:31
+passive / 2026-09-18 15:30
+passive / 2026-09-18 15:22
+passive / 2026-09-18 15:21
+passive / 2026-09-18 15:17
+New dataset version
+Import a compatible history extension first
+
+Choose a history extension with the same instruments, currencies, exposure groups, bar interval and start date, plus later observations. The server also verifies the complete event-time prefix.
+
+Record observation
+Inspect saved record
+Saved observation records 2
+historical only
+2026-09-18 15:30:17 UTC
+Outcome: not evaluated
+historical only
+2026-09-18 15:17:32 UTC
+Outcome: not evaluated
+Source access
+
+Checking read-only connector status…
+
+Frontier Research
+Local snapshots. Explicit assumptions. Inspectable evidence.

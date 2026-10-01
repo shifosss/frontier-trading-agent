@@ -1,0 +1,35 @@
+{
+  "declared_at": "2026-09-28T19:36:48.579404+00:00",
+  "purpose": "Attribute all54 original account trade logs to recorded action crossings and existing source-audit flags. Descriptive economics only; no exclusion, correction, model changes or reruns.",
+  "outcome_access": "Status checked once at32/54. No outcomes read before declaration; processing starts only after parent completion notification and complete status.",
+  "accounts": "Exactly nine declared policies x three holds x two cost profiles, including failures, zero-activity and losses.",
+  "crossing_rule": "entry_session < provider effective_session <= exit_session, same symbol; entry at event-day close did not hold through that opening boundary. No invented timezone conversion or action date repair.",
+  "categories": [
+    "any_reported_action",
+    "large_adjusted_move_triage",
+    "ratio_alignment_triage",
+    "missing_source_boundary",
+    "audited_composite_quantity_semantics",
+    "audited_nominal_discrepancy",
+    "audited_missing_adjustment",
+    "audited_factor_outside_declared_precision",
+    "known_source_issue_union"
+  ],
+  "known_issue_union": "Existing five composite/distribution quantity mismatches, EVO/TOPS nominal discrepancies, and separately proven AIXI2026-09-08 missing adjustment. This is a source-evidence category, not a completeness guarantee.",
+  "attribution": "Retain each original trade index and raw-file hash. Sum full recorded net PnL for trades crossing each category; within a category count a trade once. Categories overlap and must not be summed. Event-level attribution can overlap if one trade crosses multiple events. No fractional attribution pretending to know causal action PnL.",
+  "metrics": "For each account and category: trades, wins/losses/flat, net PnL, positive PnL, negative PnL, absolute PnL, gross PnL and fees. Report shares of count, total net, positive contributions, negative magnitudes and absolute contributions when denominator nonzero. Noncrossing residual is observed partition arithmetic, never corrected portfolio profit.",
+  "extremes": "Topfive positive and topfive negative trade contributions for every account, both all trades and action-crossing trades; deterministic tie break by original trade index. Topfive positive and negative event contributions per account. No omissions based on favorable result.",
+  "failures": "Preserve incomplete/failed accounts and missing trade records; mark attribution unavailable. Verify recorded trade count and net PnL consistency when supplied. Do not abort other accounts for one missing account.",
+  "verification_tolerance": "Decimal sum of serialized amounts; report delta against saved net total. Check per-trade gross-minus-fees-minus-net absolute difference <=1e-7 USD; account total difference <=1e-6 USD plus1e-12 times sum absolute trade PnL, for float serialization/accumulation only.",
+  "limits": "Observed full-trade contributions do not identify causal action gain, correct future sizing/cash, verify all actions, or qualify adjusted-vintage/current-member results. Flags are not a hindsight trade filter.",
+  "inputs": {
+    ".qualification/strategy-interactions20260928/request.json": "b978285712d9cac7d3c62cb93199941da8fe8573a27485767e1336b606f2427b",
+    ".qualification/strategy-interactions20260928/definition.json": "4c367273acf7c401e09c27f4ab65e8e927c805953f01d288dd61e6a83bec29a7",
+    ".qualification/action-inventory20260928/events.jsonl": "c8d471e4eb17fe8b44c8a77da77f7f82bdf63397787db9d7db27a5f259ef566d",
+    ".qualification/action-inventory20260928/definition.json": "1edf1d072ad11a9e2e57100c0a65771135a96fd775a13f1104922133905b257f",
+    ".qualification/action-validation20260928/notice-assessments.json": "af912c6741c8b16fc2148470eb2e5c0e23389c11a9e55366601619216f4d5317",
+    ".qualification/action-validation20260928/bar-factor-results.json": "9216526d6e04c99a1fdb9b599f0cccf8de5d0eaf80ae24f7dbeb9ad596c8277e",
+    "docs/aixi-source-continuity.md": "7edba45f86a57a4aa1ffeef5b6df75fb167f3dc536a784cb3334ec7c900ee568"
+  },
+  "prohibited": "No network, original result changes, strategy/production edits, source repairs, account reruns or broker operations."
+}

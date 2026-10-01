@@ -1,0 +1,139 @@
+{
+  "family": "hist_gradient_boosting",
+  "year": 2025,
+  "requested_test_rows": 0,
+  "predicted_rows": 0,
+  "joint_label_available": 0,
+  "model_status": "insufficient_sample",
+  "heads": {
+    "return_5": {
+      "raw": {
+        "count": 0,
+        "mae": null,
+        "mse": null,
+        "mean_error": null,
+        "numeric_forecasts": 0,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 0,
+          "mae": null,
+          "mse": null,
+          "mean_error": null
+        },
+        "calibration_only_edges": [],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": null,
+            "mean_target": null,
+            "count": 0,
+            "mae": null,
+            "mse": null,
+            "mean_error": null
+          }
+        ]
+      },
+      "corrected": {
+        "count": 0,
+        "mae": null,
+        "mse": null,
+        "mean_error": null,
+        "numeric_forecasts": 0,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 0,
+          "mae": null,
+          "mse": null,
+          "mean_error": null
+        },
+        "calibration_only_edges": [],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": null,
+            "mean_target": null,
+            "count": 0,
+            "mae": null,
+            "mse": null,
+            "mean_error": null
+          }
+        ]
+      },
+      "training_mean": {
+        "count": 0,
+        "mae": null,
+        "mse": null,
+        "mean_error": null,
+        "numeric_forecasts": 0,
+        "missing_labels": 0
+      }
+    },
+    "downside_5": {
+      "raw": {
+        "count": 0,
+        "mae": null,
+        "mse": null,
+        "mean_error": null,
+        "numeric_forecasts": 0,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 0,
+          "mae": null,
+          "mse": null,
+          "mean_error": null
+        },
+        "calibration_only_edges": [],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": null,
+            "mean_target": null,
+            "count": 0,
+            "mae": null,
+            "mse": null,
+            "mean_error": null
+          }
+        ]
+      },
+      "corrected": {
+        "count": 0,
+        "mae": null,
+        "mse": null,
+        "mean_error": null,
+        "numeric_forecasts": 0,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 0,
+          "mae": null,
+          "mse": null,
+          "mean_error": null
+        },
+        "calibration_only_edges": [],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": null,
+            "mean_target": null,
+            "count": 0,
+            "mae": null,
+            "mse": null,
+            "mean_error": null
+          }
+        ]
+      },
+      "training_mean": {
+        "count": 0,
+        "mae": null,
+        "mse": null,
+        "mean_error": null,
+        "numeric_forecasts": 0,
+        "missing_labels": 0
+      }
+    }
+  },
+  "interpretation": "Repeated retrospective tests with overlapping events and issuer clustering; no independent-event significance claim"
+}

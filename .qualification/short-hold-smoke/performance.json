@@ -1,0 +1,295 @@
+{
+  "source_run_id": "577a24e71a844022b3ac86ca66e32c34",
+  "as_of": "2026-09-18T20:43:15.256344+00:00",
+  "symbols": [
+    "SPY",
+    "AAPL",
+    "MSFT",
+    "AMD",
+    "JPM",
+    "XOM",
+    "WMT",
+    "NVDA",
+    "TSLA",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "COST"
+  ],
+  "budgets": [
+    500
+  ],
+  "rows": 80421,
+  "coverage": [
+    {
+      "currency": "USD",
+      "calendar_sessions": 6718,
+      "first_session": "2000-01-03",
+      "last_session": "2026-09-18",
+      "stock_count": 12,
+      "discarded_rows": 0,
+      "benchmark": "SPY"
+    }
+  ],
+  "normalization_seconds": 0.9215119000000414,
+  "evaluation_seconds": 23.752802800008794,
+  "total_seconds": 24.683222999999998,
+  "statuses": {
+    "portfolios": {
+      "complete": 90
+    },
+    "walk_forward": {
+      "complete": 3
+    },
+    "benchmarks": {
+      "complete": 6
+    }
+  },
+  "incomplete_paths": [],
+  "progress": [
+    {
+      "elapsed_seconds": 0.6259556000004523,
+      "stage": "historical_features",
+      "currency": "USD",
+      "symbols": 13,
+      "peak_working_set_mb": 196.87109375,
+      "working_set_mb": 174.4375
+    },
+    {
+      "elapsed_seconds": 14.439959700001054,
+      "stage": "short_horizon_portfolios",
+      "currency": "USD",
+      "budget": 500.0,
+      "peak_working_set_mb": 398.6875,
+      "working_set_mb": 398.6875
+    },
+    {
+      "elapsed_seconds": 14.71741430000111,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2003-10-23",
+      "peak_working_set_mb": 398.6953125,
+      "working_set_mb": 398.6953125
+    },
+    {
+      "elapsed_seconds": 15.153090500010876,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2004-10-25",
+      "peak_working_set_mb": 398.7265625,
+      "working_set_mb": 398.7265625
+    },
+    {
+      "elapsed_seconds": 15.703730799999903,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2005-10-24",
+      "peak_working_set_mb": 398.79296875,
+      "working_set_mb": 398.79296875
+    },
+    {
+      "elapsed_seconds": 16.20240890000423,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2006-10-24",
+      "peak_working_set_mb": 398.90234375,
+      "working_set_mb": 398.90234375
+    },
+    {
+      "elapsed_seconds": 16.68236020000768,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2007-10-25",
+      "peak_working_set_mb": 398.953125,
+      "working_set_mb": 398.953125
+    },
+    {
+      "elapsed_seconds": 17.071286100006546,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2008-10-24",
+      "peak_working_set_mb": 398.99609375,
+      "working_set_mb": 398.99609375
+    },
+    {
+      "elapsed_seconds": 17.377252800011775,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2009-10-26",
+      "peak_working_set_mb": 399.109375,
+      "working_set_mb": 399.109375
+    },
+    {
+      "elapsed_seconds": 17.68668830000388,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2010-10-26",
+      "peak_working_set_mb": 399.16015625,
+      "working_set_mb": 399.16015625
+    },
+    {
+      "elapsed_seconds": 18.093939300000784,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2011-10-25",
+      "peak_working_set_mb": 399.26953125,
+      "working_set_mb": 399.26953125
+    },
+    {
+      "elapsed_seconds": 18.527042900008382,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2012-10-24",
+      "peak_working_set_mb": 399.3203125,
+      "working_set_mb": 399.3203125
+    },
+    {
+      "elapsed_seconds": 19.03174360000412,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2013-10-28",
+      "peak_working_set_mb": 399.37109375,
+      "working_set_mb": 399.37109375
+    },
+    {
+      "elapsed_seconds": 19.564160699999775,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2014-10-28",
+      "peak_working_set_mb": 399.484375,
+      "working_set_mb": 399.484375
+    },
+    {
+      "elapsed_seconds": 20.081700000009732,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2015-10-28",
+      "peak_working_set_mb": 399.5390625,
+      "working_set_mb": 399.5390625
+    },
+    {
+      "elapsed_seconds": 20.526213100005407,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2016-10-27",
+      "peak_working_set_mb": 399.6484375,
+      "working_set_mb": 399.6484375
+    },
+    {
+      "elapsed_seconds": 20.965343600008055,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2017-10-27",
+      "peak_working_set_mb": 399.69921875,
+      "working_set_mb": 399.69921875
+    },
+    {
+      "elapsed_seconds": 21.413731300010113,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2018-10-29",
+      "peak_working_set_mb": 399.7421875,
+      "working_set_mb": 399.7421875
+    },
+    {
+      "elapsed_seconds": 21.853679100007867,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2019-10-30",
+      "peak_working_set_mb": 399.80078125,
+      "working_set_mb": 399.80078125
+    },
+    {
+      "elapsed_seconds": 22.190591300008236,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2020-10-29",
+      "peak_working_set_mb": 399.95703125,
+      "working_set_mb": 399.95703125
+    },
+    {
+      "elapsed_seconds": 22.47731690001092,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2021-10-29",
+      "peak_working_set_mb": 400.0078125,
+      "working_set_mb": 400.0078125
+    },
+    {
+      "elapsed_seconds": 22.72911610000301,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2022-10-31",
+      "peak_working_set_mb": 400.0703125,
+      "working_set_mb": 400.0703125
+    },
+    {
+      "elapsed_seconds": 22.971538600002532,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2023-11-01",
+      "peak_working_set_mb": 400.13671875,
+      "working_set_mb": 400.13671875
+    },
+    {
+      "elapsed_seconds": 23.25216270000965,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2024-11-01",
+      "peak_working_set_mb": 400.2265625,
+      "working_set_mb": 400.2265625
+    },
+    {
+      "elapsed_seconds": 23.575501200000872,
+      "stage": "short_horizon_walk_forward",
+      "currency": "USD",
+      "budget": 500.0,
+      "test_start": "2025-11-05",
+      "peak_working_set_mb": 400.39453125,
+      "working_set_mb": 400.39453125
+    }
+  ],
+  "fixed_completed_trade_count": 136029,
+  "rolling_audit_trade_count": 0,
+  "fixed_audit_retained": false,
+  "summary_bytes": 821602,
+  "source_sha256": {
+    "short_horizon_study.py": "200df1f92d3f10b0f04b17a177d00e027b5fc8fc75dc57d368a095670f0054fd",
+    "historical_settlement.py": "fbaaec13818dc3fa5393f4ca94247edee58d642dd50d7eed8ce83565f88d52a8",
+    "historical_study.py": "0da612bebc104369de3bb5fffd0e757f3c7cde8de328ea49b3bdcedbddf3456d"
+  },
+  "peak_working_set_mb": 411.6875,
+  "working_set_mb": 411.6875,
+  "full_run_estimate": {
+    "provisional_minutes": [
+      10,
+      45
+    ],
+    "basis": "24-second one-budget small-universe evaluation implies about 3 minutes minimum loop overhead across two markets and four budgets. Full normalization, feature construction and larger eligible candidate vectors add material work.",
+    "confidence": "Low: 13 large-cap symbols and a 500-unit account do not represent full-universe eligibility or larger-account activity. Update estimate after first full-budget progress.",
+    "no_linear_symbol_extrapolation": true
+  },
+  "interpretation": "Runtime and accounting smoke only. All three rolling accounts selected cash throughout this small historical subset; no profitability claim."
+}

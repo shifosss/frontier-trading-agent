@@ -1,0 +1,38 @@
+{
+  "at": "2026-09-28T23:05:38.409508+00:00",
+  "status": "passed",
+  "reviewed_files": {
+    ".qualification\\post-filing-strategy20260928\\plan.md": "34ad74b877de8bbe11492d84c4832cadff8e67fa01ecaadc49566dcc90a1bb4b",
+    ".qualification\\post-filing-strategy20260928\\adapter.py": "2439d00a971c9288186a038e69c78572b686fb9085ed87f771b265229d05143c",
+    ".qualification\\post-filing-strategy20260928\\test_adapter.py": "5f81442f9e2547555573aa3bcad194927e94730f7ae5134286315a385f655b45",
+    ".qualification\\post-filing-strategy20260928\\prepare_market.py": "5b2fdd8d23785a52dd0df22df65af620c9bb59cdd28958b2a2685388f9df0b3d"
+  },
+  "focused_synthetic_tests": 12,
+  "independent_additional_checks": [
+    {
+      "case": "Second pending entry missing after first entry filled",
+      "result": "Incomplete account, first held position and fill intent retained, no fabricated complete return"
+    },
+    {
+      "case": "Synthetic split-factor ATR units",
+      "result": "Adjusted true-range normalization equals raw-unit ATR2 before factor transition and1 afterward; no artificial price-jump range"
+    }
+  ],
+  "timezone_delta": "Aware decision converted to America/New_York before09:00/date assertions;09:00UTC rejected,13:00UTC summer equivalent accepted.12focusedtests independently passed after delta.",
+  "review_scope": [
+    "Prior completed-session prices/ATR/NAV with explicit next-session09ET decision",
+    "Known next-open settlement and no sale-proceeds use before settlement",
+    "Original fee-inclusive reservation and quantity-only-decrease fill convention",
+    "Missing required prices retained as account failure, no outcome-based candidate replacement",
+    "Common treatment/control structural eligibility and Decimal threshold",
+    "Mixed-provider adjusted-notional mark/ATR convention matches frozen shared daily arithmetic"
+  ],
+  "material_findings": [],
+  "runner_gate": "Start at or before earliest eligible entry prior-price row; retain fifth-session exits through configured terminal date; final immutable feature/source/code identities before actual accounts.",
+  "limitations": [
+    "Synthetic verification and source-code review only; no actual post-filing strategy outcomes",
+    "Adjusted-notional corporate-action accounting and retrospective provider vintages remain unqualified"
+  ],
+  "real_event_returns_read": false,
+  "files_modified": false
+}

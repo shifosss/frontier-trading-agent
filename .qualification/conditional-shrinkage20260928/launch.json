@@ -1,0 +1,9 @@
+{
+  "launched_at": "2026-09-28T21:16:01.858387+00:00",
+  "pid": 37672,
+  "entrypoint": "run_study.py",
+  "definition_sha256": "31302c331559629deccc4f324b0efa5edb6cf355fcc6a3827a43229a19631755",
+  "code_files": 66,
+  "input_identities": 141,
+  "automatic_analysis": "economic_analysis.py after six accounts"
+}

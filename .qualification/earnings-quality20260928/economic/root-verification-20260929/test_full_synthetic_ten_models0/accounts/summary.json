@@ -1,0 +1,1222 @@
+[
+  {
+    "recipe": "filing_control",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05690519999999988,
+    "ending_equity": 10569.052,
+    "max_drawdown": 0.0011880000000000779,
+    "fees": 24.948,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 189.68399999999977,
+      "net_expectancy_return": 0.09579999999999989,
+      "win_rate": 1.0,
+      "average_win_native": 189.68399999999977,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1804397929332182,
+      "annualized_turnover": 0.23406929118830508,
+      "mean_exposure_fraction": 0.002383649587873068,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 569.0519999999993,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011880000000000779,
+      "p05_trade_return": 0.09579999999999989,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966424220403707,
+      "completed_trades": 3,
+      "fees": 24.948
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "filing_control",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05569619999999986,
+    "ending_equity": 10556.962,
+    "max_drawdown": 0.0017849999999998145,
+    "fees": 37.038,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 185.65399999999985,
+      "net_expectancy_return": 0.09376464646464637,
+      "win_rate": 1.0,
+      "average_win_native": 185.65399999999985,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1817881098653542,
+      "annualized_turnover": 0.23433664882102098,
+      "mean_exposure_fraction": 0.002385042157531237,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 556.9619999999995,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0017849999999998145,
+      "p05_trade_return": 0.09376464646464637,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966408292068122,
+      "completed_trades": 3,
+      "fees": 37.038
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "filing_control",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.05460599999999993,
+    "ending_equity": 2109.212,
+    "max_drawdown": 0.0011400000000000299,
+    "fees": 4.788,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 36.40399999999999,
+      "net_expectancy_return": 0.09579999999999995,
+      "win_rate": 1.0,
+      "average_win_native": 36.40399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1352073862608465,
+      "annualized_turnover": 0.22510016168934538,
+      "mean_exposure_fraction": 0.0022893748937505383,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 109.21199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011400000000000299,
+      "p05_trade_return": 0.09579999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967740098554911,
+      "completed_trades": 3,
+      "fees": 4.788
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "filing_control",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.048621000000000025,
+    "ending_equity": 2097.242,
+    "max_drawdown": 0.004125000000000045,
+    "fees": 16.758,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 32.41399999999999,
+      "net_expectancy_return": 0.08529999999999997,
+      "win_rate": 1.0,
+      "average_win_native": 32.41399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1416696121049448,
+      "annualized_turnover": 0.22638155582048378,
+      "mean_exposure_fraction": 0.0022960838640238798,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 97.24199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.004125000000000045,
+      "p05_trade_return": 0.08529999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967664711799381,
+      "completed_trades": 3,
+      "fees": 16.758
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05690519999999988,
+    "ending_equity": 10569.052,
+    "max_drawdown": 0.0011880000000000779,
+    "fees": 24.948,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 189.68399999999977,
+      "net_expectancy_return": 0.09579999999999989,
+      "win_rate": 1.0,
+      "average_win_native": 189.68399999999977,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1804397929332182,
+      "annualized_turnover": 0.23406929118830508,
+      "mean_exposure_fraction": 0.002383649587873068,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 569.0519999999993,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011880000000000779,
+      "p05_trade_return": 0.09579999999999989,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966424220403707,
+      "completed_trades": 3,
+      "fees": 24.948
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05569619999999986,
+    "ending_equity": 10556.962,
+    "max_drawdown": 0.0017849999999998145,
+    "fees": 37.038,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 185.65399999999985,
+      "net_expectancy_return": 0.09376464646464637,
+      "win_rate": 1.0,
+      "average_win_native": 185.65399999999985,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1817881098653542,
+      "annualized_turnover": 0.23433664882102098,
+      "mean_exposure_fraction": 0.002385042157531237,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 556.9619999999995,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0017849999999998145,
+      "p05_trade_return": 0.09376464646464637,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966408292068122,
+      "completed_trades": 3,
+      "fees": 37.038
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.05460599999999993,
+    "ending_equity": 2109.212,
+    "max_drawdown": 0.0011400000000000299,
+    "fees": 4.788,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 36.40399999999999,
+      "net_expectancy_return": 0.09579999999999995,
+      "win_rate": 1.0,
+      "average_win_native": 36.40399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1352073862608465,
+      "annualized_turnover": 0.22510016168934538,
+      "mean_exposure_fraction": 0.0022893748937505383,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 109.21199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011400000000000299,
+      "p05_trade_return": 0.09579999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967740098554911,
+      "completed_trades": 3,
+      "fees": 4.788
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.048621000000000025,
+    "ending_equity": 2097.242,
+    "max_drawdown": 0.004125000000000045,
+    "fees": 16.758,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 32.41399999999999,
+      "net_expectancy_return": 0.08529999999999997,
+      "win_rate": 1.0,
+      "average_win_native": 32.41399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1416696121049448,
+      "annualized_turnover": 0.22638155582048378,
+      "mean_exposure_fraction": 0.0022960838640238798,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 97.24199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.004125000000000045,
+      "p05_trade_return": 0.08529999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967664711799381,
+      "completed_trades": 3,
+      "fees": 16.758
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05690519999999988,
+    "ending_equity": 10569.052,
+    "max_drawdown": 0.0011880000000000779,
+    "fees": 24.948,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 189.68399999999977,
+      "net_expectancy_return": 0.09579999999999989,
+      "win_rate": 1.0,
+      "average_win_native": 189.68399999999977,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1804397929332182,
+      "annualized_turnover": 0.23406929118830508,
+      "mean_exposure_fraction": 0.002383649587873068,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 569.0519999999993,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011880000000000779,
+      "p05_trade_return": 0.09579999999999989,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966424220403707,
+      "completed_trades": 3,
+      "fees": 24.948
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05569619999999986,
+    "ending_equity": 10556.962,
+    "max_drawdown": 0.0017849999999998145,
+    "fees": 37.038,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 185.65399999999985,
+      "net_expectancy_return": 0.09376464646464637,
+      "win_rate": 1.0,
+      "average_win_native": 185.65399999999985,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1817881098653542,
+      "annualized_turnover": 0.23433664882102098,
+      "mean_exposure_fraction": 0.002385042157531237,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 556.9619999999995,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0017849999999998145,
+      "p05_trade_return": 0.09376464646464637,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966408292068122,
+      "completed_trades": 3,
+      "fees": 37.038
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.05460599999999993,
+    "ending_equity": 2109.212,
+    "max_drawdown": 0.0011400000000000299,
+    "fees": 4.788,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 36.40399999999999,
+      "net_expectancy_return": 0.09579999999999995,
+      "win_rate": 1.0,
+      "average_win_native": 36.40399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1352073862608465,
+      "annualized_turnover": 0.22510016168934538,
+      "mean_exposure_fraction": 0.0022893748937505383,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 109.21199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011400000000000299,
+      "p05_trade_return": 0.09579999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967740098554911,
+      "completed_trades": 3,
+      "fees": 4.788
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.048621000000000025,
+    "ending_equity": 2097.242,
+    "max_drawdown": 0.004125000000000045,
+    "fees": 16.758,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 32.41399999999999,
+      "net_expectancy_return": 0.08529999999999997,
+      "win_rate": 1.0,
+      "average_win_native": 32.41399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1416696121049448,
+      "annualized_turnover": 0.22638155582048378,
+      "mean_exposure_fraction": 0.0022960838640238798,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 97.24199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.004125000000000045,
+      "p05_trade_return": 0.08529999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967664711799381,
+      "completed_trades": 3,
+      "fees": 16.758
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05690519999999988,
+    "ending_equity": 10569.052,
+    "max_drawdown": 0.0011880000000000779,
+    "fees": 24.948,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 189.68399999999977,
+      "net_expectancy_return": 0.09579999999999989,
+      "win_rate": 1.0,
+      "average_win_native": 189.68399999999977,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1804397929332182,
+      "annualized_turnover": 0.23406929118830508,
+      "mean_exposure_fraction": 0.002383649587873068,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 569.0519999999993,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011880000000000779,
+      "p05_trade_return": 0.09579999999999989,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966424220403707,
+      "completed_trades": 3,
+      "fees": 24.948
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05569619999999986,
+    "ending_equity": 10556.962,
+    "max_drawdown": 0.0017849999999998145,
+    "fees": 37.038,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 185.65399999999985,
+      "net_expectancy_return": 0.09376464646464637,
+      "win_rate": 1.0,
+      "average_win_native": 185.65399999999985,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1817881098653542,
+      "annualized_turnover": 0.23433664882102098,
+      "mean_exposure_fraction": 0.002385042157531237,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 556.9619999999995,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0017849999999998145,
+      "p05_trade_return": 0.09376464646464637,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966408292068122,
+      "completed_trades": 3,
+      "fees": 37.038
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.05460599999999993,
+    "ending_equity": 2109.212,
+    "max_drawdown": 0.0011400000000000299,
+    "fees": 4.788,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 36.40399999999999,
+      "net_expectancy_return": 0.09579999999999995,
+      "win_rate": 1.0,
+      "average_win_native": 36.40399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1352073862608465,
+      "annualized_turnover": 0.22510016168934538,
+      "mean_exposure_fraction": 0.0022893748937505383,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 109.21199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011400000000000299,
+      "p05_trade_return": 0.09579999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967740098554911,
+      "completed_trades": 3,
+      "fees": 4.788
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.048621000000000025,
+    "ending_equity": 2097.242,
+    "max_drawdown": 0.004125000000000045,
+    "fees": 16.758,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 32.41399999999999,
+      "net_expectancy_return": 0.08529999999999997,
+      "win_rate": 1.0,
+      "average_win_native": 32.41399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1416696121049448,
+      "annualized_turnover": 0.22638155582048378,
+      "mean_exposure_fraction": 0.0022960838640238798,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 97.24199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.004125000000000045,
+      "p05_trade_return": 0.08529999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967664711799381,
+      "completed_trades": 3,
+      "fees": 16.758
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05690519999999988,
+    "ending_equity": 10569.052,
+    "max_drawdown": 0.0011880000000000779,
+    "fees": 24.948,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 189.68399999999977,
+      "net_expectancy_return": 0.09579999999999989,
+      "win_rate": 1.0,
+      "average_win_native": 189.68399999999977,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1804397929332182,
+      "annualized_turnover": 0.23406929118830508,
+      "mean_exposure_fraction": 0.002383649587873068,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 569.0519999999993,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011880000000000779,
+      "p05_trade_return": 0.09579999999999989,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966424220403707,
+      "completed_trades": 3,
+      "fees": 24.948
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "complete",
+    "total_return": 0.05569619999999986,
+    "ending_equity": 10556.962,
+    "max_drawdown": 0.0017849999999998145,
+    "fees": 37.038,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 185.65399999999985,
+      "net_expectancy_return": 0.09376464646464637,
+      "win_rate": 1.0,
+      "average_win_native": 185.65399999999985,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1817881098653542,
+      "annualized_turnover": 0.23433664882102098,
+      "mean_exposure_fraction": 0.002385042157531237,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 556.9619999999995,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0017849999999998145,
+      "p05_trade_return": 0.09376464646464637,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9966408292068122,
+      "completed_trades": 3,
+      "fees": 37.038
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.05460599999999993,
+    "ending_equity": 2109.212,
+    "max_drawdown": 0.0011400000000000299,
+    "fees": 4.788,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 36.40399999999999,
+      "net_expectancy_return": 0.09579999999999995,
+      "win_rate": 1.0,
+      "average_win_native": 36.40399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1352073862608465,
+      "annualized_turnover": 0.22510016168934538,
+      "mean_exposure_fraction": 0.0022893748937505383,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 109.21199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.0011400000000000299,
+      "p05_trade_return": 0.09579999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967740098554911,
+      "completed_trades": 3,
+      "fees": 4.788
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "complete",
+    "total_return": 0.048621000000000025,
+    "ending_equity": 2097.242,
+    "max_drawdown": 0.004125000000000045,
+    "fees": 16.758,
+    "trades": 3,
+    "trade_metrics": {
+      "net_expectancy_native": 32.41399999999999,
+      "net_expectancy_return": 0.08529999999999997,
+      "win_rate": 1.0,
+      "average_win_native": 32.41399999999999,
+      "average_loss_native": null,
+      "profit_factor": null,
+      "turnover": 1.1416696121049448,
+      "annualized_turnover": 0.22638155582048378,
+      "mean_exposure_fraction": 0.0022960838640238798,
+      "invested_session_fraction": 0.003946329913180742,
+      "mean_holding_sessions": 5.0,
+      "max_holding_sessions": 5,
+      "mean_holding_calendar_days": 7.0,
+      "max_holding_calendar_days": 7,
+      "trades_per_week": 0.011838989739542225,
+      "net_pnl_total": 97.24199999999996,
+      "consecutive_losses": 0,
+      "worst_day_return": -0.004125000000000045,
+      "p05_trade_return": 0.08529999999999997,
+      "max_drawdown_duration_sessions": 1,
+      "mean_settled_cash_fraction": 0.9967664711799381,
+      "completed_trades": 3,
+      "fees": 16.758
+    },
+    "weekly_objective": {
+      "status": "complete",
+      "count": 264,
+      "targets": {
+        "0.05": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.1": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        },
+        "0.15": {
+          "hits": 0,
+          "denominator": 264,
+          "fraction": 0.0
+        }
+      },
+      "median_return": 0.0,
+      "worst_return": 0.0,
+      "longest_losing_streak": 0,
+      "all_idle_and_losing_weeks_retained": true
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-09-28T22:52:13.155088+00:00",
+  "tests": 6,
+  "result": "passed",
+  "independent_review": "strategy_design independently passed6tests; no remaining material finding",
+  "reviewed_hashes": {
+    "request.json": "438205d2b6f3c88f76b6966e27f50e8de87dce824a1e7cfd6155eed8f3834e5e",
+    "capture_supplement.py": "4948f3d2e850e4b1f238236cc52fb550dbcf4534c74dd7ecb67ff643504d167b",
+    "test_supplement.py": "ea19d310eb41239b3fab8951dd46b18469900349a9c29c51960063da8629520d"
+  },
+  "original_Ford_failure_hashes_verified": 20,
+  "source_index_hashes_verified": 20,
+  "new_public_requests": 0
+}

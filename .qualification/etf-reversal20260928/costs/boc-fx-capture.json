@@ -1,0 +1,19 @@
+{
+  "requested_at_utc": "2026-09-29T00:25:28.718193+00:00",
+  "url": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?start_date=2026-09-28&end_date=2026-09-28",
+  "method": "GET",
+  "attempts": 1,
+  "web_tool_error": "URL not accessible via web tool; one public no-auth source GET follows",
+  "status": 200,
+  "bytes": 515,
+  "sha256": "09e81f749143326dba64ea4e54ec54b7ceec9a9c7019c21a918f7985e058e34d",
+  "raw_file": "boc-fx-response.json",
+  "observations": [
+    {
+      "d": "2026-09-28",
+      "FXUSDCAD": {
+        "v": "1.4168"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "total_sample": 91,
+  "attempted_events": 24,
+  "pending_events": 67,
+  "bar_requests": 48,
+  "notice_requests": 25,
+  "price_factor_counts": {
+    "inconsistent": 11,
+    "unresolved_missing_boundary": 4,
+    "consistent": 8,
+    "unresolved_precision_insufficient": 1
+  },
+  "notice_counts": {
+    "contradicted_split_only": 5,
+    "unresolved": 2,
+    "partial_notice": 6,
+    "basic_terms_corroborated": 11
+  },
+  "full_action_accounting_qualified": 0,
+  "scope": "Original sample unchanged; no additional searches or acquisitions after fixed batch."
+}

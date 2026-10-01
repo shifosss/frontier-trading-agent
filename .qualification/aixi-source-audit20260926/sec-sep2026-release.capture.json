@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "url": "https://www.sec.gov/Archives/edgar/data/1935172/000121390026096964/ea030426001ex99-1.htm",
+  "params": null,
+  "captured_at": "2026-09-28T18:39:25.484112+00:00",
+  "status_code": 200,
+  "sha256": "38d9b9dc3c450e8247ffe0bbd32cedb36f665a25e0b7d557c4e8a8a564b229cc",
+  "bytes": 8739,
+  "content_type": "text/html",
+  "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+  "raw_file": "sec-sep2026-release.38d9b9dc3c450e8247ffe0bbd32cedb36f665a25e0b7d557c4e8a8a564b229cc.raw"
+}

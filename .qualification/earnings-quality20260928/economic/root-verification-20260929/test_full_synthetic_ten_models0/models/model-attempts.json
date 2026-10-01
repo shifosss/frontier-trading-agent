@@ -1,0 +1,258 @@
+[
+  {
+    "family": "ridge",
+    "test_decision_year": 2021,
+    "status": "complete",
+    "attempt_id": "5bf2a575ad1644e88266171a5c1959be",
+    "samples": {
+      "calibration": {
+        "rows": 64,
+        "distinct_ciks": 16
+      },
+      "fit": {
+        "rows": 256,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 3,
+        "distinct_ciks": 3
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "82d631ac1c6c00582e220f1882fe30c617450ff36ebcee09514d8ade24573fa2",
+    "forecasts_sha256": "1c1184166760dda7c90d479efe930669eecd3f441a0e268c3d5129d98df4be4b"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2021,
+    "status": "complete",
+    "attempt_id": "037dc1744f274ac6bef1924f7ab887b2",
+    "samples": {
+      "calibration": {
+        "rows": 64,
+        "distinct_ciks": 16
+      },
+      "fit": {
+        "rows": 256,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 3,
+        "distinct_ciks": 3
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "6f37efccfefd8f2a57a092ba17ee71cccb53c434db7b793936e0a089f95f7cdd",
+    "forecasts_sha256": "c7fa5673e77f5620a0f0196fc8e988b647a5dcc45f6b4b6e3c08787d8a0d6f3f"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2022,
+    "status": "insufficient_sample",
+    "attempt_id": "6d27d64de4584fbfa768d2f5d8afa30f",
+    "samples": {
+      "calibration": {
+        "rows": 3,
+        "distinct_ciks": 3
+      },
+      "fit": {
+        "rows": 320,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "cfa0636e4840267908e71c7babe341063a00730393242eb8ef09b2dcf50837bc",
+    "forecasts_sha256": "e9db6a6b82b189405984bb7c27c407d8db8d735a633b9977d551927ec5c58822"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2022,
+    "status": "insufficient_sample",
+    "attempt_id": "ba28a69b982f4c0dbf8e54c6cf001156",
+    "samples": {
+      "calibration": {
+        "rows": 3,
+        "distinct_ciks": 3
+      },
+      "fit": {
+        "rows": 320,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "e4d9157ceb2b966624552b755b54f4aa190aec086c19865f74e29efd4196f52a",
+    "forecasts_sha256": "c6156fa0727729158c5ff41e6e50b65c6bed4787bb3e69cdd46b120e04c49126"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2023,
+    "status": "insufficient_sample",
+    "attempt_id": "a65c6563d5a34cc09c77bd4fc49de0de",
+    "samples": {
+      "calibration": {
+        "rows": 0,
+        "distinct_ciks": 0
+      },
+      "fit": {
+        "rows": 323,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "dac2196bcc29c380b45cb530082586eb04607972aa405238660063ee47dfd079",
+    "forecasts_sha256": "6f67f5340e189b1d2c52c987933367ea177f870d9b2611de9d785c4612c5a898"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2023,
+    "status": "insufficient_sample",
+    "attempt_id": "697082f78f654d1f8622378d02b2041d",
+    "samples": {
+      "calibration": {
+        "rows": 0,
+        "distinct_ciks": 0
+      },
+      "fit": {
+        "rows": 323,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "29cdcc526ba96a59db6d04545b4b004ac815c431b206149012ed4c42719bf0de",
+    "forecasts_sha256": "828be178b6e93c9a8fcdf23f0ab179c5abc818839cf0f8b6346d7e2e86c6346b"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2024,
+    "status": "insufficient_sample",
+    "attempt_id": "d987760d44c24d3aa5c01368c97b724e",
+    "samples": {
+      "calibration": {
+        "rows": 0,
+        "distinct_ciks": 0
+      },
+      "fit": {
+        "rows": 323,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "e74f8ca49b4f4a1e24f36a4d5b2823f1fdc4be83ca2c971d732c4d2f3c76d088",
+    "forecasts_sha256": "f4b1fb51eccb774f801a78960d040fb445015964c2923e50c4998499f83d348c"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2024,
+    "status": "insufficient_sample",
+    "attempt_id": "dfde2222534f467fa345b28a8d2fec1c",
+    "samples": {
+      "calibration": {
+        "rows": 0,
+        "distinct_ciks": 0
+      },
+      "fit": {
+        "rows": 323,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "feedb00d27cfbb13b530f98a59879128a3dfb7b52dc8def9a03bb3f0714e47c2",
+    "forecasts_sha256": "31c898d7a22bb3209cf100d4886f46dba85c711cebfb14d4f60f85f2c04e30a8"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2025,
+    "status": "insufficient_sample",
+    "attempt_id": "10868f9a23114a7882744f1af287efff",
+    "samples": {
+      "calibration": {
+        "rows": 0,
+        "distinct_ciks": 0
+      },
+      "fit": {
+        "rows": 323,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "b5d919a5b367d391e615a5d709fb88a81d8da3e2487f08a406bd7805d3c76fe6",
+    "forecasts_sha256": "078b2571fc2aff67288cf0667155354c6419417d78891526caa8b25eeaa569ff"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2025,
+    "status": "insufficient_sample",
+    "attempt_id": "cbd54d0f3c18459096e298d19bc64991",
+    "samples": {
+      "calibration": {
+        "rows": 0,
+        "distinct_ciks": 0
+      },
+      "fit": {
+        "rows": 323,
+        "distinct_ciks": 25
+      },
+      "test": {
+        "rows": 0,
+        "distinct_ciks": 0
+      }
+    },
+    "reasons": [
+      "calibration sample below fixed row/issuer minimum"
+    ],
+    "warnings": [],
+    "manifest_sha256": "05b50a7dab80eb5c070f9363d9e9d268baaf3f24f502c2b39be924a4fdf35146",
+    "forecasts_sha256": "e472cd29261772b95e4ddf88179fed2ec25c010427eb489425013646dc879f21"
+  }
+]

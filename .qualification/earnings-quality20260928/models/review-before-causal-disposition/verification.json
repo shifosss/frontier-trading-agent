@@ -1,0 +1,12 @@
+{
+  "scope": "Synthetic only",
+  "tests": 19,
+  "exit_code": 0,
+  "result": "Ran 19 tests in 0.850s; OK",
+  "tool_chunk_id": "cf80b5",
+  "files": {
+    "earnings_models.py": "fcbdfbdff8814d0d534a47c813d0b36d4daf7e9ef26c0d67c8691a484ea368fa",
+    "test_earnings_models.py": "4a8c8154e3e1062ecbe254cd0e1bb115a372f3759bf49837ac597143864af890",
+    "interface.md": "1be305e6311e7de148a81f29beb483174d5b84ac08a9aa6f224882916ad9ce4f"
+  }
+}

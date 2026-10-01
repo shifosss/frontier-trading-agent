@@ -1,0 +1,38 @@
+{
+  "at": "2026-09-29T13:45:13.671795+00:00",
+  "reason": "Both previous source process handles absent, locks free, no completion/STOP/error status; interruption left one unfinished header request with no result resource. Frozen adapter permits one additional attempt for an interrupted start.",
+  "old_parent_pid": 41176,
+  "last_completed": {
+    "at": "2026-09-29T01:21:57.214765+00:00",
+    "issuer": "CNMD",
+    "accession": "0000816956-17-000004",
+    "status": "captured",
+    "completed": 1121,
+    "registered_originals": 4057
+  },
+  "unfinished_request": {
+    "at": "2026-09-29T01:21:58.944880+00:00",
+    "event": "request_started",
+    "url": "https://www.sec.gov/Archives/edgar/data/816956/000081695617000006/0000816956-17-000006.hdr.sgml",
+    "attempt": 1
+  },
+  "prior_identities": {
+    "registry.json": "3698fe925b8102fb863c4f5a0ba1588f38227a323cf7b18d6f91376e10255bbe",
+    "launch.json": "1b498d5c1814a715fe9c08cfbb9faa88e2d2552eeb76757dac23089ff052be6e",
+    "progress.jsonl": "29a5c8c41ada3db6a913de2a74c91692acdd85ef7116564927a5977026871b6a",
+    "requests.jsonl": "0e3e8fd401b4090331d94e2012872aa842d9f2ca5183b102cc89ccb08c417964",
+    "implementation.json": "3570a2d8067ea9031ec84d4eeb0cb6e17530039402b60a75d2fdd4bc4e4b303c",
+    "request.json": "2d688da497c4c58a8701db66083d88b5f07aff28a436a65dcb9395bdcb26dfe1"
+  },
+  "source_request_sha256": "2d688da497c4c58a8701db66083d88b5f07aff28a436a65dcb9395bdcb26dfe1",
+  "source_implementation_sha256": "3570a2d8067ea9031ec84d4eeb0cb6e17530039402b60a75d2fdd4bc4e4b303c",
+  "completed_failures_preserved": true,
+  "new_parent_pid": 38856,
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\source\\capture.py"
+  ]
+}

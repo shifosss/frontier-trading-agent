@@ -1,0 +1,24 @@
+{
+  "reviewed_at": "2026-09-28T22:05:12.253063+00:00",
+  "scope": "Independent auditor prepared before actual intraday account outcomes; outside frozen implementation map.",
+  "auditor_sha256": "372c6d25db3e91de1cdf0c0d3e934e73a2ef6c05399778fad9d43be87ddad39e",
+  "tests_sha256": "4ddd11967a72a99484fe92a9cb0aad745dbcb96674d735fd51618eea0e95c0cf",
+  "frozen_files_verified": 63,
+  "synthetic_tests_passed": 13,
+  "test_command": ".venv/Scripts/python.exe -B -X utf8 -m pytest -q .qualification/intraday-opening-strategy20260928/test_audit_intraday.py",
+  "actual_accounts_audited": 0,
+  "completion_present": false,
+  "coverage": [
+    "Whole shares/raw entry-exit clock and prices",
+    "Independent Decimal fees and cash/receivable arithmetic",
+    "Recorded causal opening and preceding20-session features and fixed reservations",
+    "Every recorded source-observed minute mark, stale ages, NAV, drawdown and exposure",
+    "Weekly/monthly/yearly returns and equal-date unfunded event reference",
+    "Full four-account denominator with invalid prefix and exception retention"
+  ],
+  "limits": [
+    "No strategy selection rerun",
+    "Reuses reviewed canonical source adapter and frozen settlement-calendar assumptions",
+    "Does not establish source completeness, live fills or profitability"
+  ]
+}

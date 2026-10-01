@@ -1,0 +1,653 @@
+{
+  "session": "2016-03-24",
+  "params": {
+    "timeframe": "1Min",
+    "feed": "sip",
+    "adjustment": "raw",
+    "currency": "USD",
+    "sort": "asc",
+    "limit": 10000,
+    "symbols": "AAPL,MSFT,F,T,HRL,BANF,SPY",
+    "start": "2016-03-24T13:30:00+00:00",
+    "end": "2016-03-24T19:59:59+00:00",
+    "asof": "2016-03-24"
+  },
+  "request_sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+  "transport_complete": true,
+  "error": null,
+  "stop_all": false,
+  "sources": [
+    {
+      "origin": "new_capture",
+      "method": "GET",
+      "url": "https://data.alpaca.markets/v2/stocks/bars",
+      "params": {
+        "timeframe": "1Min",
+        "feed": "sip",
+        "adjustment": "raw",
+        "currency": "USD",
+        "sort": "asc",
+        "limit": 10000,
+        "symbols": "AAPL,MSFT,F,T,HRL,BANF,SPY",
+        "start": "2016-03-24T13:30:00+00:00",
+        "end": "2016-03-24T19:59:59+00:00",
+        "asof": "2016-03-24"
+      },
+      "started_at": "2026-09-28T21:24:40.689587+00:00",
+      "session": "2016-03-24",
+      "page": 1,
+      "attempt": 1,
+      "state": "success",
+      "status_code": 200,
+      "raw_file": "raw/18d2bad74b5ccadd583f5f5a6368abedd6e6e211fc50814748776f38adbb2654.json",
+      "sha256": "18d2bad74b5ccadd583f5f5a6368abedd6e6e211fc50814748776f38adbb2654",
+      "bytes": 248503,
+      "captured_at": "2026-09-28T21:24:41.279585+00:00",
+      "headers": {
+        "date": "Mon, 28 Sep 2026 21:24:41 GMT",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "200",
+        "x-ratelimit-remaining": "199",
+        "x-ratelimit-reset": "1790630681",
+        "x-request-id": "26d6f510ac13f69e48b5ab1dfbbf9132"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "symbol": "AAPL",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "MSFT",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "F",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "T",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "HRL",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 384,
+      "observed_unique_minutes": 384,
+      "valid_unique_minutes": 384,
+      "missing_minutes": 6,
+      "missing_intervals": [
+        {
+          "start": "2016-03-24T15:26:00+00:00",
+          "end_exclusive": "2016-03-24T15:27:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:31:00+00:00",
+          "end_exclusive": "2016-03-24T15:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:44:00+00:00",
+          "end_exclusive": "2016-03-24T15:45:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:52:00+00:00",
+          "end_exclusive": "2016-03-24T15:53:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T16:23:00+00:00",
+          "end_exclusive": "2016-03-24T16:24:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T16:36:00+00:00",
+          "end_exclusive": "2016-03-24T16:37:00+00:00",
+          "minutes": 1
+        }
+      ],
+      "unusable_intervals": [
+        {
+          "start": "2016-03-24T15:26:00+00:00",
+          "end_exclusive": "2016-03-24T15:27:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:31:00+00:00",
+          "end_exclusive": "2016-03-24T15:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:44:00+00:00",
+          "end_exclusive": "2016-03-24T15:45:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:52:00+00:00",
+          "end_exclusive": "2016-03-24T15:53:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T16:23:00+00:00",
+          "end_exclusive": "2016-03-24T16:24:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T16:36:00+00:00",
+          "end_exclusive": "2016-03-24T16:37:00+00:00",
+          "minutes": 1
+        }
+      ],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": false
+    },
+    {
+      "symbol": "BANF",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 53,
+      "observed_unique_minutes": 53,
+      "valid_unique_minutes": 53,
+      "missing_minutes": 337,
+      "missing_intervals": [
+        {
+          "start": "2016-03-24T13:31:00+00:00",
+          "end_exclusive": "2016-03-24T13:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:33:00+00:00",
+          "end_exclusive": "2016-03-24T13:41:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-03-24T13:45:00+00:00",
+          "end_exclusive": "2016-03-24T13:46:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:48:00+00:00",
+          "end_exclusive": "2016-03-24T13:49:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:51:00+00:00",
+          "end_exclusive": "2016-03-24T13:52:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:54:00+00:00",
+          "end_exclusive": "2016-03-24T13:55:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:56:00+00:00",
+          "end_exclusive": "2016-03-24T13:59:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T14:00:00+00:00",
+          "end_exclusive": "2016-03-24T14:01:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T14:02:00+00:00",
+          "end_exclusive": "2016-03-24T14:05:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T14:07:00+00:00",
+          "end_exclusive": "2016-03-24T14:11:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-03-24T14:12:00+00:00",
+          "end_exclusive": "2016-03-24T14:15:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T14:16:00+00:00",
+          "end_exclusive": "2016-03-24T14:26:00+00:00",
+          "minutes": 10
+        },
+        {
+          "start": "2016-03-24T14:27:00+00:00",
+          "end_exclusive": "2016-03-24T14:31:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-03-24T14:32:00+00:00",
+          "end_exclusive": "2016-03-24T14:34:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-03-24T14:36:00+00:00",
+          "end_exclusive": "2016-03-24T14:47:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-03-24T14:48:00+00:00",
+          "end_exclusive": "2016-03-24T15:18:00+00:00",
+          "minutes": 30
+        },
+        {
+          "start": "2016-03-24T15:19:00+00:00",
+          "end_exclusive": "2016-03-24T15:25:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-03-24T15:26:00+00:00",
+          "end_exclusive": "2016-03-24T15:31:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T15:32:00+00:00",
+          "end_exclusive": "2016-03-24T15:33:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:34:00+00:00",
+          "end_exclusive": "2016-03-24T15:39:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T15:41:00+00:00",
+          "end_exclusive": "2016-03-24T15:42:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:43:00+00:00",
+          "end_exclusive": "2016-03-24T15:58:00+00:00",
+          "minutes": 15
+        },
+        {
+          "start": "2016-03-24T15:59:00+00:00",
+          "end_exclusive": "2016-03-24T16:24:00+00:00",
+          "minutes": 25
+        },
+        {
+          "start": "2016-03-24T16:25:00+00:00",
+          "end_exclusive": "2016-03-24T17:33:00+00:00",
+          "minutes": 68
+        },
+        {
+          "start": "2016-03-24T17:35:00+00:00",
+          "end_exclusive": "2016-03-24T18:07:00+00:00",
+          "minutes": 32
+        },
+        {
+          "start": "2016-03-24T18:08:00+00:00",
+          "end_exclusive": "2016-03-24T18:31:00+00:00",
+          "minutes": 23
+        },
+        {
+          "start": "2016-03-24T18:32:00+00:00",
+          "end_exclusive": "2016-03-24T18:37:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T18:38:00+00:00",
+          "end_exclusive": "2016-03-24T18:45:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-03-24T18:47:00+00:00",
+          "end_exclusive": "2016-03-24T18:56:00+00:00",
+          "minutes": 9
+        },
+        {
+          "start": "2016-03-24T18:57:00+00:00",
+          "end_exclusive": "2016-03-24T19:00:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T19:01:00+00:00",
+          "end_exclusive": "2016-03-24T19:06:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T19:07:00+00:00",
+          "end_exclusive": "2016-03-24T19:10:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T19:11:00+00:00",
+          "end_exclusive": "2016-03-24T19:12:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T19:13:00+00:00",
+          "end_exclusive": "2016-03-24T19:29:00+00:00",
+          "minutes": 16
+        },
+        {
+          "start": "2016-03-24T19:30:00+00:00",
+          "end_exclusive": "2016-03-24T19:41:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-03-24T19:42:00+00:00",
+          "end_exclusive": "2016-03-24T19:53:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-03-24T19:58:00+00:00",
+          "end_exclusive": "2016-03-24T19:59:00+00:00",
+          "minutes": 1
+        }
+      ],
+      "unusable_intervals": [
+        {
+          "start": "2016-03-24T13:31:00+00:00",
+          "end_exclusive": "2016-03-24T13:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:33:00+00:00",
+          "end_exclusive": "2016-03-24T13:41:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-03-24T13:45:00+00:00",
+          "end_exclusive": "2016-03-24T13:46:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:48:00+00:00",
+          "end_exclusive": "2016-03-24T13:49:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:51:00+00:00",
+          "end_exclusive": "2016-03-24T13:52:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:54:00+00:00",
+          "end_exclusive": "2016-03-24T13:55:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T13:56:00+00:00",
+          "end_exclusive": "2016-03-24T13:59:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T14:00:00+00:00",
+          "end_exclusive": "2016-03-24T14:01:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T14:02:00+00:00",
+          "end_exclusive": "2016-03-24T14:05:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T14:07:00+00:00",
+          "end_exclusive": "2016-03-24T14:11:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-03-24T14:12:00+00:00",
+          "end_exclusive": "2016-03-24T14:15:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T14:16:00+00:00",
+          "end_exclusive": "2016-03-24T14:26:00+00:00",
+          "minutes": 10
+        },
+        {
+          "start": "2016-03-24T14:27:00+00:00",
+          "end_exclusive": "2016-03-24T14:31:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-03-24T14:32:00+00:00",
+          "end_exclusive": "2016-03-24T14:34:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-03-24T14:36:00+00:00",
+          "end_exclusive": "2016-03-24T14:47:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-03-24T14:48:00+00:00",
+          "end_exclusive": "2016-03-24T15:18:00+00:00",
+          "minutes": 30
+        },
+        {
+          "start": "2016-03-24T15:19:00+00:00",
+          "end_exclusive": "2016-03-24T15:25:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-03-24T15:26:00+00:00",
+          "end_exclusive": "2016-03-24T15:31:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T15:32:00+00:00",
+          "end_exclusive": "2016-03-24T15:33:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:34:00+00:00",
+          "end_exclusive": "2016-03-24T15:39:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T15:41:00+00:00",
+          "end_exclusive": "2016-03-24T15:42:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T15:43:00+00:00",
+          "end_exclusive": "2016-03-24T15:58:00+00:00",
+          "minutes": 15
+        },
+        {
+          "start": "2016-03-24T15:59:00+00:00",
+          "end_exclusive": "2016-03-24T16:24:00+00:00",
+          "minutes": 25
+        },
+        {
+          "start": "2016-03-24T16:25:00+00:00",
+          "end_exclusive": "2016-03-24T17:33:00+00:00",
+          "minutes": 68
+        },
+        {
+          "start": "2016-03-24T17:35:00+00:00",
+          "end_exclusive": "2016-03-24T18:07:00+00:00",
+          "minutes": 32
+        },
+        {
+          "start": "2016-03-24T18:08:00+00:00",
+          "end_exclusive": "2016-03-24T18:31:00+00:00",
+          "minutes": 23
+        },
+        {
+          "start": "2016-03-24T18:32:00+00:00",
+          "end_exclusive": "2016-03-24T18:37:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T18:38:00+00:00",
+          "end_exclusive": "2016-03-24T18:45:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-03-24T18:47:00+00:00",
+          "end_exclusive": "2016-03-24T18:56:00+00:00",
+          "minutes": 9
+        },
+        {
+          "start": "2016-03-24T18:57:00+00:00",
+          "end_exclusive": "2016-03-24T19:00:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T19:01:00+00:00",
+          "end_exclusive": "2016-03-24T19:06:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-03-24T19:07:00+00:00",
+          "end_exclusive": "2016-03-24T19:10:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-03-24T19:11:00+00:00",
+          "end_exclusive": "2016-03-24T19:12:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-03-24T19:13:00+00:00",
+          "end_exclusive": "2016-03-24T19:29:00+00:00",
+          "minutes": 16
+        },
+        {
+          "start": "2016-03-24T19:30:00+00:00",
+          "end_exclusive": "2016-03-24T19:41:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-03-24T19:42:00+00:00",
+          "end_exclusive": "2016-03-24T19:53:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-03-24T19:58:00+00:00",
+          "end_exclusive": "2016-03-24T19:59:00+00:00",
+          "minutes": 1
+        }
+      ],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 20,
+      "opening_complete": false,
+      "entry_bar_valid": false,
+      "exit_bar_valid": false,
+      "full_session_complete": false
+    },
+    {
+      "symbol": "SPY",
+      "session": "2016-03-24",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "pid": 23492,
+  "args": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-u",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\strategy-interactions20260928\\run_study.py"
+  ],
+  "started_at": "2026-09-28T19:26:07.859100+00:00",
+  "hypotheses_sha256": {
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\strategy-interactions20260928\\signals.py": "b10f406f73c7e0f57d65d6eefbaa03d14be96e74be6162781ad8184f21f70e86",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\docs\\strategy-experiment-2026-09-28.md": "9338edbdf7bb65266e8fe3b30ec0d7885dc4f675441dc64817c485f14179a74d"
+  },
+  "accounts": 54,
+  "mode": "offline frozen-data strategy study; no refit, broker access or production changes"
+}

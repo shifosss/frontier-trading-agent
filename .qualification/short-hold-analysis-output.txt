@@ -1,0 +1,2572 @@
+{
+  "run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "source_run_id": "577a24e71a844022b3ac86ca66e32c34",
+  "code_identity": "9fc41227e51c48eeeeb3f64b534dab4fe893650f949070a783aa21e07a8441be",
+  "data_cutoff": "2026-09-18T20:43:15.256344+00:00",
+  "created_at": "2026-09-18T22:07:42.304651+00:00",
+  "statuses": {
+    "portfolios": {
+      "complete": 509,
+      "incomplete": 211
+    },
+    "walk_forward": {
+      "complete": 24
+    },
+    "benchmarks": {
+      "complete": 48
+    }
+  },
+  "missing": {
+    "WJX.TO:2005-06-15:mark": 55,
+    "ARX.TO:2026-07-20:mark": 4,
+    "CPH.TO:2014-12-24:mark": 15,
+    "AUXX.V:2026-09-17:mark": 25,
+    "PHOS.CN:2026-09-17:mark": 20,
+    "REI-UN.TO:2026-09-17:mark": 4,
+    "LGN.V:2026-09-17:entry": 25,
+    "SPB.TO:2009-01-07:entry": 23,
+    "WJX.TO:2005-06-15:entry": 22,
+    "ARX.TO:2026-07-20:entry": 6,
+    "BIG.V:2026-09-17:mark": 2,
+    "CPH.TO:2014-12-24:entry": 3,
+    "WTE.TO:2012-07-05:entry": 10,
+    "MAXX.CN:2026-09-17:mark": 5,
+    "SPB.TO:2009-01-07:mark": 1,
+    "KMP-UN.TO:2026-09-17:mark": 1,
+    "TECK-B.TO:2026-09-17:mark": 3,
+    "MGA.TO:2006-09-06:entry": 1,
+    "CRON.TO:2018-05-24:entry": 1
+  }
+}
+{
+  "rolling": [
+    {
+      "currency": "USD",
+      "budget": 500.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 500.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": 0.024238135640444414,
+        "max_drawdown": 0.1652902592151967,
+        "trades": 357
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 500.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 500.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.07893206086671367,
+        "max_drawdown": 0.20039292957603938,
+        "trades": 356
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 500.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 500.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.24483492640682902,
+        "max_drawdown": 0.26374462172070046,
+        "trades": 354
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 2032.6213182212814,
+      "total_return": 0.01631065911064078,
+      "max_drawdown": 0.06454607237422849,
+      "cagr": 0.0007066092064960117,
+      "trades": 225,
+      "fees": 89.40188042495787,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": 0.14498363653903362,
+        "net_expectancy_return": 0.0008920796803649974,
+        "win_rate": 0.49333333333333335,
+        "average_win_native": 5.567680148854395,
+        "average_loss_native": -5.135010335978556,
+        "profit_factor": 1.0557256744386367,
+        "turnover": 43.95048818084995,
+        "annualized_turnover": 1.9188280908505195,
+        "mean_exposure_fraction": 0.018732496445225552,
+        "invested_session_fraction": 0.0399166955918084,
+        "mean_holding_sessions": 5.0,
+        "max_holding_sessions": 5,
+        "mean_holding_calendar_days": 7.315555555555555,
+        "max_holding_calendar_days": 10,
+        "trades_per_week": 0.1952447066990628,
+        "net_pnl_total": 32.62131822128259,
+        "consecutive_losses": 8,
+        "worst_day_return": -0.03000819006437705,
+        "p05_trade_return": -0.05990383801812852,
+        "max_drawdown_duration_sessions": 5651,
+        "mean_settled_cash_fraction": 0.9699510071896441,
+        "completed_trades": 225,
+        "fees": 89.40188042495787
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.020903010033444816,
+          "mean_return": 1.5846541469815342e-05,
+          "median_return": 0.0,
+          "worst_return": -0.02889701085063645,
+          "best_return": 0.025843612175628028,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.036231884057971016,
+          "mean_return": 6.737103775202257e-05,
+          "median_return": 0.0,
+          "worst_return": -0.03694985696969233,
+          "best_return": 0.027275429611080648,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [
+          [
+            "EOG",
+            21.084729661306604
+          ],
+          [
+            "BSX",
+            17.01976060485841
+          ],
+          [
+            "BXP",
+            16.58140319830106
+          ],
+          [
+            "MKC",
+            15.021452887190533
+          ],
+          [
+            "WRB",
+            13.729536823132147
+          ],
+          [
+            "VVR",
+            13.598825870089238
+          ],
+          [
+            "PLUG",
+            13.44519847869873
+          ],
+          [
+            "RMBS",
+            13.424337100982665
+          ],
+          [
+            "PPL",
+            13.311414001768686
+          ],
+          [
+            "NOC",
+            12.99893646491066
+          ]
+        ],
+        "worst_symbols": [
+          [
+            "NUS",
+            -60.32329511247932
+          ],
+          [
+            "HAS",
+            -16.906482999893502
+          ],
+          [
+            "COLM",
+            -13.387799400451433
+          ],
+          [
+            "WM",
+            -11.35819749324015
+          ],
+          [
+            "KMT",
+            -10.792753777755037
+          ],
+          [
+            "CHKP",
+            -10.409571762084969
+          ],
+          [
+            "FMX",
+            -10.326720504625271
+          ],
+          [
+            "SID",
+            -10.157038798207182
+          ],
+          [
+            "MOS",
+            -10.138772178461965
+          ],
+          [
+            "FHN",
+            -9.458376026937747
+          ]
+        ]
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "trend_pullback_market_trend:5": 1,
+        "cash:1": 22
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.14357667044779343,
+        "max_drawdown": 0.22003411442711407,
+        "trades": 718
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 2030.9971928223827,
+      "total_return": 0.015498596411191334,
+      "max_drawdown": 0.06246558190599438,
+      "cagr": 0.0006716864752922547,
+      "trades": 224,
+      "fees": 175.90035769464725,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": 0.13838032509991688,
+        "net_expectancy_return": 0.0025714006680395245,
+        "win_rate": 0.5223214285714286,
+        "average_win_native": 5.059341612593045,
+        "average_loss_native": -5.242483886457988,
+        "profit_factor": 1.0552588042495836,
+        "turnover": 43.26564875758081,
+        "annualized_turnover": 1.8889287842106612,
+        "mean_exposure_fraction": 0.01839176025499036,
+        "invested_session_fraction": 0.039743144741409234,
+        "mean_holding_sessions": 5.0,
+        "max_holding_sessions": 5,
+        "mean_holding_calendar_days": 7.303571428571429,
+        "max_holding_calendar_days": 10,
+        "trades_per_week": 0.194376952447067,
+        "net_pnl_total": 30.997192822381315,
+        "consecutive_losses": 6,
+        "worst_day_return": -0.029042358616579445,
+        "p05_trade_return": -0.050310591760154434,
+        "max_drawdown_duration_sessions": 5651,
+        "mean_settled_cash_fraction": 0.9704779809517774,
+        "completed_trades": 224,
+        "fees": 175.90035769464725
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.020066889632107024,
+          "mean_return": 1.4920969043190193e-05,
+          "median_return": 0.0,
+          "worst_return": -0.027138963260135984,
+          "best_return": 0.02508066547760479,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.036231884057971016,
+          "mean_return": 6.346302270909459e-05,
+          "median_return": 0.0,
+          "worst_return": -0.03393971568156562,
+          "best_return": 0.022612674190386706,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [
+          [
+            "APH",
+            21.152074325978926
+          ],
+          [
+            "EOG",
+            20.299299534477445
+          ],
+          [
+            "BXP",
+            15.80244285917766
+          ],
+          [
+            "WAT",
+            14.03569507598875
+          ],
+          [
+            "RMBS",
+            13.30867710113525
+          ],
+          [
+            "PLUG",
+            13.290398483276366
+          ],
+          [
+            "WRB",
+            13.23915689646173
+          ],
+          [
+            "VVR",
+            13.157866082447885
+          ],
+          [
+            "CYH",
+            12.395409446895718
+          ],
+          [
+            "HOPE",
+            11.637733808850104
+          ]
+        ],
+        "worst_symbols": [
+          [
+            "NUS",
+            -60.64665516276871
+          ],
+          [
+            "HAS",
+            -17.307777799486168
+          ],
+          [
+            "COLM",
+            -13.815639428872357
+          ],
+          [
+            "KMT",
+            -11.26555380386179
+          ],
+          [
+            "FMX",
+            -10.75342048257272
+          ],
+          [
+            "ALL",
+            -10.701278827998063
+          ],
+          [
+            "FHN",
+            -10.089488740571662
+          ],
+          [
+            "LH",
+            -9.781804766346152
+          ],
+          [
+            "NLY",
+            -9.564492217516982
+          ],
+          [
+            "MOS",
+            -9.534165635927176
+          ]
+        ]
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "trend_pullback_market_trend:5": 1,
+        "cash:1": 22
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.19792528350166905,
+        "max_drawdown": 0.25694729459126564,
+        "trades": 718
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 1839.2781423408946,
+      "total_return": -0.0803609288295527,
+      "max_drawdown": 0.1030877357073462,
+      "cagr": -0.003650796681191726,
+      "trades": 224,
+      "fees": 413.7899576684347,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": -0.7175082931209923,
+        "net_expectancy_return": -0.0028676094677369487,
+        "win_rate": 0.45982142857142855,
+        "average_win_native": 4.204770905624968,
+        "average_loss_native": -4.907547611061768,
+        "profit_factor": 0.729339392985104,
+        "turnover": 44.90145028726378,
+        "annualized_turnover": 1.9603460097326195,
+        "mean_exposure_fraction": 0.01854454314388068,
+        "invested_session_fraction": 0.039743144741409234,
+        "mean_holding_sessions": 5.0,
+        "max_holding_sessions": 5,
+        "mean_holding_calendar_days": 7.330357142857143,
+        "max_holding_calendar_days": 10,
+        "trades_per_week": 0.194376952447067,
+        "net_pnl_total": -160.7218576591023,
+        "consecutive_losses": 6,
+        "worst_day_return": -0.013852783030540605,
+        "p05_trade_return": -0.05617138156448264,
+        "max_drawdown_duration_sessions": 5732,
+        "mean_settled_cash_fraction": 0.9702348104171472,
+        "completed_trades": 224,
+        "fees": 413.7899576684347
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.01839464882943144,
+          "mean_return": -6.83078272602431e-05,
+          "median_return": 0.0,
+          "worst_return": -0.021252155276917595,
+          "best_return": 0.02164784645110074,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.014492753623188406,
+          "mean_return": -0.0002969529319744816,
+          "median_return": 0.0,
+          "worst_return": -0.043364730573878685,
+          "best_return": 0.014420760032068491,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [
+          [
+            "APH",
+            16.51695081519675
+          ],
+          [
+            "EOG",
+            15.94934147021332
+          ],
+          [
+            "BXP",
+            13.46556184180757
+          ],
+          [
+            "RMBS",
+            12.96169710159301
+          ],
+          [
+            "WRB",
+            11.768017116450535
+          ],
+          [
+            "PLUG",
+            11.543398647308358
+          ],
+          [
+            "VVR",
+            10.924603125714254
+          ],
+          [
+            "NOC",
+            10.515176946042956
+          ],
+          [
+            "WAT",
+            10.310413360595685
+          ],
+          [
+            "MKC",
+            9.845962499765896
+          ]
+        ],
+        "worst_symbols": [
+          [
+            "COLM",
+            -15.099159514135183
+          ],
+          [
+            "ALL",
+            -13.345382824929857
+          ],
+          [
+            "WM",
+            -12.89812081824966
+          ],
+          [
+            "KMT",
+            -12.683953882182045
+          ],
+          [
+            "WMT",
+            -11.054015742092222
+          ],
+          [
+            "AEP",
+            -10.821659773896375
+          ],
+          [
+            "NLY",
+            -10.711091894441921
+          ],
+          [
+            "LH",
+            -10.549387152870565
+          ],
+          [
+            "MTD",
+            -10.513198242187496
+          ],
+          [
+            "FICO",
+            -10.44273360773081
+          ]
+        ]
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "trend_pullback_market_trend:5": 1,
+        "cash:1": 22
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.38174559044389067,
+        "max_drawdown": 0.40738151418298385,
+        "trades": 718
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 10311.094623138777,
+      "total_return": 0.031109462313877678,
+      "max_drawdown": 0.05265048379722659,
+      "cagr": 0.0013384001235836607,
+      "trades": 224,
+      "fees": 455.18157145524367,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": 1.3888152818695816,
+        "net_expectancy_return": 0.0010014182587463646,
+        "win_rate": 0.5133928571428571,
+        "average_win_native": 27.133982290806046,
+        "average_loss_native": -25.7735168835221,
+        "profit_factor": 1.1107368902840624,
+        "turnover": 44.117410344003744,
+        "annualized_turnover": 1.9261157217484304,
+        "mean_exposure_fraction": 0.01886160621560742,
+        "invested_session_fraction": 0.039743144741409234,
+        "mean_holding_sessions": 5.0,
+        "max_holding_sessions": 5,
+        "mean_holding_calendar_days": 7.303571428571429,
+        "max_holding_calendar_days": 10,
+        "trades_per_week": 0.194376952447067,
+        "net_pnl_total": 311.0946231387868,
+        "consecutive_losses": 6,
+        "worst_day_return": -0.029850119922648743,
+        "p05_trade_return": -0.05630828093009174,
+        "max_drawdown_duration_sessions": 5527,
+        "mean_settled_cash_fraction": 0.9697243216732608,
+        "completed_trades": 224,
+        "fees": 455.18157145524367
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.021739130434782608,
+          "mean_return": 2.7706599472498926e-05,
+          "median_return": 0.0,
+          "worst_return": -0.03213343264348578,
+          "best_return": 0.022746012227091494,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.036231884057971016,
+          "mean_return": 0.00011840367264677647,
+          "median_return": 0.0,
+          "worst_return": -0.036059185798426485,
+          "best_return": 0.020205006134461412,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [
+          [
+            "EOG",
+            105.42364830653297
+          ],
+          [
+            "BXP",
+            89.12504219086814
+          ],
+          [
+            "WAT",
+            75.88903713226314
+          ],
+          [
+            "WRB",
+            75.51245252722676
+          ],
+          [
+            "VVR",
+            69.56322464314883
+          ],
+          [
+            "PLUG",
+            67.22599239349364
+          ],
+          [
+            "HOPE",
+            66.18546894958534
+          ],
+          [
+            "NVS",
+            65.56648056638751
+          ],
+          [
+            "BCE",
+            60.37414515548795
+          ],
+          [
+            "EWBC",
+            57.397462054114165
+          ]
+        ],
+        "worst_symbols": [
+          [
+            "NUS",
+            -324.2377112295764
+          ],
+          [
+            "AEG",
+            -82.90149880259642
+          ],
+          [
+            "COLM",
+            -66.93899700225731
+          ],
+          [
+            "KMT",
+            -61.15893807394524
+          ],
+          [
+            "SID",
+            -58.07821918366997
+          ],
+          [
+            "BRSL",
+            -52.46486735390848
+          ],
+          [
+            "FMX",
+            -51.63360252312641
+          ],
+          [
+            "FHN",
+            -51.34546986051946
+          ],
+          [
+            "MOS",
+            -50.69386089230986
+          ],
+          [
+            "NLY",
+            -49.58437855612682
+          ]
+        ]
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "trend_pullback_market_trend:5": 1,
+        "cash:1": 22
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": 0.020406231137637176,
+        "max_drawdown": 0.16667196032262677,
+        "trades": 443
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 10064.48246238741,
+      "total_return": 0.006448246238740962,
+      "max_drawdown": 0.08096784703072513,
+      "cagr": 0.00028065865762472164,
+      "trades": 223,
+      "fees": 914.0842768110687,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": 0.289159024158814,
+        "net_expectancy_return": 0.0013277438075975257,
+        "win_rate": 0.5022421524663677,
+        "average_win_native": 26.389902173017465,
+        "average_loss_native": -26.046725954869732,
+        "profit_factor": 1.0223031134729892,
+        "turnover": 45.38666788928912,
+        "annualized_turnover": 1.9815300557689282,
+        "mean_exposure_fraction": 0.01939869756907072,
+        "invested_session_fraction": 0.039743144741409234,
+        "mean_holding_sessions": 5.0,
+        "max_holding_sessions": 5,
+        "mean_holding_calendar_days": 7.304932735426009,
+        "max_holding_calendar_days": 10,
+        "trades_per_week": 0.19350919819507115,
+        "net_pnl_total": 64.48246238741578,
+        "consecutive_losses": 8,
+        "worst_day_return": -0.015497917112159976,
+        "p05_trade_return": -0.058333217676051534,
+        "max_drawdown_duration_sessions": 5651,
+        "mean_settled_cash_fraction": 0.9688473442467717,
+        "completed_trades": 223,
+        "fees": 914.0842768110687
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0225752508361204,
+          "mean_return": 7.285241651847864e-06,
+          "median_return": 0.0,
+          "worst_return": -0.019067329885163575,
+          "best_return": 0.026177336941385576,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.028985507246376812,
+          "mean_return": 2.9421212645551817e-05,
+          "median_return": 0.0,
+          "worst_return": -0.039023533386913556,
+          "best_return": 0.020364251717560622,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [
+          [
+            "EOG",
+            101.49649767238722
+          ],
+          [
+            "RMBS",
+            93.16073970794679
+          ],
+          [
+            "BXP",
+            84.93813036807998
+          ],
+          [
+            "BSX",
+            83.39760299682621
+          ],
+          [
+            "WRB",
+            70.60883678112923
+          ],
+          [
+            "PLUG",
+            66.45199241638186
+          ],
+          [
+            "VVR",
+            64.27111509503408
+          ],
+          [
+            "PPL",
+            63.853337105493864
+          ],
+          [
+            "CYH",
+            61.977047234478306
+          ],
+          [
+            "HOPE",
+            60.5162158060206
+          ]
+        ],
+        "worst_symbols": [
+          [
+            "HAS",
+            -86.53888899743102
+          ],
+          [
+            "COLM",
+            -69.07819714436204
+          ],
+          [
+            "KMT",
+            -61.96054592123977
+          ],
+          [
+            "SID",
+            -61.67139642244099
+          ],
+          [
+            "ALL",
+            -54.68146982708574
+          ],
+          [
+            "FMX",
+            -53.76710241286346
+          ],
+          [
+            "FHN",
+            -53.33015477159305
+          ],
+          [
+            "DCI",
+            -52.81998014990352
+          ],
+          [
+            "CHKP",
+            -51.61590019226069
+          ],
+          [
+            "MOS",
+            -51.484494434006734
+          ]
+        ]
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "trend_pullback_market_trend:5": 1,
+        "cash:1": 22
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.05706307071907435,
+        "max_drawdown": 0.19824893822509748,
+        "trades": 443
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 8693.83319787294,
+      "total_return": -0.130616680212706,
+      "max_drawdown": 0.1542709030106708,
+      "cagr": -0.006092346244971014,
+      "trades": 224,
+      "fees": 2175.248070700195,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": -5.831101795210133,
+        "net_expectancy_return": -0.0058477154644966745,
+        "win_rate": 0.4375,
+        "average_win_native": 22.48403600009985,
+        "average_loss_native": -27.853986747117887,
+        "profit_factor": 0.6278305405398635,
+        "turnover": 49.83952204910377,
+        "annualized_turnover": 2.1759365800185457,
+        "mean_exposure_fraction": 0.019730777920637627,
+        "invested_session_fraction": 0.039743144741409234,
+        "mean_holding_sessions": 5.0,
+        "max_holding_sessions": 5,
+        "mean_holding_calendar_days": 7.308035714285714,
+        "max_holding_calendar_days": 10,
+        "trades_per_week": 0.194376952447067,
+        "net_pnl_total": -1306.1668021270693,
+        "consecutive_losses": 7,
+        "worst_day_return": -0.015599282088584854,
+        "p05_trade_return": -0.06073407666845546,
+        "max_drawdown_duration_sessions": 5682,
+        "mean_settled_cash_fraction": 0.9683433506363402,
+        "completed_trades": 224,
+        "fees": 2175.248070700195
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.017558528428093644,
+          "mean_return": -0.00011484477039083766,
+          "median_return": 0.0,
+          "worst_return": -0.022241058030979866,
+          "best_return": 0.02315610945296598,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.014492753623188406,
+          "mean_return": -0.0004962299025589465,
+          "median_return": 0.0,
+          "worst_return": -0.05253054297446247,
+          "best_return": 0.016113826125319752,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [
+          [
+            "EOG",
+            87.72137808617323
+          ],
+          [
+            "RMBS",
+            84.25103116035463
+          ],
+          [
+            "BSX",
+            70.4646026229858
+          ],
+          [
+            "BXP",
+            69.01100443926404
+          ],
+          [
+            "PLUG",
+            61.564792785644535
+          ],
+          [
+            "WRB",
+            60.801421768327984
+          ],
+          [
+            "VVR",
+            53.257440237856926
+          ],
+          [
+            "CYH",
+            51.54484499412872
+          ],
+          [
+            "HOPE",
+            51.034396457078245
+          ],
+          [
+            "BCE",
+            44.90480173919629
+          ]
+        ],
+        "worst_symbols": [
+          [
+            "HAS",
+            -87.00481233184175
+          ],
+          [
+            "EL",
+            -84.66033908712711
+          ],
+          [
+            "PRDO",
+            -78.60266738068218
+          ],
+          [
+            "COLM",
+            -75.49579757067599
+          ],
+          [
+            "ALL",
+            -73.18163443385248
+          ],
+          [
+            "HNI",
+            -73.08809251121072
+          ],
+          [
+            "ACGL",
+            -71.9768419126195
+          ],
+          [
+            "TJX",
+            -70.06257105392346
+          ],
+          [
+            "KMT",
+            -67.64775403830424
+          ],
+          [
+            "WMT",
+            -61.16661550401237
+          ]
+        ]
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "trend_pullback_market_trend:5": 1,
+        "cash:1": 22
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.25554335703040343,
+        "max_drawdown": 0.29955679277963065,
+        "trades": 443
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 100000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.0072185705067296935,
+        "max_drawdown": 0.18117478590790614,
+        "trades": 448
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 100000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.08840572711648575,
+        "max_drawdown": 0.2164943185566922,
+        "trades": 448
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 100000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "complete",
+        "total_return": -0.2834296703513016,
+        "max_drawdown": 0.3117907084684771,
+        "trades": 448
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 500.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 500.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 500.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 500.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 500.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 500.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 2000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 2000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 2000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 10000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 10000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 10000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000.0,
+      "cost_bps": 20,
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000.0,
+      "cost_bps": 40,
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000.0,
+      "cost_bps": 100,
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "total_return": 0.0,
+      "max_drawdown": 0.0,
+      "cagr": 0.0,
+      "trades": 0,
+      "fees": 0.0,
+      "missing": [],
+      "first_session": "2003-10-22",
+      "last_session": "2026-09-18",
+      "trade_metrics": {
+        "net_expectancy_native": null,
+        "net_expectancy_return": null,
+        "win_rate": null,
+        "average_win_native": null,
+        "average_loss_native": null,
+        "profit_factor": null,
+        "turnover": 0.0,
+        "annualized_turnover": 0.0,
+        "mean_exposure_fraction": 0.0,
+        "invested_session_fraction": 0.0,
+        "mean_holding_sessions": null,
+        "max_holding_sessions": null,
+        "mean_holding_calendar_days": null,
+        "max_holding_calendar_days": null,
+        "trades_per_week": 0.0,
+        "net_pnl_total": 0.0,
+        "consecutive_losses": 0,
+        "worst_day_return": 0.0,
+        "p05_trade_return": null,
+        "max_drawdown_duration_sessions": 0,
+        "mean_settled_cash_fraction": 1.0,
+        "completed_trades": 0,
+        "fees": 0.0
+      },
+      "period_metrics": {
+        "weekly": {
+          "count": 1196,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        },
+        "monthly": {
+          "count": 276,
+          "profitable_fraction": 0.0,
+          "mean_return": 0.0,
+          "median_return": 0.0,
+          "worst_return": 0.0,
+          "best_return": 0.0,
+          "p05_return": 0.0
+        }
+      },
+      "profit_concentration": {
+        "best_symbols": [],
+        "worst_symbols": []
+      },
+      "fold_count": 23,
+      "selected_rules": {
+        "cash:1": 23
+      },
+      "legacy": {
+        "status": "incomplete",
+        "total_return": null,
+        "max_drawdown": null,
+        "trades": 85
+      }
+    }
+  ],
+  "fixed_counts": [
+    {
+      "currency": "USD",
+      "budget": 500,
+      "cost_bps": 20,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 5,
+      "profitable_and_under_30pct_dd": 1
+    },
+    {
+      "currency": "USD",
+      "budget": 500,
+      "cost_bps": 40,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 500,
+      "cost_bps": 100,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 2000,
+      "cost_bps": 20,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 6,
+      "profitable_and_under_30pct_dd": 3
+    },
+    {
+      "currency": "USD",
+      "budget": 2000,
+      "cost_bps": 40,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 2000,
+      "cost_bps": 100,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 10000,
+      "cost_bps": 20,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 6,
+      "profitable_and_under_30pct_dd": 4
+    },
+    {
+      "currency": "USD",
+      "budget": 10000,
+      "cost_bps": 40,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 10000,
+      "cost_bps": 100,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 100000,
+      "cost_bps": 20,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 5,
+      "profitable_and_under_30pct_dd": 4
+    },
+    {
+      "currency": "USD",
+      "budget": 100000,
+      "cost_bps": 40,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 1,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "USD",
+      "budget": 100000,
+      "cost_bps": 100,
+      "statuses": {
+        "complete": 30
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 500,
+      "cost_bps": 20,
+      "statuses": {
+        "incomplete": 20,
+        "complete": 10
+      },
+      "profitable": 7,
+      "profitable_and_under_30pct_dd": 2
+    },
+    {
+      "currency": "CAD",
+      "budget": 500,
+      "cost_bps": 40,
+      "statuses": {
+        "incomplete": 16,
+        "complete": 14
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 500,
+      "cost_bps": 100,
+      "statuses": {
+        "incomplete": 15,
+        "complete": 15
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000,
+      "cost_bps": 20,
+      "statuses": {
+        "incomplete": 20,
+        "complete": 10
+      },
+      "profitable": 6,
+      "profitable_and_under_30pct_dd": 1
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000,
+      "cost_bps": 40,
+      "statuses": {
+        "incomplete": 18,
+        "complete": 12
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000,
+      "cost_bps": 100,
+      "statuses": {
+        "incomplete": 17,
+        "complete": 13
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000,
+      "cost_bps": 20,
+      "statuses": {
+        "incomplete": 19,
+        "complete": 11
+      },
+      "profitable": 6,
+      "profitable_and_under_30pct_dd": 1
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000,
+      "cost_bps": 40,
+      "statuses": {
+        "incomplete": 19,
+        "complete": 11
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000,
+      "cost_bps": 100,
+      "statuses": {
+        "incomplete": 13,
+        "complete": 17
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000,
+      "cost_bps": 20,
+      "statuses": {
+        "incomplete": 19,
+        "complete": 11
+      },
+      "profitable": 8,
+      "profitable_and_under_30pct_dd": 1
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000,
+      "cost_bps": 40,
+      "statuses": {
+        "incomplete": 19,
+        "complete": 11
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000,
+      "cost_bps": 100,
+      "statuses": {
+        "incomplete": 16,
+        "complete": 14
+      },
+      "profitable": 0,
+      "profitable_and_under_30pct_dd": 0
+    }
+  ]
+}

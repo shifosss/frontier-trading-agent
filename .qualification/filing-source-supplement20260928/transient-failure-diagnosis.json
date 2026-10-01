@@ -1,0 +1,61 @@
+{
+  "at": "2026-09-28T22:57:51.751254+00:00",
+  "stage": "original accession index GET",
+  "count": 5,
+  "no_completed_source_in_filing_manifests": true,
+  "sources": [
+    {
+      "resource_record_path": ".qualification/filing-source20260928/resources/cab39afe1d87922c4df1b628f32a93cbd32786c239ede6caedb15acd06a4c761.json",
+      "resource_record_sha256": "79bded683c8b38208eeb7c168eca52bffc8c9e5b84435cf55b0f0e63fe6f10d8",
+      "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/0000950170-24-121319-index.html",
+      "status": null,
+      "error": "TimeoutError: The read operation timed out",
+      "requested_at_utc": "2026-09-28T22:48:41.400499+00:00"
+    },
+    {
+      "resource_record_path": ".qualification/filing-source20260928/resources/d192bf50b5872c4cd6a319c6505645d92074793ee9596a108436305e42943015.json",
+      "resource_record_sha256": "4a70642aa2733399934a53ecd34bfb5e8febe35368e97997bfd267bbf34f2523",
+      "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/0001564590-20-052332-index.html",
+      "status": 503,
+      "error": "HTTP 503",
+      "requested_at_utc": "2026-09-28T22:47:46.763503+00:00",
+      "raw_path": ".qualification/filing-source20260928/raw/3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da.bin",
+      "raw_sha256": "3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da",
+      "bytes": 7747
+    },
+    {
+      "resource_record_path": ".qualification/filing-source20260928/resources/4e2c9ef520901940580aaa23afe68b099201904569b93681d247192cd6826e5e.json",
+      "resource_record_sha256": "9679ca724b1e6af6ed5657ce49339ad6fa43d10d76fd5b1934e688668318c0a2",
+      "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/0001564590-21-023832-index.html",
+      "status": 503,
+      "error": "HTTP 503",
+      "requested_at_utc": "2026-09-28T22:47:58.748409+00:00",
+      "raw_path": ".qualification/filing-source20260928/raw/3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da.bin",
+      "raw_sha256": "3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da",
+      "bytes": 7747
+    },
+    {
+      "resource_record_path": ".qualification/filing-source20260928/resources/08a736d7d4aced5120ed3a40d176fa8a4d8a8b623fd4b066bee33a7cd0fd2456.json",
+      "resource_record_sha256": "3849ab8ed0899ecba3d5325201f5f4289087ea4a5b471f66cf65c08f56c4faf4",
+      "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/0001104659-16-125370-index.html",
+      "status": 503,
+      "error": "HTTP 503",
+      "requested_at_utc": "2026-09-28T22:44:01.748807+00:00",
+      "raw_path": ".qualification/filing-source20260928/raw/3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da.bin",
+      "raw_sha256": "3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da",
+      "bytes": 7747
+    },
+    {
+      "resource_record_path": ".qualification/filing-source20260928/resources/5c927c1e5b019c4487e61d7ad4cff85ef638751bbb04431b4905b9dd9a04a136.json",
+      "resource_record_sha256": "dfbb7e5f9489f5a2e48c08667b83bb7e070a511d015971ec352bbe7bc5b6e800",
+      "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/0000732717-17-000055-index.html",
+      "status": 503,
+      "error": "HTTP 503",
+      "requested_at_utc": "2026-09-28T22:41:42.315514+00:00",
+      "raw_path": ".qualification/filing-source20260928/raw/3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da.bin",
+      "raw_sha256": "3907718ad0c8e2b5dabf7a6d0c0e31d2130f761a0db8b13125a77e22eeaee4da",
+      "bytes": 7747
+    }
+  ],
+  "recovery": "One separate attempt per named failed index, then at most header/primary/one original instance; all baseline error records and bytes retained"
+}

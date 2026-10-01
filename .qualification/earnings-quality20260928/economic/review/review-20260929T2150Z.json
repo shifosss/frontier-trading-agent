@@ -1,0 +1,42 @@
+{
+  "frozen_model_specification_sha256": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+  "initial_review_fixture_corrections": [
+    "Initial generated runner fixture predated new causal clustering; added generated interval indices.",
+    "Updated expected training-mean denominator to matched forecast rows after reviewed implementation improvement.",
+    "Closed generated SQLite creation connections explicitly so Windows temporary fixtures can be removed."
+  ],
+  "limitations": [
+    "Generated-only orchestration and corruption checks; no actual source collector, original-event model fit or economic account executed by this reviewer.",
+    "Model fitting and account arithmetic rely on separately reviewed adapter implementations; these tests stub those calls to directly check invocation and ordering.",
+    "This does not establish profitability, corporate-action completeness or real broker fills."
+  ],
+  "open_material_findings": [],
+  "reviewed_at": "2026-09-29T21:50:07.743982+00:00",
+  "runner_sha256": "fe88ccd61666643b0344bb435368839bf78b17fe90325178c0e850230655e200",
+  "schema_version": 1,
+  "scope": [
+    "Ten fixed family/year calls and both persisted forecasts before test-label access",
+    "Lazy fitting/calibration labels refuse unavailable, purged and test events",
+    "Twenty account calls, retained injected account failure, same family forecasts shared across all fee/capital combinations",
+    "Manual diagnostic errors and fixed calibration bins; inputs remain unchanged",
+    "Reference window equals account initialization through liquidation tail; missing benchmark price remains invalid",
+    "Both source read locks block writers and global historical exclusive lock blocks another worker",
+    "Mandatory original source identity bindings, reviewed-rerun gate, durable failed attempt and duplicate claim refusal",
+    "Original raw corruption, ordered cohort mismatch and unresolved source STOP refused"
+  ],
+  "source_review": [
+    "Reuses reviewed input/model/account adapters and fixed declaration; no alternate recipes/costs/thresholds introduced",
+    "Preserves prepared original rows, source identities, all forecast statuses and declared attempts before any work",
+    "Matched diagnostic baselines and calibration-only bins retained; no test-driven retuning",
+    "New denominator report retains declared issuer-year zero cells and unassigned actual events"
+  ],
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "file": ".qualification\\earnings-quality20260928\\economic\\review\\test_independent_runner.py",
+    "log": ".qualification\\earnings-quality20260928\\economic\\review\\tests-20260929T214921Z.log",
+    "log_sha256": "63595860484f0909659018653b58bb58f1cb74d417189eb2ba4a4d1a39564931",
+    "sha256": "86d9b0829e7f6aff07d6210c407ffd723d4806c074a7fc6ffa54c206e5403824",
+    "tests_run": 9
+  }
+}

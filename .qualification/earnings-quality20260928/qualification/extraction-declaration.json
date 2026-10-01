@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "purpose": "Original-event industry qualification without altering frozen S/Q or histories",
+  "source": "Same original accession SEC .hdr.sgml; exact matching FILER / COMPANY-DATA CIK and ASSIGNED-SIC only",
+  "allowed_sic_ranges": [
+    [
+      100,
+      5999
+    ],
+    [
+      7000,
+      8999
+    ]
+  ],
+  "parser_rules": [
+    "One SEC-HEADER and one matching original ACCESSION-NUMBER",
+    "Structurally balanced, nonnested FILER and COMPANY-DATA blocks; exactly one COMPANY-DATA per FILER",
+    "CIK ASCII1-10digits, positive, normalize to10digits; expected CIK is exact10digits",
+    "SIC ASCII1-4digits, normalize to4digits; consistent duplicate numeric fields allowed; any malformed/conflicting duplicate unavailable",
+    "Exactly one matching FILER; multiple matching FILER blocks remain ambiguous even if codes agree",
+    "Any unidentified or internally ambiguous FILER linkage leaves the header unavailable; other well-identified cofilers never provide the event SIC",
+    "No current-profile SIC, tag aliases, text labels, nearest block or first-flat-value fallback",
+    "Out-of-range valid code is excluded; absent/malformed/ambiguous/source-unavailable is unavailable",
+    "Retain raw source SHA256 and exact original byte spans for header, FILER, COMPANY-DATA and selected CIK/SIC fields"
+  ],
+  "integration": "Q.enrich_filing and Q.build_features run unchanged before adding industry_status and strategy_source_status. Preserve every existing field including joint_feature_status, S,Q,u,selected, clocks and eight-prior histories. Industry qualification applies only to current event.",
+  "source_terminal_gate": "Full collector needs terminal completion, no unresolved STOP, no active source writer, exact ordered100-member request/cohort/registry and verified frozen source implementation/finalization/model identities. Terminal incomplete captures retain discovered original failures plus all100 issuer denominators; incomplete discovery has unknown undiscovered-original count, never invented zero.",
+  "outputs": [
+    "records.json",
+    "events.json",
+    "issuer-status.json",
+    "source-inputs.json",
+    "summary.json"
+  ],
+  "prohibited": [
+    "network",
+    "price arrays",
+    "return labels",
+    "strategy runs",
+    "source writes",
+    "replacement issuers",
+    "modification of frozen S/Q parser"
+  ],
+  "prior_history_caveat": "Original industry changes and unavailable older industry classification do not rewrite prior eight S innovations."
+}

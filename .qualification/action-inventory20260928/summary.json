@@ -1,0 +1,35 @@
+{
+  "completed_at": "2026-09-28T18:52:12.218980+00:00",
+  "seconds": 77.16633879998699,
+  "requested_usable_sources": 8234,
+  "verified_source_count": 8234,
+  "source_failures": 0,
+  "sources_with_reported_splits": 3581,
+  "events": 7143,
+  "event_status": {
+    "valid_event": 7143
+  },
+  "directions": {
+    "forward": 2703,
+    "reverse": 4440
+  },
+  "currencies": {
+    "USD": 4929,
+    "CAD": 2214
+  },
+  "source_currencies": {
+    "USD": 5664,
+    "CAD": 2570
+  },
+  "missing_boundaries": 51,
+  "large_adjusted_move_triage": 600,
+  "ratio_alignment_triage": 12,
+  "validation_sample_count": 91,
+  "maximum_predeclared_sample_cells": 96,
+  "original_failed_instruments_unavailable": 200,
+  "original_capture_failures_sha256": "a611069a79e763ec19fcbefc90f58adfb8397a3c516055a349ef61b1bf4c58b6",
+  "definition_sha256": "1edf1d072ad11a9e2e57100c0a65771135a96fd775a13f1104922133905b257f",
+  "script_sha256": "77eb3f2c68e3f11b8558cfd5d3522ee005603dbe1a5f9088312d5464c37507ae",
+  "normalizer_reference_sha256": "930923cbbab8c7152b769f76034a7ef502a0fbc163c9c0344be2702a2a19379d",
+  "qualification": "Provider-event inventory and independently predeclared sample, not verified action completeness or corrected performance"
+}

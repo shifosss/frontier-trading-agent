@@ -1,0 +1,117 @@
+{
+  "evidence_collected_at": "2026-09-18T21:03:12.213889+00:00",
+  "conclusion": "Qualified narrow repair for the current retrospective adjusted-return research model; not a complete corporate-action cash ledger",
+  "original_provider_file": "data\\historical\\capture-workspace\\data\\scanner\\raw\\WJX.TO.035955aeb5010fd87d8d6a0e63f60fa79eb64457d69fa8e924c3afa17535af81.json",
+  "original_provider_sha256": "035955aeb5010fd87d8d6a0e63f60fa79eb64457d69fa8e924c3afa17535af81",
+  "provider_missing_sessions": [
+    "2005-06-15",
+    "2005-06-16",
+    "2005-06-17"
+  ],
+  "share_to_unit_ratio": 1,
+  "conversion_date": "2005-06-15",
+  "conversion_sources": [
+    {
+      "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/w/TSX_WJX_2006.pdf",
+      "location": "Note 1: Structure of the trust and fund profile; printed page 47",
+      "evidence": "All outstanding shares exchanged on an equal basis for fund units effective June 15, 2005."
+    },
+    {
+      "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/e/TSX_EMP-A_2005.pdf",
+      "location": "Note 24(b): Subsequent events",
+      "evidence": "Major shareholder reports receiving one fund unit for each Wajax share."
+    }
+  ],
+  "adjustment_factor_before": {
+    "session": "2005-06-14",
+    "close": 19.450000762939453,
+    "adjusted_close": 3.7900230884552,
+    "factor": 0.19485979124879063
+  },
+  "adjustment_factor_after": {
+    "session": "2005-06-20",
+    "close": 19.190000534057617,
+    "adjusted_close": 3.739358425140381,
+    "factor": 0.19485973533476056
+  },
+  "relative_factor_difference": -2.869449347020492e-07,
+  "factor_tolerance": 1e-06,
+  "factor_choice": "preceding session, not interpolation or backfill from later session",
+  "provider_actions_in_gap": [],
+  "nearest_provider_distributions": [
+    {
+      "ex_session": "2005-05-12",
+      "amount": 0.07
+    },
+    {
+      "ex_session": "2005-07-27",
+      "amount": 0.275
+    }
+  ],
+  "distribution_qualification": "Issuer describes month-end record dates and following-month cash payments; no conversion-day cash entitlement appears in the reviewed equal-exchange terms. Provider factor continuity and absence of gap actions corroborate no economic adjustment in these three sessions. This is not an independent audit of every historical distribution.",
+  "rows": [
+    {
+      "symbol": "WJX.TO",
+      "session": "2005-06-15",
+      "close": 19.42,
+      "high": 19.42,
+      "low": 19.25,
+      "volume": 99500.0,
+      "open": null,
+      "adjusted_close_derived": 3.7841771460515146,
+      "adjusted_close_formula": "issuer close * preceding retained provider adjusted_close/close factor",
+      "source_url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-15&ticker=WJX%3ACA",
+      "source_sha256": "450b91587f34ae95f17b00a9c72ced477d062f1a0e4be5ae89b396fa34d82aa2",
+      "quote_session_date_verified": true,
+      "split_adjustment_reported": "1:1"
+    },
+    {
+      "symbol": "WJX.TO",
+      "session": "2005-06-16",
+      "close": 19.32,
+      "high": 19.43,
+      "low": 19.2,
+      "volume": 127200.0,
+      "open": null,
+      "adjusted_close_derived": 3.764691166926635,
+      "adjusted_close_formula": "issuer close * preceding retained provider adjusted_close/close factor",
+      "source_url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-16&ticker=WJX%3ACA",
+      "source_sha256": "881c296d17ca78a918b2348310e3947da3be9d761d7381c3fc7270705ebe0a27",
+      "quote_session_date_verified": true,
+      "split_adjustment_reported": "1:1"
+    },
+    {
+      "symbol": "WJX.TO",
+      "session": "2005-06-17",
+      "close": 19.1,
+      "high": 19.29,
+      "low": 19.1,
+      "volume": 172900.0,
+      "open": null,
+      "adjusted_close_derived": 3.7218220128519013,
+      "adjusted_close_formula": "issuer close * preceding retained provider adjusted_close/close factor",
+      "source_url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-17&ticker=WJX%3ACA",
+      "source_sha256": "388605907f119c5fc4b540986e62fcace0d7b557ce66407c519f885decd798e0",
+      "quote_session_date_verified": true,
+      "split_adjustment_reported": "1:1"
+    }
+  ],
+  "limits": [
+    "Issuer quote does not supply opening prices. Leave open unavailable.",
+    "Adjusted close is explicitly derived from a retained provider factor; it is not issuer-reported.",
+    "Historical daily availability timestamps would be imputed exchange close plus one minute, not actual publication times.",
+    "Use a separate hashed overlay and new experiment identity; do not overwrite immutable raw captures."
+  ],
+  "longbridge_probe": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"error_code\":301600,\"message\":\"invalid symbol\",\"recoverable\":\"fix_params\",\"hint\":null,\"data\":null}"
+      }
+    ],
+    "structuredContent": {
+      "error_code": "INVALID_ARGUMENT"
+    },
+    "isError": true
+  }
+}

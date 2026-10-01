@@ -1,0 +1,642 @@
+{
+  "kind": "actual running daily short-hold study",
+  "run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "published_run_id": "577a24e71a844022b3ac86ca66e32c34",
+  "status": {
+    "run_id": "90af4c840aad48f7ab58fba7a682f96a",
+    "status": "running",
+    "phase": "evaluation",
+    "pid": 20100,
+    "started_at": "2026-09-18T21:53:09.704941+00:00",
+    "requested_start": "2000-01-01",
+    "study_mode": "short_horizon",
+    "source_run_id": "577a24e71a844022b3ac86ca66e32c34",
+    "updated_at": "2026-09-18T21:57:07.528858+00:00",
+    "discovered": 8434,
+    "requested": 8434,
+    "cached": 8234,
+    "attempted": 0,
+    "failed": 200,
+    "usable": 8234,
+    "currency": "USD",
+    "normalized": 5664,
+    "market_histories": 5664,
+    "rows": 19800186,
+    "stage": "historical_features",
+    "symbols": 1280
+  },
+  "widths": [
+    {
+      "width": 1440,
+      "status_text": "Historical research\nrunning \u00b7 historical features\n\nRunning daily screening with 1 / 3 / 5-session holds.\n\nActive run 90af4c840aad48f7ab58fba7a682f96a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD \u00b7 1,536 instrument features prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status_text": "Historical research\nrunning \u00b7 historical features\n\nRunning daily screening with 1 / 3 / 5-session holds.\n\nActive run 90af4c840aad48f7ab58fba7a682f96a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD \u00b7 2,048 instrument features prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status_text": "Historical research\nrunning \u00b7 historical features\n\nRunning daily screening with 1 / 3 / 5-session holds.\n\nActive run 90af4c840aad48f7ab58fba7a682f96a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD \u00b7 2,560 instrument features prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "status_text": "Historical research\nrunning \u00b7 historical features\n\nRunning daily screening with 1 / 3 / 5-session holds.\n\nActive run 90af4c840aad48f7ab58fba7a682f96a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD \u00b7 3,072 instrument features prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    }
+  ]
+}

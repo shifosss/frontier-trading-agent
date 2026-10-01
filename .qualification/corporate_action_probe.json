@@ -1,0 +1,107 @@
+{
+  "pre_ex_holder": {
+    "trace": [
+      {
+        "event": "ex_date",
+        "quantity": "10",
+        "receivable": "10.00"
+      },
+      {
+        "event": "payment",
+        "cash_credit": "10.00"
+      }
+    ],
+    "snapshots": [
+      {
+        "time": "1735828200000000000",
+        "cash": "1000",
+        "shares": "0",
+        "receivable": "0",
+        "nav": "1000"
+      },
+      {
+        "time": "fill:1735828200000000000",
+        "cash": "0",
+        "shares": "10",
+        "receivable": "0",
+        "nav": "1000"
+      },
+      {
+        "time": "1735914600000000000",
+        "cash": "0",
+        "shares": "10",
+        "receivable": "10.00",
+        "nav": "1000.00"
+      },
+      {
+        "time": "fill:1735914600000000000",
+        "cash": "495",
+        "shares": "5",
+        "receivable": "10.00",
+        "nav": "1000.00"
+      },
+      {
+        "time": "1736173800000000000",
+        "cash": "505",
+        "shares": "5",
+        "receivable": "0",
+        "nav": "1000"
+      }
+    ],
+    "unsupported_split": {
+      "quantity": 10.0,
+      "basis_before": 100.0,
+      "basis_after": 100.0,
+      "unrealized_at_half_price": -505.0
+    }
+  },
+  "ex_date_buyer": {
+    "trace": [
+      {
+        "event": "ex_date",
+        "quantity": "0",
+        "receivable": "0.00"
+      },
+      {
+        "event": "payment",
+        "cash_credit": "0.00"
+      }
+    ],
+    "snapshots": [
+      {
+        "time": "1735828200000000000",
+        "cash": "1000",
+        "shares": "0",
+        "receivable": "0",
+        "nav": "1000"
+      },
+      {
+        "time": "1735914600000000000",
+        "cash": "1000",
+        "shares": "0",
+        "receivable": "0.00",
+        "nav": "1000.00"
+      },
+      {
+        "time": "fill:1735914600000000000",
+        "cash": "505",
+        "shares": "5",
+        "receivable": "0.00",
+        "nav": "1000.00"
+      },
+      {
+        "time": "1736173800000000000",
+        "cash": "505",
+        "shares": "5",
+        "receivable": "0",
+        "nav": "1000"
+      }
+    ],
+    "unsupported_split": {
+      "quantity": 10.0,
+      "basis_before": 99.0,
+      "basis_after": 99.0,
+      "unrealized_at_half_price": -495.0
+    }
+  }
+}

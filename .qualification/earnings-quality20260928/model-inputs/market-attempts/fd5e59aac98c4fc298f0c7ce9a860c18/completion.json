@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "definition_sha256": "2ce0cac8cded227b612ff63c9181f64e1e84a0d6fd98e1ffb52c56a75ef75544",
+  "completed_at": "2026-09-29T14:03:47.099098+00:00",
+  "symbols": 101,
+  "copied_histories": 101,
+  "mapped_quotes": 101,
+  "outputs": {
+    "market-inputs.json": "aa0ca1fae52ea007cf9a27b9527da1894a7078bf73f26b2c5c446997342d3842",
+    "market-arrays.npz": "bbe3751e3da6531ee865e12c0ba06430b8138b4d2e1398a52d287823a390a6fd"
+  }
+}

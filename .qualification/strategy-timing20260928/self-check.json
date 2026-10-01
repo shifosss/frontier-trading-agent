@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "same-exit entry timing identity",
+    "equal-clock identity",
+    "overnight gap distinct",
+    "later unit-factor cancellation",
+    "missing/out-of-range opens preserve close-only outcome",
+    "cache/source close disagreement rejected",
+    "90 summary cells on independent synthetic cohorts",
+    "missing outcomes preserve attempted denominators",
+    "no-candidate days not credited as zero returns",
+    "CSV columns and all60 planned event-horizon rows"
+  ],
+  "real_timing_outcomes_computed": false,
+  "script_sha256": "798ce05159471258b4f5da5be346c03d64cddf75e48163f77b797f4e2e4e0c6a"
+}

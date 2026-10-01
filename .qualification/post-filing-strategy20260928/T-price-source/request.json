@@ -1,0 +1,31 @@
+{
+  "declared_at": "2026-09-28T22:49:22.950404+00:00",
+  "purpose": "Fill missing predeclared T study member with historical source only; no event returns or account run",
+  "endpoint": "https://data.alpaca.markets/v2/stocks/bars",
+  "params": {
+    "symbols": "T",
+    "timeframe": "1Day",
+    "start": "2016-01-04T00:00:00Z",
+    "end": "2026-09-19T00:00:00Z",
+    "asof": "2026-09-18",
+    "feed": "sip",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "adjustments": [
+    "raw",
+    "all"
+  ],
+  "maximum_pages_per_adjustment": 5,
+  "maximum_total_requests": 10,
+  "minimum_request_interval_seconds": 1,
+  "automatic_retries": 0,
+  "source_contract": "https://docs.alpaca.markets/us/reference/stockbars",
+  "limits": [
+    "Retrospective provider revision, not original information vintage",
+    "Vendor adjusted total-return proxy; raw bars used for whole-share sizing",
+    "Mixed price providers across six fixed issuers; exact source identities retained",
+    "No future endpoint availability used to exclude filing events"
+  ]
+}

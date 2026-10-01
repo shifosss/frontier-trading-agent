@@ -1,0 +1,267 @@
+{
+  "fixture": false,
+  "errors": [],
+  "http_errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/operator/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/datasets"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/runs"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/campaigns"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/runs/114df178722046bebaca0db1e3c7d8e7"
+    }
+  ],
+  "widths": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "filters": [
+    {
+      "width": 1440,
+      "currency": "USD",
+      "budget": 500,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.29%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 1440,
+      "currency": "USD",
+      "budget": 100000,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.36%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 1440,
+      "currency": "CAD",
+      "budget": 500,
+      "horizon": 5,
+      "cost_bps": 20,
+      "momentum_mean_return": "0.02%",
+      "complete_cohorts": 49
+    },
+    {
+      "width": 1440,
+      "currency": "CAD",
+      "budget": 100000,
+      "horizon": 20,
+      "cost_bps": 100,
+      "momentum_mean_return": "-0.00%",
+      "complete_cohorts": 11
+    },
+    {
+      "width": 768,
+      "currency": "USD",
+      "budget": 500,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.29%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 768,
+      "currency": "USD",
+      "budget": 100000,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.36%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 768,
+      "currency": "CAD",
+      "budget": 500,
+      "horizon": 5,
+      "cost_bps": 20,
+      "momentum_mean_return": "0.02%",
+      "complete_cohorts": 49
+    },
+    {
+      "width": 768,
+      "currency": "CAD",
+      "budget": 100000,
+      "horizon": 20,
+      "cost_bps": 100,
+      "momentum_mean_return": "-0.00%",
+      "complete_cohorts": 11
+    },
+    {
+      "width": 390,
+      "currency": "USD",
+      "budget": 500,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.29%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 390,
+      "currency": "USD",
+      "budget": 100000,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.36%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 390,
+      "currency": "CAD",
+      "budget": 500,
+      "horizon": 5,
+      "cost_bps": 20,
+      "momentum_mean_return": "0.02%",
+      "complete_cohorts": 49
+    },
+    {
+      "width": 390,
+      "currency": "CAD",
+      "budget": 100000,
+      "horizon": 20,
+      "cost_bps": 100,
+      "momentum_mean_return": "-0.00%",
+      "complete_cohorts": 11
+    },
+    {
+      "width": 320,
+      "currency": "USD",
+      "budget": 500,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.29%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 320,
+      "currency": "USD",
+      "budget": 100000,
+      "horizon": 10,
+      "cost_bps": 40,
+      "momentum_mean_return": "-0.36%",
+      "complete_cohorts": 24
+    },
+    {
+      "width": 320,
+      "currency": "CAD",
+      "budget": 500,
+      "horizon": 5,
+      "cost_bps": 20,
+      "momentum_mean_return": "0.02%",
+      "complete_cohorts": 49
+    },
+    {
+      "width": 320,
+      "currency": "CAD",
+      "budget": 100000,
+      "horizon": 20,
+      "cost_bps": 100,
+      "momentum_mean_return": "-0.00%",
+      "complete_cohorts": 11
+    }
+  ],
+  "downloads": {
+    "download": {
+      "status": 200,
+      "bytes": 28794394,
+      "content_disposition": "attachment; filename=\"frontier-research-114df178722046bebaca0db1e3c7d8e7.json\"",
+      "keys": [
+        "schema_version",
+        "as_of",
+        "methodology",
+        "coverage",
+        "attempts",
+        "summaries",
+        "cohorts",
+        "latest_candidates",
+        "run_id",
+        "created_at",
+        "definition",
+        "capture",
+        "forward_observation"
+      ],
+      "cohort_count": 11840
+    },
+    "forward": {
+      "status": 200,
+      "bytes": 105799,
+      "content_disposition": "attachment; filename=\"frontier-forward-114df178722046bebaca0db1e3c7d8e7.json\"",
+      "keys": [
+        "schema_version",
+        "evaluated_at",
+        "cohorts",
+        "input_rows",
+        "valid_available_endpoint_rows",
+        "stale_markets"
+      ],
+      "pending_cohorts": 96
+    }
+  },
+  "saved_status": {
+    "status": "completed",
+    "phase": "complete",
+    "discovered": 5640,
+    "requested": 5640,
+    "attempted": 58,
+    "cached": 5582,
+    "usable": 5592,
+    "failed": 48
+  },
+  "run_id": "114df178722046bebaca0db1e3c7d8e7",
+  "summary_count": 864,
+  "forward": {
+    "snapshot_id": "374906c0f24eb6790a0f8eb4410fdd48aeb4a6ca658a75259034b4cbf44d4dcd",
+    "snapshot_created": true,
+    "created_at": "2026-09-18T19:47:46.384867+00:00",
+    "snapshot_recorded_at": "2026-09-18T19:47:46.384867+00:00",
+    "status": "recorded",
+    "stale_markets": [],
+    "planned_cohorts": 96,
+    "tracked_cohorts": 96,
+    "pending_count": 96,
+    "complete_count": 0,
+    "incomplete_count": 0,
+    "version_mismatch_count": 0,
+    "evaluation_path": "artifacts/forward-studies/evaluations/6f305e0eb0ca4de6adea39d15cca843e.json"
+  },
+  "visual_review": {
+    "desktop_1440": "inspected; readable layout, controls and evidence labels",
+    "mobile_320": "inspected; stacked controls and readable content, no page overflow"
+  }
+}

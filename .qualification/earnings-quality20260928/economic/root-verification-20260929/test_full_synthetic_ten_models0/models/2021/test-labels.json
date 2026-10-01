@@ -1,0 +1,32 @@
+{
+  "0000000001:synthetic-2021-0": {
+    "status": "qualified",
+    "targets": [
+      0.10000000000000009,
+      0.0
+    ],
+    "reasons": [],
+    "entry_session": "2021-01-04",
+    "label_end_session": "2021-01-11"
+  },
+  "0000000002:synthetic-2021-1": {
+    "status": "qualified",
+    "targets": [
+      0.10000000000000009,
+      0.0
+    ],
+    "reasons": [],
+    "entry_session": "2021-01-04",
+    "label_end_session": "2021-01-11"
+  },
+  "0000000003:synthetic-2021-2": {
+    "status": "qualified",
+    "targets": [
+      0.10000000000000009,
+      0.0
+    ],
+    "reasons": [],
+    "entry_session": "2021-01-04",
+    "label_end_session": "2021-01-11"
+  }
+}

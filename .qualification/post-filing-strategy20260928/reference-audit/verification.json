@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "at": "2026-09-28T23:26:42.363772+00:00",
+  "definition_sha256": "ca842ce2c901b5ea3ae9e21bb0501ae4b1c8271804780c6292bab3846d81b5dc",
+  "event_reference_sha256": "fad3483871927fb87081efc29c203c9821d4bfb3e607f56db5fa31f63de01d8f",
+  "events_sha256": "1e10186b313e291a306e9daddbf5ae932d7361cfa4e19fce0e10d9692449feeb",
+  "market_arrays_sha256": "f351f1cb73fe73ecb954905ad8847302fee5d08c4e9cf7b4ca0b1172c76b64d8",
+  "audit_script_sha256": "5f98adee5f18bbce7f019672416766d752b37dc81be0d9ad98f512cffdeae072",
+  "scope_counts": {
+    "input_events": 252,
+    "filed_in_2017_2025": 162,
+    "outside_filing_period": 90,
+    "structurally_eligible": 121,
+    "structurally_ineligible_in_period": 41
+  },
+  "exclusion_reason_counts": {
+    "filing_date_outside_2017_2025_or_missing": 90,
+    "feature_not_qualified": 41
+  },
+  "full_six_issuer_denominator": {
+    "AAPL": {
+      "original_features": 42,
+      "in_period": 27,
+      "structurally_eligible": 27,
+      "selected": 5
+    },
+    "MSFT": {
+      "original_features": 42,
+      "in_period": 27,
+      "structurally_eligible": 27,
+      "selected": 6
+    },
+    "F": {
+      "original_features": 42,
+      "in_period": 27,
+      "structurally_eligible": 0,
+      "selected": 0
+    },
+    "T": {
+      "original_features": 42,
+      "in_period": 27,
+      "structurally_eligible": 13,
+      "selected": 3
+    },
+    "HRL": {
+      "original_features": 42,
+      "in_period": 27,
+      "structurally_eligible": 27,
+      "selected": 3
+    },
+    "BANF": {
+      "original_features": 42,
+      "in_period": 27,
+      "structurally_eligible": 27,
+      "selected": 10
+    }
+  },
+  "verified_endpoint_count": 484,
+  "all_five_session_alignments": true,
+  "selection_labels_match_frozen_S": true,
+  "missing_endpoint_events": 0,
+  "sample_support": {
+    "matched_selected_events": 27,
+    "matched_selected_issuers": 5,
+    "matched_selected_entry_years": 9,
+    "failed_gates": [
+      "fewer_than_30_matched_selected_events"
+    ],
+    "sufficient_descriptive_sample": false,
+    "establishes_profitability": false
+  },
+  "aggregate_groups_verified": 30,
+  "maximum_absolute_return_or_mean_error": "3.13921648877094556873048E-16",
+  "means_basis_points": {
+    "all_eligible": {
+      "equal_event_mean": {
+        "stock_gross_return": "74.87989552792644113455784492015722773250",
+        "benchmark_gross_return": "52.01660435232789822284143285714151158317",
+        "stock_minus_benchmark": "22.86329117559854291171641206301571614933"
+      },
+      "equal_entry_date_mean": {
+        "stock_gross_return": "73.93310744816209524524307302154677398927",
+        "benchmark_gross_return": "52.83461194608884234064419736772381614683",
+        "stock_minus_benchmark": "21.09849550207325290459887565382295784242"
+      }
+    },
+    "selected": {
+      "equal_event_mean": {
+        "stock_gross_return": "76.56551363456513665468348196033443474752",
+        "benchmark_gross_return": "72.20083833035806841062205637464061665337",
+        "stock_minus_benchmark": "4.364675304207068244061425585693818094148"
+      },
+      "equal_entry_date_mean": {
+        "stock_gross_return": "77.98842309393175488995692078020425598648",
+        "benchmark_gross_return": "76.13139634000742091060099917385092200915",
+        "stock_minus_benchmark": "1.857026753924333979355921606353333977312"
+      }
+    }
+  },
+  "selected_minus_all_eligible_excess_bps": {
+    "equal_event_mean": "-18.49861587139147466765498647732189805518",
+    "equal_entry_date_mean": "-19.24146874814891892524295404746962386511"
+  },
+  "interpretation": "Selected observations show less stock-minus-SPY association than all eligible filings under both descriptive weights. This does not establish superior stock-specific selection or causal alpha;27selected events fail the predeclared30-event support gate. Gross event means omit costs/cash and are not funded account profits.",
+  "strategy_or_helper_rerun": false,
+  "funded_account_files_read": 0,
+  "network_requests": 0
+}

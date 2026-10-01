@@ -1,0 +1,6 @@
+{
+  "stage": "primary aggregation comparison",
+  "error": "KeyError no_selected_candidate_dates",
+  "cause": "Counter output omits zero-valued keys; external checker incorrectly required explicit zero",
+  "production_artifacts_changed": false
+}

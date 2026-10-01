@@ -1,0 +1,111 @@
+{
+  "kind": "actual running multi-model study",
+  "run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "published_run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "status": {
+    "run_id": "814780d48b4141b9a82a3fb917d1b85a",
+    "status": "running",
+    "phase": "normalization",
+    "pid": 7968,
+    "started_at": "2026-09-19T19:03:32.029739+00:00",
+    "requested_start": "2000-01-01",
+    "study_mode": "multi_model",
+    "source_run_id": "90af4c840aad48f7ab58fba7a682f96a",
+    "updated_at": "2026-09-19T19:06:08.078393+00:00",
+    "discovered": 8434,
+    "requested": 8434,
+    "cached": 8234,
+    "attempted": 0,
+    "failed": 200,
+    "usable": 8234,
+    "currency": "USD",
+    "normalized": 3000,
+    "market_histories": 5664
+  },
+  "widths": [
+    {
+      "width": 1440,
+      "status_text": "Historical research\nrunning \u00b7 normalization\n\nRunning rolling model forecasts with separate fitting, calibration and test windows.\n\nActive run 814780d48b4141b9a82a3fb917d1b85a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD: 3,250 / 5,664 histories prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status_text": "Historical research\nrunning \u00b7 normalization\n\nRunning rolling model forecasts with separate fitting, calibration and test windows.\n\nActive run 814780d48b4141b9a82a3fb917d1b85a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD: 3,250 / 5,664 histories prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status_text": "Historical research\nrunning \u00b7 normalization\n\nRunning rolling model forecasts with separate fitting, calibration and test windows.\n\nActive run 814780d48b4141b9a82a3fb917d1b85a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD: 3,500 / 5,664 histories prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "status_text": "Historical research\nrunning \u00b7 normalization\n\nRunning rolling model forecasts with separate fitting, calibration and test windows.\n\nActive run 814780d48b4141b9a82a3fb917d1b85a\n\nLong histories support repeated tests before new forward observations mature.\n\n8,234 usable histories \u00b7 8,434 requested \u00b7 200 capture failures\n\nUSD: 3,500 / 5,664 histories prepared",
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost": 40,
+          "published_mode": "short_horizon"
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    }
+  ]
+}

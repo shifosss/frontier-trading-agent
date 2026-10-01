@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-09-28T18:40:19.645169+00:00",
+  "method": "GET only; journal unmodified",
+  "positions": {
+    "META": 6.0,
+    "MSFT": 15.0,
+    "XOM": 42.0
+  },
+  "expected_positions": {
+    "MSFT": 15.0,
+    "META": 6.0,
+    "XOM": 42.0
+  },
+  "cash": "81194.12",
+  "expected_cash": 81194.120002,
+  "spendable": 81194.120002,
+  "clock": {
+    "is_open": true,
+    "next_close": "2026-09-28T16:00:00-04:00",
+    "next_open": "2026-09-29T09:30:00-04:00",
+    "timestamp": "2026-09-28T14:40:19.630630395-04:00"
+  },
+  "orders": [
+    {
+      "client_order_id": "ft-235c55250cb6ffc6a3b2f8aece36f51c7f7608a6",
+      "symbol": "MSFT",
+      "status": "filled",
+      "filled_qty": "15",
+      "filled_avg_price": "511.03"
+    },
+    {
+      "client_order_id": "ft-a09fdbfa03d1a054396e63bc32b79bda24bc325c",
+      "symbol": "META",
+      "status": "filled",
+      "filled_qty": "6",
+      "filled_avg_price": "721.74"
+    },
+    {
+      "client_order_id": "ft-08e4b3a865d50557db248da1b345fd88fee78413",
+      "symbol": "XOM",
+      "status": "filled",
+      "filled_qty": "42",
+      "filled_avg_price": "162.142619"
+    }
+  ]
+}

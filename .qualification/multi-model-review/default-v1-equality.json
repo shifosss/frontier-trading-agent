@@ -1,0 +1,21 @@
+{
+  "git_head": "c50200b377741b6539f2b2d485a6c7eab685eb26",
+  "head_sha256": {
+    "strategy_study": "15d97bd4cfcd674ed1891e0c1e55c6eea6e34d6852a27f7db86eb2eeddf34489",
+    "historical_study": "f740b85202dd60d74b6a5483a0f68661f96b5fb58d846bf4b19b09d994524c8d",
+    "short_horizon_study": "4661e98748f85f39a61bfcba298f949e16272ef4f46269053e1418847962804f"
+  },
+  "current_sha256": {
+    "strategy_study": "a6aeff9faf0eea9f152c07f73df11bc7b8b631a3e966bef72e4bdb9db9e8fb04",
+    "historical_study": "9c22a45569d36c5a79c9607ffcc5e65b529d16a17af6b3643618647c6d4534dd",
+    "short_horizon_study": "b9c45efca7a3dfa59017538505d370b5bedafc3c6d4c0267d1fd88e230d3319a"
+  },
+  "deterministic_ledger_cases_exactly_equal": 360,
+  "completed_trades_compared": 35011,
+  "default_market_builder_exactly_equal": true,
+  "public_short_study_exactly_equal": true,
+  "public_fixed_rows": 90,
+  "public_rolling_rows": 3,
+  "seconds": 10.647251999995206,
+  "scope": "Current default branches match complete Git HEAD output values; no source mutation or broker access."
+}

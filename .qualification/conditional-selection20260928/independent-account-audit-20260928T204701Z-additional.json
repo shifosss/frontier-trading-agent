@@ -1,0 +1,163 @@
+{
+  "reviewed_at": "2026-09-28T20:47:01.908800+00:00",
+  "additional_accounts": 2,
+  "prior_report": "independent-account-audit-20260928T204322Z.json",
+  "prior_report_sha256": "b39e6dbf7617c29f60b19065f146e77a2d00ed407f4134830f426d8448769dbe",
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "script_sha256": "eae4dd99299b0b5c2e361dcc2eca040a64e04e04efbbb882c23f22d0ec339482",
+  "forecast_identity": "e83a9c60a9a3ecc59dcf2a73f1faaec8b806aae2c83468bed64c39decb98aed8",
+  "records": [
+    {
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 3,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 177,
+      "net_pnl": -891.0690526310422,
+      "ending_equity": 1108.9309473689586,
+      "total_return": -0.4455345263155207,
+      "max_drawdown": 0.4457619367040858,
+      "fees": 852.5648352577949,
+      "minimum_settled_cash": 2.9759946934707386,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 177,
+      "forecast_row_subset_sha256": "abe77a64ae1948065d6295cb27c4c33c0d0b887de84c1005b30e862b2a56831b",
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-3-moomoo_ca_us.json",
+      "account_sha256": "96d83a3353345770b30e6ca4cb4d0a85925357f008a719bc64b09b0eb52cb04b",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-3-moomoo_ca_us.json",
+      "manifest_sha256": "855295bd3f6cd238d40af76325f655f5bd1bacc443ab1daa800b4efc32763435"
+    },
+    {
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 5,
+      "cost_profile": "proportional",
+      "trades": 1589,
+      "net_pnl": -256.8825002318617,
+      "ending_equity": 1743.1174997681396,
+      "total_return": -0.12844125011593022,
+      "max_drawdown": 0.24786083918376645,
+      "fees": 390.1037983485384,
+      "minimum_settled_cash": 0.40191581912267793,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 4,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 5,
+          "pending_entries": 1
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 1589,
+      "forecast_row_subset_sha256": "0df7a47b7f09e3ef911a63eec797b18da77c6b181116447c863fc94296abdeb7",
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-5-proportional.json",
+      "account_sha256": "82c47fca899d16c16d8a61924b72ad8efd6caab38ab80db64f929c7dab225491",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-5-proportional.json",
+      "manifest_sha256": "d39528c30e6be62709e2f78c157050467c1153d6df5b2eae28f8999463ea0023"
+    }
+  ],
+  "qualification": [
+    "Independent accounting reconstruction from committed trade records and verified preparation-cache prices.",
+    "Fees independently reconstructed using Decimal component rounding; these are declared scenarios, not actual fills.",
+    "All recorded learned trade forecasts checked exactly against the frozen signal-date forecast map.",
+    "Source consistency is not action completeness, delisting coverage, point-in-time history or proof of profitability.",
+    "Annual boundary attribution describes preserved positions/pending entries, not an account restart.",
+    "No model fit, engine replay, source correction, broker operation or live status-file read."
+  ]
+}

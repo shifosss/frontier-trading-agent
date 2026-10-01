@@ -1,0 +1,28 @@
+{
+  "symbol": "ALM",
+  "effective_session": "2025-07-07",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/ALM/bars?timeframe=1Day&start=2025-06-27T04%3A00%3A00%2B00%3A00&end=2025-07-18T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2025-06-27T04:00:00+00:00",
+    "end": "2025-07-18T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.991298+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "ALM-2025-07-07-raw-1.beb0b3cdde443b9de8ea55dc125d47a08379f02d64901eda3a98e568dc4183e6.raw.json",
+  "sha256": "beb0b3cdde443b9de8ea55dc125d47a08379f02d64901eda3a98e568dc4183e6",
+  "bytes": 445,
+  "captured_at": "2026-09-28T19:04:31.040591+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 4,
+  "response_symbol": "ALM",
+  "pagination_complete": true
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-09-29T22:06:53.417221+00:00",
+  "automation_id": "frontier-daily-research-scan",
+  "status": "ACTIVE",
+  "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9,17;BYMINUTE=35;BYSECOND=0",
+  "target_thread_id": "01a0b4b9-74ef-74a2-9c3d-1c63324d918b",
+  "prompt_sha256": "70e558976437b65ac064ab75fadb8b9966f629306da1cd18177edcfe616b1501",
+  "updated_through_app_tool": true,
+  "verified_against_requested_prompt": true,
+  "prior_schedule_and_status_preserved": true,
+  "next_priority": "Original earlier-disclosure source-only novelty/timing audit; no backdating later10-Q features",
+  "research_complete": true,
+  "paper_watch_verified_processes": [
+    32328,
+    39892
+  ],
+  "code_checks": "8 root-generated runner tests passed;9 independent boundary tests passed; actual source/model/account audits passed",
+  "documentation_checks": {
+    "git_diff_check": "passed",
+    "local_links": "passed after URL-decoding existing Launch%20Frontier.cmd; initial checker assumption retained in tool history"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "script_sha256": "968724dcf099b37cd6a307e1c42180706c87b92ad8c6d2b9580770aebcfa084e",
+  "error": "KeyError: execution_status",
+  "interpretation": "Failed source events may omit execution_status; retain the field absence and unavailable event. Checker corrected to use the optional-field schema. No research artifact changed.",
+  "production_issue": false
+}

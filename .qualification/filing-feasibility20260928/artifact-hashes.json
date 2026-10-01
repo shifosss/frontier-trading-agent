@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-09-28T22:07:12.767276+00:00",
+  "files": {
+    "fact-context-inspection.json": "4bc3b14830b9f47e4b55f4e73f863f571627f11654a7e9abb46cd1b5ad965353",
+    "inspect_sources.py": "60da3ea748409b7a891a0cc76b34daf964244d0fd6788de87108694615f874ae",
+    "raw\\aapl_2020q3_8k_exhibit.bin": "cd4520e94378f01a326ae870874335b1c6c85aef1700951368fa68b8f58a0a9b",
+    "raw\\aapl_2020q3_8k_index.bin": "1cef1994dcec4a2623546881d936b678b20175c7d54cc14a231379caa2982093",
+    "raw\\aapl_2020q3_header.bin": "5302363137c787a960eb86cbbd999309e6456eefea7a4f668ba071487b7f87c2",
+    "raw\\aapl_2020q3_index.bin": "b7a36be235890fa93f8d07fec0d2db40b96430d48c379fefa613dbcd73813245",
+    "raw\\aapl_2020q3_original.bin": "af280db54b418fac7a0acf769d7a8ca3a5422dcb93d8567b9739debb7283ace9",
+    "raw\\aapl_eps_concept.bin": "d58cd0fce2baed8be20b7b6587917b03bb46c08fc0b527d53a4867cab9317acf",
+    "raw\\aapl_submissions.bin": "dabb28a7c4af8fac408a72345ec959c1a08255a6c5c1af99c4f22b2beacfc77f",
+    "raw\\f_2024q2_index.bin": "b0ca131f757cbbef83bd737f84287e1dad2b0045a6b33fc768c674613fae8722",
+    "raw\\f_2024q2_original.bin": "c2d4f9ab1bbef3feae8e2e2abe2c144b94823a73a55b6cd7c58a8809ce02a8e3",
+    "raw\\msft_2024q3_index.bin": "98681683a06aad92ab2a9c8c7de6be6e760df99b2b87f4c137fa371937384348",
+    "raw\\msft_2024q3_original.bin": "65f218a11d5c35016bf7c0f992ac7c28cb44ee0f436fbefb6f82ef290d827085",
+    "request.json": "7323608f4958e013aba58849203cababcf27902976e7be6ac834721722c108d0",
+    "requests.json": "c0b01ebb0ddc7575f7812bb62dfa3087a86b1f7260e09dfcedb1547001696acf",
+    "results.md": "fe613972d1b5d7b3bbc2933a8008ac657576bd2fa83e2ec4e12b4fa623db6551",
+    "strategy-memo.md": "939d27e2ca9432de3443d4717851c49e644d40e01e44f224bf46d2bd6e9b7731",
+    "verification.json": "92c226a5e0bb2313041ef61e8e1333ff86b92a1ff74fecd10638e9c0434b87bc",
+    "verify_samples.py": "e2561216f776fb837b62fe7a073a296b9611bb09b163416e3ca9a40b08be0d40"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-09-28T22:33:43.742310+00:00",
+  "command": ".venv/Scripts/python.exe -B -X utf8 .qualification/filing-source20260928/test_capture.py -v",
+  "tests": 14,
+  "result": "passed",
+  "independent_review": "strategy_design independently ran14tests and found no remaining material findings",
+  "resolved_material_findings": [
+    "Saved transport failure without payload remains explicit on resume",
+    "Saved filing reuse verifies all source bytes and exact registry row",
+    "Zero original accession issuer remains incomplete;14filed-year counts and report-period duplicates retained"
+  ],
+  "reviewed_hashes": {
+    "request.json": "dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764",
+    "capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb",
+    "test_capture.py": "c4587ccaea975b5631b86b89bd791f2bf9391c7de75e6455741e22bbf75d3e52"
+  }
+}

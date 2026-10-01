@@ -1,0 +1,87 @@
+{
+  "reviewed_at": "2026-09-28T23:23:27.765444+00:00",
+  "status": "passed",
+  "definition_sha256": "ca842ce2c901b5ea3ae9e21bb0501ae4b1c8271804780c6292bab3846d81b5dc",
+  "manifest_file_count": 1281,
+  "manifest_python_count": 58,
+  "required_small_inputs_verified": {
+    ".qualification/post-filing-strategy20260928/request.json": "5bc86722a1fa3d18bbb59327efec30aa17d3da54aa6c705ee0d2ba237042fa13",
+    ".qualification/post-filing-strategy20260928/run_study.py": "08305b00521e711ad34e77744340e9951ddda2253d1e6095bd85c48c32aeaeb8",
+    ".qualification/post-filing-strategy20260928/adapter.py": "2439d00a971c9288186a038e69c78572b686fb9085ed87f771b265229d05143c",
+    ".qualification/post-filing-strategy20260928/event_reference.py": "e6b3a1d6ad8939e56e6fe609590bf2e7e6926e2ad32ac3b1588480790b88bd2e",
+    ".qualification/post-filing-strategy20260928/market-inputs.json": "0833f7077288e8378b6bbb2a5a123730d80a47fcbad44912f8ec9fdce30b1c3d",
+    ".qualification/post-filing-strategy20260928/market-arrays.npz": "f351f1cb73fe73ecb954905ad8847302fee5d08c4e9cf7b4ca0b1172c76b64d8",
+    ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    ".qualification/post-filing-strategy20260928/plan.md": "34ad74b877de8bbe11492d84c4832cadff8e67fa01ecaadc49566dcc90a1bb4b",
+    ".qualification/filing-features20260928/attempts/657ca3491cb34dd59f29c37f3eca96c0/events.json": "1e10186b313e291a306e9daddbf5ae932d7361cfa4e19fce0e10d9692449feeb",
+    ".qualification/filing-features20260928/attempts/657ca3491cb34dd59f29c37f3eca96c0/records.json": "15c7ba84f4c8f8de7462c2c5a04fc07022d16e32c445d6cd048a0a44f189d598"
+  },
+  "all_current_src_python_files_included_and_hashed": 46,
+  "source_qualification_definition_path": ".qualification/filing-features20260928/qualification-definition.json",
+  "source_qualification_definition_sha256": "f9d7845419cf556ade90a9b5598aa3e1a93b3d4b625e226727bc384dfffb1e2b",
+  "all_feature_definition_file_entries_included": true,
+  "source_provenance_included": {
+    "AAPL": {
+      "path": "data/historical/capture-workspace/data/scanner/raw/AAPL.189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9.json",
+      "sha256": "189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9"
+    },
+    "BANF": {
+      "path": "data/historical/capture-workspace/data/scanner/raw/BANF.f6bc75656a92d68364cee2cb9a7f60070a82b843d74974d270a4d92868ab6f3f.json",
+      "sha256": "f6bc75656a92d68364cee2cb9a7f60070a82b843d74974d270a4d92868ab6f3f"
+    },
+    "F": {
+      "path": "data/historical/capture-workspace/data/scanner/raw/F.8a92537d367ea9af515dba4959a73a903ea7c68311986a41ee736e9126040908.json",
+      "sha256": "8a92537d367ea9af515dba4959a73a903ea7c68311986a41ee736e9126040908"
+    },
+    "HRL": {
+      "path": "data/historical/capture-workspace/data/scanner/raw/HRL.6e1f6f5b14f5f95a610bf80a960a881a420bb1f44773115e52bca9b4334d971e.json",
+      "sha256": "6e1f6f5b14f5f95a610bf80a960a881a420bb1f44773115e52bca9b4334d971e"
+    },
+    "MSFT": {
+      "path": "data/historical/capture-workspace/data/scanner/raw/MSFT.645938fe948c8c1654bd490a0a1143993649b3d568d0a3972c8b907243a80388.json",
+      "sha256": "645938fe948c8c1654bd490a0a1143993649b3d568d0a3972c8b907243a80388"
+    },
+    "SPY": {
+      "path": "data/historical/capture-workspace/data/scanner/raw/SPY.de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66.json",
+      "sha256": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66"
+    },
+    "T-raw": {
+      "path": ".qualification/post-filing-strategy20260928/T-price-source/raw-00-7f1b8840a107fc5f39e1bc67edcf9cac2072d7dc4f3dbf0b41e7e88f6c5c3613.json",
+      "sha256": "7f1b8840a107fc5f39e1bc67edcf9cac2072d7dc4f3dbf0b41e7e88f6c5c3613"
+    },
+    "T-all": {
+      "path": ".qualification/post-filing-strategy20260928/T-price-source/all-00-57e8a0b2fdcca85320d662957e659b337d2378236a259bc02ca852262c518e18.json",
+      "sha256": "57e8a0b2fdcca85320d662957e659b337d2378236a259bc02ca852262c518e18"
+    }
+  },
+  "declared_accounts": [
+    {
+      "arm": "income_surprise",
+      "cost_profile": "proportional"
+    },
+    {
+      "arm": "income_surprise",
+      "cost_profile": "moomoo_ca_us"
+    },
+    {
+      "arm": "filing_control",
+      "cost_profile": "proportional"
+    },
+    {
+      "arm": "filing_control",
+      "cost_profile": "moomoo_ca_us"
+    }
+  ],
+  "selected_source_events_below_predeclared_support": {
+    "eligible_filed2017_2025": 121,
+    "selected_filed2017_2025": 27,
+    "selected_issuers": 5,
+    "selected_years": 9,
+    "support": "below30selectedevents; preserve threshold and allfouraccounts"
+  },
+  "strategy_execution": false,
+  "account_outcomes_read": 0,
+  "raw_corpus_rehash_repeated": false,
+  "prior_frozen_review_files_changed": false,
+  "feature_definition_direct_inputs_checked": 18
+}

@@ -1,0 +1,41 @@
+{
+  "at": "2026-09-29T13:59:16.003519+00:00",
+  "status": "material_provenance_finding_confirmed",
+  "finding": "A quote file modified between the SHA256 check and its later read can supply changed numerical values while a completed attempt records the old hash; no terminal recheck prevents this.",
+  "location": {
+    "file": "model-inputs/prepare_market.py",
+    "first_line": 125,
+    "last_line": 130
+  },
+  "verification": {
+    "passed": 11,
+    "failed": 1,
+    "original_tests": 7,
+    "independent_tests": 5,
+    "failed_test": "test_raw_source_changed_between_hash_check_and_read_cannot_complete",
+    "mutation": "Replace the first synthetic S000 original quote close with 999 after the SHA256 gate and before the JSON read.",
+    "actual": "No ValueError; completed attempt still records the original raw SHA256.",
+    "expected": "Identity mismatch must prevent terminal completion."
+  },
+  "reviewed_collector_sha256": "636c238555ce14b2250465b40c0d98940e9ef4564ffac475f4f3f1cc645076dd",
+  "hash_source": "Exact synthetic copy created before the mutation test; unaffected by any subsequent root edit.",
+  "test_hashes": {
+    ".qualification\\earnings-quality20260928\\model-inputs\\test_prepare_market.py": "758b84128d6b88e15d25639d4626d2b43626afda0752e65a05d24d9dc9305a87",
+    ".qualification\\earnings-quality20260928\\qualification-review\\test_prepare_market_independent.py": "72ed821fef1d8824e7114f28f82dde4ccd8126f45188a9aa28e6bb20b2959197"
+  },
+  "passing_scope": [
+    "All 100 frozen issuers plus SPY retained when 99 stock histories are absent",
+    "Original vendor quote close/volume preserved separately from cached nominal sizing prices",
+    "Missing future rows remain missing without dropping a symbol",
+    "Changed frozen cache rejected before extraction",
+    "Changed original raw bytes rejected at initial check",
+    "Different raw/cache vintage hashes rejected"
+  ],
+  "suggested_minimal_remedy": "Parse original quote JSON from the same verified bytes; recheck all final source_inputs and the initial definition hash before terminal completion.",
+  "actual_market_builds": 0,
+  "actual_corpus_runs": 0,
+  "model_fits": 0,
+  "account_runs": 0,
+  "network_requests": 0,
+  "implementation_edits": 0
+}

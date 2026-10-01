@@ -1,0 +1,12 @@
+{
+  "purpose": "Independent timing arithmetic and aggregation validation, without importing Frontier trading code.",
+  "sample": "One event-horizon row per policy and horizon, chosen by minimum SHA256(policy|signal_session|symbol|horizon); no return-based selection.",
+  "raw_arithmetic": "Decimal precision50 on observed same-source raw opens,closes and adjusted closes; all three timing logs/simple returns plus entry intraday and overnight gap.",
+  "aggregation": "Independently reconstruct every primary complete-active-date mean,median,event denominator and selected/no-signal count from saved cohorts and horizon1 CSV rows.",
+  "tolerances": {
+    "log_absolute": 1e-12,
+    "simple_absolute": 1e-12,
+    "simple_relative": 2e-12
+  },
+  "outcomes_inspected_before_declaration": false
+}

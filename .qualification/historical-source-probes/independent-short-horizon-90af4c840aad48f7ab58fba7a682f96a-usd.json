@@ -1,0 +1,2565 @@
+{
+  "run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "currency_part": "USD",
+  "compact_equivalence_checked": true,
+  "status": "passed",
+  "code_identity": "9fc41227e51c48eeeeb3f64b534dab4fe893650f949070a783aa21e07a8441be",
+  "source_reuse": {
+    "run_id": "577a24e71a844022b3ac86ca66e32c34",
+    "definition_sha256": "6bbdf32aee30e7b309dc73d40961a2574482b8c1a27aee68ea381dc9a7e6a2a7",
+    "capture_index_sha256": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966",
+    "source_index_validation": "legacy source has no frozen index digest; membership, count and raw-source hashes checked",
+    "policy": "Reuse original universe, raw histories and data cutoff; no source repair added"
+  },
+  "declared_instruments": 8434,
+  "raw_sources_verified": 8234,
+  "raw_bytes_verified": 2934317749,
+  "counts": {
+    "portfolios:complete": 360,
+    "benchmarks:complete": 24,
+    "walk_forward:complete": 12,
+    "rolling_reference:complete": 12
+  },
+  "account_checks": [
+    {
+      "context": "portfolios:USD:500.0:20:momentum:1",
+      "status": "complete",
+      "ending_equity": 33.95661797466937,
+      "daily_max_drawdown": 0.9330981108284673
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum:3",
+      "status": "complete",
+      "ending_equity": 154.1442030391264,
+      "daily_max_drawdown": 0.7027394046962203
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum:5",
+      "status": "complete",
+      "ending_equity": 290.7298462454151,
+      "daily_max_drawdown": 0.4386848542989583
+    },
+    {
+      "context": "portfolios:USD:500.0:20:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 44.09109588394897,
+      "daily_max_drawdown": 0.917160453476152
+    },
+    {
+      "context": "portfolios:USD:500.0:20:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 234.14991816212952,
+      "daily_max_drawdown": 0.5773551549092124
+    },
+    {
+      "context": "portfolios:USD:500.0:20:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 502.62627298349287,
+      "daily_max_drawdown": 0.3786400950299008
+    },
+    {
+      "context": "portfolios:USD:500.0:20:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 65.27546153595578,
+      "daily_max_drawdown": 0.872721175802498
+    },
+    {
+      "context": "portfolios:USD:500.0:20:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 236.32252254462938,
+      "daily_max_drawdown": 0.6195770050993092
+    },
+    {
+      "context": "portfolios:USD:500.0:20:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 510.19394168055993,
+      "daily_max_drawdown": 0.3377018893246093
+    },
+    {
+      "context": "portfolios:USD:500.0:20:breakout:1",
+      "status": "complete",
+      "ending_equity": 46.534628352097144,
+      "daily_max_drawdown": 0.9079602696571678
+    },
+    {
+      "context": "portfolios:USD:500.0:20:breakout:3",
+      "status": "complete",
+      "ending_equity": 140.34312196871892,
+      "daily_max_drawdown": 0.739012971429406
+    },
+    {
+      "context": "portfolios:USD:500.0:20:breakout:5",
+      "status": "complete",
+      "ending_equity": 193.47861331982946,
+      "daily_max_drawdown": 0.6647319343177217
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 36.78105603655033,
+      "daily_max_drawdown": 0.9265289884689678
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 300.25405426016096,
+      "daily_max_drawdown": 0.5120059811376163
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 441.343907828145,
+      "daily_max_drawdown": 0.35123458568166344
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 42.83322754103779,
+      "daily_max_drawdown": 0.9159759127070852
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 210.5418114068474,
+      "daily_max_drawdown": 0.6236543861857996
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 438.06532642220986,
+      "daily_max_drawdown": 0.26265444941512217
+    },
+    {
+      "context": "portfolios:USD:500.0:20:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 57.1973093797108,
+      "daily_max_drawdown": 0.888865072096815
+    },
+    {
+      "context": "portfolios:USD:500.0:20:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 294.6544319537096,
+      "daily_max_drawdown": 0.5175991451550697
+    },
+    {
+      "context": "portfolios:USD:500.0:20:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 664.5756687673368,
+      "daily_max_drawdown": 0.1524440948526844
+    },
+    {
+      "context": "portfolios:USD:500.0:20:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 91.27181928225394,
+      "daily_max_drawdown": 0.8226452795347737
+    },
+    {
+      "context": "portfolios:USD:500.0:20:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 263.64006302365084,
+      "daily_max_drawdown": 0.5827091140960601
+    },
+    {
+      "context": "portfolios:USD:500.0:20:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 422.8959428813522,
+      "daily_max_drawdown": 0.39336974338948794
+    },
+    {
+      "context": "portfolios:USD:500.0:20:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 58.04468628875363,
+      "daily_max_drawdown": 0.8849329923058383
+    },
+    {
+      "context": "portfolios:USD:500.0:20:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 295.26242113392516,
+      "daily_max_drawdown": 0.5092816999736588
+    },
+    {
+      "context": "portfolios:USD:500.0:20:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 280.4474161493738,
+      "daily_max_drawdown": 0.5736525483193424
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 95.53094842315534,
+      "daily_max_drawdown": 0.8135250749031566
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 542.7210099513277,
+      "daily_max_drawdown": 0.37151457487857265
+    },
+    {
+      "context": "portfolios:USD:500.0:20:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 607.8054176280831,
+      "daily_max_drawdown": 0.40381193915539326
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum:1",
+      "status": "complete",
+      "ending_equity": 22.4529273092272,
+      "daily_max_drawdown": 0.9551394656117543
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum:3",
+      "status": "complete",
+      "ending_equity": 36.321808320307866,
+      "daily_max_drawdown": 0.9283641774395607
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum:5",
+      "status": "complete",
+      "ending_equity": 122.58744927778709,
+      "daily_max_drawdown": 0.7713447773330337
+    },
+    {
+      "context": "portfolios:USD:500.0:40:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 24.94910985903579,
+      "daily_max_drawdown": 0.9523052005030997
+    },
+    {
+      "context": "portfolios:USD:500.0:40:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 57.57358881361383,
+      "daily_max_drawdown": 0.8898818661843929
+    },
+    {
+      "context": "portfolios:USD:500.0:40:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 222.69287183879067,
+      "daily_max_drawdown": 0.697185976053325
+    },
+    {
+      "context": "portfolios:USD:500.0:40:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 46.59017203620567,
+      "daily_max_drawdown": 0.9080977955841975
+    },
+    {
+      "context": "portfolios:USD:500.0:40:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 86.88582263330498,
+      "daily_max_drawdown": 0.8336130875302896
+    },
+    {
+      "context": "portfolios:USD:500.0:40:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 133.29944808168815,
+      "daily_max_drawdown": 0.746281366458783
+    },
+    {
+      "context": "portfolios:USD:500.0:40:breakout:1",
+      "status": "complete",
+      "ending_equity": 32.56628916499016,
+      "daily_max_drawdown": 0.935932816033699
+    },
+    {
+      "context": "portfolios:USD:500.0:40:breakout:3",
+      "status": "complete",
+      "ending_equity": 64.237737875762,
+      "daily_max_drawdown": 0.877398224323381
+    },
+    {
+      "context": "portfolios:USD:500.0:40:breakout:5",
+      "status": "complete",
+      "ending_equity": 88.87963310760675,
+      "daily_max_drawdown": 0.8330694348450279
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 19.631107914923422,
+      "daily_max_drawdown": 0.9607377841701532
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 38.04536957792735,
+      "daily_max_drawdown": 0.9239092608441453
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 224.10475174688435,
+      "daily_max_drawdown": 0.5915217692033772
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 24.494017864865135,
+      "daily_max_drawdown": 0.9510641736922111
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 86.66898117508694,
+      "daily_max_drawdown": 0.84452265420193
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 166.38031801345178,
+      "daily_max_drawdown": 0.7038317297802225
+    },
+    {
+      "context": "portfolios:USD:500.0:40:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 25.31112108379867,
+      "daily_max_drawdown": 0.9499354805590419
+    },
+    {
+      "context": "portfolios:USD:500.0:40:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 89.04803591281954,
+      "daily_max_drawdown": 0.8404055075782133
+    },
+    {
+      "context": "portfolios:USD:500.0:40:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 252.54681617976905,
+      "daily_max_drawdown": 0.5746552473637196
+    },
+    {
+      "context": "portfolios:USD:500.0:40:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 49.486518181145314,
+      "daily_max_drawdown": 0.9020054477237824
+    },
+    {
+      "context": "portfolios:USD:500.0:40:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 95.51404069669798,
+      "daily_max_drawdown": 0.8292494499765806
+    },
+    {
+      "context": "portfolios:USD:500.0:40:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 173.25958663510755,
+      "daily_max_drawdown": 0.6951109942485398
+    },
+    {
+      "context": "portfolios:USD:500.0:40:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 33.668491874730464,
+      "daily_max_drawdown": 0.933493704020429
+    },
+    {
+      "context": "portfolios:USD:500.0:40:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 87.98956404829275,
+      "daily_max_drawdown": 0.82899158384582
+    },
+    {
+      "context": "portfolios:USD:500.0:40:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 173.0022874675135,
+      "daily_max_drawdown": 0.6780356144942723
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 19.941118646341746,
+      "daily_max_drawdown": 0.960237112090544
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 81.06462344755339,
+      "daily_max_drawdown": 0.8452340529699484
+    },
+    {
+      "context": "portfolios:USD:500.0:40:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 307.9669589434849,
+      "daily_max_drawdown": 0.5309105335624011
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum:1",
+      "status": "complete",
+      "ending_equity": 14.854716030020898,
+      "daily_max_drawdown": 0.970466497935032
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum:3",
+      "status": "complete",
+      "ending_equity": 20.04906540707178,
+      "daily_max_drawdown": 0.9599309170638168
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum:5",
+      "status": "complete",
+      "ending_equity": 20.654723837894128,
+      "daily_max_drawdown": 0.959169775219882
+    },
+    {
+      "context": "portfolios:USD:500.0:100:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 18.281184933790197,
+      "daily_max_drawdown": 0.9634376301324196
+    },
+    {
+      "context": "portfolios:USD:500.0:100:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 22.092411051138935,
+      "daily_max_drawdown": 0.9564175747378728
+    },
+    {
+      "context": "portfolios:USD:500.0:100:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 25.439999798932835,
+      "daily_max_drawdown": 0.9518401483631765
+    },
+    {
+      "context": "portfolios:USD:500.0:100:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 29.08332771652232,
+      "daily_max_drawdown": 0.9418990779083086
+    },
+    {
+      "context": "portfolios:USD:500.0:100:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 33.94857651333701,
+      "daily_max_drawdown": 0.9346494990866437
+    },
+    {
+      "context": "portfolios:USD:500.0:100:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 42.5703103684071,
+      "daily_max_drawdown": 0.917510862104064
+    },
+    {
+      "context": "portfolios:USD:500.0:100:breakout:1",
+      "status": "complete",
+      "ending_equity": 22.27831553142684,
+      "daily_max_drawdown": 0.9556314389363643
+    },
+    {
+      "context": "portfolios:USD:500.0:100:breakout:3",
+      "status": "complete",
+      "ending_equity": 27.473828073294822,
+      "daily_max_drawdown": 0.9463357301778651
+    },
+    {
+      "context": "portfolios:USD:500.0:100:breakout:5",
+      "status": "complete",
+      "ending_equity": 25.060185455071853,
+      "daily_max_drawdown": 0.9513964184394207
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 13.194497256782835,
+      "daily_max_drawdown": 0.9736110054864343
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 17.50529946177813,
+      "daily_max_drawdown": 0.9650110408121424
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 22.264938263018824,
+      "daily_max_drawdown": 0.9554958793140849
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 15.562223479674003,
+      "daily_max_drawdown": 0.9691013730290955
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 21.49599499816994,
+      "daily_max_drawdown": 0.9571822430884162
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 23.511207815210728,
+      "daily_max_drawdown": 0.9530440096795407
+    },
+    {
+      "context": "portfolios:USD:500.0:100:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 18.568731578947812,
+      "daily_max_drawdown": 0.9628625368421044
+    },
+    {
+      "context": "portfolios:USD:500.0:100:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 22.69758083886522,
+      "daily_max_drawdown": 0.9546969630248991
+    },
+    {
+      "context": "portfolios:USD:500.0:100:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 31.817103965181182,
+      "daily_max_drawdown": 0.9382128314017284
+    },
+    {
+      "context": "portfolios:USD:500.0:100:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 29.855424610726033,
+      "daily_max_drawdown": 0.9402891507785479
+    },
+    {
+      "context": "portfolios:USD:500.0:100:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 36.05534873725099,
+      "daily_max_drawdown": 0.9293384925297565
+    },
+    {
+      "context": "portfolios:USD:500.0:100:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 50.20572750456619,
+      "daily_max_drawdown": 0.9012293563708524
+    },
+    {
+      "context": "portfolios:USD:500.0:100:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 23.18773065079908,
+      "daily_max_drawdown": 0.9537604087354807
+    },
+    {
+      "context": "portfolios:USD:500.0:100:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 28.31093397326783,
+      "daily_max_drawdown": 0.9438531724043188
+    },
+    {
+      "context": "portfolios:USD:500.0:100:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 32.09093413407292,
+      "daily_max_drawdown": 0.9359881322788213
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 13.473455950191866,
+      "daily_max_drawdown": 0.9730530880996162
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 17.522728754767265,
+      "daily_max_drawdown": 0.9651589581252298
+    },
+    {
+      "context": "portfolios:USD:500.0:100:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 27.552749193549886,
+      "daily_max_drawdown": 0.9458358223510491
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum:1",
+      "status": "complete",
+      "ending_equity": 65.38263880386056,
+      "daily_max_drawdown": 0.9675639905895123
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum:3",
+      "status": "complete",
+      "ending_equity": 382.78973401778245,
+      "daily_max_drawdown": 0.8147723892451061
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum:5",
+      "status": "complete",
+      "ending_equity": 1338.600771811496,
+      "daily_max_drawdown": 0.4187834145473296
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 122.19530360181328,
+      "daily_max_drawdown": 0.9403494354289411
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 918.6366478530683,
+      "daily_max_drawdown": 0.6066060457760183
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 2425.1999331464835,
+      "daily_max_drawdown": 0.394883474202425
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 166.83685925738536,
+      "daily_max_drawdown": 0.9194034591335809
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 1076.441553880058,
+      "daily_max_drawdown": 0.5450805360072786
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 2063.3305252936802,
+      "daily_max_drawdown": 0.275389675968841
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:breakout:1",
+      "status": "complete",
+      "ending_equity": 71.15824917098375,
+      "daily_max_drawdown": 0.9650377141024904
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:breakout:3",
+      "status": "complete",
+      "ending_equity": 436.5790581302314,
+      "daily_max_drawdown": 0.7839117424492208
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:breakout:5",
+      "status": "complete",
+      "ending_equity": 574.0924545062655,
+      "daily_max_drawdown": 0.7301474298713841
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 194.76311009148583,
+      "daily_max_drawdown": 0.9026184449542571
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 1093.357240796191,
+      "daily_max_drawdown": 0.49584076893781115
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 1382.5424682625107,
+      "daily_max_drawdown": 0.43248514938232585
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 178.62011372161345,
+      "daily_max_drawdown": 0.9133428546793689
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 969.2268943762197,
+      "daily_max_drawdown": 0.5329958740049634
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 1673.8594197382668,
+      "daily_max_drawdown": 0.3399208423586243
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 247.59778320508434,
+      "daily_max_drawdown": 0.8828499416832077
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1241.8478845049958,
+      "daily_max_drawdown": 0.5225590724404775
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 2845.2271935107383,
+      "daily_max_drawdown": 0.19808144876580458
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 237.98183591984787,
+      "daily_max_drawdown": 0.8872044716412479
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1388.0085300865776,
+      "daily_max_drawdown": 0.5463073493892631
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 2798.9356125582954,
+      "daily_max_drawdown": 0.211994847042986
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 149.8801283853685,
+      "daily_max_drawdown": 0.9258321222515751
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1049.12129243331,
+      "daily_max_drawdown": 0.5267152591988704
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 1057.6253668422728,
+      "daily_max_drawdown": 0.5470667898781205
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 270.7234113186203,
+      "daily_max_drawdown": 0.866191101370603
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 2146.1312796999246,
+      "daily_max_drawdown": 0.3699164419191777
+    },
+    {
+      "context": "portfolios:USD:2000.0:20:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 2747.4126714412287,
+      "daily_max_drawdown": 0.36684538888065277
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum:1",
+      "status": "complete",
+      "ending_equity": 24.105730473417164,
+      "daily_max_drawdown": 0.9880481719937073
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum:3",
+      "status": "complete",
+      "ending_equity": 124.06098739682555,
+      "daily_max_drawdown": 0.9412519820308514
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum:5",
+      "status": "complete",
+      "ending_equity": 345.32828278620946,
+      "daily_max_drawdown": 0.8307148117530865
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 26.637745262905685,
+      "daily_max_drawdown": 0.9868200656084576
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 203.77275370541392,
+      "daily_max_drawdown": 0.8987929117367789
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 631.9516107774773,
+      "daily_max_drawdown": 0.7449881902618748
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 51.40913015110523,
+      "daily_max_drawdown": 0.9746833961328624
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 183.89363815837632,
+      "daily_max_drawdown": 0.9102335753534084
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 842.2487986323797,
+      "daily_max_drawdown": 0.6612143633665991
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:breakout:1",
+      "status": "complete",
+      "ending_equity": 32.67982729050129,
+      "daily_max_drawdown": 0.9839234533066918
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:breakout:3",
+      "status": "complete",
+      "ending_equity": 130.63035236427368,
+      "daily_max_drawdown": 0.9348746037172605
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:breakout:5",
+      "status": "complete",
+      "ending_equity": 298.70190081636383,
+      "daily_max_drawdown": 0.8556017897496718
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 21.808943623691977,
+      "daily_max_drawdown": 0.989105330109164
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 263.46482383423813,
+      "daily_max_drawdown": 0.8703737647586041
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 622.6575902286348,
+      "daily_max_drawdown": 0.7023637554261606
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 28.6162650067722,
+      "daily_max_drawdown": 0.9858281840697389
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 218.9780232182926,
+      "daily_max_drawdown": 0.8911423273848337
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 693.3026259674241,
+      "daily_max_drawdown": 0.6939900285341596
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 35.081308771082064,
+      "daily_max_drawdown": 0.9826528164486261
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 334.7763020196619,
+      "daily_max_drawdown": 0.8531548832161195
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 1356.7566823478337,
+      "daily_max_drawdown": 0.49509105628869543
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 62.56193234093399,
+      "daily_max_drawdown": 0.9693075553124038
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 287.36669089502163,
+      "daily_max_drawdown": 0.8693812910530359
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 1231.3766339113065,
+      "daily_max_drawdown": 0.5138090878198882
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 36.20322634546276,
+      "daily_max_drawdown": 0.9820717587886238
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 373.52147614960927,
+      "daily_max_drawdown": 0.8135564852480041
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 700.3891386771542,
+      "daily_max_drawdown": 0.6954517642159384
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 33.83184989956983,
+      "daily_max_drawdown": 0.9830840750502151
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 692.6972740734655,
+      "daily_max_drawdown": 0.737816238948309
+    },
+    {
+      "context": "portfolios:USD:2000.0:40:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 1589.4905138299396,
+      "daily_max_drawdown": 0.45894996508057617
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum:1",
+      "status": "complete",
+      "ending_equity": 14.941367790773798,
+      "daily_max_drawdown": 0.9925732986033816
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum:3",
+      "status": "complete",
+      "ending_equity": 20.010296602856506,
+      "daily_max_drawdown": 0.9899948516985717
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum:5",
+      "status": "complete",
+      "ending_equity": 27.197882994902198,
+      "daily_max_drawdown": 0.9864493980656043
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 18.570931912279477,
+      "daily_max_drawdown": 0.9907204625653407
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 22.735469840578567,
+      "daily_max_drawdown": 0.9886601267399185
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 65.24311453848624,
+      "daily_max_drawdown": 0.969617982120965
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 29.340849946812924,
+      "daily_max_drawdown": 0.9853426404420915
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 36.20067700270767,
+      "daily_max_drawdown": 0.9823391973042785
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 50.161524742262834,
+      "daily_max_drawdown": 0.9756355393627517
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:breakout:1",
+      "status": "complete",
+      "ending_equity": 22.51147580414723,
+      "daily_max_drawdown": 0.9887912795977308
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:breakout:3",
+      "status": "complete",
+      "ending_equity": 27.59012506344018,
+      "daily_max_drawdown": 0.9863236975559935
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:breakout:5",
+      "status": "complete",
+      "ending_equity": 45.17487213800827,
+      "daily_max_drawdown": 0.9774125639309958
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 13.200473552664807,
+      "daily_max_drawdown": 0.9933997632236676
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 18.15430113124961,
+      "daily_max_drawdown": 0.9909242793602342
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 27.767453422684905,
+      "daily_max_drawdown": 0.986493351939441
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 16.18691786379645,
+      "daily_max_drawdown": 0.9919680210604205
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 21.701861147322774,
+      "daily_max_drawdown": 0.9892277499573757
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 52.798443431093304,
+      "daily_max_drawdown": 0.9737183015985578
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 18.670453261882493,
+      "daily_max_drawdown": 0.9906647733690588
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 23.52500213837447,
+      "daily_max_drawdown": 0.988416311014041
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 83.84752432480927,
+      "daily_max_drawdown": 0.9614984183335895
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 30.83448616894369,
+      "daily_max_drawdown": 0.9845827569155281
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 43.62983213450137,
+      "daily_max_drawdown": 0.9784281652271785
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 86.40387006324924,
+      "daily_max_drawdown": 0.9587670488184503
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 23.340165353056967,
+      "daily_max_drawdown": 0.9883638848327412
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 31.597062086743467,
+      "daily_max_drawdown": 0.984400801483327
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 87.95541785294725,
+      "daily_max_drawdown": 0.9564323615014874
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 13.762417377814138,
+      "daily_max_drawdown": 0.9931187913110929
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 20.821142496608896,
+      "daily_max_drawdown": 0.9897800217513947
+    },
+    {
+      "context": "portfolios:USD:2000.0:100:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 146.54167014871976,
+      "daily_max_drawdown": 0.9302743398385904
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum:1",
+      "status": "complete",
+      "ending_equity": 230.78671939129595,
+      "daily_max_drawdown": 0.977038035975083
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum:3",
+      "status": "complete",
+      "ending_equity": 1869.695937145879,
+      "daily_max_drawdown": 0.8144891972157899
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum:5",
+      "status": "complete",
+      "ending_equity": 4124.130607099154,
+      "daily_max_drawdown": 0.6037830584127746
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 709.1763213343149,
+      "daily_max_drawdown": 0.9296233282724238
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 5195.802634330606,
+      "daily_max_drawdown": 0.5713856835842885
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 15080.310887678552,
+      "daily_max_drawdown": 0.4079695723951523
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 662.5540690342453,
+      "daily_max_drawdown": 0.935102899300583
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 4862.741918679434,
+      "daily_max_drawdown": 0.6480552510241697
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 11224.684890853958,
+      "daily_max_drawdown": 0.27012418624414536
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:breakout:1",
+      "status": "complete",
+      "ending_equity": 167.84004402573578,
+      "daily_max_drawdown": 0.9832186609695716
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:breakout:3",
+      "status": "complete",
+      "ending_equity": 1958.0413076775303,
+      "daily_max_drawdown": 0.8125218722148787
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:breakout:5",
+      "status": "complete",
+      "ending_equity": 2405.991420701222,
+      "daily_max_drawdown": 0.7685180608370301
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 984.7425736341431,
+      "daily_max_drawdown": 0.9016835168485646
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 5727.180955523598,
+      "daily_max_drawdown": 0.5031910770159437
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 9600.306279744713,
+      "daily_max_drawdown": 0.38780684002218246
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 1018.7702819884618,
+      "daily_max_drawdown": 0.9016848704117384
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 5220.94987305481,
+      "daily_max_drawdown": 0.5167042593031346
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 7506.377717491982,
+      "daily_max_drawdown": 0.4004882114452133
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 1133.357551675247,
+      "daily_max_drawdown": 0.8938241473927685
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 7200.017949709859,
+      "daily_max_drawdown": 0.4599550194270313
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 15135.899895434111,
+      "daily_max_drawdown": 0.237727735098188
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 984.5864854087417,
+      "daily_max_drawdown": 0.9070239856211175
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 6580.651340930601,
+      "daily_max_drawdown": 0.5470845642172504
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 14363.124607584654,
+      "daily_max_drawdown": 0.2129488338883564
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 545.8962719283679,
+      "daily_max_drawdown": 0.9471335839063525
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 3501.122414459767,
+      "daily_max_drawdown": 0.666852652581593
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 5376.221017474793,
+      "daily_max_drawdown": 0.6005996158334803
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 1870.1636336808845,
+      "daily_max_drawdown": 0.8240525912858125
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 10509.24525103255,
+      "daily_max_drawdown": 0.393207687214714
+    },
+    {
+      "context": "portfolios:USD:10000.0:20:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 20129.628787104517,
+      "daily_max_drawdown": 0.25068225399426247
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum:1",
+      "status": "complete",
+      "ending_equity": 28.204628199842436,
+      "daily_max_drawdown": 0.9971883201123173
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum:3",
+      "status": "complete",
+      "ending_equity": 372.60514278554945,
+      "daily_max_drawdown": 0.9628501498085011
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum:5",
+      "status": "complete",
+      "ending_equity": 1559.6497590840936,
+      "daily_max_drawdown": 0.8465447921068906
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 35.57163849741028,
+      "daily_max_drawdown": 0.9964634378898726
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 1124.4102280055406,
+      "daily_max_drawdown": 0.8898508497381521
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 4322.9684182448555,
+      "daily_max_drawdown": 0.6911026814045897
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 69.14814995397316,
+      "daily_max_drawdown": 0.9931695700947124
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 936.7265069894266,
+      "daily_max_drawdown": 0.9104825865092634
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 4176.389253509486,
+      "daily_max_drawdown": 0.6245481700885371
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:breakout:1",
+      "status": "complete",
+      "ending_equity": 36.57849348965196,
+      "daily_max_drawdown": 0.9963730910461516
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:breakout:3",
+      "status": "complete",
+      "ending_equity": 656.3616954789221,
+      "daily_max_drawdown": 0.9343638304521078
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:breakout:5",
+      "status": "complete",
+      "ending_equity": 1486.5359046142391,
+      "daily_max_drawdown": 0.8534107717084308
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 29.04608419833399,
+      "daily_max_drawdown": 0.9970953915801666
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 1132.2660857475917,
+      "daily_max_drawdown": 0.8868921926169523
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 4138.827336763573,
+      "daily_max_drawdown": 0.6593895213868132
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 70.75179688553888,
+      "daily_max_drawdown": 0.9929565234294132
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1195.6387542906702,
+      "daily_max_drawdown": 0.8829888696884128
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 3070.8952432121396,
+      "daily_max_drawdown": 0.7024094816989785
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 78.35079135243285,
+      "daily_max_drawdown": 0.9922745062960834
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1694.2159809061923,
+      "daily_max_drawdown": 0.8485703534857107
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 7152.347145000863,
+      "daily_max_drawdown": 0.48124765735398656
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 108.34663773328896,
+      "daily_max_drawdown": 0.9893571962827353
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1610.9954954647214,
+      "daily_max_drawdown": 0.8577014474059523
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 5588.75503835685,
+      "daily_max_drawdown": 0.5417970697358447
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 83.81852625301681,
+      "daily_max_drawdown": 0.9916181473746983
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1499.4626033821032,
+      "daily_max_drawdown": 0.8532522638101884
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 3089.84762413683,
+      "daily_max_drawdown": 0.7419740006192457
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 121.94050358018164,
+      "daily_max_drawdown": 0.9879896295399406
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 2805.0385623248035,
+      "daily_max_drawdown": 0.7791932972386864
+    },
+    {
+      "context": "portfolios:USD:10000.0:40:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 8192.451460632235,
+      "daily_max_drawdown": 0.47333033753213705
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum:1",
+      "status": "complete",
+      "ending_equity": 15.406234961913158,
+      "daily_max_drawdown": 0.9984722525022557
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum:3",
+      "status": "complete",
+      "ending_equity": 20.78211888578506,
+      "daily_max_drawdown": 0.9979278902091563
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum:5",
+      "status": "complete",
+      "ending_equity": 60.105458732843175,
+      "daily_max_drawdown": 0.994001426896523
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 18.68400430434403,
+      "daily_max_drawdown": 0.9981338465484485
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 24.927711239194796,
+      "daily_max_drawdown": 0.9975187133236052
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 174.9344105517862,
+      "daily_max_drawdown": 0.982758322136663
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 29.869438773244596,
+      "daily_max_drawdown": 0.9970281520303453
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 46.7271931845807,
+      "daily_max_drawdown": 0.9954404586560468
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 146.09202364211498,
+      "daily_max_drawdown": 0.985842308487169
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:breakout:1",
+      "status": "complete",
+      "ending_equity": 22.555936526934367,
+      "daily_max_drawdown": 0.9977538098472675
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:breakout:3",
+      "status": "complete",
+      "ending_equity": 34.670906894109315,
+      "daily_max_drawdown": 0.9965655358216413
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:breakout:5",
+      "status": "complete",
+      "ending_equity": 248.16975713828037,
+      "daily_max_drawdown": 0.9756832858821125
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 13.616467794483572,
+      "daily_max_drawdown": 0.9986383532205516
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 20.427628511000695,
+      "daily_max_drawdown": 0.9979572371489
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 191.99202107853904,
+      "daily_max_drawdown": 0.9812413155404914
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 16.425834661893937,
+      "daily_max_drawdown": 0.9983663880334421
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 27.02543831900055,
+      "daily_max_drawdown": 0.9973117925961444
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 248.36689493353347,
+      "daily_max_drawdown": 0.9754503537345987
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 20.09486597789176,
+      "daily_max_drawdown": 0.9979905134022108
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 32.660535896223635,
+      "daily_max_drawdown": 0.9967948610306688
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 585.2391500783377,
+      "daily_max_drawdown": 0.9465163534082345
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 32.75187136675272,
+      "daily_max_drawdown": 0.9967284153590547
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 56.99509411980804,
+      "daily_max_drawdown": 0.9943723300908847
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 430.2651657881512,
+      "daily_max_drawdown": 0.9591676745363126
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 23.58914976249857,
+      "daily_max_drawdown": 0.9976478785256041
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 145.65746848293742,
+      "daily_max_drawdown": 0.9854342531517063
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 574.4576797853186,
+      "daily_max_drawdown": 0.9474403470606582
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 15.604425294710229,
+      "daily_max_drawdown": 0.9984395574705289
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 110.05609613215503,
+      "daily_max_drawdown": 0.9892324367966002
+    },
+    {
+      "context": "portfolios:USD:10000.0:100:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 679.9385912110721,
+      "daily_max_drawdown": 0.9353385222369163
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum:1",
+      "status": "complete",
+      "ending_equity": 3279.634702921561,
+      "daily_max_drawdown": 0.9673767813222095
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum:3",
+      "status": "complete",
+      "ending_equity": 15173.399315331179,
+      "daily_max_drawdown": 0.8495256711365858
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum:5",
+      "status": "complete",
+      "ending_equity": 34824.02681111085,
+      "daily_max_drawdown": 0.6639020286308028
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 6096.249038990808,
+      "daily_max_drawdown": 0.9395340055761979
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 66780.6498299018,
+      "daily_max_drawdown": 0.5130692322989386
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 154534.46607639582,
+      "daily_max_drawdown": 0.403021715974315
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 5484.946376785504,
+      "daily_max_drawdown": 0.9462258638556482
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 43474.195059512596,
+      "daily_max_drawdown": 0.6593419412522223
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 121238.39342433019,
+      "daily_max_drawdown": 0.2926755542708226
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:breakout:1",
+      "status": "complete",
+      "ending_equity": 1110.4775090229089,
+      "daily_max_drawdown": 0.9894674907694164
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:breakout:3",
+      "status": "complete",
+      "ending_equity": 17653.29817322364,
+      "daily_max_drawdown": 0.8296354696924555
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:breakout:5",
+      "status": "complete",
+      "ending_equity": 22478.771794355613,
+      "daily_max_drawdown": 0.7796717140429086
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 7915.900076069959,
+      "daily_max_drawdown": 0.9208971264055907
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 47408.338536742696,
+      "daily_max_drawdown": 0.601317478985932
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 86622.81702796035,
+      "daily_max_drawdown": 0.39671022529554156
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 9573.049114970092,
+      "daily_max_drawdown": 0.9062847783471316
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 44170.47502182919,
+      "daily_max_drawdown": 0.5735288252542393
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 53111.53182328734,
+      "daily_max_drawdown": 0.557750865719511
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 10344.768139459673,
+      "daily_max_drawdown": 0.9017724489548157
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 61959.828390287854,
+      "daily_max_drawdown": 0.5141181283975789
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 160178.17835072687,
+      "daily_max_drawdown": 0.206009079369459
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 9118.671334757168,
+      "daily_max_drawdown": 0.9138130170620141
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 56294.13479233686,
+      "daily_max_drawdown": 0.5854807929391476
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 127975.67890502755,
+      "daily_max_drawdown": 0.22349960654033507
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 4018.9403634728483,
+      "daily_max_drawdown": 0.9607361142857357
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 28777.60713898415,
+      "daily_max_drawdown": 0.7146032561961742
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 50490.38310214988,
+      "daily_max_drawdown": 0.6203387694226796
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 18256.70431673727,
+      "daily_max_drawdown": 0.8285871475751126
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 96007.17419660902,
+      "daily_max_drawdown": 0.4890909820598296
+    },
+    {
+      "context": "portfolios:USD:100000.0:20:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 187476.75363659495,
+      "daily_max_drawdown": 0.2790415851305823
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum:1",
+      "status": "complete",
+      "ending_equity": 88.03896261247125,
+      "daily_max_drawdown": 0.9991225319308379
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum:3",
+      "status": "complete",
+      "ending_equity": 3087.4085149670764,
+      "daily_max_drawdown": 0.9692183705117596
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum:5",
+      "status": "complete",
+      "ending_equity": 10900.924534592616,
+      "daily_max_drawdown": 0.8927109740941186
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 161.09066053629306,
+      "daily_max_drawdown": 0.998399107507404
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 8599.20428303285,
+      "daily_max_drawdown": 0.9181982032618211
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 49749.01096822675,
+      "daily_max_drawdown": 0.6483483927328881
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 223.4142455209438,
+      "daily_max_drawdown": 0.9977910021850389
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 8723.6414846332,
+      "daily_max_drawdown": 0.9197254929226009
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 34187.00438514884,
+      "daily_max_drawdown": 0.6976718413167564
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:breakout:1",
+      "status": "complete",
+      "ending_equity": 106.55889121942964,
+      "daily_max_drawdown": 0.9989441328481604
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:breakout:3",
+      "status": "complete",
+      "ending_equity": 5373.262009247179,
+      "daily_max_drawdown": 0.9471913773431683
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:breakout:5",
+      "status": "complete",
+      "ending_equity": 10596.3941526519,
+      "daily_max_drawdown": 0.8959660213017202
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 445.5009617039905,
+      "daily_max_drawdown": 0.9955449903829601
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 11206.129936095458,
+      "daily_max_drawdown": 0.8879922868274
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 31697.156214215152,
+      "daily_max_drawdown": 0.6962134164821729
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 631.1276973925854,
+      "daily_max_drawdown": 0.9937188067558976
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 10299.122767529298,
+      "daily_max_drawdown": 0.8992829150502443
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 24600.286473735232,
+      "daily_max_drawdown": 0.7726176397571713
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 755.8252231503874,
+      "daily_max_drawdown": 0.9925773029621103
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 15054.370453789892,
+      "daily_max_drawdown": 0.8633104333116395
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 57824.114766732615,
+      "daily_max_drawdown": 0.5721318479178796
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 713.3267873040688,
+      "daily_max_drawdown": 0.9929082910157456
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 14650.960410118023,
+      "daily_max_drawdown": 0.8696812343236278
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 57274.46505682001,
+      "daily_max_drawdown": 0.5360933925423443
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 537.2754591426043,
+      "daily_max_drawdown": 0.9947485738495113
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 10419.89985319035,
+      "daily_max_drawdown": 0.8962710812169106
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 25209.961139515723,
+      "daily_max_drawdown": 0.7890451603895756
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 1603.9263200255355,
+      "daily_max_drawdown": 0.9839835693065215
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 29512.042571101567,
+      "daily_max_drawdown": 0.7820435112026942
+    },
+    {
+      "context": "portfolios:USD:100000.0:40:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 102230.70895386962,
+      "daily_max_drawdown": 0.4402576745829049
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum:1",
+      "status": "complete",
+      "ending_equity": 16.057572848182307,
+      "daily_max_drawdown": 0.9998406538713646
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum:3",
+      "status": "complete",
+      "ending_equity": 23.99967032642953,
+      "daily_max_drawdown": 0.9997605935067667
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum:5",
+      "status": "complete",
+      "ending_equity": 616.954148787583,
+      "daily_max_drawdown": 0.9938438530438294
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:trend_pullback:1",
+      "status": "complete",
+      "ending_equity": 19.920451487989208,
+      "daily_max_drawdown": 0.9998010908372593
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:trend_pullback:3",
+      "status": "complete",
+      "ending_equity": 46.114460470063804,
+      "daily_max_drawdown": 0.9995394506226007
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:trend_pullback:5",
+      "status": "complete",
+      "ending_equity": 1410.6479395581343,
+      "daily_max_drawdown": 0.9864253401817725
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:mean_reversion:1",
+      "status": "complete",
+      "ending_equity": 31.828277796886645,
+      "daily_max_drawdown": 0.9996835755028539
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:mean_reversion:3",
+      "status": "complete",
+      "ending_equity": 65.73623201051065,
+      "daily_max_drawdown": 0.9993612516882467
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:mean_reversion:5",
+      "status": "complete",
+      "ending_equity": 1833.575402028658,
+      "daily_max_drawdown": 0.9830645600466319
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:breakout:1",
+      "status": "complete",
+      "ending_equity": 22.777915012144014,
+      "daily_max_drawdown": 0.9997731611998747
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:breakout:3",
+      "status": "complete",
+      "ending_equity": 166.44050695395404,
+      "daily_max_drawdown": 0.9983355949304604
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:breakout:5",
+      "status": "complete",
+      "ending_equity": 1320.6100199090872,
+      "daily_max_drawdown": 0.987207901006419
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_12_1:1",
+      "status": "complete",
+      "ending_equity": 14.95918445507385,
+      "daily_max_drawdown": 0.9998504081554492
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_12_1:3",
+      "status": "complete",
+      "ending_equity": 150.66688443496398,
+      "daily_max_drawdown": 0.9984933311556503
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_12_1:5",
+      "status": "complete",
+      "ending_equity": 1875.4531325747548,
+      "daily_max_drawdown": 0.9816676830831833
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_market_trend:1",
+      "status": "complete",
+      "ending_equity": 18.019603374505778,
+      "daily_max_drawdown": 0.9998203380163845
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_market_trend:3",
+      "status": "complete",
+      "ending_equity": 181.79550885311818,
+      "daily_max_drawdown": 0.9981921842771377
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_market_trend:5",
+      "status": "complete",
+      "ending_equity": 1750.4286983014567,
+      "daily_max_drawdown": 0.9825933404928309
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:trend_pullback_market_trend:1",
+      "status": "complete",
+      "ending_equity": 21.30131521639643,
+      "daily_max_drawdown": 0.9997869868478361
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:trend_pullback_market_trend:3",
+      "status": "complete",
+      "ending_equity": 287.8562914362719,
+      "daily_max_drawdown": 0.9971780295877827
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:trend_pullback_market_trend:5",
+      "status": "complete",
+      "ending_equity": 5136.86575966646,
+      "daily_max_drawdown": 0.9530961798036116
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:mean_reversion_market_trend:1",
+      "status": "complete",
+      "ending_equity": 39.16346111095777,
+      "daily_max_drawdown": 0.9996087256384634
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:mean_reversion_market_trend:3",
+      "status": "complete",
+      "ending_equity": 317.0924965433404,
+      "daily_max_drawdown": 0.9968712727992067
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:mean_reversion_market_trend:5",
+      "status": "complete",
+      "ending_equity": 4574.452681247047,
+      "daily_max_drawdown": 0.957522461055009
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:breakout_market_trend:1",
+      "status": "complete",
+      "ending_equity": 26.54245186990451,
+      "daily_max_drawdown": 0.9997390136308336
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:breakout_market_trend:3",
+      "status": "complete",
+      "ending_equity": 825.923224158257,
+      "daily_max_drawdown": 0.9918500831163604
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:breakout_market_trend:5",
+      "status": "complete",
+      "ending_equity": 3978.6942933416067,
+      "daily_max_drawdown": 0.9639228821328155
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_12_1_market_trend:1",
+      "status": "complete",
+      "ending_equity": 16.155753879680717,
+      "daily_max_drawdown": 0.9998384424612032
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_12_1_market_trend:3",
+      "status": "complete",
+      "ending_equity": 1145.1831619798322,
+      "daily_max_drawdown": 0.9888122908341456
+    },
+    {
+      "context": "portfolios:USD:100000.0:100:momentum_12_1_market_trend:5",
+      "status": "complete",
+      "ending_equity": 10195.46464972225,
+      "daily_max_drawdown": 0.9029776986902431
+    },
+    {
+      "context": "benchmarks:USD:500.0:20:SPY:",
+      "status": "complete",
+      "ending_equity": 3713.057072563086,
+      "daily_max_drawdown": 0.46620156257568934
+    },
+    {
+      "context": "benchmarks:USD:500.0:20:CASH:",
+      "status": "complete",
+      "ending_equity": 500.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:500.0:40:SPY:",
+      "status": "complete",
+      "ending_equity": 3709.034492910871,
+      "daily_max_drawdown": 0.4665027878187079
+    },
+    {
+      "context": "benchmarks:USD:500.0:40:CASH:",
+      "status": "complete",
+      "ending_equity": 500.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:500.0:100:SPY:",
+      "status": "complete",
+      "ending_equity": 3696.9667539542247,
+      "daily_max_drawdown": 0.46740880363955206
+    },
+    {
+      "context": "benchmarks:USD:500.0:100:CASH:",
+      "status": "complete",
+      "ending_equity": 500.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:2000.0:20:SPY:",
+      "status": "complete",
+      "ending_equity": 16994.266338627735,
+      "daily_max_drawdown": 0.5264946459768463
+    },
+    {
+      "context": "benchmarks:USD:2000.0:20:CASH:",
+      "status": "complete",
+      "ending_equity": 2000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:2000.0:40:SPY:",
+      "status": "complete",
+      "ending_equity": 16975.494300250724,
+      "daily_max_drawdown": 0.5268788554991526
+    },
+    {
+      "context": "benchmarks:USD:2000.0:40:CASH:",
+      "status": "complete",
+      "ending_equity": 2000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:2000.0:100:SPY:",
+      "status": "complete",
+      "ending_equity": 16919.178185119716,
+      "daily_max_drawdown": 0.5280348559712792
+    },
+    {
+      "context": "benchmarks:USD:2000.0:100:CASH:",
+      "status": "complete",
+      "ending_equity": 2000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:10000.0:20:SPY:",
+      "status": "complete",
+      "ending_equity": 89255.40778988946,
+      "daily_max_drawdown": 0.5495449419616785
+    },
+    {
+      "context": "benchmarks:USD:10000.0:20:CASH:",
+      "status": "complete",
+      "ending_equity": 10000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:10000.0:40:SPY:",
+      "status": "complete",
+      "ending_equity": 89156.18415846814,
+      "daily_max_drawdown": 0.5499635432025745
+    },
+    {
+      "context": "benchmarks:USD:10000.0:40:CASH:",
+      "status": "complete",
+      "ending_equity": 10000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:10000.0:100:SPY:",
+      "status": "complete",
+      "ending_equity": 88858.51326420422,
+      "daily_max_drawdown": 0.5512231819893552
+    },
+    {
+      "context": "benchmarks:USD:10000.0:100:CASH:",
+      "status": "complete",
+      "ending_equity": 10000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:100000.0:20:SPY:",
+      "status": "complete",
+      "ending_equity": 896838.1539956453,
+      "daily_max_drawdown": 0.551817963158094
+    },
+    {
+      "context": "benchmarks:USD:100000.0:20:CASH:",
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:100000.0:40:SPY:",
+      "status": "complete",
+      "ending_equity": 894770.8760775924,
+      "daily_max_drawdown": 0.5516714502576713
+    },
+    {
+      "context": "benchmarks:USD:100000.0:40:CASH:",
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "benchmarks:USD:100000.0:100:SPY:",
+      "status": "complete",
+      "ending_equity": 889650.7882266935,
+      "daily_max_drawdown": 0.5517954569806142
+    },
+    {
+      "context": "benchmarks:USD:100000.0:100:CASH:",
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "walk_forward:USD:500.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 500.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:500.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 4704.122665868726,
+      "daily_max_drawdown": 0.48983259959210956
+    },
+    {
+      "context": "walk_forward:USD:500.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 500.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:500.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 4699.084865387727,
+      "daily_max_drawdown": 0.49010040269320665
+    },
+    {
+      "context": "walk_forward:USD:500.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 500.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:500.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 4683.971463944733,
+      "daily_max_drawdown": 0.4909055718546589
+    },
+    {
+      "context": "walk_forward:USD:2000.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 2032.6213182212814,
+      "daily_max_drawdown": 0.06454607237422849
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:2000.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 21969.582662876448,
+      "daily_max_drawdown": 0.5467611233304437
+    },
+    {
+      "context": "walk_forward:USD:2000.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 2030.9971928223827,
+      "daily_max_drawdown": 0.06246558190599438
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:2000.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 21945.65311059171,
+      "daily_max_drawdown": 0.5470948132458123
+    },
+    {
+      "context": "walk_forward:USD:2000.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 1839.2781423408946,
+      "daily_max_drawdown": 0.1030877357073462
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:2000.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 21873.864453737482,
+      "daily_max_drawdown": 0.5480983312977379
+    },
+    {
+      "context": "walk_forward:USD:10000.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 10311.094623138777,
+      "daily_max_drawdown": 0.05265048379722659
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:10000.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 110898.94398084942,
+      "daily_max_drawdown": 0.5503143306988411
+    },
+    {
+      "context": "walk_forward:USD:10000.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 10064.48246238741,
+      "daily_max_drawdown": 0.08096784703072513
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:10000.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 110778.03676930547,
+      "daily_max_drawdown": 0.5506523731131961
+    },
+    {
+      "context": "walk_forward:USD:10000.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 8693.83319787294,
+      "daily_max_drawdown": 0.1542709030106708
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:10000.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 110415.31513467361,
+      "daily_max_drawdown": 0.5516689967545481
+    },
+    {
+      "context": "walk_forward:USD:100000.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:100000.0:20:rolling:",
+      "status": "complete",
+      "ending_equity": 1113193.562474363,
+      "daily_max_drawdown": 0.5517276955112822
+    },
+    {
+      "context": "walk_forward:USD:100000.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:100000.0:40:rolling:",
+      "status": "complete",
+      "ending_equity": 1110929.6813420954,
+      "daily_max_drawdown": 0.5517141231730207
+    },
+    {
+      "context": "walk_forward:USD:100000.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 100000.0,
+      "daily_max_drawdown": 0.0
+    },
+    {
+      "context": "rolling_reference:walk_forward:USD:100000.0:100:rolling:",
+      "status": "complete",
+      "ending_equity": 1104153.1513467361,
+      "daily_max_drawdown": 0.5516689967545481
+    }
+  ],
+  "rolling_ledger_checks": [
+    {
+      "context": "walk_forward:USD:500.0:20:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 0,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:500.0:40:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 0,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:500.0:100:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 0,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:2000.0:20:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 225,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:2000.0:40:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 224,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:2000.0:100:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 224,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:10000.0:20:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 224,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:10000.0:40:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 223,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:10000.0:100:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 224,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:100000.0:20:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 0,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:100000.0:40:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 0,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    },
+    {
+      "context": "walk_forward:USD:100000.0:100:rolling:",
+      "status": "complete",
+      "completed_trades_checked": 0,
+      "daily_raw_price_ledger_reconstructed": true,
+      "incomplete_scope": null
+    }
+  ],
+  "compact_equivalence_source": ".qualification/short-hold-smoke/full-usd-summary.json",
+  "compact_counts": {
+    "portfolios": 360,
+    "benchmarks": 24,
+    "walk_forward": 12
+  }
+}

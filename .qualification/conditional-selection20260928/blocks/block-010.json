@@ -1,0 +1,31 @@
+{
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "block": 10,
+  "bounds": {
+    "fit_start": 3274,
+    "calibration_start": 3778,
+    "test_start": 4030,
+    "test_end": 4202
+  },
+  "model_directory": "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model",
+  "forecast_path": "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/forecasts.npz",
+  "family": "ridge",
+  "available": true,
+  "candidates": 290497,
+  "invalid_feature_rows": 0,
+  "finite_corrected_rows": 290497,
+  "fit_rows": 47808,
+  "calibration_rows": 23616,
+  "files": {
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/attempt.json": "9a9cc603584d325af9a9e701b309b6644b1df1d90d55416adbcc7b4db310086a",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/forecasts.npz": "8ae7eaec79dbabe914929056c23f2d771021beee3dbd4c8b64b16982da05739c",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model/attempt.json": "d7e51f7e293bb769007b79e15079fbd330fd9281a9025f87c7d6e723b7c913c9",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model/calibration-predictions.npz": "a6427dadb791ba323699127c61fcbc763c180fdde0b1451a165c6025ade730aa",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model/diagnostics.json": "5296329d8f5d516a71b0ad01f002423ade82918ab9c1ad11641ad73cc990f15a",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model/manifest.json": "f50a101c62d1f10c39910cc6136a2ae7c045e37ce3fc3e9122fa75db1c25a0fd",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model/model.joblib": "2b158c40da8ab3acb79cf123d9ca0178eb0c25e39e0ac5fddc1095749940dc81",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/model/samples.json": "209124ec85cae1c9ec6d84bf9652e914110d52a6bb960cda37ef41bf0e56a1db",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/sample-arrays.npz": "44ab531e9decb4c3ef74058c3f11428aada41497f4a5c922cad2796230ba7324",
+    "blocks/block-010/attempt-cc56f54d246c4caaaed9b02f9af9b3d2/test-diagnostics.json": "9265631e014ac60c80830deb78a55b36af582bc3f612e6033dcbc44fe7aa70d4"
+  }
+}

@@ -1,0 +1,2261 @@
+{
+  "status": "completed",
+  "finished_at": "2026-09-28T18:50:42.464331+00:00",
+  "definition": {
+    "selection": "First32 per currency sorted by symbol SHA256 among common frozen/current members; frozen before capture completion. No outcome-based substitution.",
+    "sample": {
+      "USD": [
+        "QMCO",
+        "ABG",
+        "HTB",
+        "ULCC",
+        "GCGR",
+        "CMP",
+        "JAKK",
+        "NTIC",
+        "AQB",
+        "LGN",
+        "MCHB",
+        "FIG",
+        "TREX",
+        "HLF",
+        "AIRS",
+        "EVF",
+        "EMAT",
+        "FTRE",
+        "SHLS",
+        "ACRS",
+        "AMC",
+        "ONCH",
+        "BST",
+        "LOB",
+        "UCTT",
+        "WCCB",
+        "GDTC",
+        "LUNR",
+        "SITC",
+        "UGP",
+        "BLRX",
+        "GRDX"
+      ],
+      "CAD": [
+        "SRR.V",
+        "ABRA.TO",
+        "DHB.V",
+        "SEGN.V",
+        "YFI.V",
+        "SLT.TO",
+        "FL.V",
+        "BCE.TO",
+        "GOFL.V",
+        "ANDC.V",
+        "WSP.TO",
+        "AIDX.TO",
+        "NZ.V",
+        "SUGR.V",
+        "SLZ.CN",
+        "LCU.CN",
+        "GCC.CN",
+        "PPP.V",
+        "TF.TO",
+        "KRN.TO",
+        "STIF.CN",
+        "STG.TO",
+        "TCL-A.TO",
+        "SU.TO",
+        "TCCM.V",
+        "MDM.V",
+        "MDP.TO",
+        "LIO.V",
+        "GMV.V",
+        "UDOC.CN",
+        "CCM.TO",
+        "ADX.CN"
+      ]
+    },
+    "overlap_start": "2026-09-14",
+    "overlap_end": "2026-09-18",
+    "fields": [
+      "close",
+      "high",
+      "low",
+      "volume",
+      "adjusted_close"
+    ],
+    "comparison": "Raw provider values, exact float equality with signed deltas retained. Revisions need not be errors and no correction/promotion follows."
+  },
+  "summary": {
+    "compared_cells": 1525,
+    "changed_cells": 138,
+    "compared_symbols": 61,
+    "changed_symbols": 55,
+    "unavailable_symbols": 3
+  },
+  "symbols": [
+    {
+      "symbol": "QMCO",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "645273872904185b4753d80478dbbcca7e202a4455c26a071324721868d02ece",
+      "new_sha256": "bc9c404fde2f3cb9c9b1c1543f032c98b563809dba692de879e90710f988eeb4",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "ABG",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "be2824de0bb47f68822bea2efbb95f25b7ceb362bd71a35eed31163312b1d5dd",
+      "new_sha256": "fbf03eafcd0cdc53d0d91e93ab5a34cdd9ae6fb717654cade27a1df70a646b5e",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 4
+    },
+    {
+      "symbol": "HTB",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "08ab6edb1a8e33694e4c3c17fcc76b803d40915134c355fdbc47102437adcbab",
+      "new_sha256": "7e2d5bbef18d695fba4defa6b2a18539147386477309504ebfc274fd04d175e1",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 3
+    },
+    {
+      "symbol": "ULCC",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "6e759968269e3a354394e667262563cb787f533caa3d420f2ef22eaffb3cb17a",
+      "new_sha256": "41303f30d6370cf1ddf0121a7bf3e26291cfbd2201144f95ab44d5278f0f0650",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "GCGR",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "f9a3c9fbf343cbfd6550d88a49561ce5b7784d01698f1366f9a75b6f4777d912",
+      "new_sha256": "1854210ce26679d7c46b04293522ee59322eff4bddc315c8b428f1cd8094c7f4",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "CMP",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "bf07fd6f1d2f3a041f10ffccb5eced794ae0643ed5983b315daee3eb8b3fdbda",
+      "new_sha256": "bc786a3860cbdb9e0f1941097f8f1229e646109c323b6057e3369fe2e341ec91",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 4
+    },
+    {
+      "symbol": "JAKK",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "a6a5642c6576d996264b85ce9740df83199baf28b3147881af0b5128c9dbfc62",
+      "new_sha256": "05e4375b5a812626b4f18c3eb6f7e4d59f9fffee97bf8434f7446238c0518808",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "NTIC",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "adc1fb8b11be091fab0f09b929f8383dfd91ca89a3662f26654598ad27883eb5",
+      "new_sha256": "eeb834d9bfe1ab225465a88501f36b26487fa274558489822deb8de16a909dbf",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "AQB",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "42d34797d2b4e1feae64df4fbb1c77def6e3ed6539e00efe27c21e8c8b90a9a8",
+      "new_sha256": "12f8c210eb2740f5d200a024577c128ef9325f11f69e47d1da2d97dc931e8120",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "LGN",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "1f75bca111292d7b3aea4bd5cd33afeb0c78b5788c2c453302f37b70f7deb2d5",
+      "new_sha256": "c4432e529f41592ebc23831dee79672a03ecf062dda22b939d060f35b501fe33",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "MCHB",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "adb36546b6ae2a36c892a7bef22fe4b2e5e85a84d8375529138ce105e35e644b",
+      "new_sha256": "04dfedec4b2675706b58dc00110e46255d20d1509fdc0d8273d093492e582fc2",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "FIG",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "02d5952d0db57246b639840d4f3794e09623c15a45fd33e5bf445dd94900bfb3",
+      "new_sha256": "2ffb6199743dabecb1e980139de88ac3276a7d1cd5b1b70b205cbaaf0d049d42",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 4
+    },
+    {
+      "symbol": "TREX",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "cf3651ecfbb289d243a0b7f7d0176ca081e0e13ae9d50ddd5aa5d9dfee98a224",
+      "new_sha256": "44d57b2e7356bc7dd7742e48a2f08c713a905b66f72c3add9a6b7193c75e4b1f",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "HLF",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "9787cd5bb739b903fd905afb54b365439e3eccf72e602ad1e99b4fff58d21d66",
+      "new_sha256": "6c7091290970cc1d32b0e63296c9e7edbafa7347c42bd93df823e20f7e52e657",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "AIRS",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "bf5dc51804037c0fb6774b892bf48b34f2c2181aa31119aea871efe1e75f17bc",
+      "new_sha256": "91317f115f68e3f4471c6c8efee80e4ff1718adca4cad2991e48fead2fd9bdd2",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "EVF",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "6ccd2b9851ef41069233732846d759025226fb006aff828c1519eb5b179a3d8d",
+      "new_sha256": "601ce825ffa92b9bae17620b4dd8624eded1937bbc275b2f1b42954c1703887d",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 3
+    },
+    {
+      "symbol": "EMAT",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "89e5ed6ca069e9b393807b22c50c2f975413f262997b1b1ac58ba1b057cf4359",
+      "new_sha256": "73b8e8c427110b7395bd0e4546dd0df5374e3bde7c1586639fecae78679f2399",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "FTRE",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "91c441ef5113a28e145fa15ea305d95b7662415c55961288aac9a7064e7af2ac",
+      "new_sha256": "76059634be3dfc31c1f947cb46f86bd0d23eb1fa2260859d6bac481a76482878",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 3
+    },
+    {
+      "symbol": "SHLS",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "74be5223bcf9895277938ab1e58da5dc4681d86b3117e8d13d7b04d3a649e8c6",
+      "new_sha256": "0fd7f72c8789c97b1e2a3fbf0b045e7feead5433662a24c945b3e89b429de543",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "ACRS",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "669ae106adf4b329328fc05c4af8f97133986c620eb17e02fba36d2a5fabbaaa",
+      "new_sha256": "4229a3ab0f8a4c48fce9bacd80070b4e4f574460bce2e677422cb43f5dc8fa90",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "AMC",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "7c2ca78c49a3db6b033b13d53d6abe4696cffea821f46118fcf2f4a62c974c5a",
+      "new_sha256": "60a72f1b769123631448a5a687e228516fd328ca51384861df7880d711854f34",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 4
+    },
+    {
+      "symbol": "ONCH",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "f40765958ad7db4312a1773cef4800aaee194e7a141880c7e164d52d00379cb4",
+      "new_sha256": "4138793619bf24f80e89afa247404f7cede6827b987c4398a37b6147fbb56751",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "BST",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "47c8639e318ac75de755849389e2d78b32c8806aaf85dfe737681de57038443e",
+      "new_sha256": "d7924ea6b80197dd31e5e115263e58c863dedae95f4321015d0495f613e480fb",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 3
+    },
+    {
+      "symbol": "LOB",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "cfd5102d422d47e30a42f45d0abb0307bb5baf07fa18f857956ee552732034a7",
+      "new_sha256": "e0203dca0fcf804e7f030ec40c0ea428e9a4c00886414673cccc53a70387d5b3",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "UCTT",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "fb010f20d715d14b365f8a623ecd09b14a513f07c7793b1601e455609eaa5c29",
+      "new_sha256": "9e365b7a4972a1b30753f57b30a56cfffc73b8f4dcc17496c5ac44e6bb575cbc",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "WCCB",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "bcf26d62fc08209dfa645b405048a432ed626cbdfb41081d78f851c56cfa429c",
+      "new_sha256": "651dfcf51dc5d37a7f03df59a7fc4b07fb6619158975ee5d3268cd353e10fc53",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "GDTC",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "6e98168c9ffc17a95cf416b92f81ef4ba5c1b9c1924c6e875d740b8ea72b8605",
+      "new_sha256": "f107ed61b3638a50527a0606b893f2393b228eaae9538c8ef01294a68b2d077d",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "LUNR",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "5ad2bba8310923033b7435b978269de66dfc58ca34f44c85c5632e46fe7267fa",
+      "new_sha256": "880fd8ac03dbdf6664618be1e3d653b16881d503791e80429dd3a24e895e3141",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "SITC",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "da5462e8acd2779029549a2b4b0073fb617c791dcc32e1836313efb6586dd3a2",
+      "new_sha256": "676517feaf660d28baa2923adb2ea688e5edae6897fe1638e14bff821d9083a4",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "UGP",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "ffe8815928704f616756b055d01d0b6b11c0de0d26019d851f1310536b678d55",
+      "new_sha256": "8bdcc5323debee0781884bc0d87232a0b2ada031c4222d80afdcc9a619ade6cf",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 2
+    },
+    {
+      "symbol": "BLRX",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "1b6be043f6b88ee79b58631d3b90e069f27c79777c921e1553e41b33b3b4ec4c",
+      "new_sha256": "30e200703de79c5678c8168fb028340e16d332593790f67f1feca741e6d4d24d",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 4
+    },
+    {
+      "symbol": "GRDX",
+      "currency": "USD",
+      "status": "compared",
+      "old_sha256": "e9accc2f6c5945482e2a96709477298b18fbdde4b491d3dd1af3ea5a839469a1",
+      "new_sha256": "ac079c3136ce266c74eb4b0edf95db77c38f0bba923cc378a89e003c18e09cb5",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "SRR.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "4bf9df563320aaa501a247010c621e7746a6a7363369adfcdd0de68b67ce085a",
+      "new_sha256": "f40bfa5f6c677179d31c64145881c2bd4b1885aa24bc570d0a488a86c121fe09",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "ABRA.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "4220f984d62a79c5225406bdfc3a622bb60d4e0834f489e0d4531f5aced0d73d",
+      "new_sha256": "92ec34d53dc7e2d39f8415f1b9a18fcf89e3df87a0249948b98f33572a4da4a7",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "DHB.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "f5ef849003645812115a1cc4547f8bf20cd4fe96de09860de3a40ccd2076f62a",
+      "new_sha256": "9b55491943832fd194ba623a1c0abe19501a7eccc2d542e946303a703da3bfdd",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 0
+    },
+    {
+      "symbol": "SEGN.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "19f641fdd09be9b0bb452ef7c1ffff6449afc46234535871904030e2b1d02c4f",
+      "new_sha256": "4655c1add926bf036571c123d8800e17df36849902fbe97b047db8323e883a0f",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "YFI.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "f27bf8b65be2e0c0ee70f1565f158dacf4e6d4448f2030458e5bb68871303e2d",
+      "new_sha256": "9843117ae9e75c2f4f5653d1ee0d247af472cf0245c39a3f67478cfae92e77d9",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "SLT.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "30098310ad4278d0c836ac609f9054aeeab2cfc48cbe79302ec0c875cc225657",
+      "new_sha256": "2d6f21b52f5f19436e9d8f500dda294c57c0896153446d7c7092d04a3e5187ce",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 0
+    },
+    {
+      "symbol": "FL.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "325d48b3c5d2b1e9429ecd8f7da2191c68edf226bafe1154ffd90b8290a6fe03",
+      "new_sha256": "c7b8e5dd486997e892f53dc7a93c7be960b7b57d28eb923085eae06c591dedad",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "BCE.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "0b02115917433ec923e26bb83042e15c3c6010e00823ce6a99688a7789d8eb19",
+      "new_sha256": "14f62770c1b633bdd05910867c08dc152e54d9564270e598869675d6c9264292",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "GOFL.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "fa4d651f3f514b39a3fbae4a7570f4434771fac9310cf9f97e9f7821c405dcee",
+      "new_sha256": "101f86ba9bf0eae0db7701f1c71ade27ef50465de2243db568ebe813b7823741",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "ANDC.V",
+      "currency": "CAD",
+      "status": "unavailable",
+      "old_available": false,
+      "new_available": true
+    },
+    {
+      "symbol": "WSP.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "c151e34f7eafbb9dc1f40e88bba3115eec9e38d4705c5eb6e217d41cc8b97bef",
+      "new_sha256": "51751f63cb311ba4c5787d5214b0ed7c3fbaef82b5ac92234775fd2b1e714a7d",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "AIDX.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "aa77e7760a0a920fa4ac9f8f9961a4fa919ee291d042866e3b7dbb2813ee5160",
+      "new_sha256": "7cc54d9f32f883ccfdd6ebfe0d8bda9321df40bf85050c0b6e92ac9fce023781",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "NZ.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "80122223925592ae72986c4dd2105a85f6f88247a1db9650ec979ab92fcacfc8",
+      "new_sha256": "d1dcf3805ffebd59f8fd38bf1197d505b13d500c0e0d686e52f8aab64f3ef32e",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 0
+    },
+    {
+      "symbol": "SUGR.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "c07e635e63f7e328d6bbe38ae2f3d7721825f89e0880a8c18b0a3e84072075ff",
+      "new_sha256": "62a8a4d34a6583202d67d598d92f2827779284e87e285c227ac8d1ac35da1a47",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 0
+    },
+    {
+      "symbol": "SLZ.CN",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "16cc9f9081b78e0677522edb91b4cc7e0aac0b983a21a128494b185d95a1d30e",
+      "new_sha256": "1b736301ecd9d75264c521c57864c905e103c454746676db52a12068dcf9e8a8",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 10
+    },
+    {
+      "symbol": "LCU.CN",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "56c3aaa3e605a259f54afb045dc489779bfa637b59f89b14373bf9d56cac0070",
+      "new_sha256": "da5f219529929db40644c4dcf328546b2b9764ec332551429cd86fb7fdf4aa4b",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 0
+    },
+    {
+      "symbol": "GCC.CN",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "4ec8f4675608f1fd2ec7687be6b6a5c76b5def61585fe8d25394f515a4f2f49b",
+      "new_sha256": "81a4cf077edae2b576e084963b12b62adc1dfbeedd29a9c5636336fd69c7269c",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "PPP.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "ba1aaf47f8719260d8711574c480f3155fafb0e5d6745427e029ce6b7d4fdd9b",
+      "new_sha256": "1260df5a749bb445f11dc24bc8b0ed054945eebe0287bdb912c700a6d7a1d576",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "TF.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "a61cf449c423e106b3c3c9445fdf1e184d7aad0a40996f2cf6deff33bca2b452",
+      "new_sha256": "20ba593ca02193d6bd5be3a19a9e54c1f2126c2d6aa19baf1f16bedfbcc7a841",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "KRN.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "6ebc6d77fb2e43a08989742161022a7efbbc2f19fce28b22811289f07b9bf3cf",
+      "new_sha256": "4888aaba88cab82b2652a5d732ffe3919cf3fc8dee818de47ba41475386cc279",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "STIF.CN",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "8d364cf260fd810e15fcdfad0d4c6fd8a3c8356b1fde8d12c8bc0f4af4e54ace",
+      "new_sha256": "9bb5ff2b8a356aec2919c2717173caa680ad22be889153e1e99679c443f374b3",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "STG.TO",
+      "currency": "CAD",
+      "status": "unavailable",
+      "old_available": false,
+      "new_available": false
+    },
+    {
+      "symbol": "TCL-A.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "e9ec171276c3324142b5c0264ae83fd9cda5bdae94593843ecfc91832a2a016a",
+      "new_sha256": "83431b50e2c7fcc3be73d57f4656431a243ca308473fb87884075d8f597ba540",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "SU.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "6c5e596c8469aef79d57df79ee41fec3186900e7ada28c817d17481128d655fb",
+      "new_sha256": "4a56c21484f1104c0103c070a5f60d5ff825add4edea7f47b23c95b1be20d9cc",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "TCCM.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "259bc138d769520338cb8acbe69a833b22ecc13d97d31182606e4f32af8c5697",
+      "new_sha256": "f3c14492c58d9ff26ea153fd094191312f792e1e89cb882ceb82a9cb75f4b554",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 0
+    },
+    {
+      "symbol": "MDM.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "2f5c052b54a624a08b19b681b52a864177d6d092b7956a8e41f48da6343a8dc3",
+      "new_sha256": "5828214362c06a150bc12f00d75fc119c0aac9c5fc489bb53bfd82fd2b134ddd",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "MDP.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "747c25565250c9e20c492554ef34093ca0c990c5b90eafda9636bed0c32347d0",
+      "new_sha256": "d8bff42e477e43c3c9375c2724bac8228d42dc03f71501546573e05bf7eff86e",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "LIO.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "aeaab254be8cbc08a8bbc603b9a5bda0087f01ae6cf3b68532518dda0a072e4d",
+      "new_sha256": "54f311dd1a63892ef3d03ecc3a979a8c4d3f76b01965fb3eb834a6ab246bb267",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "GMV.V",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "b8cc1b516e5e084f4674e23613208b26c252def077337cc11d5c7843a9d364c8",
+      "new_sha256": "2597d3eedaa6a11ab6f5afee0d4a6448117bdeca279459d0d38d82b4503c78fe",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 3
+    },
+    {
+      "symbol": "UDOC.CN",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "2f4739ec7fc473e19c7985f5b0e267ff6dfc3084c0e29cad4cb87d340605ee85",
+      "new_sha256": "9f9d92399650a19f0635e8b2337924979c1e5c6e5179b30ca5d2cf4adef3e8b7",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 5
+    },
+    {
+      "symbol": "CCM.TO",
+      "currency": "CAD",
+      "status": "compared",
+      "old_sha256": "9b393896799d3197d8a52c3967f9797132ed3ab905bf4e9393a6a20397bb1e96",
+      "new_sha256": "da3994c5a37528ea01390ca5ada2be3f8e6a4c700b26660c083e3751e64ad3f5",
+      "shared_sessions": [
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18"
+      ],
+      "old_only_sessions": [],
+      "new_only_sessions": [],
+      "changed_cells": 1
+    },
+    {
+      "symbol": "ADX.CN",
+      "currency": "CAD",
+      "status": "unavailable",
+      "old_available": false,
+      "new_available": true
+    }
+  ],
+  "changed_values": [
+    {
+      "symbol": "QMCO",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 25.309900283813477,
+      "new": 25.309999465942383,
+      "delta": 9.918212890625e-05
+    },
+    {
+      "symbol": "QMCO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 1818788,
+      "new": 1873600,
+      "delta": 54812
+    },
+    {
+      "symbol": "ABG",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 183.2899932861328,
+      "new": 183.05999755859375,
+      "delta": -0.2299957275390625
+    },
+    {
+      "symbol": "ABG",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 177.94500732421875,
+      "new": 177.75999450683594,
+      "delta": -0.1850128173828125
+    },
+    {
+      "symbol": "ABG",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 283069,
+      "new": 919300,
+      "delta": 636231
+    },
+    {
+      "symbol": "ABG",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 183.2899932861328,
+      "new": 183.05999755859375,
+      "delta": -0.2299957275390625
+    },
+    {
+      "symbol": "HTB",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 47.040000915527344,
+      "new": 47.08000183105469,
+      "delta": 0.04000091552734375
+    },
+    {
+      "symbol": "HTB",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 192293,
+      "new": 595900,
+      "delta": 403607
+    },
+    {
+      "symbol": "HTB",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 47.040000915527344,
+      "new": 47.08000183105469,
+      "delta": 0.04000091552734375
+    },
+    {
+      "symbol": "ULCC",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 3008682,
+      "new": 3165400,
+      "delta": 156718
+    },
+    {
+      "symbol": "GCGR",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 10.140000343322754,
+      "delta": null
+    },
+    {
+      "symbol": "GCGR",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 10.140000343322754,
+      "delta": null
+    },
+    {
+      "symbol": "GCGR",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 10.140000343322754,
+      "delta": null
+    },
+    {
+      "symbol": "GCGR",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "GCGR",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 10.140000343322754,
+      "delta": null
+    },
+    {
+      "symbol": "CMP",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 23.875,
+      "new": 23.8700008392334,
+      "delta": -0.0049991607666015625
+    },
+    {
+      "symbol": "CMP",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 23.9950008392334,
+      "new": 24.0,
+      "delta": 0.0049991607666015625
+    },
+    {
+      "symbol": "CMP",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 307289,
+      "new": 786000,
+      "delta": 478711
+    },
+    {
+      "symbol": "CMP",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 23.875,
+      "new": 23.8700008392334,
+      "delta": -0.0049991607666015625
+    },
+    {
+      "symbol": "JAKK",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 23.860000610351562,
+      "new": 23.81999969482422,
+      "delta": -0.04000091552734375
+    },
+    {
+      "symbol": "JAKK",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 87078,
+      "new": 87100,
+      "delta": 22
+    },
+    {
+      "symbol": "NTIC",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 7.8018999099731445,
+      "new": 7.800000190734863,
+      "delta": -0.00189971923828125
+    },
+    {
+      "symbol": "NTIC",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 20113,
+      "new": 20100,
+      "delta": -13
+    },
+    {
+      "symbol": "AQB",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 30514,
+      "new": 30600,
+      "delta": 86
+    },
+    {
+      "symbol": "LGN",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 1382253,
+      "new": 1410000,
+      "delta": 27747
+    },
+    {
+      "symbol": "MCHB",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 15.239999771118164,
+      "new": 15.229999542236328,
+      "delta": -0.010000228881835938
+    },
+    {
+      "symbol": "MCHB",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 1497520,
+      "new": 1500500,
+      "delta": 2980
+    },
+    {
+      "symbol": "FIG",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 22.700000762939453,
+      "new": 22.690000534057617,
+      "delta": -0.010000228881835938
+    },
+    {
+      "symbol": "FIG",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 22.556299209594727,
+      "new": 22.555999755859375,
+      "delta": -0.0002994537353515625
+    },
+    {
+      "symbol": "FIG",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 10593270,
+      "new": 33913600,
+      "delta": 23320330
+    },
+    {
+      "symbol": "FIG",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 22.700000762939453,
+      "new": 22.690000534057617,
+      "delta": -0.010000228881835938
+    },
+    {
+      "symbol": "TREX",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 43.40039825439453,
+      "new": 43.439998626708984,
+      "delta": 0.039600372314453125
+    },
+    {
+      "symbol": "TREX",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 2256584,
+      "new": 2319000,
+      "delta": 62416
+    },
+    {
+      "symbol": "HLF",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 1338775,
+      "new": 2998300,
+      "delta": 1659525
+    },
+    {
+      "symbol": "AIRS",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 1046578,
+      "new": 1059100,
+      "delta": 12522
+    },
+    {
+      "symbol": "EVF",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 4.860000133514404,
+      "new": 4.849999904632568,
+      "delta": -0.010000228881835938
+    },
+    {
+      "symbol": "EVF",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 59516,
+      "new": 60700,
+      "delta": 1184
+    },
+    {
+      "symbol": "EVF",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 4.860000133514404,
+      "new": 4.849999904632568,
+      "delta": -0.010000228881835938
+    },
+    {
+      "symbol": "EMAT",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 5029100,
+      "new": 5594100,
+      "delta": 565000
+    },
+    {
+      "symbol": "FTRE",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 20.18000030517578,
+      "new": 20.219999313354492,
+      "delta": 0.03999900817871094
+    },
+    {
+      "symbol": "FTRE",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 19.280099868774414,
+      "new": 19.280000686645508,
+      "delta": -9.918212890625e-05
+    },
+    {
+      "symbol": "FTRE",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 2840765,
+      "new": 3107500,
+      "delta": 266735
+    },
+    {
+      "symbol": "SHLS",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 6776633,
+      "new": 6797400,
+      "delta": 20767
+    },
+    {
+      "symbol": "ACRS",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 3248939,
+      "new": 4687700,
+      "delta": 1438761
+    },
+    {
+      "symbol": "AMC",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 2.680000066757202,
+      "new": 2.700000047683716,
+      "delta": 0.019999980926513672
+    },
+    {
+      "symbol": "AMC",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 2.7685000896453857,
+      "new": 2.7699999809265137,
+      "delta": 0.0014998912811279297
+    },
+    {
+      "symbol": "AMC",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 16741103,
+      "new": 67607300,
+      "delta": 50866197
+    },
+    {
+      "symbol": "AMC",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 2.680000066757202,
+      "new": 2.700000047683716,
+      "delta": 0.019999980926513672
+    },
+    {
+      "symbol": "ONCH",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 10.3100004196167,
+      "delta": null
+    },
+    {
+      "symbol": "ONCH",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 10.3100004196167,
+      "delta": null
+    },
+    {
+      "symbol": "ONCH",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 10.3100004196167,
+      "delta": null
+    },
+    {
+      "symbol": "ONCH",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "ONCH",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 10.3100004196167,
+      "delta": null
+    },
+    {
+      "symbol": "BST",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 48.355098724365234,
+      "new": 48.349998474121094,
+      "delta": -0.005100250244140625
+    },
+    {
+      "symbol": "BST",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 67241,
+      "new": 69900,
+      "delta": 2659
+    },
+    {
+      "symbol": "BST",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 48.355098724365234,
+      "new": 48.349998474121094,
+      "delta": -0.005100250244140625
+    },
+    {
+      "symbol": "LOB",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 340191,
+      "new": 340400,
+      "delta": 209
+    },
+    {
+      "symbol": "UCTT",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 68.2699966430664,
+      "new": 68.23999786376953,
+      "delta": -0.029998779296875
+    },
+    {
+      "symbol": "UCTT",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 1314375,
+      "new": 1341700,
+      "delta": 27325
+    },
+    {
+      "symbol": "WCCB",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 9959,
+      "new": 10000,
+      "delta": 41
+    },
+    {
+      "symbol": "GDTC",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 0.7659000158309937,
+      "new": 0.765999972820282,
+      "delta": 9.995698928833008e-05
+    },
+    {
+      "symbol": "GDTC",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 20671,
+      "new": 20700,
+      "delta": 29
+    },
+    {
+      "symbol": "LUNR",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 14835970,
+      "new": 14988200,
+      "delta": 152230
+    },
+    {
+      "symbol": "SITC",
+      "session": "2026-09-17",
+      "field": "volume",
+      "old": 622340,
+      "new": 622689,
+      "delta": 349
+    },
+    {
+      "symbol": "SITC",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 2567366,
+      "new": 2957939,
+      "delta": 390573
+    },
+    {
+      "symbol": "UGP",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 7.529900074005127,
+      "new": 7.53000020980835,
+      "delta": 0.00010013580322265625
+    },
+    {
+      "symbol": "UGP",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 4488519,
+      "new": 4807900,
+      "delta": 319381
+    },
+    {
+      "symbol": "BLRX",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 2.486999988555908,
+      "new": 2.490000009536743,
+      "delta": 0.003000020980834961
+    },
+    {
+      "symbol": "BLRX",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 2.4400999546051025,
+      "new": 2.440000057220459,
+      "delta": -9.989738464355469e-05
+    },
+    {
+      "symbol": "BLRX",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 2550,
+      "new": 2800,
+      "delta": 250
+    },
+    {
+      "symbol": "BLRX",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 2.486999988555908,
+      "new": 2.490000009536743,
+      "delta": 0.003000020980834961
+    },
+    {
+      "symbol": "GRDX",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 103747,
+      "new": 106100,
+      "delta": 2353
+    },
+    {
+      "symbol": "SRR.V",
+      "session": "2026-09-17",
+      "field": "close",
+      "old": null,
+      "new": 1.059999942779541,
+      "delta": null
+    },
+    {
+      "symbol": "SRR.V",
+      "session": "2026-09-17",
+      "field": "high",
+      "old": null,
+      "new": 1.0700000524520874,
+      "delta": null
+    },
+    {
+      "symbol": "SRR.V",
+      "session": "2026-09-17",
+      "field": "low",
+      "old": null,
+      "new": 1.059999942779541,
+      "delta": null
+    },
+    {
+      "symbol": "SRR.V",
+      "session": "2026-09-17",
+      "field": "volume",
+      "old": null,
+      "new": 34750,
+      "delta": null
+    },
+    {
+      "symbol": "SRR.V",
+      "session": "2026-09-17",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 1.059999942779541,
+      "delta": null
+    },
+    {
+      "symbol": "ABRA.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 8128736,
+      "new": 8139100,
+      "delta": 10364
+    },
+    {
+      "symbol": "SEGN.V",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 0.2800000011920929,
+      "delta": null
+    },
+    {
+      "symbol": "SEGN.V",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 0.2800000011920929,
+      "delta": null
+    },
+    {
+      "symbol": "SEGN.V",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 0.2800000011920929,
+      "delta": null
+    },
+    {
+      "symbol": "SEGN.V",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "SEGN.V",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.2800000011920929,
+      "delta": null
+    },
+    {
+      "symbol": "YFI.V",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "YFI.V",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "YFI.V",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "YFI.V",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "YFI.V",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "FL.V",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 91596,
+      "new": 91500,
+      "delta": -96
+    },
+    {
+      "symbol": "BCE.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 7176094,
+      "new": 7188600,
+      "delta": 12506
+    },
+    {
+      "symbol": "GOFL.V",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 0.029999999329447746,
+      "delta": null
+    },
+    {
+      "symbol": "GOFL.V",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 0.029999999329447746,
+      "delta": null
+    },
+    {
+      "symbol": "GOFL.V",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 0.029999999329447746,
+      "delta": null
+    },
+    {
+      "symbol": "GOFL.V",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "GOFL.V",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.029999999329447746,
+      "delta": null
+    },
+    {
+      "symbol": "WSP.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 734069,
+      "new": 734100,
+      "delta": 31
+    },
+    {
+      "symbol": "AIDX.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 51546,
+      "new": 52400,
+      "delta": 854
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-17",
+      "field": "close",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-17",
+      "field": "high",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-17",
+      "field": "low",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-17",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-17",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "SLZ.CN",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.03999999910593033,
+      "delta": null
+    },
+    {
+      "symbol": "GCC.CN",
+      "session": "2026-09-17",
+      "field": "close",
+      "old": null,
+      "new": 0.10499999672174454,
+      "delta": null
+    },
+    {
+      "symbol": "GCC.CN",
+      "session": "2026-09-17",
+      "field": "high",
+      "old": null,
+      "new": 0.11500000208616257,
+      "delta": null
+    },
+    {
+      "symbol": "GCC.CN",
+      "session": "2026-09-17",
+      "field": "low",
+      "old": null,
+      "new": 0.10499999672174454,
+      "delta": null
+    },
+    {
+      "symbol": "GCC.CN",
+      "session": "2026-09-17",
+      "field": "volume",
+      "old": null,
+      "new": 8650,
+      "delta": null
+    },
+    {
+      "symbol": "GCC.CN",
+      "session": "2026-09-17",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.10499999672174454,
+      "delta": null
+    },
+    {
+      "symbol": "PPP.V",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 367434,
+      "new": 367400,
+      "delta": -34
+    },
+    {
+      "symbol": "TF.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 144672,
+      "new": 145700,
+      "delta": 1028
+    },
+    {
+      "symbol": "KRN.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 2834,
+      "new": 2800,
+      "delta": -34
+    },
+    {
+      "symbol": "STIF.CN",
+      "session": "2026-09-17",
+      "field": "close",
+      "old": null,
+      "new": 0.20000000298023224,
+      "delta": null
+    },
+    {
+      "symbol": "STIF.CN",
+      "session": "2026-09-17",
+      "field": "high",
+      "old": null,
+      "new": 0.20000000298023224,
+      "delta": null
+    },
+    {
+      "symbol": "STIF.CN",
+      "session": "2026-09-17",
+      "field": "low",
+      "old": null,
+      "new": 0.20000000298023224,
+      "delta": null
+    },
+    {
+      "symbol": "STIF.CN",
+      "session": "2026-09-17",
+      "field": "volume",
+      "old": null,
+      "new": 3863,
+      "delta": null
+    },
+    {
+      "symbol": "STIF.CN",
+      "session": "2026-09-17",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.20000000298023224,
+      "delta": null
+    },
+    {
+      "symbol": "TCL-A.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 3287132,
+      "new": 3290200,
+      "delta": 3068
+    },
+    {
+      "symbol": "SU.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 8332749,
+      "new": 8347600,
+      "delta": 14851
+    },
+    {
+      "symbol": "MDM.V",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": null,
+      "new": 0.05999999865889549,
+      "delta": null
+    },
+    {
+      "symbol": "MDM.V",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": null,
+      "new": 0.05999999865889549,
+      "delta": null
+    },
+    {
+      "symbol": "MDM.V",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": null,
+      "new": 0.05999999865889549,
+      "delta": null
+    },
+    {
+      "symbol": "MDM.V",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": null,
+      "new": 0,
+      "delta": null
+    },
+    {
+      "symbol": "MDM.V",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.05999999865889549,
+      "delta": null
+    },
+    {
+      "symbol": "MDP.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 28920,
+      "new": 28900,
+      "delta": -20
+    },
+    {
+      "symbol": "LIO.V",
+      "session": "2026-09-18",
+      "field": "low",
+      "old": 0.16750000417232513,
+      "new": 0.17000000178813934,
+      "delta": 0.002499997615814209
+    },
+    {
+      "symbol": "GMV.V",
+      "session": "2026-09-18",
+      "field": "close",
+      "old": 0.1550000011920929,
+      "new": 0.1599999964237213,
+      "delta": 0.004999995231628418
+    },
+    {
+      "symbol": "GMV.V",
+      "session": "2026-09-18",
+      "field": "high",
+      "old": 0.1550000011920929,
+      "new": 0.1599999964237213,
+      "delta": 0.004999995231628418
+    },
+    {
+      "symbol": "GMV.V",
+      "session": "2026-09-18",
+      "field": "adjusted_close",
+      "old": 0.1550000011920929,
+      "new": 0.1599999964237213,
+      "delta": 0.004999995231628418
+    },
+    {
+      "symbol": "UDOC.CN",
+      "session": "2026-09-17",
+      "field": "close",
+      "old": null,
+      "new": 0.10000000149011612,
+      "delta": null
+    },
+    {
+      "symbol": "UDOC.CN",
+      "session": "2026-09-17",
+      "field": "high",
+      "old": null,
+      "new": 0.10999999940395355,
+      "delta": null
+    },
+    {
+      "symbol": "UDOC.CN",
+      "session": "2026-09-17",
+      "field": "low",
+      "old": null,
+      "new": 0.06499999761581421,
+      "delta": null
+    },
+    {
+      "symbol": "UDOC.CN",
+      "session": "2026-09-17",
+      "field": "volume",
+      "old": null,
+      "new": 34500,
+      "delta": null
+    },
+    {
+      "symbol": "UDOC.CN",
+      "session": "2026-09-17",
+      "field": "adjusted_close",
+      "old": null,
+      "new": 0.10000000149011612,
+      "delta": null
+    },
+    {
+      "symbol": "CCM.TO",
+      "session": "2026-09-18",
+      "field": "volume",
+      "old": 14594,
+      "new": 14600,
+      "delta": 6
+    }
+  ],
+  "conclusion": "Raw value differences or equality do not establish corporate-action or entity-history completeness. No source changes applied."
+}

@@ -1,0 +1,85 @@
+{
+  "reviewed_at": "2026-09-28T20:21:08.924064+00:00",
+  "scope": "Independent bounded arithmetic/schema review; no worker, model, source or policy modifications",
+  "source_sha256": {
+    ".qualification/conditional-selection20260928/economic_analysis.py": "0ed9f7f7a2f39fbc6bf4983c8247efb51dcf7bdda5fff6ce3072e260894ed88e",
+    ".qualification/conditional-selection20260928/run_and_analyze.py": "518d539a0fab070d11b69f4737292d03c97fe39de1bf9d6147e30296a830ad2b",
+    ".qualification/strategy-interactions20260928/economic_analysis.py": "2a78675b069be68cfaea08322f6f2543308d23c6570c6713acb3821485af08c1",
+    "src/frontier/conditional_policy.py": "ca36d080c9dde07ebbed45d93c21cd3710b6588ce9a86d653a6850a88527e41e",
+    "src/frontier/short_horizon_study.py": "9105cce590c0165e37c2add71be7daf0b0b4db12eef0c52182f629c811d04cd0",
+    "src/frontier/execution_costs.py": "5563f6eb14196f4b12d1a7b103e9bfced733976fd0b93f197dafd795e2381483"
+  },
+  "status": "reviewed_fix_no_open_material_findings",
+  "finding": {
+    "title": "Join projected economics to the actual ledger and recompute fee errors",
+    "location": ".qualification/conditional-selection20260928/economic_analysis.py conditional trade block",
+    "observed": "Projection fees and utilities are recalculated internally, but conditional metadata is optional on learned-policy trades; its quantity, price and notional are not independently joined to actual trade/source values. Realized-minus-projected fee fields are summed without recalculation.",
+    "impact": "A self-consistent projection attached to the wrong trade, missing learned-policy projection, or erroneous stored fee-error field can pass this analyzer, undermining the declared projected-versus-realized diagnostic even when account PnL remains correctly reconciled.",
+    "recommended_checks": [
+      "Require conditional metadata on learned-policy trades",
+      "Assert fill quantity equals executed quantity and does not exceed reference quantity",
+      "Check reference price against signal close and fill price against entry close; each notional equals quantity times price",
+      "Check frozen mu and downside agree between reference and fill",
+      "Check projected sale notional equals N*(1+mu)",
+      "Recalculate realized total fees less each projected total fee before summing errors"
+    ],
+    "owner_notified": true,
+    "resolution_at_write": "Resolved by owner; independently reread the final joins and arithmetic. The initial finding text is retained as review history."
+  },
+  "reviewed_consistent": [
+    "Decimal fees match frozen 40bps and moomoo scenario including price threshold, component minima and sell levy",
+    "Entry is next close, exit is entry plus declared horizon, quantity is positive whole shares",
+    "Source notional and adjusted sale checks agree with engine convention within declared numeric tolerance",
+    "Prior account helper reconciles full account PnL, fees, trade counts, cash, period returns, exposure and drawdown; incomplete paths stay invalid",
+    "Eighteen-account scope and paired comparisons preserve every declared account",
+    "Launcher runs analysis only after successful study exit and records both exit statuses"
+  ],
+  "actual_accounts_available": 0,
+  "actual_account_validation_performed": false,
+  "limits": [
+    "Static review does not validate unavailable account results",
+    "No source-action completeness or profitability claim",
+    "No waiting for future accounts or additional broad validation initiated"
+  ],
+  "followup": {
+    "reviewed_at": "2026-09-28T20:21:52.187705+00:00",
+    "analyzer_sha256": "0ed9f7f7a2f39fbc6bf4983c8247efb51dcf7bdda5fff6ce3072e260894ed88e",
+    "verified": [
+      "Learned trades require conditional metadata",
+      "Fill quantity is executed quantity and bounded above by reference quantity",
+      "Both projection prices and notionals join to the corresponding source close and actual ledger",
+      "Frozen mu/downside match each other and the exact hash-verified saved forecast array",
+      "Projected exit notional equals N*(1+mu)",
+      "Both realized-minus-projected fee fields are independently recomputed before aggregation"
+    ],
+    "actual_account_validation_performed": false,
+    "additional_tests_run": false
+  },
+  "source_hash_timing": "Hashes were captured when initial evidence was written, concurrently with the owner fix; they do not establish an immutable pre-fix snapshot. The followup hash identifies the final reread source.",
+  "action_attribution_followup": {
+    "reviewed_at": "2026-09-28T20:25:38.184974+00:00",
+    "status": "no_open_material_findings",
+    "source_sha256": {
+      ".qualification/conditional-selection20260928/economic_analysis.py": "7df5d0ef780e5b1a068a9bb2429d53b9db625b2866f3ba00baddb0c2da8025fc",
+      ".qualification/strategy-action-attribution20260928/matched-event-definitions.json": "e15056c2fc41d5c97cdcda308ca7e036bde3f91788e099576630740d2c5ba8c3",
+      ".qualification/conditional-selection20260928/preparation/source-evidence.json": "ae2e3a1ce69a20e98961084f7104e39a50a5e5edcc8704f89efa46eee1fcf206"
+    },
+    "inventory_scope": "Full USD source-matched provider split-labelled inventory, not only previously held crossings; not ordinary dividends or exhaustive corporate actions",
+    "event_count": 4929,
+    "unique_event_count": 4929,
+    "preparation_sources": 5664,
+    "event_source_missing_or_mismatched": 0,
+    "known_source_issue_union_event_count": 8,
+    "verified": [
+      "Actual source_hashes schema is list of symbol/sha256 records; event source_sha256 keys and values all join",
+      "ISO session comparison excludes action on entry session and includes action on exit session",
+      "Multiple events per trade preserve all event IDs while counting trade PnL once",
+      "Crossing signed PnL sums all crossing trades; absolute PnL share uses sum(abs(crossing net))/sum(abs(all net)) and is undefined for zero denominator",
+      "Known-issue count and signed PnL filter union membership once per crossing trade",
+      "No trades are deleted or corrected and source-lookback/dividend limitations are explicit"
+    ],
+    "actual_account_validation_performed": false,
+    "no_additional_tests_or_network": true
+  },
+  "final_analyzer_sha256": "7df5d0ef780e5b1a068a9bb2429d53b9db625b2866f3ba00baddb0c2da8025fc"
+}

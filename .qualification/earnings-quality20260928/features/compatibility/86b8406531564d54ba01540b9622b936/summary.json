@@ -1,0 +1,76 @@
+{
+  "at": "2026-09-28T23:47:34.505386+00:00",
+  "status": "complete",
+  "records": 252,
+  "original_records_all_fields_unchanged": true,
+  "original_events_all_fields_unchanged": true,
+  "q_status": {
+    "qualified": 146,
+    "unavailable": 106
+  },
+  "q_unavailable_reasons": {
+    "current_YTD_CFO:missing_or_unreadable_selected_fact": 73,
+    "original_S_financial_inputs_unavailable": 29,
+    "current_YTD_NI:missing_or_unreadable_selected_fact": 4
+  },
+  "joint_feature_status": {
+    "unavailable": 141,
+    "qualified": 111
+  },
+  "evaluation_originals": 162,
+  "evaluation_S_eligible": 121,
+  "evaluation_joint_eligible": 111,
+  "by_issuer": {
+    "AAPL": {
+      "records": 42,
+      "q_qualified": 33,
+      "evaluation_joint_eligible": 26
+    },
+    "BANF": {
+      "records": 42,
+      "q_qualified": 29,
+      "evaluation_joint_eligible": 23
+    },
+    "F": {
+      "records": 42,
+      "q_qualified": 3,
+      "evaluation_joint_eligible": 0
+    },
+    "HRL": {
+      "records": 42,
+      "q_qualified": 25,
+      "evaluation_joint_eligible": 25
+    },
+    "MSFT": {
+      "records": 42,
+      "q_qualified": 28,
+      "evaluation_joint_eligible": 24
+    },
+    "T": {
+      "records": 42,
+      "q_qualified": 28,
+      "evaluation_joint_eligible": 13
+    }
+  },
+  "original_fact_context_unit_spans_checked": 3186,
+  "rational_Q_arithmetic_checked": 146,
+  "inputs": {
+    ".qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0\\records.json": "15c7ba84f4c8f8de7462c2c5a04fc07022d16e32c445d6cd048a0a44f189d598",
+    ".qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0\\events.json": "1e10186b313e291a306e9daddbf5ae932d7361cfa4e19fce0e10d9692449feeb",
+    ".qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0\\summary.json": "25d7d43eb41a3b4b47c60712b8924ee8635349b2b28b8e5016eacccbf9622d55",
+    ".qualification\\post-filing-strategy20260928\\calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    ".qualification\\filing-features20260928\\features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+    ".qualification\\earnings-quality20260928\\features\\cash_backing.py": "b8f54a439a3e119be7f93842b04a4b40fc1c5ae718c203a4b929d0d98dce4673",
+    ".qualification\\earnings-quality20260928\\features\\test_cash_backing.py": "a392a2cc85ab720dfa5410cce6839a6ebbca6479dcc2b5500399005ba4c1f64f",
+    ".qualification\\earnings-quality20260928\\features\\extraction-declaration.json": "891ada623f1bab393bb288cd524ce2d3758df1db6031067f3ad54db64a1d7102",
+    ".qualification\\earnings-quality20260928\\features\\run_compatibility.py": "3ba75c17ed5b96c62d47add1eb9e7bdccb0370a4956722fc36cdc389cfdc1041"
+  },
+  "files": {
+    "q-records.json": "92698ca470d5687727b74d1ff07484edc1eafc17bf9187eea78d8628a3a228f5",
+    "q-events.json": "b7e89b3d8b47e9f88238fe0e4c0f2261d6626fcdb38a488c3436a04f54e16ff9",
+    "request.json": "a193100427456f86978a1898a0c93f2118122ae5819be01628e8346634342367"
+  },
+  "price_returns_read": false,
+  "new_network_requests": 0,
+  "limitation": "Compatibility on the previously requested six-issuer originals; it neither selects nor replaces the new100-issuer cohort, and includes pilotfinancialissuerBANF only to preserve complete original denominator."
+}

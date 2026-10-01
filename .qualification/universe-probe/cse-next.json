@@ -1,0 +1,3867 @@
+{
+  "props": {
+    "pageProps": {
+      "__SEED_NODE__": {
+        "__typename": "Page",
+        "uri": "/listing/listed-companies/",
+        "id": "cG9zdDo4MzI=",
+        "databaseId": 832,
+        "isContentNode": true,
+        "slug": "listed-companies",
+        "contentType": {
+          "__typename": "ContentNodeToContentTypeConnectionEdge",
+          "node": {
+            "__typename": "ContentType",
+            "name": "page"
+          }
+        },
+        "template": {
+          "__typename": "Template_ListedCompanies",
+          "templateName": "Listed Companies"
+        },
+        "isFrontPage": false,
+        "isPostsPage": false
+      },
+      "__TEMPLATE_QUERY_DATA__": {
+        "page": {
+          "__typename": "Page",
+          "translation": {
+            "__typename": "Page",
+            "seo": {
+              "__typename": "Seo",
+              "canonical": "https://cms.thecse.com/listing/listed-companies/",
+              "description": "",
+              "title": "Listed Companies",
+              "socialImage": "",
+              "robots": ""
+            },
+            "title": "Listed Companies",
+            "slug": "listed-companies",
+            "homeGeneralCta": {
+              "__typename": "Page_Homegeneralcta",
+              "ctaBanner": {
+                "__typename": "Page_Homegeneralcta_CtaBanner",
+                "description": "List your company with the unrivaled support and expertise of our seasoned Listings team.",
+                "title": "Find a home for \u2028your next big idea.",
+                "backgroundImage": {
+                  "__typename": "MediaItem",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/04/li-lc-banner@2x-scaled.jpg",
+                  "focusPoint": {
+                    "__typename": "FocusPoint",
+                    "left": 36,
+                    "top": 30
+                  }
+                },
+                "button": {
+                  "__typename": "Page_Homegeneralcta_CtaBanner_Button",
+                  "label": "Get in touch",
+                  "link": {
+                    "__typename": "AcfLink",
+                    "target": "",
+                    "url": "/contact-us/"
+                  }
+                }
+              }
+            },
+            "homeLatestFromCSE": {
+              "__typename": "Page_Homelatestfromcse",
+              "latestFromCse": {
+                "__typename": "Page_Homelatestfromcse_LatestFromCse",
+                "title": "**Custom** follow us",
+                "description": "Custom latest description. Rutrum leo quis semper eu a nam morbi a nisi suspendisse blandit ante fusce ac pulvinar a suspendisse in scelerisque pulvinar suspendisse dignissim phasellus nunc."
+              }
+            },
+            "homeFollowUsCTA": {
+              "__typename": "Page_Homefollowuscta",
+              "latestFromCse": {
+                "__typename": "Page_Homefollowuscta_LatestFromCse",
+                "backgroundImage": null,
+                "title": null
+              }
+            },
+            "parent": {
+              "__typename": "HierarchicalContentNodeToParentContentNodeConnectionEdge",
+              "node": {
+                "__typename": "Page",
+                "slug": "listing",
+                "translation": {
+                  "__typename": "Page",
+                  "title": "Listing",
+                  "pageMetadata": {
+                    "__typename": "Page_Pagemetadata",
+                    "breadcrumbsLabel": null
+                  }
+                }
+              }
+            },
+            "translations": [
+              {
+                "__typename": "Page",
+                "uri": "/fr/listing/listed-companies/",
+                "language": {
+                  "__typename": "Language",
+                  "code": "FR"
+                }
+              }
+            ],
+            "heroBanner": {
+              "__typename": "Page_Herobanner",
+              "heroBanner": {
+                "__typename": "Page_Herobanner_HeroBanner",
+                "content": {
+                  "__typename": "Page_Herobanner_HeroBanner_Content",
+                  "metaTitle": "A transparent platform to present your company's disclosure.",
+                  "description": "The CSE provides each listed company with an individual page devoted to trading activity and stock performance, corporate disclosure and regulatory filings."
+                },
+                "mediaType": null,
+                "youtubeUrl": null,
+                "placeholderVideo": null,
+                "placeholderImage": null,
+                "overlayLogo": null,
+                "image": {
+                  "__typename": "MediaItem",
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/04/li-lc-hero@2x.jpg",
+                  "focusPoint": {
+                    "__typename": "FocusPoint",
+                    "left": 52,
+                    "top": 39
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "__TEMPLATE_VARIABLES__": {
+        "databaseId": 832,
+        "asPreview": false,
+        "language": "EN",
+        "translationLanguage": "EN"
+      },
+      "menus": {
+        "aboutMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDoxNTQ1",
+              "path": "/about/about-us/",
+              "label": "About Us",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTY4",
+              "path": "/about/about-us/#overview",
+              "label": "Overview",
+              "description": null,
+              "parentId": "cG9zdDoxNTQ1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTcw",
+              "path": "/about/about-us/#our-history",
+              "label": "Our History",
+              "description": null,
+              "parentId": "cG9zdDoxNTQ1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTcx",
+              "path": "/about/about-us/#trading-on-the-cse",
+              "label": "Trading on the CSE",
+              "description": null,
+              "parentId": "cG9zdDoxNTQ1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTY5",
+              "path": "/about/about-us/#how-were-regulated",
+              "label": "How We're Regulated",
+              "description": null,
+              "parentId": "cG9zdDoxNTQ1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxODA5",
+              "path": "/about/marketplace-operations/",
+              "label": "Marketplace Operations",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTcy",
+              "path": "/about/marketplace-operations/#fees",
+              "label": "Fees",
+              "description": null,
+              "parentId": "cG9zdDoxODA5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTcz",
+              "path": "/about/marketplace-operations/#order-entry-execution",
+              "label": "Order Entry & Execution",
+              "description": null,
+              "parentId": "cG9zdDoxODA5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTc0",
+              "path": "/about/marketplace-operations/#access-to-trading",
+              "label": "Access to Trading",
+              "description": null,
+              "parentId": "cG9zdDoxODA5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTc1",
+              "path": "/about/marketplace-operations/#conflicts-of-interest",
+              "label": "Conflicts of Interest",
+              "description": null,
+              "parentId": "cG9zdDoxODA5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxODA3",
+              "path": "/about/team/",
+              "label": "Team",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTc2",
+              "path": "/about/team/#executive-team",
+              "label": "Executive Team",
+              "description": null,
+              "parentId": "cG9zdDoxODA3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTc3",
+              "path": "/about/team/#board-of-directors",
+              "label": "Board of Directors",
+              "description": null,
+              "parentId": "cG9zdDoxODA3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxODA4",
+              "path": "/about/careers/",
+              "label": "Careers",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxODEw",
+              "path": "/contact-us/",
+              "label": "Contact Us",
+              "description": null,
+              "parentId": "cG9zdDoxODA4",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTc4",
+              "path": "/about/careers/#why-work-with-us",
+              "label": "Why work with us",
+              "description": null,
+              "parentId": "cG9zdDoxODA4",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTc5",
+              "path": "/about/careers/#our-values",
+              "label": "Our Values",
+              "description": null,
+              "parentId": "cG9zdDoxODA4",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTgw",
+              "path": "/about/careers/#open-positions",
+              "label": "Open Positions",
+              "description": null,
+              "parentId": "cG9zdDoxODA4",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main About",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "listingMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDoxNTM2",
+              "path": "/listing/listing-on-the-cse/",
+              "label": "Listing on the CSE",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTA1",
+              "path": "/listing/listing-on-the-cse/#why-list-on-the-cse",
+              "label": "Why List on the CSE",
+              "description": null,
+              "parentId": "cG9zdDoxNTM2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTA3",
+              "path": "/listing/listing-on-the-cse/#how-to-list",
+              "label": "How to List on the CSE",
+              "description": null,
+              "parentId": "cG9zdDoxNTM2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxNTQw",
+              "path": "/listing/fees-policies-forms/",
+              "label": "Fees, Policies & Forms",
+              "description": "Another page with fees and forms",
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTA4",
+              "path": "/listing/fees-policies-forms/#listing-fees",
+              "label": "Listing Fees",
+              "description": null,
+              "parentId": "cG9zdDoxNTQw",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTA5",
+              "path": "/listing/fees-policies-forms/#listing-policies",
+              "label": "Listing Policies",
+              "description": null,
+              "parentId": "cG9zdDoxNTQw",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTEw",
+              "path": "/listing/fees-policies-forms/#listing-forms",
+              "label": "Listing Forms",
+              "description": null,
+              "parentId": "cG9zdDoxNTQw",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxNTQx",
+              "path": "/listing/listed-companies/",
+              "label": "Listed Companies",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNzUy",
+              "path": "/listing/listed-companies/",
+              "label": "All Listed Companies",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTE3",
+              "path": "/industry/cleantech/",
+              "label": "Clean Tech",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTE1",
+              "path": "/industry/diversified-industries/",
+              "label": "Diversified Industries",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTE2",
+              "path": "/industry/life-sciences/",
+              "label": "Life Sciences",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTEx",
+              "path": "/industry/mining/",
+              "label": "Mining",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTEz",
+              "path": "/industry/oil-and-gas/",
+              "label": "Oil and Gas",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTE0",
+              "path": "/industry/technology/",
+              "label": "Technology",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDUw",
+              "path": "/listing/listed-companies/interlisted-securities/",
+              "label": "Interlisted Securities",
+              "description": null,
+              "parentId": "cG9zdDoxNTQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDAz",
+              "path": "/listing/partner-services/",
+              "label": "Partner Services",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo3NzA0",
+              "path": "/listing/partner-services/",
+              "label": "CSE Featured Sponsors",
+              "description": null,
+              "parentId": "cG9zdDo1MDAz",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Listing",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "activityMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo1MDEy",
+              "path": "/market-activity/market-overview/",
+              "label": "Market Overview",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQ1",
+              "path": "/market-activity/market-overview/#most-active",
+              "label": "Most Active",
+              "description": null,
+              "parentId": "cG9zdDo1MDEy",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQ2",
+              "path": "/market-activity/market-overview/#industries",
+              "label": "Industries",
+              "description": null,
+              "parentId": "cG9zdDo1MDEy",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQ3",
+              "path": "/market-activity/market-overview/#recent-quotes",
+              "label": "Recent Quotes",
+              "description": null,
+              "parentId": "cG9zdDo1MDEy",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQ4",
+              "path": "/market-activity/market-overview/#movers",
+              "label": "Movers",
+              "description": null,
+              "parentId": "cG9zdDo1MDEy",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQ5",
+              "path": "/market-activity/market-overview/#indices",
+              "label": "Indices",
+              "description": null,
+              "parentId": "cG9zdDo1MDEy",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDEz",
+              "path": "/market-activity/activity-summaries/",
+              "label": "Activity Summaries",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTUx",
+              "path": "/market-activity/activity-summaries/#daily",
+              "label": "Daily",
+              "description": null,
+              "parentId": "cG9zdDo1MDEz",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTUy",
+              "path": "/market-activity/activity-summaries/#weekly",
+              "label": "Weekly",
+              "description": null,
+              "parentId": "cG9zdDo1MDEz",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTUz",
+              "path": "/market-activity/activity-summaries/#monthly",
+              "label": "Monthly",
+              "description": null,
+              "parentId": "cG9zdDo1MDEz",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTU0",
+              "path": "/market-activity/activity-summaries/#annual",
+              "label": "Annual",
+              "description": null,
+              "parentId": "cG9zdDo1MDEz",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDE0",
+              "path": "/market-activity/indices/",
+              "label": "Indices",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTU2",
+              "path": "/market-activity/indices/#overview",
+              "label": "Overview",
+              "description": null,
+              "parentId": "cG9zdDo1MDE0",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTU3",
+              "path": "/market-activity/indices/#performance",
+              "label": "Performance",
+              "description": null,
+              "parentId": "cG9zdDo1MDE0",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTU4",
+              "path": "/market-activity/indices/#methodology",
+              "label": "Methodology",
+              "description": null,
+              "parentId": "cG9zdDo1MDE0",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTU5",
+              "path": "/market-activity/indices/#characteristics",
+              "label": "Characteristics",
+              "description": null,
+              "parentId": "cG9zdDo1MDE0",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTYw",
+              "path": "/market-activity/indices/#weighting",
+              "label": "Weighting",
+              "description": null,
+              "parentId": "cG9zdDo1MDE0",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTYx",
+              "path": "/market-activity/indices/#constituents",
+              "label": "Constituents",
+              "description": null,
+              "parentId": "cG9zdDo1MDE0",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Market Activity",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "newsMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo1MDM1",
+              "path": "/news-events/",
+              "label": "News & Events",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDM2",
+              "path": "/news-events/cse-news/",
+              "label": "CSE News",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDM3",
+              "path": "/news-events/bulletins/",
+              "label": "Bulletins",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDM4",
+              "path": "/news-events/notices/",
+              "label": "Notices",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDM5",
+              "path": "/news-events/company-news/",
+              "label": "Company News",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo5Mjc4",
+              "path": "/news-events/company-filings/",
+              "label": "Company Filings",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1OTk4",
+              "path": "/news-events/events/",
+              "label": "Events",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTg1",
+              "path": "https://blog.thecse.com/",
+              "label": "Blog",
+              "description": null,
+              "parentId": "cG9zdDo1MDM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main News",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "tradingMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDozMzM1",
+              "path": "/trading/trading-resources/",
+              "label": "Trading Resources",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTIy",
+              "path": "/trading/trading-resources/#order-types",
+              "label": "Order Types",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo4NTUx",
+              "path": "/trading/trading-resources/#market-on-close",
+              "label": "Market on Close",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTIz",
+              "path": "/trading/trading-resources/#trade-cancellation-and-correction-policy",
+              "label": "Trade Cancellation & Correction Policy",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTI0",
+              "path": "/trading/trading-resources/#trading-rules",
+              "label": "Trading Rules",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTI1",
+              "path": "/trading/trading-resources/#trading-fees",
+              "label": "Trading Fees",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTI2",
+              "path": "/trading/trading-resources/#trading-hours",
+              "label": "Trading Hours",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTI3",
+              "path": "/trading/trading-resources/#buy-ins",
+              "label": "Buy-ins",
+              "description": null,
+              "parentId": "cG9zdDozMzM1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozMzM2",
+              "path": "/trading/dealers/",
+              "label": "Dealers",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTMw",
+              "path": "/trading/dealers/#overview",
+              "label": "Overview",
+              "description": null,
+              "parentId": "cG9zdDozMzM2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTMx",
+              "path": "/trading/dealers/#how-to-apply",
+              "label": "How to Apply",
+              "description": null,
+              "parentId": "cG9zdDozMzM2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTMy",
+              "path": "/trading/dealers/#dealer-directory",
+              "label": "Dealer Directory",
+              "description": null,
+              "parentId": "cG9zdDozMzM2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTMz",
+              "path": "/trading/dealers/#forms",
+              "label": "Forms",
+              "description": null,
+              "parentId": "cG9zdDozMzM2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1MDQx",
+              "path": "/trading/market-data/",
+              "label": "Market Data",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTM2",
+              "path": "/trading/market-data/#market-data-feed",
+              "label": "Market Data Feed",
+              "description": null,
+              "parentId": "cG9zdDo1MDQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTM1",
+              "path": "/trading/market-data/#authorized-vendors",
+              "label": "Authorized Vendors",
+              "description": null,
+              "parentId": "cG9zdDo1MDQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTM3",
+              "path": "/trading/market-data/#historical-data",
+              "label": "Historical Data",
+              "description": null,
+              "parentId": "cG9zdDo1MDQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTM4",
+              "path": "/trading/market-data/#fee-schedule",
+              "label": "Fee Schedule",
+              "description": null,
+              "parentId": "cG9zdDo1MDQx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozMzM3",
+              "path": "/trading/market-maker-program/",
+              "label": "Market Makers",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQw",
+              "path": "/trading/market-maker-program/#overview",
+              "label": "Overview",
+              "description": null,
+              "parentId": "cG9zdDozMzM3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQx",
+              "path": "/trading/market-maker-program/#performance-metrics",
+              "label": "Performance Metrics",
+              "description": null,
+              "parentId": "cG9zdDozMzM3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQy",
+              "path": "/trading/market-maker-program/#how-to-apply",
+              "label": "How to Apply",
+              "description": null,
+              "parentId": "cG9zdDozMzM3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTQz",
+              "path": "/trading/market-maker-program/#exchange-market-makers",
+              "label": "Exchange Market Makers",
+              "description": null,
+              "parentId": "cG9zdDozMzM3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Trading",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "investorResourcesMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo0OTc3",
+              "path": "/investor-resources/",
+              "label": "Investor Resources",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Investor Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTYz",
+              "path": "/investor-resources/#company-disclosure",
+              "label": "Company Disclosure",
+              "description": null,
+              "parentId": "cG9zdDo0OTc3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Investor Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTY0",
+              "path": "/investor-resources/#online-broker-directory",
+              "label": "Online Broker Directory",
+              "description": null,
+              "parentId": "cG9zdDo0OTc3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Investor Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTY1",
+              "path": "/investor-resources/#cse-quotes",
+              "label": "CSE Quotes",
+              "description": null,
+              "parentId": "cG9zdDo0OTc3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Investor Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTY2",
+              "path": "/investor-resources/#faq",
+              "label": "FAQ",
+              "description": null,
+              "parentId": "cG9zdDo0OTc3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Investor Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxOTY3",
+              "path": "/investor-resources/#us-and-foreign-investors",
+              "label": "US & Foreign Investors",
+              "description": null,
+              "parentId": "cG9zdDo0OTc3",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Investor Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "contactMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo0OTc2",
+              "path": "/contact-us/",
+              "label": "Contact Us",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Contact",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTI2",
+              "path": "/contact-us/#offices",
+              "label": "Offices",
+              "description": null,
+              "parentId": "cG9zdDo0OTc2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Contact",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTI3",
+              "path": "/contact-us/#general-inquiries",
+              "label": "General Inquiries",
+              "description": null,
+              "parentId": "cG9zdDo0OTc2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Contact",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTI4",
+              "path": "/contact-us/#new-listing-inquiries",
+              "label": "New Listing Inquiries",
+              "description": null,
+              "parentId": "cG9zdDo0OTc2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Contact",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTI5",
+              "path": "/contact-us/#listings-and-regulation",
+              "label": "Listings and Regulation",
+              "description": null,
+              "parentId": "cG9zdDo0OTc2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Contact",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTMw",
+              "path": "/contact-us/#support",
+              "label": "Support",
+              "description": null,
+              "parentId": "cG9zdDo0OTc2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Contact",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "footerMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo0OTU5",
+              "path": "/about/",
+              "label": "About",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTM3",
+              "path": "/about/about-us/",
+              "label": "About Us",
+              "description": null,
+              "parentId": "cG9zdDo0OTU5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxNTI5",
+              "path": "/about/team/",
+              "label": "Team",
+              "description": null,
+              "parentId": "cG9zdDo0OTU5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTYw",
+              "path": "/news-events/",
+              "label": "News & Events",
+              "description": null,
+              "parentId": "cG9zdDo0OTU5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxNTMw",
+              "path": "/about/careers/",
+              "label": "Careers",
+              "description": null,
+              "parentId": "cG9zdDo0OTU5",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDoxNTI2",
+              "path": "#",
+              "label": "Resources",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTAy",
+              "path": "/trading/trading-resources/#trading-fees",
+              "label": "Fee Schedules",
+              "description": null,
+              "parentId": "cG9zdDoxNTI2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNDk5",
+              "path": "/investor-resources/#online-broker-directory",
+              "label": "Online Broker Directory",
+              "description": null,
+              "parentId": "cG9zdDoxNTI2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTAw",
+              "path": "/investor-resources/#cse-quotes",
+              "label": "CSE Quotes",
+              "description": null,
+              "parentId": "cG9zdDoxNTI2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTAx",
+              "path": "/investor-resources/#faq",
+              "label": "FAQs",
+              "description": null,
+              "parentId": "cG9zdDoxNTI2",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTYx",
+              "path": "/trading/",
+              "label": "Trading",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDozNTAz",
+              "path": "/about/about-us/#trading-on-the-cse",
+              "label": "Trading on the CSE",
+              "description": null,
+              "parentId": "cG9zdDo0OTYx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTYy",
+              "path": "/trading/dealers/",
+              "label": "Dealers",
+              "description": null,
+              "parentId": "cG9zdDo0OTYx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTYz",
+              "path": "/trading/market-data/",
+              "label": "Market Data",
+              "description": null,
+              "parentId": "cG9zdDo0OTYx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTY0",
+              "path": "/trading/market-maker-program/",
+              "label": "Market Maker Program",
+              "description": null,
+              "parentId": "cG9zdDo0OTYx",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTY1",
+              "path": "/listing/",
+              "label": "Listing",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTY2",
+              "path": "/listing/listing-on-the-cse/",
+              "label": "Listing on the CSE",
+              "description": null,
+              "parentId": "cG9zdDo0OTY1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTY4",
+              "path": "/listing/listed-companies/",
+              "label": "Listed Companies",
+              "description": null,
+              "parentId": "cG9zdDo0OTY1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTY3",
+              "path": "/listing/fees-policies-forms/",
+              "label": "Listing Resources",
+              "description": null,
+              "parentId": "cG9zdDo0OTY1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0OTY5",
+              "path": "/listing/partner-services/",
+              "label": "Partner Services",
+              "description": null,
+              "parentId": "cG9zdDo0OTY1",
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Global Footer",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "legalMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo1ODc1",
+              "path": "/site-terms/",
+              "label": "Site Terms",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Legal",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1ODc4",
+              "path": "/privacy-statement/",
+              "label": "Privacy Statement",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Legal",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1ODc2",
+              "path": "/accessibility/",
+              "label": "Accessibility",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Legal",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo1ODg2",
+              "path": "/conflicts-of-interest/",
+              "label": "Conflicts of Interest",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Main Legal",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "relatedResourcesMenuItems": {
+          "nodes": [
+            {
+              "id": "cG9zdDo0MzA1",
+              "path": "/investor-resources/",
+              "label": "Investor Resources",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Related Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0MzA2",
+              "path": "/trading/trading-resources/",
+              "label": "Trading Resources",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Related Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0MzA0",
+              "path": "/listing/listed-companies/",
+              "label": "Listed Companies",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Related Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0MzA3",
+              "path": "/market-activity/activity-summaries/",
+              "label": "Market Activity",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Related Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            },
+            {
+              "id": "cG9zdDo0MzA4",
+              "path": "/about/marketplace-operations/",
+              "label": "Marketplace Operations",
+              "description": null,
+              "parentId": null,
+              "cssClasses": [],
+              "menu": {
+                "node": {
+                  "name": "Related Resources",
+                  "__typename": "Menu"
+                },
+                "__typename": "MenuItemToMenuConnectionEdge"
+              },
+              "__typename": "MenuItem"
+            }
+          ],
+          "__typename": "RootQueryToMenuItemConnection"
+        },
+        "globalModules": {
+          "modules": {
+            "footer": {
+              "offices": [
+                {
+                  "address": "100 King Street West, Suite 7210<br />\r\nToronto, ON, M5X 1E1",
+                  "phone": "416-572-2000",
+                  "footerLabel": "Toronto Office",
+                  "title": "Canadian Securities Exchange",
+                  "__typename": "GlobalModules_Modules_Footer_offices"
+                },
+                {
+                  "address": "1095 West Pender Street, Suite 305<br />\r\nVancouver, BC, V6E 2M6",
+                  "phone": "604-331-1213",
+                  "footerLabel": "Vancouver Office",
+                  "title": "Vancouver Office",
+                  "__typename": "GlobalModules_Modules_Footer_offices"
+                }
+              ],
+              "__typename": "GlobalModules_Modules_Footer"
+            },
+            "__typename": "GlobalModules_Modules"
+          },
+          "__typename": "GlobalModules"
+        },
+        "globalModulesFr": {
+          "modules": {
+            "footer": {
+              "offices": [
+                {
+                  "address": "100 King Street West, Suite 7210<br />\r\nToronto, (Ontario), M5X 1E1",
+                  "phone": "416 572-2000",
+                  "footerLabel": "Bureau de Toronto",
+                  "title": "Bourse des valeurs canadiennes",
+                  "__typename": "GlobalModulesFr_Modules_Footer_offices"
+                },
+                {
+                  "address": "1095 West Pender Street, Suite 305<br />\r\nVancouver, (Colombie-Britannique), V6E 2M6",
+                  "phone": "604-331-1213",
+                  "footerLabel": null,
+                  "title": "Bureau de Vancouver",
+                  "__typename": "GlobalModulesFr_Modules_Footer_offices"
+                }
+              ],
+              "__typename": "GlobalModulesFr_Modules_Footer"
+            },
+            "__typename": "GlobalModulesFr_Modules"
+          },
+          "__typename": "GlobalModulesFr"
+        },
+        "events": {
+          "nodes": [
+            {
+              "uri": "/event/asic-annual-forum-2026/",
+              "title": "ASIC Annual Forum 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "September 18, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "November 17, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "ICC Sydney",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/09/AdobeStock_222234129-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/arcstone-kingswood-growth-summit-2026/",
+              "title": "ArcStone Kingswood Growth Summit 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "September 16, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Sheraton Centre Toronto Hotel",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2025/09/AdobeStock_167777918-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/capital-tides-investor-cruise-2026/",
+              "title": "Capital Tides Investor Cruise 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "September 10, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Harbour Cruises",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/08/The-Britannia-Photo-2-scaled.jpg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/sta-92nd-annual-market-structure-conference-2/",
+              "title": "STA 93rd Annual Market Structure Conference: The Future in Focus",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "October 16, 2026",
+                    "time": "10:30 AM",
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "October 14, 2026",
+                    "time": "8:30 AM",
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "JW Marriott Washington, DC",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/08/AdobeStock_268692847-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/atlantic-capital-markets-forum/",
+              "title": "Atlantic Capital Markets Forum",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "September 22, 2026",
+                    "time": "7:00 PM",
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "September 22, 2026",
+                    "time": "5:00 PM",
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": null,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Halifax Marriott Harbourfront Hotel",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/07/AdobeStock_530281290-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/red-cloud-fall-mining-showcase-2026/",
+              "title": "Red Cloud Fall Mining Showcase 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "October 29, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "October 28, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "The Omni King Edward Hotel",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "Red Cloud Fall Mining Header",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/07/2026-11-01-Red-Cloud-Fall-Mining-Showcase_Website-1093x480-1.jpg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/csta-annual-conference-2026/",
+              "title": "CSTA Annual Conference 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "August 22, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "August 19, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "The Westin Resort & Spa",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2025/08/AdobeStock_132900167.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/121-mining-investment-new-york/",
+              "title": "121 Mining Investment New York",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "June 16, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "June 15, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Convene 360 Madison",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/06/AdobeStock_2022498060.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/bay-street-rides-far-2-2/",
+              "title": "Bay Street Rides FAR",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "September 26, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Sherbourne Common",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2025/06/JBC_3241-2-edit-1-scaled.png",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/pcma-2026-the-power-of-private-capital-building-canadas-future/",
+              "title": "PCMA 2026 \u2013 The Power of Private Capital \u2013 Building Canada\u2019s Future",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "May 28, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "The Omni King Edward Hotel",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/05/AdobeStock_1984615564-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/blockchain-futurist-conference/",
+              "title": "Blockchain Futurist Conference",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "July 22, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "July 21, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Rebel Toronto",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/04/AdobeStock_734127788.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/the-calgary-stampede-2026/",
+              "title": "The Calgary Stampede 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "July 12, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "July 3, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Stampede Park",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/04/AdobeStock_833157355_Editorial_Use_Only-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/takestock-calgary-investor-forum-5-2/",
+              "title": "TAKESTOCK 2026 \u2013 Calgary Investor Forum",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "June 3, 2026",
+                    "time": "5:00 PM",
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "June 3, 2026",
+                    "time": "9:00 AM",
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Calgary Petroleum Club",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2025/09/AdobeStock_180384221-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/takestock-at-sampede-2026/",
+              "title": "TAKESTOCK-at-Sampede 2026",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "July 1, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "June 30, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Calgary Petroleum Club",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/04/AdobeStock_399166064-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/fisd-toronto/",
+              "title": "FISD Toronto",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "April 29, 2026",
+                    "time": "2:30 PM",
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": null,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Bank of Montreal",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/03/AdobeStock_1645557063_Editorial_Use_Only-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/room-leadership-summit/",
+              "title": "ROOM Leadership Summit",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "April 7, 2026",
+                    "time": "10:30 AM",
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": null,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "The Ritz-Carlton Toronto",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/03/AdobeStock_566753404-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/stany-90th-annual-conference/",
+              "title": "STANY 90th Annual Conference",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": null,
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "April 13, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": null,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "New York Stock Exchange",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/03/2026-04-13-STANY-90th-Annual-Conference_Website-1093x480-1.jpg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/going-public-and-raising-capital-in-canada-5/",
+              "title": "Going Public and Raising Capital in Canada",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "February 26, 2026",
+                    "time": "6:30 PM",
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "February 26, 2026",
+                    "time": "3:00 PM",
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": null,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "1 Hotel South Beach",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/02/AdobeStock_955256965-scaled.jpeg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/cmi-summit-v/",
+              "title": "CMI Summit V",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "May 14, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "May 13, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "The National Club",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/01/2026-05-13-CMI-Summit-V_Website-1093x480-1.jpg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            },
+            {
+              "uri": "/event/precious-metals-summit-beaver-creek-3/",
+              "title": "Precious Metals Summit Beaver Creek",
+              "aboutTheEvent": {
+                "hideFromEventListings": null,
+                "dates": {
+                  "end": {
+                    "date": "September 25, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_End"
+                  },
+                  "start": {
+                    "date": "September 22, 2026",
+                    "time": null,
+                    "__typename": "Event_Abouttheevent_Dates_Start"
+                  },
+                  "allDay": true,
+                  "showEndDate": true,
+                  "__typename": "Event_Abouttheevent_Dates"
+                },
+                "location": {
+                  "name": "Beaver Creek Resort",
+                  "__typename": "EventLocation"
+                },
+                "image": {
+                  "altText": "",
+                  "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2026/01/2026-09-22-Precious-Metals-Summit-Beaver-Creek_Website-1093x480-1.jpg",
+                  "focusPoint": null,
+                  "__typename": "MediaItem"
+                },
+                "__typename": "Event_Abouttheevent"
+              },
+              "__typename": "Event"
+            }
+          ],
+          "__typename": "RootQueryToEventConnection"
+        }
+      },
+      "globalModules": {
+        "cseIndices": {
+          "indices": [
+            {
+              "label": null,
+              "symbol": "CSE25",
+              "title": "CSE25\u2122",
+              "rebalancingReport": "https://thecse.com/bulletin/2026-0618-index-cse-25-index-quarterly-rebalancing/",
+              "__typename": "GlobalModules_Modules_CseIndices_indices"
+            },
+            {
+              "label": null,
+              "symbol": "CSECOMP",
+              "title": "CSE Composite Index\u00ae",
+              "rebalancingReport": "https://thecse.com/bulletin/2026-0619-index-cse-composite-index-quarterly-rebalancing/",
+              "__typename": "GlobalModules_Modules_CseIndices_indices"
+            }
+          ],
+          "button": {
+            "label": "CSE Indices",
+            "link": {
+              "target": "",
+              "url": "/market-activity/indices/",
+              "__typename": "AcfLink"
+            },
+            "__typename": "GlobalModules_Modules_CseIndices_Button"
+          },
+          "__typename": "GlobalModules_Modules_CseIndices"
+        },
+        "followUsCta": {
+          "title": "**Follow us** for the **latest news** from the CSE",
+          "backgroundImage": {
+            "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/03/hp-social-banner-bg.jpg",
+            "__typename": "MediaItem"
+          },
+          "__typename": "GlobalModules_Modules_FollowUsCta"
+        },
+        "footer": {
+          "offices": [
+            {
+              "address": "100 King Street West, Suite 7210<br />\r\nToronto, ON, M5X 1E1",
+              "phone": "416-572-2000",
+              "fax": "416-572-4160 (Fax)",
+              "title": "Canadian Securities Exchange",
+              "subtitle": "Headquarters",
+              "footerLabel": "Toronto Office",
+              "image": {
+                "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/08/toronto-office-image.jpg",
+                "focusPoint": null,
+                "altText": "Image of the Canadian Securities Exchange Toronto office building.",
+                "__typename": "MediaItem"
+              },
+              "__typename": "GlobalModules_Modules_Footer_offices"
+            },
+            {
+              "address": "1095 West Pender Street, Suite 305<br />\r\nVancouver, BC, V6E 2M6",
+              "phone": "604-331-1213",
+              "fax": "604-687-1188 (Fax)",
+              "title": "Vancouver Office",
+              "subtitle": null,
+              "footerLabel": "Vancouver Office",
+              "image": {
+                "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/08/vancouver-office-image.jpg",
+                "focusPoint": null,
+                "altText": "Image of the Canadian Securities Exchange Vancouver office building.",
+                "__typename": "MediaItem"
+              },
+              "__typename": "GlobalModules_Modules_Footer_offices"
+            }
+          ],
+          "footerAboutGroup": {
+            "description": "The Canadian Securities Exchange is a rapidly growing exchange invested in working with entrepreneurs, innovators and disruptors to access public capital markets in Canada. The Exchange's efficient operating model, advanced technology and competitive fee structure help its listed issuers of all sectors and sizes minimize their cost of capital and enhance global liquidity. Our client-centric approach and corresponding products and services ensure businesses have the support they need to confidently realize their vision. The CSE offers global investors access to an innovative collection of growing and mature companies.",
+            "copyrightText": "CNSX Markets Inc. All rights reserved.",
+            "socialLinks": {
+              "instagram": "https://www.instagram.com/canadianexchange/",
+              "linkedin": "https://www.linkedin.com/company/canadian-securities-exchange",
+              "twitter": "https://twitter.com/CSE_News",
+              "youtube": "https://www.youtube.com/channel/UCHAlYSqAf_2dGADm9yiqTiw",
+              "__typename": "GlobalModules_Modules_Footer_FooterAboutGroup_SocialLinks"
+            },
+            "__typename": "GlobalModules_Modules_Footer_FooterAboutGroup"
+          },
+          "__typename": "GlobalModules_Modules_Footer"
+        },
+        "generalSiteMetadata": {
+          "siteDescription": " The CSE provides a modern and efficient alternative for companies looking to access the Canadian public capital markets.",
+          "siteTitle": "The Canadian Securities Exchange (CSE)",
+          "defaultFeaturedImage": {
+            "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/05/listing-on-the-cse-cta-banner@2x.jpg",
+            "__typename": "MediaItem"
+          },
+          "__typename": "GlobalModules_Modules_GeneralSiteMetadata"
+        },
+        "getStarted": {
+          "cards": [
+            {
+              "title": "Listing on the CSE",
+              "description": "Learn how we streamline issuer regulation through enhanced disclosure, practical and effective regulatory oversight, and modern technology.",
+              "links": [
+                {
+                  "label": "Benefits",
+                  "link": [
+                    "url",
+                    "/listing/listing-on-the-cse/#why-list-on-the-cse",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Requirements",
+                  "link": [
+                    "url",
+                    "/listing/listing-on-the-cse/#how-to-list",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Policies",
+                  "link": [
+                    "url",
+                    "/listing/fees-policies-forms/#listing-policies",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Forms",
+                  "link": [
+                    "url",
+                    "/listing/fees-policies-forms/#listing-forms",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                }
+              ],
+              "__typename": "GlobalModules_Modules_GetStarted_cards"
+            },
+            {
+              "title": "Investing in Listed Companies",
+              "description": "Learn more about the companies we list and how to get started trading on the CSE.",
+              "links": [
+                {
+                  "label": "Market Activity",
+                  "link": [
+                    "url",
+                    "/market-activity/market-overview/",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "U.S. and foreign investors",
+                  "link": [
+                    "url",
+                    "/investor-resources/#us-and-foreign-investors",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Listings Directory",
+                  "link": [
+                    "url",
+                    "/listing/listed-companies/",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "How to trade stocks on the CSE",
+                  "link": [
+                    "url",
+                    "/trading/trading-resources/#trading-rules",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                }
+              ],
+              "__typename": "GlobalModules_Modules_GetStarted_cards"
+            },
+            {
+              "title": "Trading on the CSE",
+              "description": "Learn how we lower costs, reduce complexity, and provide market making opportunities for the dealer community.",
+              "links": [
+                {
+                  "label": "Become a Dealer",
+                  "link": [
+                    "url",
+                    "/trading/dealers/#how-to-apply",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Market Data",
+                  "link": [
+                    "url",
+                    "/trading/market-data/",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Trading Fee Schedules",
+                  "link": [
+                    "url",
+                    "/trading/market-data/#fee-schedule",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                },
+                {
+                  "label": "Order Types and Functionality",
+                  "link": [
+                    "url",
+                    "/trading/trading-resources/#order-types",
+                    "",
+                    ""
+                  ],
+                  "__typename": "GlobalModules_Modules_GetStarted_cards_links"
+                }
+              ],
+              "__typename": "GlobalModules_Modules_GetStarted_cards"
+            }
+          ],
+          "mainContent": {
+            "description": "Whether you\u2019re an investor, business leader, or simply looking to learn more, start your journey with the CSE here.",
+            "title": "Get Started",
+            "__typename": "GlobalModules_Modules_GetStarted_MainContent"
+          },
+          "__typename": "GlobalModules_Modules_GetStarted"
+        },
+        "cseIssuerStories": {
+          "title": "CSE Issuer Spotlight",
+          "description": "In this series, we delve deep into the experiences of CSE listed companies, exploring their past successes and future opportunities.",
+          "button": {
+            "label": "Issuer story spotlight",
+            "link": {
+              "url": "https://blog.thecse.com/category/cse-issuer-stories/",
+              "__typename": "AcfLink"
+            },
+            "__typename": "GlobalModules_Modules_CseIssuerStories_Button"
+          },
+          "__typename": "GlobalModules_Modules_CseIssuerStories"
+        },
+        "latestFromCse": {
+          "description": "From announcements and market updates to in-depth interviews with company leaders - stay informed with the latest from the CSE.",
+          "title": "Latest from the CSE",
+          "button": {
+            "label": null,
+            "link": null,
+            "__typename": "GlobalModules_Modules_LatestFromCse_Button"
+          },
+          "__typename": "GlobalModules_Modules_LatestFromCse"
+        },
+        "latestListings": {
+          "latestListings": {
+            "description": "Discover newly listed companies on the CSE through our series of bite-sized interviews with company leaders.",
+            "title": "Get to know our latest listings",
+            "button": {
+              "label": "Discover Companies",
+              "link": {
+                "url": "/listing/listed-companies/",
+                "__typename": "AcfLink"
+              },
+              "__typename": "GlobalModules_Modules_LatestListings_LatestListings_Button"
+            },
+            "__typename": "GlobalModules_Modules_LatestListings_LatestListings"
+          },
+          "__typename": "GlobalModules_Modules_LatestListings"
+        },
+        "listedCompanyNews": {
+          "title": "Listed Company News",
+          "description": null,
+          "button": {
+            "label": "Company news",
+            "link": {
+              "url": "/news-events/company-news/",
+              "__typename": "AcfLink"
+            },
+            "__typename": "GlobalModules_Modules_ListedCompanyNews_Button"
+          },
+          "__typename": "GlobalModules_Modules_ListedCompanyNews"
+        },
+        "marketActivity": {
+          "title": "Market Activity",
+          "button": {
+            "label": "Market Activity",
+            "link": {
+              "url": "/market-activity/market-overview/",
+              "__typename": "AcfLink"
+            },
+            "__typename": "GlobalModules_Modules_MarketActivity_Button"
+          },
+          "__typename": "GlobalModules_Modules_MarketActivity"
+        },
+        "megaMenu": {
+          "aboutLabel": "About",
+          "aboutLabelUrl": {
+            "url": "/about/about-us/",
+            "__typename": "AcfLink"
+          },
+          "aboutDescription": null,
+          "aboutBannerTitle": "Find a home for your next big idea.",
+          "aboutBannerCta": {
+            "target": "",
+            "title": "List with the CSE",
+            "url": "/listing/listing-on-the-cse/",
+            "__typename": "AcfLink"
+          },
+          "contactLabel": "Contact Us",
+          "contactLabelUrl": {
+            "url": "/contact-us/",
+            "__typename": "AcfLink"
+          },
+          "contactDescription": "Sample Desc",
+          "investorResourcesLabel": "Investor Resources",
+          "investorResourcesLabelUrl": {
+            "url": "/investor-resources/",
+            "__typename": "AcfLink"
+          },
+          "investorResourcesDescription": null,
+          "investorResourcesFaqSecondaryLink": {
+            "target": "",
+            "title": "Frequently Asked Questions",
+            "url": "/investor-resources/#faq",
+            "__typename": "AcfLink"
+          },
+          "investorResourcesFaqs": [
+            {
+              "faqLink": {
+                "target": "",
+                "title": "How does being listed on the CSE affect me as a shareholder?",
+                "url": "/investor-resources?open=faq-0",
+                "__typename": "AcfLink"
+              },
+              "__typename": "GlobalModules_Modules_MegaMenu_investorResourcesFaqs"
+            },
+            {
+              "faqLink": {
+                "target": "",
+                "title": "Where do I get information and trade CSE listed securities?",
+                "url": "/investor-resources?open=faq-1",
+                "__typename": "AcfLink"
+              },
+              "__typename": "GlobalModules_Modules_MegaMenu_investorResourcesFaqs"
+            },
+            {
+              "faqLink": {
+                "target": "",
+                "title": "Where can I find an RSS feed for listed company news?",
+                "url": "/investor-resources?open=faq-2",
+                "__typename": "AcfLink"
+              },
+              "__typename": "GlobalModules_Modules_MegaMenu_investorResourcesFaqs"
+            },
+            {
+              "faqLink": {
+                "target": "",
+                "title": "Where is the CSE recognized?",
+                "url": "/investor-resources?open=faq-3",
+                "__typename": "AcfLink"
+              },
+              "__typename": "GlobalModules_Modules_MegaMenu_investorResourcesFaqs"
+            }
+          ],
+          "listingLabel": "Listing",
+          "listingLabelUrl": {
+            "url": "/listing/listing-on-the-cse/",
+            "__typename": "AcfLink"
+          },
+          "listingDescription": null,
+          "listingBannerTitle": "Find a home for your next big idea.",
+          "listingBannerCta": {
+            "target": "",
+            "title": "List with the CSE",
+            "url": "/listing/listing-on-the-cse/",
+            "__typename": "AcfLink"
+          },
+          "marketActivityLabel": "Market Activity",
+          "marketActivityLabelUrl": {
+            "url": "/market-activity/market-overview/",
+            "__typename": "AcfLink"
+          },
+          "marketActivityDescription": null,
+          "marketActivitySecondaryLink": {
+            "target": "",
+            "title": "Market Activity",
+            "url": "/market-activity/market-overview",
+            "__typename": "AcfLink"
+          },
+          "newsEventsLabel": "News & Events",
+          "newsEventsLabelUrl": {
+            "url": "/news-events/",
+            "__typename": "AcfLink"
+          },
+          "newsEventsDescription": null,
+          "newsEventsSecondaryLink": {
+            "target": "",
+            "title": "Upcoming Events",
+            "url": "/news-events/events",
+            "__typename": "AcfLink"
+          },
+          "tradingLabel": "Trading",
+          "tradingLabelUrl": {
+            "url": "/trading/trading-resources/",
+            "__typename": "AcfLink"
+          },
+          "tradingDescription": null,
+          "tradingBannerTitle": "Join our mailing list to receive buy-in notifications",
+          "tradingBannerCta": {
+            "target": "",
+            "title": "join the list",
+            "url": "/trading/dealers/",
+            "__typename": "AcfLink"
+          },
+          "__typename": "GlobalModules_Modules_MegaMenu"
+        },
+        "missionAndVision": {
+          "cards": {
+            "mission": {
+              "title": "Where innovation, passion, and trust intersect",
+              "description": "The CSE provides a superior exchange experience by investing in our customers\u2019 success with innovation, dedication, and passion.",
+              "__typename": "GlobalModules_Modules_MissionAndVision_Cards_Mission"
+            },
+            "vision": {
+              "title": "We are Canada's entrepreneurial exchange",
+              "description": "We strive to be the most innovative exchange in Canada. We aim to offer unlimited global access and a customized client-centric experience while delivering the lowest cost of public capital. ",
+              "__typename": "GlobalModules_Modules_MissionAndVision_Cards_Vision"
+            },
+            "__typename": "GlobalModules_Modules_MissionAndVision_Cards"
+          },
+          "image": {
+            "altText": "Woman sitting on desk in an office",
+            "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/03/ab-lp-mission@2x.jpg",
+            "focusPoint": null,
+            "__typename": "MediaItem"
+          },
+          "__typename": "GlobalModules_Modules_MissionAndVision"
+        },
+        "popularSearches": {
+          "description": "Discover companies listed on the CSE",
+          "title": "Popular Searches",
+          "__typename": "GlobalModules_Modules_PopularSearches"
+        },
+        "recentQuotes": {
+          "description": "The latest quotes for CSE listed companies",
+          "title": "Recent Quotes",
+          "__typename": "GlobalModules_Modules_RecentQuotes"
+        },
+        "stayInformed": {
+          "title": "Stay Informed",
+          "cards": [
+            {
+              "title": "Notices",
+              "description": "Get the latest regulatory announcements from the CSE concerning its Listings Policies, Trading Rules and functionality and other important industry developments.",
+              "button": {
+                "link": {
+                  "url": "/news-events/notices/",
+                  "__typename": "AcfLink"
+                },
+                "label": "All Notices",
+                "__typename": "GlobalModules_Modules_StayInformed_cards_Button"
+              },
+              "__typename": "GlobalModules_Modules_StayInformed_cards"
+            },
+            {
+              "title": "Bulletins",
+              "description": "Get the latest information about new CSE listings, the appointment of Market Makers, market events, and other news.",
+              "button": {
+                "link": {
+                  "url": "/news-events/bulletins/",
+                  "__typename": "AcfLink"
+                },
+                "label": "All Bulletins",
+                "__typename": "GlobalModules_Modules_StayInformed_cards_Button"
+              },
+              "__typename": "GlobalModules_Modules_StayInformed_cards"
+            },
+            {
+              "title": "Company News",
+              "description": "Stay informed with CSE listed company news, providing transparency and accountability to shareholders and the public.",
+              "button": {
+                "link": {
+                  "url": " /news-events/company-news/",
+                  "__typename": "AcfLink"
+                },
+                "label": "All Company News",
+                "__typename": "GlobalModules_Modules_StayInformed_cards_Button"
+              },
+              "__typename": "GlobalModules_Modules_StayInformed_cards"
+            }
+          ],
+          "__typename": "GlobalModules_Modules_StayInformed"
+        },
+        "totalValueTradedCta": {
+          "gainersdeclinerslabel": "Gainers & Decliners",
+          "gainersdeclinerstooltip": "Market Information, including total volume and value, is calculated as of today's open for CSE-listed securities in CSE.",
+          "title": "The **total volume** traded on the CSE today is",
+          "valueLabel": "Value traded",
+          "tradeslabel": "Trades",
+          "backgroundImage": {
+            "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/03/hp-number-banner-bg.jpg",
+            "__typename": "MediaItem"
+          },
+          "button": {
+            "label": "Trade on the CSE",
+            "link": {
+              "url": "/trading/trading-resources/",
+              "target": "",
+              "__typename": "AcfLink"
+            },
+            "__typename": "GlobalModules_Modules_TotalValueTradedCta_Button"
+          },
+          "__typename": "GlobalModules_Modules_TotalValueTradedCta"
+        },
+        "upcomingEvents": {
+          "upcomingEvents": {
+            "description": "Connect with our professionals and listing experts at industry events and conferences.",
+            "title": "Meet us at upcoming events",
+            "button": {
+              "label": "All Events",
+              "link": {
+                "url": "/news-events/events/",
+                "__typename": "AcfLink"
+              },
+              "__typename": "GlobalModules_Modules_UpcomingEvents_UpcomingEvents_Button"
+            },
+            "__typename": "GlobalModules_Modules_UpcomingEvents_UpcomingEvents"
+          },
+          "__typename": "GlobalModules_Modules_UpcomingEvents"
+        },
+        "__typename": "GlobalModules_Modules"
+      },
+      "__APOLLO_STATE__": {
+        "Page:cG9zdDo4MzI=": {
+          "__typename": "Page",
+          "uri": "/listing/listed-companies/",
+          "id": "cG9zdDo4MzI=",
+          "databaseId": 832,
+          "isContentNode": true,
+          "slug": "listed-companies",
+          "contentType": {
+            "__typename": "ContentNodeToContentTypeConnectionEdge",
+            "node": {
+              "__typename": "ContentType",
+              "name": "page"
+            }
+          },
+          "template": {
+            "__typename": "Template_ListedCompanies",
+            "templateName": "Listed Companies"
+          },
+          "isFrontPage": false,
+          "isPostsPage": false
+        },
+        "ROOT_QUERY": {
+          "__typename": "RootQuery",
+          "nodeByUri({\"uri\":\"/listing/listed-companies\"})": {
+            "__ref": "Page:cG9zdDo4MzI="
+          },
+          "page({\"asPreview\":false,\"id\":832,\"idType\":\"DATABASE_ID\"})": {
+            "__typename": "Page",
+            "translation({\"language\":\"EN\"})": {
+              "__typename": "Page",
+              "seo": {
+                "__typename": "Seo",
+                "canonical": "https://cms.thecse.com/listing/listed-companies/",
+                "description": "",
+                "title": "Listed Companies",
+                "socialImage": "",
+                "robots": ""
+              },
+              "title": "Listed Companies",
+              "slug": "listed-companies",
+              "heroBanner": {
+                "__typename": "Page_Herobanner",
+                "heroBanner": {
+                  "__typename": "Page_Herobanner_HeroBanner",
+                  "content": {
+                    "__typename": "Page_Herobanner_HeroBanner_Content",
+                    "metaTitle": "A transparent platform to present your company's disclosure.",
+                    "description": "The CSE provides each listed company with an individual page devoted to trading activity and stock performance, corporate disclosure and regulatory filings."
+                  },
+                  "mediaType": null,
+                  "youtubeUrl": null,
+                  "placeholderVideo": null,
+                  "placeholderImage": null,
+                  "overlayLogo": null,
+                  "image": {
+                    "__typename": "MediaItem",
+                    "altText": "",
+                    "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/04/li-lc-hero@2x.jpg",
+                    "focusPoint": {
+                      "__typename": "FocusPoint",
+                      "left": 52,
+                      "top": 39
+                    }
+                  }
+                }
+              },
+              "homeGeneralCta": {
+                "__typename": "Page_Homegeneralcta",
+                "ctaBanner": {
+                  "__typename": "Page_Homegeneralcta_CtaBanner",
+                  "description": "List your company with the unrivaled support and expertise of our seasoned Listings team.",
+                  "title": "Find a home for \u2028your next big idea.",
+                  "backgroundImage": {
+                    "__typename": "MediaItem",
+                    "sourceUrl": "https://cms.thecse.com/wp-content/uploads/2023/04/li-lc-banner@2x-scaled.jpg",
+                    "focusPoint": {
+                      "__typename": "FocusPoint",
+                      "left": 36,
+                      "top": 30
+                    }
+                  },
+                  "button": {
+                    "__typename": "Page_Homegeneralcta_CtaBanner_Button",
+                    "label": "Get in touch",
+                    "link": {
+                      "__typename": "AcfLink",
+                      "target": "",
+                      "url": "/contact-us/"
+                    }
+                  }
+                }
+              },
+              "homeLatestFromCSE": {
+                "__typename": "Page_Homelatestfromcse",
+                "latestFromCse": {
+                  "__typename": "Page_Homelatestfromcse_LatestFromCse",
+                  "title": "**Custom** follow us",
+                  "description": "Custom latest description. Rutrum leo quis semper eu a nam morbi a nisi suspendisse blandit ante fusce ac pulvinar a suspendisse in scelerisque pulvinar suspendisse dignissim phasellus nunc."
+                }
+              },
+              "homeFollowUsCTA": {
+                "__typename": "Page_Homefollowuscta",
+                "latestFromCse": {
+                  "__typename": "Page_Homefollowuscta_LatestFromCse",
+                  "backgroundImage": null,
+                  "title": null
+                }
+              },
+              "parent": {
+                "__typename": "HierarchicalContentNodeToParentContentNodeConnectionEdge",
+                "node": {
+                  "__typename": "Page",
+                  "slug": "listing",
+                  "translation({\"language\":\"EN\"})": {
+                    "__typename": "Page",
+                    "title": "Listing",
+                    "pageMetadata": {
+                      "__typename": "Page_Pagemetadata",
+                      "breadcrumbsLabel": null
+                    }
+                  }
+                }
+              },
+              "translations": [
+                {
+                  "__typename": "Page",
+                  "uri": "/fr/listing/listed-companies/",
+                  "language": {
+                    "__typename": "Language",
+                    "code": "FR"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "__lang": "en",
+      "__namespaces": {
+        "global": {
+          "52weekHigh": "52 Week High",
+          "52weekLow": "52 Week Low",
+          "about": "About",
+          "active": "Active",
+          "address": "Address",
+          "all": "All",
+          "allBulletins": "All Bulletins",
+          "allCompanies": "all companies",
+          "allCseFilings": "All CSE Filings",
+          "allEvents": "All Events",
+          "allNews": "All News",
+          "allNewsReleases": "All News Releases",
+          "allNotices": "All Notices",
+          "allSedarFilings": "All SEDAR Filings",
+          "apply": "Apply",
+          "applyNow": "Apply Now",
+          "askBroker": "Ask Broker",
+          "askCount": "Ask Count",
+          "askPrice": "Ask Price",
+          "askSize": "Ask Size",
+          "associatedCompanies": "Associated Companies",
+          "associatedSecurities": "Associated Securities:",
+          "auditor": "Auditor",
+          "backToTeam": "Back to team",
+          "bidBroker": "Bid Broker",
+          "bidCount": "Bid Count",
+          "bidPrice": "Bid Price",
+          "bidSize": "Bid Size",
+          "blog": "Blog",
+          "boardOfDirectors": "Board of Directors",
+          "bulletins": "Bulletins",
+          "buyer": "Buyer",
+          "byOrder": "By Order",
+          "byPrice": "By Price",
+          "capitalRaised": "Capital Raised",
+          "carouselNext": "Navigate to next slide",
+          "carouselPrev": "Navigate to previous slide",
+          "category": "Category",
+          "change": "Change",
+          "chartsBy": "Charts by",
+          "chg": "Chg",
+          "close": "Close",
+          "companies": "Companies",
+          "companiesFilteredBy": "companies filtered by",
+          "company": "Company",
+          "securityName": "Company",
+          "companyNews": "Company News",
+          "companyFilings": "Company Filings",
+          "companyOfficers": "Company Officers",
+          "contactUs": "Contact us",
+          "contacts": "Contacts",
+          "copyLink": "Copy Link",
+          "copyLinkSuccess": "Link copied",
+          "readFullNotice": "Read the full notice",
+          "readFullNoticeCta": "View PDF",
+          "cse25Index": "CSE25 Index\u2122",
+          "cseCompositeIndex": "CSE Composite Index\u00ae",
+          "cseBulletins": "CSE Bulletins",
+          "cseFilings": "CSE Filings",
+          "cseIndex": "CSE Index",
+          "cseListedSecurities": "CSE Listed Securities",
+          "cseNews": "CSE News",
+          "currency": "Currency",
+          "date": "Date",
+          "dateTime": "Date/Time",
+          "dayHigh": "Day High",
+          "dayLow": "Day Low",
+          "dealerId": "Dealer ID",
+          "dealerName": "Name",
+          "dealerNumber": "Participant Number",
+          "dealerSearch": "Search dealers",
+          "depthDisplay": "Depth Display",
+          "description": "Description",
+          "disclosure": "Disclosure",
+          "effectiveDate": "Effective date",
+          "email": "Email",
+          "emptyPositions": "We are not hiring currently but please check back soon as we continue to grow and look for great people!",
+          "thereAreNoResultsForThisSearch": "There are no results for this search.",
+          "pleaseTryAnotherKeyword": "Please try another keyword.",
+          "sorryNoResults": "Sorry, no results.",
+          "eventDetails": "Event Details",
+          "eventWebsite": "Event Website",
+          "events": "Events",
+          "executiveTeam": "Executive Team",
+          "exportList": "Export List",
+          "fax": "Fax",
+          "filterBulletinCategories": "Bulletin categories",
+          "filterCategory": "Filter by Category",
+          "filterFilingType": "Filing Type",
+          "filterT1": "Non-venture",
+          "filterT2": "Venture",
+          "filterYear": "Filter by Year",
+          "filters": "Filters",
+          "financingDeals": "Financing Deals",
+          "followUs": "Follow us",
+          "formIsEmail": "Please enter a valid email address",
+          "formIsPhone": "Please enter a valid phone number",
+          "formIsRequired": "This is a required field",
+          "formNetworkError": "<p class=\"alert-title\">Connection error</p><p>Please check your internet connection and try again.</p>",
+          "formSubmitError": "<p class=\"alert-title\">Oops!</p><p>There was a problem submitting your form.</p>",
+          "generalInquiries": "General Inquiries",
+          "getDirections": "Get directions",
+          "headshotAlt": "Photo of {{name}}",
+          "homePage": "homepage",
+          "hour": "hour",
+          "hours": "hours",
+          "inactive": "Inactive",
+          "indices": "Indices",
+          "industries": "Industries",
+          "industry": "Industry",
+          "issuedAndOutstanding": "Issued & Outstanding",
+          "lastPrice": "Last Price",
+          "lastUpdated": "Last updated",
+          "lastUpdatedPascalCase": "Last Updated",
+          "latestBulletins": "Latest Bulletins",
+          "latestNews": "Latest News",
+          "latestNotices": "Latest Notices",
+          "latestRebalancingReport": "Latest Rebalancing Report",
+          "lessThanAMinute": "less than a minute",
+          "listedCompanies": "Listed Companies",
+          "listedCompanyNews": "Listed Company News",
+          "listing": "Listing",
+          "listingDate": "Listing Date",
+          "listingExchange": "Listing Exchange",
+          "listings": "Listings",
+          "listingsAndRegulation": "Listings and Regulation",
+          "marketActivityCount": "Market activity will be available in ",
+          "marketMaker": "Market Maker",
+          "minute": "minute",
+          "minutes": "minutes",
+          "mostActive": "Most Active",
+          "movers": "Movers",
+          "newListingInquiries": "New Listing Inquiries",
+          "newsAndEvents": "News & Events",
+          "newsReleases": "News Releases",
+          "newsroom": "Newsroom",
+          "noMarketActivity": "No market activity",
+          "noUpcomingEvents": "No upcoming events",
+          "notice": "Notice",
+          "notices": "Notices",
+          "of": "of",
+          "offices": "Offices",
+          "onThisPage": "On this page",
+          "open": "Open",
+          "openIn": "Open in",
+          "openInGoogleMaps": "Open in Google Maps",
+          "orGoToThe": "or go to the",
+          "pageNext": "Next page",
+          "pageNotFound": "Sorry, we couldn't find this page",
+          "pagePrev": "Previous page",
+          "partner-services": "Partner Services",
+          "phone": "Phone",
+          "pleaseTryAnotherSearch": "Please try another search",
+          "prevClose": "Prev Close",
+          "price": "Price",
+          "publications": "publications",
+          "quote": "Quote",
+          "quoteFinePrint": "<b>Note:</b> Bid Size and Ask Size fields are displayed as actual quantities.<br />52 Week high and low are unadjusted values.",
+          "quoteBidAskTooltip": "Bid Size and Ask Size fields are displayed as actual quantities.",
+          "quote52WeekTooltip": "52 Week high and low are unadjusted values.",
+          "readMore": "Read More",
+          "recentQuotes": "Recent Quotes",
+          "recentTrades": "Recent Trades",
+          "relatedResources": "Related Resources",
+          "registerLink": "Register",
+          "reservedForIssuance": "Reserved for Issuance",
+          "resetFilters": "Reset Filters",
+          "search": "Search",
+          "searchBulletins": "Search bulletins",
+          "searchCompanies": "Search Companies",
+          "searchMarketMakersPlaceholder": "Search Name or Dealer Number",
+          "searchMocEligiblePlaceholder": "Search company symbol",
+          "searchNews": "Search news",
+          "searchNewsSearching": "Searching...",
+          "searchPlaceholder": "Search Symbol, Name or Keyword",
+          "searchPlaceholderMostActive": "Search Most Active Listings",
+          "searchProviders": "Search Providers",
+          "sedarFilings": "SEDAR Filings",
+          "securityInformationBondInformation": "Bond Information",
+          "securityInformationDebentureInformation": "Debenture Information",
+          "securityInformationNote Information": "Note Information",
+          "securityInformationInvestorNote": "Additional Details",
+          "securityInformationBoardLot": "Face Value",
+          "securityInformationClearingAndSettlement": "Clearing and Settlement",
+          "securityInformationCorporateJurisdiction": "Corporate Jurisdiction",
+          "securityInformationCoupon": "Coupon",
+          "securityInformationDated": "Dated",
+          "securityInformationMaturity": "Maturity",
+          "securityInformationRedemption": "Redemption",
+          "seeXResults": "See {{count}} results",
+          "seller": "Seller",
+          "showMe": "Show me",
+          "social": "Social",
+          "status": "Status",
+          "submit": "Submit",
+          "submit-resume": "Submit your resume",
+          "submitting": "Submitting",
+          "support": "Support",
+          "symbol": "Symbol",
+          "team": "Team",
+          "teamContactByEmail": "Contact {{name}} by email",
+          "teamContactByLinkedIn": "Find {{name}} on LinkedIn",
+          "teamContactByTwitter": "Find {{name}} on Twitter",
+          "time": "Time",
+          "to": "to",
+          "trading": "Trading",
+          "transferAgent": "Transfer Agent",
+          "tryTypingAnotherAddress": "Try typing another address",
+          "tsxListedSecurities": "Other Listed Securities",
+          "venue": "Venue",
+          "viewAllFilings": "View all filings",
+          "volume": "Volume",
+          "website": "Website"
+        }
+      }
+    },
+    "__N_SSG": true
+  },
+  "page": "/[...wordpressNode]",
+  "query": {
+    "wordpressNode": [
+      "listing",
+      "listed-companies"
+    ]
+  },
+  "buildId": "_alvJbnxaUBdJboJMOYft",
+  "isFallback": false,
+  "gsp": true,
+  "locale": "en",
+  "locales": [
+    "en",
+    "fr"
+  ],
+  "defaultLocale": "en",
+  "scriptLoader": []
+}

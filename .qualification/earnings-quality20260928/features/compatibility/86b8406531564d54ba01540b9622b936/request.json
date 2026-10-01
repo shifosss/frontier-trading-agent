@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-09-28T23:47:26.483283+00:00",
+  "scope": "all252 existing original filing records; source-only compatibility, no new capture or return join",
+  "inputs": {
+    ".qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0\\records.json": "15c7ba84f4c8f8de7462c2c5a04fc07022d16e32c445d6cd048a0a44f189d598",
+    ".qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0\\events.json": "1e10186b313e291a306e9daddbf5ae932d7361cfa4e19fce0e10d9692449feeb",
+    ".qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0\\summary.json": "25d7d43eb41a3b4b47c60712b8924ee8635349b2b28b8e5016eacccbf9622d55",
+    ".qualification\\post-filing-strategy20260928\\calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    ".qualification\\filing-features20260928\\features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+    ".qualification\\earnings-quality20260928\\features\\cash_backing.py": "b8f54a439a3e119be7f93842b04a4b40fc1c5ae718c203a4b929d0d98dce4673",
+    ".qualification\\earnings-quality20260928\\features\\test_cash_backing.py": "a392a2cc85ab720dfa5410cce6839a6ebbca6479dcc2b5500399005ba4c1f64f",
+    ".qualification\\earnings-quality20260928\\features\\extraction-declaration.json": "891ada623f1bab393bb288cd524ce2d3758df1db6031067f3ad54db64a1d7102",
+    ".qualification\\earnings-quality20260928\\features\\run_compatibility.py": "3ba75c17ed5b96c62d47add1eb9e7bdccb0370a4956722fc36cdc389cfdc1041"
+  },
+  "expected_records": 252
+}

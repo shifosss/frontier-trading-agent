@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "reviewer": "root",
+  "files": {
+    "event_reference.py": "e6b3a1d6ad8939e56e6fe609590bf2e7e6926e2ad32ac3b1588480790b88bd2e",
+    "test_event_reference.py": "2f91bee20141d47ddeb0966b973bcfcedc6353c7b284ba15c72ccaa639181e7c"
+  },
+  "checks": [
+    "Return labels do not determine structural eligibility.",
+    "Paired stock/SPY denominator and unavailable endpoints retained.",
+    "Equal-event and equal-entry-date descriptive summaries use matched subset explicitly.",
+    "Selected27 below30 support gate preserved; no funded-return claim."
+  ],
+  "independently_run_synthetic_tests": 4,
+  "actual_outcomes_read": false
+}

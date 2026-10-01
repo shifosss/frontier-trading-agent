@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-26",
+  "full_suite": {
+    "command": "python -B -X utf8 -m pytest -q -p no:cacheprovider",
+    "passed": 491,
+    "warnings": 96,
+    "seconds": 138.24
+  },
+  "independent_replay_review": {
+    "passed": 19,
+    "runtime_and_settlement_identity_cases": 3
+  },
+  "ruff_check_src_tests": "passed --no-cache",
+  "paper_code_identity": "9fd509d8ce514b9fe3e3136684c7475637a12304670cc517b285e48aebbc26a2",
+  "model_dependencies_verified": 11
+}

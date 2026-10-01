@@ -1,0 +1,30 @@
+[
+  {
+    "session_requested": "2005-06-15",
+    "url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-15&ticker=WJX%3ACA",
+    "status_code": 200,
+    "sha256": "450b91587f34ae95f17b00a9c72ced477d062f1a0e4be5ae89b396fa34d82aa2",
+    "body": "<h4 wd_historical_result_date=\"1118865600\">Results for Wednesday, June 15, 2005</h4><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.42</div><div class=\"wd_historical_label\">Closing Price</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">99,500</div><div class=\"wd_historical_label\">Volume</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.42</div><div class=\"wd_historical_label\">Day's High</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.25</div><div class=\"wd_historical_label\">Day's Low</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">1:1</div><div class=\"wd_historical_label\">Split Adjustment</div></div>"
+  },
+  {
+    "session_requested": "2005-06-16",
+    "url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-16&ticker=WJX%3ACA",
+    "status_code": 200,
+    "sha256": "881c296d17ca78a918b2348310e3947da3be9d761d7381c3fc7270705ebe0a27",
+    "body": "<h4 wd_historical_result_date=\"1118952000\">Results for Thursday, June 16, 2005</h4><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.32</div><div class=\"wd_historical_label\">Closing Price</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">127,200</div><div class=\"wd_historical_label\">Volume</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.43</div><div class=\"wd_historical_label\">Day's High</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.20</div><div class=\"wd_historical_label\">Day's Low</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">1:1</div><div class=\"wd_historical_label\">Split Adjustment</div></div>"
+  },
+  {
+    "session_requested": "2005-06-17",
+    "url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-17&ticker=WJX%3ACA",
+    "status_code": 200,
+    "sha256": "388605907f119c5fc4b540986e62fcace0d7b557ce66407c519f885decd798e0",
+    "body": "<h4 wd_historical_result_date=\"1119038400\">Results for Friday, June 17, 2005</h4><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.10</div><div class=\"wd_historical_label\">Closing Price</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">172,900</div><div class=\"wd_historical_label\">Volume</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.29</div><div class=\"wd_historical_label\">Day's High</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.10</div><div class=\"wd_historical_label\">Day's Low</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">1:1</div><div class=\"wd_historical_label\">Split Adjustment</div></div>"
+  },
+  {
+    "session_requested": "2005-06-20",
+    "url": "https://investors.wajax.com/index.php?s=125&ajax=ir_historical&date=2005-06-20&ticker=WJX%3ACA",
+    "status_code": 200,
+    "sha256": "13454b394c7ac544ee837bce62bec42942c6cd40b6b83c0e05f242370a6fbc4a",
+    "body": "<h4 wd_historical_result_date=\"1119297600\">Results for Monday, June 20, 2005</h4><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.19</div><div class=\"wd_historical_label\">Closing Price</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">139,600</div><div class=\"wd_historical_label\">Volume</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.24</div><div class=\"wd_historical_label\">Day's High</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">$19.10</div><div class=\"wd_historical_label\">Day's Low</div></div><div class=\"wd_historical_item\"><div class=\"wd_historical_value\">1:1</div><div class=\"wd_historical_label\">Split Adjustment</div></div>"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "at": "2026-09-28T21:34:06.766319+00:00",
+  "session": "2016-12-29",
+  "operation": "Publish already retained successful response metadata after verifying request identity and raw SHA; no source GET",
+  "raw_sha256": "c42ac5003872e30c3c22a76cab4c547038a18832287aba275a27ae5eb052d809",
+  "raw_file": "raw/c42ac5003872e30c3c22a76cab4c547038a18832287aba275a27ae5eb052d809.json",
+  "prior_started_sha256": "e5f47010220dbcedb06c5394516a20e98b4a48b452edf657e753da3cdef796b3",
+  "retained_final_metadata_sha256": "a0d6e6cdcdde4a709b2d7d77d2ff3b3c401c01855c0de3a42f28be65b7a7e31d",
+  "reconciled_metadata_sha256": "732088296e378fd90c591abbabd1709f2751c456b325528df8f8e54fb0a1688a"
+}

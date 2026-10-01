@@ -1,0 +1,13 @@
+{
+  "declared_at": "2026-09-28T23:40:38.222655+00:00",
+  "purpose": "Current SEC ticker/CIK/exchange association for bounded earnings-quality cohort discovery; no return/financialfact query",
+  "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+  "max_requests": 1,
+  "max_response_bytes": 8388608,
+  "timeout_seconds": 30,
+  "redirects": false,
+  "retry": false,
+  "user_agent": "FrontierResearch/0.1 (bounded local SEC research; no contact address configured)",
+  "scope": "Current associations only; SEC does not guarantee completeness or accuracy. Not historical listing/type/SIC proof.",
+  "official_documentation": "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data"
+}

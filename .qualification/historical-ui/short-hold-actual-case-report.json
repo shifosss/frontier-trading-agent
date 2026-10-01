@@ -1,0 +1,62 @@
+{
+  "run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "incomplete_fixed": {
+    "count": 211,
+    "currencies": {
+      "CAD": 211
+    },
+    "missing_counts": {
+      "WJX.TO:2005-06-15:mark": 55,
+      "ARX.TO:2026-07-20:mark": 4,
+      "CPH.TO:2014-12-24:mark": 15,
+      "AUXX.V:2026-09-17:mark": 25,
+      "PHOS.CN:2026-09-17:mark": 20,
+      "REI-UN.TO:2026-09-17:mark": 4,
+      "LGN.V:2026-09-17:entry": 25,
+      "SPB.TO:2009-01-07:entry": 23,
+      "WJX.TO:2005-06-15:entry": 22,
+      "ARX.TO:2026-07-20:entry": 6,
+      "BIG.V:2026-09-17:mark": 2,
+      "CPH.TO:2014-12-24:entry": 3,
+      "WTE.TO:2012-07-05:entry": 10,
+      "MAXX.CN:2026-09-17:mark": 5,
+      "SPB.TO:2009-01-07:mark": 1,
+      "KMP-UN.TO:2026-09-17:mark": 1,
+      "TECK-B.TO:2026-09-17:mark": 3,
+      "MGA.TO:2006-09-06:entry": 1,
+      "CRON.TO:2018-05-24:entry": 1
+    },
+    "null_full_period_metrics": true,
+    "null_expectancy": true,
+    "empty_period_metrics": true
+  },
+  "visual_cases": [
+    {
+      "currency": "USD",
+      "budget": 2000,
+      "cost_bps": 40,
+      "width": 1440,
+      "statistics": "Actual trading activity\nCompleted round trips\n224\n0.19 per 5 sessions\nAverage holding time\n5.00 sessions\n7.30 calendar days\nNet expectancy per trade\nUSD 0.14\n0.26% average net trade return\nWinning trades\n52.23%\nAfter modeled trading costs\nAnnualized turnover\n1.89\u00d7\nEntry + exit notional / mean equity\nAverage invested fraction\n1.84%\nRemaining equity is cash\nAccount results by calendar period\nPeriod\tPeriods observed\tProfitable periods\tAverage return\tMedian return\tWorst return\nweekly\t1,196\t2.01%\t0.00%\t0.00%\t-2.71%\nmonthly\t276\t3.62%\t0.01%\t0.00%\t-3.39%\n\nThese are whole-account returns, including time spent in cash and the first and last partial calendar periods.",
+      "page_errors": [],
+      "mutations": []
+    },
+    {
+      "currency": "USD",
+      "budget": 2000,
+      "cost_bps": 40,
+      "width": 390,
+      "statistics": "Actual trading activity\nCompleted round trips\n224\n0.19 per 5 sessions\nAverage holding time\n5.00 sessions\n7.30 calendar days\nNet expectancy per trade\nUSD 0.14\n0.26% average net trade return\nWinning trades\n52.23%\nAfter modeled trading costs\nAnnualized turnover\n1.89\u00d7\nEntry + exit notional / mean equity\nAverage invested fraction\n1.84%\nRemaining equity is cash\nAccount results by calendar period\nPeriod\tPeriods observed\tProfitable periods\tAverage return\tMedian return\tWorst return\nweekly\t1,196\t2.01%\t0.00%\t0.00%\t-2.71%\nmonthly\t276\t3.62%\t0.01%\t0.00%\t-3.39%\n\nThese are whole-account returns, including time spent in cash and the first and last partial calendar periods.",
+      "page_errors": [],
+      "mutations": []
+    },
+    {
+      "currency": "CAD",
+      "budget": 500,
+      "cost_bps": 40,
+      "width": 390,
+      "statistics": "Actual trading activity\nCompleted round trips\n0\n0.00 per 5 sessions\nAverage holding time\nUnavailable sessions\nUnavailable calendar days\nNet expectancy per trade\nCAD Unavailable\nUnavailable average net trade return\nWinning trades\nUnavailable\nAfter modeled trading costs\nAnnualized turnover\n0.00\u00d7\nEntry + exit notional / mean equity\nAverage invested fraction\n0.00%\nRemaining equity is cash\nAccount results by calendar period\nPeriod\tPeriods observed\tProfitable periods\tAverage return\tMedian return\tWorst return\nweekly\t1,196\t0.00%\t0.00%\t0.00%\t0.00%\nmonthly\t276\t0.00%\t0.00%\t0.00%\t0.00%\n\nThese are whole-account returns, including time spent in cash and the first and last partial calendar periods.",
+      "page_errors": [],
+      "mutations": []
+    }
+  ]
+}

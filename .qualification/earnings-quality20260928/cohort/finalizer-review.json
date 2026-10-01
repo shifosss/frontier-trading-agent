@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-09-29T00:10:39.821635+00:00",
+  "reviewer": "strategy_design",
+  "scope": "Material-only offline finalizer/source bindings/fixed cohort review",
+  "definition_sha256": "8699f57831e2985d2bdcc8126e1f90620446093515c1e306c2c9f3f9e9b2fdd4",
+  "finalizer_sha256": "9398ac88e5dc34e8d388b100a3f2a060949e180b6ea92721fa26fba80611f423",
+  "tests_sha256": "52acfc0593e94b70dd54ecf3c8854b43bdf132d67025ee36eccebe6ca52992a0",
+  "frozen_input_identities_checked": 25,
+  "focused_tests_passed": 15,
+  "test_runtime_seconds": 0.791,
+  "material_findings": [],
+  "checks": [
+    "Exact ordered pool/member denominator and terminal profile counts; pending/incomplete/access-stop rejected",
+    "Per-profile raw URL/CIK/content/hash/byte count and wrapper agreement; captured and failed sources retained",
+    "Original catalog remains unchanged; same-URL different successful vintage rejected",
+    "Frozen classifier produces final cohort without pool refill; insufficient classification cannot create a capture request",
+    "Source request must equal exact ordered100 selected symbol/CIK pairs and include final model specification identity",
+    "Shared SEC/source locks, immutable outputs, exact archive bytes and final input checks"
+  ],
+  "limitations": [
+    "Classification is current-member metadata; original same-CIK event-header SIC and financial facts still require later qualification",
+    "No finalizer execution, original-filing acquisition, model fit or strategy return calculation performed by this review"
+  ]
+}

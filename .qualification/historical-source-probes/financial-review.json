@@ -1,0 +1,8 @@
+{
+  "hand_calculated_ending_equity": 1093.0049999999999,
+  "actual_ending_equity": 1093.005,
+  "actual_max_drawdown": 0.4759500000000001,
+  "training_selection_unchanged_after_future_mutation": true,
+  "cash_nonnegative": true,
+  "adjusted_units_caveat": "This validates synthetic total-return accounting, not actual dividend cash or share ledger."
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-09-28T19:50:35.724976+00:00",
+  "strategy_accounts": {
+    "status": "complete",
+    "planned": 54,
+    "completed": 54,
+    "positive_after_declared_costs": 0,
+    "trade_observations": 191947
+  },
+  "timing_study": {
+    "status": "complete",
+    "strategy_cells": 81,
+    "reference_cells": 9,
+    "selected_stock_events": 120772,
+    "mean_earlier_entry_effect_negative_policies": 9,
+    "source_histories": 3959,
+    "independent_audit": "passed"
+  },
+  "historical_worker_lock": "verified free after both workers exited",
+  "paper": {
+    "status": "ready",
+    "observed_at": "2026-09-28T19:47:51Z",
+    "parent_pid": 12628,
+    "worker_pid": 12676,
+    "open_orders": 0,
+    "frozen_baseline_unchanged": true
+  },
+  "next_priority": "conditional strategy selection, cost-aware abstention and dollar-aware allocation; retain next-close timing",
+  "qualification": "No profitable or promoted strategy; revised current-member data and cost-scenario limitations remain.",
+  "reports": {
+    "docs\\strategy-experiment-2026-09-28.md": "9338edbdf7bb65266e8fe3b30ec0d7885dc4f675441dc64817c485f14179a74d",
+    "docs\\strategy-timing-study-2026-09-28.md": "76c1ec7b5fd845089134836cc8030aebffd74b604c6a587ec789c3c2f07d128e",
+    "docs\\strategy-timing-results.md": "3fd0af86c6b64e6b77b9d294f1d56af9a7c5a9381b81ca3b8c5d9e7452a0d2e1",
+    "docs/strategy-interaction-results.md": "3c0eba31301ecad9190535f55ec8be1866930623cbd6b48321a1f80a65f3667d",
+    "docs/conditional-strategy-selection-plan.md": "5f595331bde3fc2ef0404999bff5a6e09e4f904dad2e3347fe4688ad4268126a",
+    "docs/strategy-action-attribution-results.md": "548bd81614e62692b0fe2143fe78cee311be38fd955f3a0a669ac15f316117a6"
+  },
+  "updated_at": "2026-09-28T19:55:08.702690+00:00",
+  "local_commit": "02f9551",
+  "automation": {
+    "id": "frontier-daily-research-scan",
+    "status": "ACTIVE",
+    "next_work": "reviewed conditional selection design; fitting has not started"
+  },
+  "validation_note": "Financial arithmetic and frozen source checks passed. Git staged whitespace check reported existing final blank lines in two sealed source-audit reports; their recorded bytes were preserved. No production code changed in this strategy milestone."
+}

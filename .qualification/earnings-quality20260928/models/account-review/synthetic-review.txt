@@ -1,0 +1,11 @@
+test_all_twenty_synthetic_accounts_reconcile_independently (__main__.IndependentAccountReview.test_all_twenty_synthetic_accounts_reconcile_independently) ... ok
+test_forecasts_cannot_cross_original_or_feature_identity (__main__.IndependentAccountReview.test_forecasts_cannot_cross_original_or_feature_identity) ... ok
+test_future_missing_price_does_not_change_causal_candidates (__main__.IndependentAccountReview.test_future_missing_price_does_not_change_causal_candidates) ... ok
+test_nonpositive_utility_retains_all_events_and_stays_in_cash (__main__.IndependentAccountReview.test_nonpositive_utility_retains_all_events_and_stays_in_cash) ... ok
+test_sixth_candidate_is_not_substituted_after_first_fill_rejection (__main__.IndependentAccountReview.test_sixth_candidate_is_not_substituted_after_first_fill_rejection) ... ok
+test_year_boundary_keeps_existing_hold_despite_new_fold_abstention (__main__.IndependentAccountReview.test_year_boundary_keeps_existing_hold_despite_new_fold_abstention) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.526s
+
+OK

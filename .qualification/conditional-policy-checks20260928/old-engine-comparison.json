@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "archive_sha256": "4905ac2a5c755cf2b0e67d38ab89c4a8aa7ff3bde650a40e4841160f5762ddfc",
+  "old_engine_sha256": "23910566e770b0dd7323151d64f3ad644579f9b38320356b32cdbdacf75b712f",
+  "new_engine_sha256": "9105cce590c0165e37c2add71be7daf0b0b4db12eef0c52182f629c811d04cd0",
+  "scenarios": [
+    {
+      "budget": 500,
+      "horizon": 1,
+      "cost": null,
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 1,
+      "cost": "proportional",
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 1,
+      "cost": "moomoo_ca_us",
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 3,
+      "cost": null,
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 3,
+      "cost": "proportional",
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 3,
+      "cost": "moomoo_ca_us",
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 5,
+      "cost": null,
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 5,
+      "cost": "proportional",
+      "comparisons": 3
+    },
+    {
+      "budget": 500,
+      "horizon": 5,
+      "cost": "moomoo_ca_us",
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 1,
+      "cost": null,
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 1,
+      "cost": "proportional",
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 1,
+      "cost": "moomoo_ca_us",
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 3,
+      "cost": null,
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 3,
+      "cost": "proportional",
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 3,
+      "cost": "moomoo_ca_us",
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 5,
+      "cost": null,
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 5,
+      "cost": "proportional",
+      "comparisons": 3
+    },
+    {
+      "budget": 2000,
+      "horizon": 5,
+      "cost": "moomoo_ca_us",
+      "comparisons": 3
+    }
+  ],
+  "exact_complete_output_comparisons": 54,
+  "includes": "All arrays, trade records, activity, fees, tallies, cash/settlement state and streaming scope; no optional policy supplied."
+}

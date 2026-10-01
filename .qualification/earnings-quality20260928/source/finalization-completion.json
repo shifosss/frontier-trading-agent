@@ -1,0 +1,18 @@
+{
+  "status": "ready_for_root_launch",
+  "at": "2026-09-29T00:11:09.284544+00:00",
+  "definition_sha256": "8699f57831e2985d2bdcc8126e1f90620446093515c1e306c2c9f3f9e9b2fdd4",
+  "outputs": {
+    "cohort.json": "41a26bef5fa3c449a2f627c57e9da34aaeabdf551506c31f907e279339d0c76a",
+    "reusable-source-catalog-v2.json": "81cc8adcc191a8e636dd8f3cfa885df3202fff4d54dc699a8443f16c5bbe85a9",
+    "request.json": "2d688da497c4c58a8701db66083d88b5f07aff28a436a65dcb9395bdcb26dfe1",
+    "implementation.json": "3570a2d8067ea9031ec84d4eeb0cb6e17530039402b60a75d2fdd4bc4e4b303c",
+    "frozen-source.zip": "78c0c1b9939ce1ce6f798ccd4f7c8b2cdf589a9a69962a70f6247234c620101a"
+  },
+  "selected_count": 100,
+  "qualified_count": 199,
+  "profile_denominator": 300,
+  "archive_members": 30,
+  "reuse_urls": 1199,
+  "network_requests": 0
+}

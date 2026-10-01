@@ -1,0 +1,313 @@
+{
+  "kind": "source_schema_inventory_not_cohort_selection",
+  "listing": {
+    "path": "data/research/universe/snapshots/20260918T201012673731Z-2da49ecfd9bb.json",
+    "sha256": "d426bedf1b9bdce6ded0adab036d52e7f8bddec9bb1603630b64773f0dac43cc"
+  },
+  "captured_at": "2026-09-18T20:10:12.673731+00:00",
+  "membership_basis": "current listings at discovery",
+  "historical_membership": false,
+  "usd_stock_label_count": 5661,
+  "security_type_counts": {
+    "common_ordinary_or_equity_depositary_shares": 5661
+  },
+  "listing_field_presence": {
+    "cik": 0,
+    "sic": 0,
+    "stateOfIncorporation": 0,
+    "country": 0,
+    "name": 5661,
+    "is_etf": 5661
+  },
+  "frozen_capture_index": {
+    "path": "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json",
+    "sha256": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966"
+  },
+  "stock_symbols_with_capture_record": 5650,
+  "stock_symbols_without_capture_record": [
+    "ATLX",
+    "CBIO",
+    "CNL",
+    "DEC",
+    "NFE",
+    "PRTA",
+    "RCAT",
+    "SHEL",
+    "SPRC",
+    "VATE",
+    "VHI"
+  ],
+  "provider_schema_examples": [
+    {
+      "symbol": "AAPL",
+      "listing": {
+        "source_id": "nasdaq",
+        "source_symbol": "AAPL",
+        "symbol": "AAPL",
+        "name": "Apple Inc. - Common Stock",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "Nasdaq",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": "N",
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "provider_instrumentType": "EQUITY",
+      "raw": {
+        "path": "data/historical/capture-workspace/data/scanner/raw/AAPL.189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9.json",
+        "sha256": "189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9"
+      },
+      "chart_fields": [
+        "meta",
+        "timestamp",
+        "events",
+        "indicators"
+      ],
+      "quote_fields": [
+        "close",
+        "low",
+        "high",
+        "open",
+        "volume"
+      ],
+      "contains_CIK_SIC_or_incorporation": false
+    },
+    {
+      "symbol": "AMH",
+      "listing": {
+        "source_id": "other_us",
+        "source_symbol": "AMH",
+        "symbol": "AMH",
+        "name": "American Homes 4 Rent Common Shares of Beneficial Interest",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "provider_instrumentType": "EQUITY",
+      "raw": {
+        "path": "data/historical/capture-workspace/data/scanner/raw/AMH.54df226835df03bcf4f10df855421f51d617c9406799c5dc04be34835b3d7b77.json",
+        "sha256": "54df226835df03bcf4f10df855421f51d617c9406799c5dc04be34835b3d7b77"
+      },
+      "chart_fields": [
+        "meta",
+        "timestamp",
+        "events",
+        "indicators"
+      ],
+      "quote_fields": [
+        "low",
+        "close",
+        "volume",
+        "open",
+        "high"
+      ],
+      "contains_CIK_SIC_or_incorporation": false
+    },
+    {
+      "symbol": "KEP",
+      "listing": {
+        "source_id": "other_us",
+        "source_symbol": "KEP",
+        "symbol": "KEP",
+        "name": "Korea Electric Power Corporation Common Stock",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "provider_instrumentType": "EQUITY",
+      "raw": {
+        "path": "data/historical/capture-workspace/data/scanner/raw/KEP.8677b3992dfe6686d0d0f01fca376ba08e448790eaf7e706df81e24a37b392a7.json",
+        "sha256": "8677b3992dfe6686d0d0f01fca376ba08e448790eaf7e706df81e24a37b392a7"
+      },
+      "chart_fields": [
+        "meta",
+        "timestamp",
+        "events",
+        "indicators"
+      ],
+      "quote_fields": [
+        "low",
+        "close",
+        "volume",
+        "open",
+        "high"
+      ],
+      "contains_CIK_SIC_or_incorporation": false
+    },
+    {
+      "symbol": "EXG",
+      "listing": {
+        "source_id": "other_us",
+        "source_symbol": "EXG",
+        "symbol": "EXG",
+        "name": "Eaton Vance Tax-Managed Global Diversified Equity Income Fund Common Shares of Beneficial Interest",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "provider_instrumentType": "EQUITY",
+      "raw": {
+        "path": "data/historical/capture-workspace/data/scanner/raw/EXG.8a8e9d515b538c868ffc0a2089a9eaa55c3b40d05d2dc4c24765db40da4c7bb0.json",
+        "sha256": "8a8e9d515b538c868ffc0a2089a9eaa55c3b40d05d2dc4c24765db40da4c7bb0"
+      },
+      "chart_fields": [
+        "meta",
+        "timestamp",
+        "events",
+        "indicators"
+      ],
+      "quote_fields": [
+        "high",
+        "close",
+        "open",
+        "low",
+        "volume"
+      ],
+      "contains_CIK_SIC_or_incorporation": false
+    }
+  ],
+  "existing_SEC_metadata": [
+    {
+      "symbol": "AAPL",
+      "source": {
+        "path": ".qualification/filing-feasibility20260928/raw/aapl_submissions.bin",
+        "sha256": "dabb28a7c4af8fac408a72345ec959c1a08255a6c5c1af99c4f22b2beacfc77f"
+      },
+      "cik": "0000320193",
+      "entityType": "operating",
+      "sic": "3571",
+      "sicDescription": "Electronic Computers",
+      "stateOfIncorporation": "CA",
+      "stateOfIncorporationDescription": "CA",
+      "tickers": [
+        "AAPL"
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "source": {
+        "path": ".qualification/filing-source20260928/raw/551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9.bin",
+        "sha256": "551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9"
+      },
+      "cik": "0000789019",
+      "entityType": "operating",
+      "sic": "7372",
+      "sicDescription": "Services-Prepackaged Software",
+      "stateOfIncorporation": "WA",
+      "stateOfIncorporationDescription": "WA",
+      "tickers": [
+        "MSFT"
+      ]
+    },
+    {
+      "symbol": "F",
+      "source": {
+        "path": ".qualification/filing-source20260928/raw/8f2b028ada902231fc5fa85a1439449258d2e7ed1b57b920d66ab7616b94bd7b.bin",
+        "sha256": "8f2b028ada902231fc5fa85a1439449258d2e7ed1b57b920d66ab7616b94bd7b"
+      },
+      "cik": "0000037996",
+      "entityType": "operating",
+      "sic": "3711",
+      "sicDescription": "Motor Vehicles & Passenger Car Bodies",
+      "stateOfIncorporation": "DE",
+      "stateOfIncorporationDescription": "DE",
+      "tickers": [
+        "F",
+        "F-PB",
+        "F-PC",
+        "F-PD"
+      ]
+    },
+    {
+      "symbol": "T",
+      "source": {
+        "path": ".qualification/filing-source20260928/identity-raw/T-submissions.bin",
+        "sha256": "84eccf0171172ec4fe29525f0b3c7338b8268677e7ea36781301a1d912c7c56f"
+      },
+      "cik": "0000732717",
+      "entityType": "operating",
+      "sic": "4813",
+      "sicDescription": "Telephone Communications (No Radiotelephone)",
+      "stateOfIncorporation": "DE",
+      "stateOfIncorporationDescription": "DE",
+      "tickers": [
+        "T",
+        "TBB",
+        "T-PA",
+        "T-PC"
+      ]
+    },
+    {
+      "symbol": "HRL",
+      "source": {
+        "path": ".qualification/filing-source20260928/identity-raw/HRL-submissions.bin",
+        "sha256": "2ba0992e6944335be8c69c4bf7bcf7adc986e92a6f2f9f559a3f34a76b0d55f4"
+      },
+      "cik": "0000048465",
+      "entityType": "operating",
+      "sic": "2011",
+      "sicDescription": "Meat Packing Plants",
+      "stateOfIncorporation": "DE",
+      "stateOfIncorporationDescription": "DE",
+      "tickers": [
+        "HRL"
+      ]
+    },
+    {
+      "symbol": "BANF",
+      "source": {
+        "path": ".qualification/filing-source20260928/identity-raw/BANF-submissions.bin",
+        "sha256": "f27388aa6fa8b032567dbc890d36835ae208ff8d8b192ea9d56f8356d29eb5ef"
+      },
+      "cik": "0000760498",
+      "entityType": "operating",
+      "sic": "6021",
+      "sicDescription": "National Commercial Banks",
+      "stateOfIncorporation": "OK",
+      "stateOfIncorporationDescription": "OK",
+      "tickers": [
+        "BANF",
+        "BANFP"
+      ]
+    }
+  ],
+  "broad_mapping_before_this_task": "No broad SEC mapping was identified in the frozen listing or six-pilot source catalog; the parent captured one official current ticker/exchange map separately for this stage.",
+  "new_ticker_map": {
+    "path": ".qualification/earnings-quality20260928/discovery/company-tickers-exchange.json",
+    "sha256": "affa8f025ab31bab39b60e06cf0bcc401bb87f23151412d686258fc9b99ef091"
+  },
+  "next_gate": "Frozen criteria and implementation before any actual hash-ranked discovery pool; current profile evidence before final100cohort.",
+  "network_requests_by_inventory": 0,
+  "liquidity_statistics_computed": false,
+  "actual_cohort_selected": false,
+  "strategy_outcomes_read": false
+}

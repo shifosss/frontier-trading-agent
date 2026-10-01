@@ -1,0 +1,46 @@
+{
+  "status": "offline_checks_passed_pending_independent_review",
+  "at": "2026-09-29T00:31:28.411779+00:00",
+  "tests": {
+    "new": 35,
+    "existing_frozen_Q_S": 44,
+    "total": 79,
+    "seconds": 1.37,
+    "failed": 0
+  },
+  "preimplementation_failures": [
+    "test_header_industry collection: header_industry.py absent",
+    "test_collector collection: run_qualification.py absent"
+  ],
+  "actual_corpus_executed": false,
+  "network_requests": 0,
+  "actual_source_fixtures": [
+    {
+      "symbol": "MCRB",
+      "accession": "0000950170-21-000674",
+      "cik": "0001609809",
+      "sic": "2834",
+      "raw_sha256": "ad2a9a0d0b4468da71b4aff8cbdb2b6a8152e80bff8bd91e67bea676c0068f66"
+    },
+    {
+      "symbol": "CAG",
+      "accession": "0000023217-13-000005",
+      "cik": "0000023217",
+      "sic": "2000",
+      "raw_sha256": "868265758b6d2cb4e9dcba2b7ca08271d622842648938fded4d1ac635dea8945"
+    }
+  ],
+  "files": {
+    "extraction-declaration.json": "2d8bb20dee9de456c19531472a31eea9a06ea0c6bc38df1a32805125afbc4316",
+    "header_industry.py": "25cc332501e39eec2ff2a0efe142540fe30fc4f17c35f900c24e5f0cef2706bc",
+    "interface.md": "04a308a5374a6f470102e31dbf2f8b30aaa5b7c89b618144329d09b194998f6f",
+    "run_qualification.py": "571bf002f55d5c23467013f37b3b778792578b757c0135aaad2adff022e34ea0",
+    "test_collector.py": "bffda91d50a06dd283217a4f1cb47a8e046d0d7438abdbdaadf9cf0e7661cdeb",
+    "test_header_industry.py": "2def85534ae16cde3985d3ea3abdcb7d56bccc3d76a978dc37bc68c70ebdb708"
+  },
+  "limitations": [
+    "Current-event industry gate does not rewrite or qualify prior industry history",
+    "Source/financial/clock qualification is separate from price/model/execution qualification",
+    "Root must freeze terminal source identities and review before actual corpus execution"
+  ]
+}

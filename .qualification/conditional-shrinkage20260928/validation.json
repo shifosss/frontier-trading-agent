@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-28T21:16:01.845600+00:00",
+  "focused_tests": 22,
+  "result": "passed",
+  "independent_scientific_review": "no material issue from two reviewers",
+  "retained_test_failures": [
+    "test first compared Python tuples with reloaded JSON lists; test corrected to serialized comparison",
+    "combined isolated suites required --import-mode=importlib for same test filename"
+  ],
+  "original_models_refit": false,
+  "new_actual_coefficients_fitted": false,
+  "archive_sha256": "9b8457f380505fdff9158a47a55e38f0e1e980ed0bb7ad30ca257881e46342e7"
+}

@@ -1,0 +1,54 @@
+{
+  "at": "2026-09-29T14:06:54.302517+00:00",
+  "status": "passed",
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    ".qualification\\earnings-quality20260928\\accounts\\test_account_adapter.py",
+    ".qualification\\earnings-quality20260928\\accounts\\test_models_independent.py"
+  ],
+  "returncode": 0,
+  "stdout": "..................................                                       [100%]\n34 passed in 4.44s\n",
+  "stderr": "",
+  "files": {
+    ".qualification\\earnings-quality20260928\\accounts\\account_adapter.py": "f1a67cd923188891c93514601fa210b5183d11c60b8d69a64389bdc421351aa7",
+    ".qualification\\earnings-quality20260928\\accounts\\test_account_adapter.py": "0ed216df549a50e4bcdea602ea6d36cecc56cdb8453f7aeaefee1efdc9db2c9a",
+    ".qualification\\earnings-quality20260928\\accounts\\test_models_independent.py": "17a9d90a6932962b9051514431d6e64dc97d72522e1581e9c873764a8bbfa7cc",
+    ".qualification\\earnings-quality20260928\\accounts\\interface.md": "70e87674d00c6226efeb6120fc9515abf4c4228ca4b52c40d636f91f49bf5fca",
+    ".qualification\\earnings-quality20260928\\models\\earnings_models.py": "0d6ecc98a92368ef7bd8bf8802979790a539636adb769f9e9f4b49fa8a38b4de",
+    ".qualification\\earnings-quality20260928\\models\\test_earnings_models.py": "bc0d996f620b9ac48bcaca58ed28ef20f279e9e00805e9664b3c18b4bcd1eb38",
+    ".qualification\\earnings-quality20260928\\cohort\\model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    "src\\frontier\\short_horizon_study.py": "9105cce590c0165e37c2add71be7daf0b0b4db12eef0c52182f629c811d04cd0",
+    "src\\frontier\\conditional_policy.py": "a1ac07371bc981b7f56623860c157eabf6ed2bafe10322bb66d1158b1aa16041",
+    "src\\frontier\\daily_policy.py": "5f76545cb738f8c6326cece3aec2905e2c611af1e4af16c6af6f89b0392ac98c",
+    "src\\frontier\\execution_costs.py": "5563f6eb14196f4b12d1a7b103e9bfced733976fd0b93f197dafd795e2381483",
+    "src\\frontier\\historical_settlement.py": "fbaaec13818dc3fa5393f4ca94247edee58d642dd50d7eed8ce83565f88d52a8"
+  },
+  "checks": {
+    "account_adapter_tests": 29,
+    "independent_model_contract_tests": 5
+  },
+  "actual_study_accounts_run": 0,
+  "new_study_model_fits": 0,
+  "network_requests": 0,
+  "shared_modules_changed": false,
+  "qualification": "Synthetic execution/model contract evidence only; no economic validation",
+  "review_findings_fixed": [
+    "Forecast keyed to wrong event or CIK or prepared-row digest is refused",
+    "Model prediction rows must match saved source row identity",
+    "Model prediction honors saved test-row causal eligibility",
+    "Model reload checks current implementation identity"
+  ],
+  "retained_previous_evidence": [
+    "verification-initial25.json",
+    "model-review-before-causal-fix.json"
+  ],
+  "documentation_note": "Clarified synthetic fits versus original-cohort model fits after tests; no code changed."
+}

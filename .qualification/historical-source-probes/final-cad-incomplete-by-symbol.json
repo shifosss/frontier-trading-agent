@@ -1,0 +1,39 @@
+{
+  "BIG.V": {
+    "failed_portfolios": 24,
+    "missing_mark_occurrences": 24,
+    "distinct_dates": [
+      "2026-09-17"
+    ]
+  },
+  "CRON.TO": {
+    "failed_portfolios": 35,
+    "missing_mark_occurrences": 35,
+    "distinct_dates": [
+      "2018-05-24"
+    ]
+  },
+  "WJX.TO": {
+    "failed_portfolios": 24,
+    "missing_mark_occurrences": 72,
+    "distinct_dates": [
+      "2005-06-15",
+      "2005-06-16",
+      "2005-06-17"
+    ]
+  },
+  "SPB.TO": {
+    "failed_portfolios": 12,
+    "missing_mark_occurrences": 12,
+    "distinct_dates": [
+      "2009-01-07"
+    ]
+  },
+  "CPH.TO": {
+    "failed_portfolios": 2,
+    "missing_mark_occurrences": 2,
+    "distinct_dates": [
+      "2014-12-24"
+    ]
+  }
+}

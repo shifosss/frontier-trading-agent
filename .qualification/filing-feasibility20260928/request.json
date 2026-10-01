@@ -1,0 +1,66 @@
+{
+  "declared_at_utc": "2026-09-28T21:57:21.308040+00:00",
+  "scope": "source feasibility only, AAPL MSFT F not a selected trading universe",
+  "no_returns": true,
+  "max_requests": 12,
+  "planned_requests": [
+    {
+      "name": "aapl_2020q3_index",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000062/0000320193-20-000062-index.html"
+    },
+    {
+      "name": "aapl_2020q3_original",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000062/aapl-20200627.htm"
+    },
+    {
+      "name": "aapl_2020q3_header",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000062/0000320193-20-000062.hdr.sgml"
+    },
+    {
+      "name": "msft_2024q3_index",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/0000950170-24-048288-index.htm"
+    },
+    {
+      "name": "msft_2024q3_original",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024048288/msft-20240331.htm"
+    },
+    {
+      "name": "f_2024q2_index",
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/0000037996-24-000144-index.htm"
+    },
+    {
+      "name": "f_2024q2_original",
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000144/f-20240630.htm"
+    },
+    {
+      "name": "aapl_2020q3_8k_index",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/0000320193-20-000060-index.htm"
+    },
+    {
+      "name": "aapl_2020q3_8k_exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000060/a8-kexhibit991q3202062.htm"
+    },
+    {
+      "name": "aapl_eps_concept",
+      "url": "https://data.sec.gov/api/xbrl/companyconcept/CIK0000320193/us-gaap/EarningsPerShareDiluted.json"
+    },
+    {
+      "name": "aapl_submissions",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json"
+    }
+  ],
+  "rate_per_second": 1,
+  "attempts_per_url": 1,
+  "max_bytes_per_response": 15000000,
+  "user_agent": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
+  "identity_note": "Actual project name; no invented person, company affiliation, email, browser disguise or authentication. If denied retain denial, no bypass.",
+  "checks": [
+    "Exact accession issuer CIK and cover security class/ticker/exchange",
+    "Accepted timestamp and filing date separately; no public-availability guarantee",
+    "Original non-dimensional USD quarterly NetIncomeLoss current and prior-year comparative, prior-fiscal-year Assets",
+    "Original EPS duration/unit/scale versus later same-period API values",
+    "Original release exhibit separated from later10Q",
+    "Do not replace missing facts or derive Q4; no earnings-return calculation"
+  ],
+  "allowed_followup": "One additional official URL only if a discovered link directly resolves original sample context; no larger history."
+}

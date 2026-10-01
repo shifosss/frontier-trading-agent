@@ -1,0 +1,208 @@
+{
+  "declared_at": "2026-09-28T19:03:32.035112+00:00",
+  "sample_sha256": "62547a1e32b17dfced5585387a9acac5f76f5acc1b3f4d18a97e92db02e31214",
+  "sample_total": 91,
+  "scope": "All frozen sample USD events on/after2016-01-04;24events23symbols. Other67 remain pending, no replacements. No strategy/account output read.",
+  "selected": [
+    {
+      "symbol": "DHR",
+      "source_listing_name": "Danaher Corporation Common Stock",
+      "effective_session": "2016-07-05",
+      "ratio": 1.319,
+      "stratum": "USD|forward|2010-2019|<=2|>=1000000"
+    },
+    {
+      "symbol": "LINK",
+      "source_listing_name": "Interlink Electronics, Inc. - Common Stock",
+      "effective_session": "2016-04-04",
+      "ratio": 1.25,
+      "stratum": "USD|forward|2010-2019|<=2|unavailable"
+    },
+    {
+      "symbol": "MRBK",
+      "source_listing_name": "Meridian Corporation - Common Stock",
+      "effective_session": "2023-03-21",
+      "ratio": 2.0,
+      "stratum": "USD|forward|2020-2023|<=2|<1000000"
+    },
+    {
+      "symbol": "IP",
+      "source_listing_name": "International Paper Company Common Stock",
+      "effective_session": "2021-10-01",
+      "ratio": 1.056,
+      "stratum": "USD|forward|2020-2023|<=2|>=1000000"
+    },
+    {
+      "symbol": "OLOX",
+      "source_listing_name": "Olenox Industries Inc. - Common Stock",
+      "effective_session": "2023-09-28",
+      "ratio": 2.133,
+      "stratum": "USD|forward|2020-2023|>2|<1000000"
+    },
+    {
+      "symbol": "NTES",
+      "source_listing_name": "NetEase, Inc. - American Depositary Shares, each representing 5 ordinary shares",
+      "effective_session": "2020-10-02",
+      "ratio": 5.0,
+      "stratum": "USD|forward|2020-2023|>2|>=1000000"
+    },
+    {
+      "symbol": "EVO",
+      "source_listing_name": "Evotec SE - American Depositary Shares each representing 1/2 of one ordinary share",
+      "effective_session": "2021-10-20",
+      "ratio": 4.0,
+      "stratum": "USD|forward|2020-2023|>2|unavailable"
+    },
+    {
+      "symbol": "CZFS",
+      "source_listing_name": "Citizens Financial Services, Inc. - Common Stock",
+      "effective_session": "2024-06-14",
+      "ratio": 1.01,
+      "stratum": "USD|forward|2024-2026|<=2|<1000000"
+    },
+    {
+      "symbol": "ODFL",
+      "source_listing_name": "Old Dominion Freight Line, Inc. - Common Stock",
+      "effective_session": "2024-03-28",
+      "ratio": 2.0,
+      "stratum": "USD|forward|2024-2026|<=2|>=1000000"
+    },
+    {
+      "symbol": "DIT",
+      "source_listing_name": "AMCON Distributing Company Common Stock",
+      "effective_session": "2026-03-23",
+      "ratio": 1.5,
+      "stratum": "USD|forward|2024-2026|<=2|unavailable"
+    },
+    {
+      "symbol": "BRAI",
+      "source_listing_name": "Braiin Limited - Common Stock",
+      "effective_session": "2026-04-29",
+      "ratio": 3.0,
+      "stratum": "USD|forward|2024-2026|>2|<1000000"
+    },
+    {
+      "symbol": "WMT",
+      "source_listing_name": "Walmart Inc. - Common Stock",
+      "effective_session": "2024-02-26",
+      "ratio": 3.0,
+      "stratum": "USD|forward|2024-2026|>2|>=1000000"
+    },
+    {
+      "symbol": "TOPS",
+      "source_listing_name": "TOP Ships, Inc. Common Stock",
+      "effective_session": "2017-10-06",
+      "ratio": 0.5,
+      "stratum": "USD|reverse|2010-2019|<=2|<1000000"
+    },
+    {
+      "symbol": "CRVO",
+      "source_listing_name": "CervoMed Inc. - Common Stock",
+      "effective_session": "2023-08-17",
+      "ratio": 0.6666666666666666,
+      "stratum": "USD|reverse|2020-2023|<=2|<1000000"
+    },
+    {
+      "symbol": "ENOV",
+      "source_listing_name": "Enovis Corporation Common Stock",
+      "effective_session": "2022-04-05",
+      "ratio": 0.581,
+      "stratum": "USD|reverse|2020-2023|<=2|>=1000000"
+    },
+    {
+      "symbol": "CYPH",
+      "source_listing_name": "Cypherpunk Technologies Inc. - Common Stock",
+      "effective_session": "2023-06-21",
+      "ratio": 0.1,
+      "stratum": "USD|reverse|2020-2023|>2|<1000000"
+    },
+    {
+      "symbol": "NUWE",
+      "source_listing_name": "Nuwellis, Inc. - Common Stock",
+      "effective_session": "2022-12-12",
+      "ratio": 0.01,
+      "stratum": "USD|reverse|2020-2023|>2|>=1000000"
+    },
+    {
+      "symbol": "QXL",
+      "source_listing_name": "Quantum X Labs Inc. - Common Stock",
+      "effective_session": "2022-09-06",
+      "ratio": 0.03571428571428571,
+      "stratum": "USD|reverse|2020-2023|>2|unavailable"
+    },
+    {
+      "symbol": "ALM",
+      "source_listing_name": "Almonty Industries Inc. - Common Shares",
+      "effective_session": "2025-07-07",
+      "ratio": 0.6666666666666666,
+      "stratum": "USD|reverse|2024-2026|<=2|<1000000"
+    },
+    {
+      "symbol": "HON",
+      "source_listing_name": "Honeywell International Inc. - Common Stock",
+      "effective_session": "2026-06-29",
+      "ratio": 0.9535,
+      "stratum": "USD|reverse|2024-2026|<=2|>=1000000"
+    },
+    {
+      "symbol": "WHLR",
+      "source_listing_name": "Wheeler Real Estate Investment Trust, Inc. - Common Stock",
+      "effective_session": "2024-11-19",
+      "ratio": 0.5,
+      "stratum": "USD|reverse|2024-2026|<=2|unavailable"
+    },
+    {
+      "symbol": "STKH",
+      "source_listing_name": "Steakholder Foods Ltd. - American Depositary Shares",
+      "effective_session": "2025-04-28",
+      "ratio": 0.2,
+      "stratum": "USD|reverse|2024-2026|>2|<1000000"
+    },
+    {
+      "symbol": "WOK",
+      "source_listing_name": "WORK Medical Technology Group LTD - Class A Ordinary Shares",
+      "effective_session": "2025-12-29",
+      "ratio": 0.01,
+      "stratum": "USD|reverse|2024-2026|>2|>=1000000"
+    },
+    {
+      "symbol": "QXL",
+      "source_listing_name": "Quantum X Labs Inc. - Common Stock",
+      "effective_session": "2025-03-14",
+      "ratio": 0.25,
+      "stratum": "USD|reverse|2024-2026|>2|unavailable"
+    }
+  ],
+  "market_data": {
+    "method": "GET",
+    "endpoint": "https://data.alpaca.markets/v2/stocks/{symbol}/bars",
+    "feed": "sip",
+    "timeframe": "1Day",
+    "adjustments": [
+      "raw",
+      "split"
+    ],
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "window": "Effective local date minus10 through plus10 calendar days, bounded by2026-09-18 inclusive; UTC request covers whole local dates",
+    "max_pages_per_representation": 2,
+    "limit": 10000,
+    "request_count_initial": 48,
+    "automatic_retry": false,
+    "source_vintage": "Fresh retrieval with fixed entity asof; asof does not freeze adjustment vintage or historical availability."
+  },
+  "comparison_rules": {
+    "session": "Interpret source and Alpaca timestamps in America/New_York; compare original prior session and exact reported effective session. Do not forward-fill. Retain raw timestamps and missing sessions.",
+    "factor": "Use (split_close/raw_close) before divided by same quantity on effective date; expected reciprocal of provider new/old ratio. Later adjustment factors cancel. Volume factors are separate descriptive checks with rounding and coverage caveats.",
+    "numeric_price_interval": "Each value has absolute uncertainty max(0.0005 USD,abs(value)*0.0000005), accommodating three-decimal adjusted API output and float32 source rounding. Engineering precision tolerance, not an economic spread allowance.",
+    "factor_acceptance": "Expected factor must lie inside propagated positive-price interval; if interval width/expected exceeds0.02 mark precision-insufficient rather than corroborated. Ratios use provider event components as recorded; primary notice semantics checked separately.",
+    "cross_provider_nominal_close": "Compare original reconstructed nominal close and independent raw close with sum of their declared price intervals. Outside tolerance is discrepancy, not automatic bad-price proof; revisions/session conventions retained.",
+    "volume": "Compare inverse adjustment factors allowing each returned volume rounding by1share; no coverage agreement inferred because venues/conditions/revisions can differ.",
+    "notice": "Primary issuer,exchange,SEC or depositary evidence must explicitly identify issuer/action/date/ratio; corporate action type matters. Noninteger provider factors may encode distributions rather than splits. No guessed share repair.",
+    "classification": "Report price-factor checks, original nominal-price checks and action-notice evidence separately. Corroborated requires independent factor and action semantics/date agree; contradicted needs positive contradictory evidence; missing or ambiguous evidence unresolved. None qualifies full action accounting.",
+    "cash": "Fractional rights, cash-in-lieu, depositary charges and broker settlement remain separately unresolved unless directly evidenced. No corrected strategy or portfolio return."
+  },
+  "primary_notice_search": "At most two targeted discovery searches per selected event initially, then only direct primary references; preserve all queries, URLs, responses, failures. No substitutes for unavailable events.",
+  "reuse": "AIXI is not selected; previous AIXI evidence stays separate and is not redownloaded.",
+  "prohibited": "No raw-source correction, production changes, model fitting, paper/live orders, journal access, authentication flow, funds transfer or paid services."
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-09-28T23:52:38.038955+00:00",
+  "status": "passed",
+  "resolves": "independent-cohort-source-review.json final cohort/request membership finding",
+  "fix": "verify_frozen now compares exact ordered request(symbol,cik) pairs against hashed cohort selected100 after both request and cohort identity validation.",
+  "independent_focused_tests": 9,
+  "tests_passed": 9,
+  "material_findings_remaining": [],
+  "code_sha256": "a5ab505aef1e83ca584f9ae6485dc5a38fee88f7ec62ce5cfde1d1477a9dfdba",
+  "test_sha256": "5e174f1d61a9b89b477948f509936b54cec6e05691b3daf51f15e59b2f19caf8",
+  "network_requests": 0
+}

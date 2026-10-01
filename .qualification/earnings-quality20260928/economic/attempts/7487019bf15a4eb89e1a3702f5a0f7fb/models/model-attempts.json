@@ -1,0 +1,242 @@
+[
+  {
+    "family": "ridge",
+    "test_decision_year": 2021,
+    "status": "complete",
+    "attempt_id": "ab0c3c9921b24aa29d935f8479252ea2",
+    "samples": {
+      "calibration": {
+        "rows": 211,
+        "distinct_ciks": 74
+      },
+      "fit": {
+        "rows": 479,
+        "distinct_ciks": 77
+      },
+      "test": {
+        "rows": 208,
+        "distinct_ciks": 71
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "906b7f108d1d2a95d0ac1ca454db0f2753a5ade2f49a804bdc1668c1a69bd889",
+    "forecasts_sha256": "331c07703e251ceb807b3895cbf73c857928b6f216f5983983bc0a4c592819ac"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2021,
+    "status": "complete",
+    "attempt_id": "0115eec3579743efb49372f579752287",
+    "samples": {
+      "calibration": {
+        "rows": 211,
+        "distinct_ciks": 74
+      },
+      "fit": {
+        "rows": 479,
+        "distinct_ciks": 77
+      },
+      "test": {
+        "rows": 208,
+        "distinct_ciks": 71
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "10b98bda6b63d6a1f8bc1e03419a472fc4f8299b2da5879c7a29056f07f70f7c",
+    "forecasts_sha256": "a7b8cf237672322d7057aeb87362aee331b4ef5ec0c87de555236f17fb3422d0"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2022,
+    "status": "complete",
+    "attempt_id": "bf49a329e39c406baab0929943d53d20",
+    "samples": {
+      "calibration": {
+        "rows": 208,
+        "distinct_ciks": 71
+      },
+      "fit": {
+        "rows": 690,
+        "distinct_ciks": 82
+      },
+      "test": {
+        "rows": 209,
+        "distinct_ciks": 71
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "3e60fc6bf5a11de6db9b0513788dc6c608f4cbde790ede9cf392b7a611c4e047",
+    "forecasts_sha256": "251af3131c5c79119d1f2b1f7b40fbd2a98abbbcde4da88eea1061c194885aea"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2022,
+    "status": "complete",
+    "attempt_id": "cd3ef4e232454a24bcf98107c8b811e2",
+    "samples": {
+      "calibration": {
+        "rows": 208,
+        "distinct_ciks": 71
+      },
+      "fit": {
+        "rows": 690,
+        "distinct_ciks": 82
+      },
+      "test": {
+        "rows": 209,
+        "distinct_ciks": 71
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "8e0e391f1dc442e666eaac18de53d07d54cef0f8539462cc02b79cdc32d546ee",
+    "forecasts_sha256": "6519919462520d23163702e747cd0b96429775d2fab0906614cad0954bb81534"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2023,
+    "status": "complete",
+    "attempt_id": "2fdd9ea5a4a44a438df30327ef84dfbf",
+    "samples": {
+      "calibration": {
+        "rows": 209,
+        "distinct_ciks": 71
+      },
+      "fit": {
+        "rows": 898,
+        "distinct_ciks": 82
+      },
+      "test": {
+        "rows": 210,
+        "distinct_ciks": 75
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "4e7741ab9d15a4f4117aa91cfd8d9cd281eabc503741177746207def4314ade3",
+    "forecasts_sha256": "d3f07a0dd26dadbc375a5779ff935e1bd73f64643ff2067f5a1875213a1cb111"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2023,
+    "status": "complete",
+    "attempt_id": "ef2b28795a7348978b5735b8af823ae5",
+    "samples": {
+      "calibration": {
+        "rows": 209,
+        "distinct_ciks": 71
+      },
+      "fit": {
+        "rows": 898,
+        "distinct_ciks": 82
+      },
+      "test": {
+        "rows": 210,
+        "distinct_ciks": 75
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "f17e3da4cba56fabe972f25d8feb1f38fb7f5b1096a8f80506a2f637cb0fd24e",
+    "forecasts_sha256": "4164079fb23031c5d5870daff7d265ae989f6be17507864096e756dddbb5a6c8"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2024,
+    "status": "complete",
+    "attempt_id": "43df2e5a620f44ac9cf701e83d9c3fa7",
+    "samples": {
+      "calibration": {
+        "rows": 210,
+        "distinct_ciks": 75
+      },
+      "fit": {
+        "rows": 1107,
+        "distinct_ciks": 83
+      },
+      "test": {
+        "rows": 228,
+        "distinct_ciks": 79
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "4c2672fb2a095c375f22562b0ad009ca083a11127cd34f2dff2ab6e8109d8cb5",
+    "forecasts_sha256": "252b33e3c2472dc04e173c8e0dfe6cb0e9bc885abdfea3f2628eccf2891ee5c1"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2024,
+    "status": "complete",
+    "attempt_id": "7a0443554976491c8d13301ce83b1b45",
+    "samples": {
+      "calibration": {
+        "rows": 210,
+        "distinct_ciks": 75
+      },
+      "fit": {
+        "rows": 1107,
+        "distinct_ciks": 83
+      },
+      "test": {
+        "rows": 228,
+        "distinct_ciks": 79
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "3719c990557a5e7e9bdff5e0d2f8611090850f896c61ddb70cf220086242e8ed",
+    "forecasts_sha256": "2c83ecb12d7f65c5525cf8a91cac13c393a22069ee49d7a97885be3a4bf75947"
+  },
+  {
+    "family": "ridge",
+    "test_decision_year": 2025,
+    "status": "complete",
+    "attempt_id": "97e6c176ca0e42eaa207391cff42f4a0",
+    "samples": {
+      "calibration": {
+        "rows": 228,
+        "distinct_ciks": 79
+      },
+      "fit": {
+        "rows": 1317,
+        "distinct_ciks": 87
+      },
+      "test": {
+        "rows": 232,
+        "distinct_ciks": 81
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "59339f14db47f9f52801c2748798854b83539b0b190c220fc6b0a069a9db1492",
+    "forecasts_sha256": "b393056a63a99ea7254ed60679dc6a3b6f2a33fb28a79eed710c918971a32fbc"
+  },
+  {
+    "family": "hist_gradient_boosting",
+    "test_decision_year": 2025,
+    "status": "complete",
+    "attempt_id": "a19f4511f8af408591fd9c935009f117",
+    "samples": {
+      "calibration": {
+        "rows": 228,
+        "distinct_ciks": 79
+      },
+      "fit": {
+        "rows": 1317,
+        "distinct_ciks": 87
+      },
+      "test": {
+        "rows": 232,
+        "distinct_ciks": 81
+      }
+    },
+    "reasons": [],
+    "warnings": [],
+    "manifest_sha256": "d8152d6735284b5103332383da9c77cccac726dc768d4e464038f575384c9f23",
+    "forecasts_sha256": "d2e568afd31ca13a9cdaaf9be64606b867589ba0720f4b0bfaf85b2f4ebecc16"
+  }
+]

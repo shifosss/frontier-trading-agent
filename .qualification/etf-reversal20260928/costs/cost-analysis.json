@@ -1,0 +1,2923 @@
+{
+  "definition_sha256": "96049f3705753b07d9aed5db6cd1e561015b79f9e65c147c559292ba537d4b68",
+  "cells": [
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "DIA",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 3512,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 3503,
+      "crossed_quotes": 9,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 172,
+      "valid_observed_seconds": 59.98800000000001,
+      "crossed_seconds": 0.004,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.008,
+      "locked_seconds": 0.342,
+      "longest_quote_state_seconds": 0.924,
+      "equal_timestamp_updates": 1356,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.008Z",
+      "last_timestamp": "2016-01-04T20:59:59.995Z",
+      "conditions": {
+        "[\"?\"]": 3512
+      },
+      "bid_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 171.18829874308193,
+        "min": 171.01999999999998,
+        "max": 171.325,
+        "p05": 171.09500000000003,
+        "p50": 171.195,
+        "p90": 171.28,
+        "p95": 171.28500000000003,
+        "p99": 171.305
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.024833598851402,
+        "min": 0.0,
+        "max": 2.338634237604773,
+        "p05": 0.5837882016415731,
+        "p50": 1.1679514132218074,
+        "p90": 1.75187596718159,
+        "p95": 1.7528995880686635,
+        "p99": 1.753514334979755
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.056453249135213,
+        "min": 0.0,
+        "max": 2.338634237604773,
+        "p05": 0.5840950906818918,
+        "p50": 1.1680878402045212,
+        "p90": 1.75187596718159,
+        "p95": 1.753002015952385,
+        "p99": 1.7534118472194473
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "IWM",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 8068,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 8061,
+      "crossed_quotes": 7,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 358,
+      "valid_observed_seconds": 59.999,
+      "crossed_seconds": 0.001,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.0,
+      "locked_seconds": 0.521,
+      "longest_quote_state_seconds": 0.65,
+      "equal_timestamp_updates": 4214,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00Z",
+      "last_timestamp": "2016-01-04T20:59:59.998Z",
+      "conditions": {
+        "[\"?\"]": 8068
+      },
+      "bid_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 109.9497663294388,
+        "min": 109.88499999999999,
+        "max": 110.065,
+        "p05": 109.88499999999999,
+        "p50": 109.955,
+        "p90": 109.985,
+        "p95": 109.99000000000001,
+        "p99": 110.005
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.9756129073801539,
+        "min": 0.0,
+        "max": 3.636363636362913,
+        "p05": 0.9086365907959761,
+        "p50": 0.9095456819323404,
+        "p90": 1.8173557473871893,
+        "p95": 1.8188432157144434,
+        "p99": 2.727148765965287
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.96283492075937,
+        "min": 0.0,
+        "max": 3.636363636362913,
+        "p05": 0.9092148929391194,
+        "p50": 0.9095456819323404,
+        "p90": 0.9100423169682046,
+        "p95": 1.8183471224653167,
+        "p99": 1.819174094960526
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "QQQ",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 10975,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 10975,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 364,
+      "valid_observed_seconds": 59.99900000000001,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001,
+      "locked_seconds": 0.2959,
+      "longest_quote_state_seconds": 0.376,
+      "equal_timestamp_updates": 6705,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.001Z",
+      "last_timestamp": "2016-01-04T20:59:59.999Z",
+      "conditions": {
+        "[\"?\"]": 10975
+      },
+      "bid_exchange_codes": [
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "C"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 109.50421197853296,
+        "min": 109.38499999999999,
+        "max": 109.595,
+        "p05": 109.445,
+        "p50": 109.505,
+        "p90": 109.565,
+        "p95": 109.58500000000001,
+        "p99": 109.58500000000001
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.8982954208684332,
+        "min": 0.0,
+        "max": 1.8279864728997368,
+        "p05": 0.9125336496787987,
+        "p50": 0.9132003104885728,
+        "p90": 0.9137009456809463,
+        "p95": 0.9138679460822586,
+        "p99": 1.825650387950344
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.9153396168112377,
+        "min": 0.0,
+        "max": 1.8276523805168619,
+        "p05": 0.9125336496787987,
+        "p50": 0.9132003104885728,
+        "p90": 0.9137009456809463,
+        "p95": 0.9137009456809463,
+        "p99": 0.9141185611778523
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLE",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 4240,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 4240,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 255,
+      "valid_observed_seconds": 59.998000000000005,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.002,
+      "locked_seconds": 0.543,
+      "longest_quote_state_seconds": 0.736,
+      "equal_timestamp_updates": 1961,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.002Z",
+      "last_timestamp": "2016-01-04T20:59:59.995Z",
+      "conditions": {
+        "[\"?\"]": 4240
+      },
+      "bid_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 60.28275159171972,
+        "min": 60.185,
+        "max": 60.345,
+        "p05": 60.235,
+        "p50": 60.275000000000006,
+        "p90": 60.32,
+        "p95": 60.33,
+        "p99": 60.33
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.7129144258341222,
+        "min": 0.0,
+        "max": 4.973062577704291,
+        "p05": 0.0,
+        "p50": 1.6590626296139377,
+        "p90": 1.661543573979897,
+        "p95": 3.3156498673733457,
+        "p99": 3.318400530944604
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.8190678655163408,
+        "min": 0.0,
+        "max": 4.973062577704291,
+        "p05": 1.6576875259010377,
+        "p50": 1.6590626296139377,
+        "p90": 3.3151002817840425,
+        "p95": 3.3156498673733457,
+        "p99": 3.318400530944604
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLF",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 2349,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 2349,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 103,
+      "valid_observed_seconds": 59.99700000000001,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.003,
+      "locked_seconds": 0.171,
+      "longest_quote_state_seconds": 0.856,
+      "equal_timestamp_updates": 800,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.003Z",
+      "last_timestamp": "2016-01-04T20:59:59.807Z",
+      "conditions": {
+        "[\"?\"]": 2349
+      },
+      "bid_exchange_codes": [
+        "J",
+        "K",
+        "P",
+        "T",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "K",
+        "P",
+        "T",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 23.370429688151074,
+        "min": 23.355,
+        "max": 23.384999999999998,
+        "p05": 23.365000000000002,
+        "p50": 23.375,
+        "p90": 23.375,
+        "p95": 23.375,
+        "p99": 23.384999999999998
+      },
+      "count_weighted_spread_bps": {
+        "mean": 4.09114206327931,
+        "min": 0.0,
+        "max": 4.281738385783776,
+        "p05": 4.276245456489871,
+        "p50": 4.278074866309309,
+        "p90": 4.279905842072143,
+        "p95": 4.281738385783776,
+        "p99": 4.281738385783776
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 4.266721023169414,
+        "min": 0.0,
+        "max": 4.281738385783776,
+        "p05": 4.278074866309309,
+        "p50": 4.278074866309309,
+        "p90": 4.279905842072143,
+        "p95": 4.279905842072143,
+        "p99": 4.281738385783776
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLI",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 1805,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 1805,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 119,
+      "valid_observed_seconds": 59.995,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.005,
+      "locked_seconds": 0.24900000000000003,
+      "longest_quote_state_seconds": 1.526,
+      "equal_timestamp_updates": 647,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.005Z",
+      "last_timestamp": "2016-01-04T20:59:59.999Z",
+      "conditions": {
+        "[\"?\"]": 1805
+      },
+      "bid_exchange_codes": [
+        "J",
+        "K",
+        "P",
+        "T",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 52.29138078173182,
+        "min": 52.254999999999995,
+        "max": 52.315,
+        "p05": 52.275000000000006,
+        "p50": 52.295,
+        "p90": 52.315,
+        "p95": 52.315,
+        "p99": 52.315
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.8106500077188867,
+        "min": 0.0,
+        "max": 3.8255547054315264,
+        "p05": 0.0,
+        "p50": 1.9122287025524447,
+        "p90": 1.9129603060732683,
+        "p95": 1.9133263178044801,
+        "p99": 3.8233607340858584
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.9150050526091804,
+        "min": 0.0,
+        "max": 3.8255547054315264,
+        "p05": 1.9114976584149883,
+        "p50": 1.9122287025524447,
+        "p90": 1.9129603060732683,
+        "p95": 1.9129603060732683,
+        "p99": 1.9136924696197515
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLK",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 2451,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2451,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 181,
+      "valid_observed_seconds": 59.999,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001,
+      "locked_seconds": 1.4759999999999998,
+      "longest_quote_state_seconds": 0.675,
+      "equal_timestamp_updates": 923,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.001Z",
+      "last_timestamp": "2016-01-04T20:59:59.999Z",
+      "conditions": {
+        "[\"?\"]": 2451
+      },
+      "bid_exchange_codes": [
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 42.22349272487874,
+        "min": 42.18,
+        "max": 42.275000000000006,
+        "p05": 42.195,
+        "p50": 42.224999999999994,
+        "p90": 42.245000000000005,
+        "p95": 42.265,
+        "p99": 42.265
+      },
+      "count_weighted_spread_bps": {
+        "mean": 2.2175906648800003,
+        "min": 0.0,
+        "max": 4.739336492891736,
+        "p05": 0.0,
+        "p50": 2.3682652457070485,
+        "p90": 2.369949046096721,
+        "p95": 2.3705108450866446,
+        "p99": 4.732607666825159
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 2.311076149878768,
+        "min": 0.0,
+        "max": 4.739336492891736,
+        "p05": 2.3660238968425684,
+        "p50": 2.3682652457070485,
+        "p90": 2.369949046096721,
+        "p95": 2.369949046096721,
+        "p99": 2.3705108450866446
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLP",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 1760,
+      "terminal_quotes_excluded": 2,
+      "valid_quotes": 1760,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 101,
+      "valid_observed_seconds": 59.995,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.005,
+      "locked_seconds": 0.030000000000000002,
+      "longest_quote_state_seconds": 1.236,
+      "equal_timestamp_updates": 736,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.005Z",
+      "last_timestamp": "2016-01-04T20:59:59.987Z",
+      "conditions": {
+        "[\"?\"]": 1760
+      },
+      "bid_exchange_codes": [
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 49.815791565963835,
+        "min": 49.765,
+        "max": 49.845,
+        "p05": 49.785,
+        "p50": 49.825,
+        "p90": 49.835,
+        "p95": 49.845,
+        "p99": 49.845
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.9378476046229571,
+        "min": 0.0,
+        "max": 4.0184850311438876,
+        "p05": 0.0,
+        "p50": 2.00702458605078,
+        "p90": 2.0086371397003138,
+        "p95": 2.009040683073432,
+        "p99": 4.015257980325863
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 2.0066594844541736,
+        "min": 0.0,
+        "max": 4.0184850311438876,
+        "p05": 2.0062192797668796,
+        "p50": 2.00702458605078,
+        "p90": 2.0086371397003138,
+        "p95": 2.0086371397003138,
+        "p99": 2.009040683073432
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLU",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 1334,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 1334,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 92,
+      "valid_observed_seconds": 59.99499999999999,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.005,
+      "locked_seconds": 0.632,
+      "longest_quote_state_seconds": 1.111,
+      "equal_timestamp_updates": 611,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.005Z",
+      "last_timestamp": "2016-01-04T20:59:59.996Z",
+      "conditions": {
+        "[\"?\"]": 1334
+      },
+      "bid_exchange_codes": [
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 43.18371347612301,
+        "min": 43.144999999999996,
+        "max": 43.195,
+        "p05": 43.175,
+        "p50": 43.185,
+        "p90": 43.195,
+        "p95": 43.195,
+        "p99": 43.195
+      },
+      "count_weighted_spread_bps": {
+        "mean": 2.234442385866465,
+        "min": 0.0,
+        "max": 4.63499420625632,
+        "p05": 0.0,
+        "p50": 2.315618849136971,
+        "p90": 2.317228594600396,
+        "p95": 2.317765673889909,
+        "p99": 4.6317739694293705
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 2.2948033661997007,
+        "min": 0.0,
+        "max": 4.6317739694293705,
+        "p05": 2.315082764210005,
+        "p50": 2.315618849136971,
+        "p90": 2.31615518239676,
+        "p95": 2.31615518239676,
+        "p99": 2.317228594600396
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "XLV",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 4029,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 4021,
+      "crossed_quotes": 8,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 295,
+      "valid_observed_seconds": 59.987,
+      "crossed_seconds": 0.009000000000000001,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.004,
+      "locked_seconds": 1.735,
+      "longest_quote_state_seconds": 0.737,
+      "equal_timestamp_updates": 2095,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.004Z",
+      "last_timestamp": "2016-01-04T20:59:59.994Z",
+      "conditions": {
+        "[\"?\"]": 4029
+      },
+      "bid_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 70.66314243086002,
+        "min": 70.595,
+        "max": 70.705,
+        "p05": 70.625,
+        "p50": 70.66499999999999,
+        "p90": 70.695,
+        "p95": 70.695,
+        "p99": 70.695
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.3469525927068227,
+        "min": 0.0,
+        "max": 2.832459991504069,
+        "p05": 0.0,
+        "p50": 1.4151277152770279,
+        "p90": 1.4163302882239384,
+        "p95": 1.4163302882239384,
+        "p99": 2.8300551860775762
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.3803343265915942,
+        "min": 0.0,
+        "max": 2.831257078144144,
+        "p05": 1.414527194286034,
+        "p50": 1.4149274849671192,
+        "p90": 1.4159292035385351,
+        "p95": 1.4159292035385351,
+        "p99": 1.4163302882239384
+      }
+    },
+    {
+      "window": "2016-01-04-1559",
+      "symbol": "SPY",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "1a3e36c3cb4db5a8aa1092203143673739e305bd88538a56ee1434a4070946a8",
+        "aa8601db82c71cfd5da682bdaaa2fad62f7b4054ef9b712982dcd580cefbdde5",
+        "b93a79fe0d5bf18a3a2b562514f7313b71dda8f3300064de78701fae08a516f1",
+        "2f2613bcef4dc78687ad39a4e0cd9d695fd0c6d5e21a3ce8f5a3e2b143590c8a",
+        "c8a45715ffa1f4d109f7cace79b0d56ebe48588690735d425fb669e9a46b1a66",
+        "f7008cfc41b95b347ee246475570f7ef3494e31cd935aab5570ace032c23d55c"
+      ],
+      "quotes": 14940,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 14851,
+      "crossed_quotes": 89,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 1507,
+      "valid_observed_seconds": 59.966,
+      "crossed_seconds": 0.028,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.006,
+      "locked_seconds": 1.327,
+      "longest_quote_state_seconds": 0.325,
+      "equal_timestamp_updates": 8739,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2016-01-04T20:59:00.006Z",
+      "last_timestamp": "2016-01-04T20:59:59.999Z",
+      "conditions": {
+        "[\"?\"]": 14940
+      },
+      "bid_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "M",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 200.89054630957537,
+        "min": 200.695,
+        "max": 201.025,
+        "p05": 200.79500000000002,
+        "p50": 200.885,
+        "p90": 200.985,
+        "p95": 201.0,
+        "p99": 201.015
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.4650346963879527,
+        "min": 0.0,
+        "max": 1.4927229754945208,
+        "p05": 0.0,
+        "p50": 0.4977229176512906,
+        "p90": 0.4979955678389933,
+        "p95": 0.49816922808774383,
+        "p99": 0.9955201592837349
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.501252390650907,
+        "min": 0.0,
+        "max": 0.9961151509105394,
+        "p05": 0.49750006218705534,
+        "p50": 0.49779724718077034,
+        "p90": 0.4979955678389933,
+        "p95": 0.49804517269671067,
+        "p99": 0.9955697147697861
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "DIA",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 6266,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 6266,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 257,
+      "valid_observed_seconds": 59.986198968,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.013801032,
+      "locked_seconds": 0.056250488,
+      "longest_quote_state_seconds": 0.601057474,
+      "equal_timestamp_updates": 243,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.013801032Z",
+      "last_timestamp": "2020-01-02T20:59:59.997869159Z",
+      "conditions": {
+        "[\"?\"]": 6266
+      },
+      "bid_exchange_codes": [
+        "B",
+        "C",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 288.482570022198,
+        "min": 288.395,
+        "max": 288.635,
+        "p05": 288.435,
+        "p50": 288.485,
+        "p90": 288.515,
+        "p95": 288.545,
+        "p99": 288.585
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.41771444963686827,
+        "min": 0.0,
+        "max": 1.0399875201507827,
+        "p05": 0.3464703334773809,
+        "p50": 0.3466504896435013,
+        "p90": 0.6932649311928251,
+        "p95": 0.6933129961534528,
+        "p99": 0.6934331877117332
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.4298498192726402,
+        "min": 0.0,
+        "max": 1.0399875201507827,
+        "p05": 0.34659041677466096,
+        "p50": 0.3466625067182413,
+        "p90": 0.6932649311928251,
+        "p95": 0.693288962839081,
+        "p99": 0.6934331877117332
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "IWM",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 10959,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 10959,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 371,
+      "valid_observed_seconds": 59.999301491,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000698509,
+      "locked_seconds": 0.284250314,
+      "longest_quote_state_seconds": 0.628486946,
+      "equal_timestamp_updates": 997,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.000698509Z",
+      "last_timestamp": "2020-01-02T20:59:59.998502337Z",
+      "conditions": {
+        "[\"?\"]": 10959
+      },
+      "bid_exchange_codes": [
+        "B",
+        "C",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 165.65774842417716,
+        "min": 165.615,
+        "max": 165.765,
+        "p05": 165.625,
+        "p50": 165.655,
+        "p90": 165.695,
+        "p95": 165.725,
+        "p99": 165.735
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.5970602361590538,
+        "min": 0.0,
+        "max": 1.2075836251649443,
+        "p05": 0.6033000512799557,
+        "p50": 0.6036642419480791,
+        "p90": 0.6037735849051112,
+        "p95": 0.6038100413604386,
+        "p99": 1.2074378169530449
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.6277676872057607,
+        "min": 0.0,
+        "max": 1.2075836251649443,
+        "p05": 0.6034092623316281,
+        "p50": 0.6036642419480791,
+        "p90": 0.6037735849051112,
+        "p95": 0.6038100413604386,
+        "p99": 1.2075836251649443
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "QQQ",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 12346,
+      "terminal_quotes_excluded": 1,
+      "valid_quotes": 12346,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 422,
+      "valid_observed_seconds": 59.987,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.013,
+      "locked_seconds": 0.35800000000000004,
+      "longest_quote_state_seconds": 0.494,
+      "equal_timestamp_updates": 7903,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.013Z",
+      "last_timestamp": "2020-01-02T20:59:59.996Z",
+      "conditions": {
+        "[\"?\"]": 12346
+      },
+      "bid_exchange_codes": [
+        "A",
+        "B",
+        "C",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "C",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "C"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 216.01582151132743,
+        "min": 215.95499999999998,
+        "max": 216.14499999999998,
+        "p05": 215.975,
+        "p50": 216.015,
+        "p90": 216.04500000000002,
+        "p95": 216.065,
+        "p99": 216.095
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.45664323673928087,
+        "min": 0.0,
+        "max": 0.9260974254496311,
+        "p05": 0.462695199536884,
+        "p50": 0.4629308149905945,
+        "p90": 0.4629951154024273,
+        "p95": 0.463016552841343,
+        "p99": 0.9257973429607836
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.46624734232097165,
+        "min": 0.0,
+        "max": 0.9260545446118355,
+        "p05": 0.4628236873158959,
+        "p50": 0.4629308149905945,
+        "p90": 0.4629951154024273,
+        "p95": 0.463016552841343,
+        "p99": 0.9258401999819569
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLE",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 2578,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2578,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 70,
+      "valid_observed_seconds": 59.99745420399999,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.002545796,
+      "locked_seconds": 0.047683587000000006,
+      "longest_quote_state_seconds": 0.774127315,
+      "equal_timestamp_updates": 159,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.002545796Z",
+      "last_timestamp": "2020-01-02T20:59:59.999944545Z",
+      "conditions": {
+        "[\"?\"]": 2578
+      },
+      "bid_exchange_codes": [
+        "K",
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "C",
+        "K",
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 60.56708877852373,
+        "min": 60.545,
+        "max": 60.595,
+        "p05": 60.545,
+        "p50": 60.575,
+        "p90": 60.575,
+        "p95": 60.575,
+        "p99": 60.585
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.6133388817445893,
+        "min": 0.0,
+        "max": 3.3030553261772297,
+        "p05": 1.6505735743179195,
+        "p50": 1.6511186328734435,
+        "p90": 1.6516640515315897,
+        "p95": 1.6516640515315897,
+        "p99": 1.6516640515315897
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.650480026300904,
+        "min": 0.0,
+        "max": 3.3030553261772297,
+        "p05": 1.6508460586047065,
+        "p50": 1.6508460586047065,
+        "p90": 1.6513912971687088,
+        "p95": 1.6516640515315897,
+        "p99": 1.6516640515315897
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLF",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 2098,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2098,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 19,
+      "valid_observed_seconds": 59.999594399,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000405601,
+      "locked_seconds": 0.0009383590000000002,
+      "longest_quote_state_seconds": 0.52153325,
+      "equal_timestamp_updates": 107,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.000405601Z",
+      "last_timestamp": "2020-01-02T20:59:59.992982493Z",
+      "conditions": {
+        "[\"?\"]": 2098
+      },
+      "bid_exchange_codes": [
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "K",
+        "P",
+        "T",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 31.056259224912463,
+        "min": 31.045,
+        "max": 31.075,
+        "p05": 31.055,
+        "p50": 31.055,
+        "p90": 31.064999999999998,
+        "p95": 31.064999999999998,
+        "p99": 31.064999999999998
+      },
+      "count_weighted_spread_bps": {
+        "mean": 3.1984599115480026,
+        "min": 0.0,
+        "max": 6.441223832528044,
+        "p05": 3.219056816353312,
+        "p50": 3.220093382707458,
+        "p90": 3.220093382707458,
+        "p95": 3.220093382707458,
+        "p99": 3.2211306168470166
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 3.2199151368783108,
+        "min": 0.0,
+        "max": 6.441223832528044,
+        "p05": 3.219056816353312,
+        "p50": 3.220093382707458,
+        "p90": 3.220093382707458,
+        "p95": 3.220093382707458,
+        "p99": 3.2211306168470166
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLI",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 3898,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 3898,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 79,
+      "valid_observed_seconds": 59.999494085,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000505915,
+      "locked_seconds": 0.009027274000000002,
+      "longest_quote_state_seconds": 0.664974331,
+      "equal_timestamp_updates": 274,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.000505915Z",
+      "last_timestamp": "2020-01-02T20:59:59.999301691Z",
+      "conditions": {
+        "[\"?\"]": 3898
+      },
+      "bid_exchange_codes": [
+        "K",
+        "N",
+        "P",
+        "T",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "K",
+        "N",
+        "P",
+        "T",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 82.9387680577861,
+        "min": 82.92500000000001,
+        "max": 82.995,
+        "p05": 82.92500000000001,
+        "p50": 82.935,
+        "p90": 82.965,
+        "p95": 82.985,
+        "p99": 82.995
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.181241309304724,
+        "min": 0.0,
+        "max": 1.2059089538745993,
+        "p05": 1.2048918609560957,
+        "p50": 1.2057635497667938,
+        "p90": 1.2059089538745993,
+        "p95": 1.2059089538745993,
+        "p99": 1.2059089538745993
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.205527469462057,
+        "min": 0.0,
+        "max": 1.2059089538745993,
+        "p05": 1.2050370548883418,
+        "p50": 1.2057635497667938,
+        "p90": 1.2059089538745993,
+        "p95": 1.2059089538745993,
+        "p99": 1.2059089538745993
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLK",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 4450,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 4450,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 152,
+      "valid_observed_seconds": 59.999506826,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000493174,
+      "locked_seconds": 0.014981522,
+      "longest_quote_state_seconds": 0.636090413,
+      "equal_timestamp_updates": 328,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.000493174Z",
+      "last_timestamp": "2020-01-02T20:59:59.999037681Z",
+      "conditions": {
+        "[\"?\"]": 4450
+      },
+      "bid_exchange_codes": [
+        "K",
+        "N",
+        "P",
+        "T",
+        "X",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 93.32890308099496,
+        "min": 93.305,
+        "max": 93.38499999999999,
+        "p05": 93.315,
+        "p50": 93.32499999999999,
+        "p90": 93.35499999999999,
+        "p95": 93.36500000000001,
+        "p99": 93.375
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.0372819921974166,
+        "min": 0.0,
+        "max": 2.143163309043723,
+        "p05": 1.0709504685398559,
+        "p50": 1.0715242432365515,
+        "p90": 1.071639071959589,
+        "p95": 1.071639071959589,
+        "p99": 1.0717539252992996
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.0712290375437172,
+        "min": 0.0,
+        "max": 2.143163309043723,
+        "p05": 1.071065174316405,
+        "p50": 1.0715242432365515,
+        "p90": 1.071639071959589,
+        "p95": 1.071639071959589,
+        "p99": 1.0717539252992996
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLP",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 2762,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2762,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 130,
+      "valid_observed_seconds": 59.999477082,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000522918,
+      "locked_seconds": 0.007743652,
+      "longest_quote_state_seconds": 1.501811515,
+      "equal_timestamp_updates": 299,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.000522918Z",
+      "last_timestamp": "2020-01-02T20:59:59.999401505Z",
+      "conditions": {
+        "[\"?\"]": 2762
+      },
+      "bid_exchange_codes": [
+        "B",
+        "C",
+        "K",
+        "N",
+        "P",
+        "T",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "K",
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 62.47584227388301,
+        "min": 62.435,
+        "max": 62.495000000000005,
+        "p05": 62.445,
+        "p50": 62.474999999999994,
+        "p90": 62.495000000000005,
+        "p95": 62.495000000000005,
+        "p99": 62.495000000000005
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.5306810033615645,
+        "min": 0.0,
+        "max": 3.2030749519543766,
+        "p05": 1.6001280102405009,
+        "p50": 1.6008965020408243,
+        "p90": 1.601409240132135,
+        "p95": 1.601409240132135,
+        "p99": 1.6016657323613375
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.6004919714662837,
+        "min": 0.0,
+        "max": 3.2030749519543766,
+        "p05": 1.6001280102405009,
+        "p50": 1.6006402561021227,
+        "p90": 1.6011528300373086,
+        "p95": 1.601409240132135,
+        "p99": 1.6016657323613375
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLU",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 2544,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2544,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 28,
+      "valid_observed_seconds": 59.999324332,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000675668,
+      "locked_seconds": 0.001013013,
+      "longest_quote_state_seconds": 1.544160175,
+      "equal_timestamp_updates": 283,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.000675668Z",
+      "last_timestamp": "2020-01-02T20:59:59.998398972Z",
+      "conditions": {
+        "[\"?\"]": 2544
+      },
+      "bid_exchange_codes": [
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "K",
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 63.77202046803401,
+        "min": 63.765,
+        "max": 63.795,
+        "p05": 63.765,
+        "p50": 63.775000000000006,
+        "p90": 63.775000000000006,
+        "p95": 63.775000000000006,
+        "p99": 63.795
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.5514430152170051,
+        "min": 0.0,
+        "max": 3.1357792411407996,
+        "p05": 1.5680125441000408,
+        "p50": 1.5680125441000408,
+        "p90": 1.5682584489931963,
+        "p95": 1.5682584489931963,
+        "p99": 1.5682584489931963
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.5680593394396265,
+        "min": 0.0,
+        "max": 1.5682584489931963,
+        "p05": 1.5680125441000408,
+        "p50": 1.5680125441000408,
+        "p90": 1.5682584489931963,
+        "p95": 1.5682584489931963,
+        "p99": 1.5682584489931963
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "XLV",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 3061,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 3061,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 123,
+      "valid_observed_seconds": 59.998168813,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001831187,
+      "locked_seconds": 0.497588227,
+      "longest_quote_state_seconds": 0.760596114,
+      "equal_timestamp_updates": 279,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.001831187Z",
+      "last_timestamp": "2020-01-02T20:59:59.999410484Z",
+      "conditions": {
+        "[\"?\"]": 3061
+      },
+      "bid_exchange_codes": [
+        "C",
+        "K",
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "K",
+        "N",
+        "P",
+        "T",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 102.1251930481047,
+        "min": 102.07499999999999,
+        "max": 102.155,
+        "p05": 102.095,
+        "p50": 102.13499999999999,
+        "p90": 102.14500000000001,
+        "p95": 102.14500000000001,
+        "p99": 102.14500000000001
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.9504223184825035,
+        "min": 0.0,
+        "max": 1.9586720203711911,
+        "p05": 0.979000440550699,
+        "p50": 0.9791921664617778,
+        "p90": 0.9794798961742401,
+        "p95": 0.9795758436601965,
+        "p99": 1.9579050416050925
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.9747640428649201,
+        "min": 0.0,
+        "max": 1.9586720203711911,
+        "p05": 0.979000440550699,
+        "p50": 0.9790962941210277,
+        "p90": 0.9793839674849534,
+        "p95": 0.9794798961742401,
+        "p99": 0.9795758436601965
+      }
+    },
+    {
+      "window": "2020-01-02-1559",
+      "symbol": "SPY",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "6d611e15dd56a28069cd9fa27fe283dc9a77577984c6d07a218368a2ab3f8891",
+        "0c88cbc9de53f6db68e25d98abc6e99644ceae9854181e27e0b3b46cacd5d901",
+        "dc839caba52e591b7871510a05091ed16707b582374426f8ccaa1054d21a199d",
+        "9c0078b44fc1b607d7467013891f8aeab8d75280144c473cf415f3aeca06d6c8",
+        "40691969fc29cffa96c2146e871795dccec74cef51f6bba4b385690fd0b6d559",
+        "4745d990241a2f1d2be7d8a61f5038d2a2424584770402669919dac1bacff511",
+        "36d50de0148d61a09573215520dad02b02bf018e8e1b4cc9bf32266ad7d10944"
+      ],
+      "quotes": 17092,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 17092,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 595,
+      "valid_observed_seconds": 59.990444341999996,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.009555658,
+      "locked_seconds": 0.130747877,
+      "longest_quote_state_seconds": 0.25916428,
+      "equal_timestamp_updates": 2203,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2020-01-02T20:59:00.009555658Z",
+      "last_timestamp": "2020-01-02T20:59:59.997173141Z",
+      "conditions": {
+        "[\"?\"]": 17092
+      },
+      "bid_exchange_codes": [
+        "A",
+        "B",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "B",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 324.664431901107,
+        "min": 324.545,
+        "max": 324.845,
+        "p05": 324.595,
+        "p50": 324.675,
+        "p90": 324.705,
+        "p95": 324.735,
+        "p99": 324.795
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.3119627639858172,
+        "min": 0.0,
+        "max": 0.9241147750542213,
+        "p05": 0.3078580774260265,
+        "p50": 0.30800030800002787,
+        "p90": 0.30808570944408725,
+        "p95": 0.3081141871174656,
+        "p99": 0.6161049842887626
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.32214867437584865,
+        "min": 0.0,
+        "max": 0.9241147750542213,
+        "p05": 0.30794340000279935,
+        "p50": 0.30800979471119166,
+        "p90": 0.30806672725284284,
+        "p95": 0.3081046939747325,
+        "p99": 0.6161239641410249
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "DIA",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 7290,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 7288,
+      "crossed_quotes": 2,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 12,
+      "valid_observed_seconds": 59.990440448,
+      "crossed_seconds": 0.000366336,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.009193216,
+      "locked_seconds": 0.012239104000000002,
+      "longest_quote_state_seconds": 0.685602048,
+      "equal_timestamp_updates": 243,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.009193216Z",
+      "last_timestamp": "2024-01-02T20:59:59.999693824Z",
+      "conditions": {
+        "[\"R\"]": 7290
+      },
+      "bid_exchange_codes": [
+        "A",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 377.0807355833095,
+        "min": 376.9,
+        "max": 377.18,
+        "p05": 376.925,
+        "p50": 377.09000000000003,
+        "p90": 377.13,
+        "p95": 377.155,
+        "p99": 377.175
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.5481957458960002,
+        "min": 0.0,
+        "max": 1.0608953957145255,
+        "p05": 0.26517110165310065,
+        "p50": 0.530391428874027,
+        "p90": 0.7956187925151557,
+        "p95": 0.7956609953726892,
+        "p99": 1.0606140955618726
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.5334628229596163,
+        "min": 0.0,
+        "max": 1.0608953957145255,
+        "p05": 0.26517110165310065,
+        "p50": 0.5303773634951511,
+        "p90": 0.7955765941373842,
+        "p95": 0.7956187925151557,
+        "p99": 0.7959354231067897
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "IWM",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 14925,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 14915,
+      "crossed_quotes": 10,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 453,
+      "valid_observed_seconds": 59.993402368000005,
+      "crossed_seconds": 0.000340992,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.00625664,
+      "locked_seconds": 0.15187558399999998,
+      "longest_quote_state_seconds": 0.409389312,
+      "equal_timestamp_updates": 640,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.00625664Z",
+      "last_timestamp": "2024-01-02T20:59:59.99994112Z",
+      "conditions": {
+        "[\"R\"]": 14925
+      },
+      "bid_exchange_codes": [
+        "A",
+        "B",
+        "C",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 199.41258738808392,
+        "min": 199.315,
+        "max": 199.575,
+        "p05": 199.35500000000002,
+        "p50": 199.415,
+        "p90": 199.445,
+        "p95": 199.475,
+        "p99": 199.525
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.49628759591122545,
+        "min": 0.0,
+        "max": 1.5040986688727351,
+        "p05": 0.5010898704678127,
+        "p50": 0.5014416447295638,
+        "p90": 0.5016177171387387,
+        "p95": 0.5016680462533376,
+        "p99": 1.0030090270817569
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.500999911099937,
+        "min": 0.0,
+        "max": 1.5040986688727351,
+        "p05": 0.5013159543797923,
+        "p50": 0.5014667903613522,
+        "p90": 0.5015422423949096,
+        "p95": 0.5016177171387387,
+        "p99": 0.5016932146002422
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "QQQ",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 25992,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 25992,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 1081,
+      "valid_observed_seconds": 59.998489195999994,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001510804,
+      "locked_seconds": 0.17067274000000002,
+      "longest_quote_state_seconds": 0.291980748,
+      "equal_timestamp_updates": 0,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.001510804Z",
+      "last_timestamp": "2024-01-02T20:59:59.997347947Z",
+      "conditions": {
+        "[\"R\"]": 25992
+      },
+      "bid_exchange_codes": [
+        "A",
+        "B",
+        "C",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "Q",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "B",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "Q",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "C"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 402.60823451041693,
+        "min": 402.385,
+        "max": 402.685,
+        "p05": 402.42,
+        "p50": 402.635,
+        "p90": 402.665,
+        "p95": 402.675,
+        "p99": 402.675
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.2531776546316838,
+        "min": 0.0,
+        "max": 0.49703024428991305,
+        "p05": 0.24833923138985298,
+        "p50": 0.2483885790943193,
+        "p90": 0.24850585852680135,
+        "p95": 0.496758649809538,
+        "p99": 0.49699319119282864
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.25577470728040697,
+        "min": 0.0,
+        "max": 0.49703024428991305,
+        "p05": 0.24833923138985298,
+        "p50": 0.24836390279014256,
+        "p90": 0.2484749847806812,
+        "p95": 0.24850585852680135,
+        "p99": 0.49699319119282864
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLE",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 5230,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 5225,
+      "crossed_quotes": 5,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 355,
+      "valid_observed_seconds": 59.999275264000005,
+      "crossed_seconds": 0.000366336,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.0003584,
+      "locked_seconds": 0.680099328,
+      "longest_quote_state_seconds": 0.425899776,
+      "equal_timestamp_updates": 234,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.0003584Z",
+      "last_timestamp": "2024-01-02T20:59:59.99996672Z",
+      "conditions": {
+        "[\"R\"]": 5230
+      },
+      "bid_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 84.77748157698281,
+        "min": 84.745,
+        "max": 84.815,
+        "p05": 84.755,
+        "p50": 84.775,
+        "p90": 84.795,
+        "p95": 84.795,
+        "p99": 84.805
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.10505764897552,
+        "min": 0.0,
+        "max": 2.3598820059009125,
+        "p05": 0.0,
+        "p50": 1.179593040401665,
+        "p90": 1.1797322007893476,
+        "p95": 1.1798713940186558,
+        "p99": 1.1800106200961844
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.1662087205861482,
+        "min": 0.0,
+        "max": 2.3598820059009125,
+        "p05": 1.1793148180896167,
+        "p50": 1.179593040401665,
+        "p90": 1.1797322007893476,
+        "p95": 1.1798713940186558,
+        "p99": 1.1800106200961844
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLF",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 2010,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2010,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 36,
+      "valid_observed_seconds": 59.996599296,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.003400704,
+      "locked_seconds": 0.056323583999999996,
+      "longest_quote_state_seconds": 0.982045952,
+      "equal_timestamp_updates": 51,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.003400704Z",
+      "last_timestamp": "2024-01-02T20:59:59.998498304Z",
+      "conditions": {
+        "[\"R\"]": 2010
+      },
+      "bid_exchange_codes": [
+        "H",
+        "K",
+        "P",
+        "T",
+        "V",
+        "X",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 37.77061369165773,
+        "min": 37.754999999999995,
+        "max": 37.775000000000006,
+        "p05": 37.754999999999995,
+        "p50": 37.775000000000006,
+        "p90": 37.775000000000006,
+        "p95": 37.775000000000006,
+        "p99": 37.775000000000006
+      },
+      "count_weighted_spread_bps": {
+        "mean": 2.600201327300511,
+        "min": 0.0,
+        "max": 2.6486558071773305,
+        "p05": 2.6472534745196583,
+        "p50": 2.6472534745196583,
+        "p90": 2.6486558071773305,
+        "p95": 2.6486558071773305,
+        "p99": 2.6486558071773305
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 2.645075457512898,
+        "min": 0.0,
+        "max": 2.6486558071773305,
+        "p05": 2.6472534745196583,
+        "p50": 2.6472534745196583,
+        "p90": 2.6486558071773305,
+        "p95": 2.6486558071773305,
+        "p99": 2.6486558071773305
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLI",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 3246,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 3246,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 133,
+      "valid_observed_seconds": 59.998614016000005,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001385984,
+      "locked_seconds": 0.304362752,
+      "longest_quote_state_seconds": 0.889816064,
+      "equal_timestamp_updates": 95,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.001385984Z",
+      "last_timestamp": "2024-01-02T20:59:59.999340288Z",
+      "conditions": {
+        "[\"R\"]": 3246
+      },
+      "bid_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 112.8422690293953,
+        "min": 112.805,
+        "max": 112.86500000000001,
+        "p05": 112.81,
+        "p50": 112.845,
+        "p90": 112.85499999999999,
+        "p95": 112.86500000000001,
+        "p99": 112.86500000000001
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.8572720207239479,
+        "min": 0.0,
+        "max": 1.7728924740710947,
+        "p05": 0.8860142648301169,
+        "p50": 0.886171296910887,
+        "p90": 0.8863283846669725,
+        "p95": 0.8864855281242069,
+        "p99": 0.8864855281242069
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.8817142187852521,
+        "min": 0.0,
+        "max": 1.7728924740710947,
+        "p05": 0.8860142648301169,
+        "p50": 0.886171296910887,
+        "p90": 0.8862498338286094,
+        "p95": 0.8864069494296773,
+        "p99": 0.8864855281242069
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLK",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 6921,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 6916,
+      "crossed_quotes": 5,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 256,
+      "valid_observed_seconds": 59.99874944,
+      "crossed_seconds": 0.000606464,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.000644096,
+      "locked_seconds": 0.245174016,
+      "longest_quote_state_seconds": 0.58675328,
+      "equal_timestamp_updates": 163,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.000644096Z",
+      "last_timestamp": "2024-01-02T20:59:59.99997184Z",
+      "conditions": {
+        "[\"R\"]": 6921
+      },
+      "bid_exchange_codes": [
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "C",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 187.5221493024612,
+        "min": 187.415,
+        "max": 187.565,
+        "p05": 187.435,
+        "p50": 187.53,
+        "p90": 187.54500000000002,
+        "p95": 187.555,
+        "p99": 187.555
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.5866395406569399,
+        "min": 0.0,
+        "max": 1.5999573344711415,
+        "p05": 0.5331769347653171,
+        "p50": 0.5332622317019546,
+        "p90": 1.0664960273013284,
+        "p95": 1.0666097808122357,
+        "p99": 1.06700810926066
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.5959288973940932,
+        "min": 0.0,
+        "max": 1.5999573344711415,
+        "p05": 0.5331769347653171,
+        "p50": 0.5332622317019546,
+        "p90": 1.0664391596464877,
+        "p95": 1.0665529010244366,
+        "p99": 1.06700810926066
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLP",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 2992,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2992,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 137,
+      "valid_observed_seconds": 59.999922176,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 7.7824e-05,
+      "locked_seconds": 0.005391616,
+      "longest_quote_state_seconds": 0.887068672,
+      "equal_timestamp_updates": 103,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.000077824Z",
+      "last_timestamp": "2024-01-02T20:59:59.99973632Z",
+      "conditions": {
+        "[\"R\"]": 2992
+      },
+      "bid_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "X",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 72.83156469399752,
+        "min": 72.805,
+        "max": 72.845,
+        "p05": 72.815,
+        "p50": 72.83500000000001,
+        "p90": 72.845,
+        "p95": 72.845,
+        "p99": 72.845
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.3106500547730566,
+        "min": 0.0,
+        "max": 2.745744096649646,
+        "p05": 1.3727778159092463,
+        "p50": 1.3729662936781926,
+        "p90": 1.3733434045170507,
+        "p95": 1.3733434045170507,
+        "p99": 1.3735320376354805
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.3729078002985746,
+        "min": 0.0,
+        "max": 2.745744096649646,
+        "p05": 1.3727778159092463,
+        "p50": 1.3729662936781926,
+        "p90": 1.3733434045170507,
+        "p95": 1.3733434045170507,
+        "p99": 1.3735320376354805
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLU",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 2102,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 2102,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 82,
+      "valid_observed_seconds": 59.996559104,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.003440896,
+      "locked_seconds": 0.002892288,
+      "longest_quote_state_seconds": 0.88358656,
+      "equal_timestamp_updates": 109,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.003440896Z",
+      "last_timestamp": "2024-01-02T20:59:59.999696128Z",
+      "conditions": {
+        "[\"R\"]": 2102
+      },
+      "bid_exchange_codes": [
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 64.22212603112953,
+        "min": 64.205,
+        "max": 64.245,
+        "p05": 64.215,
+        "p50": 64.215,
+        "p90": 64.235,
+        "p95": 64.235,
+        "p99": 64.245
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.5015356507001196,
+        "min": 0.0,
+        "max": 3.114294612271914,
+        "p05": 1.5565413650875735,
+        "p50": 1.5570260801876399,
+        "p90": 1.55726855096241,
+        "p95": 1.55726855096241,
+        "p99": 1.5575110972651516
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.557022550593329,
+        "min": 0.0,
+        "max": 3.114294612271914,
+        "p05": 1.5567836849055663,
+        "p50": 1.55726855096241,
+        "p90": 1.55726855096241,
+        "p95": 1.55726855096241,
+        "p99": 1.55726855096241
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "XLV",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 4317,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 4317,
+      "crossed_quotes": 0,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 135,
+      "valid_observed_seconds": 59.99854387199999,
+      "crossed_seconds": 0.0,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001456128,
+      "locked_seconds": 0.008313599999999999,
+      "longest_quote_state_seconds": 0.440099584,
+      "equal_timestamp_updates": 145,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.001456128Z",
+      "last_timestamp": "2024-01-02T20:59:59.999701248Z",
+      "conditions": {
+        "[\"R\"]": 4317
+      },
+      "bid_exchange_codes": [
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "B",
+        "C",
+        "H",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 138.737575843398,
+        "min": 138.695,
+        "max": 138.765,
+        "p05": 138.70499999999998,
+        "p50": 138.735,
+        "p90": 138.755,
+        "p95": 138.755,
+        "p99": 138.765
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.7121275265772004,
+        "min": 0.0,
+        "max": 1.4419610670519274,
+        "p05": 0.7206947497380927,
+        "p50": 0.7207986448999406,
+        "p90": 0.7209545438174059,
+        "p95": 0.7210065251083965,
+        "p99": 1.4416492467390059
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.7233130601737545,
+        "min": 0.0,
+        "max": 1.4419610670519274,
+        "p05": 0.7206947497380927,
+        "p50": 0.7207986448999406,
+        "p90": 0.720850603711725,
+        "p95": 0.7209545438174059,
+        "p99": 0.7210065251083965
+      }
+    },
+    {
+      "window": "2024-01-02-1559",
+      "symbol": "SPY",
+      "pagination_complete": true,
+      "capture_hashes": [
+        "4edb4e873d796b6b7053ac545df4858a24e91944c3503a5f8fbcf2afc8f097a5",
+        "5349fe98b6a63faf575736563c31caedae2286ec427ff81845d735374a51bc01",
+        "860750c11169a7946591608844275fa23d42558824c3172fd52a008c08cebd4a",
+        "3246c5912303ed8284f7cf01e6a8f4d5d86caca4b8a8057fcb85ec6a9e448e56",
+        "5034aafef61ac0cd3ba457c60d017f69e1b7b2b5141c8770fdfde4f4d3f44b1c",
+        "2f1847264b1af4c3ddf88aea43f4d32df6f54e2db19b5b4a80bbbb31b0bd9209",
+        "f5fc8241343064e3949c131ef7e0f718a258a8116ce3737b10dc3df68f865cc6",
+        "8f6892414aa2a273beed159380907a0a4702a1519536f852979ee722f56a5a5d",
+        "2c2871c6de50aa407c00b0f64d79a47e0c5d88cb4054aee96183b409f8a96e3f",
+        "fe2bae57215d224b8d84d7926ba877f6bd1628cf84dcb98ef7905b98831fcea9"
+      ],
+      "quotes": 21579,
+      "terminal_quotes_excluded": 0,
+      "valid_quotes": 21578,
+      "crossed_quotes": 1,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "locked_quotes": 709,
+      "valid_observed_seconds": 59.997472,
+      "crossed_seconds": 0.000606208,
+      "other_invalid_seconds": 0.0,
+      "uncovered_seconds": 0.001921792,
+      "locked_seconds": 0.150016256,
+      "longest_quote_state_seconds": 0.200983296,
+      "equal_timestamp_updates": 1079,
+      "exact_duplicate_records": 0,
+      "first_timestamp": "2024-01-02T20:59:00.001921792Z",
+      "last_timestamp": "2024-01-02T20:59:59.999685632Z",
+      "conditions": {
+        "[\"R\"]": 21579
+      },
+      "bid_exchange_codes": [
+        "A",
+        "B",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "B",
+        "H",
+        "J",
+        "K",
+        "N",
+        "P",
+        "T",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "B"
+      ],
+      "observed_midpoint_usd": {
+        "mean": 472.56707060758293,
+        "min": 472.315,
+        "max": 472.66,
+        "p05": 472.355,
+        "p50": 472.585,
+        "p90": 472.625,
+        "p95": 472.635,
+        "p99": 472.635
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.21129939256204772,
+        "min": 0.0,
+        "max": 0.6348467374162312,
+        "p05": 0.2115797602799392,
+        "p50": 0.21160662328711644,
+        "p90": 0.2117141435631682,
+        "p95": 0.21171862594592505,
+        "p99": 0.42326250740670895
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.2114905862896503,
+        "min": 0.0,
+        "max": 0.6348467374162312,
+        "p05": 0.2115797602799392,
+        "p50": 0.2116021456455644,
+        "p90": 0.21165141012732747,
+        "p95": 0.21170517936702066,
+        "p99": 0.21171862594592505
+      }
+    }
+  ]
+}

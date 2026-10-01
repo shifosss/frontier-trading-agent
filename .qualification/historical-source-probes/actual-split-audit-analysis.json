@@ -1,0 +1,24 @@
+{
+  "run_id": "8ffea024adfd442fa55f6ecf1a25c899",
+  "normalized_histories": 8234,
+  "markets": {
+    "USD": {
+      "audits": 5664,
+      "reported_actions": 4929,
+      "nonunit_factor_histories": 2334,
+      "reverse_split_histories": 1335,
+      "event_completeness": {
+        "Provider-reported events; independently complete history unverified": 5664
+      }
+    },
+    "CAD": {
+      "audits": 2570,
+      "reported_actions": 2214,
+      "nonunit_factor_histories": 1232,
+      "reverse_split_histories": 1084,
+      "event_completeness": {
+        "Provider-reported events; independently complete history unverified": 2570
+      }
+    }
+  }
+}

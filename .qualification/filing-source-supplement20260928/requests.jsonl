@@ -1,0 +1,190 @@
+{"at": "2026-09-28T23:03:19.178800+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:19.329528+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023.hdr.sgml", "status": 200, "error": null, "bytes": 753}
+{"at": "2026-09-28T23:03:20.179908+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f03312012-10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:20.331227+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f03312012-10q.htm", "status": 200, "error": null, "bytes": 3062013}
+{"at": "2026-09-28T23:03:21.180901+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f-20120331.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:21.280756+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f-20120331.xml", "status": 200, "error": null, "bytes": 6482521}
+{"at": "2026-09-28T23:03:22.181877+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/0000037996-12-000049.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:22.269891+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/0000037996-12-000049.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:23.183010+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f09302012-10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:23.521950+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f09302012-10q.htm", "status": 200, "error": null, "bytes": 3688356}
+{"at": "2026-09-28T23:03:24.183943+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f-20120930.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:24.560300+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f-20120930.xml", "status": 200, "error": null, "bytes": 7681198}
+{"at": "2026-09-28T23:03:25.185081+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/0000037996-13-000027.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:25.356136+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/0000037996-13-000027.hdr.sgml", "status": 200, "error": null, "bytes": 753}
+{"at": "2026-09-28T23:03:26.186405+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f03312013-10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:26.269080+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f03312013-10q.htm", "status": 200, "error": null, "bytes": 2770161}
+{"at": "2026-09-28T23:03:27.187605+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f-20130331.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:27.272739+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f-20130331.xml", "status": 200, "error": null, "bytes": 5178067}
+{"at": "2026-09-28T23:03:28.188834+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/0000037996-13-000042.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:28.345085+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/0000037996-13-000042.hdr.sgml", "status": 200, "error": null, "bytes": 753}
+{"at": "2026-09-28T23:03:29.189778+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f06302013-10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:29.460044+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f06302013-10q.htm", "status": 200, "error": null, "bytes": 3298190}
+{"at": "2026-09-28T23:03:30.190853+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f-20130630.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:30.316065+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f-20130630.xml", "status": 200, "error": null, "bytes": 6114751}
+{"at": "2026-09-28T23:03:31.192138+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/0000037996-13-000055.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:31.357485+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/0000037996-13-000055.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:32.193449+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f09302013-10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:32.355507+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f09302013-10q.htm", "status": 200, "error": null, "bytes": 3330491}
+{"at": "2026-09-28T23:03:33.194653+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f-20130930.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:33.295882+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f-20130930.xml", "status": 200, "error": null, "bytes": 6154390}
+{"at": "2026-09-28T23:03:34.195675+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/0000037996-14-000023.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:34.360644+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/0000037996-14-000023.hdr.sgml", "status": 200, "error": null, "bytes": 753}
+{"at": "2026-09-28T23:03:35.196793+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:35.475998+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410-q.htm", "status": 200, "error": null, "bytes": 2547660}
+{"at": "2026-09-28T23:03:36.198084+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f-20140331.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:36.304567+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f-20140331.xml", "status": 200, "error": null, "bytes": 4282538}
+{"at": "2026-09-28T23:03:37.199397+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/0000037996-14-000043.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:37.353989+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/0000037996-14-000043.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:38.200567+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:38.348547+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410-q.htm", "status": 200, "error": null, "bytes": 3044227}
+{"at": "2026-09-28T23:03:39.201687+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f-20140630.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:39.299187+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f-20140630.xml", "status": 200, "error": null, "bytes": 4969863}
+{"at": "2026-09-28T23:03:40.203849+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/0000037996-14-000057.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:40.435776+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/0000037996-14-000057.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:41.204807+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:41.370040+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410-q.htm", "status": 200, "error": null, "bytes": 2929013}
+{"at": "2026-09-28T23:03:42.219965+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f-20140930.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:42.286133+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f-20140930.xml", "status": 200, "error": null, "bytes": 4665749}
+{"at": "2026-09-28T23:03:43.222414+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/0000037996-15-000029.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:43.429932+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/0000037996-15-000029.hdr.sgml", "status": 200, "error": null, "bytes": 753}
+{"at": "2026-09-28T23:03:44.223575+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:44.320358+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510-q.htm", "status": 200, "error": null, "bytes": 2126108}
+{"at": "2026-09-28T23:03:45.251683+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f-20150331.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:45.350270+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f-20150331.xml", "status": 200, "error": null, "bytes": 3083407}
+{"at": "2026-09-28T23:03:46.252718+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/0000037996-15-000046.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:46.532682+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/0000037996-15-000046.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:47.253934+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:47.374227+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510-q.htm", "status": 200, "error": null, "bytes": 2624485}
+{"at": "2026-09-28T23:03:48.254683+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f-20150630.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:48.377756+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f-20150630.xml", "status": 200, "error": null, "bytes": 4083764}
+{"at": "2026-09-28T23:03:49.255788+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/0000037996-15-000064.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:49.317750+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/0000037996-15-000064.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:50.257017+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:50.369834+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510-q.htm", "status": 200, "error": null, "bytes": 2647343}
+{"at": "2026-09-28T23:03:51.258214+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f-20150930.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:51.329955+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f-20150930.xml", "status": 200, "error": null, "bytes": 4092726}
+{"at": "2026-09-28T23:03:52.259247+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:52.414122+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:03:53.260333+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:53.383788+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610-q.htm", "status": 200, "error": null, "bytes": 1816157}
+{"at": "2026-09-28T23:03:54.261218+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f-20160331.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:54.364125+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f-20160331.xml", "status": 200, "error": null, "bytes": 2447670}
+{"at": "2026-09-28T23:03:55.262303+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/0000037996-16-000133.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:55.455038+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/0000037996-16-000133.hdr.sgml", "status": 200, "error": null, "bytes": 755}
+{"at": "2026-09-28T23:03:56.263073+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:56.391953+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610-q.htm", "status": 200, "error": null, "bytes": 1825118}
+{"at": "2026-09-28T23:03:57.264259+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f-20160630.xml", "attempt": 1}
+{"at": "2026-09-28T23:03:57.348663+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f-20160630.xml", "status": 200, "error": null, "bytes": 3017412}
+{"at": "2026-09-28T23:03:58.265302+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/0000037996-16-000158.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:03:58.403946+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/0000037996-16-000158.hdr.sgml", "status": 200, "error": null, "bytes": 755}
+{"at": "2026-09-28T23:03:59.266622+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:03:59.412801+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610-q.htm", "status": 200, "error": null, "bytes": 1988870}
+{"at": "2026-09-28T23:04:00.267481+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f-20160930.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:00.362543+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f-20160930.xml", "status": 200, "error": null, "bytes": 3435354}
+{"at": "2026-09-28T23:04:01.268572+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/0000037996-17-000036.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:01.466397+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/0000037996-17-000036.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:04:02.269974+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:02.370739+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710-q.htm", "status": 200, "error": null, "bytes": 1959984}
+{"at": "2026-09-28T23:04:03.271288+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f-20170331.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:03.437010+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f-20170331.xml", "status": 200, "error": null, "bytes": 3382298}
+{"at": "2026-09-28T23:04:04.272199+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/0000037996-17-000068.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:04.456769+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/0000037996-17-000068.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:04:05.273169+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:05.410095+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710-q.htm", "status": 200, "error": null, "bytes": 2439144}
+{"at": "2026-09-28T23:04:06.274147+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f-20170630.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:06.383183+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f-20170630.xml", "status": 200, "error": null, "bytes": 4493022}
+{"at": "2026-09-28T23:04:07.275061+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/0000037996-17-000092.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:07.341008+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/0000037996-17-000092.hdr.sgml", "status": 200, "error": null, "bytes": 755}
+{"at": "2026-09-28T23:04:08.276362+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:08.407572+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710-q.htm", "status": 200, "error": null, "bytes": 2436912}
+{"at": "2026-09-28T23:04:09.277708+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f-20170930.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:09.333790+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f-20170930.xml", "status": 200, "error": null, "bytes": 4507522}
+{"at": "2026-09-28T23:04:10.278956+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/0000037996-18-000036.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:10.510406+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/0000037996-18-000036.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:04:11.280403+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:11.399026+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810-q.htm", "status": 200, "error": null, "bytes": 1972052}
+{"at": "2026-09-28T23:04:12.281338+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f-20180331.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:12.350345+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f-20180331.xml", "status": 200, "error": null, "bytes": 3448218}
+{"at": "2026-09-28T23:04:13.282500+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/0000037996-18-000063.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:13.578698+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/0000037996-18-000063.hdr.sgml", "status": 200, "error": null, "bytes": 754}
+{"at": "2026-09-28T23:04:14.283610+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:14.400755+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810-q.htm", "status": 200, "error": null, "bytes": 2412421}
+{"at": "2026-09-28T23:04:15.284676+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f-20180630.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:15.352569+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f-20180630.xml", "status": 200, "error": null, "bytes": 4551379}
+{"at": "2026-09-28T23:04:16.285690+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/0000037996-18-000084.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:16.464070+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/0000037996-18-000084.hdr.sgml", "status": 200, "error": null, "bytes": 755}
+{"at": "2026-09-28T23:04:17.286886+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810-q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:17.440691+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810-q.htm", "status": 200, "error": null, "bytes": 2438168}
+{"at": "2026-09-28T23:04:18.287768+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f-20180930.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:18.373081+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f-20180930.xml", "status": 200, "error": null, "bytes": 4590266}
+{"at": "2026-09-28T23:04:19.288741+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/0000950170-24-121319-index.html", "attempt": 1}
+{"at": "2026-09-28T23:04:19.331499+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/0000950170-24-121319-index.html", "status": 200, "error": null, "bytes": 9774}
+{"at": "2026-09-28T23:04:20.289746+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/0000950170-24-121319.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:20.575643+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/0000950170-24-121319.hdr.sgml", "status": 200, "error": null, "bytes": 925}
+{"at": "2026-09-28T23:04:21.291023+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/banf-20240930.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:21.473061+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000095017024121319/banf-20240930.htm", "status": 200, "error": null, "bytes": 5721876}
+{"at": "2026-09-28T23:04:22.292175+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/0001564590-20-052332-index.html", "attempt": 1}
+{"at": "2026-09-28T23:04:22.430737+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/0001564590-20-052332-index.html", "status": 200, "error": null, "bytes": 11260}
+{"at": "2026-09-28T23:04:23.293461+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/0001564590-20-052332.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:23.459440+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/0001564590-20-052332.hdr.sgml", "status": 200, "error": null, "bytes": 908}
+{"at": "2026-09-28T23:04:24.295171+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/banf-10q_20200930.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:24.509837+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459020052332/banf-10q_20200930.htm", "status": 200, "error": null, "bytes": 6721831}
+{"at": "2026-09-28T23:04:25.295943+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/0001564590-21-023832-index.html", "attempt": 1}
+{"at": "2026-09-28T23:04:32.562655+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/0001564590-21-023832-index.html", "status": 200, "error": null, "bytes": 11259}
+{"at": "2026-09-28T23:04:32.564604+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/0001564590-21-023832.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:32.634973+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/0001564590-21-023832.hdr.sgml", "status": 200, "error": null, "bytes": 907}
+{"at": "2026-09-28T23:04:33.565448+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/banf-10q_20210331.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:33.779028+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/760498/000156459021023832/banf-10q_20210331.htm", "status": 200, "error": null, "bytes": 5467904}
+{"at": "2026-09-28T23:04:34.566278+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/0001104659-16-125370-index.html", "attempt": 1}
+{"at": "2026-09-28T23:04:35.008078+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/0001104659-16-125370-index.html", "status": 200, "error": null, "bytes": 11148}
+{"at": "2026-09-28T23:04:35.567449+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/0001104659-16-125370.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:35.820669+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/0001104659-16-125370.hdr.sgml", "status": 200, "error": null, "bytes": 865}
+{"at": "2026-09-28T23:04:36.568457+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/a16-11096_110q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:36.917516+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/a16-11096_110q.htm", "status": 200, "error": null, "bytes": 1623022}
+{"at": "2026-09-28T23:04:37.569695+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/hrl-20160424.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:37.688298+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916125370/hrl-20160424.xml", "status": 200, "error": null, "bytes": 2485244}
+{"at": "2026-09-28T23:04:38.570543+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000073/0000732717-12-000073.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:38.752710+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000073/0000732717-12-000073.hdr.sgml", "status": 200, "error": null, "bytes": 1006}
+{"at": "2026-09-28T23:04:39.571490+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000073/q2_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:39.712042+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000073/q2_10q.htm", "status": 200, "error": null, "bytes": 1572584}
+{"at": "2026-09-28T23:04:40.572475+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000073/t-20120630.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:40.797080+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000073/t-20120630.xml", "status": 200, "error": null, "bytes": 1101895}
+{"at": "2026-09-28T23:04:41.573713+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000088/0000732717-12-000088.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:41.781919+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000088/0000732717-12-000088.hdr.sgml", "status": 200, "error": null, "bytes": 1006}
+{"at": "2026-09-28T23:04:42.574605+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000088/q3_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:42.672148+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000088/q3_10q.htm", "status": 200, "error": null, "bytes": 1436780}
+{"at": "2026-09-28T23:04:43.575724+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000088/t-20120930.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:43.898888+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000088/t-20120930.xml", "status": 200, "error": null, "bytes": 1084197}
+{"at": "2026-09-28T23:04:44.576985+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000036/0000732717-13-000036.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:44.625658+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000036/0000732717-13-000036.hdr.sgml", "status": 200, "error": null, "bytes": 1005}
+{"at": "2026-09-28T23:04:45.578360+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000036/q1_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:45.681634+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000036/q1_10q.htm", "status": 200, "error": null, "bytes": 1182207}
+{"at": "2026-09-28T23:04:46.579632+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000036/t-20130331.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:46.759692+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000036/t-20130331.xml", "status": 200, "error": null, "bytes": 797808}
+{"at": "2026-09-28T23:04:47.580835+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000080/0000732717-13-000080.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:47.702880+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000080/0000732717-13-000080.hdr.sgml", "status": 200, "error": null, "bytes": 1006}
+{"at": "2026-09-28T23:04:48.582208+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000080/q2_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:48.680038+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000080/q2_10q.htm", "status": 200, "error": null, "bytes": 1530929}
+{"at": "2026-09-28T23:04:49.583050+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000080/t-20130630.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:49.813620+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000080/t-20130630.xml", "status": 200, "error": null, "bytes": 1204197}
+{"at": "2026-09-28T23:04:50.584116+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000099/0000732717-13-000099.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:50.786507+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000099/0000732717-13-000099.hdr.sgml", "status": 200, "error": null, "bytes": 1006}
+{"at": "2026-09-28T23:04:51.585120+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000099/q3_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:51.676281+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000099/q3_10q.htm", "status": 200, "error": null, "bytes": 1608499}
+{"at": "2026-09-28T23:04:52.585954+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000099/t-20130930.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:52.932426+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271713000099/t-20130930.xml", "status": 200, "error": null, "bytes": 1242517}
+{"at": "2026-09-28T23:04:53.587146+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000110/0000732717-14-000110.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:53.739336+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000110/0000732717-14-000110.hdr.sgml", "status": 200, "error": null, "bytes": 1006}
+{"at": "2026-09-28T23:04:54.587947+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000110/q2_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:54.707632+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000110/q2_10q.htm", "status": 200, "error": null, "bytes": 1607759}
+{"at": "2026-09-28T23:04:55.588891+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000110/t-20140630.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:55.670833+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271714000110/t-20140630.xml", "status": 200, "error": null, "bytes": 1209567}
+{"at": "2026-09-28T23:04:56.590273+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/0000732717-17-000055-index.html", "attempt": 1}
+{"at": "2026-09-28T23:04:56.722108+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/0000732717-17-000055-index.html", "status": 200, "error": null, "bytes": 12248}
+{"at": "2026-09-28T23:04:57.591267+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/0000732717-17-000055.hdr.sgml", "attempt": 1}
+{"at": "2026-09-28T23:04:57.750392+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/0000732717-17-000055.hdr.sgml", "status": 200, "error": null, "bytes": 1005}
+{"at": "2026-09-28T23:04:58.592141+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/q1_10q.htm", "attempt": 1}
+{"at": "2026-09-28T23:04:58.708232+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/q1_10q.htm", "status": 200, "error": null, "bytes": 1431345}
+{"at": "2026-09-28T23:04:59.593304+00:00", "event": "request_started", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/t-20170331.xml", "attempt": 1}
+{"at": "2026-09-28T23:04:59.663543+00:00", "event": "request_finished", "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271717000055/t-20170331.xml", "status": 200, "error": null, "bytes": 1254741}

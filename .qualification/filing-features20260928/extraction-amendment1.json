@@ -1,0 +1,22 @@
+{
+  "at": "2026-09-28T22:58:24.052727+00:00",
+  "stage": "Reviewed parser, before corpus qualification",
+  "base_definition_sha256": "0fec227994f1508ed433cdbcea42b5f338be1d5e3d498ed63b0506c552db137e",
+  "clarifications": {
+    "representations": "Actual capture name original_xbrl_instance accepted, original_instance is an explicit parser alias only; inline_primary unchanged.",
+    "inline": "Selected nested facts inspected independently; ix:exclude contents omitted according to retained inline namespace. Numeric duplicates compare exact Decimal amounts.",
+    "history": "Only metadata publicly knowable at each decision can affect slot ambiguity or missing-report blockers. Missing reportDate accessions remain distinct; unknown-period originals block when their filing dates fall within the required eight-event filing interval. Later data cannot retroactively alter earlier qualification.",
+    "calendar": "Financial feature_status qualified is distinct from execution_status qualified; missing or truncated calendar endpoints remain explicit. No pre-calendar event moves to the first saved date.",
+    "source": "Fact source must be HTTP200 official original accession/CIK path and retain exact hash. Original source supplements, if used, must bind both baseline and effective manifest; no original HTML semantic mapping accepted by this declaration."
+  },
+  "reviewed_files": {
+    "features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+    "test_features.py": "c6a61ff756f88e6a1b53a6937cd9b0886ac5bf4eb5dbdcb1b336ec3b11a38732",
+    "extraction-definition.json": "0fec227994f1508ed433cdbcea42b5f338be1d5e3d498ed63b0506c552db137e"
+  },
+  "calendar_path": ".qualification/post-filing-strategy20260928/calendar.json",
+  "calendar_sha256": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+  "independent_review": "strategy_design reviewed method/code and independently passed28focusedtests; no remaining material findings",
+  "actual_corpus_processing": false,
+  "price_returns_read": false
+}

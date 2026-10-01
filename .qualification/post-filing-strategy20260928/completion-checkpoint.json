@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-09-28T23:32:25.977870+00:00",
+  "status": "complete_and_independently_audited",
+  "definition_sha256": "ca842ce2c901b5ea3ae9e21bb0501ae4b1c8271804780c6292bab3846d81b5dc",
+  "attempt": "54fd505baeb347cfae5d79bcf96925e3",
+  "frozen_files_verified": 1281,
+  "completed_artifacts_verified": 11,
+  "accounts_complete": 4,
+  "accounts_invalid": 0,
+  "trades_checked": 195,
+  "daily_account_rows_checked": 9096,
+  "held_marks_checked": 975,
+  "period_rows_checked": 2376,
+  "event_reference_rows_checked": 121,
+  "selected_events": 27,
+  "support_threshold_satisfied": false,
+  "economic_promotion": false,
+  "audits": {
+    "account-audit/audit-20260928T233015Z.json": "738c63e2a56c0b3bbec080ea11547d3d2bfc5933b868485a0d5417f47d3b945c",
+    "account-audit/checker-validation.json": "b5b05e98dac25207b569dd0c1135f4a62a1cabeeaddda697c25b0e8ae3ab742b",
+    "reference-audit/verification.json": "065b78589d1f96bc278cbd7aed5749b81e60dfbb868b7c761c7e093c54c339d2",
+    "price-audit/verification.json": "c9fa62f6f7a6228fbd4db2eb0f2ccc54ebcefcd52736c1a44dcc7b0d501ec9cc",
+    "final-review/frozen-definition-review.json": "46199888c7dade1228d6a0f66a6cd55a62b10f4588f035695b93b6455d5be7f2",
+    "final-review/T-accession-bindings.json": "4b04b2c20e6354094290f36364fe3f7a30faa68d3f0c55c558b2c5aa7a0f8ca5"
+  },
+  "account_table_rows_checked": 4,
+  "yearly_table_values_checked": 36,
+  "workers": {
+    "parent5380_active": false,
+    "child9192_active": false,
+    "historical_sqlite_lock": "free"
+  },
+  "paper": {
+    "parent12628_active": true,
+    "child12676_active": true,
+    "saved_status": "ready",
+    "verified_at_approximately": "2026-09-28T23:18:00Z",
+    "policy_changed": false
+  },
+  "next_design_sha256": "11f25c514e6bd8e75f00e5e4e27ba8a366dd02360a1efbdc1e063bbc6f17ae44",
+  "next_design_status": "proposed; exact cohort and presets not yet frozen or run",
+  "limitations": [
+    "Economic eligibility remains below declared sample minimum.",
+    "Adjusted-notional price convention is not corporate-action-complete broker accounting.",
+    "Current-member survivor sample and cost-sensitivity assumptions remain.",
+    "Arithmetic checks do not establish future profitability."
+  ]
+}

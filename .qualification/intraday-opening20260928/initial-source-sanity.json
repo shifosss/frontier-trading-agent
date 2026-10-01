@@ -1,0 +1,179 @@
+{
+  "scope": "Predeclared first2 sessions; no strategy outcomes",
+  "passed": true,
+  "checks": "Raw hashes, HTTP200 final pagination, exact symbol set, timestamps/regular bounds/OHLC/duplicates/order; missing minutes retained rather than repaired",
+  "records": [
+    {
+      "session": "2016-01-04",
+      "http": [
+        200
+      ],
+      "asof": [
+        "2016-01-04"
+      ],
+      "source_hashes": [
+        "b7a401d4eae5a1fc085fa91e20e42709cfbd7cf9654f3d5643871198d9911309"
+      ],
+      "by_symbol": [
+        {
+          "symbol": "AAPL",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "MSFT",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "F",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "T",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "HRL",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "BANF",
+          "expected_minutes": 390,
+          "raw_records": 59,
+          "missing_minutes": 331,
+          "opening_valid_minutes": 6,
+          "opening_complete": false,
+          "entry_bar_valid": false,
+          "exit_bar_valid": false
+        },
+        {
+          "symbol": "SPY",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        }
+      ]
+    },
+    {
+      "session": "2016-01-05",
+      "http": [
+        200
+      ],
+      "asof": [
+        "2016-01-05"
+      ],
+      "source_hashes": [
+        "675b4c8e8adb43eae906a823e9e3c9f16e1c0f5521887b3394bfc2df8fb0af6f"
+      ],
+      "by_symbol": [
+        {
+          "symbol": "AAPL",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "MSFT",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "F",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "T",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "HRL",
+          "expected_minutes": 390,
+          "raw_records": 389,
+          "missing_minutes": 1,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        },
+        {
+          "symbol": "BANF",
+          "expected_minutes": 390,
+          "raw_records": 162,
+          "missing_minutes": 228,
+          "opening_valid_minutes": 29,
+          "opening_complete": false,
+          "entry_bar_valid": false,
+          "exit_bar_valid": false
+        },
+        {
+          "symbol": "SPY",
+          "expected_minutes": 390,
+          "raw_records": 390,
+          "missing_minutes": 0,
+          "opening_valid_minutes": 60,
+          "opening_complete": true,
+          "entry_bar_valid": true,
+          "exit_bar_valid": true
+        }
+      ]
+    }
+  ],
+  "independent_review": {
+    "agent": "strategy_design",
+    "reported": "8offline tests independently passed; all2514calendar rows localopen09:30,close13:00/16:00 and UTCduration verified; no blocking source/scientific issue"
+  }
+}

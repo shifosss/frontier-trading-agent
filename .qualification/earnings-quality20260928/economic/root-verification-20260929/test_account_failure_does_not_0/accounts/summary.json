@@ -1,0 +1,182 @@
+[
+  {
+    "recipe": "filing_control",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "filing_control",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "filing_control",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "filing_control",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_surprise",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "income_cash_confirmation",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "ridge",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 10000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "proportional_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  },
+  {
+    "recipe": "hist_gradient_boosting",
+    "cost_profile": "moomoo_ca_us_plus_40bps",
+    "starting_capital": 2000,
+    "status": "failed",
+    "error_type": "ValueError",
+    "error": "Synthetic collision retained",
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py\", line 413, in run_accounts\n    result = accounts.run_account(market, rows, recipe=recipe, cost_profile=cost,\n                                  capital=capital, **kwargs)\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1169, in __call__\n    return self._mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1173, in _mock_call\n    return self._execute_mock_call(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Python313\\Lib\\unittest\\mock.py\", line 1234, in _execute_mock_call\n    result = effect(*args, **kwargs)\n  File \"E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\test_run_study.py\", line 124, in fail\n    raise ValueError(\"Synthetic collision retained\")\nValueError: Synthetic collision retained\n"
+  }
+]

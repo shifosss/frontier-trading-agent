@@ -1,0 +1,40 @@
+{
+  "at": "2026-09-28T23:31:10.326815+00:00",
+  "status": "passed",
+  "mutation_checks": [
+    {
+      "mutation": "daily_cash",
+      "detected": true,
+      "message": "('daily cash', 2001.0, Decimal('2000'), 1.0)"
+    },
+    {
+      "mutation": "entry_fee",
+      "detected": true,
+      "message": "('entry fee', 0.5576799926757813, 0.5476799926757812, 0.01000000000000012)"
+    },
+    {
+      "mutation": "settlement",
+      "detected": true,
+      "message": ""
+    },
+    {
+      "mutation": "original_reserve",
+      "detected": true,
+      "message": "('original reserve', 343.0326831817627, 342.0326831817627, 1.0)"
+    },
+    {
+      "mutation": "future_decision",
+      "detected": true,
+      "message": "decision_time"
+    },
+    {
+      "mutation": "weekly_return",
+      "detected": true,
+      "message": "('period return', 0.01, 0.0, 0.01)"
+    }
+  ],
+  "fee_boundary_assertions": 3,
+  "checker_sha256": "dc6da52f915368c4ebb5f7259d90a53175ff81086eb1978b2dcc51aad5ef872d",
+  "source_reports_unchanged": true,
+  "explanation": "Mutations affect in-memory copies only; no account engine or policy executed."
+}

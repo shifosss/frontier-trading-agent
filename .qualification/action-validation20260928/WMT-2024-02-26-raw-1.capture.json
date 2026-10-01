@@ -1,0 +1,28 @@
+{
+  "symbol": "WMT",
+  "effective_session": "2024-02-26",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/WMT/bars?timeframe=1Day&start=2024-02-16T05%3A00%3A00%2B00%3A00&end=2024-03-08T04%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2024-02-16T05:00:00+00:00",
+    "end": "2024-03-08T04:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.449120+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "WMT-2024-02-26-raw-1.8a927771afd25067a15689464c2ad8bbe5059f7f305fef0969719f96cc4cdd54.raw.json",
+  "sha256": "8a927771afd25067a15689464c2ad8bbe5059f7f305fef0969719f96cc4cdd54",
+  "bytes": 1570,
+  "captured_at": "2026-09-28T19:04:30.518083+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 14,
+  "response_symbol": "WMT",
+  "pagination_complete": true
+}

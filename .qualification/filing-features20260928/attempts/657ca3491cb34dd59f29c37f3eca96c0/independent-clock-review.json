@@ -1,0 +1,39 @@
+{
+  "at": "2026-09-28T23:19:13.321927+00:00",
+  "status": "passed",
+  "availability_rows_checked": 251,
+  "execution_clock_rows_checked": 223,
+  "original_records": 252,
+  "financial_unavailable_execution_rows_retained": 29,
+  "checks": [
+    "Original registry UTC acceptance equals saved Eastern acceptance",
+    "Availability nextday01ET after max acceptance localdate/filingdate",
+    "Earliest eligible09ET exchange session for financially qualified records",
+    "Actual source calendar close entry/fifth-subsequent-session exit"
+  ],
+  "events_sha256": "1e10186b313e291a306e9daddbf5ae932d7361cfa4e19fce0e10d9692449feeb",
+  "calendar_sha256": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+  "selected_by_year": {
+    "2017": 4,
+    "2018": 6,
+    "2019": 2,
+    "2020": 1,
+    "2021": 8,
+    "2022": 3,
+    "2023": 1,
+    "2024": 1,
+    "2025": 1
+  },
+  "checker_attempts": [
+    {
+      "status": "failed_checker_assumption",
+      "error": "TypeError on fromisoformat(None)",
+      "reason": "Financially unavailable records deliberately retain availability but no decision/entry/exit; initial standalone checker incorrectly required endpoints for them."
+    },
+    {
+      "status": "passed",
+      "change": "Validate availability for all captured records; require endpoint chronology only when saved execution status qualified; retain and check null unavailable endpoints."
+    }
+  ],
+  "returns_accessed": false
+}

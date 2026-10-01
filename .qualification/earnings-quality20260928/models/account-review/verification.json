@@ -1,0 +1,28 @@
+{
+  "account_matrix_paths": 20,
+  "adapter_sha256_before": "f1a67cd923188891c93514601fa210b5183d11c60b8d69a64389bdc421351aa7",
+  "adapter_unchanged_during_review": true,
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    ".qualification\\earnings-quality20260928\\models\\account-review\\test_independent_accounts.py"
+  ],
+  "completed_utc": "2026-09-29T14:07:09.434909+00:00",
+  "exit_code": 0,
+  "files": {
+    ".qualification/earnings-quality20260928/accounts/account_adapter.py": "f1a67cd923188891c93514601fa210b5183d11c60b8d69a64389bdc421351aa7",
+    ".qualification/earnings-quality20260928/cohort/model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    ".qualification/earnings-quality20260928/models/account-review/synthetic-review.txt": "4965c78a8f8b524ab2ef64dc068ab8fa28a567cf68bdf72411e36a11a4964884",
+    ".qualification/earnings-quality20260928/models/account-review/test_independent_accounts.py": "e3690befb5fc2d70d0f2f26d59e3dd7febd8a4c402d645a1b1fb638d9e2500bc",
+    "src/frontier/conditional_policy.py": "a1ac07371bc981b7f56623860c157eabf6ed2bafe10322bb66d1158b1aa16041",
+    "src/frontier/daily_policy.py": "5f76545cb738f8c6326cece3aec2905e2c611af1e4af16c6af6f89b0392ac98c",
+    "src/frontier/execution_costs.py": "5563f6eb14196f4b12d1a7b103e9bfced733976fd0b93f197dafd795e2381483",
+    "src/frontier/short_horizon_study.py": "9105cce590c0165e37c2add71be7daf0b0b4db12eef0c52182f629c811d04cd0"
+  },
+  "scope": "Independent synthetic cash/fee review, no original cohort economic outcomes",
+  "started_utc": "2026-09-29T14:07:08.074722+00:00",
+  "status": "passed",
+  "tests": 6
+}

@@ -1,0 +1,76 @@
+{
+  "reviewed_at": "2026-09-28T21:30:14.330153+00:00",
+  "scope": "Post-run independent reuse of existing provider split-labelled inventory only; no corrections or reruns.",
+  "crossing_rule": "same symbol and entry_session < effective_session <= exit_session",
+  "inputs": {
+    ".qualification/strategy-action-attribution20260928/matched-event-definitions.json": "e15056c2fc41d5c97cdcda308ca7e036bde3f91788e099576630740d2c5ba8c3",
+    ".qualification/action-inventory20260928/events.jsonl": "c8d471e4eb17fe8b44c8a77da77f7f82bdf63397787db9d7db27a5f259ef566d",
+    ".qualification/conditional-selection20260928/preparation/source-evidence.json": "ae2e3a1ce69a20e98961084f7104e39a50a5e5edcc8704f89efa46eee1fcf206",
+    ".qualification/strategy-action-attribution20260928/definition.json": "402114d7cbae08dc271777c977a0839e0fff67af9415a8b3d0328743286a0871",
+    ".qualification/strategy-action-attribution20260928/scope-clarifications.json": "08d8fdcfa8b8d91d67580fb59e3be0693734369c84fffed50a90ea75bfa190dd",
+    ".qualification/conditional-shrinkage20260928/definition.json": "31302c331559629deccc4f324b0efa5edb6cf355fcc6a3827a43229a19631755"
+  },
+  "capture_index_sha256": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966",
+  "traded_symbols": 481,
+  "accounts": [
+    {
+      "account": "conditional_shrinkage_dollars-1-moomoo_ca_us.json",
+      "sha256": "47ec6626c30f724a83b975621943c5e094480d7b0a24615dc818f5be14eef576",
+      "trades": 0,
+      "crossing_trades": 0,
+      "known_issue_crossing_trades": 0,
+      "full_recorded_crossing_net_pnl": 0
+    },
+    {
+      "account": "conditional_shrinkage_dollars-1-proportional.json",
+      "sha256": "127fb09d7d91815b62e095db97fb25f0b69ec2a9957d648aeb4fcb83e8e2c7b9",
+      "trades": 812,
+      "crossing_trades": 0,
+      "known_issue_crossing_trades": 0,
+      "full_recorded_crossing_net_pnl": 0
+    },
+    {
+      "account": "conditional_shrinkage_dollars-3-moomoo_ca_us.json",
+      "sha256": "7d693925ec3417dbc88eb847c72ba9b01fa3d96799c86693744ca28feb41e6cb",
+      "trades": 0,
+      "crossing_trades": 0,
+      "known_issue_crossing_trades": 0,
+      "full_recorded_crossing_net_pnl": 0
+    },
+    {
+      "account": "conditional_shrinkage_dollars-3-proportional.json",
+      "sha256": "f1b2f13b38c5654c8dd5961893af7500d8364d28adbb18676fce143fb11daa24",
+      "trades": 3,
+      "crossing_trades": 0,
+      "known_issue_crossing_trades": 0,
+      "full_recorded_crossing_net_pnl": 0
+    },
+    {
+      "account": "conditional_shrinkage_dollars-5-moomoo_ca_us.json",
+      "sha256": "40741a3c7d924211472c2b9f604759359b773ca0c8e84b346de00fd242957f36",
+      "trades": 125,
+      "crossing_trades": 0,
+      "known_issue_crossing_trades": 0,
+      "full_recorded_crossing_net_pnl": 0
+    },
+    {
+      "account": "conditional_shrinkage_dollars-5-proportional.json",
+      "sha256": "d3e09fdb32e7a40d8abcd0b830cbadd59cc44883876e29e3efece56f0c3a107e",
+      "trades": 240,
+      "crossing_trades": 0,
+      "known_issue_crossing_trades": 0,
+      "full_recorded_crossing_net_pnl": 0
+    }
+  ],
+  "crossings": [],
+  "trade_observations": 1180,
+  "crossing_trade_observations": 0,
+  "unique_events_crossed": 0,
+  "known_issue_crossing_observations": 0,
+  "limitations": [
+    "Inventory is not an exhaustive corporate-action or cash-dividend history.",
+    "Zero known-issue held crossings does not establish clean training/calibration or signal/lookback inputs.",
+    "Recorded full-trade PnL is descriptive attribution, not causal action gain or a corrected account.",
+    "Alternative account observations overlap; they are not independent investments."
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "kind": "independent_saved_option_access_review",
+  "reviewed_at": "2026-09-29T00:01:20.599744+00:00",
+  "method": "Offline inspection and independent SHA256, request-URL, calendar, OCC-style symbol and Decimal numeric checks. No network, source edits, model fitting or strategy replay.",
+  "inputs": {
+    "alpaca-attempt.json": "aff63d74697638bf29b7033eb9bc8759adfc6dcb4bedc45ddbd3f008fdc06de7",
+    "alpaca-raw-6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08.json": "6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08",
+    "alpaca-request.json": "0f6f92aa8cb25141d063e02bacd41523c2e439c10674def1d5b7f8ac8e07b0ee",
+    "alpaca-response.json": "c1f95cdddf5f2c917641df1998201cd95c003e6d590a19b1bdabb451ec2aabc7",
+    "alpaca-summary.json": "3f8541be380cb1e23d52dfad1f0255ae440833101e8f064fcbdb1066f33e4b21",
+    "alpha-vantage-probe-1.json": "1be9bf91f943c9ee8915a62d32884917d8d38af7547e6624d653b78996539f3d",
+    "capital-comparison.json": "5cd0cc1f83dd10287f10d7462111c42de68e5fd34be5e670f14eee68966174e4",
+    "declaration.json": "448e00255c96d15954502787a8b2e19cf831f77e5e003d604892a4f133686dc5",
+    "probe_alpaca.py": "d2499ca579c0bfba526ea032f1faf9d5d6df9a60e8b3dbd74d6297af81eed687",
+    "review_capital.py": "1968952b8cb7b12077f7428cfa66a7c9c5b3d996f33e72d349134cfdbf70ef17"
+  },
+  "calendar": {
+    "path": ".qualification\\post-filing-strategy20260928\\calendar.json",
+    "sha256": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    "scope": "Saved XNYS dates corroborate these six dates only; this does not verify option-specific trading hours."
+  },
+  "status": "passed_access_fixture_only",
+  "failures": [],
+  "alpaca": {
+    "http_status": 200,
+    "raw_sha256": "6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08",
+    "bytes": 3664,
+    "requested_contracts": 6,
+    "returned_contracts": 6,
+    "bars": 36,
+    "expected_session_dates": [
+      "2024-02-15",
+      "2024-02-16",
+      "2024-02-20",
+      "2024-02-21",
+      "2024-02-22",
+      "2024-02-23"
+    ],
+    "contract_encodings": [
+      {
+        "symbol": "SPY240315C00495000",
+        "root_encoded": "SPY",
+        "expiry_encoded": "2024-03-15",
+        "right_encoded": "C",
+        "strike_encoded": "495",
+        "bar_count": 6,
+        "sessions": [
+          "2024-02-15",
+          "2024-02-16",
+          "2024-02-20",
+          "2024-02-21",
+          "2024-02-22",
+          "2024-02-23"
+        ]
+      },
+      {
+        "symbol": "SPY240315C00500000",
+        "root_encoded": "SPY",
+        "expiry_encoded": "2024-03-15",
+        "right_encoded": "C",
+        "strike_encoded": "500",
+        "bar_count": 6,
+        "sessions": [
+          "2024-02-15",
+          "2024-02-16",
+          "2024-02-20",
+          "2024-02-21",
+          "2024-02-22",
+          "2024-02-23"
+        ]
+      },
+      {
+        "symbol": "SPY240315C00505000",
+        "root_encoded": "SPY",
+        "expiry_encoded": "2024-03-15",
+        "right_encoded": "C",
+        "strike_encoded": "505",
+        "bar_count": 6,
+        "sessions": [
+          "2024-02-15",
+          "2024-02-16",
+          "2024-02-20",
+          "2024-02-21",
+          "2024-02-22",
+          "2024-02-23"
+        ]
+      },
+      {
+        "symbol": "SPY240315P00495000",
+        "root_encoded": "SPY",
+        "expiry_encoded": "2024-03-15",
+        "right_encoded": "P",
+        "strike_encoded": "495",
+        "bar_count": 6,
+        "sessions": [
+          "2024-02-15",
+          "2024-02-16",
+          "2024-02-20",
+          "2024-02-21",
+          "2024-02-22",
+          "2024-02-23"
+        ]
+      },
+      {
+        "symbol": "SPY240315P00500000",
+        "root_encoded": "SPY",
+        "expiry_encoded": "2024-03-15",
+        "right_encoded": "P",
+        "strike_encoded": "500",
+        "bar_count": 6,
+        "sessions": [
+          "2024-02-15",
+          "2024-02-16",
+          "2024-02-20",
+          "2024-02-21",
+          "2024-02-22",
+          "2024-02-23"
+        ]
+      },
+      {
+        "symbol": "SPY240315P00505000",
+        "root_encoded": "SPY",
+        "expiry_encoded": "2024-03-15",
+        "right_encoded": "P",
+        "strike_encoded": "505",
+        "bar_count": 6,
+        "sessions": [
+          "2024-02-15",
+          "2024-02-16",
+          "2024-02-20",
+          "2024-02-21",
+          "2024-02-22",
+          "2024-02-23"
+        ]
+      }
+    ],
+    "checks": {
+      "source_request_code_hashes": true,
+      "response_URL_exact_request_parameters": true,
+      "request_symbol_set_exact": true,
+      "six_session_dates_per_contract": true,
+      "unique_sorted_timestamps": true,
+      "positive_finite_OHLC_VWAP": true,
+      "OHLC_and_VWAP_within_range": true,
+      "positive_integer_volume_and_trade_count": true,
+      "volume_at_least_trade_count": true,
+      "dates_before_encoded_expiry": true,
+      "reported_summary_counts": true,
+      "no_next_page_token": true
+    },
+    "timestamp_observation": "Every daily timestamp is 05:00 UTC = 00:00 America/New_York. It is a daily label, not a synchronized executable quote or actual opening/closing trade timestamp.",
+    "volume_sum": 340354,
+    "trade_count_sum": 36088,
+    "lowest_volume_bar": {
+      "symbol": "SPY240315P00505000",
+      "session": "2024-02-21",
+      "volume": 48,
+      "trade_count": 31
+    },
+    "fields": [
+      "c",
+      "h",
+      "l",
+      "n",
+      "o",
+      "t",
+      "v",
+      "vw"
+    ],
+    "encoded_contract_terms_limit": "Root, expiry, call/put and numeric strike are parsed from symbols, not corroborated against authoritative contract-master records. Standard deliverable, multiplier, exercise/settlement terms and quote currency are not returned.",
+    "absent": [
+      "bid",
+      "ask",
+      "bid_size",
+      "ask_size",
+      "bid_ask_timestamp",
+      "open_interest",
+      "implied_volatility",
+      "greeks",
+      "contract_multiplier",
+      "deliverable",
+      "exercise_style",
+      "settlement_terms",
+      "option_exchange_calendar",
+      "feed_identity",
+      "chain_membership_as_of_date",
+      "trade_condition_details",
+      "revision_history",
+      "underlying_synchronized_price"
+    ],
+    "scope_limit": "Only six predetermined SPY symbols, one encoded expiry and six sessions. This does not establish all contracts, other underlyings, other dates, intraday options access, completeness of all trades, or continuing entitlement."
+  },
+  "alpha_vantage": {
+    "saved_probe_count": 1,
+    "successful_option_rows": 0,
+    "response_transport_isError": false,
+    "structured_error_type": "rate_limit",
+    "structured_message_says_premium_endpoint": true,
+    "interpretation": "Saved response is an entitlement/rate-limit failure despite isError=false. The second declared date is documented as unattempted. This fixture does not justify paid access or a retry."
+  },
+  "enables": [
+    "A confirmed bounded historical option-bar retrieval path for these exact symbols/dates.",
+    "Offline bar parser, source provenance, calendar and contract-symbol fixtures.",
+    "A separately declared wider access/metadata/quote feasibility study using existing authorized access, with failures retained."
+  ],
+  "does_not_enable": [
+    "Qualified executable option backtests from daily closes or VWAP alone.",
+    "Complete historical-chain selection, synchronized spread fills, Greeks/IV selection, contract-size affordability, settlement/exercise accounting, or corporate-action-complete option ledgers.",
+    "A claim of positive expected return, attainable weekly targets, or ready-to-trade option automation."
+  ],
+  "capital_comparison": {
+    "source": "artifacts\\historical-lab\\runs\\814780d48b4141b9a82a3fb917d1b85a\\summary.json",
+    "source_sha256": "107195ef703901cf3b5dc4971579c02e046cbe6a67c0beddaca965b7b236751d",
+    "accounts_verified": 42,
+    "full_factorial": "7 learned/ensemble families x 3 holds x 2 initial balances, USD 40bps",
+    "copied_fields_exact": true,
+    "ending_NAV_return_and_yearly_compounding_match_tolerance": 1e-12,
+    "aggregates_independently_recomputed": {
+      "2000": {
+        "status_counts": {
+          "complete": 21
+        },
+        "positive_full_path_accounts": 0,
+        "within_30pct_observed_drawdown": 4,
+        "full_path_return_range": [
+          -0.9525949424477531,
+          -0.0196893039932291
+        ],
+        "mean_weekly_return_range": [
+          -0.0024931670609100146,
+          6.416393163042983e-05
+        ],
+        "median_weekly_return_range": [
+          -0.0022715241239196216,
+          0.0
+        ],
+        "accounts_with_mean_weekly_return_at_least_5pct": 0
+      },
+      "10000": {
+        "status_counts": {
+          "complete": 21
+        },
+        "positive_full_path_accounts": 1,
+        "within_30pct_observed_drawdown": 4,
+        "full_path_return_range": [
+          -0.9635264374110322,
+          0.02784611572792084
+        ],
+        "mean_weekly_return_range": [
+          -0.002705866421691587,
+          0.00010411958893878836
+        ],
+        "median_weekly_return_range": [
+          -0.0023961350081351807,
+          0.0
+        ],
+        "accounts_with_mean_weekly_return_at_least_5pct": 0
+      }
+    },
+    "only_positive_path": {
+      "budget": 10000.0,
+      "strategy": "extra_trees",
+      "horizon": 5,
+      "total_return": 0.02784611572792084,
+      "max_drawdown": 0.17610004881874208,
+      "first_session": "2003-10-23",
+      "last_session": "2026-09-18"
+    },
+    "limits": [
+      "Aggregate arithmetic/filtering checked, not a fresh ledger or weekly-series reconstruction.",
+      "Maximum mean weekly return for USD10000 is 0.010411958893878836 percent; not a weekly target-hit rate or CAGR.",
+      "Observed drawdown <=30 percent is not evidence of an enforced stop or future bound.",
+      "One positive full-path result is not a selected winner, nor proof that capital creates an edge.",
+      "40bps is a retained sensitivity; source continuity and current-member limitations persist."
+    ]
+  }
+}

@@ -1,4 +1,6 @@
-# Frontier Trading
+# Frontier Trading Agent
+
+**New to the project? Start with the [complete project handbook](docs/project-handbook.md).** It records the owner mandate, academic and technical decisions, all research lanes and failures, architecture, setup, operating rules, retained evidence, and unfinished work. The [handover index](docs/handover/README.md) maps the supporting inventories and decision registers.
 
 The target is automated hourly/daily decisions with intraday to roughly one-week individual-stock positions. The local system now combines broad historical research, saved learned models and persistent simulated accounts with a separate operating Alpaca paper baseline. Start with the [delivery plan](docs/automated-trading-plan.md), [latest account rehearsal](docs/candidate-replay-results.md) and [paper operator](docs/paper-operator.md).
 

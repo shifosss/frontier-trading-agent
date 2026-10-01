@@ -1,0 +1,28 @@
+{
+  "symbol": "OLOX",
+  "effective_session": "2023-09-28",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/OLOX/bars?timeframe=1Day&start=2023-09-18T04%3A00%3A00%2B00%3A00&end=2023-10-09T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=split&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2023-09-18T04:00:00+00:00",
+    "end": "2023-10-09T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "split",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:29.772324+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "OLOX-2023-09-28-split-1.11f88dfd4dc3ac910c81f1615f45e2861ef8af161e9adab333500602d2bf58f8.raw.json",
+  "sha256": "11f88dfd4dc3ac910c81f1615f45e2861ef8af161e9adab333500602d2bf58f8",
+  "bytes": 1543,
+  "captured_at": "2026-09-28T19:04:29.823474+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:29 GMT",
+  "bar_count": 15,
+  "response_symbol": "OLOX",
+  "pagination_complete": true
+}

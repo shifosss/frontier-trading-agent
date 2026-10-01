@@ -1,0 +1,17 @@
+{
+  "fit_signal_range": [
+    200,
+    697
+  ],
+  "calibration_signal_range": [
+    704,
+    949
+  ],
+  "first_test_signal": 956,
+  "purged_rows_each_boundary": 36,
+  "test_label_mutation_did_not_change_prediction_membership_or_model_inputs": true,
+  "benchmark_gap_excluded_prediction_but_invalidated_trading_path": true,
+  "correlation_positive_rejected_negative_allowed": true,
+  "correlation_minimum_40_and_future_mutation_passed": true,
+  "incomplete_profitability_aggregates_are_null": true
+}

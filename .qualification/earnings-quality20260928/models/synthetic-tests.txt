@@ -1,0 +1,22 @@
+test_actual_families_have_two_heads_and_exact_presets (__main__.TwoOutputTests.test_actual_families_have_two_heads_and_exact_presets) ... ok
+test_each_fixed_row_and_issuer_gate_abstains_without_fit (__main__.TwoOutputTests.test_each_fixed_row_and_issuer_gate_abstains_without_fit) ... ok
+test_failed_calibration_retains_fitted_model_and_raw_nonfinite_outputs (__main__.TwoOutputTests.test_failed_calibration_retains_fitted_model_and_raw_nonfinite_outputs) ... ok
+test_fit_failure_preserves_warning_and_no_family_fallback (__main__.TwoOutputTests.test_fit_failure_preserves_warning_and_no_family_fallback) ... ok
+test_future_labels_never_accessed_and_missing_test_labels_do_not_filter (__main__.TwoOutputTests.test_future_labels_never_accessed_and_missing_test_labels_do_not_filter) ... ok
+test_insufficient_sample_artifact_retains_absence_and_all_rows (__main__.TwoOutputTests.test_insufficient_sample_artifact_retains_absence_and_all_rows) ... ok
+test_invalid_input_or_training_label_retained_and_affects_gate (__main__.TwoOutputTests.test_invalid_input_or_training_label_retained_and_affects_gate) ... ok
+test_invalid_return_and_nonfinite_row_abstain_without_hiding_output (__main__.TwoOutputTests.test_invalid_return_and_nonfinite_row_abstain_without_hiding_output) ... ok
+test_manual_calibration_and_calibration_only_edges (__main__.TwoOutputTests.test_manual_calibration_and_calibration_only_edges) ... ok
+test_negative_raw_downside_survives_and_is_clipped_before_bias (__main__.TwoOutputTests.test_negative_raw_downside_survives_and_is_clipped_before_bias) ... ok
+test_prediction_shape_failure_retains_all_requested_events (__main__.TwoOutputTests.test_prediction_shape_failure_retains_all_requested_events) ... ok
+test_purge_uses_actual_first_sessions_and_decision_year (__main__.TwoOutputTests.test_purge_uses_actual_first_sessions_and_decision_year) ... ok
+test_scaler_and_baseline_use_fitting_rows_only (__main__.TwoOutputTests.test_scaler_and_baseline_use_fitting_rows_only) ... ok
+test_six_head_calibration_is_explicit_failure (__main__.TwoOutputTests.test_six_head_calibration_is_explicit_failure) ... ok
+test_source_rows_saved_models_and_forecasts_reload_exactly (__main__.TwoOutputTests.test_source_rows_saved_models_and_forecasts_reload_exactly) ... ok
+test_specification_and_fold_are_fixed (__main__.TwoOutputTests.test_specification_and_fold_are_fixed) ... ok
+test_wrong_clock_and_duplicate_event_cannot_enter (__main__.TwoOutputTests.test_wrong_clock_and_duplicate_event_cannot_enter) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.659s
+
+OK

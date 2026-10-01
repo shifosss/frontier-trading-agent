@@ -1,0 +1,28 @@
+{
+  "symbol": "CRVO",
+  "effective_session": "2023-08-17",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/CRVO/bars?timeframe=1Day&start=2023-08-07T04%3A00%3A00%2B00%3A00&end=2023-08-28T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=split&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2023-08-07T04:00:00+00:00",
+    "end": "2023-08-28T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "split",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.704242+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "CRVO-2023-08-17-split-1.ad163a23a1895f29719969105b8188e0136a89eca6dc87b93add4c595ab54536.raw.json",
+  "sha256": "ad163a23a1895f29719969105b8188e0136a89eca6dc87b93add4c595ab54536",
+  "bytes": 1509,
+  "captured_at": "2026-09-28T19:04:30.741932+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 15,
+  "response_symbol": "CRVO",
+  "pagination_complete": true
+}

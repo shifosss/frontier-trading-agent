@@ -1,0 +1,142 @@
+[
+  {
+    "file": "all-886-session-comparison.csv",
+    "sha256": "695b83c6ba37ee2bea1ed47d6db76c32bd919a4dd82f7e964ad96799bc228d8d",
+    "bytes": 436112
+  },
+  {
+    "file": "alpaca-raw-1.757d119ebbe757d0e851fb11bfe4629471be7f135c65966f3827b77dd060e46e.raw",
+    "sha256": "757d119ebbe757d0e851fb11bfe4629471be7f135c65966f3827b77dd060e46e",
+    "bytes": 88179
+  },
+  {
+    "file": "alpaca-raw-1.capture.json",
+    "sha256": "fadab7439a380cbe5106cd447646a84f976b21475f1129e1623cd36d8f331279",
+    "bytes": 860
+  },
+  {
+    "file": "alpaca-split-1.ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608.raw",
+    "sha256": "ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608",
+    "bytes": 86853
+  },
+  {
+    "file": "alpaca-split-1.capture.json",
+    "sha256": "8baee03d55e6222afc1c0614433e934ee8325ba3b34fecd76d5a85a4b2fedbb7",
+    "bytes": 866
+  },
+  {
+    "file": "analyze.py",
+    "sha256": "d829bfc2401d1d91df5ee3c78334eff947bf99de2754959d40cda21edf4929f5",
+    "bytes": 6772
+  },
+  {
+    "file": "both-directions-largest-12.csv",
+    "sha256": "602b692c12bf0f6a31d50fe6ba0026e29df16dbbe384afbfb274303f75660f78",
+    "bytes": 12940
+  },
+  {
+    "file": "capture-summary.json",
+    "sha256": "06d7a213a8dfd0cdd0b16a363fbdcacca721c7d7f7b38b2b031adac56d2b4d2c",
+    "bytes": 4985
+  },
+  {
+    "file": "capture.py",
+    "sha256": "452f37472c81aaf0bb62e47e51c8a7dba661a89d4a50a948f50d69058ccd855a",
+    "bytes": 3767
+  },
+  {
+    "file": "citi-sep2026-notice.capture.json",
+    "sha256": "ac786883b319428ec7f762c29dd3c620d67038d0a424c4bb13d3e4c47df5049d",
+    "bytes": 497
+  },
+  {
+    "file": "citi-sep2026-notice.f3fb264ab64263ea0aca909efdb37be8741b1a75caae8fa2f76b9599bffc7a17.pdf",
+    "sha256": "f3fb264ab64263ea0aca909efdb37be8741b1a75caae8fa2f76b9599bffc7a17",
+    "bytes": 162756
+  },
+  {
+    "file": "definition.json",
+    "sha256": "30fb2f90acbfbbc0bb55ed030299d786fa6d27c07ebd1dc59cb68d043b0d437c",
+    "bytes": 1390
+  },
+  {
+    "file": "findings.json",
+    "sha256": "fc7e75a5ebf3cd895378dc54813db103e9f244300a68838ce8b65c1ac7cf44bf",
+    "bytes": 8552
+  },
+  {
+    "file": "frozen-yahoo.raw.json",
+    "sha256": "78718566befb39a31c0bd12742a0a8c1d64bbe0dd7cfa456703b564cff37207e",
+    "bytes": 84742
+  },
+  {
+    "file": "issuer-action-map.json",
+    "sha256": "853f097b3fccbac47ce561703a5970646f5d3381943e4223e358939d57cf0318",
+    "bytes": 1929
+  },
+  {
+    "file": "nasdaq-aug2024.398062872e1c05352440f06f5380525ede4e2d52ff1627a6cb401af785719c69.raw",
+    "sha256": "398062872e1c05352440f06f5380525ede4e2d52ff1627a6cb401af785719c69",
+    "bytes": 58877
+  },
+  {
+    "file": "nasdaq-aug2024.capture.json",
+    "sha256": "b1eff831147602dfad2b8c02f3c347fd9e85623238663f06e465a628758c479e",
+    "bytes": 494
+  },
+  {
+    "file": "nasdaq-may2026.capture.json",
+    "sha256": "836e3a16b3f7e20d6bcf441c5d3a27a699bc83571fc5ef3ae9679125cab02d6c",
+    "bytes": 494
+  },
+  {
+    "file": "nasdaq-may2026.e0531dcb213e747b75e0238acd00f631755b3129347172bd53717a6d171fa30e.raw",
+    "sha256": "e0531dcb213e747b75e0238acd00f631755b3129347172bd53717a6d171fa30e",
+    "bytes": 59059
+  },
+  {
+    "file": "nasdaq-sep2026.34291f74d1ec36be6d791abc569e2ca0c816ce737ad252e19539f6c3a8ff87a1.raw",
+    "sha256": "34291f74d1ec36be6d791abc569e2ca0c816ce737ad252e19539f6c3a8ff87a1",
+    "bytes": 59150
+  },
+  {
+    "file": "nasdaq-sep2026.capture.json",
+    "sha256": "a4a04b8b63a68f861493da077698cf1e4f69d37f8fa8a615a5e23c9c9db224ac",
+    "bytes": 494
+  },
+  {
+    "file": "sec-sep2026-6k.7c78b677bf021161f9ea0a1f87071d6947c08df512a26f05b8650c519ffcca3f.raw",
+    "sha256": "7c78b677bf021161f9ea0a1f87071d6947c08df512a26f05b8650c519ffcca3f",
+    "bytes": 13585
+  },
+  {
+    "file": "sec-sep2026-6k.capture.json",
+    "sha256": "4ad94620c89191677eee5e04a9e222c07fa8ad9ca6d07153a822b557ad4abc91",
+    "bytes": 509
+  },
+  {
+    "file": "sec-sep2026-release.38d9b9dc3c450e8247ffe0bbd32cedb36f665a25e0b7d557c4e8a8a564b229cc.raw",
+    "sha256": "38d9b9dc3c450e8247ffe0bbd32cedb36f665a25e0b7d557c4e8a8a564b229cc",
+    "bytes": 8739
+  },
+  {
+    "file": "sec-sep2026-release.capture.json",
+    "sha256": "f920a70c816666600898ccfed70e9b987de278c77edebcd88f92f2eae4db6558",
+    "bytes": 512
+  },
+  {
+    "file": "surrounding-window.csv",
+    "sha256": "2198c217e4c6c47f46b7bc75d91446653cac91888802e0966a4be298143ba4a4",
+    "bytes": 15411
+  },
+  {
+    "file": "three-action-boundaries.csv",
+    "sha256": "b2e2d2fbd6dfa07442b43b0231b2c26579acad9d2cd65f51fcf85b415f28b997",
+    "bytes": 3639
+  },
+  {
+    "file": "verification.json",
+    "sha256": "16f7e1b56ace05a55881c1979361b6b8f959c7ee541f13fd6bcaaef3097e4ac0",
+    "bytes": 457
+  }
+]

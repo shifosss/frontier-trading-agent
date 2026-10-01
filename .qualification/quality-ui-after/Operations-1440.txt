@@ -1,0 +1,61 @@
+F
+Frontier
+Research
+◷
+Study
+▤
+Data
+⤨
+Experiments
+◇
+Research
+⚙
+Operations
+Local workspace
+Research only
+No broker connection
+Operations
+
+Runtime evidence and the limits of this workstation.
+
+Local service ready
+Nautilus 1.231.0
+Runtime and capabilities
+Current service
+Engine
+Nautilus Trader 1.231.0
+Python
+3.13.7
+Workspace
+E:\Alex's Local Codebases\One_Person-Trading_Agent
+Datasets / studies
+5 / 140
+Evidence boundaries
+daily raw replay
+Synthetic quotes from raw bars; research only
+separate currency funding
+Available
+corporate actions
+Unsupported
+hourly execution
+Regular-session raw-bar replay; inferred quotes and availability
+broker connection
+Unsupported
+automatic fx trading
+Unsupported
+research agent
+Codex proposals with measured feedback; at most 2 calls per campaign
+Latest jobs
+Study	Status	Started (UTC)	Error
+81e46104bbfc466bb0cfecb6c4725910	COMPLETED	2026-09-18T15:31:16.534844+00:00	—
+0b218356357f4d52bc88f0d21f6ea0a3	COMPLETED	2026-09-18T15:31:08.257141+00:00	—
+82725d596b5442749ecd82a28e1ebdab	COMPLETED	2026-09-18T15:31:04.764032+00:00	—
+e488116cf9ef478d9bed6a469e3eb7ee	FAILED	2026-09-18T15:30:18.549486+00:00	ValueError: Known split/dividend actions are unsupported: replay rejected
+9d61a2124e0d49d290a27f6d5f7d4332	COMPLETED	2026-09-18T15:30:16.389309+00:00	—
+3eabf9875423433497c6530413b4d414	COMPLETED	2026-09-18T15:30:15.364217+00:00	—
+792eb0e81c384d7b9eefd82a9b504eac	COMPLETED	2026-09-18T15:30:14.534093+00:00	—
+36b1ac06c54e4fd98d625771faddc3cf	COMPLETED	2026-09-18T15:30:12.949785+00:00	—
+822b42f549db4c3ea6c6bbd4e2f811fb	COMPLETED	2026-09-18T15:30:11.328207+00:00	—
+6b1d370bed7d433f8bfec497004a0c8b	COMPLETED	2026-09-18T15:30:07.917230+00:00	—
+Frontier Research
+Local snapshots. Explicit assumptions. Inspectable evidence.

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "declared_at_utc": "2026-09-28T22:45:52.884679+00:00",
+  "purpose": "Original-accession financial features only; no price labels or strategy outcomes",
+  "memo_sha256": "de1e7474f339d5de3c8a0f882072f8ede8d37e0e52a6de2022afbf1e44f874f1",
+  "source_request_sha256": "dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764",
+  "issuers": [
+    "AAPL",
+    "MSFT",
+    "F",
+    "T",
+    "HRL",
+    "BANF"
+  ],
+  "filed_years": [
+    2012,
+    2025
+  ],
+  "exact_concepts": [
+    "us-gaap:NetIncomeLoss",
+    "us-gaap:Assets"
+  ],
+  "entity": "Exact CIK; no segment/scenario, explicit/typed dimensions; USD measure only",
+  "representations": [
+    "inline_primary",
+    "original_instance"
+  ],
+  "numeric": "Decimal; retain source bytes and [start,end) spans, namespace, context/unit XML, scale/sign/decimals/format; nil or unsupported transformations unavailable; exact duplicate values must agree",
+  "fiscal": "Original DEI DocumentFiscalYearFocus, DocumentFiscalPeriodFocus Q1/Q2/Q3 and common YTD context ending reportDate; inclusive YTD days [84*q,98*q]. Current NI quarter ends reportDate,84-98 days. Q1 starts at YTD start; Q2/Q3 starts after YTD start, earlier elapsed period [84*(q-1),98*(q-1)]. Prior NI quarter84-98days, both endpoints357-371days earlier and duration difference<=7. Ambiguous contexts unavailable. PriorFY Assets exactly YTD start minus1day, positive. No nearest balance or Q4 derivation.",
+  "innovation": "u=(current NI-prior NI)/priorFY Assets, all from same original accession",
+  "history": "First original for exact reportDate, ordered filingDate/acceptance/accession; duplicate originals never replace first failure. Scheduled fiscal slot FY*3+Q-1, preceding8slots required. NoQ4. Unparsed intervening report records block history. All8 source innovations must have qualified inputs and availability floor earlier than current decision; no later-accession rewrites. Zero sample variance unavailable. S=u/sample_sd(previous8); no mean subtraction, clipping, cross-issuer imputation or alternate concept.",
+  "clock": "Verify retained API UTC, original index/header America/New_York and filingDate consistency; D=max(acceptanceETdate,filingDate), floor next day01:00ET. First future regular session09:00ET after floor; entry actualclose, fifth subsequent sessionclose exit. Calendar-limited endpoints remain unavailable, never fabricated.",
+  "supplements": "No originalHTML semantic mapping in baseline v1. Any source supplements require separately frozen explicit overlay and preserve baseline failure.",
+  "failures": "Retain every registry original, missing manifests and extraction/clock ambiguities; no replacements. Feature qualification does not establish historical security/action continuity or exact dissemination."
+}

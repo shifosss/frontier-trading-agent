@@ -1,0 +1,28 @@
+{
+  "symbol": "HON",
+  "effective_session": "2026-06-29",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/HON/bars?timeframe=1Day&start=2026-06-19T04%3A00%3A00%2B00%3A00&end=2026-07-10T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2026-06-19T04:00:00+00:00",
+    "end": "2026-07-10T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:31.070806+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "HON-2026-06-29-raw-1.9cfa1884a2f9ed3e670072a27bd9af6b1270e4c650815917de91e88804dc99e1.raw.json",
+  "sha256": "9cfa1884a2f9ed3e670072a27bd9af6b1270e4c650815917de91e88804dc99e1",
+  "bytes": 1484,
+  "captured_at": "2026-09-28T19:04:31.115061+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:31 GMT",
+  "bar_count": 13,
+  "response_symbol": "HON",
+  "pagination_complete": true
+}

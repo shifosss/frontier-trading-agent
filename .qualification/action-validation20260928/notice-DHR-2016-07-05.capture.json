@@ -1,0 +1,16 @@
+{
+  "symbol": "DHR",
+  "effective_sessions": "2016-07-05",
+  "url": "https://investors.danaher.com/2016-07-02-Danaher-Corporation-Completes-Separation-of-Fortive-Corporation",
+  "method": "GET",
+  "started_at": "2026-09-28T19:13:59.319696+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://investors.danaher.com/2016-07-02-Danaher-Corporation-Completes-Separation-of-Fortive-Corporation",
+  "redirects": [],
+  "sha256": "a891fcc6396ad24572ff4fd98552f8208e9671c0c64fd47bbba746dfdb1e60ca",
+  "raw_file": "notice-DHR-2016-07-05.a891fcc6396ad24572ff4fd98552f8208e9671c0c64fd47bbba746dfdb1e60ca.raw.html",
+  "bytes": 86128,
+  "captured_at": "2026-09-28T19:13:59.773102+00:00",
+  "text_file": "notice-DHR-2016-07-05.text.txt"
+}

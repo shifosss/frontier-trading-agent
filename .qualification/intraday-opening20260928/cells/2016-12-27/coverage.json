@@ -1,0 +1,843 @@
+{
+  "session": "2016-12-27",
+  "params": {
+    "timeframe": "1Min",
+    "feed": "sip",
+    "adjustment": "raw",
+    "currency": "USD",
+    "sort": "asc",
+    "limit": 10000,
+    "symbols": "AAPL,MSFT,F,T,HRL,BANF,SPY",
+    "start": "2016-12-27T14:30:00+00:00",
+    "end": "2016-12-27T20:59:59+00:00",
+    "asof": "2016-12-27"
+  },
+  "request_sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+  "transport_complete": true,
+  "error": null,
+  "stop_all": false,
+  "sources": [
+    {
+      "origin": "new_capture",
+      "method": "GET",
+      "url": "https://data.alpaca.markets/v2/stocks/bars",
+      "params": {
+        "timeframe": "1Min",
+        "feed": "sip",
+        "adjustment": "raw",
+        "currency": "USD",
+        "sort": "asc",
+        "limit": 10000,
+        "symbols": "AAPL,MSFT,F,T,HRL,BANF,SPY",
+        "start": "2016-12-27T14:30:00+00:00",
+        "end": "2016-12-27T20:59:59+00:00",
+        "asof": "2016-12-27"
+      },
+      "started_at": "2026-09-28T21:26:35.966940+00:00",
+      "session": "2016-12-27",
+      "page": 1,
+      "attempt": 1,
+      "state": "success",
+      "status_code": 200,
+      "raw_file": "raw/5c4ca09b1ca2a5e9534e04e00cdf24f9ae2c332e24b70f849742508e881fa07d.json",
+      "sha256": "5c4ca09b1ca2a5e9534e04e00cdf24f9ae2c332e24b70f849742508e881fa07d",
+      "bytes": 246756,
+      "captured_at": "2026-09-28T21:26:36.597788+00:00",
+      "headers": {
+        "date": "Mon, 28 Sep 2026 21:26:36 GMT",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "200",
+        "x-ratelimit-remaining": "199",
+        "x-ratelimit-reset": "1790630796",
+        "x-request-id": "7dff0452cda27c8510d2a99b01a39039"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "symbol": "AAPL",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "MSFT",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "F",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "T",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    },
+    {
+      "symbol": "HRL",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 368,
+      "observed_unique_minutes": 368,
+      "valid_unique_minutes": 368,
+      "missing_minutes": 22,
+      "missing_intervals": [
+        {
+          "start": "2016-12-27T15:15:00+00:00",
+          "end_exclusive": "2016-12-27T15:16:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T15:33:00+00:00",
+          "end_exclusive": "2016-12-27T15:34:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:30:00+00:00",
+          "end_exclusive": "2016-12-27T16:31:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:50:00+00:00",
+          "end_exclusive": "2016-12-27T16:51:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:59:00+00:00",
+          "end_exclusive": "2016-12-27T17:00:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T17:27:00+00:00",
+          "end_exclusive": "2016-12-27T17:28:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T17:40:00+00:00",
+          "end_exclusive": "2016-12-27T17:41:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T17:58:00+00:00",
+          "end_exclusive": "2016-12-27T18:00:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T18:12:00+00:00",
+          "end_exclusive": "2016-12-27T18:14:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T18:22:00+00:00",
+          "end_exclusive": "2016-12-27T18:23:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T18:24:00+00:00",
+          "end_exclusive": "2016-12-27T18:25:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:30:00+00:00",
+          "end_exclusive": "2016-12-27T19:31:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:34:00+00:00",
+          "end_exclusive": "2016-12-27T19:35:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:38:00+00:00",
+          "end_exclusive": "2016-12-27T19:39:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:41:00+00:00",
+          "end_exclusive": "2016-12-27T19:42:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:52:00+00:00",
+          "end_exclusive": "2016-12-27T19:54:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T19:57:00+00:00",
+          "end_exclusive": "2016-12-27T19:58:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:02:00+00:00",
+          "end_exclusive": "2016-12-27T20:03:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:23:00+00:00",
+          "end_exclusive": "2016-12-27T20:24:00+00:00",
+          "minutes": 1
+        }
+      ],
+      "unusable_intervals": [
+        {
+          "start": "2016-12-27T15:15:00+00:00",
+          "end_exclusive": "2016-12-27T15:16:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T15:33:00+00:00",
+          "end_exclusive": "2016-12-27T15:34:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:30:00+00:00",
+          "end_exclusive": "2016-12-27T16:31:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:50:00+00:00",
+          "end_exclusive": "2016-12-27T16:51:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:59:00+00:00",
+          "end_exclusive": "2016-12-27T17:00:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T17:27:00+00:00",
+          "end_exclusive": "2016-12-27T17:28:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T17:40:00+00:00",
+          "end_exclusive": "2016-12-27T17:41:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T17:58:00+00:00",
+          "end_exclusive": "2016-12-27T18:00:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T18:12:00+00:00",
+          "end_exclusive": "2016-12-27T18:14:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T18:22:00+00:00",
+          "end_exclusive": "2016-12-27T18:23:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T18:24:00+00:00",
+          "end_exclusive": "2016-12-27T18:25:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:30:00+00:00",
+          "end_exclusive": "2016-12-27T19:31:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:34:00+00:00",
+          "end_exclusive": "2016-12-27T19:35:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:38:00+00:00",
+          "end_exclusive": "2016-12-27T19:39:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:41:00+00:00",
+          "end_exclusive": "2016-12-27T19:42:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:52:00+00:00",
+          "end_exclusive": "2016-12-27T19:54:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T19:57:00+00:00",
+          "end_exclusive": "2016-12-27T19:58:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:02:00+00:00",
+          "end_exclusive": "2016-12-27T20:03:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:23:00+00:00",
+          "end_exclusive": "2016-12-27T20:24:00+00:00",
+          "minutes": 1
+        }
+      ],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 59,
+      "opening_complete": false,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": false
+    },
+    {
+      "symbol": "BANF",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 55,
+      "observed_unique_minutes": 55,
+      "valid_unique_minutes": 55,
+      "missing_minutes": 335,
+      "missing_intervals": [
+        {
+          "start": "2016-12-27T14:31:00+00:00",
+          "end_exclusive": "2016-12-27T14:47:00+00:00",
+          "minutes": 16
+        },
+        {
+          "start": "2016-12-27T14:48:00+00:00",
+          "end_exclusive": "2016-12-27T15:07:00+00:00",
+          "minutes": 19
+        },
+        {
+          "start": "2016-12-27T15:08:00+00:00",
+          "end_exclusive": "2016-12-27T15:16:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T15:17:00+00:00",
+          "end_exclusive": "2016-12-27T15:20:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-12-27T15:21:00+00:00",
+          "end_exclusive": "2016-12-27T15:22:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T15:23:00+00:00",
+          "end_exclusive": "2016-12-27T15:24:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T15:25:00+00:00",
+          "end_exclusive": "2016-12-27T15:42:00+00:00",
+          "minutes": 17
+        },
+        {
+          "start": "2016-12-27T15:43:00+00:00",
+          "end_exclusive": "2016-12-27T15:51:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T15:52:00+00:00",
+          "end_exclusive": "2016-12-27T15:59:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T16:00:00+00:00",
+          "end_exclusive": "2016-12-27T16:02:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T16:03:00+00:00",
+          "end_exclusive": "2016-12-27T16:14:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-12-27T16:15:00+00:00",
+          "end_exclusive": "2016-12-27T16:17:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T16:18:00+00:00",
+          "end_exclusive": "2016-12-27T16:25:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T16:26:00+00:00",
+          "end_exclusive": "2016-12-27T16:27:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:28:00+00:00",
+          "end_exclusive": "2016-12-27T16:30:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T16:31:00+00:00",
+          "end_exclusive": "2016-12-27T16:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:33:00+00:00",
+          "end_exclusive": "2016-12-27T16:39:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-12-27T16:40:00+00:00",
+          "end_exclusive": "2016-12-27T16:48:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T16:50:00+00:00",
+          "end_exclusive": "2016-12-27T17:52:00+00:00",
+          "minutes": 62
+        },
+        {
+          "start": "2016-12-27T17:53:00+00:00",
+          "end_exclusive": "2016-12-27T18:01:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T18:02:00+00:00",
+          "end_exclusive": "2016-12-27T18:07:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-12-27T18:08:00+00:00",
+          "end_exclusive": "2016-12-27T18:18:00+00:00",
+          "minutes": 10
+        },
+        {
+          "start": "2016-12-27T18:19:00+00:00",
+          "end_exclusive": "2016-12-27T18:25:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-12-27T18:26:00+00:00",
+          "end_exclusive": "2016-12-27T18:31:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-12-27T18:32:00+00:00",
+          "end_exclusive": "2016-12-27T18:36:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-12-27T18:38:00+00:00",
+          "end_exclusive": "2016-12-27T18:45:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T18:46:00+00:00",
+          "end_exclusive": "2016-12-27T18:48:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T18:49:00+00:00",
+          "end_exclusive": "2016-12-27T18:59:00+00:00",
+          "minutes": 10
+        },
+        {
+          "start": "2016-12-27T19:00:00+00:00",
+          "end_exclusive": "2016-12-27T19:12:00+00:00",
+          "minutes": 12
+        },
+        {
+          "start": "2016-12-27T19:13:00+00:00",
+          "end_exclusive": "2016-12-27T19:16:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-12-27T19:18:00+00:00",
+          "end_exclusive": "2016-12-27T19:38:00+00:00",
+          "minutes": 20
+        },
+        {
+          "start": "2016-12-27T19:39:00+00:00",
+          "end_exclusive": "2016-12-27T19:41:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T19:43:00+00:00",
+          "end_exclusive": "2016-12-27T19:52:00+00:00",
+          "minutes": 9
+        },
+        {
+          "start": "2016-12-27T19:54:00+00:00",
+          "end_exclusive": "2016-12-27T19:55:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:56:00+00:00",
+          "end_exclusive": "2016-12-27T20:02:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-12-27T20:04:00+00:00",
+          "end_exclusive": "2016-12-27T20:12:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T20:13:00+00:00",
+          "end_exclusive": "2016-12-27T20:20:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T20:22:00+00:00",
+          "end_exclusive": "2016-12-27T20:29:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T20:31:00+00:00",
+          "end_exclusive": "2016-12-27T20:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:33:00+00:00",
+          "end_exclusive": "2016-12-27T20:41:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T20:42:00+00:00",
+          "end_exclusive": "2016-12-27T20:43:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:44:00+00:00",
+          "end_exclusive": "2016-12-27T20:48:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-12-27T20:51:00+00:00",
+          "end_exclusive": "2016-12-27T20:58:00+00:00",
+          "minutes": 7
+        }
+      ],
+      "unusable_intervals": [
+        {
+          "start": "2016-12-27T14:31:00+00:00",
+          "end_exclusive": "2016-12-27T14:47:00+00:00",
+          "minutes": 16
+        },
+        {
+          "start": "2016-12-27T14:48:00+00:00",
+          "end_exclusive": "2016-12-27T15:07:00+00:00",
+          "minutes": 19
+        },
+        {
+          "start": "2016-12-27T15:08:00+00:00",
+          "end_exclusive": "2016-12-27T15:16:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T15:17:00+00:00",
+          "end_exclusive": "2016-12-27T15:20:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-12-27T15:21:00+00:00",
+          "end_exclusive": "2016-12-27T15:22:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T15:23:00+00:00",
+          "end_exclusive": "2016-12-27T15:24:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T15:25:00+00:00",
+          "end_exclusive": "2016-12-27T15:42:00+00:00",
+          "minutes": 17
+        },
+        {
+          "start": "2016-12-27T15:43:00+00:00",
+          "end_exclusive": "2016-12-27T15:51:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T15:52:00+00:00",
+          "end_exclusive": "2016-12-27T15:59:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T16:00:00+00:00",
+          "end_exclusive": "2016-12-27T16:02:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T16:03:00+00:00",
+          "end_exclusive": "2016-12-27T16:14:00+00:00",
+          "minutes": 11
+        },
+        {
+          "start": "2016-12-27T16:15:00+00:00",
+          "end_exclusive": "2016-12-27T16:17:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T16:18:00+00:00",
+          "end_exclusive": "2016-12-27T16:25:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T16:26:00+00:00",
+          "end_exclusive": "2016-12-27T16:27:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:28:00+00:00",
+          "end_exclusive": "2016-12-27T16:30:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T16:31:00+00:00",
+          "end_exclusive": "2016-12-27T16:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T16:33:00+00:00",
+          "end_exclusive": "2016-12-27T16:39:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-12-27T16:40:00+00:00",
+          "end_exclusive": "2016-12-27T16:48:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T16:50:00+00:00",
+          "end_exclusive": "2016-12-27T17:52:00+00:00",
+          "minutes": 62
+        },
+        {
+          "start": "2016-12-27T17:53:00+00:00",
+          "end_exclusive": "2016-12-27T18:01:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T18:02:00+00:00",
+          "end_exclusive": "2016-12-27T18:07:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-12-27T18:08:00+00:00",
+          "end_exclusive": "2016-12-27T18:18:00+00:00",
+          "minutes": 10
+        },
+        {
+          "start": "2016-12-27T18:19:00+00:00",
+          "end_exclusive": "2016-12-27T18:25:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-12-27T18:26:00+00:00",
+          "end_exclusive": "2016-12-27T18:31:00+00:00",
+          "minutes": 5
+        },
+        {
+          "start": "2016-12-27T18:32:00+00:00",
+          "end_exclusive": "2016-12-27T18:36:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-12-27T18:38:00+00:00",
+          "end_exclusive": "2016-12-27T18:45:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T18:46:00+00:00",
+          "end_exclusive": "2016-12-27T18:48:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T18:49:00+00:00",
+          "end_exclusive": "2016-12-27T18:59:00+00:00",
+          "minutes": 10
+        },
+        {
+          "start": "2016-12-27T19:00:00+00:00",
+          "end_exclusive": "2016-12-27T19:12:00+00:00",
+          "minutes": 12
+        },
+        {
+          "start": "2016-12-27T19:13:00+00:00",
+          "end_exclusive": "2016-12-27T19:16:00+00:00",
+          "minutes": 3
+        },
+        {
+          "start": "2016-12-27T19:18:00+00:00",
+          "end_exclusive": "2016-12-27T19:38:00+00:00",
+          "minutes": 20
+        },
+        {
+          "start": "2016-12-27T19:39:00+00:00",
+          "end_exclusive": "2016-12-27T19:41:00+00:00",
+          "minutes": 2
+        },
+        {
+          "start": "2016-12-27T19:43:00+00:00",
+          "end_exclusive": "2016-12-27T19:52:00+00:00",
+          "minutes": 9
+        },
+        {
+          "start": "2016-12-27T19:54:00+00:00",
+          "end_exclusive": "2016-12-27T19:55:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T19:56:00+00:00",
+          "end_exclusive": "2016-12-27T20:02:00+00:00",
+          "minutes": 6
+        },
+        {
+          "start": "2016-12-27T20:04:00+00:00",
+          "end_exclusive": "2016-12-27T20:12:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T20:13:00+00:00",
+          "end_exclusive": "2016-12-27T20:20:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T20:22:00+00:00",
+          "end_exclusive": "2016-12-27T20:29:00+00:00",
+          "minutes": 7
+        },
+        {
+          "start": "2016-12-27T20:31:00+00:00",
+          "end_exclusive": "2016-12-27T20:32:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:33:00+00:00",
+          "end_exclusive": "2016-12-27T20:41:00+00:00",
+          "minutes": 8
+        },
+        {
+          "start": "2016-12-27T20:42:00+00:00",
+          "end_exclusive": "2016-12-27T20:43:00+00:00",
+          "minutes": 1
+        },
+        {
+          "start": "2016-12-27T20:44:00+00:00",
+          "end_exclusive": "2016-12-27T20:48:00+00:00",
+          "minutes": 4
+        },
+        {
+          "start": "2016-12-27T20:51:00+00:00",
+          "end_exclusive": "2016-12-27T20:58:00+00:00",
+          "minutes": 7
+        }
+      ],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 7,
+      "opening_complete": false,
+      "entry_bar_valid": false,
+      "exit_bar_valid": false,
+      "full_session_complete": false
+    },
+    {
+      "symbol": "SPY",
+      "session": "2016-12-27",
+      "phase": "warmup",
+      "expected_minutes": 390,
+      "raw_records": 390,
+      "observed_unique_minutes": 390,
+      "valid_unique_minutes": 390,
+      "missing_minutes": 0,
+      "missing_intervals": [],
+      "unusable_intervals": [],
+      "invalid_records": 0,
+      "duplicate_timestamps": 0,
+      "timestamp_parse_failures": 0,
+      "unaligned_timestamps": 0,
+      "out_of_window": 0,
+      "order_violations": 0,
+      "opening_valid_minutes": 60,
+      "opening_complete": true,
+      "entry_bar_valid": true,
+      "exit_bar_valid": true,
+      "full_session_complete": true
+    }
+  ]
+}

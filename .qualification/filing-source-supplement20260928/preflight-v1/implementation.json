@@ -1,0 +1,27 @@
+{
+  "frozen_at_utc": "2026-09-28T22:52:13.156602+00:00",
+  "files": {
+    "capture_supplement.py": "4948f3d2e850e4b1f238236cc52fb550dbcf4534c74dd7ecb67ff643504d167b",
+    "msft-balance_sheet-original-table.html": "3574ea4b61956b9fbf4c964b4fd9213b9f527c00c85b95b0b6a8d54924c17b74",
+    "msft-income_statement-original-table.html": "f54248ddcc491bede948173d611b54600eafbd4c91e7393f8fa22d4a653ed37d",
+    "msft-original-html-assessment.json": "9881b1a014247ef8390f99f615055b48a45ecf86c4b8e5d800fbaf4519fe6a75",
+    "report.md": "efe814f7018d2faebe1655a3d59e33bc3d7cd7587c41a1f53121b32a8dfc975f",
+    "request.json": "438205d2b6f3c88f76b6966e27f50e8de87dce824a1e7cfd6155eed8f3834e5e",
+    "test-result.json": "37628d14f777231ce26c0ffe7554d6509b77e853e5d505954198958783957e82",
+    "test_supplement.py": "ea19d310eb41239b3fab8951dd46b18469900349a9c29c51960063da8629520d"
+  },
+  "durable_writer_source_sha256": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+  "baseline_implementation_sha256": "f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5",
+  "baseline_code_sha256": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb",
+  "tests": 6,
+  "independent_review": "passed; no remaining material finding",
+  "acquisition_started": false,
+  "launch_python": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+  "launch_arguments": [
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\capture_supplement.py"
+  ],
+  "working_directory": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent"
+}

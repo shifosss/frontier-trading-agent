@@ -1,0 +1,31 @@
+{
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "block": 9,
+  "bounds": {
+    "fit_start": 3022,
+    "calibration_start": 3526,
+    "test_start": 3778,
+    "test_end": 4029
+  },
+  "model_directory": "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model",
+  "forecast_path": "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/forecasts.npz",
+  "family": "hist_gradient_boosting",
+  "available": true,
+  "candidates": 382299,
+  "invalid_feature_rows": 0,
+  "finite_corrected_rows": 382299,
+  "fit_rows": 47808,
+  "calibration_rows": 23616,
+  "files": {
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/attempt.json": "20ff1563e3b578acdab3a906758451d4e682982352ff7b63bb5efc6f6b4db6b9",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/forecasts.npz": "141f09691eb1bb5041e66cf8ccd2611d9260edf6c66eae4452a24474ab97ce45",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model/attempt.json": "29cbafa48d67c20b2117633fd8509ec0731ed3ca47ba412d7cd6bf0cbe0b2585",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model/calibration-predictions.npz": "1a8e144faa673654cef2edcfbf39aa300ab59c9e8887d5468520a07f66a27fa5",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model/diagnostics.json": "68ca9db6ac9d501db019e5f7bdfa4a5371740b5cb70432f3eb2e7026518c9a1e",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model/manifest.json": "f53a1a74cd76bcef8d15b5bbbf5f1ac0cf917c271448e1458655627c9fc4a71b",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model/model.joblib": "8554281b23c80210658a3f60e1f6aef2db384bb796e58bfb1881f2602e4133f2",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/model/samples.json": "9a644143562d622c0e4452d749e7ae86daaea551c1977c61e0de57f960e02924",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/sample-arrays.npz": "f640410a558958d8f70aa581746b619840ce02b300984b8b8aa7ce991391baee",
+    "blocks/block-009/attempt-beee79d6f60641c396f93b2a9808d949/test-diagnostics.json": "115d12a055b86549591e69561d3bf26010ac70178259c97912508b52f5c1a307"
+  }
+}

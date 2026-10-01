@@ -1,0 +1,21 @@
+{
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/bars",
+  "params": {
+    "timeframe": "1Min",
+    "feed": "sip",
+    "adjustment": "raw",
+    "currency": "USD",
+    "sort": "asc",
+    "limit": 10000,
+    "symbols": "AAPL,MSFT,F,T,HRL,BANF,SPY",
+    "start": "2016-12-29T14:30:00+00:00",
+    "end": "2016-12-29T20:59:59+00:00",
+    "asof": "2016-12-29"
+  },
+  "started_at": "2026-09-28T21:26:37.189435+00:00",
+  "session": "2016-12-29",
+  "page": 1,
+  "attempt": 1,
+  "state": "request_started"
+}

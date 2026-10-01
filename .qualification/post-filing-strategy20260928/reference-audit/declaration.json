@@ -1,0 +1,11 @@
+{
+  "at": "2026-09-28T23:26:42.342337+00:00",
+  "scope": "All252 source events and121eligible references, all endpoint ratios/selection labels and overall/issuer/year aggregations; no funded account files or network",
+  "arithmetic": "Decimal40precision from exact displayed float64 endpoint values; absolute return/mean tolerance1e-12",
+  "selection": "Alleligible fixed rows, no return filtering or sampling",
+  "do_not_import": [
+    "event_reference.py",
+    "run_study.py",
+    "adapter.py"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "symbol": "BRAI",
+  "effective_sessions": "2026-04-29",
+  "url": "https://www.sec.gov/Archives/edgar/data/2076975/000149315226016061/ex99-1.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:02.183120+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/2076975/000149315226016061/ex99-1.htm",
+  "redirects": [],
+  "sha256": "f1b3275ab436aef7910f7fc51773a7956bb7e7b7c0a3d30d1a41b7c20a730cdd",
+  "raw_file": "notice-BRAI-2026-04-29.f1b3275ab436aef7910f7fc51773a7956bb7e7b7c0a3d30d1a41b7c20a730cdd.raw.html",
+  "bytes": 11314,
+  "captured_at": "2026-09-28T19:14:02.532657+00:00",
+  "text_file": "notice-BRAI-2026-04-29.text.txt"
+}

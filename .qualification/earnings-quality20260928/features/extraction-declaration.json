@@ -1,0 +1,36 @@
+{
+  "schema": "original-cash-backing-feature-v1",
+  "declared_at_utc": "2026-09-28T23:37:42.045099+00:00",
+  "status": "declaration_for_review_before_corpus",
+  "source_only": true,
+  "prior_parser": {
+    "path": ".qualification\\filing-features20260928\\features.py",
+    "sha256": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f"
+  },
+  "design_sha256": "11f25c514e6bd8e75f00e5e4e27ba8a366dd02360a1efbdc1e063bbc6f17ae44",
+  "formula": "Q=((CFO_current_YTD-NI_current_YTD)-(CFO_prior_year_YTD-NI_prior_year_YTD))/prior_FY_assets",
+  "concepts": [
+    "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+    "us-gaap:NetIncomeLoss",
+    "us-gaap:Assets"
+  ],
+  "current_period": "Exact qualified original S fiscal YTD start and report_date; entity-wide USD CFO and NI must share these endpoints. Q1 duration84-98, Q2 168-196, Q3 252-294 inclusive days. No quarter subtraction, Q4 or later fact.",
+  "prior_period": "Unique period shared by exact CFO and NI; inclusive duration84*q through98*q; both endpoints357-371days earlier than current YTD; duration difference<=7days. Multiple matching periods or conflicting selected duplicate amounts unavailable.",
+  "assets": "Use same-accession already qualified original S positive priorFYAssets exactly fiscalYTDstart minus1day. No new/nearest denominator.",
+  "numeric": "Reuse frozen numeric/context/unit decoder. Require exactCIK, entity-wide no dimensions/segment/scenario, ISO4217USD; originalsign/scale/transform/nil handling and Decimal duplicate amount agreement unchanged. Preserve source bytes/hash and each original fact/context/unit span.",
+  "decoder_adapter": "Frozen parser hardcodes its concepts. Adapter locates only exact CFO facts, appends an in-memory synthetic name-alias copy to the unchanged original bytes and invokes the frozen decoder. All CFO fact identities/attributes/spans are restored to original bytes; context and unit locations stay unchanged because only appended content is synthetic. Internal name alias is numeric-decoder reuse, never a substitution of a financial concept or a modification of preserved sources. The original NI/Assets/S extraction remains unchanged.",
+  "clock_and_history": "Reuse frozen qualify_filing and build_features clocks/first-original/eight-prior-S history exactly. Q does not alter S status/history or require prior Qs. Every input record retained. q_status qualified/unavailable and q_reasons remain separate from status/feature_status/execution_status. joint_feature_status qualified only for qualified S, Q and execution.",
+  "failure_rules": "Any unavailable current S financial record leaves Q unavailable. Exact CFO/NI missingness, selected invalid values, conflicting periods or unit/context ambiguity are retained. No ProfitLoss, alternative cashflow, customtag, moderncompanyfacts, originalHTML or later accession fallback. No zero filling or winsorizing Q.",
+  "model_contract": "Provide unchanged S, new Q and event source/clock identities. Downstream owner joins only three predecision price inputs. All five recipes share complete five-input population while wider S population and Q gaps remain visible. No returns or models accessed by this module.",
+  "limits": [
+    "Q is a seasonal cash-backing-change proxy, not proof of accrual quality.",
+    "Exact NetIncomeLoss can be parent-attributable while operating CFO is consolidated; no fallback reconciles that semantic limitation.",
+    "Current filing prior-year comparator may incorporate revisions; older S innovations stay from their original accessions.",
+    "Inherited source clock and security/corporate-action limitations remain."
+  ],
+  "not_authorized_in_this_step": [
+    "new network capture",
+    "full corpus qualification",
+    "account fit or return evaluation"
+  ]
+}

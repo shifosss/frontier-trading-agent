@@ -1,0 +1,28 @@
+{
+  "symbol": "DIT",
+  "effective_session": "2026-03-23",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/DIT/bars?timeframe=1Day&start=2026-03-13T04%3A00%3A00%2B00%3A00&end=2026-04-03T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=split&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2026-03-13T04:00:00+00:00",
+    "end": "2026-04-03T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "split",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.324799+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "DIT-2026-03-23-split-1.a2d4ad6cff7e483684f429ddde2eee435de6ed50d61a24a5427a05addf81aad5.raw.json",
+  "sha256": "a2d4ad6cff7e483684f429ddde2eee435de6ed50d61a24a5427a05addf81aad5",
+  "bytes": 1462,
+  "captured_at": "2026-09-28T19:04:30.382635+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 15,
+  "response_symbol": "DIT",
+  "pagination_complete": true
+}

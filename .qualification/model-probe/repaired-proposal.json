@@ -1,0 +1,8 @@
+{
+  "name": "Exploratory raw-close mean trend",
+  "family": "trend",
+  "lookback": 20,
+  "price_basis": "raw",
+  "mechanism": "Hypothesis: closes above their trailing 20-session arithmetic mean indicate positive subsequent strategy returns. Use only contiguous daily spans without corporate actions; reset the lookback at each span boundary. After session t's raw close becomes available, target long if it exceeds the mean of raw closes t-19 through t, otherwise cash. Execute position changes at the first session open strictly after signal availability. Opening prices serve only as replay fills. No live orders or forecasts; exploratory only.",
+  "failure_condition": "Reject if mean daily strategy return is nonpositive on a chronologically held-out, action-free evaluation span fixed before testing, net of 10 basis points per entry or exit. Use open-to-open returns, zero cash return, no leverage, and exclude intervals crossing span boundaries."
+}

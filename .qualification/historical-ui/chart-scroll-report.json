@@ -1,0 +1,38 @@
+[
+  {
+    "width": 1440,
+    "client": 1160,
+    "scroll": 1160,
+    "plot": 1160,
+    "overflow": false,
+    "errors": [],
+    "app_mutations": []
+  },
+  {
+    "width": 768,
+    "client": 546,
+    "scroll": 930,
+    "plot": 930,
+    "overflow": false,
+    "errors": [],
+    "app_mutations": []
+  },
+  {
+    "width": 390,
+    "client": 360,
+    "scroll": 930,
+    "plot": 930,
+    "overflow": false,
+    "errors": [],
+    "app_mutations": []
+  },
+  {
+    "width": 320,
+    "client": 290,
+    "scroll": 930,
+    "plot": 930,
+    "overflow": false,
+    "errors": [],
+    "app_mutations": []
+  }
+]

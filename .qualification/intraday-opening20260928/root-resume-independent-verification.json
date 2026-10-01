@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-09-28T21:43:07.379832+00:00",
+  "root_launch_at": "2026-09-28T21:41:41.064608+00:00",
+  "processes": [
+    {
+      "pid": 43960,
+      "exit_code": 259,
+      "active": true,
+      "executable": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 49236,
+      "exit_code": 259,
+      "active": true,
+      "executable": "C:\\Python313\\python.exe"
+    }
+  ],
+  "capture_lock_held": true,
+  "latest_complete_progress": {
+    "phase": "running",
+    "pid": 49236,
+    "started_at": "2026-09-28T21:41:41.619324+00:00",
+    "request_sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+    "processed_sessions": 453,
+    "new_sessions": 142,
+    "updated_at": "2026-09-28T21:43:07.186783+00:00",
+    "new_requests": 142,
+    "last_session": "2017-10-18"
+  },
+  "new_worker_stderr_bytes": 0,
+  "new_worker_stdout_tail": [
+    "{\"processed_sessions\": 350, \"new_requests\": 39, \"last_session\": \"2017-05-23\"}",
+    "{\"processed_sessions\": 400, \"new_requests\": 89, \"last_session\": \"2017-08-03\"}",
+    "{\"processed_sessions\": 450, \"new_requests\": 139, \"last_session\": \"2017-10-13\"}"
+  ],
+  "limits": "Verifies process handles and progress after root launch tool returned; not proof of survival after all future task boundaries"
+}

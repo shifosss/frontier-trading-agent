@@ -1,0 +1,22 @@
+{
+  "declared_at": "2026-09-19T19:24:07.871609+00:00",
+  "url": "https://data.alpaca.markets/v2/stocks/quotes",
+  "params": {
+    "symbols": "AAPL,MSFT,F",
+    "start": "2024-11-29T17:59:00Z",
+    "end": "2024-11-29T18:00:00Z",
+    "asof": "2024-11-29",
+    "feed": "sip",
+    "sort": "asc",
+    "limit": 10000
+  },
+  "maximum_requests": 2,
+  "maximum_continuation_pages": 1,
+  "selection": "fixed earlier early-close source fixture, independent of strategy outcomes",
+  "analysis_window": "left-closed right-open; preserve any quote exactly at end separately",
+  "spread_formula": "10000*(ask-bid)/((ask+bid)/2)",
+  "count_weighting": "each observed mechanically valid noncrossed positive-price positive-size quote",
+  "duration_weighting": "last observed quote until next timestamp, capped at window end; leading and invalid intervals uncovered; incomplete pages do not extend the trailing quote",
+  "condition_policy": "preserve all quote conditions; no claim that mechanically valid quotes are executable",
+  "side_effects": "historical quotes only; no account/order/transfer/subscription access"
+}

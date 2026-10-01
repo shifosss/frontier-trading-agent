@@ -1,0 +1,80 @@
+{
+  "version": "etf-residual-reversal-v1",
+  "status": "strategy definition frozen before new ETF signals or outcomes; broker costs separately frozen before accounts",
+  "universe": ["DIA", "IWM", "QQQ", "XLE", "XLF", "XLI", "XLK", "XLP", "XLU", "XLV"],
+  "reference": "SPY",
+  "source": {
+    "inventory": ".qualification/options-access20260928/etf-source-inventory.json",
+    "capture_index": "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json",
+    "capture_workspace": "data/historical/capture-workspace",
+    "listing": "data/research/universe/snapshots/20260918T201012673731Z-2da49ecfd9bb.json",
+    "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
+    "price_start": "2016-01-04",
+    "price_end": "2026-01-16",
+    "network_requests": 0,
+    "membership": "fixed current-member research sample; no substitutions or retrospective membership claim",
+    "price_convention": "Existing Yahoo revised-vintage adjusted close for signals/mark ratios; provider-reported split reconstruction for nominal close and ATR; preserve every action record and missing session; no corporate-action cash-ledger qualification"
+  },
+  "signal": {
+    "return": "r[j,k] = log(adjusted[j,k]/adjusted[j,k-1])",
+    "fit_sessions": 60,
+    "formation_sessions": 2,
+    "fit_indices": "k=t-61 through t-2 inclusive, requiring 61 consecutive fitting prices t-62 through t-2",
+    "ols": "beta=sum((SPY_return-mean_SPY)*(ETF_return-mean_ETF))/sum((SPY_return-mean_SPY)^2); alpha=mean_ETF-beta*mean_SPY",
+    "residual_scale": "sqrt(sum(fitting_residual^2)/58)",
+    "formation_residual": "(r[j,t-1]-alpha-beta*r[SPY,t-1])+(r[j,t]-alpha-beta*r[SPY,t])",
+    "z": "formation_residual/(sqrt(2)*residual_scale)",
+    "threshold_inclusive": -2.0,
+    "ranking": "ascending z, then alphabetical symbol",
+    "availability": "all 63 consecutive adjusted closes t-62..t for ETF and SPY finite positive; current reconstructed nominal close and ATR finite positive; strictly positive finite SPY centered sum of squares and residual scale",
+    "roundoff_gate": "unavailable when residual L2 norm <=64*float64 epsilon*max(ETF fitting-return L2 norm,fitted-return L2 norm,float64 tiny); no variance floor, zero filling or adjusted threshold",
+    "trend_gate": "SPY adjusted close[t] > arithmetic mean of 200 consecutive finite positive SPY adjusted closes t-199..t; unavailable trend history means no trend-arm signal",
+    "interpretation": "z is a fixed residual-dislocation score, not a calibrated p-value or forecast; sqrt(2) scaling ignores serial covariance and fitted-parameter uncertainty"
+  },
+  "arms": [
+    {"name": "residual_reversal", "rule": "all shared-eligible ETFs with z<=-2"},
+    {"name": "residual_reversal_trend", "rule": "same reversal candidates and ranking, only when the declared SPY trend gate is known and true"},
+    {"name": "matched_count_control", "rule": "on an unfiltered reversal alert date, K is its candidate count; take the first K shared-eligible ETFs sorted by SHA256(control_seed+ISO_signal_session+':'+symbol), then symbol, independently of z rank; otherwise no candidates"}
+  ],
+  "control_seed": "frontier-etf-reversal-control-v1:",
+  "control_interpretation": "date/candidate-count matched and return-blind; may overlap reversal candidates; realized position count, risk sizing and exposure can differ; no exposure-matched causal-performance claim",
+  "timing": {
+    "decision": "official XNYS signal-session close plus one minute; daily bars treated as available at that historical clock under the existing retrospective-data assumption",
+    "first_signal": "2016-12-30",
+    "first_entry": "2017-01-03",
+    "last_entry": "2025-12-31",
+    "last_signal": "2025-12-30",
+    "fill": "next exchange-session close",
+    "holding_sessions": 3,
+    "exit": "entry session index plus three, independently per position",
+    "liquidation_tail_end": "2026-01-16",
+    "horizon_refinement": "Original proposal suggested two; unchanged cash engine accepts 1/3/5. Three selected before signals/outcomes to test short correction without shared constant mutation or an additional exit engine. Two-session formation remains unchanged."
+  },
+  "accounts": {
+    "capital_usd": [10000, 2000],
+    "primary_capital_usd": 10000,
+    "brokers": ["wealthsimple_usd", "moomoo_ca_us"],
+    "costs": "Both existing broker profiles use one uniform round-trip ETF allowance: ceil(maximum duration-weighted mean quoted spread in basis points across all 33 predeclared cells))+10 basis points. Quote coverage must qualify before freezing its numerical value; no profitable-outcome selection.",
+    "count": 12,
+    "cash_reference": "two flat nominal-cash references, zero modeled interest/fees, not additional fitted policies",
+    "position_limit": 5,
+    "position_nav_fraction": 0.2,
+    "atr_risk_nav_fraction": 0.005,
+    "atr_multiple": 2,
+    "atr_sessions": 14,
+    "sizing": "existing plan_entries whole shares, prior-close NAV/price/ATR, available settled cash plus scheduled settlements due by next opening; original fee-inclusive reservation retained; actual-fill quantity may only decrease",
+    "settlement": "existing historical USD T+3/T+2/T+1 exchange/bank intersection; no spending sale proceeds before settlement",
+    "drawdown_halt": "Starting peak is initial capital. Evaluate each close after due exits, fills and marks. At first drawdown >=30%, cancel newly pending entries without crediting cash (reservations were not debited), permanently disable new entries, and advance each held exit to min(original exit,next exchange-session close). Retain trigger NAV/peak, canceled intents and original/actual exits; preserve missing-price failure and any gap/friction overshoot.",
+    "continuous": "one unreset account per arm/capital/broker across the full entry period; no deposits or calendar-year resets",
+    "correlation_limit": null,
+    "missing_required_prices": "invalidate account and preserve ledger prefix; never use future entry/exit availability to remove or rerank a current candidate",
+    "restrictions": "cash-funded long ETFs only; no borrowing, ETF shorts, options, inverse/leveraged substitution or modification of reserved ETF portfolios/paper policy"
+  },
+  "reporting": {
+    "all_paths": true,
+    "calendar_weeks": "retain full account weekly series including idle/loss weeks; report fractions >=5/10/15%, median/worst week, longest consecutive losing-week streak; initialization and liquidation-tail weeks labelled",
+    "other": ["trade ledger", "sampled-close drawdown and overshoot", "weekly/monthly/yearly stability", "fees", "exposure", "integer-affordability rejections", "issuer contribution", "signal and source missing denominators", "control pairing limits"],
+    "refutation": "cash reversal is unsupported if declared net account returns fail to exceed cash, if excess over the matched-count control is absent or unstable across years, or if the result depends on one ETF/short episode or violates the drawdown gate. Trend filtering is unsupported if its fee/risk-adjusted improvement is absent; lower losses with substantially lower exposure do not establish better alpha.",
+    "qualification": "exploratory current-member revised-vintage study; existing historical prices have already supported other research and are not an untouched holdout; no proof of weekly target or deployable profitability"
+  }
+}

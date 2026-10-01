@@ -1,0 +1,330 @@
+[
+  {
+    "symbol": "SPY",
+    "name": "S&P 500 ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "us-broad",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "QQQ",
+    "name": "Nasdaq 100 ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "technology",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "IWM",
+    "name": "US small-cap ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "us-small-cap",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "DIA",
+    "name": "US blue-chip ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "us-broad",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLK",
+    "name": "US technology ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "technology",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLF",
+    "name": "US financials ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "financials",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLE",
+    "name": "US energy ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "energy",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLV",
+    "name": "US healthcare ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "healthcare",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLI",
+    "name": "US industrials ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "industrials",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLP",
+    "name": "US staples ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "staples",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XLU",
+    "name": "US utilities ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "utilities",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "GLD",
+    "name": "Gold trust",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "gold",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "TLT",
+    "name": "US long Treasury ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "long-bonds",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "SHY",
+    "name": "US short Treasury ETF",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "short-bonds",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "AAPL",
+    "name": "Apple",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "technology",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "technology",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "technology",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "AMZN",
+    "name": "Amazon",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "consumer-discretionary",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "GOOGL",
+    "name": "Alphabet",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "communication",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "META",
+    "name": "Meta Platforms",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "communication",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "AVGO",
+    "name": "Broadcom",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "technology",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "JPM",
+    "name": "JPMorgan Chase",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "financials",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "COST",
+    "name": "Costco",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "staples",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "LLY",
+    "name": "Eli Lilly",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "healthcare",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "XOM",
+    "name": "Exxon Mobil",
+    "currency": "USD",
+    "calendar": "XNYS",
+    "group": "energy",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "XIU.TO",
+    "name": "Canada large-cap ETF",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "canada-broad",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XIC.TO",
+    "name": "Canada broad-market ETF",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "canada-broad",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XQQ.TO",
+    "name": "CAD-hedged Nasdaq 100 ETF",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "technology",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "XEF.TO",
+    "name": "Developed markets ex North America ETF",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "international",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "ZAG.TO",
+    "name": "Canadian aggregate bond ETF",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "canada-bonds",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "CASH.TO",
+    "name": "CAD savings ETF",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "cad-savings",
+    "asset_type": "etf"
+  },
+  {
+    "symbol": "RY.TO",
+    "name": "Royal Bank of Canada",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "financials",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "TD.TO",
+    "name": "Toronto-Dominion Bank",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "financials",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "BN.TO",
+    "name": "Brookfield Corporation",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "financials",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "SHOP.TO",
+    "name": "Shopify",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "technology",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "CSU.TO",
+    "name": "Constellation Software",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "technology",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "CNQ.TO",
+    "name": "Canadian Natural Resources",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "energy",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "ENB.TO",
+    "name": "Enbridge",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "energy",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "CNR.TO",
+    "name": "Canadian National Railway",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "industrials",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "CP.TO",
+    "name": "Canadian Pacific Kansas City",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "industrials",
+    "asset_type": "stock"
+  },
+  {
+    "symbol": "WCN.TO",
+    "name": "Waste Connections",
+    "currency": "CAD",
+    "calendar": "XTSE",
+    "group": "industrials",
+    "asset_type": "stock"
+  }
+]

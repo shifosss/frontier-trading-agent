@@ -1,0 +1,122 @@
+{
+  "source_run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "original_capture_run_id": "90af4c840aad48f7ab58fba7a682f96a",
+  "snapshot_id": "20260918T201012673731Z-2da49ecfd9bb",
+  "captured_at": "2026-09-18T20:10:12.673731+00:00",
+  "snapshot_path": "data\\research\\universe\\snapshots\\20260918T201012673731Z-2da49ecfd9bb.json",
+  "snapshot_file_sha256": "d426bedf1b9bdce6ded0adab036d52e7f8bddec9bb1603630b64773f0dac43cc",
+  "snapshot_sorted_json_sha256": "0a7835cad3d64ce2c7fc961c83b701b71a343539c43149bea068898b9a4d5dc9",
+  "snapshot_definition_identity_verified": true,
+  "membership_basis": "current listings at discovery",
+  "historical_membership": false,
+  "prepared_usd_instruments": 5675,
+  "prepared_stock_labels": 5661,
+  "prepared_etf_labels": 14,
+  "distinct_eligible_symbols_verified_from_saved_forecast_columns": 4434,
+  "eligible_asset_type_labels": {
+    "stock": 4434
+  },
+  "eligible_etf_flagged": 0,
+  "examples": {
+    "EXG": {
+      "specification": {
+        "source_id": "other_us",
+        "source_symbol": "EXG",
+        "symbol": "EXG",
+        "name": "Eaton Vance Tax-Managed Global Diversified Equity Income Fund Common Shares of Beneficial Interest",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "ever_eligible": true
+    },
+    "EVV": {
+      "specification": {
+        "source_id": "other_us",
+        "source_symbol": "EVV",
+        "symbol": "EVV",
+        "name": "Eaton Vance Limited Duration Income Fund Common Shares of Beneficial Interest",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE American",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "ever_eligible": true
+    },
+    "AMH": {
+      "specification": {
+        "source_id": "other_us",
+        "source_symbol": "AMH",
+        "symbol": "AMH",
+        "name": "American Homes 4 Rent Common Shares of Beneficial Interest",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "ever_eligible": true
+    },
+    "KEP": {
+      "specification": {
+        "source_id": "other_us",
+        "source_symbol": "KEP",
+        "symbol": "KEP",
+        "name": "Korea Electric Power Corporation Common Stock",
+        "currency": "USD",
+        "calendar": "XNYS",
+        "exchange": "NYSE",
+        "is_test": false,
+        "is_etf": false,
+        "financial_status": null,
+        "next_shares": false,
+        "symbol_identity": "exchange_security_symbol",
+        "asset_type": "stock",
+        "group": "unclassified-us-equity",
+        "security_type": "common_ordinary_or_equity_depositary_shares"
+      },
+      "ever_eligible": true
+    }
+  },
+  "raw_us_directory_sources": [
+    {
+      "source_id": "nasdaq",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "path": "data/research/universe/raw/nasdaq.e2ea12742cb0d13eb22aa4880540912205dc5bf828311867cc8277c942a5cbef.txt",
+      "sha256": "e2ea12742cb0d13eb22aa4880540912205dc5bf828311867cc8277c942a5cbef",
+      "source_vintage": "0918202615:41",
+      "observed_rows": 5623
+    },
+    {
+      "source_id": "other_us",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt",
+      "path": "data/research/universe/raw/other_us.73e39cbb8bf16f68493d68534fb7c689e0ac3edd50ca15da0f8216e76ac5d4e9.txt",
+      "sha256": "73e39cbb8bf16f68493d68534fb7c689e0ac3edd50ca15da0f8216e76ac5d4e9",
+      "source_vintage": "0918202615:41",
+      "observed_rows": 7635
+    }
+  ],
+  "classification_limit": "stock is a coarse parser label, not verified operating-company, issuer domicile, CEF, REIT or ADR taxonomy",
+  "outcomes_changed": false
+}

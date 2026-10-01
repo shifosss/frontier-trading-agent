@@ -1,0 +1,31 @@
+{
+  "frozen_at_utc": "2026-09-28T22:33:43.744032+00:00",
+  "files": {
+    "capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb",
+    "identity-raw/BANF-submissions.bin": "f27388aa6fa8b032567dbc890d36835ae208ff8d8b192ea9d56f8356d29eb5ef",
+    "identity-raw/HRL-submissions.bin": "2ba0992e6944335be8c69c4bf7bcf7adc986e92a6f2f9f559a3f34a76b0d55f4",
+    "identity-raw/T-submissions.bin": "84eccf0171172ec4fe29525f0b3c7338b8268677e7ea36781301a1d912c7c56f",
+    "identity-request.json": "c06751e958a1a1a2a0db67124e0efe537cfd5efcbe8138acbb96fbec62dca4b1",
+    "identity-requests.json": "03c112f760969239c4b148d85bed9f5792d97d9e57f4ebbed5ea2d34e1e57ece",
+    "identity-verification.json": "312fbf23fd99f9dceafa8c8993e143dd5076b5f5c08613f4322ecf66dc8d077b",
+    "README.md": "ba3c335b700cb5af5fcb7c8ccb9571338cfbd4fe8c464872ce8d5afcdb06da5e",
+    "request.json": "dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764",
+    "source-reference-manifest.json": "d432b6503fee93d9cf285786f98fa603956ccefa67570897ac53d0a8c76710f4",
+    "test-result.json": "a4c1c5f06881971dad16b70a6f85bbe335646ac32317e84fdcea9035860234ef",
+    "test_capture.py": "c4587ccaea975b5631b86b89bd791f2bf9391c7de75e6455741e22bbf75d3e52"
+  },
+  "durable_writer_source": "src/frontier/historical_lab.py",
+  "durable_writer_source_sha256": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+  "network_scope_started": false,
+  "identity_probes_already_completed": 3,
+  "tests": 14,
+  "independent_review": "passed; no remaining material finding",
+  "launch_python": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+  "launch_arguments": [
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\capture.py"
+  ],
+  "working_directory": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent"
+}

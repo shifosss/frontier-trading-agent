@@ -1,0 +1,103 @@
+{
+  "seed": 95117,
+  "cases": [
+    {
+      "currency": "USD",
+      "horizon": 1,
+      "cost_bps": 20,
+      "sessions": 252,
+      "trades": 704,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "USD",
+      "horizon": 1,
+      "cost_bps": 100,
+      "sessions": 252,
+      "trades": 703,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "USD",
+      "horizon": 3,
+      "cost_bps": 20,
+      "sessions": 252,
+      "trades": 361,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "USD",
+      "horizon": 3,
+      "cost_bps": 100,
+      "sessions": 252,
+      "trades": 363,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "USD",
+      "horizon": 5,
+      "cost_bps": 20,
+      "sessions": 252,
+      "trades": 231,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "USD",
+      "horizon": 5,
+      "cost_bps": 100,
+      "sessions": 252,
+      "trades": 231,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "CAD",
+      "horizon": 1,
+      "cost_bps": 20,
+      "sessions": 252,
+      "trades": 719,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "CAD",
+      "horizon": 1,
+      "cost_bps": 100,
+      "sessions": 252,
+      "trades": 712,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "CAD",
+      "horizon": 3,
+      "cost_bps": 20,
+      "sessions": 252,
+      "trades": 373,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "CAD",
+      "horizon": 3,
+      "cost_bps": 100,
+      "sessions": 252,
+      "trades": 373,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "CAD",
+      "horizon": 5,
+      "cost_bps": 20,
+      "sessions": 252,
+      "trades": 231,
+      "independent_daily_ledger_reconciles": true
+    },
+    {
+      "currency": "CAD",
+      "horizon": 5,
+      "cost_bps": 100,
+      "sessions": 252,
+      "trades": 230,
+      "independent_daily_ledger_reconciles": true
+    }
+  ],
+  "source_sha256": "4ae11c9396ef79ec47cbf0b654b16826696dd9e51be09010271388f6104151c8",
+  "calendar_sha256": "fbaaec13818dc3fa5393f4ca94247edee58d642dd50d7eed8ce83565f88d52a8"
+}

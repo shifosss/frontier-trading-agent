@@ -1,0 +1,21 @@
+{
+  "calibration_rows": 23616,
+  "calibration_dates": 246,
+  "latest_symbols": 2878,
+  "date_head_rows": 8856,
+  "date_decile_rows": 88560,
+  "latest_forecast_rows": 51804,
+  "date_score_rows": 4428,
+  "all_saved_predictions_finite": true,
+  "calibrated_equals_extra_trees_all_heads": true,
+  "six_heads_purged_and_complete": true,
+  "all_decile_samples_accounted_for": true,
+  "status": "passed",
+  "failed_checks": [],
+  "missing_tests": [
+    "No untouched later holdout exists in this saved September 18 candidate capture.",
+    "No realized latest outcomes, broker fills or portfolio performance are inferred.",
+    "Sampled calibration covers 96 stocks/date, not every eligible calibration stock.",
+    "Extreme targets remain unaltered; corporate-action/vendor validation is not performed."
+  ]
+}

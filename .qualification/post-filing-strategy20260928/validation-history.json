@@ -1,0 +1,12 @@
+{
+  "initial_run": {
+    "tests": 11,
+    "passed": 10,
+    "failed": 1,
+    "test": "test_sale_cash_waits_for_next_opening_settlement",
+    "observed": "Settled residue4.016, fixture incorrectly required<2",
+    "reason": "Shared engine lowers later same-close quantities as entry fees reduce NAV; residue remains below oneUSD100share",
+    "change": "Assert inability to fund one share, retain exact no-same-day-entry and next-open-settlement checks",
+    "production_change": false
+  }
+}

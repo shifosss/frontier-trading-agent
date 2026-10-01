@@ -1,0 +1,10783 @@
+{
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "prepared_symbols": 5675,
+  "distinct_eligible_symbols": 4434,
+  "candidate_rows": 3133575,
+  "minimum_per_session": 470,
+  "median_per_session": 1104.0,
+  "maximum_per_session": 2351,
+  "sessions": [
+    {
+      "session": "2016-01-04",
+      "eligible": 860
+    },
+    {
+      "session": "2016-01-05",
+      "eligible": 843
+    },
+    {
+      "session": "2016-01-06",
+      "eligible": 850
+    },
+    {
+      "session": "2016-01-07",
+      "eligible": 901
+    },
+    {
+      "session": "2016-01-08",
+      "eligible": 975
+    },
+    {
+      "session": "2016-01-11",
+      "eligible": 925
+    },
+    {
+      "session": "2016-01-12",
+      "eligible": 962
+    },
+    {
+      "session": "2016-01-13",
+      "eligible": 986
+    },
+    {
+      "session": "2016-01-14",
+      "eligible": 1041
+    },
+    {
+      "session": "2016-01-15",
+      "eligible": 947
+    },
+    {
+      "session": "2016-01-19",
+      "eligible": 985
+    },
+    {
+      "session": "2016-01-20",
+      "eligible": 870
+    },
+    {
+      "session": "2016-01-21",
+      "eligible": 888
+    },
+    {
+      "session": "2016-01-22",
+      "eligible": 782
+    },
+    {
+      "session": "2016-01-25",
+      "eligible": 835
+    },
+    {
+      "session": "2016-01-26",
+      "eligible": 617
+    },
+    {
+      "session": "2016-01-27",
+      "eligible": 724
+    },
+    {
+      "session": "2016-01-28",
+      "eligible": 713
+    },
+    {
+      "session": "2016-01-29",
+      "eligible": 703
+    },
+    {
+      "session": "2016-02-01",
+      "eligible": 655
+    },
+    {
+      "session": "2016-02-02",
+      "eligible": 820
+    },
+    {
+      "session": "2016-02-03",
+      "eligible": 842
+    },
+    {
+      "session": "2016-02-04",
+      "eligible": 743
+    },
+    {
+      "session": "2016-02-05",
+      "eligible": 790
+    },
+    {
+      "session": "2016-02-08",
+      "eligible": 818
+    },
+    {
+      "session": "2016-02-09",
+      "eligible": 822
+    },
+    {
+      "session": "2016-02-10",
+      "eligible": 805
+    },
+    {
+      "session": "2016-02-11",
+      "eligible": 870
+    },
+    {
+      "session": "2016-02-12",
+      "eligible": 832
+    },
+    {
+      "session": "2016-02-16",
+      "eligible": 680
+    },
+    {
+      "session": "2016-02-17",
+      "eligible": 614
+    },
+    {
+      "session": "2016-02-18",
+      "eligible": 639
+    },
+    {
+      "session": "2016-02-19",
+      "eligible": 598
+    },
+    {
+      "session": "2016-02-22",
+      "eligible": 611
+    },
+    {
+      "session": "2016-02-23",
+      "eligible": 636
+    },
+    {
+      "session": "2016-02-24",
+      "eligible": 629
+    },
+    {
+      "session": "2016-02-25",
+      "eligible": 733
+    },
+    {
+      "session": "2016-02-26",
+      "eligible": 649
+    },
+    {
+      "session": "2016-02-29",
+      "eligible": 577
+    },
+    {
+      "session": "2016-03-01",
+      "eligible": 615
+    },
+    {
+      "session": "2016-03-02",
+      "eligible": 615
+    },
+    {
+      "session": "2016-03-03",
+      "eligible": 559
+    },
+    {
+      "session": "2016-03-04",
+      "eligible": 620
+    },
+    {
+      "session": "2016-03-07",
+      "eligible": 640
+    },
+    {
+      "session": "2016-03-08",
+      "eligible": 636
+    },
+    {
+      "session": "2016-03-09",
+      "eligible": 676
+    },
+    {
+      "session": "2016-03-10",
+      "eligible": 822
+    },
+    {
+      "session": "2016-03-11",
+      "eligible": 751
+    },
+    {
+      "session": "2016-03-14",
+      "eligible": 886
+    },
+    {
+      "session": "2016-03-15",
+      "eligible": 901
+    },
+    {
+      "session": "2016-03-16",
+      "eligible": 816
+    },
+    {
+      "session": "2016-03-17",
+      "eligible": 621
+    },
+    {
+      "session": "2016-03-18",
+      "eligible": 718
+    },
+    {
+      "session": "2016-03-21",
+      "eligible": 724
+    },
+    {
+      "session": "2016-03-22",
+      "eligible": 633
+    },
+    {
+      "session": "2016-03-23",
+      "eligible": 817
+    },
+    {
+      "session": "2016-03-24",
+      "eligible": 919
+    },
+    {
+      "session": "2016-03-28",
+      "eligible": 899
+    },
+    {
+      "session": "2016-03-29",
+      "eligible": 678
+    },
+    {
+      "session": "2016-03-30",
+      "eligible": 667
+    },
+    {
+      "session": "2016-03-31",
+      "eligible": 470
+    },
+    {
+      "session": "2016-04-01",
+      "eligible": 573
+    },
+    {
+      "session": "2016-04-04",
+      "eligible": 728
+    },
+    {
+      "session": "2016-04-05",
+      "eligible": 920
+    },
+    {
+      "session": "2016-04-06",
+      "eligible": 935
+    },
+    {
+      "session": "2016-04-07",
+      "eligible": 967
+    },
+    {
+      "session": "2016-04-08",
+      "eligible": 830
+    },
+    {
+      "session": "2016-04-11",
+      "eligible": 721
+    },
+    {
+      "session": "2016-04-12",
+      "eligible": 708
+    },
+    {
+      "session": "2016-04-13",
+      "eligible": 539
+    },
+    {
+      "session": "2016-04-14",
+      "eligible": 588
+    },
+    {
+      "session": "2016-04-15",
+      "eligible": 552
+    },
+    {
+      "session": "2016-04-18",
+      "eligible": 600
+    },
+    {
+      "session": "2016-04-19",
+      "eligible": 609
+    },
+    {
+      "session": "2016-04-20",
+      "eligible": 749
+    },
+    {
+      "session": "2016-04-21",
+      "eligible": 752
+    },
+    {
+      "session": "2016-04-22",
+      "eligible": 736
+    },
+    {
+      "session": "2016-04-25",
+      "eligible": 777
+    },
+    {
+      "session": "2016-04-26",
+      "eligible": 637
+    },
+    {
+      "session": "2016-04-27",
+      "eligible": 578
+    },
+    {
+      "session": "2016-04-28",
+      "eligible": 617
+    },
+    {
+      "session": "2016-04-29",
+      "eligible": 755
+    },
+    {
+      "session": "2016-05-02",
+      "eligible": 684
+    },
+    {
+      "session": "2016-05-03",
+      "eligible": 926
+    },
+    {
+      "session": "2016-05-04",
+      "eligible": 960
+    },
+    {
+      "session": "2016-05-05",
+      "eligible": 934
+    },
+    {
+      "session": "2016-05-06",
+      "eligible": 922
+    },
+    {
+      "session": "2016-05-09",
+      "eligible": 921
+    },
+    {
+      "session": "2016-05-10",
+      "eligible": 872
+    },
+    {
+      "session": "2016-05-11",
+      "eligible": 799
+    },
+    {
+      "session": "2016-05-12",
+      "eligible": 801
+    },
+    {
+      "session": "2016-05-13",
+      "eligible": 823
+    },
+    {
+      "session": "2016-05-16",
+      "eligible": 775
+    },
+    {
+      "session": "2016-05-17",
+      "eligible": 796
+    },
+    {
+      "session": "2016-05-18",
+      "eligible": 816
+    },
+    {
+      "session": "2016-05-19",
+      "eligible": 808
+    },
+    {
+      "session": "2016-05-20",
+      "eligible": 710
+    },
+    {
+      "session": "2016-05-23",
+      "eligible": 721
+    },
+    {
+      "session": "2016-05-24",
+      "eligible": 689
+    },
+    {
+      "session": "2016-05-25",
+      "eligible": 636
+    },
+    {
+      "session": "2016-05-26",
+      "eligible": 613
+    },
+    {
+      "session": "2016-05-27",
+      "eligible": 646
+    },
+    {
+      "session": "2016-05-31",
+      "eligible": 577
+    },
+    {
+      "session": "2016-06-01",
+      "eligible": 625
+    },
+    {
+      "session": "2016-06-02",
+      "eligible": 616
+    },
+    {
+      "session": "2016-06-03",
+      "eligible": 590
+    },
+    {
+      "session": "2016-06-06",
+      "eligible": 577
+    },
+    {
+      "session": "2016-06-07",
+      "eligible": 620
+    },
+    {
+      "session": "2016-06-08",
+      "eligible": 605
+    },
+    {
+      "session": "2016-06-09",
+      "eligible": 718
+    },
+    {
+      "session": "2016-06-10",
+      "eligible": 792
+    },
+    {
+      "session": "2016-06-13",
+      "eligible": 896
+    },
+    {
+      "session": "2016-06-14",
+      "eligible": 919
+    },
+    {
+      "session": "2016-06-15",
+      "eligible": 904
+    },
+    {
+      "session": "2016-06-16",
+      "eligible": 891
+    },
+    {
+      "session": "2016-06-17",
+      "eligible": 787
+    },
+    {
+      "session": "2016-06-20",
+      "eligible": 636
+    },
+    {
+      "session": "2016-06-21",
+      "eligible": 691
+    },
+    {
+      "session": "2016-06-22",
+      "eligible": 753
+    },
+    {
+      "session": "2016-06-23",
+      "eligible": 640
+    },
+    {
+      "session": "2016-06-24",
+      "eligible": 858
+    },
+    {
+      "session": "2016-06-27",
+      "eligible": 1054
+    },
+    {
+      "session": "2016-06-28",
+      "eligible": 1029
+    },
+    {
+      "session": "2016-06-29",
+      "eligible": 1020
+    },
+    {
+      "session": "2016-06-30",
+      "eligible": 1089
+    },
+    {
+      "session": "2016-07-01",
+      "eligible": 826
+    },
+    {
+      "session": "2016-07-05",
+      "eligible": 720
+    },
+    {
+      "session": "2016-07-06",
+      "eligible": 764
+    },
+    {
+      "session": "2016-07-07",
+      "eligible": 797
+    },
+    {
+      "session": "2016-07-08",
+      "eligible": 771
+    },
+    {
+      "session": "2016-07-11",
+      "eligible": 661
+    },
+    {
+      "session": "2016-07-12",
+      "eligible": 544
+    },
+    {
+      "session": "2016-07-13",
+      "eligible": 575
+    },
+    {
+      "session": "2016-07-14",
+      "eligible": 631
+    },
+    {
+      "session": "2016-07-15",
+      "eligible": 680
+    },
+    {
+      "session": "2016-07-18",
+      "eligible": 748
+    },
+    {
+      "session": "2016-07-19",
+      "eligible": 872
+    },
+    {
+      "session": "2016-07-20",
+      "eligible": 818
+    },
+    {
+      "session": "2016-07-21",
+      "eligible": 784
+    },
+    {
+      "session": "2016-07-22",
+      "eligible": 750
+    },
+    {
+      "session": "2016-07-25",
+      "eligible": 699
+    },
+    {
+      "session": "2016-07-26",
+      "eligible": 599
+    },
+    {
+      "session": "2016-07-27",
+      "eligible": 652
+    },
+    {
+      "session": "2016-07-28",
+      "eligible": 648
+    },
+    {
+      "session": "2016-07-29",
+      "eligible": 721
+    },
+    {
+      "session": "2016-08-01",
+      "eligible": 784
+    },
+    {
+      "session": "2016-08-02",
+      "eligible": 953
+    },
+    {
+      "session": "2016-08-03",
+      "eligible": 897
+    },
+    {
+      "session": "2016-08-04",
+      "eligible": 927
+    },
+    {
+      "session": "2016-08-05",
+      "eligible": 882
+    },
+    {
+      "session": "2016-08-08",
+      "eligible": 846
+    },
+    {
+      "session": "2016-08-09",
+      "eligible": 760
+    },
+    {
+      "session": "2016-08-10",
+      "eligible": 743
+    },
+    {
+      "session": "2016-08-11",
+      "eligible": 738
+    },
+    {
+      "session": "2016-08-12",
+      "eligible": 778
+    },
+    {
+      "session": "2016-08-15",
+      "eligible": 722
+    },
+    {
+      "session": "2016-08-16",
+      "eligible": 776
+    },
+    {
+      "session": "2016-08-17",
+      "eligible": 811
+    },
+    {
+      "session": "2016-08-18",
+      "eligible": 721
+    },
+    {
+      "session": "2016-08-19",
+      "eligible": 681
+    },
+    {
+      "session": "2016-08-22",
+      "eligible": 722
+    },
+    {
+      "session": "2016-08-23",
+      "eligible": 606
+    },
+    {
+      "session": "2016-08-24",
+      "eligible": 590
+    },
+    {
+      "session": "2016-08-25",
+      "eligible": 618
+    },
+    {
+      "session": "2016-08-26",
+      "eligible": 682
+    },
+    {
+      "session": "2016-08-29",
+      "eligible": 684
+    },
+    {
+      "session": "2016-08-30",
+      "eligible": 731
+    },
+    {
+      "session": "2016-08-31",
+      "eligible": 703
+    },
+    {
+      "session": "2016-09-01",
+      "eligible": 736
+    },
+    {
+      "session": "2016-09-02",
+      "eligible": 581
+    },
+    {
+      "session": "2016-09-06",
+      "eligible": 673
+    },
+    {
+      "session": "2016-09-07",
+      "eligible": 690
+    },
+    {
+      "session": "2016-09-08",
+      "eligible": 687
+    },
+    {
+      "session": "2016-09-09",
+      "eligible": 773
+    },
+    {
+      "session": "2016-09-12",
+      "eligible": 936
+    },
+    {
+      "session": "2016-09-13",
+      "eligible": 945
+    },
+    {
+      "session": "2016-09-14",
+      "eligible": 1008
+    },
+    {
+      "session": "2016-09-15",
+      "eligible": 982
+    },
+    {
+      "session": "2016-09-16",
+      "eligible": 989
+    },
+    {
+      "session": "2016-09-19",
+      "eligible": 837
+    },
+    {
+      "session": "2016-09-20",
+      "eligible": 774
+    },
+    {
+      "session": "2016-09-21",
+      "eligible": 730
+    },
+    {
+      "session": "2016-09-22",
+      "eligible": 670
+    },
+    {
+      "session": "2016-09-23",
+      "eligible": 603
+    },
+    {
+      "session": "2016-09-26",
+      "eligible": 717
+    },
+    {
+      "session": "2016-09-27",
+      "eligible": 692
+    },
+    {
+      "session": "2016-09-28",
+      "eligible": 703
+    },
+    {
+      "session": "2016-09-29",
+      "eligible": 828
+    },
+    {
+      "session": "2016-09-30",
+      "eligible": 811
+    },
+    {
+      "session": "2016-10-03",
+      "eligible": 795
+    },
+    {
+      "session": "2016-10-04",
+      "eligible": 749
+    },
+    {
+      "session": "2016-10-05",
+      "eligible": 744
+    },
+    {
+      "session": "2016-10-06",
+      "eligible": 713
+    },
+    {
+      "session": "2016-10-07",
+      "eligible": 802
+    },
+    {
+      "session": "2016-10-10",
+      "eligible": 787
+    },
+    {
+      "session": "2016-10-11",
+      "eligible": 820
+    },
+    {
+      "session": "2016-10-12",
+      "eligible": 766
+    },
+    {
+      "session": "2016-10-13",
+      "eligible": 847
+    },
+    {
+      "session": "2016-10-14",
+      "eligible": 798
+    },
+    {
+      "session": "2016-10-17",
+      "eligible": 786
+    },
+    {
+      "session": "2016-10-18",
+      "eligible": 734
+    },
+    {
+      "session": "2016-10-19",
+      "eligible": 730
+    },
+    {
+      "session": "2016-10-20",
+      "eligible": 737
+    },
+    {
+      "session": "2016-10-21",
+      "eligible": 755
+    },
+    {
+      "session": "2016-10-24",
+      "eligible": 768
+    },
+    {
+      "session": "2016-10-25",
+      "eligible": 845
+    },
+    {
+      "session": "2016-10-26",
+      "eligible": 896
+    },
+    {
+      "session": "2016-10-27",
+      "eligible": 981
+    },
+    {
+      "session": "2016-10-28",
+      "eligible": 915
+    },
+    {
+      "session": "2016-10-31",
+      "eligible": 865
+    },
+    {
+      "session": "2016-11-01",
+      "eligible": 856
+    },
+    {
+      "session": "2016-11-02",
+      "eligible": 886
+    },
+    {
+      "session": "2016-11-03",
+      "eligible": 784
+    },
+    {
+      "session": "2016-11-04",
+      "eligible": 787
+    },
+    {
+      "session": "2016-11-07",
+      "eligible": 869
+    },
+    {
+      "session": "2016-11-08",
+      "eligible": 833
+    },
+    {
+      "session": "2016-11-09",
+      "eligible": 838
+    },
+    {
+      "session": "2016-11-10",
+      "eligible": 957
+    },
+    {
+      "session": "2016-11-11",
+      "eligible": 995
+    },
+    {
+      "session": "2016-11-14",
+      "eligible": 975
+    },
+    {
+      "session": "2016-11-15",
+      "eligible": 989
+    },
+    {
+      "session": "2016-11-16",
+      "eligible": 878
+    },
+    {
+      "session": "2016-11-17",
+      "eligible": 765
+    },
+    {
+      "session": "2016-11-18",
+      "eligible": 762
+    },
+    {
+      "session": "2016-11-21",
+      "eligible": 834
+    },
+    {
+      "session": "2016-11-22",
+      "eligible": 704
+    },
+    {
+      "session": "2016-11-23",
+      "eligible": 670
+    },
+    {
+      "session": "2016-11-25",
+      "eligible": 569
+    },
+    {
+      "session": "2016-11-28",
+      "eligible": 714
+    },
+    {
+      "session": "2016-11-29",
+      "eligible": 733
+    },
+    {
+      "session": "2016-11-30",
+      "eligible": 884
+    },
+    {
+      "session": "2016-12-01",
+      "eligible": 935
+    },
+    {
+      "session": "2016-12-02",
+      "eligible": 976
+    },
+    {
+      "session": "2016-12-05",
+      "eligible": 870
+    },
+    {
+      "session": "2016-12-06",
+      "eligible": 769
+    },
+    {
+      "session": "2016-12-07",
+      "eligible": 698
+    },
+    {
+      "session": "2016-12-08",
+      "eligible": 570
+    },
+    {
+      "session": "2016-12-09",
+      "eligible": 673
+    },
+    {
+      "session": "2016-12-12",
+      "eligible": 829
+    },
+    {
+      "session": "2016-12-13",
+      "eligible": 1004
+    },
+    {
+      "session": "2016-12-14",
+      "eligible": 1080
+    },
+    {
+      "session": "2016-12-15",
+      "eligible": 1149
+    },
+    {
+      "session": "2016-12-16",
+      "eligible": 1152
+    },
+    {
+      "session": "2016-12-19",
+      "eligible": 1064
+    },
+    {
+      "session": "2016-12-20",
+      "eligible": 959
+    },
+    {
+      "session": "2016-12-21",
+      "eligible": 829
+    },
+    {
+      "session": "2016-12-22",
+      "eligible": 894
+    },
+    {
+      "session": "2016-12-23",
+      "eligible": 806
+    },
+    {
+      "session": "2016-12-27",
+      "eligible": 796
+    },
+    {
+      "session": "2016-12-28",
+      "eligible": 869
+    },
+    {
+      "session": "2016-12-29",
+      "eligible": 783
+    },
+    {
+      "session": "2016-12-30",
+      "eligible": 690
+    },
+    {
+      "session": "2017-01-03",
+      "eligible": 725
+    },
+    {
+      "session": "2017-01-04",
+      "eligible": 574
+    },
+    {
+      "session": "2017-01-05",
+      "eligible": 673
+    },
+    {
+      "session": "2017-01-06",
+      "eligible": 839
+    },
+    {
+      "session": "2017-01-09",
+      "eligible": 952
+    },
+    {
+      "session": "2017-01-10",
+      "eligible": 854
+    },
+    {
+      "session": "2017-01-11",
+      "eligible": 987
+    },
+    {
+      "session": "2017-01-12",
+      "eligible": 911
+    },
+    {
+      "session": "2017-01-13",
+      "eligible": 743
+    },
+    {
+      "session": "2017-01-17",
+      "eligible": 714
+    },
+    {
+      "session": "2017-01-18",
+      "eligible": 768
+    },
+    {
+      "session": "2017-01-19",
+      "eligible": 854
+    },
+    {
+      "session": "2017-01-20",
+      "eligible": 812
+    },
+    {
+      "session": "2017-01-23",
+      "eligible": 867
+    },
+    {
+      "session": "2017-01-24",
+      "eligible": 675
+    },
+    {
+      "session": "2017-01-25",
+      "eligible": 811
+    },
+    {
+      "session": "2017-01-26",
+      "eligible": 825
+    },
+    {
+      "session": "2017-01-27",
+      "eligible": 859
+    },
+    {
+      "session": "2017-01-30",
+      "eligible": 937
+    },
+    {
+      "session": "2017-01-31",
+      "eligible": 933
+    },
+    {
+      "session": "2017-02-01",
+      "eligible": 965
+    },
+    {
+      "session": "2017-02-02",
+      "eligible": 887
+    },
+    {
+      "session": "2017-02-03",
+      "eligible": 797
+    },
+    {
+      "session": "2017-02-06",
+      "eligible": 827
+    },
+    {
+      "session": "2017-02-07",
+      "eligible": 929
+    },
+    {
+      "session": "2017-02-08",
+      "eligible": 862
+    },
+    {
+      "session": "2017-02-09",
+      "eligible": 790
+    },
+    {
+      "session": "2017-02-10",
+      "eligible": 817
+    },
+    {
+      "session": "2017-02-13",
+      "eligible": 807
+    },
+    {
+      "session": "2017-02-14",
+      "eligible": 816
+    },
+    {
+      "session": "2017-02-15",
+      "eligible": 827
+    },
+    {
+      "session": "2017-02-16",
+      "eligible": 895
+    },
+    {
+      "session": "2017-02-17",
+      "eligible": 959
+    },
+    {
+      "session": "2017-02-21",
+      "eligible": 943
+    },
+    {
+      "session": "2017-02-22",
+      "eligible": 935
+    },
+    {
+      "session": "2017-02-23",
+      "eligible": 1001
+    },
+    {
+      "session": "2017-02-24",
+      "eligible": 1039
+    },
+    {
+      "session": "2017-02-27",
+      "eligible": 935
+    },
+    {
+      "session": "2017-02-28",
+      "eligible": 1074
+    },
+    {
+      "session": "2017-03-01",
+      "eligible": 1018
+    },
+    {
+      "session": "2017-03-02",
+      "eligible": 1015
+    },
+    {
+      "session": "2017-03-03",
+      "eligible": 1012
+    },
+    {
+      "session": "2017-03-06",
+      "eligible": 1138
+    },
+    {
+      "session": "2017-03-07",
+      "eligible": 1037
+    },
+    {
+      "session": "2017-03-08",
+      "eligible": 1000
+    },
+    {
+      "session": "2017-03-09",
+      "eligible": 1021
+    },
+    {
+      "session": "2017-03-10",
+      "eligible": 1008
+    },
+    {
+      "session": "2017-03-13",
+      "eligible": 881
+    },
+    {
+      "session": "2017-03-14",
+      "eligible": 852
+    },
+    {
+      "session": "2017-03-15",
+      "eligible": 700
+    },
+    {
+      "session": "2017-03-16",
+      "eligible": 533
+    },
+    {
+      "session": "2017-03-17",
+      "eligible": 612
+    },
+    {
+      "session": "2017-03-20",
+      "eligible": 682
+    },
+    {
+      "session": "2017-03-21",
+      "eligible": 801
+    },
+    {
+      "session": "2017-03-22",
+      "eligible": 898
+    },
+    {
+      "session": "2017-03-23",
+      "eligible": 859
+    },
+    {
+      "session": "2017-03-24",
+      "eligible": 876
+    },
+    {
+      "session": "2017-03-27",
+      "eligible": 822
+    },
+    {
+      "session": "2017-03-28",
+      "eligible": 709
+    },
+    {
+      "session": "2017-03-29",
+      "eligible": 622
+    },
+    {
+      "session": "2017-03-30",
+      "eligible": 701
+    },
+    {
+      "session": "2017-03-31",
+      "eligible": 640
+    },
+    {
+      "session": "2017-04-03",
+      "eligible": 805
+    },
+    {
+      "session": "2017-04-04",
+      "eligible": 811
+    },
+    {
+      "session": "2017-04-05",
+      "eligible": 930
+    },
+    {
+      "session": "2017-04-06",
+      "eligible": 895
+    },
+    {
+      "session": "2017-04-07",
+      "eligible": 956
+    },
+    {
+      "session": "2017-04-10",
+      "eligible": 795
+    },
+    {
+      "session": "2017-04-11",
+      "eligible": 596
+    },
+    {
+      "session": "2017-04-12",
+      "eligible": 581
+    },
+    {
+      "session": "2017-04-13",
+      "eligible": 768
+    },
+    {
+      "session": "2017-04-17",
+      "eligible": 701
+    },
+    {
+      "session": "2017-04-18",
+      "eligible": 693
+    },
+    {
+      "session": "2017-04-19",
+      "eligible": 686
+    },
+    {
+      "session": "2017-04-20",
+      "eligible": 586
+    },
+    {
+      "session": "2017-04-21",
+      "eligible": 599
+    },
+    {
+      "session": "2017-04-24",
+      "eligible": 654
+    },
+    {
+      "session": "2017-04-25",
+      "eligible": 728
+    },
+    {
+      "session": "2017-04-26",
+      "eligible": 802
+    },
+    {
+      "session": "2017-04-27",
+      "eligible": 844
+    },
+    {
+      "session": "2017-04-28",
+      "eligible": 996
+    },
+    {
+      "session": "2017-05-01",
+      "eligible": 992
+    },
+    {
+      "session": "2017-05-02",
+      "eligible": 1012
+    },
+    {
+      "session": "2017-05-03",
+      "eligible": 1078
+    },
+    {
+      "session": "2017-05-04",
+      "eligible": 1107
+    },
+    {
+      "session": "2017-05-05",
+      "eligible": 962
+    },
+    {
+      "session": "2017-05-08",
+      "eligible": 1017
+    },
+    {
+      "session": "2017-05-09",
+      "eligible": 991
+    },
+    {
+      "session": "2017-05-10",
+      "eligible": 878
+    },
+    {
+      "session": "2017-05-11",
+      "eligible": 912
+    },
+    {
+      "session": "2017-05-12",
+      "eligible": 986
+    },
+    {
+      "session": "2017-05-15",
+      "eligible": 904
+    },
+    {
+      "session": "2017-05-16",
+      "eligible": 866
+    },
+    {
+      "session": "2017-05-17",
+      "eligible": 933
+    },
+    {
+      "session": "2017-05-18",
+      "eligible": 932
+    },
+    {
+      "session": "2017-05-19",
+      "eligible": 847
+    },
+    {
+      "session": "2017-05-22",
+      "eligible": 833
+    },
+    {
+      "session": "2017-05-23",
+      "eligible": 881
+    },
+    {
+      "session": "2017-05-24",
+      "eligible": 810
+    },
+    {
+      "session": "2017-05-25",
+      "eligible": 840
+    },
+    {
+      "session": "2017-05-26",
+      "eligible": 880
+    },
+    {
+      "session": "2017-05-30",
+      "eligible": 953
+    },
+    {
+      "session": "2017-05-31",
+      "eligible": 905
+    },
+    {
+      "session": "2017-06-01",
+      "eligible": 790
+    },
+    {
+      "session": "2017-06-02",
+      "eligible": 717
+    },
+    {
+      "session": "2017-06-05",
+      "eligible": 824
+    },
+    {
+      "session": "2017-06-06",
+      "eligible": 746
+    },
+    {
+      "session": "2017-06-07",
+      "eligible": 769
+    },
+    {
+      "session": "2017-06-08",
+      "eligible": 796
+    },
+    {
+      "session": "2017-06-09",
+      "eligible": 751
+    },
+    {
+      "session": "2017-06-12",
+      "eligible": 680
+    },
+    {
+      "session": "2017-06-13",
+      "eligible": 695
+    },
+    {
+      "session": "2017-06-14",
+      "eligible": 679
+    },
+    {
+      "session": "2017-06-15",
+      "eligible": 734
+    },
+    {
+      "session": "2017-06-16",
+      "eligible": 882
+    },
+    {
+      "session": "2017-06-19",
+      "eligible": 869
+    },
+    {
+      "session": "2017-06-20",
+      "eligible": 935
+    },
+    {
+      "session": "2017-06-21",
+      "eligible": 990
+    },
+    {
+      "session": "2017-06-22",
+      "eligible": 962
+    },
+    {
+      "session": "2017-06-23",
+      "eligible": 931
+    },
+    {
+      "session": "2017-06-26",
+      "eligible": 859
+    },
+    {
+      "session": "2017-06-27",
+      "eligible": 805
+    },
+    {
+      "session": "2017-06-28",
+      "eligible": 677
+    },
+    {
+      "session": "2017-06-29",
+      "eligible": 746
+    },
+    {
+      "session": "2017-06-30",
+      "eligible": 681
+    },
+    {
+      "session": "2017-07-03",
+      "eligible": 628
+    },
+    {
+      "session": "2017-07-05",
+      "eligible": 733
+    },
+    {
+      "session": "2017-07-06",
+      "eligible": 850
+    },
+    {
+      "session": "2017-07-07",
+      "eligible": 797
+    },
+    {
+      "session": "2017-07-10",
+      "eligible": 866
+    },
+    {
+      "session": "2017-07-11",
+      "eligible": 915
+    },
+    {
+      "session": "2017-07-12",
+      "eligible": 813
+    },
+    {
+      "session": "2017-07-13",
+      "eligible": 802
+    },
+    {
+      "session": "2017-07-14",
+      "eligible": 850
+    },
+    {
+      "session": "2017-07-17",
+      "eligible": 729
+    },
+    {
+      "session": "2017-07-18",
+      "eligible": 854
+    },
+    {
+      "session": "2017-07-19",
+      "eligible": 780
+    },
+    {
+      "session": "2017-07-20",
+      "eligible": 755
+    },
+    {
+      "session": "2017-07-21",
+      "eligible": 791
+    },
+    {
+      "session": "2017-07-24",
+      "eligible": 776
+    },
+    {
+      "session": "2017-07-25",
+      "eligible": 670
+    },
+    {
+      "session": "2017-07-26",
+      "eligible": 784
+    },
+    {
+      "session": "2017-07-27",
+      "eligible": 879
+    },
+    {
+      "session": "2017-07-28",
+      "eligible": 882
+    },
+    {
+      "session": "2017-07-31",
+      "eligible": 888
+    },
+    {
+      "session": "2017-08-01",
+      "eligible": 939
+    },
+    {
+      "session": "2017-08-02",
+      "eligible": 1005
+    },
+    {
+      "session": "2017-08-03",
+      "eligible": 962
+    },
+    {
+      "session": "2017-08-04",
+      "eligible": 984
+    },
+    {
+      "session": "2017-08-07",
+      "eligible": 994
+    },
+    {
+      "session": "2017-08-08",
+      "eligible": 986
+    },
+    {
+      "session": "2017-08-09",
+      "eligible": 926
+    },
+    {
+      "session": "2017-08-10",
+      "eligible": 952
+    },
+    {
+      "session": "2017-08-11",
+      "eligible": 984
+    },
+    {
+      "session": "2017-08-14",
+      "eligible": 928
+    },
+    {
+      "session": "2017-08-15",
+      "eligible": 989
+    },
+    {
+      "session": "2017-08-16",
+      "eligible": 877
+    },
+    {
+      "session": "2017-08-17",
+      "eligible": 849
+    },
+    {
+      "session": "2017-08-18",
+      "eligible": 854
+    },
+    {
+      "session": "2017-08-21",
+      "eligible": 874
+    },
+    {
+      "session": "2017-08-22",
+      "eligible": 802
+    },
+    {
+      "session": "2017-08-23",
+      "eligible": 754
+    },
+    {
+      "session": "2017-08-24",
+      "eligible": 676
+    },
+    {
+      "session": "2017-08-25",
+      "eligible": 659
+    },
+    {
+      "session": "2017-08-28",
+      "eligible": 653
+    },
+    {
+      "session": "2017-08-29",
+      "eligible": 661
+    },
+    {
+      "session": "2017-08-30",
+      "eligible": 767
+    },
+    {
+      "session": "2017-08-31",
+      "eligible": 804
+    },
+    {
+      "session": "2017-09-01",
+      "eligible": 735
+    },
+    {
+      "session": "2017-09-05",
+      "eligible": 720
+    },
+    {
+      "session": "2017-09-06",
+      "eligible": 754
+    },
+    {
+      "session": "2017-09-07",
+      "eligible": 754
+    },
+    {
+      "session": "2017-09-08",
+      "eligible": 756
+    },
+    {
+      "session": "2017-09-11",
+      "eligible": 841
+    },
+    {
+      "session": "2017-09-12",
+      "eligible": 797
+    },
+    {
+      "session": "2017-09-13",
+      "eligible": 777
+    },
+    {
+      "session": "2017-09-14",
+      "eligible": 808
+    },
+    {
+      "session": "2017-09-15",
+      "eligible": 928
+    },
+    {
+      "session": "2017-09-18",
+      "eligible": 878
+    },
+    {
+      "session": "2017-09-19",
+      "eligible": 934
+    },
+    {
+      "session": "2017-09-20",
+      "eligible": 925
+    },
+    {
+      "session": "2017-09-21",
+      "eligible": 870
+    },
+    {
+      "session": "2017-09-22",
+      "eligible": 701
+    },
+    {
+      "session": "2017-09-25",
+      "eligible": 673
+    },
+    {
+      "session": "2017-09-26",
+      "eligible": 658
+    },
+    {
+      "session": "2017-09-27",
+      "eligible": 619
+    },
+    {
+      "session": "2017-09-28",
+      "eligible": 644
+    },
+    {
+      "session": "2017-09-29",
+      "eligible": 733
+    },
+    {
+      "session": "2017-10-02",
+      "eligible": 722
+    },
+    {
+      "session": "2017-10-03",
+      "eligible": 748
+    },
+    {
+      "session": "2017-10-04",
+      "eligible": 841
+    },
+    {
+      "session": "2017-10-05",
+      "eligible": 962
+    },
+    {
+      "session": "2017-10-06",
+      "eligible": 900
+    },
+    {
+      "session": "2017-10-09",
+      "eligible": 1010
+    },
+    {
+      "session": "2017-10-10",
+      "eligible": 985
+    },
+    {
+      "session": "2017-10-11",
+      "eligible": 965
+    },
+    {
+      "session": "2017-10-12",
+      "eligible": 777
+    },
+    {
+      "session": "2017-10-13",
+      "eligible": 788
+    },
+    {
+      "session": "2017-10-16",
+      "eligible": 831
+    },
+    {
+      "session": "2017-10-17",
+      "eligible": 906
+    },
+    {
+      "session": "2017-10-18",
+      "eligible": 841
+    },
+    {
+      "session": "2017-10-19",
+      "eligible": 901
+    },
+    {
+      "session": "2017-10-20",
+      "eligible": 920
+    },
+    {
+      "session": "2017-10-23",
+      "eligible": 923
+    },
+    {
+      "session": "2017-10-24",
+      "eligible": 824
+    },
+    {
+      "session": "2017-10-25",
+      "eligible": 893
+    },
+    {
+      "session": "2017-10-26",
+      "eligible": 897
+    },
+    {
+      "session": "2017-10-27",
+      "eligible": 982
+    },
+    {
+      "session": "2017-10-30",
+      "eligible": 1056
+    },
+    {
+      "session": "2017-10-31",
+      "eligible": 999
+    },
+    {
+      "session": "2017-11-01",
+      "eligible": 1100
+    },
+    {
+      "session": "2017-11-02",
+      "eligible": 1074
+    },
+    {
+      "session": "2017-11-03",
+      "eligible": 1049
+    },
+    {
+      "session": "2017-11-06",
+      "eligible": 990
+    },
+    {
+      "session": "2017-11-07",
+      "eligible": 1128
+    },
+    {
+      "session": "2017-11-08",
+      "eligible": 1056
+    },
+    {
+      "session": "2017-11-09",
+      "eligible": 1048
+    },
+    {
+      "session": "2017-11-10",
+      "eligible": 994
+    },
+    {
+      "session": "2017-11-13",
+      "eligible": 1009
+    },
+    {
+      "session": "2017-11-14",
+      "eligible": 852
+    },
+    {
+      "session": "2017-11-15",
+      "eligible": 842
+    },
+    {
+      "session": "2017-11-16",
+      "eligible": 768
+    },
+    {
+      "session": "2017-11-17",
+      "eligible": 684
+    },
+    {
+      "session": "2017-11-20",
+      "eligible": 644
+    },
+    {
+      "session": "2017-11-21",
+      "eligible": 659
+    },
+    {
+      "session": "2017-11-22",
+      "eligible": 614
+    },
+    {
+      "session": "2017-11-24",
+      "eligible": 641
+    },
+    {
+      "session": "2017-11-27",
+      "eligible": 864
+    },
+    {
+      "session": "2017-11-28",
+      "eligible": 900
+    },
+    {
+      "session": "2017-11-29",
+      "eligible": 769
+    },
+    {
+      "session": "2017-11-30",
+      "eligible": 897
+    },
+    {
+      "session": "2017-12-01",
+      "eligible": 981
+    },
+    {
+      "session": "2017-12-04",
+      "eligible": 1019
+    },
+    {
+      "session": "2017-12-05",
+      "eligible": 1061
+    },
+    {
+      "session": "2017-12-06",
+      "eligible": 1170
+    },
+    {
+      "session": "2017-12-07",
+      "eligible": 1016
+    },
+    {
+      "session": "2017-12-08",
+      "eligible": 1026
+    },
+    {
+      "session": "2017-12-11",
+      "eligible": 1063
+    },
+    {
+      "session": "2017-12-12",
+      "eligible": 1099
+    },
+    {
+      "session": "2017-12-13",
+      "eligible": 986
+    },
+    {
+      "session": "2017-12-14",
+      "eligible": 1097
+    },
+    {
+      "session": "2017-12-15",
+      "eligible": 1122
+    },
+    {
+      "session": "2017-12-18",
+      "eligible": 1017
+    },
+    {
+      "session": "2017-12-19",
+      "eligible": 970
+    },
+    {
+      "session": "2017-12-20",
+      "eligible": 934
+    },
+    {
+      "session": "2017-12-21",
+      "eligible": 835
+    },
+    {
+      "session": "2017-12-22",
+      "eligible": 778
+    },
+    {
+      "session": "2017-12-26",
+      "eligible": 833
+    },
+    {
+      "session": "2017-12-27",
+      "eligible": 773
+    },
+    {
+      "session": "2017-12-28",
+      "eligible": 723
+    },
+    {
+      "session": "2017-12-29",
+      "eligible": 772
+    },
+    {
+      "session": "2018-01-02",
+      "eligible": 745
+    },
+    {
+      "session": "2018-01-03",
+      "eligible": 915
+    },
+    {
+      "session": "2018-01-04",
+      "eligible": 943
+    },
+    {
+      "session": "2018-01-05",
+      "eligible": 1028
+    },
+    {
+      "session": "2018-01-08",
+      "eligible": 1006
+    },
+    {
+      "session": "2018-01-09",
+      "eligible": 1103
+    },
+    {
+      "session": "2018-01-10",
+      "eligible": 1080
+    },
+    {
+      "session": "2018-01-11",
+      "eligible": 977
+    },
+    {
+      "session": "2018-01-12",
+      "eligible": 965
+    },
+    {
+      "session": "2018-01-16",
+      "eligible": 1076
+    },
+    {
+      "session": "2018-01-17",
+      "eligible": 1028
+    },
+    {
+      "session": "2018-01-18",
+      "eligible": 1078
+    },
+    {
+      "session": "2018-01-19",
+      "eligible": 1042
+    },
+    {
+      "session": "2018-01-22",
+      "eligible": 1103
+    },
+    {
+      "session": "2018-01-23",
+      "eligible": 1007
+    },
+    {
+      "session": "2018-01-24",
+      "eligible": 1026
+    },
+    {
+      "session": "2018-01-25",
+      "eligible": 938
+    },
+    {
+      "session": "2018-01-26",
+      "eligible": 1170
+    },
+    {
+      "session": "2018-01-29",
+      "eligible": 1158
+    },
+    {
+      "session": "2018-01-30",
+      "eligible": 1136
+    },
+    {
+      "session": "2018-01-31",
+      "eligible": 1152
+    },
+    {
+      "session": "2018-02-01",
+      "eligible": 1118
+    },
+    {
+      "session": "2018-02-02",
+      "eligible": 1003
+    },
+    {
+      "session": "2018-02-05",
+      "eligible": 905
+    },
+    {
+      "session": "2018-02-06",
+      "eligible": 1097
+    },
+    {
+      "session": "2018-02-07",
+      "eligible": 980
+    },
+    {
+      "session": "2018-02-08",
+      "eligible": 890
+    },
+    {
+      "session": "2018-02-09",
+      "eligible": 999
+    },
+    {
+      "session": "2018-02-12",
+      "eligible": 1110
+    },
+    {
+      "session": "2018-02-13",
+      "eligible": 852
+    },
+    {
+      "session": "2018-02-14",
+      "eligible": 893
+    },
+    {
+      "session": "2018-02-15",
+      "eligible": 1107
+    },
+    {
+      "session": "2018-02-16",
+      "eligible": 952
+    },
+    {
+      "session": "2018-02-20",
+      "eligible": 921
+    },
+    {
+      "session": "2018-02-21",
+      "eligible": 825
+    },
+    {
+      "session": "2018-02-22",
+      "eligible": 964
+    },
+    {
+      "session": "2018-02-23",
+      "eligible": 915
+    },
+    {
+      "session": "2018-02-26",
+      "eligible": 1077
+    },
+    {
+      "session": "2018-02-27",
+      "eligible": 1115
+    },
+    {
+      "session": "2018-02-28",
+      "eligible": 1201
+    },
+    {
+      "session": "2018-03-01",
+      "eligible": 988
+    },
+    {
+      "session": "2018-03-02",
+      "eligible": 856
+    },
+    {
+      "session": "2018-03-05",
+      "eligible": 793
+    },
+    {
+      "session": "2018-03-06",
+      "eligible": 672
+    },
+    {
+      "session": "2018-03-07",
+      "eligible": 596
+    },
+    {
+      "session": "2018-03-08",
+      "eligible": 758
+    },
+    {
+      "session": "2018-03-09",
+      "eligible": 874
+    },
+    {
+      "session": "2018-03-12",
+      "eligible": 801
+    },
+    {
+      "session": "2018-03-13",
+      "eligible": 881
+    },
+    {
+      "session": "2018-03-14",
+      "eligible": 955
+    },
+    {
+      "session": "2018-03-15",
+      "eligible": 901
+    },
+    {
+      "session": "2018-03-16",
+      "eligible": 817
+    },
+    {
+      "session": "2018-03-19",
+      "eligible": 782
+    },
+    {
+      "session": "2018-03-20",
+      "eligible": 785
+    },
+    {
+      "session": "2018-03-21",
+      "eligible": 646
+    },
+    {
+      "session": "2018-03-22",
+      "eligible": 608
+    },
+    {
+      "session": "2018-03-23",
+      "eligible": 621
+    },
+    {
+      "session": "2018-03-26",
+      "eligible": 841
+    },
+    {
+      "session": "2018-03-27",
+      "eligible": 766
+    },
+    {
+      "session": "2018-03-28",
+      "eligible": 827
+    },
+    {
+      "session": "2018-03-29",
+      "eligible": 820
+    },
+    {
+      "session": "2018-04-02",
+      "eligible": 848
+    },
+    {
+      "session": "2018-04-03",
+      "eligible": 738
+    },
+    {
+      "session": "2018-04-04",
+      "eligible": 842
+    },
+    {
+      "session": "2018-04-05",
+      "eligible": 952
+    },
+    {
+      "session": "2018-04-06",
+      "eligible": 819
+    },
+    {
+      "session": "2018-04-09",
+      "eligible": 962
+    },
+    {
+      "session": "2018-04-10",
+      "eligible": 935
+    },
+    {
+      "session": "2018-04-11",
+      "eligible": 856
+    },
+    {
+      "session": "2018-04-12",
+      "eligible": 869
+    },
+    {
+      "session": "2018-04-13",
+      "eligible": 958
+    },
+    {
+      "session": "2018-04-16",
+      "eligible": 812
+    },
+    {
+      "session": "2018-04-17",
+      "eligible": 833
+    },
+    {
+      "session": "2018-04-18",
+      "eligible": 892
+    },
+    {
+      "session": "2018-04-19",
+      "eligible": 823
+    },
+    {
+      "session": "2018-04-20",
+      "eligible": 746
+    },
+    {
+      "session": "2018-04-23",
+      "eligible": 776
+    },
+    {
+      "session": "2018-04-24",
+      "eligible": 668
+    },
+    {
+      "session": "2018-04-25",
+      "eligible": 752
+    },
+    {
+      "session": "2018-04-26",
+      "eligible": 804
+    },
+    {
+      "session": "2018-04-27",
+      "eligible": 889
+    },
+    {
+      "session": "2018-04-30",
+      "eligible": 902
+    },
+    {
+      "session": "2018-05-01",
+      "eligible": 1029
+    },
+    {
+      "session": "2018-05-02",
+      "eligible": 921
+    },
+    {
+      "session": "2018-05-03",
+      "eligible": 863
+    },
+    {
+      "session": "2018-05-04",
+      "eligible": 932
+    },
+    {
+      "session": "2018-05-07",
+      "eligible": 881
+    },
+    {
+      "session": "2018-05-08",
+      "eligible": 840
+    },
+    {
+      "session": "2018-05-09",
+      "eligible": 978
+    },
+    {
+      "session": "2018-05-10",
+      "eligible": 1015
+    },
+    {
+      "session": "2018-05-11",
+      "eligible": 1021
+    },
+    {
+      "session": "2018-05-14",
+      "eligible": 1096
+    },
+    {
+      "session": "2018-05-15",
+      "eligible": 1039
+    },
+    {
+      "session": "2018-05-16",
+      "eligible": 917
+    },
+    {
+      "session": "2018-05-17",
+      "eligible": 759
+    },
+    {
+      "session": "2018-05-18",
+      "eligible": 703
+    },
+    {
+      "session": "2018-05-21",
+      "eligible": 655
+    },
+    {
+      "session": "2018-05-22",
+      "eligible": 763
+    },
+    {
+      "session": "2018-05-23",
+      "eligible": 847
+    },
+    {
+      "session": "2018-05-24",
+      "eligible": 887
+    },
+    {
+      "session": "2018-05-25",
+      "eligible": 893
+    },
+    {
+      "session": "2018-05-29",
+      "eligible": 775
+    },
+    {
+      "session": "2018-05-30",
+      "eligible": 744
+    },
+    {
+      "session": "2018-05-31",
+      "eligible": 780
+    },
+    {
+      "session": "2018-06-01",
+      "eligible": 904
+    },
+    {
+      "session": "2018-06-04",
+      "eligible": 912
+    },
+    {
+      "session": "2018-06-05",
+      "eligible": 968
+    },
+    {
+      "session": "2018-06-06",
+      "eligible": 938
+    },
+    {
+      "session": "2018-06-07",
+      "eligible": 920
+    },
+    {
+      "session": "2018-06-08",
+      "eligible": 836
+    },
+    {
+      "session": "2018-06-11",
+      "eligible": 891
+    },
+    {
+      "session": "2018-06-12",
+      "eligible": 962
+    },
+    {
+      "session": "2018-06-13",
+      "eligible": 982
+    },
+    {
+      "session": "2018-06-14",
+      "eligible": 932
+    },
+    {
+      "session": "2018-06-15",
+      "eligible": 977
+    },
+    {
+      "session": "2018-06-18",
+      "eligible": 979
+    },
+    {
+      "session": "2018-06-19",
+      "eligible": 962
+    },
+    {
+      "session": "2018-06-20",
+      "eligible": 851
+    },
+    {
+      "session": "2018-06-21",
+      "eligible": 902
+    },
+    {
+      "session": "2018-06-22",
+      "eligible": 923
+    },
+    {
+      "session": "2018-06-25",
+      "eligible": 1030
+    },
+    {
+      "session": "2018-06-26",
+      "eligible": 999
+    },
+    {
+      "session": "2018-06-27",
+      "eligible": 1112
+    },
+    {
+      "session": "2018-06-28",
+      "eligible": 1106
+    },
+    {
+      "session": "2018-06-29",
+      "eligible": 1034
+    },
+    {
+      "session": "2018-07-02",
+      "eligible": 1047
+    },
+    {
+      "session": "2018-07-03",
+      "eligible": 923
+    },
+    {
+      "session": "2018-07-05",
+      "eligible": 764
+    },
+    {
+      "session": "2018-07-06",
+      "eligible": 724
+    },
+    {
+      "session": "2018-07-09",
+      "eligible": 731
+    },
+    {
+      "session": "2018-07-10",
+      "eligible": 901
+    },
+    {
+      "session": "2018-07-11",
+      "eligible": 1100
+    },
+    {
+      "session": "2018-07-12",
+      "eligible": 1164
+    },
+    {
+      "session": "2018-07-13",
+      "eligible": 1169
+    },
+    {
+      "session": "2018-07-16",
+      "eligible": 1191
+    },
+    {
+      "session": "2018-07-17",
+      "eligible": 1073
+    },
+    {
+      "session": "2018-07-18",
+      "eligible": 1003
+    },
+    {
+      "session": "2018-07-19",
+      "eligible": 791
+    },
+    {
+      "session": "2018-07-20",
+      "eligible": 808
+    },
+    {
+      "session": "2018-07-23",
+      "eligible": 784
+    },
+    {
+      "session": "2018-07-24",
+      "eligible": 1084
+    },
+    {
+      "session": "2018-07-25",
+      "eligible": 1139
+    },
+    {
+      "session": "2018-07-26",
+      "eligible": 1141
+    },
+    {
+      "session": "2018-07-27",
+      "eligible": 1176
+    },
+    {
+      "session": "2018-07-30",
+      "eligible": 1115
+    },
+    {
+      "session": "2018-07-31",
+      "eligible": 937
+    },
+    {
+      "session": "2018-08-01",
+      "eligible": 901
+    },
+    {
+      "session": "2018-08-02",
+      "eligible": 1017
+    },
+    {
+      "session": "2018-08-03",
+      "eligible": 1059
+    },
+    {
+      "session": "2018-08-06",
+      "eligible": 1059
+    },
+    {
+      "session": "2018-08-07",
+      "eligible": 1105
+    },
+    {
+      "session": "2018-08-08",
+      "eligible": 1058
+    },
+    {
+      "session": "2018-08-09",
+      "eligible": 1011
+    },
+    {
+      "session": "2018-08-10",
+      "eligible": 911
+    },
+    {
+      "session": "2018-08-13",
+      "eligible": 966
+    },
+    {
+      "session": "2018-08-14",
+      "eligible": 888
+    },
+    {
+      "session": "2018-08-15",
+      "eligible": 864
+    },
+    {
+      "session": "2018-08-16",
+      "eligible": 840
+    },
+    {
+      "session": "2018-08-17",
+      "eligible": 830
+    },
+    {
+      "session": "2018-08-20",
+      "eligible": 726
+    },
+    {
+      "session": "2018-08-21",
+      "eligible": 698
+    },
+    {
+      "session": "2018-08-22",
+      "eligible": 653
+    },
+    {
+      "session": "2018-08-23",
+      "eligible": 759
+    },
+    {
+      "session": "2018-08-24",
+      "eligible": 856
+    },
+    {
+      "session": "2018-08-27",
+      "eligible": 938
+    },
+    {
+      "session": "2018-08-28",
+      "eligible": 1070
+    },
+    {
+      "session": "2018-08-29",
+      "eligible": 1117
+    },
+    {
+      "session": "2018-08-30",
+      "eligible": 1074
+    },
+    {
+      "session": "2018-08-31",
+      "eligible": 1038
+    },
+    {
+      "session": "2018-09-04",
+      "eligible": 967
+    },
+    {
+      "session": "2018-09-05",
+      "eligible": 914
+    },
+    {
+      "session": "2018-09-06",
+      "eligible": 866
+    },
+    {
+      "session": "2018-09-07",
+      "eligible": 882
+    },
+    {
+      "session": "2018-09-10",
+      "eligible": 906
+    },
+    {
+      "session": "2018-09-11",
+      "eligible": 894
+    },
+    {
+      "session": "2018-09-12",
+      "eligible": 933
+    },
+    {
+      "session": "2018-09-13",
+      "eligible": 995
+    },
+    {
+      "session": "2018-09-14",
+      "eligible": 929
+    },
+    {
+      "session": "2018-09-17",
+      "eligible": 934
+    },
+    {
+      "session": "2018-09-18",
+      "eligible": 952
+    },
+    {
+      "session": "2018-09-19",
+      "eligible": 987
+    },
+    {
+      "session": "2018-09-20",
+      "eligible": 987
+    },
+    {
+      "session": "2018-09-21",
+      "eligible": 1143
+    },
+    {
+      "session": "2018-09-24",
+      "eligible": 1189
+    },
+    {
+      "session": "2018-09-25",
+      "eligible": 1185
+    },
+    {
+      "session": "2018-09-26",
+      "eligible": 1151
+    },
+    {
+      "session": "2018-09-27",
+      "eligible": 1188
+    },
+    {
+      "session": "2018-09-28",
+      "eligible": 1020
+    },
+    {
+      "session": "2018-10-01",
+      "eligible": 1158
+    },
+    {
+      "session": "2018-10-02",
+      "eligible": 1253
+    },
+    {
+      "session": "2018-10-03",
+      "eligible": 1150
+    },
+    {
+      "session": "2018-10-04",
+      "eligible": 1116
+    },
+    {
+      "session": "2018-10-05",
+      "eligible": 1168
+    },
+    {
+      "session": "2018-10-08",
+      "eligible": 1007
+    },
+    {
+      "session": "2018-10-09",
+      "eligible": 1017
+    },
+    {
+      "session": "2018-10-10",
+      "eligible": 1004
+    },
+    {
+      "session": "2018-10-11",
+      "eligible": 929
+    },
+    {
+      "session": "2018-10-12",
+      "eligible": 1043
+    },
+    {
+      "session": "2018-10-15",
+      "eligible": 899
+    },
+    {
+      "session": "2018-10-16",
+      "eligible": 766
+    },
+    {
+      "session": "2018-10-17",
+      "eligible": 895
+    },
+    {
+      "session": "2018-10-18",
+      "eligible": 930
+    },
+    {
+      "session": "2018-10-19",
+      "eligible": 900
+    },
+    {
+      "session": "2018-10-22",
+      "eligible": 959
+    },
+    {
+      "session": "2018-10-23",
+      "eligible": 1051
+    },
+    {
+      "session": "2018-10-24",
+      "eligible": 1049
+    },
+    {
+      "session": "2018-10-25",
+      "eligible": 1059
+    },
+    {
+      "session": "2018-10-26",
+      "eligible": 908
+    },
+    {
+      "session": "2018-10-29",
+      "eligible": 986
+    },
+    {
+      "session": "2018-10-30",
+      "eligible": 876
+    },
+    {
+      "session": "2018-10-31",
+      "eligible": 876
+    },
+    {
+      "session": "2018-11-01",
+      "eligible": 754
+    },
+    {
+      "session": "2018-11-02",
+      "eligible": 800
+    },
+    {
+      "session": "2018-11-05",
+      "eligible": 819
+    },
+    {
+      "session": "2018-11-06",
+      "eligible": 884
+    },
+    {
+      "session": "2018-11-07",
+      "eligible": 921
+    },
+    {
+      "session": "2018-11-08",
+      "eligible": 1033
+    },
+    {
+      "session": "2018-11-09",
+      "eligible": 1096
+    },
+    {
+      "session": "2018-11-12",
+      "eligible": 1011
+    },
+    {
+      "session": "2018-11-13",
+      "eligible": 960
+    },
+    {
+      "session": "2018-11-14",
+      "eligible": 867
+    },
+    {
+      "session": "2018-11-15",
+      "eligible": 786
+    },
+    {
+      "session": "2018-11-16",
+      "eligible": 742
+    },
+    {
+      "session": "2018-11-19",
+      "eligible": 767
+    },
+    {
+      "session": "2018-11-20",
+      "eligible": 745
+    },
+    {
+      "session": "2018-11-21",
+      "eligible": 610
+    },
+    {
+      "session": "2018-11-23",
+      "eligible": 551
+    },
+    {
+      "session": "2018-11-26",
+      "eligible": 552
+    },
+    {
+      "session": "2018-11-27",
+      "eligible": 814
+    },
+    {
+      "session": "2018-11-28",
+      "eligible": 894
+    },
+    {
+      "session": "2018-11-29",
+      "eligible": 1124
+    },
+    {
+      "session": "2018-11-30",
+      "eligible": 1182
+    },
+    {
+      "session": "2018-12-03",
+      "eligible": 1189
+    },
+    {
+      "session": "2018-12-04",
+      "eligible": 1062
+    },
+    {
+      "session": "2018-12-06",
+      "eligible": 1078
+    },
+    {
+      "session": "2018-12-07",
+      "eligible": 1080
+    },
+    {
+      "session": "2018-12-10",
+      "eligible": 1068
+    },
+    {
+      "session": "2018-12-11",
+      "eligible": 1045
+    },
+    {
+      "session": "2018-12-12",
+      "eligible": 908
+    },
+    {
+      "session": "2018-12-13",
+      "eligible": 1045
+    },
+    {
+      "session": "2018-12-14",
+      "eligible": 1002
+    },
+    {
+      "session": "2018-12-17",
+      "eligible": 965
+    },
+    {
+      "session": "2018-12-18",
+      "eligible": 903
+    },
+    {
+      "session": "2018-12-19",
+      "eligible": 973
+    },
+    {
+      "session": "2018-12-20",
+      "eligible": 829
+    },
+    {
+      "session": "2018-12-21",
+      "eligible": 1077
+    },
+    {
+      "session": "2018-12-24",
+      "eligible": 889
+    },
+    {
+      "session": "2018-12-26",
+      "eligible": 977
+    },
+    {
+      "session": "2018-12-27",
+      "eligible": 966
+    },
+    {
+      "session": "2018-12-28",
+      "eligible": 926
+    },
+    {
+      "session": "2018-12-31",
+      "eligible": 878
+    },
+    {
+      "session": "2019-01-02",
+      "eligible": 925
+    },
+    {
+      "session": "2019-01-03",
+      "eligible": 683
+    },
+    {
+      "session": "2019-01-04",
+      "eligible": 679
+    },
+    {
+      "session": "2019-01-07",
+      "eligible": 695
+    },
+    {
+      "session": "2019-01-08",
+      "eligible": 626
+    },
+    {
+      "session": "2019-01-09",
+      "eligible": 576
+    },
+    {
+      "session": "2019-01-10",
+      "eligible": 689
+    },
+    {
+      "session": "2019-01-11",
+      "eligible": 637
+    },
+    {
+      "session": "2019-01-14",
+      "eligible": 617
+    },
+    {
+      "session": "2019-01-15",
+      "eligible": 826
+    },
+    {
+      "session": "2019-01-16",
+      "eligible": 810
+    },
+    {
+      "session": "2019-01-17",
+      "eligible": 859
+    },
+    {
+      "session": "2019-01-18",
+      "eligible": 935
+    },
+    {
+      "session": "2019-01-22",
+      "eligible": 939
+    },
+    {
+      "session": "2019-01-23",
+      "eligible": 892
+    },
+    {
+      "session": "2019-01-24",
+      "eligible": 846
+    },
+    {
+      "session": "2019-01-25",
+      "eligible": 804
+    },
+    {
+      "session": "2019-01-28",
+      "eligible": 686
+    },
+    {
+      "session": "2019-01-29",
+      "eligible": 640
+    },
+    {
+      "session": "2019-01-30",
+      "eligible": 746
+    },
+    {
+      "session": "2019-01-31",
+      "eligible": 872
+    },
+    {
+      "session": "2019-02-01",
+      "eligible": 907
+    },
+    {
+      "session": "2019-02-04",
+      "eligible": 1015
+    },
+    {
+      "session": "2019-02-05",
+      "eligible": 1096
+    },
+    {
+      "session": "2019-02-06",
+      "eligible": 1008
+    },
+    {
+      "session": "2019-02-07",
+      "eligible": 842
+    },
+    {
+      "session": "2019-02-08",
+      "eligible": 891
+    },
+    {
+      "session": "2019-02-11",
+      "eligible": 790
+    },
+    {
+      "session": "2019-02-12",
+      "eligible": 837
+    },
+    {
+      "session": "2019-02-13",
+      "eligible": 835
+    },
+    {
+      "session": "2019-02-14",
+      "eligible": 903
+    },
+    {
+      "session": "2019-02-15",
+      "eligible": 852
+    },
+    {
+      "session": "2019-02-19",
+      "eligible": 897
+    },
+    {
+      "session": "2019-02-20",
+      "eligible": 850
+    },
+    {
+      "session": "2019-02-21",
+      "eligible": 810
+    },
+    {
+      "session": "2019-02-22",
+      "eligible": 821
+    },
+    {
+      "session": "2019-02-25",
+      "eligible": 890
+    },
+    {
+      "session": "2019-02-26",
+      "eligible": 1028
+    },
+    {
+      "session": "2019-02-27",
+      "eligible": 1053
+    },
+    {
+      "session": "2019-02-28",
+      "eligible": 1108
+    },
+    {
+      "session": "2019-03-01",
+      "eligible": 1170
+    },
+    {
+      "session": "2019-03-04",
+      "eligible": 1136
+    },
+    {
+      "session": "2019-03-05",
+      "eligible": 1041
+    },
+    {
+      "session": "2019-03-06",
+      "eligible": 1181
+    },
+    {
+      "session": "2019-03-07",
+      "eligible": 1122
+    },
+    {
+      "session": "2019-03-08",
+      "eligible": 1098
+    },
+    {
+      "session": "2019-03-11",
+      "eligible": 1046
+    },
+    {
+      "session": "2019-03-12",
+      "eligible": 1070
+    },
+    {
+      "session": "2019-03-13",
+      "eligible": 968
+    },
+    {
+      "session": "2019-03-14",
+      "eligible": 1035
+    },
+    {
+      "session": "2019-03-15",
+      "eligible": 1160
+    },
+    {
+      "session": "2019-03-18",
+      "eligible": 1111
+    },
+    {
+      "session": "2019-03-19",
+      "eligible": 1134
+    },
+    {
+      "session": "2019-03-20",
+      "eligible": 1167
+    },
+    {
+      "session": "2019-03-21",
+      "eligible": 1097
+    },
+    {
+      "session": "2019-03-22",
+      "eligible": 1075
+    },
+    {
+      "session": "2019-03-25",
+      "eligible": 1064
+    },
+    {
+      "session": "2019-03-26",
+      "eligible": 1017
+    },
+    {
+      "session": "2019-03-27",
+      "eligible": 917
+    },
+    {
+      "session": "2019-03-28",
+      "eligible": 840
+    },
+    {
+      "session": "2019-03-29",
+      "eligible": 697
+    },
+    {
+      "session": "2019-04-01",
+      "eligible": 750
+    },
+    {
+      "session": "2019-04-02",
+      "eligible": 820
+    },
+    {
+      "session": "2019-04-03",
+      "eligible": 856
+    },
+    {
+      "session": "2019-04-04",
+      "eligible": 915
+    },
+    {
+      "session": "2019-04-05",
+      "eligible": 820
+    },
+    {
+      "session": "2019-04-08",
+      "eligible": 833
+    },
+    {
+      "session": "2019-04-09",
+      "eligible": 907
+    },
+    {
+      "session": "2019-04-10",
+      "eligible": 840
+    },
+    {
+      "session": "2019-04-11",
+      "eligible": 783
+    },
+    {
+      "session": "2019-04-12",
+      "eligible": 851
+    },
+    {
+      "session": "2019-04-15",
+      "eligible": 894
+    },
+    {
+      "session": "2019-04-16",
+      "eligible": 750
+    },
+    {
+      "session": "2019-04-17",
+      "eligible": 862
+    },
+    {
+      "session": "2019-04-18",
+      "eligible": 967
+    },
+    {
+      "session": "2019-04-22",
+      "eligible": 1082
+    },
+    {
+      "session": "2019-04-23",
+      "eligible": 1015
+    },
+    {
+      "session": "2019-04-24",
+      "eligible": 1022
+    },
+    {
+      "session": "2019-04-25",
+      "eligible": 1036
+    },
+    {
+      "session": "2019-04-26",
+      "eligible": 936
+    },
+    {
+      "session": "2019-04-29",
+      "eligible": 891
+    },
+    {
+      "session": "2019-04-30",
+      "eligible": 864
+    },
+    {
+      "session": "2019-05-01",
+      "eligible": 979
+    },
+    {
+      "session": "2019-05-02",
+      "eligible": 830
+    },
+    {
+      "session": "2019-05-03",
+      "eligible": 837
+    },
+    {
+      "session": "2019-05-06",
+      "eligible": 855
+    },
+    {
+      "session": "2019-05-07",
+      "eligible": 857
+    },
+    {
+      "session": "2019-05-08",
+      "eligible": 849
+    },
+    {
+      "session": "2019-05-09",
+      "eligible": 888
+    },
+    {
+      "session": "2019-05-10",
+      "eligible": 967
+    },
+    {
+      "session": "2019-05-13",
+      "eligible": 1067
+    },
+    {
+      "session": "2019-05-14",
+      "eligible": 966
+    },
+    {
+      "session": "2019-05-15",
+      "eligible": 953
+    },
+    {
+      "session": "2019-05-16",
+      "eligible": 1032
+    },
+    {
+      "session": "2019-05-17",
+      "eligible": 1045
+    },
+    {
+      "session": "2019-05-20",
+      "eligible": 1070
+    },
+    {
+      "session": "2019-05-21",
+      "eligible": 1025
+    },
+    {
+      "session": "2019-05-22",
+      "eligible": 1020
+    },
+    {
+      "session": "2019-05-23",
+      "eligible": 1055
+    },
+    {
+      "session": "2019-05-24",
+      "eligible": 900
+    },
+    {
+      "session": "2019-05-28",
+      "eligible": 897
+    },
+    {
+      "session": "2019-05-29",
+      "eligible": 936
+    },
+    {
+      "session": "2019-05-30",
+      "eligible": 958
+    },
+    {
+      "session": "2019-05-31",
+      "eligible": 838
+    },
+    {
+      "session": "2019-06-03",
+      "eligible": 744
+    },
+    {
+      "session": "2019-06-04",
+      "eligible": 713
+    },
+    {
+      "session": "2019-06-05",
+      "eligible": 814
+    },
+    {
+      "session": "2019-06-06",
+      "eligible": 866
+    },
+    {
+      "session": "2019-06-07",
+      "eligible": 1005
+    },
+    {
+      "session": "2019-06-10",
+      "eligible": 1125
+    },
+    {
+      "session": "2019-06-11",
+      "eligible": 1199
+    },
+    {
+      "session": "2019-06-12",
+      "eligible": 1069
+    },
+    {
+      "session": "2019-06-13",
+      "eligible": 849
+    },
+    {
+      "session": "2019-06-14",
+      "eligible": 873
+    },
+    {
+      "session": "2019-06-17",
+      "eligible": 875
+    },
+    {
+      "session": "2019-06-18",
+      "eligible": 850
+    },
+    {
+      "session": "2019-06-19",
+      "eligible": 853
+    },
+    {
+      "session": "2019-06-20",
+      "eligible": 985
+    },
+    {
+      "session": "2019-06-21",
+      "eligible": 1049
+    },
+    {
+      "session": "2019-06-24",
+      "eligible": 1174
+    },
+    {
+      "session": "2019-06-25",
+      "eligible": 1106
+    },
+    {
+      "session": "2019-06-26",
+      "eligible": 1128
+    },
+    {
+      "session": "2019-06-27",
+      "eligible": 949
+    },
+    {
+      "session": "2019-06-28",
+      "eligible": 875
+    },
+    {
+      "session": "2019-07-01",
+      "eligible": 869
+    },
+    {
+      "session": "2019-07-02",
+      "eligible": 988
+    },
+    {
+      "session": "2019-07-03",
+      "eligible": 896
+    },
+    {
+      "session": "2019-07-05",
+      "eligible": 1031
+    },
+    {
+      "session": "2019-07-08",
+      "eligible": 1081
+    },
+    {
+      "session": "2019-07-09",
+      "eligible": 986
+    },
+    {
+      "session": "2019-07-10",
+      "eligible": 990
+    },
+    {
+      "session": "2019-07-11",
+      "eligible": 1071
+    },
+    {
+      "session": "2019-07-12",
+      "eligible": 1097
+    },
+    {
+      "session": "2019-07-15",
+      "eligible": 1124
+    },
+    {
+      "session": "2019-07-16",
+      "eligible": 1004
+    },
+    {
+      "session": "2019-07-17",
+      "eligible": 880
+    },
+    {
+      "session": "2019-07-18",
+      "eligible": 811
+    },
+    {
+      "session": "2019-07-19",
+      "eligible": 886
+    },
+    {
+      "session": "2019-07-22",
+      "eligible": 905
+    },
+    {
+      "session": "2019-07-23",
+      "eligible": 979
+    },
+    {
+      "session": "2019-07-24",
+      "eligible": 895
+    },
+    {
+      "session": "2019-07-25",
+      "eligible": 957
+    },
+    {
+      "session": "2019-07-26",
+      "eligible": 956
+    },
+    {
+      "session": "2019-07-29",
+      "eligible": 912
+    },
+    {
+      "session": "2019-07-30",
+      "eligible": 795
+    },
+    {
+      "session": "2019-07-31",
+      "eligible": 899
+    },
+    {
+      "session": "2019-08-01",
+      "eligible": 990
+    },
+    {
+      "session": "2019-08-02",
+      "eligible": 1056
+    },
+    {
+      "session": "2019-08-05",
+      "eligible": 1102
+    },
+    {
+      "session": "2019-08-06",
+      "eligible": 1229
+    },
+    {
+      "session": "2019-08-07",
+      "eligible": 1182
+    },
+    {
+      "session": "2019-08-08",
+      "eligible": 1055
+    },
+    {
+      "session": "2019-08-09",
+      "eligible": 1064
+    },
+    {
+      "session": "2019-08-12",
+      "eligible": 1068
+    },
+    {
+      "session": "2019-08-13",
+      "eligible": 1090
+    },
+    {
+      "session": "2019-08-14",
+      "eligible": 1055
+    },
+    {
+      "session": "2019-08-15",
+      "eligible": 1067
+    },
+    {
+      "session": "2019-08-16",
+      "eligible": 950
+    },
+    {
+      "session": "2019-08-19",
+      "eligible": 1016
+    },
+    {
+      "session": "2019-08-20",
+      "eligible": 902
+    },
+    {
+      "session": "2019-08-21",
+      "eligible": 973
+    },
+    {
+      "session": "2019-08-22",
+      "eligible": 944
+    },
+    {
+      "session": "2019-08-23",
+      "eligible": 1031
+    },
+    {
+      "session": "2019-08-26",
+      "eligible": 995
+    },
+    {
+      "session": "2019-08-27",
+      "eligible": 1099
+    },
+    {
+      "session": "2019-08-28",
+      "eligible": 1018
+    },
+    {
+      "session": "2019-08-29",
+      "eligible": 968
+    },
+    {
+      "session": "2019-08-30",
+      "eligible": 902
+    },
+    {
+      "session": "2019-09-03",
+      "eligible": 947
+    },
+    {
+      "session": "2019-09-04",
+      "eligible": 879
+    },
+    {
+      "session": "2019-09-05",
+      "eligible": 889
+    },
+    {
+      "session": "2019-09-06",
+      "eligible": 918
+    },
+    {
+      "session": "2019-09-09",
+      "eligible": 855
+    },
+    {
+      "session": "2019-09-10",
+      "eligible": 784
+    },
+    {
+      "session": "2019-09-11",
+      "eligible": 772
+    },
+    {
+      "session": "2019-09-12",
+      "eligible": 818
+    },
+    {
+      "session": "2019-09-13",
+      "eligible": 838
+    },
+    {
+      "session": "2019-09-16",
+      "eligible": 842
+    },
+    {
+      "session": "2019-09-17",
+      "eligible": 868
+    },
+    {
+      "session": "2019-09-18",
+      "eligible": 1017
+    },
+    {
+      "session": "2019-09-19",
+      "eligible": 979
+    },
+    {
+      "session": "2019-09-20",
+      "eligible": 1076
+    },
+    {
+      "session": "2019-09-23",
+      "eligible": 1105
+    },
+    {
+      "session": "2019-09-24",
+      "eligible": 1155
+    },
+    {
+      "session": "2019-09-25",
+      "eligible": 1031
+    },
+    {
+      "session": "2019-09-26",
+      "eligible": 1022
+    },
+    {
+      "session": "2019-09-27",
+      "eligible": 927
+    },
+    {
+      "session": "2019-09-30",
+      "eligible": 963
+    },
+    {
+      "session": "2019-10-01",
+      "eligible": 1024
+    },
+    {
+      "session": "2019-10-02",
+      "eligible": 995
+    },
+    {
+      "session": "2019-10-03",
+      "eligible": 985
+    },
+    {
+      "session": "2019-10-04",
+      "eligible": 1026
+    },
+    {
+      "session": "2019-10-07",
+      "eligible": 971
+    },
+    {
+      "session": "2019-10-08",
+      "eligible": 927
+    },
+    {
+      "session": "2019-10-09",
+      "eligible": 1094
+    },
+    {
+      "session": "2019-10-10",
+      "eligible": 1058
+    },
+    {
+      "session": "2019-10-11",
+      "eligible": 898
+    },
+    {
+      "session": "2019-10-14",
+      "eligible": 945
+    },
+    {
+      "session": "2019-10-15",
+      "eligible": 862
+    },
+    {
+      "session": "2019-10-16",
+      "eligible": 835
+    },
+    {
+      "session": "2019-10-17",
+      "eligible": 749
+    },
+    {
+      "session": "2019-10-18",
+      "eligible": 747
+    },
+    {
+      "session": "2019-10-21",
+      "eligible": 698
+    },
+    {
+      "session": "2019-10-22",
+      "eligible": 629
+    },
+    {
+      "session": "2019-10-23",
+      "eligible": 680
+    },
+    {
+      "session": "2019-10-24",
+      "eligible": 804
+    },
+    {
+      "session": "2019-10-25",
+      "eligible": 859
+    },
+    {
+      "session": "2019-10-28",
+      "eligible": 902
+    },
+    {
+      "session": "2019-10-29",
+      "eligible": 948
+    },
+    {
+      "session": "2019-10-30",
+      "eligible": 1046
+    },
+    {
+      "session": "2019-10-31",
+      "eligible": 1116
+    },
+    {
+      "session": "2019-11-01",
+      "eligible": 1044
+    },
+    {
+      "session": "2019-11-04",
+      "eligible": 1043
+    },
+    {
+      "session": "2019-11-05",
+      "eligible": 1068
+    },
+    {
+      "session": "2019-11-06",
+      "eligible": 1060
+    },
+    {
+      "session": "2019-11-07",
+      "eligible": 1001
+    },
+    {
+      "session": "2019-11-08",
+      "eligible": 1030
+    },
+    {
+      "session": "2019-11-11",
+      "eligible": 1045
+    },
+    {
+      "session": "2019-11-12",
+      "eligible": 1155
+    },
+    {
+      "session": "2019-11-13",
+      "eligible": 1160
+    },
+    {
+      "session": "2019-11-14",
+      "eligible": 1047
+    },
+    {
+      "session": "2019-11-15",
+      "eligible": 1088
+    },
+    {
+      "session": "2019-11-18",
+      "eligible": 1119
+    },
+    {
+      "session": "2019-11-19",
+      "eligible": 1079
+    },
+    {
+      "session": "2019-11-20",
+      "eligible": 1014
+    },
+    {
+      "session": "2019-11-21",
+      "eligible": 1107
+    },
+    {
+      "session": "2019-11-22",
+      "eligible": 973
+    },
+    {
+      "session": "2019-11-25",
+      "eligible": 831
+    },
+    {
+      "session": "2019-11-26",
+      "eligible": 903
+    },
+    {
+      "session": "2019-11-27",
+      "eligible": 887
+    },
+    {
+      "session": "2019-11-29",
+      "eligible": 804
+    },
+    {
+      "session": "2019-12-02",
+      "eligible": 865
+    },
+    {
+      "session": "2019-12-03",
+      "eligible": 967
+    },
+    {
+      "session": "2019-12-04",
+      "eligible": 888
+    },
+    {
+      "session": "2019-12-05",
+      "eligible": 902
+    },
+    {
+      "session": "2019-12-06",
+      "eligible": 902
+    },
+    {
+      "session": "2019-12-09",
+      "eligible": 901
+    },
+    {
+      "session": "2019-12-10",
+      "eligible": 916
+    },
+    {
+      "session": "2019-12-11",
+      "eligible": 932
+    },
+    {
+      "session": "2019-12-12",
+      "eligible": 981
+    },
+    {
+      "session": "2019-12-13",
+      "eligible": 1020
+    },
+    {
+      "session": "2019-12-16",
+      "eligible": 1055
+    },
+    {
+      "session": "2019-12-17",
+      "eligible": 1041
+    },
+    {
+      "session": "2019-12-18",
+      "eligible": 1041
+    },
+    {
+      "session": "2019-12-19",
+      "eligible": 1064
+    },
+    {
+      "session": "2019-12-20",
+      "eligible": 1219
+    },
+    {
+      "session": "2019-12-23",
+      "eligible": 1160
+    },
+    {
+      "session": "2019-12-24",
+      "eligible": 1076
+    },
+    {
+      "session": "2019-12-26",
+      "eligible": 1171
+    },
+    {
+      "session": "2019-12-27",
+      "eligible": 1222
+    },
+    {
+      "session": "2019-12-30",
+      "eligible": 1081
+    },
+    {
+      "session": "2019-12-31",
+      "eligible": 1013
+    },
+    {
+      "session": "2020-01-02",
+      "eligible": 1227
+    },
+    {
+      "session": "2020-01-03",
+      "eligible": 960
+    },
+    {
+      "session": "2020-01-06",
+      "eligible": 1016
+    },
+    {
+      "session": "2020-01-07",
+      "eligible": 1124
+    },
+    {
+      "session": "2020-01-08",
+      "eligible": 1228
+    },
+    {
+      "session": "2020-01-09",
+      "eligible": 1128
+    },
+    {
+      "session": "2020-01-10",
+      "eligible": 1218
+    },
+    {
+      "session": "2020-01-13",
+      "eligible": 1127
+    },
+    {
+      "session": "2020-01-14",
+      "eligible": 1068
+    },
+    {
+      "session": "2020-01-15",
+      "eligible": 1001
+    },
+    {
+      "session": "2020-01-16",
+      "eligible": 859
+    },
+    {
+      "session": "2020-01-17",
+      "eligible": 926
+    },
+    {
+      "session": "2020-01-21",
+      "eligible": 1050
+    },
+    {
+      "session": "2020-01-22",
+      "eligible": 1106
+    },
+    {
+      "session": "2020-01-23",
+      "eligible": 1133
+    },
+    {
+      "session": "2020-01-24",
+      "eligible": 1170
+    },
+    {
+      "session": "2020-01-27",
+      "eligible": 1060
+    },
+    {
+      "session": "2020-01-28",
+      "eligible": 1041
+    },
+    {
+      "session": "2020-01-29",
+      "eligible": 1104
+    },
+    {
+      "session": "2020-01-30",
+      "eligible": 1136
+    },
+    {
+      "session": "2020-01-31",
+      "eligible": 1146
+    },
+    {
+      "session": "2020-02-03",
+      "eligible": 1182
+    },
+    {
+      "session": "2020-02-04",
+      "eligible": 1175
+    },
+    {
+      "session": "2020-02-05",
+      "eligible": 1119
+    },
+    {
+      "session": "2020-02-06",
+      "eligible": 1185
+    },
+    {
+      "session": "2020-02-07",
+      "eligible": 1226
+    },
+    {
+      "session": "2020-02-10",
+      "eligible": 1274
+    },
+    {
+      "session": "2020-02-11",
+      "eligible": 1137
+    },
+    {
+      "session": "2020-02-12",
+      "eligible": 1119
+    },
+    {
+      "session": "2020-02-13",
+      "eligible": 971
+    },
+    {
+      "session": "2020-02-14",
+      "eligible": 961
+    },
+    {
+      "session": "2020-02-18",
+      "eligible": 916
+    },
+    {
+      "session": "2020-02-19",
+      "eligible": 1038
+    },
+    {
+      "session": "2020-02-20",
+      "eligible": 940
+    },
+    {
+      "session": "2020-02-21",
+      "eligible": 976
+    },
+    {
+      "session": "2020-02-24",
+      "eligible": 926
+    },
+    {
+      "session": "2020-02-25",
+      "eligible": 999
+    },
+    {
+      "session": "2020-02-26",
+      "eligible": 1150
+    },
+    {
+      "session": "2020-02-27",
+      "eligible": 1144
+    },
+    {
+      "session": "2020-02-28",
+      "eligible": 1390
+    },
+    {
+      "session": "2020-03-02",
+      "eligible": 1514
+    },
+    {
+      "session": "2020-03-03",
+      "eligible": 1451
+    },
+    {
+      "session": "2020-03-04",
+      "eligible": 1454
+    },
+    {
+      "session": "2020-03-05",
+      "eligible": 1438
+    },
+    {
+      "session": "2020-03-06",
+      "eligible": 1309
+    },
+    {
+      "session": "2020-03-09",
+      "eligible": 1189
+    },
+    {
+      "session": "2020-03-10",
+      "eligible": 1409
+    },
+    {
+      "session": "2020-03-11",
+      "eligible": 1393
+    },
+    {
+      "session": "2020-03-12",
+      "eligible": 1489
+    },
+    {
+      "session": "2020-03-13",
+      "eligible": 1576
+    },
+    {
+      "session": "2020-03-16",
+      "eligible": 1517
+    },
+    {
+      "session": "2020-03-17",
+      "eligible": 1450
+    },
+    {
+      "session": "2020-03-18",
+      "eligible": 1514
+    },
+    {
+      "session": "2020-03-19",
+      "eligible": 1343
+    },
+    {
+      "session": "2020-03-20",
+      "eligible": 1232
+    },
+    {
+      "session": "2020-03-23",
+      "eligible": 1105
+    },
+    {
+      "session": "2020-03-24",
+      "eligible": 956
+    },
+    {
+      "session": "2020-03-25",
+      "eligible": 617
+    },
+    {
+      "session": "2020-03-26",
+      "eligible": 786
+    },
+    {
+      "session": "2020-03-27",
+      "eligible": 863
+    },
+    {
+      "session": "2020-03-30",
+      "eligible": 925
+    },
+    {
+      "session": "2020-03-31",
+      "eligible": 985
+    },
+    {
+      "session": "2020-04-01",
+      "eligible": 1168
+    },
+    {
+      "session": "2020-04-02",
+      "eligible": 1223
+    },
+    {
+      "session": "2020-04-03",
+      "eligible": 1244
+    },
+    {
+      "session": "2020-04-06",
+      "eligible": 1133
+    },
+    {
+      "session": "2020-04-07",
+      "eligible": 1142
+    },
+    {
+      "session": "2020-04-08",
+      "eligible": 884
+    },
+    {
+      "session": "2020-04-09",
+      "eligible": 658
+    },
+    {
+      "session": "2020-04-13",
+      "eligible": 684
+    },
+    {
+      "session": "2020-04-14",
+      "eligible": 850
+    },
+    {
+      "session": "2020-04-15",
+      "eligible": 1099
+    },
+    {
+      "session": "2020-04-16",
+      "eligible": 1242
+    },
+    {
+      "session": "2020-04-17",
+      "eligible": 1295
+    },
+    {
+      "session": "2020-04-20",
+      "eligible": 1197
+    },
+    {
+      "session": "2020-04-21",
+      "eligible": 1091
+    },
+    {
+      "session": "2020-04-22",
+      "eligible": 918
+    },
+    {
+      "session": "2020-04-23",
+      "eligible": 725
+    },
+    {
+      "session": "2020-04-24",
+      "eligible": 898
+    },
+    {
+      "session": "2020-04-27",
+      "eligible": 636
+    },
+    {
+      "session": "2020-04-28",
+      "eligible": 588
+    },
+    {
+      "session": "2020-04-29",
+      "eligible": 618
+    },
+    {
+      "session": "2020-04-30",
+      "eligible": 786
+    },
+    {
+      "session": "2020-05-01",
+      "eligible": 845
+    },
+    {
+      "session": "2020-05-04",
+      "eligible": 1082
+    },
+    {
+      "session": "2020-05-05",
+      "eligible": 1284
+    },
+    {
+      "session": "2020-05-06",
+      "eligible": 1322
+    },
+    {
+      "session": "2020-05-07",
+      "eligible": 1126
+    },
+    {
+      "session": "2020-05-08",
+      "eligible": 918
+    },
+    {
+      "session": "2020-05-11",
+      "eligible": 1020
+    },
+    {
+      "session": "2020-05-12",
+      "eligible": 1117
+    },
+    {
+      "session": "2020-05-13",
+      "eligible": 1244
+    },
+    {
+      "session": "2020-05-14",
+      "eligible": 1287
+    },
+    {
+      "session": "2020-05-15",
+      "eligible": 1373
+    },
+    {
+      "session": "2020-05-18",
+      "eligible": 1041
+    },
+    {
+      "session": "2020-05-19",
+      "eligible": 986
+    },
+    {
+      "session": "2020-05-20",
+      "eligible": 743
+    },
+    {
+      "session": "2020-05-21",
+      "eligible": 657
+    },
+    {
+      "session": "2020-05-22",
+      "eligible": 616
+    },
+    {
+      "session": "2020-05-26",
+      "eligible": 647
+    },
+    {
+      "session": "2020-05-27",
+      "eligible": 680
+    },
+    {
+      "session": "2020-05-28",
+      "eligible": 740
+    },
+    {
+      "session": "2020-05-29",
+      "eligible": 927
+    },
+    {
+      "session": "2020-06-01",
+      "eligible": 881
+    },
+    {
+      "session": "2020-06-02",
+      "eligible": 1093
+    },
+    {
+      "session": "2020-06-03",
+      "eligible": 1067
+    },
+    {
+      "session": "2020-06-04",
+      "eligible": 876
+    },
+    {
+      "session": "2020-06-05",
+      "eligible": 926
+    },
+    {
+      "session": "2020-06-08",
+      "eligible": 1006
+    },
+    {
+      "session": "2020-06-09",
+      "eligible": 1104
+    },
+    {
+      "session": "2020-06-10",
+      "eligible": 1414
+    },
+    {
+      "session": "2020-06-11",
+      "eligible": 1491
+    },
+    {
+      "session": "2020-06-12",
+      "eligible": 1347
+    },
+    {
+      "session": "2020-06-15",
+      "eligible": 1320
+    },
+    {
+      "session": "2020-06-16",
+      "eligible": 1278
+    },
+    {
+      "session": "2020-06-17",
+      "eligible": 1173
+    },
+    {
+      "session": "2020-06-18",
+      "eligible": 931
+    },
+    {
+      "session": "2020-06-19",
+      "eligible": 1227
+    },
+    {
+      "session": "2020-06-22",
+      "eligible": 1369
+    },
+    {
+      "session": "2020-06-23",
+      "eligible": 1372
+    },
+    {
+      "session": "2020-06-24",
+      "eligible": 1387
+    },
+    {
+      "session": "2020-06-25",
+      "eligible": 1329
+    },
+    {
+      "session": "2020-06-26",
+      "eligible": 1293
+    },
+    {
+      "session": "2020-06-29",
+      "eligible": 1067
+    },
+    {
+      "session": "2020-06-30",
+      "eligible": 1036
+    },
+    {
+      "session": "2020-07-01",
+      "eligible": 1164
+    },
+    {
+      "session": "2020-07-02",
+      "eligible": 1187
+    },
+    {
+      "session": "2020-07-06",
+      "eligible": 1223
+    },
+    {
+      "session": "2020-07-07",
+      "eligible": 1417
+    },
+    {
+      "session": "2020-07-08",
+      "eligible": 1449
+    },
+    {
+      "session": "2020-07-09",
+      "eligible": 1398
+    },
+    {
+      "session": "2020-07-10",
+      "eligible": 1387
+    },
+    {
+      "session": "2020-07-13",
+      "eligible": 1383
+    },
+    {
+      "session": "2020-07-14",
+      "eligible": 1192
+    },
+    {
+      "session": "2020-07-15",
+      "eligible": 782
+    },
+    {
+      "session": "2020-07-16",
+      "eligible": 706
+    },
+    {
+      "session": "2020-07-17",
+      "eligible": 728
+    },
+    {
+      "session": "2020-07-20",
+      "eligible": 868
+    },
+    {
+      "session": "2020-07-21",
+      "eligible": 736
+    },
+    {
+      "session": "2020-07-22",
+      "eligible": 1124
+    },
+    {
+      "session": "2020-07-23",
+      "eligible": 911
+    },
+    {
+      "session": "2020-07-24",
+      "eligible": 990
+    },
+    {
+      "session": "2020-07-27",
+      "eligible": 819
+    },
+    {
+      "session": "2020-07-28",
+      "eligible": 973
+    },
+    {
+      "session": "2020-07-29",
+      "eligible": 852
+    },
+    {
+      "session": "2020-07-30",
+      "eligible": 1118
+    },
+    {
+      "session": "2020-07-31",
+      "eligible": 1268
+    },
+    {
+      "session": "2020-08-03",
+      "eligible": 1285
+    },
+    {
+      "session": "2020-08-04",
+      "eligible": 1255
+    },
+    {
+      "session": "2020-08-05",
+      "eligible": 1259
+    },
+    {
+      "session": "2020-08-06",
+      "eligible": 1340
+    },
+    {
+      "session": "2020-08-07",
+      "eligible": 988
+    },
+    {
+      "session": "2020-08-10",
+      "eligible": 982
+    },
+    {
+      "session": "2020-08-11",
+      "eligible": 977
+    },
+    {
+      "session": "2020-08-12",
+      "eligible": 1030
+    },
+    {
+      "session": "2020-08-13",
+      "eligible": 916
+    },
+    {
+      "session": "2020-08-14",
+      "eligible": 1038
+    },
+    {
+      "session": "2020-08-17",
+      "eligible": 1143
+    },
+    {
+      "session": "2020-08-18",
+      "eligible": 1334
+    },
+    {
+      "session": "2020-08-19",
+      "eligible": 1241
+    },
+    {
+      "session": "2020-08-20",
+      "eligible": 1376
+    },
+    {
+      "session": "2020-08-21",
+      "eligible": 1436
+    },
+    {
+      "session": "2020-08-24",
+      "eligible": 1443
+    },
+    {
+      "session": "2020-08-25",
+      "eligible": 1355
+    },
+    {
+      "session": "2020-08-26",
+      "eligible": 1578
+    },
+    {
+      "session": "2020-08-27",
+      "eligible": 1427
+    },
+    {
+      "session": "2020-08-28",
+      "eligible": 1207
+    },
+    {
+      "session": "2020-08-31",
+      "eligible": 1404
+    },
+    {
+      "session": "2020-09-01",
+      "eligible": 1385
+    },
+    {
+      "session": "2020-09-02",
+      "eligible": 1192
+    },
+    {
+      "session": "2020-09-03",
+      "eligible": 1035
+    },
+    {
+      "session": "2020-09-04",
+      "eligible": 998
+    },
+    {
+      "session": "2020-09-08",
+      "eligible": 815
+    },
+    {
+      "session": "2020-09-09",
+      "eligible": 834
+    },
+    {
+      "session": "2020-09-10",
+      "eligible": 775
+    },
+    {
+      "session": "2020-09-11",
+      "eligible": 885
+    },
+    {
+      "session": "2020-09-14",
+      "eligible": 849
+    },
+    {
+      "session": "2020-09-15",
+      "eligible": 980
+    },
+    {
+      "session": "2020-09-16",
+      "eligible": 798
+    },
+    {
+      "session": "2020-09-17",
+      "eligible": 794
+    },
+    {
+      "session": "2020-09-18",
+      "eligible": 1016
+    },
+    {
+      "session": "2020-09-21",
+      "eligible": 1264
+    },
+    {
+      "session": "2020-09-22",
+      "eligible": 1270
+    },
+    {
+      "session": "2020-09-23",
+      "eligible": 1343
+    },
+    {
+      "session": "2020-09-24",
+      "eligible": 1391
+    },
+    {
+      "session": "2020-09-25",
+      "eligible": 1402
+    },
+    {
+      "session": "2020-09-28",
+      "eligible": 1142
+    },
+    {
+      "session": "2020-09-29",
+      "eligible": 1057
+    },
+    {
+      "session": "2020-09-30",
+      "eligible": 1115
+    },
+    {
+      "session": "2020-10-01",
+      "eligible": 985
+    },
+    {
+      "session": "2020-10-02",
+      "eligible": 694
+    },
+    {
+      "session": "2020-10-05",
+      "eligible": 695
+    },
+    {
+      "session": "2020-10-06",
+      "eligible": 625
+    },
+    {
+      "session": "2020-10-07",
+      "eligible": 611
+    },
+    {
+      "session": "2020-10-08",
+      "eligible": 613
+    },
+    {
+      "session": "2020-10-09",
+      "eligible": 860
+    },
+    {
+      "session": "2020-10-12",
+      "eligible": 1084
+    },
+    {
+      "session": "2020-10-13",
+      "eligible": 1282
+    },
+    {
+      "session": "2020-10-14",
+      "eligible": 1246
+    },
+    {
+      "session": "2020-10-15",
+      "eligible": 1187
+    },
+    {
+      "session": "2020-10-16",
+      "eligible": 1122
+    },
+    {
+      "session": "2020-10-19",
+      "eligible": 828
+    },
+    {
+      "session": "2020-10-20",
+      "eligible": 787
+    },
+    {
+      "session": "2020-10-21",
+      "eligible": 898
+    },
+    {
+      "session": "2020-10-22",
+      "eligible": 925
+    },
+    {
+      "session": "2020-10-23",
+      "eligible": 904
+    },
+    {
+      "session": "2020-10-26",
+      "eligible": 985
+    },
+    {
+      "session": "2020-10-27",
+      "eligible": 1106
+    },
+    {
+      "session": "2020-10-28",
+      "eligible": 1028
+    },
+    {
+      "session": "2020-10-29",
+      "eligible": 1098
+    },
+    {
+      "session": "2020-10-30",
+      "eligible": 1141
+    },
+    {
+      "session": "2020-11-02",
+      "eligible": 1005
+    },
+    {
+      "session": "2020-11-03",
+      "eligible": 847
+    },
+    {
+      "session": "2020-11-04",
+      "eligible": 1226
+    },
+    {
+      "session": "2020-11-05",
+      "eligible": 1170
+    },
+    {
+      "session": "2020-11-06",
+      "eligible": 1225
+    },
+    {
+      "session": "2020-11-09",
+      "eligible": 1230
+    },
+    {
+      "session": "2020-11-10",
+      "eligible": 1261
+    },
+    {
+      "session": "2020-11-11",
+      "eligible": 1163
+    },
+    {
+      "session": "2020-11-12",
+      "eligible": 1164
+    },
+    {
+      "session": "2020-11-13",
+      "eligible": 1101
+    },
+    {
+      "session": "2020-11-16",
+      "eligible": 910
+    },
+    {
+      "session": "2020-11-17",
+      "eligible": 949
+    },
+    {
+      "session": "2020-11-18",
+      "eligible": 829
+    },
+    {
+      "session": "2020-11-19",
+      "eligible": 745
+    },
+    {
+      "session": "2020-11-20",
+      "eligible": 724
+    },
+    {
+      "session": "2020-11-23",
+      "eligible": 762
+    },
+    {
+      "session": "2020-11-24",
+      "eligible": 828
+    },
+    {
+      "session": "2020-11-25",
+      "eligible": 878
+    },
+    {
+      "session": "2020-11-27",
+      "eligible": 868
+    },
+    {
+      "session": "2020-11-30",
+      "eligible": 1184
+    },
+    {
+      "session": "2020-12-01",
+      "eligible": 1353
+    },
+    {
+      "session": "2020-12-02",
+      "eligible": 1389
+    },
+    {
+      "session": "2020-12-03",
+      "eligible": 1252
+    },
+    {
+      "session": "2020-12-04",
+      "eligible": 1091
+    },
+    {
+      "session": "2020-12-07",
+      "eligible": 934
+    },
+    {
+      "session": "2020-12-08",
+      "eligible": 843
+    },
+    {
+      "session": "2020-12-09",
+      "eligible": 746
+    },
+    {
+      "session": "2020-12-10",
+      "eligible": 828
+    },
+    {
+      "session": "2020-12-11",
+      "eligible": 1046
+    },
+    {
+      "session": "2020-12-14",
+      "eligible": 1012
+    },
+    {
+      "session": "2020-12-15",
+      "eligible": 977
+    },
+    {
+      "session": "2020-12-16",
+      "eligible": 1165
+    },
+    {
+      "session": "2020-12-17",
+      "eligible": 1180
+    },
+    {
+      "session": "2020-12-18",
+      "eligible": 1357
+    },
+    {
+      "session": "2020-12-21",
+      "eligible": 1363
+    },
+    {
+      "session": "2020-12-22",
+      "eligible": 1417
+    },
+    {
+      "session": "2020-12-23",
+      "eligible": 1230
+    },
+    {
+      "session": "2020-12-24",
+      "eligible": 1196
+    },
+    {
+      "session": "2020-12-28",
+      "eligible": 1271
+    },
+    {
+      "session": "2020-12-29",
+      "eligible": 1380
+    },
+    {
+      "session": "2020-12-30",
+      "eligible": 1216
+    },
+    {
+      "session": "2020-12-31",
+      "eligible": 1470
+    },
+    {
+      "session": "2021-01-04",
+      "eligible": 1387
+    },
+    {
+      "session": "2021-01-05",
+      "eligible": 1052
+    },
+    {
+      "session": "2021-01-06",
+      "eligible": 704
+    },
+    {
+      "session": "2021-01-07",
+      "eligible": 956
+    },
+    {
+      "session": "2021-01-08",
+      "eligible": 1100
+    },
+    {
+      "session": "2021-01-11",
+      "eligible": 1035
+    },
+    {
+      "session": "2021-01-12",
+      "eligible": 1000
+    },
+    {
+      "session": "2021-01-13",
+      "eligible": 1310
+    },
+    {
+      "session": "2021-01-14",
+      "eligible": 1001
+    },
+    {
+      "session": "2021-01-15",
+      "eligible": 928
+    },
+    {
+      "session": "2021-01-19",
+      "eligible": 1082
+    },
+    {
+      "session": "2021-01-20",
+      "eligible": 1321
+    },
+    {
+      "session": "2021-01-21",
+      "eligible": 1317
+    },
+    {
+      "session": "2021-01-22",
+      "eligible": 1431
+    },
+    {
+      "session": "2021-01-25",
+      "eligible": 1518
+    },
+    {
+      "session": "2021-01-26",
+      "eligible": 1588
+    },
+    {
+      "session": "2021-01-27",
+      "eligible": 1575
+    },
+    {
+      "session": "2021-01-28",
+      "eligible": 1563
+    },
+    {
+      "session": "2021-01-29",
+      "eligible": 1657
+    },
+    {
+      "session": "2021-02-01",
+      "eligible": 1497
+    },
+    {
+      "session": "2021-02-02",
+      "eligible": 1302
+    },
+    {
+      "session": "2021-02-03",
+      "eligible": 1118
+    },
+    {
+      "session": "2021-02-04",
+      "eligible": 1037
+    },
+    {
+      "session": "2021-02-05",
+      "eligible": 1001
+    },
+    {
+      "session": "2021-02-08",
+      "eligible": 928
+    },
+    {
+      "session": "2021-02-09",
+      "eligible": 870
+    },
+    {
+      "session": "2021-02-10",
+      "eligible": 907
+    },
+    {
+      "session": "2021-02-11",
+      "eligible": 993
+    },
+    {
+      "session": "2021-02-12",
+      "eligible": 1090
+    },
+    {
+      "session": "2021-02-16",
+      "eligible": 1272
+    },
+    {
+      "session": "2021-02-17",
+      "eligible": 1431
+    },
+    {
+      "session": "2021-02-18",
+      "eligible": 1561
+    },
+    {
+      "session": "2021-02-19",
+      "eligible": 1297
+    },
+    {
+      "session": "2021-02-22",
+      "eligible": 1271
+    },
+    {
+      "session": "2021-02-23",
+      "eligible": 1343
+    },
+    {
+      "session": "2021-02-24",
+      "eligible": 1325
+    },
+    {
+      "session": "2021-02-25",
+      "eligible": 1321
+    },
+    {
+      "session": "2021-02-26",
+      "eligible": 1471
+    },
+    {
+      "session": "2021-03-01",
+      "eligible": 1445
+    },
+    {
+      "session": "2021-03-02",
+      "eligible": 1291
+    },
+    {
+      "session": "2021-03-03",
+      "eligible": 1301
+    },
+    {
+      "session": "2021-03-04",
+      "eligible": 1452
+    },
+    {
+      "session": "2021-03-05",
+      "eligible": 1409
+    },
+    {
+      "session": "2021-03-08",
+      "eligible": 1323
+    },
+    {
+      "session": "2021-03-09",
+      "eligible": 1350
+    },
+    {
+      "session": "2021-03-10",
+      "eligible": 1297
+    },
+    {
+      "session": "2021-03-11",
+      "eligible": 915
+    },
+    {
+      "session": "2021-03-12",
+      "eligible": 790
+    },
+    {
+      "session": "2021-03-15",
+      "eligible": 978
+    },
+    {
+      "session": "2021-03-16",
+      "eligible": 1045
+    },
+    {
+      "session": "2021-03-17",
+      "eligible": 1154
+    },
+    {
+      "session": "2021-03-18",
+      "eligible": 1290
+    },
+    {
+      "session": "2021-03-19",
+      "eligible": 1429
+    },
+    {
+      "session": "2021-03-22",
+      "eligible": 1688
+    },
+    {
+      "session": "2021-03-23",
+      "eligible": 1808
+    },
+    {
+      "session": "2021-03-24",
+      "eligible": 1886
+    },
+    {
+      "session": "2021-03-25",
+      "eligible": 1796
+    },
+    {
+      "session": "2021-03-26",
+      "eligible": 1724
+    },
+    {
+      "session": "2021-03-29",
+      "eligible": 1683
+    },
+    {
+      "session": "2021-03-30",
+      "eligible": 1198
+    },
+    {
+      "session": "2021-03-31",
+      "eligible": 1110
+    },
+    {
+      "session": "2021-04-01",
+      "eligible": 1290
+    },
+    {
+      "session": "2021-04-05",
+      "eligible": 1488
+    },
+    {
+      "session": "2021-04-06",
+      "eligible": 1071
+    },
+    {
+      "session": "2021-04-07",
+      "eligible": 1560
+    },
+    {
+      "session": "2021-04-08",
+      "eligible": 1537
+    },
+    {
+      "session": "2021-04-09",
+      "eligible": 1733
+    },
+    {
+      "session": "2021-04-12",
+      "eligible": 1549
+    },
+    {
+      "session": "2021-04-13",
+      "eligible": 1737
+    },
+    {
+      "session": "2021-04-14",
+      "eligible": 1340
+    },
+    {
+      "session": "2021-04-15",
+      "eligible": 1400
+    },
+    {
+      "session": "2021-04-16",
+      "eligible": 1276
+    },
+    {
+      "session": "2021-04-19",
+      "eligible": 1281
+    },
+    {
+      "session": "2021-04-20",
+      "eligible": 1291
+    },
+    {
+      "session": "2021-04-21",
+      "eligible": 1314
+    },
+    {
+      "session": "2021-04-22",
+      "eligible": 1019
+    },
+    {
+      "session": "2021-04-23",
+      "eligible": 931
+    },
+    {
+      "session": "2021-04-26",
+      "eligible": 831
+    },
+    {
+      "session": "2021-04-27",
+      "eligible": 690
+    },
+    {
+      "session": "2021-04-28",
+      "eligible": 812
+    },
+    {
+      "session": "2021-04-29",
+      "eligible": 1084
+    },
+    {
+      "session": "2021-04-30",
+      "eligible": 1277
+    },
+    {
+      "session": "2021-05-03",
+      "eligible": 1266
+    },
+    {
+      "session": "2021-05-04",
+      "eligible": 1308
+    },
+    {
+      "session": "2021-05-05",
+      "eligible": 1359
+    },
+    {
+      "session": "2021-05-06",
+      "eligible": 1360
+    },
+    {
+      "session": "2021-05-07",
+      "eligible": 1283
+    },
+    {
+      "session": "2021-05-10",
+      "eligible": 1327
+    },
+    {
+      "session": "2021-05-11",
+      "eligible": 1340
+    },
+    {
+      "session": "2021-05-12",
+      "eligible": 1423
+    },
+    {
+      "session": "2021-05-13",
+      "eligible": 1246
+    },
+    {
+      "session": "2021-05-14",
+      "eligible": 1220
+    },
+    {
+      "session": "2021-05-17",
+      "eligible": 1040
+    },
+    {
+      "session": "2021-05-18",
+      "eligible": 1011
+    },
+    {
+      "session": "2021-05-19",
+      "eligible": 940
+    },
+    {
+      "session": "2021-05-20",
+      "eligible": 1083
+    },
+    {
+      "session": "2021-05-21",
+      "eligible": 1081
+    },
+    {
+      "session": "2021-05-24",
+      "eligible": 1297
+    },
+    {
+      "session": "2021-05-25",
+      "eligible": 1501
+    },
+    {
+      "session": "2021-05-26",
+      "eligible": 1257
+    },
+    {
+      "session": "2021-05-27",
+      "eligible": 990
+    },
+    {
+      "session": "2021-05-28",
+      "eligible": 1071
+    },
+    {
+      "session": "2021-06-01",
+      "eligible": 747
+    },
+    {
+      "session": "2021-06-02",
+      "eligible": 790
+    },
+    {
+      "session": "2021-06-03",
+      "eligible": 1010
+    },
+    {
+      "session": "2021-06-04",
+      "eligible": 1254
+    },
+    {
+      "session": "2021-06-07",
+      "eligible": 1127
+    },
+    {
+      "session": "2021-06-08",
+      "eligible": 1190
+    },
+    {
+      "session": "2021-06-09",
+      "eligible": 1159
+    },
+    {
+      "session": "2021-06-10",
+      "eligible": 1252
+    },
+    {
+      "session": "2021-06-11",
+      "eligible": 1083
+    },
+    {
+      "session": "2021-06-14",
+      "eligible": 1285
+    },
+    {
+      "session": "2021-06-15",
+      "eligible": 1423
+    },
+    {
+      "session": "2021-06-16",
+      "eligible": 1331
+    },
+    {
+      "session": "2021-06-17",
+      "eligible": 1491
+    },
+    {
+      "session": "2021-06-18",
+      "eligible": 1715
+    },
+    {
+      "session": "2021-06-21",
+      "eligible": 1629
+    },
+    {
+      "session": "2021-06-22",
+      "eligible": 1656
+    },
+    {
+      "session": "2021-06-23",
+      "eligible": 1595
+    },
+    {
+      "session": "2021-06-24",
+      "eligible": 1278
+    },
+    {
+      "session": "2021-06-25",
+      "eligible": 1262
+    },
+    {
+      "session": "2021-06-28",
+      "eligible": 1535
+    },
+    {
+      "session": "2021-06-29",
+      "eligible": 1527
+    },
+    {
+      "session": "2021-06-30",
+      "eligible": 1628
+    },
+    {
+      "session": "2021-07-01",
+      "eligible": 1747
+    },
+    {
+      "session": "2021-07-02",
+      "eligible": 1849
+    },
+    {
+      "session": "2021-07-06",
+      "eligible": 1841
+    },
+    {
+      "session": "2021-07-07",
+      "eligible": 1808
+    },
+    {
+      "session": "2021-07-08",
+      "eligible": 1831
+    },
+    {
+      "session": "2021-07-09",
+      "eligible": 1768
+    },
+    {
+      "session": "2021-07-12",
+      "eligible": 1608
+    },
+    {
+      "session": "2021-07-13",
+      "eligible": 1590
+    },
+    {
+      "session": "2021-07-14",
+      "eligible": 1630
+    },
+    {
+      "session": "2021-07-15",
+      "eligible": 1456
+    },
+    {
+      "session": "2021-07-16",
+      "eligible": 1692
+    },
+    {
+      "session": "2021-07-19",
+      "eligible": 1651
+    },
+    {
+      "session": "2021-07-20",
+      "eligible": 1338
+    },
+    {
+      "session": "2021-07-21",
+      "eligible": 916
+    },
+    {
+      "session": "2021-07-22",
+      "eligible": 1290
+    },
+    {
+      "session": "2021-07-23",
+      "eligible": 1336
+    },
+    {
+      "session": "2021-07-26",
+      "eligible": 1138
+    },
+    {
+      "session": "2021-07-27",
+      "eligible": 1458
+    },
+    {
+      "session": "2021-07-28",
+      "eligible": 1408
+    },
+    {
+      "session": "2021-07-29",
+      "eligible": 975
+    },
+    {
+      "session": "2021-07-30",
+      "eligible": 820
+    },
+    {
+      "session": "2021-08-02",
+      "eligible": 908
+    },
+    {
+      "session": "2021-08-03",
+      "eligible": 1010
+    },
+    {
+      "session": "2021-08-04",
+      "eligible": 1338
+    },
+    {
+      "session": "2021-08-05",
+      "eligible": 1299
+    },
+    {
+      "session": "2021-08-06",
+      "eligible": 1300
+    },
+    {
+      "session": "2021-08-09",
+      "eligible": 1321
+    },
+    {
+      "session": "2021-08-10",
+      "eligible": 1193
+    },
+    {
+      "session": "2021-08-11",
+      "eligible": 1025
+    },
+    {
+      "session": "2021-08-12",
+      "eligible": 1195
+    },
+    {
+      "session": "2021-08-13",
+      "eligible": 1332
+    },
+    {
+      "session": "2021-08-16",
+      "eligible": 1370
+    },
+    {
+      "session": "2021-08-17",
+      "eligible": 1499
+    },
+    {
+      "session": "2021-08-18",
+      "eligible": 1515
+    },
+    {
+      "session": "2021-08-19",
+      "eligible": 1570
+    },
+    {
+      "session": "2021-08-20",
+      "eligible": 1486
+    },
+    {
+      "session": "2021-08-23",
+      "eligible": 1296
+    },
+    {
+      "session": "2021-08-24",
+      "eligible": 1006
+    },
+    {
+      "session": "2021-08-25",
+      "eligible": 996
+    },
+    {
+      "session": "2021-08-26",
+      "eligible": 800
+    },
+    {
+      "session": "2021-08-27",
+      "eligible": 716
+    },
+    {
+      "session": "2021-08-30",
+      "eligible": 924
+    },
+    {
+      "session": "2021-08-31",
+      "eligible": 1060
+    },
+    {
+      "session": "2021-09-01",
+      "eligible": 1015
+    },
+    {
+      "session": "2021-09-02",
+      "eligible": 935
+    },
+    {
+      "session": "2021-09-03",
+      "eligible": 1236
+    },
+    {
+      "session": "2021-09-07",
+      "eligible": 1202
+    },
+    {
+      "session": "2021-09-08",
+      "eligible": 1384
+    },
+    {
+      "session": "2021-09-09",
+      "eligible": 1382
+    },
+    {
+      "session": "2021-09-10",
+      "eligible": 1468
+    },
+    {
+      "session": "2021-09-13",
+      "eligible": 1329
+    },
+    {
+      "session": "2021-09-14",
+      "eligible": 1313
+    },
+    {
+      "session": "2021-09-15",
+      "eligible": 1215
+    },
+    {
+      "session": "2021-09-16",
+      "eligible": 1300
+    },
+    {
+      "session": "2021-09-17",
+      "eligible": 1449
+    },
+    {
+      "session": "2021-09-20",
+      "eligible": 1558
+    },
+    {
+      "session": "2021-09-21",
+      "eligible": 1441
+    },
+    {
+      "session": "2021-09-22",
+      "eligible": 1343
+    },
+    {
+      "session": "2021-09-23",
+      "eligible": 1335
+    },
+    {
+      "session": "2021-09-24",
+      "eligible": 1234
+    },
+    {
+      "session": "2021-09-27",
+      "eligible": 979
+    },
+    {
+      "session": "2021-09-28",
+      "eligible": 1041
+    },
+    {
+      "session": "2021-09-29",
+      "eligible": 1088
+    },
+    {
+      "session": "2021-09-30",
+      "eligible": 1069
+    },
+    {
+      "session": "2021-10-01",
+      "eligible": 980
+    },
+    {
+      "session": "2021-10-04",
+      "eligible": 1098
+    },
+    {
+      "session": "2021-10-05",
+      "eligible": 1195
+    },
+    {
+      "session": "2021-10-06",
+      "eligible": 1276
+    },
+    {
+      "session": "2021-10-07",
+      "eligible": 1233
+    },
+    {
+      "session": "2021-10-08",
+      "eligible": 1311
+    },
+    {
+      "session": "2021-10-11",
+      "eligible": 1350
+    },
+    {
+      "session": "2021-10-12",
+      "eligible": 1075
+    },
+    {
+      "session": "2021-10-13",
+      "eligible": 955
+    },
+    {
+      "session": "2021-10-14",
+      "eligible": 1047
+    },
+    {
+      "session": "2021-10-15",
+      "eligible": 1181
+    },
+    {
+      "session": "2021-10-18",
+      "eligible": 1295
+    },
+    {
+      "session": "2021-10-19",
+      "eligible": 1466
+    },
+    {
+      "session": "2021-10-20",
+      "eligible": 1414
+    },
+    {
+      "session": "2021-10-21",
+      "eligible": 1419
+    },
+    {
+      "session": "2021-10-22",
+      "eligible": 1210
+    },
+    {
+      "session": "2021-10-25",
+      "eligible": 1150
+    },
+    {
+      "session": "2021-10-26",
+      "eligible": 1267
+    },
+    {
+      "session": "2021-10-27",
+      "eligible": 1575
+    },
+    {
+      "session": "2021-10-28",
+      "eligible": 1495
+    },
+    {
+      "session": "2021-10-29",
+      "eligible": 1598
+    },
+    {
+      "session": "2021-11-01",
+      "eligible": 1346
+    },
+    {
+      "session": "2021-11-02",
+      "eligible": 1413
+    },
+    {
+      "session": "2021-11-03",
+      "eligible": 1175
+    },
+    {
+      "session": "2021-11-04",
+      "eligible": 1383
+    },
+    {
+      "session": "2021-11-05",
+      "eligible": 1244
+    },
+    {
+      "session": "2021-11-08",
+      "eligible": 1435
+    },
+    {
+      "session": "2021-11-09",
+      "eligible": 1309
+    },
+    {
+      "session": "2021-11-10",
+      "eligible": 1356
+    },
+    {
+      "session": "2021-11-11",
+      "eligible": 1027
+    },
+    {
+      "session": "2021-11-12",
+      "eligible": 1187
+    },
+    {
+      "session": "2021-11-15",
+      "eligible": 1223
+    },
+    {
+      "session": "2021-11-16",
+      "eligible": 1361
+    },
+    {
+      "session": "2021-11-17",
+      "eligible": 1456
+    },
+    {
+      "session": "2021-11-18",
+      "eligible": 1753
+    },
+    {
+      "session": "2021-11-19",
+      "eligible": 1736
+    },
+    {
+      "session": "2021-11-22",
+      "eligible": 1735
+    },
+    {
+      "session": "2021-11-23",
+      "eligible": 1613
+    },
+    {
+      "session": "2021-11-24",
+      "eligible": 1591
+    },
+    {
+      "session": "2021-11-26",
+      "eligible": 1532
+    },
+    {
+      "session": "2021-11-29",
+      "eligible": 1635
+    },
+    {
+      "session": "2021-11-30",
+      "eligible": 1686
+    },
+    {
+      "session": "2021-12-01",
+      "eligible": 1754
+    },
+    {
+      "session": "2021-12-02",
+      "eligible": 1672
+    },
+    {
+      "session": "2021-12-03",
+      "eligible": 1610
+    },
+    {
+      "session": "2021-12-06",
+      "eligible": 1304
+    },
+    {
+      "session": "2021-12-07",
+      "eligible": 1167
+    },
+    {
+      "session": "2021-12-08",
+      "eligible": 931
+    },
+    {
+      "session": "2021-12-09",
+      "eligible": 1315
+    },
+    {
+      "session": "2021-12-10",
+      "eligible": 1442
+    },
+    {
+      "session": "2021-12-13",
+      "eligible": 1621
+    },
+    {
+      "session": "2021-12-14",
+      "eligible": 1596
+    },
+    {
+      "session": "2021-12-15",
+      "eligible": 1737
+    },
+    {
+      "session": "2021-12-16",
+      "eligible": 1588
+    },
+    {
+      "session": "2021-12-17",
+      "eligible": 1524
+    },
+    {
+      "session": "2021-12-20",
+      "eligible": 1543
+    },
+    {
+      "session": "2021-12-21",
+      "eligible": 1301
+    },
+    {
+      "session": "2021-12-22",
+      "eligible": 1213
+    },
+    {
+      "session": "2021-12-23",
+      "eligible": 1124
+    },
+    {
+      "session": "2021-12-27",
+      "eligible": 1243
+    },
+    {
+      "session": "2021-12-28",
+      "eligible": 1090
+    },
+    {
+      "session": "2021-12-29",
+      "eligible": 1297
+    },
+    {
+      "session": "2021-12-30",
+      "eligible": 1150
+    },
+    {
+      "session": "2021-12-31",
+      "eligible": 1097
+    },
+    {
+      "session": "2022-01-03",
+      "eligible": 920
+    },
+    {
+      "session": "2022-01-04",
+      "eligible": 891
+    },
+    {
+      "session": "2022-01-05",
+      "eligible": 1045
+    },
+    {
+      "session": "2022-01-06",
+      "eligible": 1129
+    },
+    {
+      "session": "2022-01-07",
+      "eligible": 1251
+    },
+    {
+      "session": "2022-01-10",
+      "eligible": 1315
+    },
+    {
+      "session": "2022-01-11",
+      "eligible": 1341
+    },
+    {
+      "session": "2022-01-12",
+      "eligible": 1346
+    },
+    {
+      "session": "2022-01-13",
+      "eligible": 1246
+    },
+    {
+      "session": "2022-01-14",
+      "eligible": 1218
+    },
+    {
+      "session": "2022-01-18",
+      "eligible": 1244
+    },
+    {
+      "session": "2022-01-19",
+      "eligible": 1278
+    },
+    {
+      "session": "2022-01-20",
+      "eligible": 1271
+    },
+    {
+      "session": "2022-01-21",
+      "eligible": 1362
+    },
+    {
+      "session": "2022-01-24",
+      "eligible": 1301
+    },
+    {
+      "session": "2022-01-25",
+      "eligible": 1321
+    },
+    {
+      "session": "2022-01-26",
+      "eligible": 1519
+    },
+    {
+      "session": "2022-01-27",
+      "eligible": 1617
+    },
+    {
+      "session": "2022-01-28",
+      "eligible": 1680
+    },
+    {
+      "session": "2022-01-31",
+      "eligible": 1581
+    },
+    {
+      "session": "2022-02-01",
+      "eligible": 1464
+    },
+    {
+      "session": "2022-02-02",
+      "eligible": 1558
+    },
+    {
+      "session": "2022-02-03",
+      "eligible": 1275
+    },
+    {
+      "session": "2022-02-04",
+      "eligible": 1096
+    },
+    {
+      "session": "2022-02-07",
+      "eligible": 1132
+    },
+    {
+      "session": "2022-02-08",
+      "eligible": 1068
+    },
+    {
+      "session": "2022-02-09",
+      "eligible": 778
+    },
+    {
+      "session": "2022-02-10",
+      "eligible": 910
+    },
+    {
+      "session": "2022-02-11",
+      "eligible": 669
+    },
+    {
+      "session": "2022-02-14",
+      "eligible": 838
+    },
+    {
+      "session": "2022-02-15",
+      "eligible": 835
+    },
+    {
+      "session": "2022-02-16",
+      "eligible": 864
+    },
+    {
+      "session": "2022-02-17",
+      "eligible": 924
+    },
+    {
+      "session": "2022-02-18",
+      "eligible": 1082
+    },
+    {
+      "session": "2022-02-22",
+      "eligible": 1046
+    },
+    {
+      "session": "2022-02-23",
+      "eligible": 1161
+    },
+    {
+      "session": "2022-02-24",
+      "eligible": 1249
+    },
+    {
+      "session": "2022-02-25",
+      "eligible": 1191
+    },
+    {
+      "session": "2022-02-28",
+      "eligible": 1248
+    },
+    {
+      "session": "2022-03-01",
+      "eligible": 1298
+    },
+    {
+      "session": "2022-03-02",
+      "eligible": 1271
+    },
+    {
+      "session": "2022-03-03",
+      "eligible": 1254
+    },
+    {
+      "session": "2022-03-04",
+      "eligible": 1411
+    },
+    {
+      "session": "2022-03-07",
+      "eligible": 1416
+    },
+    {
+      "session": "2022-03-08",
+      "eligible": 1313
+    },
+    {
+      "session": "2022-03-09",
+      "eligible": 1359
+    },
+    {
+      "session": "2022-03-10",
+      "eligible": 1276
+    },
+    {
+      "session": "2022-03-11",
+      "eligible": 1095
+    },
+    {
+      "session": "2022-03-14",
+      "eligible": 1170
+    },
+    {
+      "session": "2022-03-15",
+      "eligible": 1359
+    },
+    {
+      "session": "2022-03-16",
+      "eligible": 1265
+    },
+    {
+      "session": "2022-03-17",
+      "eligible": 1277
+    },
+    {
+      "session": "2022-03-18",
+      "eligible": 1370
+    },
+    {
+      "session": "2022-03-21",
+      "eligible": 1407
+    },
+    {
+      "session": "2022-03-22",
+      "eligible": 1325
+    },
+    {
+      "session": "2022-03-23",
+      "eligible": 1454
+    },
+    {
+      "session": "2022-03-24",
+      "eligible": 1561
+    },
+    {
+      "session": "2022-03-25",
+      "eligible": 1548
+    },
+    {
+      "session": "2022-03-28",
+      "eligible": 1621
+    },
+    {
+      "session": "2022-03-29",
+      "eligible": 1380
+    },
+    {
+      "session": "2022-03-30",
+      "eligible": 1482
+    },
+    {
+      "session": "2022-03-31",
+      "eligible": 1321
+    },
+    {
+      "session": "2022-04-01",
+      "eligible": 1099
+    },
+    {
+      "session": "2022-04-04",
+      "eligible": 1039
+    },
+    {
+      "session": "2022-04-05",
+      "eligible": 1310
+    },
+    {
+      "session": "2022-04-06",
+      "eligible": 1280
+    },
+    {
+      "session": "2022-04-07",
+      "eligible": 1447
+    },
+    {
+      "session": "2022-04-08",
+      "eligible": 1533
+    },
+    {
+      "session": "2022-04-11",
+      "eligible": 1289
+    },
+    {
+      "session": "2022-04-12",
+      "eligible": 1158
+    },
+    {
+      "session": "2022-04-13",
+      "eligible": 1004
+    },
+    {
+      "session": "2022-04-14",
+      "eligible": 803
+    },
+    {
+      "session": "2022-04-18",
+      "eligible": 865
+    },
+    {
+      "session": "2022-04-19",
+      "eligible": 998
+    },
+    {
+      "session": "2022-04-20",
+      "eligible": 935
+    },
+    {
+      "session": "2022-04-21",
+      "eligible": 1060
+    },
+    {
+      "session": "2022-04-22",
+      "eligible": 1134
+    },
+    {
+      "session": "2022-04-25",
+      "eligible": 1021
+    },
+    {
+      "session": "2022-04-26",
+      "eligible": 1171
+    },
+    {
+      "session": "2022-04-27",
+      "eligible": 1337
+    },
+    {
+      "session": "2022-04-28",
+      "eligible": 1368
+    },
+    {
+      "session": "2022-04-29",
+      "eligible": 1243
+    },
+    {
+      "session": "2022-05-02",
+      "eligible": 1217
+    },
+    {
+      "session": "2022-05-03",
+      "eligible": 1122
+    },
+    {
+      "session": "2022-05-04",
+      "eligible": 1165
+    },
+    {
+      "session": "2022-05-05",
+      "eligible": 1062
+    },
+    {
+      "session": "2022-05-06",
+      "eligible": 1353
+    },
+    {
+      "session": "2022-05-09",
+      "eligible": 1362
+    },
+    {
+      "session": "2022-05-10",
+      "eligible": 1507
+    },
+    {
+      "session": "2022-05-11",
+      "eligible": 1446
+    },
+    {
+      "session": "2022-05-12",
+      "eligible": 1368
+    },
+    {
+      "session": "2022-05-13",
+      "eligible": 1186
+    },
+    {
+      "session": "2022-05-16",
+      "eligible": 1116
+    },
+    {
+      "session": "2022-05-17",
+      "eligible": 848
+    },
+    {
+      "session": "2022-05-18",
+      "eligible": 651
+    },
+    {
+      "session": "2022-05-19",
+      "eligible": 676
+    },
+    {
+      "session": "2022-05-20",
+      "eligible": 783
+    },
+    {
+      "session": "2022-05-23",
+      "eligible": 874
+    },
+    {
+      "session": "2022-05-24",
+      "eligible": 1162
+    },
+    {
+      "session": "2022-05-25",
+      "eligible": 1161
+    },
+    {
+      "session": "2022-05-26",
+      "eligible": 1355
+    },
+    {
+      "session": "2022-05-27",
+      "eligible": 1335
+    },
+    {
+      "session": "2022-05-31",
+      "eligible": 1249
+    },
+    {
+      "session": "2022-06-01",
+      "eligible": 1162
+    },
+    {
+      "session": "2022-06-02",
+      "eligible": 1164
+    },
+    {
+      "session": "2022-06-03",
+      "eligible": 1119
+    },
+    {
+      "session": "2022-06-06",
+      "eligible": 1084
+    },
+    {
+      "session": "2022-06-07",
+      "eligible": 958
+    },
+    {
+      "session": "2022-06-08",
+      "eligible": 1010
+    },
+    {
+      "session": "2022-06-09",
+      "eligible": 1079
+    },
+    {
+      "session": "2022-06-10",
+      "eligible": 1165
+    },
+    {
+      "session": "2022-06-13",
+      "eligible": 1264
+    },
+    {
+      "session": "2022-06-14",
+      "eligible": 1297
+    },
+    {
+      "session": "2022-06-15",
+      "eligible": 1281
+    },
+    {
+      "session": "2022-06-16",
+      "eligible": 1390
+    },
+    {
+      "session": "2022-06-17",
+      "eligible": 1407
+    },
+    {
+      "session": "2022-06-21",
+      "eligible": 1394
+    },
+    {
+      "session": "2022-06-22",
+      "eligible": 1368
+    },
+    {
+      "session": "2022-06-23",
+      "eligible": 1333
+    },
+    {
+      "session": "2022-06-24",
+      "eligible": 1443
+    },
+    {
+      "session": "2022-06-27",
+      "eligible": 1366
+    },
+    {
+      "session": "2022-06-28",
+      "eligible": 1101
+    },
+    {
+      "session": "2022-06-29",
+      "eligible": 1221
+    },
+    {
+      "session": "2022-06-30",
+      "eligible": 1169
+    },
+    {
+      "session": "2022-07-01",
+      "eligible": 1030
+    },
+    {
+      "session": "2022-07-05",
+      "eligible": 1076
+    },
+    {
+      "session": "2022-07-06",
+      "eligible": 1346
+    },
+    {
+      "session": "2022-07-07",
+      "eligible": 1228
+    },
+    {
+      "session": "2022-07-08",
+      "eligible": 1331
+    },
+    {
+      "session": "2022-07-11",
+      "eligible": 1382
+    },
+    {
+      "session": "2022-07-12",
+      "eligible": 1245
+    },
+    {
+      "session": "2022-07-13",
+      "eligible": 939
+    },
+    {
+      "session": "2022-07-14",
+      "eligible": 1237
+    },
+    {
+      "session": "2022-07-15",
+      "eligible": 1148
+    },
+    {
+      "session": "2022-07-18",
+      "eligible": 925
+    },
+    {
+      "session": "2022-07-19",
+      "eligible": 942
+    },
+    {
+      "session": "2022-07-20",
+      "eligible": 931
+    },
+    {
+      "session": "2022-07-21",
+      "eligible": 846
+    },
+    {
+      "session": "2022-07-22",
+      "eligible": 868
+    },
+    {
+      "session": "2022-07-25",
+      "eligible": 906
+    },
+    {
+      "session": "2022-07-26",
+      "eligible": 969
+    },
+    {
+      "session": "2022-07-27",
+      "eligible": 1122
+    },
+    {
+      "session": "2022-07-28",
+      "eligible": 1050
+    },
+    {
+      "session": "2022-07-29",
+      "eligible": 1198
+    },
+    {
+      "session": "2022-08-01",
+      "eligible": 1251
+    },
+    {
+      "session": "2022-08-02",
+      "eligible": 1339
+    },
+    {
+      "session": "2022-08-03",
+      "eligible": 1346
+    },
+    {
+      "session": "2022-08-04",
+      "eligible": 1345
+    },
+    {
+      "session": "2022-08-05",
+      "eligible": 1207
+    },
+    {
+      "session": "2022-08-08",
+      "eligible": 1194
+    },
+    {
+      "session": "2022-08-09",
+      "eligible": 1232
+    },
+    {
+      "session": "2022-08-10",
+      "eligible": 1119
+    },
+    {
+      "session": "2022-08-11",
+      "eligible": 1047
+    },
+    {
+      "session": "2022-08-12",
+      "eligible": 1104
+    },
+    {
+      "session": "2022-08-15",
+      "eligible": 1322
+    },
+    {
+      "session": "2022-08-16",
+      "eligible": 1142
+    },
+    {
+      "session": "2022-08-17",
+      "eligible": 1306
+    },
+    {
+      "session": "2022-08-18",
+      "eligible": 1354
+    },
+    {
+      "session": "2022-08-19",
+      "eligible": 1408
+    },
+    {
+      "session": "2022-08-22",
+      "eligible": 1315
+    },
+    {
+      "session": "2022-08-23",
+      "eligible": 1340
+    },
+    {
+      "session": "2022-08-24",
+      "eligible": 1182
+    },
+    {
+      "session": "2022-08-25",
+      "eligible": 1151
+    },
+    {
+      "session": "2022-08-26",
+      "eligible": 986
+    },
+    {
+      "session": "2022-08-29",
+      "eligible": 984
+    },
+    {
+      "session": "2022-08-30",
+      "eligible": 1018
+    },
+    {
+      "session": "2022-08-31",
+      "eligible": 1090
+    },
+    {
+      "session": "2022-09-01",
+      "eligible": 1354
+    },
+    {
+      "session": "2022-09-02",
+      "eligible": 1349
+    },
+    {
+      "session": "2022-09-06",
+      "eligible": 1401
+    },
+    {
+      "session": "2022-09-07",
+      "eligible": 1274
+    },
+    {
+      "session": "2022-09-08",
+      "eligible": 1272
+    },
+    {
+      "session": "2022-09-09",
+      "eligible": 955
+    },
+    {
+      "session": "2022-09-12",
+      "eligible": 1080
+    },
+    {
+      "session": "2022-09-13",
+      "eligible": 854
+    },
+    {
+      "session": "2022-09-14",
+      "eligible": 1041
+    },
+    {
+      "session": "2022-09-15",
+      "eligible": 978
+    },
+    {
+      "session": "2022-09-16",
+      "eligible": 1456
+    },
+    {
+      "session": "2022-09-19",
+      "eligible": 1454
+    },
+    {
+      "session": "2022-09-20",
+      "eligible": 1577
+    },
+    {
+      "session": "2022-09-21",
+      "eligible": 1493
+    },
+    {
+      "session": "2022-09-22",
+      "eligible": 1628
+    },
+    {
+      "session": "2022-09-23",
+      "eligible": 1470
+    },
+    {
+      "session": "2022-09-26",
+      "eligible": 1556
+    },
+    {
+      "session": "2022-09-27",
+      "eligible": 1436
+    },
+    {
+      "session": "2022-09-28",
+      "eligible": 1347
+    },
+    {
+      "session": "2022-09-29",
+      "eligible": 1112
+    },
+    {
+      "session": "2022-09-30",
+      "eligible": 856
+    },
+    {
+      "session": "2022-10-03",
+      "eligible": 778
+    },
+    {
+      "session": "2022-10-04",
+      "eligible": 682
+    },
+    {
+      "session": "2022-10-05",
+      "eligible": 918
+    },
+    {
+      "session": "2022-10-06",
+      "eligible": 815
+    },
+    {
+      "session": "2022-10-07",
+      "eligible": 993
+    },
+    {
+      "session": "2022-10-10",
+      "eligible": 960
+    },
+    {
+      "session": "2022-10-11",
+      "eligible": 1042
+    },
+    {
+      "session": "2022-10-12",
+      "eligible": 956
+    },
+    {
+      "session": "2022-10-13",
+      "eligible": 1046
+    },
+    {
+      "session": "2022-10-14",
+      "eligible": 1070
+    },
+    {
+      "session": "2022-10-17",
+      "eligible": 1059
+    },
+    {
+      "session": "2022-10-18",
+      "eligible": 1159
+    },
+    {
+      "session": "2022-10-19",
+      "eligible": 1316
+    },
+    {
+      "session": "2022-10-20",
+      "eligible": 1306
+    },
+    {
+      "session": "2022-10-21",
+      "eligible": 1318
+    },
+    {
+      "session": "2022-10-24",
+      "eligible": 1506
+    },
+    {
+      "session": "2022-10-25",
+      "eligible": 1393
+    },
+    {
+      "session": "2022-10-26",
+      "eligible": 967
+    },
+    {
+      "session": "2022-10-27",
+      "eligible": 836
+    },
+    {
+      "session": "2022-10-28",
+      "eligible": 900
+    },
+    {
+      "session": "2022-10-31",
+      "eligible": 724
+    },
+    {
+      "session": "2022-11-01",
+      "eligible": 730
+    },
+    {
+      "session": "2022-11-02",
+      "eligible": 1025
+    },
+    {
+      "session": "2022-11-03",
+      "eligible": 1016
+    },
+    {
+      "session": "2022-11-04",
+      "eligible": 976
+    },
+    {
+      "session": "2022-11-07",
+      "eligible": 1032
+    },
+    {
+      "session": "2022-11-08",
+      "eligible": 1164
+    },
+    {
+      "session": "2022-11-09",
+      "eligible": 1130
+    },
+    {
+      "session": "2022-11-10",
+      "eligible": 1270
+    },
+    {
+      "session": "2022-11-11",
+      "eligible": 1294
+    },
+    {
+      "session": "2022-11-14",
+      "eligible": 1312
+    },
+    {
+      "session": "2022-11-15",
+      "eligible": 1273
+    },
+    {
+      "session": "2022-11-16",
+      "eligible": 1352
+    },
+    {
+      "session": "2022-11-17",
+      "eligible": 1416
+    },
+    {
+      "session": "2022-11-18",
+      "eligible": 1343
+    },
+    {
+      "session": "2022-11-21",
+      "eligible": 1270
+    },
+    {
+      "session": "2022-11-22",
+      "eligible": 1347
+    },
+    {
+      "session": "2022-11-23",
+      "eligible": 1307
+    },
+    {
+      "session": "2022-11-25",
+      "eligible": 1058
+    },
+    {
+      "session": "2022-11-28",
+      "eligible": 1138
+    },
+    {
+      "session": "2022-11-29",
+      "eligible": 1017
+    },
+    {
+      "session": "2022-11-30",
+      "eligible": 1114
+    },
+    {
+      "session": "2022-12-01",
+      "eligible": 1035
+    },
+    {
+      "session": "2022-12-02",
+      "eligible": 1126
+    },
+    {
+      "session": "2022-12-05",
+      "eligible": 1174
+    },
+    {
+      "session": "2022-12-06",
+      "eligible": 1260
+    },
+    {
+      "session": "2022-12-07",
+      "eligible": 1127
+    },
+    {
+      "session": "2022-12-08",
+      "eligible": 1181
+    },
+    {
+      "session": "2022-12-09",
+      "eligible": 1231
+    },
+    {
+      "session": "2022-12-12",
+      "eligible": 1183
+    },
+    {
+      "session": "2022-12-13",
+      "eligible": 1263
+    },
+    {
+      "session": "2022-12-14",
+      "eligible": 1235
+    },
+    {
+      "session": "2022-12-15",
+      "eligible": 1217
+    },
+    {
+      "session": "2022-12-16",
+      "eligible": 1471
+    },
+    {
+      "session": "2022-12-19",
+      "eligible": 1510
+    },
+    {
+      "session": "2022-12-20",
+      "eligible": 1409
+    },
+    {
+      "session": "2022-12-21",
+      "eligible": 1356
+    },
+    {
+      "session": "2022-12-22",
+      "eligible": 1258
+    },
+    {
+      "session": "2022-12-23",
+      "eligible": 1034
+    },
+    {
+      "session": "2022-12-27",
+      "eligible": 899
+    },
+    {
+      "session": "2022-12-28",
+      "eligible": 983
+    },
+    {
+      "session": "2022-12-29",
+      "eligible": 856
+    },
+    {
+      "session": "2022-12-30",
+      "eligible": 1004
+    },
+    {
+      "session": "2023-01-03",
+      "eligible": 931
+    },
+    {
+      "session": "2023-01-04",
+      "eligible": 826
+    },
+    {
+      "session": "2023-01-05",
+      "eligible": 828
+    },
+    {
+      "session": "2023-01-06",
+      "eligible": 916
+    },
+    {
+      "session": "2023-01-09",
+      "eligible": 931
+    },
+    {
+      "session": "2023-01-10",
+      "eligible": 922
+    },
+    {
+      "session": "2023-01-11",
+      "eligible": 1046
+    },
+    {
+      "session": "2023-01-12",
+      "eligible": 944
+    },
+    {
+      "session": "2023-01-13",
+      "eligible": 942
+    },
+    {
+      "session": "2023-01-17",
+      "eligible": 980
+    },
+    {
+      "session": "2023-01-18",
+      "eligible": 982
+    },
+    {
+      "session": "2023-01-19",
+      "eligible": 980
+    },
+    {
+      "session": "2023-01-20",
+      "eligible": 1124
+    },
+    {
+      "session": "2023-01-23",
+      "eligible": 1168
+    },
+    {
+      "session": "2023-01-24",
+      "eligible": 1201
+    },
+    {
+      "session": "2023-01-25",
+      "eligible": 1260
+    },
+    {
+      "session": "2023-01-26",
+      "eligible": 1306
+    },
+    {
+      "session": "2023-01-27",
+      "eligible": 1234
+    },
+    {
+      "session": "2023-01-30",
+      "eligible": 1200
+    },
+    {
+      "session": "2023-01-31",
+      "eligible": 1127
+    },
+    {
+      "session": "2023-02-01",
+      "eligible": 1153
+    },
+    {
+      "session": "2023-02-02",
+      "eligible": 1239
+    },
+    {
+      "session": "2023-02-03",
+      "eligible": 1274
+    },
+    {
+      "session": "2023-02-06",
+      "eligible": 1386
+    },
+    {
+      "session": "2023-02-07",
+      "eligible": 1528
+    },
+    {
+      "session": "2023-02-08",
+      "eligible": 1554
+    },
+    {
+      "session": "2023-02-09",
+      "eligible": 1504
+    },
+    {
+      "session": "2023-02-10",
+      "eligible": 1521
+    },
+    {
+      "session": "2023-02-13",
+      "eligible": 1531
+    },
+    {
+      "session": "2023-02-14",
+      "eligible": 1370
+    },
+    {
+      "session": "2023-02-15",
+      "eligible": 1186
+    },
+    {
+      "session": "2023-02-16",
+      "eligible": 1017
+    },
+    {
+      "session": "2023-02-17",
+      "eligible": 966
+    },
+    {
+      "session": "2023-02-21",
+      "eligible": 1095
+    },
+    {
+      "session": "2023-02-22",
+      "eligible": 1056
+    },
+    {
+      "session": "2023-02-23",
+      "eligible": 1209
+    },
+    {
+      "session": "2023-02-24",
+      "eligible": 1241
+    },
+    {
+      "session": "2023-02-27",
+      "eligible": 1330
+    },
+    {
+      "session": "2023-02-28",
+      "eligible": 1173
+    },
+    {
+      "session": "2023-03-01",
+      "eligible": 1163
+    },
+    {
+      "session": "2023-03-02",
+      "eligible": 1173
+    },
+    {
+      "session": "2023-03-03",
+      "eligible": 1256
+    },
+    {
+      "session": "2023-03-06",
+      "eligible": 1506
+    },
+    {
+      "session": "2023-03-07",
+      "eligible": 1481
+    },
+    {
+      "session": "2023-03-08",
+      "eligible": 1560
+    },
+    {
+      "session": "2023-03-09",
+      "eligible": 1581
+    },
+    {
+      "session": "2023-03-10",
+      "eligible": 1656
+    },
+    {
+      "session": "2023-03-13",
+      "eligible": 1528
+    },
+    {
+      "session": "2023-03-14",
+      "eligible": 1613
+    },
+    {
+      "session": "2023-03-15",
+      "eligible": 1715
+    },
+    {
+      "session": "2023-03-16",
+      "eligible": 1764
+    },
+    {
+      "session": "2023-03-17",
+      "eligible": 1800
+    },
+    {
+      "session": "2023-03-20",
+      "eligible": 1808
+    },
+    {
+      "session": "2023-03-21",
+      "eligible": 1783
+    },
+    {
+      "session": "2023-03-22",
+      "eligible": 1615
+    },
+    {
+      "session": "2023-03-23",
+      "eligible": 1577
+    },
+    {
+      "session": "2023-03-24",
+      "eligible": 1327
+    },
+    {
+      "session": "2023-03-27",
+      "eligible": 1185
+    },
+    {
+      "session": "2023-03-28",
+      "eligible": 1176
+    },
+    {
+      "session": "2023-03-29",
+      "eligible": 1030
+    },
+    {
+      "session": "2023-03-30",
+      "eligible": 962
+    },
+    {
+      "session": "2023-03-31",
+      "eligible": 883
+    },
+    {
+      "session": "2023-04-03",
+      "eligible": 1212
+    },
+    {
+      "session": "2023-04-04",
+      "eligible": 1467
+    },
+    {
+      "session": "2023-04-05",
+      "eligible": 1503
+    },
+    {
+      "session": "2023-04-06",
+      "eligible": 1494
+    },
+    {
+      "session": "2023-04-10",
+      "eligible": 1444
+    },
+    {
+      "session": "2023-04-11",
+      "eligible": 1162
+    },
+    {
+      "session": "2023-04-12",
+      "eligible": 985
+    },
+    {
+      "session": "2023-04-13",
+      "eligible": 934
+    },
+    {
+      "session": "2023-04-14",
+      "eligible": 999
+    },
+    {
+      "session": "2023-04-17",
+      "eligible": 1054
+    },
+    {
+      "session": "2023-04-18",
+      "eligible": 1267
+    },
+    {
+      "session": "2023-04-19",
+      "eligible": 1215
+    },
+    {
+      "session": "2023-04-20",
+      "eligible": 1146
+    },
+    {
+      "session": "2023-04-21",
+      "eligible": 1070
+    },
+    {
+      "session": "2023-04-24",
+      "eligible": 1268
+    },
+    {
+      "session": "2023-04-25",
+      "eligible": 1314
+    },
+    {
+      "session": "2023-04-26",
+      "eligible": 1443
+    },
+    {
+      "session": "2023-04-27",
+      "eligible": 1523
+    },
+    {
+      "session": "2023-04-28",
+      "eligible": 1512
+    },
+    {
+      "session": "2023-05-01",
+      "eligible": 1493
+    },
+    {
+      "session": "2023-05-02",
+      "eligible": 1479
+    },
+    {
+      "session": "2023-05-03",
+      "eligible": 1304
+    },
+    {
+      "session": "2023-05-04",
+      "eligible": 1240
+    },
+    {
+      "session": "2023-05-05",
+      "eligible": 1257
+    },
+    {
+      "session": "2023-05-08",
+      "eligible": 1316
+    },
+    {
+      "session": "2023-05-09",
+      "eligible": 1248
+    },
+    {
+      "session": "2023-05-10",
+      "eligible": 1373
+    },
+    {
+      "session": "2023-05-11",
+      "eligible": 1398
+    },
+    {
+      "session": "2023-05-12",
+      "eligible": 1422
+    },
+    {
+      "session": "2023-05-15",
+      "eligible": 1220
+    },
+    {
+      "session": "2023-05-16",
+      "eligible": 1410
+    },
+    {
+      "session": "2023-05-17",
+      "eligible": 1244
+    },
+    {
+      "session": "2023-05-18",
+      "eligible": 1200
+    },
+    {
+      "session": "2023-05-19",
+      "eligible": 1242
+    },
+    {
+      "session": "2023-05-22",
+      "eligible": 1271
+    },
+    {
+      "session": "2023-05-23",
+      "eligible": 1055
+    },
+    {
+      "session": "2023-05-24",
+      "eligible": 1252
+    },
+    {
+      "session": "2023-05-25",
+      "eligible": 1484
+    },
+    {
+      "session": "2023-05-26",
+      "eligible": 1454
+    },
+    {
+      "session": "2023-05-30",
+      "eligible": 1671
+    },
+    {
+      "session": "2023-05-31",
+      "eligible": 1796
+    },
+    {
+      "session": "2023-06-01",
+      "eligible": 1754
+    },
+    {
+      "session": "2023-06-02",
+      "eligible": 1170
+    },
+    {
+      "session": "2023-06-05",
+      "eligible": 1243
+    },
+    {
+      "session": "2023-06-06",
+      "eligible": 895
+    },
+    {
+      "session": "2023-06-07",
+      "eligible": 677
+    },
+    {
+      "session": "2023-06-08",
+      "eligible": 722
+    },
+    {
+      "session": "2023-06-09",
+      "eligible": 971
+    },
+    {
+      "session": "2023-06-12",
+      "eligible": 998
+    },
+    {
+      "session": "2023-06-13",
+      "eligible": 1221
+    },
+    {
+      "session": "2023-06-14",
+      "eligible": 1632
+    },
+    {
+      "session": "2023-06-15",
+      "eligible": 1588
+    },
+    {
+      "session": "2023-06-16",
+      "eligible": 1603
+    },
+    {
+      "session": "2023-06-20",
+      "eligible": 1634
+    },
+    {
+      "session": "2023-06-21",
+      "eligible": 1602
+    },
+    {
+      "session": "2023-06-22",
+      "eligible": 1608
+    },
+    {
+      "session": "2023-06-23",
+      "eligible": 1793
+    },
+    {
+      "session": "2023-06-26",
+      "eligible": 1452
+    },
+    {
+      "session": "2023-06-27",
+      "eligible": 1309
+    },
+    {
+      "session": "2023-06-28",
+      "eligible": 1391
+    },
+    {
+      "session": "2023-06-29",
+      "eligible": 1003
+    },
+    {
+      "session": "2023-06-30",
+      "eligible": 893
+    },
+    {
+      "session": "2023-07-03",
+      "eligible": 971
+    },
+    {
+      "session": "2023-07-05",
+      "eligible": 1290
+    },
+    {
+      "session": "2023-07-06",
+      "eligible": 1426
+    },
+    {
+      "session": "2023-07-07",
+      "eligible": 1311
+    },
+    {
+      "session": "2023-07-10",
+      "eligible": 864
+    },
+    {
+      "session": "2023-07-11",
+      "eligible": 861
+    },
+    {
+      "session": "2023-07-12",
+      "eligible": 729
+    },
+    {
+      "session": "2023-07-13",
+      "eligible": 734
+    },
+    {
+      "session": "2023-07-14",
+      "eligible": 1095
+    },
+    {
+      "session": "2023-07-17",
+      "eligible": 1246
+    },
+    {
+      "session": "2023-07-18",
+      "eligible": 1317
+    },
+    {
+      "session": "2023-07-19",
+      "eligible": 1306
+    },
+    {
+      "session": "2023-07-20",
+      "eligible": 1230
+    },
+    {
+      "session": "2023-07-21",
+      "eligible": 1059
+    },
+    {
+      "session": "2023-07-24",
+      "eligible": 1177
+    },
+    {
+      "session": "2023-07-25",
+      "eligible": 1213
+    },
+    {
+      "session": "2023-07-26",
+      "eligible": 1183
+    },
+    {
+      "session": "2023-07-27",
+      "eligible": 1353
+    },
+    {
+      "session": "2023-07-28",
+      "eligible": 1310
+    },
+    {
+      "session": "2023-07-31",
+      "eligible": 1212
+    },
+    {
+      "session": "2023-08-01",
+      "eligible": 1224
+    },
+    {
+      "session": "2023-08-02",
+      "eligible": 1324
+    },
+    {
+      "session": "2023-08-03",
+      "eligible": 1197
+    },
+    {
+      "session": "2023-08-04",
+      "eligible": 1182
+    },
+    {
+      "session": "2023-08-07",
+      "eligible": 1320
+    },
+    {
+      "session": "2023-08-08",
+      "eligible": 1305
+    },
+    {
+      "session": "2023-08-09",
+      "eligible": 1298
+    },
+    {
+      "session": "2023-08-10",
+      "eligible": 1327
+    },
+    {
+      "session": "2023-08-11",
+      "eligible": 1367
+    },
+    {
+      "session": "2023-08-14",
+      "eligible": 1433
+    },
+    {
+      "session": "2023-08-15",
+      "eligible": 1398
+    },
+    {
+      "session": "2023-08-16",
+      "eligible": 1486
+    },
+    {
+      "session": "2023-08-17",
+      "eligible": 1475
+    },
+    {
+      "session": "2023-08-18",
+      "eligible": 1410
+    },
+    {
+      "session": "2023-08-21",
+      "eligible": 1396
+    },
+    {
+      "session": "2023-08-22",
+      "eligible": 1340
+    },
+    {
+      "session": "2023-08-23",
+      "eligible": 1376
+    },
+    {
+      "session": "2023-08-24",
+      "eligible": 1218
+    },
+    {
+      "session": "2023-08-25",
+      "eligible": 1373
+    },
+    {
+      "session": "2023-08-28",
+      "eligible": 1091
+    },
+    {
+      "session": "2023-08-29",
+      "eligible": 1165
+    },
+    {
+      "session": "2023-08-30",
+      "eligible": 1131
+    },
+    {
+      "session": "2023-08-31",
+      "eligible": 1253
+    },
+    {
+      "session": "2023-09-01",
+      "eligible": 982
+    },
+    {
+      "session": "2023-09-05",
+      "eligible": 1411
+    },
+    {
+      "session": "2023-09-06",
+      "eligible": 1334
+    },
+    {
+      "session": "2023-09-07",
+      "eligible": 1425
+    },
+    {
+      "session": "2023-09-08",
+      "eligible": 1418
+    },
+    {
+      "session": "2023-09-11",
+      "eligible": 1567
+    },
+    {
+      "session": "2023-09-12",
+      "eligible": 1219
+    },
+    {
+      "session": "2023-09-13",
+      "eligible": 1461
+    },
+    {
+      "session": "2023-09-14",
+      "eligible": 1291
+    },
+    {
+      "session": "2023-09-15",
+      "eligible": 1453
+    },
+    {
+      "session": "2023-09-18",
+      "eligible": 1427
+    },
+    {
+      "session": "2023-09-19",
+      "eligible": 1546
+    },
+    {
+      "session": "2023-09-20",
+      "eligible": 1286
+    },
+    {
+      "session": "2023-09-21",
+      "eligible": 1398
+    },
+    {
+      "session": "2023-09-22",
+      "eligible": 1204
+    },
+    {
+      "session": "2023-09-25",
+      "eligible": 1132
+    },
+    {
+      "session": "2023-09-26",
+      "eligible": 1083
+    },
+    {
+      "session": "2023-09-27",
+      "eligible": 1089
+    },
+    {
+      "session": "2023-09-28",
+      "eligible": 980
+    },
+    {
+      "session": "2023-09-29",
+      "eligible": 953
+    },
+    {
+      "session": "2023-10-02",
+      "eligible": 1309
+    },
+    {
+      "session": "2023-10-03",
+      "eligible": 1385
+    },
+    {
+      "session": "2023-10-04",
+      "eligible": 1492
+    },
+    {
+      "session": "2023-10-05",
+      "eligible": 1548
+    },
+    {
+      "session": "2023-10-06",
+      "eligible": 1607
+    },
+    {
+      "session": "2023-10-09",
+      "eligible": 1336
+    },
+    {
+      "session": "2023-10-10",
+      "eligible": 1153
+    },
+    {
+      "session": "2023-10-11",
+      "eligible": 1142
+    },
+    {
+      "session": "2023-10-12",
+      "eligible": 1421
+    },
+    {
+      "session": "2023-10-13",
+      "eligible": 1391
+    },
+    {
+      "session": "2023-10-16",
+      "eligible": 1268
+    },
+    {
+      "session": "2023-10-17",
+      "eligible": 1190
+    },
+    {
+      "session": "2023-10-18",
+      "eligible": 1268
+    },
+    {
+      "session": "2023-10-19",
+      "eligible": 1112
+    },
+    {
+      "session": "2023-10-20",
+      "eligible": 1108
+    },
+    {
+      "session": "2023-10-23",
+      "eligible": 1346
+    },
+    {
+      "session": "2023-10-24",
+      "eligible": 1481
+    },
+    {
+      "session": "2023-10-25",
+      "eligible": 1389
+    },
+    {
+      "session": "2023-10-26",
+      "eligible": 1020
+    },
+    {
+      "session": "2023-10-27",
+      "eligible": 1194
+    },
+    {
+      "session": "2023-10-30",
+      "eligible": 1140
+    },
+    {
+      "session": "2023-10-31",
+      "eligible": 1094
+    },
+    {
+      "session": "2023-11-01",
+      "eligible": 1238
+    },
+    {
+      "session": "2023-11-02",
+      "eligible": 1373
+    },
+    {
+      "session": "2023-11-03",
+      "eligible": 1142
+    },
+    {
+      "session": "2023-11-06",
+      "eligible": 1256
+    },
+    {
+      "session": "2023-11-07",
+      "eligible": 1358
+    },
+    {
+      "session": "2023-11-08",
+      "eligible": 1361
+    },
+    {
+      "session": "2023-11-09",
+      "eligible": 1518
+    },
+    {
+      "session": "2023-11-10",
+      "eligible": 1748
+    },
+    {
+      "session": "2023-11-13",
+      "eligible": 1611
+    },
+    {
+      "session": "2023-11-14",
+      "eligible": 1089
+    },
+    {
+      "session": "2023-11-15",
+      "eligible": 910
+    },
+    {
+      "session": "2023-11-16",
+      "eligible": 1056
+    },
+    {
+      "session": "2023-11-17",
+      "eligible": 782
+    },
+    {
+      "session": "2023-11-20",
+      "eligible": 893
+    },
+    {
+      "session": "2023-11-21",
+      "eligible": 1442
+    },
+    {
+      "session": "2023-11-22",
+      "eligible": 1405
+    },
+    {
+      "session": "2023-11-24",
+      "eligible": 912
+    },
+    {
+      "session": "2023-11-27",
+      "eligible": 1214
+    },
+    {
+      "session": "2023-11-28",
+      "eligible": 1252
+    },
+    {
+      "session": "2023-11-29",
+      "eligible": 928
+    },
+    {
+      "session": "2023-11-30",
+      "eligible": 1008
+    },
+    {
+      "session": "2023-12-01",
+      "eligible": 914
+    },
+    {
+      "session": "2023-12-04",
+      "eligible": 807
+    },
+    {
+      "session": "2023-12-05",
+      "eligible": 957
+    },
+    {
+      "session": "2023-12-06",
+      "eligible": 976
+    },
+    {
+      "session": "2023-12-07",
+      "eligible": 947
+    },
+    {
+      "session": "2023-12-08",
+      "eligible": 1249
+    },
+    {
+      "session": "2023-12-11",
+      "eligible": 1446
+    },
+    {
+      "session": "2023-12-12",
+      "eligible": 1270
+    },
+    {
+      "session": "2023-12-13",
+      "eligible": 1119
+    },
+    {
+      "session": "2023-12-14",
+      "eligible": 1083
+    },
+    {
+      "session": "2023-12-15",
+      "eligible": 1668
+    },
+    {
+      "session": "2023-12-18",
+      "eligible": 1721
+    },
+    {
+      "session": "2023-12-19",
+      "eligible": 1663
+    },
+    {
+      "session": "2023-12-20",
+      "eligible": 1708
+    },
+    {
+      "session": "2023-12-21",
+      "eligible": 1644
+    },
+    {
+      "session": "2023-12-22",
+      "eligible": 1036
+    },
+    {
+      "session": "2023-12-26",
+      "eligible": 717
+    },
+    {
+      "session": "2023-12-27",
+      "eligible": 895
+    },
+    {
+      "session": "2023-12-28",
+      "eligible": 774
+    },
+    {
+      "session": "2023-12-29",
+      "eligible": 1187
+    },
+    {
+      "session": "2024-01-02",
+      "eligible": 1276
+    },
+    {
+      "session": "2024-01-03",
+      "eligible": 1618
+    },
+    {
+      "session": "2024-01-04",
+      "eligible": 1576
+    },
+    {
+      "session": "2024-01-05",
+      "eligible": 1597
+    },
+    {
+      "session": "2024-01-08",
+      "eligible": 1516
+    },
+    {
+      "session": "2024-01-09",
+      "eligible": 1666
+    },
+    {
+      "session": "2024-01-10",
+      "eligible": 1494
+    },
+    {
+      "session": "2024-01-11",
+      "eligible": 1675
+    },
+    {
+      "session": "2024-01-12",
+      "eligible": 1647
+    },
+    {
+      "session": "2024-01-16",
+      "eligible": 1707
+    },
+    {
+      "session": "2024-01-17",
+      "eligible": 1619
+    },
+    {
+      "session": "2024-01-18",
+      "eligible": 1563
+    },
+    {
+      "session": "2024-01-19",
+      "eligible": 1632
+    },
+    {
+      "session": "2024-01-22",
+      "eligible": 1326
+    },
+    {
+      "session": "2024-01-23",
+      "eligible": 1315
+    },
+    {
+      "session": "2024-01-24",
+      "eligible": 1482
+    },
+    {
+      "session": "2024-01-25",
+      "eligible": 1376
+    },
+    {
+      "session": "2024-01-26",
+      "eligible": 1200
+    },
+    {
+      "session": "2024-01-29",
+      "eligible": 1368
+    },
+    {
+      "session": "2024-01-30",
+      "eligible": 1326
+    },
+    {
+      "session": "2024-01-31",
+      "eligible": 1213
+    },
+    {
+      "session": "2024-02-01",
+      "eligible": 1266
+    },
+    {
+      "session": "2024-02-02",
+      "eligible": 1674
+    },
+    {
+      "session": "2024-02-05",
+      "eligible": 1818
+    },
+    {
+      "session": "2024-02-06",
+      "eligible": 1668
+    },
+    {
+      "session": "2024-02-07",
+      "eligible": 1761
+    },
+    {
+      "session": "2024-02-08",
+      "eligible": 1637
+    },
+    {
+      "session": "2024-02-09",
+      "eligible": 1331
+    },
+    {
+      "session": "2024-02-12",
+      "eligible": 923
+    },
+    {
+      "session": "2024-02-13",
+      "eligible": 1418
+    },
+    {
+      "session": "2024-02-14",
+      "eligible": 1060
+    },
+    {
+      "session": "2024-02-15",
+      "eligible": 967
+    },
+    {
+      "session": "2024-02-16",
+      "eligible": 1061
+    },
+    {
+      "session": "2024-02-20",
+      "eligible": 1336
+    },
+    {
+      "session": "2024-02-21",
+      "eligible": 1038
+    },
+    {
+      "session": "2024-02-22",
+      "eligible": 1569
+    },
+    {
+      "session": "2024-02-23",
+      "eligible": 1679
+    },
+    {
+      "session": "2024-02-26",
+      "eligible": 1599
+    },
+    {
+      "session": "2024-02-27",
+      "eligible": 1489
+    },
+    {
+      "session": "2024-02-28",
+      "eligible": 1565
+    },
+    {
+      "session": "2024-02-29",
+      "eligible": 1207
+    },
+    {
+      "session": "2024-03-01",
+      "eligible": 1336
+    },
+    {
+      "session": "2024-03-04",
+      "eligible": 1384
+    },
+    {
+      "session": "2024-03-05",
+      "eligible": 1394
+    },
+    {
+      "session": "2024-03-06",
+      "eligible": 1319
+    },
+    {
+      "session": "2024-03-07",
+      "eligible": 1361
+    },
+    {
+      "session": "2024-03-08",
+      "eligible": 1126
+    },
+    {
+      "session": "2024-03-11",
+      "eligible": 1134
+    },
+    {
+      "session": "2024-03-12",
+      "eligible": 1453
+    },
+    {
+      "session": "2024-03-13",
+      "eligible": 1430
+    },
+    {
+      "session": "2024-03-14",
+      "eligible": 1611
+    },
+    {
+      "session": "2024-03-15",
+      "eligible": 1679
+    },
+    {
+      "session": "2024-03-18",
+      "eligible": 1806
+    },
+    {
+      "session": "2024-03-19",
+      "eligible": 1654
+    },
+    {
+      "session": "2024-03-20",
+      "eligible": 1622
+    },
+    {
+      "session": "2024-03-21",
+      "eligible": 1255
+    },
+    {
+      "session": "2024-03-22",
+      "eligible": 1451
+    },
+    {
+      "session": "2024-03-25",
+      "eligible": 1168
+    },
+    {
+      "session": "2024-03-26",
+      "eligible": 1181
+    },
+    {
+      "session": "2024-03-27",
+      "eligible": 1000
+    },
+    {
+      "session": "2024-03-28",
+      "eligible": 965
+    },
+    {
+      "session": "2024-04-01",
+      "eligible": 961
+    },
+    {
+      "session": "2024-04-02",
+      "eligible": 1183
+    },
+    {
+      "session": "2024-04-03",
+      "eligible": 1145
+    },
+    {
+      "session": "2024-04-04",
+      "eligible": 1396
+    },
+    {
+      "session": "2024-04-05",
+      "eligible": 1625
+    },
+    {
+      "session": "2024-04-08",
+      "eligible": 1305
+    },
+    {
+      "session": "2024-04-09",
+      "eligible": 1003
+    },
+    {
+      "session": "2024-04-10",
+      "eligible": 1501
+    },
+    {
+      "session": "2024-04-11",
+      "eligible": 1655
+    },
+    {
+      "session": "2024-04-12",
+      "eligible": 1697
+    },
+    {
+      "session": "2024-04-15",
+      "eligible": 1706
+    },
+    {
+      "session": "2024-04-16",
+      "eligible": 1767
+    },
+    {
+      "session": "2024-04-17",
+      "eligible": 1537
+    },
+    {
+      "session": "2024-04-18",
+      "eligible": 1334
+    },
+    {
+      "session": "2024-04-19",
+      "eligible": 973
+    },
+    {
+      "session": "2024-04-22",
+      "eligible": 1001
+    },
+    {
+      "session": "2024-04-23",
+      "eligible": 849
+    },
+    {
+      "session": "2024-04-24",
+      "eligible": 866
+    },
+    {
+      "session": "2024-04-25",
+      "eligible": 959
+    },
+    {
+      "session": "2024-04-26",
+      "eligible": 1359
+    },
+    {
+      "session": "2024-04-29",
+      "eligible": 1312
+    },
+    {
+      "session": "2024-04-30",
+      "eligible": 1384
+    },
+    {
+      "session": "2024-05-01",
+      "eligible": 1197
+    },
+    {
+      "session": "2024-05-02",
+      "eligible": 1123
+    },
+    {
+      "session": "2024-05-03",
+      "eligible": 1177
+    },
+    {
+      "session": "2024-05-06",
+      "eligible": 1243
+    },
+    {
+      "session": "2024-05-07",
+      "eligible": 1259
+    },
+    {
+      "session": "2024-05-08",
+      "eligible": 1456
+    },
+    {
+      "session": "2024-05-09",
+      "eligible": 1430
+    },
+    {
+      "session": "2024-05-10",
+      "eligible": 1370
+    },
+    {
+      "session": "2024-05-13",
+      "eligible": 1329
+    },
+    {
+      "session": "2024-05-14",
+      "eligible": 1272
+    },
+    {
+      "session": "2024-05-15",
+      "eligible": 1380
+    },
+    {
+      "session": "2024-05-16",
+      "eligible": 1473
+    },
+    {
+      "session": "2024-05-17",
+      "eligible": 1357
+    },
+    {
+      "session": "2024-05-20",
+      "eligible": 1446
+    },
+    {
+      "session": "2024-05-21",
+      "eligible": 1593
+    },
+    {
+      "session": "2024-05-22",
+      "eligible": 1545
+    },
+    {
+      "session": "2024-05-23",
+      "eligible": 1656
+    },
+    {
+      "session": "2024-05-24",
+      "eligible": 1616
+    },
+    {
+      "session": "2024-05-28",
+      "eligible": 1707
+    },
+    {
+      "session": "2024-05-29",
+      "eligible": 1741
+    },
+    {
+      "session": "2024-05-30",
+      "eligible": 1336
+    },
+    {
+      "session": "2024-05-31",
+      "eligible": 1071
+    },
+    {
+      "session": "2024-06-03",
+      "eligible": 1272
+    },
+    {
+      "session": "2024-06-04",
+      "eligible": 1404
+    },
+    {
+      "session": "2024-06-05",
+      "eligible": 1334
+    },
+    {
+      "session": "2024-06-06",
+      "eligible": 1755
+    },
+    {
+      "session": "2024-06-07",
+      "eligible": 1849
+    },
+    {
+      "session": "2024-06-10",
+      "eligible": 1813
+    },
+    {
+      "session": "2024-06-11",
+      "eligible": 1737
+    },
+    {
+      "session": "2024-06-12",
+      "eligible": 1698
+    },
+    {
+      "session": "2024-06-13",
+      "eligible": 1774
+    },
+    {
+      "session": "2024-06-14",
+      "eligible": 1862
+    },
+    {
+      "session": "2024-06-17",
+      "eligible": 1855
+    },
+    {
+      "session": "2024-06-18",
+      "eligible": 1740
+    },
+    {
+      "session": "2024-06-20",
+      "eligible": 1765
+    },
+    {
+      "session": "2024-06-21",
+      "eligible": 1645
+    },
+    {
+      "session": "2024-06-24",
+      "eligible": 1227
+    },
+    {
+      "session": "2024-06-25",
+      "eligible": 1434
+    },
+    {
+      "session": "2024-06-26",
+      "eligible": 1435
+    },
+    {
+      "session": "2024-06-27",
+      "eligible": 1391
+    },
+    {
+      "session": "2024-06-28",
+      "eligible": 1309
+    },
+    {
+      "session": "2024-07-01",
+      "eligible": 1702
+    },
+    {
+      "session": "2024-07-02",
+      "eligible": 1568
+    },
+    {
+      "session": "2024-07-03",
+      "eligible": 1449
+    },
+    {
+      "session": "2024-07-05",
+      "eligible": 1748
+    },
+    {
+      "session": "2024-07-08",
+      "eligible": 1777
+    },
+    {
+      "session": "2024-07-09",
+      "eligible": 1686
+    },
+    {
+      "session": "2024-07-10",
+      "eligible": 1583
+    },
+    {
+      "session": "2024-07-11",
+      "eligible": 779
+    },
+    {
+      "session": "2024-07-12",
+      "eligible": 615
+    },
+    {
+      "session": "2024-07-15",
+      "eligible": 678
+    },
+    {
+      "session": "2024-07-16",
+      "eligible": 613
+    },
+    {
+      "session": "2024-07-17",
+      "eligible": 670
+    },
+    {
+      "session": "2024-07-18",
+      "eligible": 937
+    },
+    {
+      "session": "2024-07-19",
+      "eligible": 951
+    },
+    {
+      "session": "2024-07-22",
+      "eligible": 907
+    },
+    {
+      "session": "2024-07-23",
+      "eligible": 1164
+    },
+    {
+      "session": "2024-07-24",
+      "eligible": 1150
+    },
+    {
+      "session": "2024-07-25",
+      "eligible": 820
+    },
+    {
+      "session": "2024-07-26",
+      "eligible": 796
+    },
+    {
+      "session": "2024-07-29",
+      "eligible": 923
+    },
+    {
+      "session": "2024-07-30",
+      "eligible": 924
+    },
+    {
+      "session": "2024-07-31",
+      "eligible": 1164
+    },
+    {
+      "session": "2024-08-01",
+      "eligible": 1623
+    },
+    {
+      "session": "2024-08-02",
+      "eligible": 1762
+    },
+    {
+      "session": "2024-08-05",
+      "eligible": 1794
+    },
+    {
+      "session": "2024-08-06",
+      "eligible": 1870
+    },
+    {
+      "session": "2024-08-07",
+      "eligible": 1744
+    },
+    {
+      "session": "2024-08-08",
+      "eligible": 1604
+    },
+    {
+      "session": "2024-08-09",
+      "eligible": 1565
+    },
+    {
+      "session": "2024-08-12",
+      "eligible": 1656
+    },
+    {
+      "session": "2024-08-13",
+      "eligible": 1770
+    },
+    {
+      "session": "2024-08-14",
+      "eligible": 1728
+    },
+    {
+      "session": "2024-08-15",
+      "eligible": 1718
+    },
+    {
+      "session": "2024-08-16",
+      "eligible": 1587
+    },
+    {
+      "session": "2024-08-19",
+      "eligible": 1376
+    },
+    {
+      "session": "2024-08-20",
+      "eligible": 1602
+    },
+    {
+      "session": "2024-08-21",
+      "eligible": 1191
+    },
+    {
+      "session": "2024-08-22",
+      "eligible": 1096
+    },
+    {
+      "session": "2024-08-23",
+      "eligible": 805
+    },
+    {
+      "session": "2024-08-26",
+      "eligible": 738
+    },
+    {
+      "session": "2024-08-27",
+      "eligible": 681
+    },
+    {
+      "session": "2024-08-28",
+      "eligible": 889
+    },
+    {
+      "session": "2024-08-29",
+      "eligible": 730
+    },
+    {
+      "session": "2024-08-30",
+      "eligible": 1115
+    },
+    {
+      "session": "2024-09-03",
+      "eligible": 1244
+    },
+    {
+      "session": "2024-09-04",
+      "eligible": 1173
+    },
+    {
+      "session": "2024-09-05",
+      "eligible": 1250
+    },
+    {
+      "session": "2024-09-06",
+      "eligible": 1353
+    },
+    {
+      "session": "2024-09-09",
+      "eligible": 1384
+    },
+    {
+      "session": "2024-09-10",
+      "eligible": 1468
+    },
+    {
+      "session": "2024-09-11",
+      "eligible": 1654
+    },
+    {
+      "session": "2024-09-12",
+      "eligible": 1649
+    },
+    {
+      "session": "2024-09-13",
+      "eligible": 1456
+    },
+    {
+      "session": "2024-09-16",
+      "eligible": 1231
+    },
+    {
+      "session": "2024-09-17",
+      "eligible": 1006
+    },
+    {
+      "session": "2024-09-18",
+      "eligible": 838
+    },
+    {
+      "session": "2024-09-19",
+      "eligible": 929
+    },
+    {
+      "session": "2024-09-20",
+      "eligible": 1660
+    },
+    {
+      "session": "2024-09-23",
+      "eligible": 1737
+    },
+    {
+      "session": "2024-09-24",
+      "eligible": 1772
+    },
+    {
+      "session": "2024-09-25",
+      "eligible": 1895
+    },
+    {
+      "session": "2024-09-26",
+      "eligible": 1799
+    },
+    {
+      "session": "2024-09-27",
+      "eligible": 1313
+    },
+    {
+      "session": "2024-09-30",
+      "eligible": 1366
+    },
+    {
+      "session": "2024-10-01",
+      "eligible": 1347
+    },
+    {
+      "session": "2024-10-02",
+      "eligible": 1181
+    },
+    {
+      "session": "2024-10-03",
+      "eligible": 1478
+    },
+    {
+      "session": "2024-10-04",
+      "eligible": 1533
+    },
+    {
+      "session": "2024-10-07",
+      "eligible": 1448
+    },
+    {
+      "session": "2024-10-08",
+      "eligible": 1583
+    },
+    {
+      "session": "2024-10-09",
+      "eligible": 1621
+    },
+    {
+      "session": "2024-10-10",
+      "eligible": 1605
+    },
+    {
+      "session": "2024-10-11",
+      "eligible": 1434
+    },
+    {
+      "session": "2024-10-14",
+      "eligible": 1468
+    },
+    {
+      "session": "2024-10-15",
+      "eligible": 1048
+    },
+    {
+      "session": "2024-10-16",
+      "eligible": 875
+    },
+    {
+      "session": "2024-10-17",
+      "eligible": 879
+    },
+    {
+      "session": "2024-10-18",
+      "eligible": 1097
+    },
+    {
+      "session": "2024-10-21",
+      "eligible": 1322
+    },
+    {
+      "session": "2024-10-22",
+      "eligible": 1613
+    },
+    {
+      "session": "2024-10-23",
+      "eligible": 1660
+    },
+    {
+      "session": "2024-10-24",
+      "eligible": 1617
+    },
+    {
+      "session": "2024-10-25",
+      "eligible": 1677
+    },
+    {
+      "session": "2024-10-28",
+      "eligible": 1218
+    },
+    {
+      "session": "2024-10-29",
+      "eligible": 1297
+    },
+    {
+      "session": "2024-10-30",
+      "eligible": 1338
+    },
+    {
+      "session": "2024-10-31",
+      "eligible": 1228
+    },
+    {
+      "session": "2024-11-01",
+      "eligible": 1238
+    },
+    {
+      "session": "2024-11-04",
+      "eligible": 1369
+    },
+    {
+      "session": "2024-11-05",
+      "eligible": 1189
+    },
+    {
+      "session": "2024-11-06",
+      "eligible": 1424
+    },
+    {
+      "session": "2024-11-07",
+      "eligible": 1580
+    },
+    {
+      "session": "2024-11-08",
+      "eligible": 1647
+    },
+    {
+      "session": "2024-11-11",
+      "eligible": 1682
+    },
+    {
+      "session": "2024-11-12",
+      "eligible": 1779
+    },
+    {
+      "session": "2024-11-13",
+      "eligible": 1834
+    },
+    {
+      "session": "2024-11-14",
+      "eligible": 1613
+    },
+    {
+      "session": "2024-11-15",
+      "eligible": 1478
+    },
+    {
+      "session": "2024-11-18",
+      "eligible": 1671
+    },
+    {
+      "session": "2024-11-19",
+      "eligible": 1524
+    },
+    {
+      "session": "2024-11-20",
+      "eligible": 1407
+    },
+    {
+      "session": "2024-11-21",
+      "eligible": 1148
+    },
+    {
+      "session": "2024-11-22",
+      "eligible": 938
+    },
+    {
+      "session": "2024-11-25",
+      "eligible": 815
+    },
+    {
+      "session": "2024-11-26",
+      "eligible": 966
+    },
+    {
+      "session": "2024-11-27",
+      "eligible": 865
+    },
+    {
+      "session": "2024-11-29",
+      "eligible": 1099
+    },
+    {
+      "session": "2024-12-02",
+      "eligible": 1446
+    },
+    {
+      "session": "2024-12-03",
+      "eligible": 1892
+    },
+    {
+      "session": "2024-12-04",
+      "eligible": 1677
+    },
+    {
+      "session": "2024-12-05",
+      "eligible": 1868
+    },
+    {
+      "session": "2024-12-06",
+      "eligible": 1838
+    },
+    {
+      "session": "2024-12-09",
+      "eligible": 1772
+    },
+    {
+      "session": "2024-12-10",
+      "eligible": 1655
+    },
+    {
+      "session": "2024-12-11",
+      "eligible": 1687
+    },
+    {
+      "session": "2024-12-12",
+      "eligible": 1589
+    },
+    {
+      "session": "2024-12-13",
+      "eligible": 1670
+    },
+    {
+      "session": "2024-12-16",
+      "eligible": 1786
+    },
+    {
+      "session": "2024-12-17",
+      "eligible": 1900
+    },
+    {
+      "session": "2024-12-18",
+      "eligible": 1900
+    },
+    {
+      "session": "2024-12-19",
+      "eligible": 1902
+    },
+    {
+      "session": "2024-12-20",
+      "eligible": 2040
+    },
+    {
+      "session": "2024-12-23",
+      "eligible": 1996
+    },
+    {
+      "session": "2024-12-24",
+      "eligible": 1977
+    },
+    {
+      "session": "2024-12-26",
+      "eligible": 1710
+    },
+    {
+      "session": "2024-12-27",
+      "eligible": 1600
+    },
+    {
+      "session": "2024-12-30",
+      "eligible": 1341
+    },
+    {
+      "session": "2024-12-31",
+      "eligible": 815
+    },
+    {
+      "session": "2025-01-02",
+      "eligible": 784
+    },
+    {
+      "session": "2025-01-03",
+      "eligible": 990
+    },
+    {
+      "session": "2025-01-06",
+      "eligible": 1302
+    },
+    {
+      "session": "2025-01-07",
+      "eligible": 1234
+    },
+    {
+      "session": "2025-01-08",
+      "eligible": 1495
+    },
+    {
+      "session": "2025-01-10",
+      "eligible": 1595
+    },
+    {
+      "session": "2025-01-13",
+      "eligible": 1511
+    },
+    {
+      "session": "2025-01-14",
+      "eligible": 1137
+    },
+    {
+      "session": "2025-01-15",
+      "eligible": 1305
+    },
+    {
+      "session": "2025-01-16",
+      "eligible": 1092
+    },
+    {
+      "session": "2025-01-17",
+      "eligible": 1174
+    },
+    {
+      "session": "2025-01-21",
+      "eligible": 1133
+    },
+    {
+      "session": "2025-01-22",
+      "eligible": 1638
+    },
+    {
+      "session": "2025-01-23",
+      "eligible": 1566
+    },
+    {
+      "session": "2025-01-24",
+      "eligible": 1663
+    },
+    {
+      "session": "2025-01-27",
+      "eligible": 1116
+    },
+    {
+      "session": "2025-01-28",
+      "eligible": 1476
+    },
+    {
+      "session": "2025-01-29",
+      "eligible": 1175
+    },
+    {
+      "session": "2025-01-30",
+      "eligible": 1123
+    },
+    {
+      "session": "2025-01-31",
+      "eligible": 1278
+    },
+    {
+      "session": "2025-02-03",
+      "eligible": 1678
+    },
+    {
+      "session": "2025-02-04",
+      "eligible": 1396
+    },
+    {
+      "session": "2025-02-05",
+      "eligible": 1346
+    },
+    {
+      "session": "2025-02-06",
+      "eligible": 1584
+    },
+    {
+      "session": "2025-02-07",
+      "eligible": 1482
+    },
+    {
+      "session": "2025-02-10",
+      "eligible": 1464
+    },
+    {
+      "session": "2025-02-11",
+      "eligible": 1579
+    },
+    {
+      "session": "2025-02-12",
+      "eligible": 1752
+    },
+    {
+      "session": "2025-02-13",
+      "eligible": 1657
+    },
+    {
+      "session": "2025-02-14",
+      "eligible": 1680
+    },
+    {
+      "session": "2025-02-18",
+      "eligible": 1560
+    },
+    {
+      "session": "2025-02-19",
+      "eligible": 1644
+    },
+    {
+      "session": "2025-02-20",
+      "eligible": 1599
+    },
+    {
+      "session": "2025-02-21",
+      "eligible": 1605
+    },
+    {
+      "session": "2025-02-24",
+      "eligible": 1588
+    },
+    {
+      "session": "2025-02-25",
+      "eligible": 1570
+    },
+    {
+      "session": "2025-02-26",
+      "eligible": 1518
+    },
+    {
+      "session": "2025-02-27",
+      "eligible": 1417
+    },
+    {
+      "session": "2025-02-28",
+      "eligible": 1428
+    },
+    {
+      "session": "2025-03-03",
+      "eligible": 1519
+    },
+    {
+      "session": "2025-03-04",
+      "eligible": 1588
+    },
+    {
+      "session": "2025-03-05",
+      "eligible": 1530
+    },
+    {
+      "session": "2025-03-06",
+      "eligible": 1491
+    },
+    {
+      "session": "2025-03-07",
+      "eligible": 1298
+    },
+    {
+      "session": "2025-03-10",
+      "eligible": 1223
+    },
+    {
+      "session": "2025-03-11",
+      "eligible": 1130
+    },
+    {
+      "session": "2025-03-12",
+      "eligible": 1205
+    },
+    {
+      "session": "2025-03-13",
+      "eligible": 1376
+    },
+    {
+      "session": "2025-03-14",
+      "eligible": 1310
+    },
+    {
+      "session": "2025-03-17",
+      "eligible": 1217
+    },
+    {
+      "session": "2025-03-18",
+      "eligible": 1152
+    },
+    {
+      "session": "2025-03-19",
+      "eligible": 968
+    },
+    {
+      "session": "2025-03-20",
+      "eligible": 1014
+    },
+    {
+      "session": "2025-03-21",
+      "eligible": 1393
+    },
+    {
+      "session": "2025-03-24",
+      "eligible": 1497
+    },
+    {
+      "session": "2025-03-25",
+      "eligible": 1696
+    },
+    {
+      "session": "2025-03-26",
+      "eligible": 1666
+    },
+    {
+      "session": "2025-03-27",
+      "eligible": 1587
+    },
+    {
+      "session": "2025-03-28",
+      "eligible": 1230
+    },
+    {
+      "session": "2025-03-31",
+      "eligible": 1429
+    },
+    {
+      "session": "2025-04-01",
+      "eligible": 1320
+    },
+    {
+      "session": "2025-04-02",
+      "eligible": 1300
+    },
+    {
+      "session": "2025-04-03",
+      "eligible": 1508
+    },
+    {
+      "session": "2025-04-04",
+      "eligible": 1443
+    },
+    {
+      "session": "2025-04-07",
+      "eligible": 1513
+    },
+    {
+      "session": "2025-04-08",
+      "eligible": 1649
+    },
+    {
+      "session": "2025-04-09",
+      "eligible": 2144
+    },
+    {
+      "session": "2025-04-10",
+      "eligible": 1895
+    },
+    {
+      "session": "2025-04-11",
+      "eligible": 1937
+    },
+    {
+      "session": "2025-04-14",
+      "eligible": 1837
+    },
+    {
+      "session": "2025-04-15",
+      "eligible": 1574
+    },
+    {
+      "session": "2025-04-16",
+      "eligible": 944
+    },
+    {
+      "session": "2025-04-17",
+      "eligible": 796
+    },
+    {
+      "session": "2025-04-21",
+      "eligible": 682
+    },
+    {
+      "session": "2025-04-22",
+      "eligible": 685
+    },
+    {
+      "session": "2025-04-23",
+      "eligible": 718
+    },
+    {
+      "session": "2025-04-24",
+      "eligible": 1082
+    },
+    {
+      "session": "2025-04-25",
+      "eligible": 1400
+    },
+    {
+      "session": "2025-04-28",
+      "eligible": 1419
+    },
+    {
+      "session": "2025-04-29",
+      "eligible": 1448
+    },
+    {
+      "session": "2025-04-30",
+      "eligible": 1531
+    },
+    {
+      "session": "2025-05-01",
+      "eligible": 1684
+    },
+    {
+      "session": "2025-05-02",
+      "eligible": 1325
+    },
+    {
+      "session": "2025-05-05",
+      "eligible": 1397
+    },
+    {
+      "session": "2025-05-06",
+      "eligible": 1320
+    },
+    {
+      "session": "2025-05-07",
+      "eligible": 1231
+    },
+    {
+      "session": "2025-05-08",
+      "eligible": 1020
+    },
+    {
+      "session": "2025-05-09",
+      "eligible": 1105
+    },
+    {
+      "session": "2025-05-12",
+      "eligible": 1307
+    },
+    {
+      "session": "2025-05-13",
+      "eligible": 1417
+    },
+    {
+      "session": "2025-05-14",
+      "eligible": 1517
+    },
+    {
+      "session": "2025-05-15",
+      "eligible": 1727
+    },
+    {
+      "session": "2025-05-16",
+      "eligible": 1737
+    },
+    {
+      "session": "2025-05-19",
+      "eligible": 1745
+    },
+    {
+      "session": "2025-05-20",
+      "eligible": 1564
+    },
+    {
+      "session": "2025-05-21",
+      "eligible": 1487
+    },
+    {
+      "session": "2025-05-22",
+      "eligible": 1570
+    },
+    {
+      "session": "2025-05-23",
+      "eligible": 1551
+    },
+    {
+      "session": "2025-05-27",
+      "eligible": 1539
+    },
+    {
+      "session": "2025-05-28",
+      "eligible": 1695
+    },
+    {
+      "session": "2025-05-29",
+      "eligible": 1490
+    },
+    {
+      "session": "2025-05-30",
+      "eligible": 1482
+    },
+    {
+      "session": "2025-06-02",
+      "eligible": 1790
+    },
+    {
+      "session": "2025-06-03",
+      "eligible": 1630
+    },
+    {
+      "session": "2025-06-04",
+      "eligible": 1565
+    },
+    {
+      "session": "2025-06-05",
+      "eligible": 1465
+    },
+    {
+      "session": "2025-06-06",
+      "eligible": 1312
+    },
+    {
+      "session": "2025-06-09",
+      "eligible": 1028
+    },
+    {
+      "session": "2025-06-10",
+      "eligible": 1169
+    },
+    {
+      "session": "2025-06-11",
+      "eligible": 1195
+    },
+    {
+      "session": "2025-06-12",
+      "eligible": 1473
+    },
+    {
+      "session": "2025-06-13",
+      "eligible": 1680
+    },
+    {
+      "session": "2025-06-16",
+      "eligible": 1740
+    },
+    {
+      "session": "2025-06-17",
+      "eligible": 1756
+    },
+    {
+      "session": "2025-06-18",
+      "eligible": 1714
+    },
+    {
+      "session": "2025-06-20",
+      "eligible": 1758
+    },
+    {
+      "session": "2025-06-23",
+      "eligible": 1565
+    },
+    {
+      "session": "2025-06-24",
+      "eligible": 1604
+    },
+    {
+      "session": "2025-06-25",
+      "eligible": 1715
+    },
+    {
+      "session": "2025-06-26",
+      "eligible": 1713
+    },
+    {
+      "session": "2025-06-27",
+      "eligible": 1828
+    },
+    {
+      "session": "2025-06-30",
+      "eligible": 1909
+    },
+    {
+      "session": "2025-07-01",
+      "eligible": 1683
+    },
+    {
+      "session": "2025-07-02",
+      "eligible": 1434
+    },
+    {
+      "session": "2025-07-03",
+      "eligible": 1394
+    },
+    {
+      "session": "2025-07-07",
+      "eligible": 1164
+    },
+    {
+      "session": "2025-07-08",
+      "eligible": 1066
+    },
+    {
+      "session": "2025-07-09",
+      "eligible": 1260
+    },
+    {
+      "session": "2025-07-10",
+      "eligible": 1349
+    },
+    {
+      "session": "2025-07-11",
+      "eligible": 1534
+    },
+    {
+      "session": "2025-07-14",
+      "eligible": 1357
+    },
+    {
+      "session": "2025-07-15",
+      "eligible": 1880
+    },
+    {
+      "session": "2025-07-16",
+      "eligible": 1817
+    },
+    {
+      "session": "2025-07-17",
+      "eligible": 1814
+    },
+    {
+      "session": "2025-07-18",
+      "eligible": 1691
+    },
+    {
+      "session": "2025-07-21",
+      "eligible": 1841
+    },
+    {
+      "session": "2025-07-22",
+      "eligible": 1188
+    },
+    {
+      "session": "2025-07-23",
+      "eligible": 1244
+    },
+    {
+      "session": "2025-07-24",
+      "eligible": 1543
+    },
+    {
+      "session": "2025-07-25",
+      "eligible": 1521
+    },
+    {
+      "session": "2025-07-28",
+      "eligible": 1559
+    },
+    {
+      "session": "2025-07-29",
+      "eligible": 1882
+    },
+    {
+      "session": "2025-07-30",
+      "eligible": 2038
+    },
+    {
+      "session": "2025-07-31",
+      "eligible": 1983
+    },
+    {
+      "session": "2025-08-01",
+      "eligible": 1930
+    },
+    {
+      "session": "2025-08-04",
+      "eligible": 1832
+    },
+    {
+      "session": "2025-08-05",
+      "eligible": 1697
+    },
+    {
+      "session": "2025-08-06",
+      "eligible": 1720
+    },
+    {
+      "session": "2025-08-07",
+      "eligible": 1634
+    },
+    {
+      "session": "2025-08-08",
+      "eligible": 1824
+    },
+    {
+      "session": "2025-08-11",
+      "eligible": 1869
+    },
+    {
+      "session": "2025-08-12",
+      "eligible": 1798
+    },
+    {
+      "session": "2025-08-13",
+      "eligible": 1283
+    },
+    {
+      "session": "2025-08-14",
+      "eligible": 1406
+    },
+    {
+      "session": "2025-08-15",
+      "eligible": 1198
+    },
+    {
+      "session": "2025-08-18",
+      "eligible": 1087
+    },
+    {
+      "session": "2025-08-19",
+      "eligible": 1150
+    },
+    {
+      "session": "2025-08-20",
+      "eligible": 1533
+    },
+    {
+      "session": "2025-08-21",
+      "eligible": 1096
+    },
+    {
+      "session": "2025-08-22",
+      "eligible": 698
+    },
+    {
+      "session": "2025-08-25",
+      "eligible": 829
+    },
+    {
+      "session": "2025-08-26",
+      "eligible": 1057
+    },
+    {
+      "session": "2025-08-27",
+      "eligible": 1005
+    },
+    {
+      "session": "2025-08-28",
+      "eligible": 1253
+    },
+    {
+      "session": "2025-08-29",
+      "eligible": 1572
+    },
+    {
+      "session": "2025-09-02",
+      "eligible": 1440
+    },
+    {
+      "session": "2025-09-03",
+      "eligible": 1618
+    },
+    {
+      "session": "2025-09-04",
+      "eligible": 1639
+    },
+    {
+      "session": "2025-09-05",
+      "eligible": 1363
+    },
+    {
+      "session": "2025-09-08",
+      "eligible": 1597
+    },
+    {
+      "session": "2025-09-09",
+      "eligible": 1795
+    },
+    {
+      "session": "2025-09-10",
+      "eligible": 1807
+    },
+    {
+      "session": "2025-09-11",
+      "eligible": 1583
+    },
+    {
+      "session": "2025-09-12",
+      "eligible": 1962
+    },
+    {
+      "session": "2025-09-15",
+      "eligible": 1991
+    },
+    {
+      "session": "2025-09-16",
+      "eligible": 1866
+    },
+    {
+      "session": "2025-09-17",
+      "eligible": 1733
+    },
+    {
+      "session": "2025-09-18",
+      "eligible": 1731
+    },
+    {
+      "session": "2025-09-19",
+      "eligible": 2054
+    },
+    {
+      "session": "2025-09-22",
+      "eligible": 2043
+    },
+    {
+      "session": "2025-09-23",
+      "eligible": 1963
+    },
+    {
+      "session": "2025-09-24",
+      "eligible": 1962
+    },
+    {
+      "session": "2025-09-25",
+      "eligible": 2137
+    },
+    {
+      "session": "2025-09-26",
+      "eligible": 1598
+    },
+    {
+      "session": "2025-09-29",
+      "eligible": 1588
+    },
+    {
+      "session": "2025-09-30",
+      "eligible": 1722
+    },
+    {
+      "session": "2025-10-01",
+      "eligible": 1791
+    },
+    {
+      "session": "2025-10-02",
+      "eligible": 1629
+    },
+    {
+      "session": "2025-10-03",
+      "eligible": 1646
+    },
+    {
+      "session": "2025-10-06",
+      "eligible": 1672
+    },
+    {
+      "session": "2025-10-07",
+      "eligible": 1770
+    },
+    {
+      "session": "2025-10-08",
+      "eligible": 1679
+    },
+    {
+      "session": "2025-10-09",
+      "eligible": 1843
+    },
+    {
+      "session": "2025-10-10",
+      "eligible": 1944
+    },
+    {
+      "session": "2025-10-13",
+      "eligible": 1877
+    },
+    {
+      "session": "2025-10-14",
+      "eligible": 1358
+    },
+    {
+      "session": "2025-10-15",
+      "eligible": 1450
+    },
+    {
+      "session": "2025-10-16",
+      "eligible": 1414
+    },
+    {
+      "session": "2025-10-17",
+      "eligible": 1565
+    },
+    {
+      "session": "2025-10-20",
+      "eligible": 1418
+    },
+    {
+      "session": "2025-10-21",
+      "eligible": 1658
+    },
+    {
+      "session": "2025-10-22",
+      "eligible": 1680
+    },
+    {
+      "session": "2025-10-23",
+      "eligible": 1494
+    },
+    {
+      "session": "2025-10-24",
+      "eligible": 1455
+    },
+    {
+      "session": "2025-10-27",
+      "eligible": 1856
+    },
+    {
+      "session": "2025-10-28",
+      "eligible": 2110
+    },
+    {
+      "session": "2025-10-29",
+      "eligible": 2137
+    },
+    {
+      "session": "2025-10-30",
+      "eligible": 2210
+    },
+    {
+      "session": "2025-10-31",
+      "eligible": 2184
+    },
+    {
+      "session": "2025-11-03",
+      "eligible": 2136
+    },
+    {
+      "session": "2025-11-04",
+      "eligible": 1978
+    },
+    {
+      "session": "2025-11-05",
+      "eligible": 1603
+    },
+    {
+      "session": "2025-11-06",
+      "eligible": 1711
+    },
+    {
+      "session": "2025-11-07",
+      "eligible": 1584
+    },
+    {
+      "session": "2025-11-10",
+      "eligible": 1584
+    },
+    {
+      "session": "2025-11-11",
+      "eligible": 1501
+    },
+    {
+      "session": "2025-11-12",
+      "eligible": 1559
+    },
+    {
+      "session": "2025-11-13",
+      "eligible": 1431
+    },
+    {
+      "session": "2025-11-14",
+      "eligible": 1686
+    },
+    {
+      "session": "2025-11-17",
+      "eligible": 1684
+    },
+    {
+      "session": "2025-11-18",
+      "eligible": 1498
+    },
+    {
+      "session": "2025-11-19",
+      "eligible": 1643
+    },
+    {
+      "session": "2025-11-20",
+      "eligible": 1654
+    },
+    {
+      "session": "2025-11-21",
+      "eligible": 1212
+    },
+    {
+      "session": "2025-11-24",
+      "eligible": 1246
+    },
+    {
+      "session": "2025-11-25",
+      "eligible": 1314
+    },
+    {
+      "session": "2025-11-26",
+      "eligible": 1126
+    },
+    {
+      "session": "2025-11-28",
+      "eligible": 1084
+    },
+    {
+      "session": "2025-12-01",
+      "eligible": 1492
+    },
+    {
+      "session": "2025-12-02",
+      "eligible": 1386
+    },
+    {
+      "session": "2025-12-03",
+      "eligible": 1380
+    },
+    {
+      "session": "2025-12-04",
+      "eligible": 1312
+    },
+    {
+      "session": "2025-12-05",
+      "eligible": 1416
+    },
+    {
+      "session": "2025-12-08",
+      "eligible": 1423
+    },
+    {
+      "session": "2025-12-09",
+      "eligible": 1299
+    },
+    {
+      "session": "2025-12-10",
+      "eligible": 1392
+    },
+    {
+      "session": "2025-12-11",
+      "eligible": 1334
+    },
+    {
+      "session": "2025-12-12",
+      "eligible": 1183
+    },
+    {
+      "session": "2025-12-15",
+      "eligible": 1249
+    },
+    {
+      "session": "2025-12-16",
+      "eligible": 1350
+    },
+    {
+      "session": "2025-12-17",
+      "eligible": 1279
+    },
+    {
+      "session": "2025-12-18",
+      "eligible": 1458
+    },
+    {
+      "session": "2025-12-19",
+      "eligible": 1973
+    },
+    {
+      "session": "2025-12-22",
+      "eligible": 1804
+    },
+    {
+      "session": "2025-12-23",
+      "eligible": 1913
+    },
+    {
+      "session": "2025-12-24",
+      "eligible": 1983
+    },
+    {
+      "session": "2025-12-26",
+      "eligible": 1948
+    },
+    {
+      "session": "2025-12-29",
+      "eligible": 1780
+    },
+    {
+      "session": "2025-12-30",
+      "eligible": 1937
+    },
+    {
+      "session": "2025-12-31",
+      "eligible": 1647
+    },
+    {
+      "session": "2026-01-02",
+      "eligible": 1439
+    },
+    {
+      "session": "2026-01-05",
+      "eligible": 1223
+    },
+    {
+      "session": "2026-01-06",
+      "eligible": 1165
+    },
+    {
+      "session": "2026-01-07",
+      "eligible": 1215
+    },
+    {
+      "session": "2026-01-08",
+      "eligible": 1145
+    },
+    {
+      "session": "2026-01-09",
+      "eligible": 1308
+    },
+    {
+      "session": "2026-01-12",
+      "eligible": 1389
+    },
+    {
+      "session": "2026-01-13",
+      "eligible": 1441
+    },
+    {
+      "session": "2026-01-14",
+      "eligible": 1200
+    },
+    {
+      "session": "2026-01-15",
+      "eligible": 1335
+    },
+    {
+      "session": "2026-01-16",
+      "eligible": 1308
+    },
+    {
+      "session": "2026-01-20",
+      "eligible": 1248
+    },
+    {
+      "session": "2026-01-21",
+      "eligible": 1196
+    },
+    {
+      "session": "2026-01-22",
+      "eligible": 1412
+    },
+    {
+      "session": "2026-01-23",
+      "eligible": 1697
+    },
+    {
+      "session": "2026-01-26",
+      "eligible": 1750
+    },
+    {
+      "session": "2026-01-27",
+      "eligible": 2012
+    },
+    {
+      "session": "2026-01-28",
+      "eligible": 2222
+    },
+    {
+      "session": "2026-01-29",
+      "eligible": 2156
+    },
+    {
+      "session": "2026-01-30",
+      "eligible": 2062
+    },
+    {
+      "session": "2026-02-02",
+      "eligible": 1881
+    },
+    {
+      "session": "2026-02-03",
+      "eligible": 1658
+    },
+    {
+      "session": "2026-02-04",
+      "eligible": 1580
+    },
+    {
+      "session": "2026-02-05",
+      "eligible": 1669
+    },
+    {
+      "session": "2026-02-06",
+      "eligible": 1424
+    },
+    {
+      "session": "2026-02-09",
+      "eligible": 1365
+    },
+    {
+      "session": "2026-02-10",
+      "eligible": 1408
+    },
+    {
+      "session": "2026-02-11",
+      "eligible": 1599
+    },
+    {
+      "session": "2026-02-12",
+      "eligible": 1496
+    },
+    {
+      "session": "2026-02-13",
+      "eligible": 1502
+    },
+    {
+      "session": "2026-02-17",
+      "eligible": 1511
+    },
+    {
+      "session": "2026-02-18",
+      "eligible": 1578
+    },
+    {
+      "session": "2026-02-19",
+      "eligible": 1397
+    },
+    {
+      "session": "2026-02-20",
+      "eligible": 1391
+    },
+    {
+      "session": "2026-02-23",
+      "eligible": 1731
+    },
+    {
+      "session": "2026-02-24",
+      "eligible": 1648
+    },
+    {
+      "session": "2026-02-25",
+      "eligible": 1757
+    },
+    {
+      "session": "2026-02-26",
+      "eligible": 1566
+    },
+    {
+      "session": "2026-02-27",
+      "eligible": 1551
+    },
+    {
+      "session": "2026-03-02",
+      "eligible": 1437
+    },
+    {
+      "session": "2026-03-03",
+      "eligible": 1664
+    },
+    {
+      "session": "2026-03-04",
+      "eligible": 1573
+    },
+    {
+      "session": "2026-03-05",
+      "eligible": 1876
+    },
+    {
+      "session": "2026-03-06",
+      "eligible": 1755
+    },
+    {
+      "session": "2026-03-09",
+      "eligible": 1961
+    },
+    {
+      "session": "2026-03-10",
+      "eligible": 1986
+    },
+    {
+      "session": "2026-03-11",
+      "eligible": 2056
+    },
+    {
+      "session": "2026-03-12",
+      "eligible": 1913
+    },
+    {
+      "session": "2026-03-13",
+      "eligible": 1860
+    },
+    {
+      "session": "2026-03-16",
+      "eligible": 1762
+    },
+    {
+      "session": "2026-03-17",
+      "eligible": 1607
+    },
+    {
+      "session": "2026-03-18",
+      "eligible": 1497
+    },
+    {
+      "session": "2026-03-19",
+      "eligible": 1348
+    },
+    {
+      "session": "2026-03-20",
+      "eligible": 1635
+    },
+    {
+      "session": "2026-03-23",
+      "eligible": 1439
+    },
+    {
+      "session": "2026-03-24",
+      "eligible": 1516
+    },
+    {
+      "session": "2026-03-25",
+      "eligible": 1388
+    },
+    {
+      "session": "2026-03-26",
+      "eligible": 1241
+    },
+    {
+      "session": "2026-03-27",
+      "eligible": 941
+    },
+    {
+      "session": "2026-03-30",
+      "eligible": 1107
+    },
+    {
+      "session": "2026-03-31",
+      "eligible": 1226
+    },
+    {
+      "session": "2026-04-01",
+      "eligible": 1350
+    },
+    {
+      "session": "2026-04-02",
+      "eligible": 1546
+    },
+    {
+      "session": "2026-04-06",
+      "eligible": 1469
+    },
+    {
+      "session": "2026-04-07",
+      "eligible": 1587
+    },
+    {
+      "session": "2026-04-08",
+      "eligible": 1570
+    },
+    {
+      "session": "2026-04-09",
+      "eligible": 1523
+    },
+    {
+      "session": "2026-04-10",
+      "eligible": 1689
+    },
+    {
+      "session": "2026-04-13",
+      "eligible": 1696
+    },
+    {
+      "session": "2026-04-14",
+      "eligible": 1715
+    },
+    {
+      "session": "2026-04-15",
+      "eligible": 1885
+    },
+    {
+      "session": "2026-04-16",
+      "eligible": 1846
+    },
+    {
+      "session": "2026-04-17",
+      "eligible": 1641
+    },
+    {
+      "session": "2026-04-20",
+      "eligible": 1619
+    },
+    {
+      "session": "2026-04-21",
+      "eligible": 1610
+    },
+    {
+      "session": "2026-04-22",
+      "eligible": 1697
+    },
+    {
+      "session": "2026-04-23",
+      "eligible": 1738
+    },
+    {
+      "session": "2026-04-24",
+      "eligible": 1984
+    },
+    {
+      "session": "2026-04-27",
+      "eligible": 2107
+    },
+    {
+      "session": "2026-04-28",
+      "eligible": 1999
+    },
+    {
+      "session": "2026-04-29",
+      "eligible": 2010
+    },
+    {
+      "session": "2026-04-30",
+      "eligible": 1885
+    },
+    {
+      "session": "2026-05-01",
+      "eligible": 1755
+    },
+    {
+      "session": "2026-05-04",
+      "eligible": 1835
+    },
+    {
+      "session": "2026-05-05",
+      "eligible": 1891
+    },
+    {
+      "session": "2026-05-06",
+      "eligible": 1829
+    },
+    {
+      "session": "2026-05-07",
+      "eligible": 2085
+    },
+    {
+      "session": "2026-05-08",
+      "eligible": 2184
+    },
+    {
+      "session": "2026-05-11",
+      "eligible": 2214
+    },
+    {
+      "session": "2026-05-12",
+      "eligible": 2346
+    },
+    {
+      "session": "2026-05-13",
+      "eligible": 2351
+    },
+    {
+      "session": "2026-05-14",
+      "eligible": 2271
+    },
+    {
+      "session": "2026-05-15",
+      "eligible": 2263
+    },
+    {
+      "session": "2026-05-18",
+      "eligible": 1957
+    },
+    {
+      "session": "2026-05-19",
+      "eligible": 1864
+    },
+    {
+      "session": "2026-05-20",
+      "eligible": 1441
+    },
+    {
+      "session": "2026-05-21",
+      "eligible": 1256
+    },
+    {
+      "session": "2026-05-22",
+      "eligible": 1190
+    },
+    {
+      "session": "2026-05-26",
+      "eligible": 1334
+    },
+    {
+      "session": "2026-05-27",
+      "eligible": 1348
+    },
+    {
+      "session": "2026-05-28",
+      "eligible": 1605
+    },
+    {
+      "session": "2026-05-29",
+      "eligible": 1748
+    },
+    {
+      "session": "2026-06-01",
+      "eligible": 1866
+    },
+    {
+      "session": "2026-06-02",
+      "eligible": 1996
+    },
+    {
+      "session": "2026-06-03",
+      "eligible": 2110
+    },
+    {
+      "session": "2026-06-04",
+      "eligible": 1827
+    },
+    {
+      "session": "2026-06-05",
+      "eligible": 1356
+    },
+    {
+      "session": "2026-06-08",
+      "eligible": 1354
+    },
+    {
+      "session": "2026-06-09",
+      "eligible": 1196
+    },
+    {
+      "session": "2026-06-10",
+      "eligible": 1088
+    },
+    {
+      "session": "2026-06-11",
+      "eligible": 1175
+    },
+    {
+      "session": "2026-06-12",
+      "eligible": 1171
+    },
+    {
+      "session": "2026-06-15",
+      "eligible": 1475
+    },
+    {
+      "session": "2026-06-16",
+      "eligible": 1716
+    },
+    {
+      "session": "2026-06-17",
+      "eligible": 1872
+    },
+    {
+      "session": "2026-06-18",
+      "eligible": 2062
+    },
+    {
+      "session": "2026-06-22",
+      "eligible": 2095
+    },
+    {
+      "session": "2026-06-23",
+      "eligible": 1573
+    },
+    {
+      "session": "2026-06-24",
+      "eligible": 1608
+    },
+    {
+      "session": "2026-06-25",
+      "eligible": 1578
+    },
+    {
+      "session": "2026-06-26",
+      "eligible": 1550
+    },
+    {
+      "session": "2026-06-29",
+      "eligible": 1743
+    },
+    {
+      "session": "2026-06-30",
+      "eligible": 1998
+    },
+    {
+      "session": "2026-07-01",
+      "eligible": 1977
+    },
+    {
+      "session": "2026-07-02",
+      "eligible": 1876
+    },
+    {
+      "session": "2026-07-06",
+      "eligible": 2059
+    },
+    {
+      "session": "2026-07-07",
+      "eligible": 1726
+    },
+    {
+      "session": "2026-07-08",
+      "eligible": 1695
+    },
+    {
+      "session": "2026-07-09",
+      "eligible": 1835
+    },
+    {
+      "session": "2026-07-10",
+      "eligible": 2109
+    },
+    {
+      "session": "2026-07-13",
+      "eligible": 1773
+    },
+    {
+      "session": "2026-07-14",
+      "eligible": 1839
+    },
+    {
+      "session": "2026-07-15",
+      "eligible": 1596
+    },
+    {
+      "session": "2026-07-16",
+      "eligible": 1310
+    },
+    {
+      "session": "2026-07-17",
+      "eligible": 1194
+    },
+    {
+      "session": "2026-07-20",
+      "eligible": 1355
+    },
+    {
+      "session": "2026-07-21",
+      "eligible": 1306
+    },
+    {
+      "session": "2026-07-22",
+      "eligible": 1373
+    },
+    {
+      "session": "2026-07-23",
+      "eligible": 1595
+    },
+    {
+      "session": "2026-07-24",
+      "eligible": 1583
+    },
+    {
+      "session": "2026-07-27",
+      "eligible": 1200
+    },
+    {
+      "session": "2026-07-28",
+      "eligible": 1205
+    },
+    {
+      "session": "2026-07-29",
+      "eligible": 1195
+    },
+    {
+      "session": "2026-07-30",
+      "eligible": 1459
+    },
+    {
+      "session": "2026-07-31",
+      "eligible": 1755
+    },
+    {
+      "session": "2026-08-03",
+      "eligible": 1946
+    },
+    {
+      "session": "2026-08-04",
+      "eligible": 2030
+    },
+    {
+      "session": "2026-08-05",
+      "eligible": 2048
+    },
+    {
+      "session": "2026-08-06",
+      "eligible": 2059
+    },
+    {
+      "session": "2026-08-07",
+      "eligible": 1869
+    },
+    {
+      "session": "2026-08-10",
+      "eligible": 1971
+    },
+    {
+      "session": "2026-08-11",
+      "eligible": 1782
+    },
+    {
+      "session": "2026-08-12",
+      "eligible": 1711
+    },
+    {
+      "session": "2026-08-13",
+      "eligible": 1651
+    },
+    {
+      "session": "2026-08-14",
+      "eligible": 1526
+    },
+    {
+      "session": "2026-08-17",
+      "eligible": 1419
+    },
+    {
+      "session": "2026-08-18",
+      "eligible": 1593
+    },
+    {
+      "session": "2026-08-19",
+      "eligible": 1501
+    },
+    {
+      "session": "2026-08-20",
+      "eligible": 1526
+    },
+    {
+      "session": "2026-08-21",
+      "eligible": 1577
+    },
+    {
+      "session": "2026-08-24",
+      "eligible": 1458
+    },
+    {
+      "session": "2026-08-25",
+      "eligible": 1522
+    },
+    {
+      "session": "2026-08-26",
+      "eligible": 1610
+    },
+    {
+      "session": "2026-08-27",
+      "eligible": 1858
+    },
+    {
+      "session": "2026-08-28",
+      "eligible": 2086
+    },
+    {
+      "session": "2026-08-31",
+      "eligible": 2140
+    },
+    {
+      "session": "2026-09-01",
+      "eligible": 2139
+    },
+    {
+      "session": "2026-09-02",
+      "eligible": 2010
+    },
+    {
+      "session": "2026-09-03",
+      "eligible": 1892
+    },
+    {
+      "session": "2026-09-04",
+      "eligible": 1588
+    },
+    {
+      "session": "2026-09-08",
+      "eligible": 1582
+    },
+    {
+      "session": "2026-09-09",
+      "eligible": 1704
+    },
+    {
+      "session": "2026-09-10",
+      "eligible": 1853
+    },
+    {
+      "session": "2026-09-11",
+      "eligible": 1882
+    },
+    {
+      "session": "2026-09-14",
+      "eligible": 1913
+    },
+    {
+      "session": "2026-09-15",
+      "eligible": 1849
+    },
+    {
+      "session": "2026-09-16",
+      "eligible": 1785
+    },
+    {
+      "session": "2026-09-17",
+      "eligible": 1982
+    },
+    {
+      "session": "2026-09-18",
+      "eligible": 2150
+    }
+  ]
+}

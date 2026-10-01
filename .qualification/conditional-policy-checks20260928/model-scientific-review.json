@@ -1,0 +1,31 @@
+{
+  "status": "reviewed_no_material_scientific_defect_found",
+  "scope": "Static independent review of current conditional model/sampling and feature chronology against the request draft; not a profitability claim or independent runner review.",
+  "inputs": {
+    "src/frontier/conditional_models.py": "3b5c1c31c6d6b9bbb424838071c0f80ef9603f8fc6df5ce9103c829d71b72d4f",
+    "src/frontier/conditional_features.py": "33c183271f1c18aa03f2e1502af5fe72130af41875f305613dd4a5b355a50c05",
+    ".qualification/conditional-selection20260928/request.draft.json": "aaec51e2766b141adf5bca2263525ade38c8ad1ecfb4d4203d41dcb5f69f36ff"
+  },
+  "checks": [
+    "Unique stock/date draws precede target availability inspection and rejected labels have no replacement.",
+    "Every six-head label end is strictly before outer fitting/calibration and inner training/validation boundaries.",
+    "Imputation/scaling fit only each training subset; calibration cannot select family or refit preprocessing.",
+    "Common causal reference notionals and equal-date/equal-horizon utility loss match the draft, with zero-quantity rows retained.",
+    "All three inner folds required, exact tie selects Ridge, final selected-family failure abstains without fallback.",
+    "Calibration uses later-only per-row mean error; downside clipped before and after correction as declared.",
+    "Predictor takes features only and does not require test labels; saved raw/corrected outputs and exact reload checks retained.",
+    "Feature context uses same-date completed inputs, preceding252 RV median and declared duplicate aliases."
+  ],
+  "coordination": [
+    {
+      "topic": "training-only setup means and calibration-defined test reliability",
+      "finding": "The model module only provides a pooled-union training mean for inner diagnostics.",
+      "resolution": "Model owner confirms strategy_design isolated runner owns setup-specific priors and later test reliability; runner owner notified.",
+      "remaining": "Verify final runner integration separately before study launch."
+    }
+  ],
+  "limitations": [
+    "Review covers exact recorded file hashes; integrated final suite remains the root task responsibility while other agents finish.",
+    "Does not resolve frozen-vintage source actions, survivorship or empirical forecast usefulness."
+  ]
+}

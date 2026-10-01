@@ -1,0 +1,16 @@
+{
+  "symbol": "TOPS",
+  "effective_sessions": "2017-10-06",
+  "url": "https://www.sec.gov/Archives/edgar/data/1296484/000091957419002626/d8214366_20-f.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:02.709988+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1296484/000091957419002626/d8214366_20-f.htm",
+  "redirects": [],
+  "sha256": "c2969b64632ac666acd88701579708da3636fd9033ba66a83ccfe8948312785d",
+  "raw_file": "notice-TOPS-2017-10-06.c2969b64632ac666acd88701579708da3636fd9033ba66a83ccfe8948312785d.raw.html",
+  "bytes": 3238597,
+  "captured_at": "2026-09-28T19:14:03.729783+00:00",
+  "text_file": "notice-TOPS-2017-10-06.text.txt"
+}

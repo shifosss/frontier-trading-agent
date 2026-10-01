@@ -1,0 +1,15 @@
+{
+  "at": "2026-09-29T00:09:37.967913+00:00",
+  "tests": 15,
+  "capture_tests": 9,
+  "finalizer_tests": 6,
+  "seconds": 0.807,
+  "result": "passed",
+  "network_requests": 0,
+  "files": {
+    "capture.py": "17243babfcfefd226cdf147c62d7131da802ad4c0aa31670d43489428339d0ae",
+    "test_capture.py": "5e174f1d61a9b89b477948f509936b54cec6e05691b3daf51f15e59b2f19caf8",
+    "finalize_source.py": "9398ac88e5dc34e8d388b100a3f2a060949e180b6ea92721fa26fba80611f423",
+    "test_finalize_source.py": "52acfc0593e94b70dd54ecf3c8854b43bdf132d67025ee36eccebe6ca52992a0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "at": "2026-09-29T21:51:51.327252+00:00",
+  "pid": 23372,
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-u",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\run_study.py",
+    "--definition",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\economic\\definition-20260929.json"
+  ],
+  "definition_sha256": "518039219b5b7be3935fb788f14ffacc23b90cb73033411414d7fb1d70a1859f",
+  "root_reviewed": true,
+  "source_writer_absent": true,
+  "expected_model_attempts": 10,
+  "expected_account_paths": 20,
+  "scope": "Offline fixed historical comparison; no network, no paper/live operations"
+}

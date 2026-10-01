@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "smoke_accounts": 360,
+  "complete_saved_metrics_reconciled": true,
+  "incomplete_compares_suppressed": true,
+  "incomplete_trade_count_retained": true,
+  "leaked_incomplete_metric_detected": true,
+  "incorrect_fold_compounding_detected": true,
+  "no_financial_source_imports": true
+}

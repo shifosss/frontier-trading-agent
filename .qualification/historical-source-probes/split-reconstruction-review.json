@@ -1,0 +1,28 @@
+{
+  "histories": 100,
+  "rows": 373041,
+  "seconds": 4.635647200004314,
+  "calendar_exact_matches": [
+    "A",
+    "AA",
+    "AAB.TO"
+  ],
+  "aapl_2000_01_03": {
+    "symbol": "AAPL",
+    "session": "2000-01-03",
+    "available_at": "2000-01-03 21:01:00+00:00",
+    "close": 111.93750190734863,
+    "adjusted_close": 0.8370022177696228,
+    "high": 112.49997138977051,
+    "low": 101.68748760223389,
+    "volume": 4783900.0
+  },
+  "split_audit": {
+    "method": "nominal OHLC = provider OHLC * later reported split ratios; volume inverse",
+    "reported_effective_events": 4,
+    "last_reported_split_session": "2020-08-31",
+    "minimum_factor": 1.0,
+    "maximum_factor": 112.0,
+    "event_completeness": "Provider-reported events; independently complete history unverified"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "definition_sha256": "ca898bb126d8fc1c6f4423dd40e30ec8f225253c7db31201db84049c76786585",
+  "paths": {
+    "criteria": ".qualification/earnings-quality20260928/cohort/criteria.json",
+    "listing": "data/research/universe/snapshots/20260918T201012673731Z-2da49ecfd9bb.json",
+    "capture_index": "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json",
+    "capture_workspace": "data/historical/capture-workspace",
+    "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
+    "ticker_exchange": ".qualification/earnings-quality20260928/discovery/company-tickers-exchange.json"
+  },
+  "inputs": {
+    ".qualification/earnings-quality20260928/cohort/criteria.json": "e16af5da1b8df311b053a9aca0ccbc198d6c44ab87dedabdca8b1be8022b9260",
+    "data/research/universe/snapshots/20260918T201012673731Z-2da49ecfd9bb.json": "d426bedf1b9bdce6ded0adab036d52e7f8bddec9bb1603630b64773f0dac43cc",
+    "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966",
+    ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    ".qualification/earnings-quality20260928/discovery/company-tickers-exchange.json": "affa8f025ab31bab39b60e06cf0bcc401bb87f23151412d686258fc9b99ef091",
+    ".qualification/earnings-quality20260928/cohort/cohort.py": "77aef2706cc1a2195407f57f25c11711a0e618d1f4da0e7f217b998ec0403b61",
+    ".qualification/earnings-quality20260928/cohort/test_cohort.py": "4f534cca84cc6ecc6313c9a4e1b7f00117b74ac694edaeab54f1263ecbdca416",
+    ".qualification/earnings-quality20260928/cohort/inventory.json": "9ee042390b7ca37591582a15f41c7a1a9674d0c3b2523813af82c7c01d6dde47",
+    ".qualification/earnings-quality20260928/cohort/README.md": "27a730fcb3c2e10664c345a00eea72db6a4c40cb9ac5145e9ee9ea8cae018bcf",
+    ".qualification/earnings-quality20260928/discovery/ticker-request.json": "dcfe882e6146568de1d71fbed86bcbba8fe1ab7b1142d391c71b5dcdd5b2cd6f",
+    ".qualification/earnings-quality20260928/discovery/ticker-result.json": "92a4c2c238d874c9fd06f685026da1a2480aaeebfad4016538d60c1f4a2143b5"
+  }
+}

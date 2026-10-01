@@ -1,0 +1,4 @@
+# Preserve immutable research/evidence bytes across checkouts.
+.qualification/** -text
+docs/handover/** -text
+# Normal application-source text checkout behavior remains unchanged.

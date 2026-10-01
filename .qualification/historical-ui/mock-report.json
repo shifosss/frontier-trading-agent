@@ -1,0 +1,627 @@
+{
+  "kind": "synthetic browser fixtures",
+  "widths": [
+    {
+      "width": 1440,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "USD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 500,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 20,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 40,
+          "rows": 32
+        },
+        {
+          "currency": "CAD",
+          "budget": 100000,
+          "cost_bps": 100,
+          "rows": 32
+        }
+      ],
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    }
+  ],
+  "states": [
+    {
+      "state": "incomplete",
+      "errors": [],
+      "mutations": [],
+      "text": "Historical strategy development\n\nDaily market history from 2000 where available \u00b7 cash accounts \u00b7 costs and settlement modeled\n\nStudy to run\nRolling models \u00b7 1 / 3 / 5 sessions\nDaily screening \u00b7 1 / 3 / 5 sessions\nBaseline \u00b7 5 / 10 / 20 sessions\nRefresh historical status\nRun model study\nReuse the saved histories from the result below\n\nThe model study compares rolling forecasts with daily trading rules, using 1, 3, or 5-session positions. All current modes use daily bars; they do not simulate intraday or hourly execution.\n\nHistorical research\ncompleted \u00b7 complete\n\nLong histories support repeated tests before new forward observations mature.\n\nBaseline historical results\n\nPublished 2026-09-18T21:00:00Z \u00b7 Run ffffffffffffffffffffffffffffffff\n\n8,300 histories \u00b7 25,000,000 daily observations \u00b7 30 declared strategy variants. USD: 2000-01-03 to 2026-09-18. CAD: 2000-01-03 to 2026-09-18.\n\nHistorical currency\nUSD\nCAD\nHistorical starting cash\n500\n2,000\n10,000\n100,000\nHistorical round-trip cost\n20 bps\n40 bps\n100 bps\nDownload historical evidence\nTraining-only selection, tested on the following year\n\nEach selection uses the previous three years. Test periods keep their selected rule; cash remains an eligible choice. These are retrospective tests designed today, with current listing and data limitations.\n\nincomplete historical test\n\nThis test stopped because required historical observations are missing. Any curve below shows only the available partial history. Full-period returns, drawdowns, and benchmark comparisons are unavailable.\n\nNo usable equity path is available for this test.\n\nChart samples month-end equity; completed-test drawdowns use daily marks.\n\nincomplete \u00b7 total return Unavailable \u00b7 maximum drawdown Unavailable \u00b7 annualized return Unavailable \u00b7 12 trades\n\nTraining interval\tTest interval\tChosen rule\tHold\tTest return\n2022-01-03 \u2013 2024-12-31\t2025-01-02 \u2013 2025-12-31\tcash\tCash\t5.40%\nAll fixed strategies and benchmarks\n\nWhole-period results are exploratory comparisons. Starting cash stays in the account between trades; unused cash earns zero. Returns exclude contributions, taxes and FX.\n\nRule\tHold\tStatus\tTotal return\tMax drawdown\tAnnualized\tTrades\tFees (USD)\nmomentum\t5 sessions\tincomplete\tUnavailable\tUnavailable\tUnavailable\t12\t0.50\nmomentum\t10 sessions\tincomplete\tUnavailable\tUnavailable\tUnavailable\t12\t0.50\nmomentum\t20 sessions\tincomplete\tUnavailable\tUnavailable\tUnavailable\t12\t0.50\ntrend pullback\t5 sessions\tincomplete\tUnavailable\tUnavailable\tUnavailable\t12\t0.50\nt"
+    },
+    {
+      "state": "empty",
+      "errors": [],
+      "mutations": [],
+      "overflow": false
+    }
+  ]
+}

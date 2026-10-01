@@ -1,0 +1,64 @@
+F
+Frontier
+Research
+Study
+Data
+Experiments
+Research
+Operations
+Data
+
+Know the source, timing and limits of every observation.
+
+Local datasets
+Import engineering demo
+Fictional US and Canada engineering fixture
+FICTUS.XNYS, FICTCA.XTSE
+Synthetic fixture
+2025-01-02 — 2025-08-29
+332 bars
+SPY + XIU retained daily observations (2026-06-22_2026-09-17)
+SPY.ARCX, XIU.XTSE
+Historical snapshot
+2026-06-22 — 2026-09-17
+123 bars
+SPY + XIU historical observation prefix through 2026-09-16
+SPY.ARCX, XIU.XTSE
+Historical snapshot
+2026-06-22 — 2026-09-16
+121 bars
+SPY retained Longbridge hourly snapshot (exploratory)
+SPY.ARCX
+Historical snapshot
+2026-06-22 — 2026-09-17
+434 bars
+SPY + XIU retained daily observations (full)
+SPY.ARCX, XIU.XTSE
+Historical snapshot
+2026-04-27 — 2026-09-17
+200 bars
+Fictional US and Canada engineering fixture
+Source
+frontier-fixture-v1-seed-1729
+Last observation
+2025-08-29T20:00:00Z
+Fetched
+2025-09-01T00:00:00Z
+Availability
+documented
+Corporate actions
+complete
+Calendars / FX
+Official listing calendars. Dated USD/CAD observations, available as of valuation. No automatic currency conversion.
+Version
+3a7650bbe4030072c81cce72588378f3ccf01f2c9a8f945373f2029bc35ee3d0
+Synthetic fictional prices and FX; engineering evidence only
+No corporate actions are defined in this fictional fixture
+FX publication modeled at 16:30 America/Toronto; not an executable quote
+Import a source folder
+
+Place a folder inside this workspace’s data/imports or data/raw. Include dataset.json and bars.csv; provide actions.csv and fx.csv when available. Files are validated before immutable import.
+
+Source folder
+Import dataset
+Frontier Research

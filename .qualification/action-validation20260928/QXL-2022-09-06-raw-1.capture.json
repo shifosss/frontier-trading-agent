@@ -1,0 +1,28 @@
+{
+  "symbol": "QXL",
+  "effective_session": "2022-09-06",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/QXL/bars?timeframe=1Day&start=2022-08-27T04%3A00%3A00%2B00%3A00&end=2022-09-17T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2022-08-27T04:00:00+00:00",
+    "end": "2022-09-17T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.923869+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "QXL-2022-09-06-raw-1.823926b96d35ed647d5a33e999d2775add0c945827f088c0fced2010dcae6fb9.raw.json",
+  "sha256": "823926b96d35ed647d5a33e999d2775add0c945827f088c0fced2010dcae6fb9",
+  "bytes": 51,
+  "captured_at": "2026-09-28T19:04:30.950423+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 0,
+  "response_symbol": "QXL",
+  "pagination_complete": true
+}

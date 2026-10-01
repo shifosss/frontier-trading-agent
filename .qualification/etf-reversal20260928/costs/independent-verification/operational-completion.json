@@ -1,0 +1,14 @@
+{
+  "at": "2026-09-29T00:37:01.823395+00:00",
+  "tool_session": 42398,
+  "exit_code": 0,
+  "observed_capture_pids": [
+    48240,
+    57484
+  ],
+  "capture_pids_absent": true,
+  "exclusive_lock_available": true,
+  "single_capture_request_journal_entries": 23,
+  "automatic_retries": 0,
+  "source_or_strategy_workers_changed": false
+}

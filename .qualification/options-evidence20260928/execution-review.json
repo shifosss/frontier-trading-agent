@@ -1,0 +1,23 @@
+{
+  "reviewed_at": "2026-09-29T00:55:06.171488+00:00",
+  "reviewer": "root agent",
+  "approval": "Execute the three frozen metadata GETs once using existing access; no retries, historical quotes or other endpoints.",
+  "verified_sha256": {
+    "request-definition.json": "10726a45ec026cb023e248b303908575496fc837afb838823e09b042a3d56766",
+    "probe_metadata.py": "ef634df90c909fe65da3bbffe06b065228ea2b91de4348af3cc60a489f75d8a9",
+    "test_probe_metadata.py": "abe52dbfbacc4b068cacff4f972835e460f00e179a5ba4c05db3f47391a991ab"
+  },
+  "source_inputs_verified": {
+    ".qualification/options-access20260928/alpaca-request.json": "0f6f92aa8cb25141d063e02bacd41523c2e439c10674def1d5b7f8ac8e07b0ee",
+    ".qualification/options-access20260928/alpaca-summary.json": "3f8541be380cb1e23d52dfad1f0255ae440833101e8f064fcbdb1066f33e4b21",
+    ".qualification/options-access20260928/review.json": "6ba8d35b05eeae17f791cc7d7370bc81b0ad74505d34ecdf4dcd074ec744073b",
+    ".qualification/options-access20260928/probe_alpaca.py": "d2499ca579c0bfba526ea032f1faf9d5d6df9a60e8b3dbd74d6297af81eed687",
+    ".qualification/options-access20260928/alpaca-raw-6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08.json": "6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08",
+    "src/frontier/paper_broker.py": "a89cee7f9fa17ae0bfd76850a338d43a740ab578322862bfda8a1a36aa313921",
+    "src/frontier/historical_lab.py": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a"
+  },
+  "approved_endpoint": "https://paper-api.alpaca.markets/v2/options/contracts",
+  "maximum_calls": 3,
+  "historical_quote_calls": 0,
+  "probe_not_yet_executed": true
+}

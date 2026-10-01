@@ -1,0 +1,16 @@
+{
+  "symbol": "EVO",
+  "effective_sessions": "2021-10-20",
+  "url": "https://www.sec.gov/Archives/edgar/data/1412558/000110465922049929/evo-20211231x20f.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:00.741726+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1412558/000110465922049929/evo-20211231x20f.htm",
+  "redirects": [],
+  "sha256": "9dc81147a616fe02bacb215efbe0135cfa7ec2e5605c743899de952a21033af5",
+  "raw_file": "notice-EVO-2021-10-20.9dc81147a616fe02bacb215efbe0135cfa7ec2e5605c743899de952a21033af5.raw.html",
+  "bytes": 7289210,
+  "captured_at": "2026-09-28T19:14:01.342501+00:00",
+  "text_file": "notice-EVO-2021-10-20.text.txt"
+}

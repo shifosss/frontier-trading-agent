@@ -1,0 +1,7 @@
+{
+  "failure": "External qualifier compared JSON list receivables with native tuple receivables; all four daily curves had already matched exactly. Production journal is complete.",
+  "correction": "Normalize expected structure through the same JSON representation as existing state-resume unit test. No rounding, tolerances or production/model/journal changes. Repeat completed replay also verifies idempotence.",
+  "failed_script_sha256": "f85d2ba3c96e2e35466df1d3d37dc05e37fd8fe934c5cd71deb4d3205ea76111",
+  "failed_exit": "AssertionError: state",
+  "declared_before_retry": true
+}

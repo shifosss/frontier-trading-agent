@@ -1,0 +1,13 @@
+{
+  "archive": ".qualification/earnings-quality20260928/earnings-comparison-20260929.zip",
+  "sha256": "51a620b50b7462d04887d6317fc9b8a6b68ebafc8fb07e2e8386510c3f122c97",
+  "bytes": 155043133,
+  "zip_entries": 192,
+  "payload_entries": 191,
+  "archive_manifest_present": true,
+  "uncompressed_bytes": 921991692,
+  "findings": [],
+  "raw_SEC_corpus_included": false,
+  "secret_values_written": false,
+  "intended_distribution": "Private GitHub handover release attachment; original archive unchanged."
+}

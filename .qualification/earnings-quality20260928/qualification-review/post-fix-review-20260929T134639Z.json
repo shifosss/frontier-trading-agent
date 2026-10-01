@@ -1,0 +1,1555 @@
+{
+  "at": "2026-09-29T13:46:39.492636+00:00",
+  "status": "fix_verified_bounded_offline",
+  "resolved_finding": "Original submissions root/history response bytes in discovery.sources were not bound by the collector.",
+  "fix_assessment": "The per-issuer loop binds every recorded discovery.sources item via the existing source_path resolver and verifies its expected SHA256 before original record or eligibility processing. The same identities are rechecked before collection returns and included in final source-inputs.json.",
+  "verification": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      ".qualification/earnings-quality20260928/qualification/test_collector.py",
+      ".qualification/earnings-quality20260928/qualification/test_header_industry.py",
+      ".qualification/earnings-quality20260928/qualification-review/test_independent_boundaries.py"
+    ],
+    "exit_code": 0,
+    "passed": 40,
+    "failed": 0,
+    "stdout": "........................................ [100%]\n40 passed in 0.91s\n",
+    "collector_tests": 9,
+    "header_tests": 27,
+    "independent_boundary_tests": 4,
+    "checks": [
+      "Discovery raw inclusion and corruption rejection",
+      "Read-only source reader blocks an exclusive writer without changing lock bytes",
+      "Incomplete discovery retains known original rows and all 100 issuers, while undiscovered counts stay null",
+      "Missing expected raw source is a fatal identity failure",
+      "Terminal completion, unresolved STOP, ordered membership, original failures and immutable identity checks remain enforced"
+    ]
+  },
+  "current_files": {
+    ".qualification\\earnings-quality20260928\\qualification\\run_qualification.py": "7791eb616d0f8e354fc995be9a3a6756e96ccb2c5afab1b98086ff1669a16519",
+    ".qualification\\earnings-quality20260928\\qualification\\test_collector.py": "97e0aa25c82ef3484ac7d00a40fd9806f9da091b7f20239970248eab3364b7ba",
+    ".qualification\\earnings-quality20260928\\qualification\\header_industry.py": "25cc332501e39eec2ff2a0efe142540fe30fc4f17c35f900c24e5f0cef2706bc",
+    ".qualification\\earnings-quality20260928\\qualification\\test_header_industry.py": "2def85534ae16cde3985d3ea3abdcb7d56bccc3d76a978dc37bc68c70ebdb708",
+    ".qualification\\earnings-quality20260928\\qualification\\interface.md": "04a308a5374a6f470102e31dbf2f8b30aaa5b7c89b618144329d09b194998f6f",
+    ".qualification\\earnings-quality20260928\\qualification\\verification.json": "57f5830c3b8f6c1ac099a2dd41ee3830780895654063f0ba7b62fe8af1ddf0e8",
+    ".qualification\\earnings-quality20260928\\qualification-review\\pre-fix-review.json": "6a6c11c11c62d8151dd2baa88ea839360a95d538521088649cd365a7b90d96b5",
+    ".qualification\\earnings-quality20260928\\qualification-review\\test_independent_boundaries.py": "5d08881858591c2ca3b2e91de9257e9d798343a7466d3b1c03fda34b15f85074"
+  },
+  "source_catalog_snapshot": {
+    "registry_sha256": "6bfde163c240b06018fdf98ba5f65a3196e4a8fb1b188f8718caa92ac6128c62",
+    "issuers": 100,
+    "discovery_source_references": 135,
+    "all_recorded_raw_hashes_match": true,
+    "references": [
+      {
+        "issuer": {
+          "symbol": "MCRB",
+          "cik": "0001609809"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001609809.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\0b7284e893dd2bf31612f3b044b53395b42e6c6f81cb8fcddbb2cc5317c14441.bin",
+        "expected_sha256": "0b7284e893dd2bf31612f3b044b53395b42e6c6f81cb8fcddbb2cc5317c14441",
+        "actual_sha256": "0b7284e893dd2bf31612f3b044b53395b42e6c6f81cb8fcddbb2cc5317c14441",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CAG",
+          "cik": "0000023217"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000023217.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\fd95ca4b09cf5a56bc7046c22d6c79e71fde7e1a9ea60dcc2ad478423e20cff9.bin",
+        "expected_sha256": "fd95ca4b09cf5a56bc7046c22d6c79e71fde7e1a9ea60dcc2ad478423e20cff9",
+        "actual_sha256": "fd95ca4b09cf5a56bc7046c22d6c79e71fde7e1a9ea60dcc2ad478423e20cff9",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CAG",
+          "cik": "0000023217"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000023217-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\9adeb2cc608e41cda0d22e50f28b3e87cc8edb25f9a7616c3a87610b4997dcd5.bin",
+        "expected_sha256": "9adeb2cc608e41cda0d22e50f28b3e87cc8edb25f9a7616c3a87610b4997dcd5",
+        "actual_sha256": "9adeb2cc608e41cda0d22e50f28b3e87cc8edb25f9a7616c3a87610b4997dcd5",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "SCOR",
+          "cik": "0001158172"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001158172.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\18ed8c8e5473f9a6acfb3fa25cf075d8709f60d72b5a86875bbff0e45daf9cf5.bin",
+        "expected_sha256": "18ed8c8e5473f9a6acfb3fa25cf075d8709f60d72b5a86875bbff0e45daf9cf5",
+        "actual_sha256": "18ed8c8e5473f9a6acfb3fa25cf075d8709f60d72b5a86875bbff0e45daf9cf5",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SCOR",
+          "cik": "0001158172"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001158172-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\334ba5f8f2821f0964f3fbd68450a2954d049c2321ccfa96447af57e8dc7dfde.bin",
+        "expected_sha256": "334ba5f8f2821f0964f3fbd68450a2954d049c2321ccfa96447af57e8dc7dfde",
+        "actual_sha256": "334ba5f8f2821f0964f3fbd68450a2954d049c2321ccfa96447af57e8dc7dfde",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "PPG",
+          "cik": "0000079879"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000079879.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\f215160918100253a2a42afead96e83343a2e91fff55854db0cc6bd994daea0b.bin",
+        "expected_sha256": "f215160918100253a2a42afead96e83343a2e91fff55854db0cc6bd994daea0b",
+        "actual_sha256": "f215160918100253a2a42afead96e83343a2e91fff55854db0cc6bd994daea0b",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "PPG",
+          "cik": "0000079879"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000079879-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\53a41b71d6bbd147a41b3e99019816506440227814fac770d05b4a9073e5924f.bin",
+        "expected_sha256": "53a41b71d6bbd147a41b3e99019816506440227814fac770d05b4a9073e5924f",
+        "actual_sha256": "53a41b71d6bbd147a41b3e99019816506440227814fac770d05b4a9073e5924f",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "PPG",
+          "cik": "0000079879"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000079879-submissions-002.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\488ce2d289d5466d3ef5e8e37423186cd9ec835b8d354c3b61d976b8d323599e.bin",
+        "expected_sha256": "488ce2d289d5466d3ef5e8e37423186cd9ec835b8d354c3b61d976b8d323599e",
+        "actual_sha256": "488ce2d289d5466d3ef5e8e37423186cd9ec835b8d354c3b61d976b8d323599e",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "DXCM",
+          "cik": "0001093557"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001093557.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\8b1ad91b5819212fd58715b744c03aec74cb605f49dfb6151f6c780734b943c3.bin",
+        "expected_sha256": "8b1ad91b5819212fd58715b744c03aec74cb605f49dfb6151f6c780734b943c3",
+        "actual_sha256": "8b1ad91b5819212fd58715b744c03aec74cb605f49dfb6151f6c780734b943c3",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "DXCM",
+          "cik": "0001093557"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001093557-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\76f9d316b65cfaf94d385d570dc243bd1dff61e5d72f0e82addc5461d26e4a06.bin",
+        "expected_sha256": "76f9d316b65cfaf94d385d570dc243bd1dff61e5d72f0e82addc5461d26e4a06",
+        "actual_sha256": "76f9d316b65cfaf94d385d570dc243bd1dff61e5d72f0e82addc5461d26e4a06",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "MMM",
+          "cik": "0000066740"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000066740.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\81c4f52cc43256a856a3e4a40f3f39692670af403ee00329980bcce7f0bd1edd.bin",
+        "expected_sha256": "81c4f52cc43256a856a3e4a40f3f39692670af403ee00329980bcce7f0bd1edd",
+        "actual_sha256": "81c4f52cc43256a856a3e4a40f3f39692670af403ee00329980bcce7f0bd1edd",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "MMM",
+          "cik": "0000066740"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000066740-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\422e21b5e1132ea2c221ee534dc7c2e4e61359e5bf363d7e229cf388dc528f5b.bin",
+        "expected_sha256": "422e21b5e1132ea2c221ee534dc7c2e4e61359e5bf363d7e229cf388dc528f5b",
+        "actual_sha256": "422e21b5e1132ea2c221ee534dc7c2e4e61359e5bf363d7e229cf388dc528f5b",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "ENOV",
+          "cik": "0001420800"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001420800.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\e9876a71179cf3004997378ca2e3f0dfcbd17beaa395d1089a3e42b6c7f41bfd.bin",
+        "expected_sha256": "e9876a71179cf3004997378ca2e3f0dfcbd17beaa395d1089a3e42b6c7f41bfd",
+        "actual_sha256": "e9876a71179cf3004997378ca2e3f0dfcbd17beaa395d1089a3e42b6c7f41bfd",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "ENOV",
+          "cik": "0001420800"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001420800-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\74b27005446dbb7d6032ea81993a48b41118b899cab05515c7df09f0fe0d9166.bin",
+        "expected_sha256": "74b27005446dbb7d6032ea81993a48b41118b899cab05515c7df09f0fe0d9166",
+        "actual_sha256": "74b27005446dbb7d6032ea81993a48b41118b899cab05515c7df09f0fe0d9166",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "TRU",
+          "cik": "0001552033"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001552033.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\bec6605390c8697b6e71c9ac1e18f34f47ecad048ba48a3fff7777bc76aa6250.bin",
+        "expected_sha256": "bec6605390c8697b6e71c9ac1e18f34f47ecad048ba48a3fff7777bc76aa6250",
+        "actual_sha256": "bec6605390c8697b6e71c9ac1e18f34f47ecad048ba48a3fff7777bc76aa6250",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "TRU",
+          "cik": "0001552033"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001552033-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\082d2ab139bd6750ccbeb6524c29c6abbe3fcb8415a2b89f7fbb389b996c77f8.bin",
+        "expected_sha256": "082d2ab139bd6750ccbeb6524c29c6abbe3fcb8415a2b89f7fbb389b996c77f8",
+        "actual_sha256": "082d2ab139bd6750ccbeb6524c29c6abbe3fcb8415a2b89f7fbb389b996c77f8",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "LULU",
+          "cik": "0001397187"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001397187.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\16414af908b2e744b820053277b95dbf66f8b8f8c84d8b80575de7ebe186f9bc.bin",
+        "expected_sha256": "16414af908b2e744b820053277b95dbf66f8b8f8c84d8b80575de7ebe186f9bc",
+        "actual_sha256": "16414af908b2e744b820053277b95dbf66f8b8f8c84d8b80575de7ebe186f9bc",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "LULU",
+          "cik": "0001397187"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001397187-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\a8dd049a865081142e0f0bbbbac85a39b17df0b02275d6f0d0503325891e4378.bin",
+        "expected_sha256": "a8dd049a865081142e0f0bbbbac85a39b17df0b02275d6f0d0503325891e4378",
+        "actual_sha256": "a8dd049a865081142e0f0bbbbac85a39b17df0b02275d6f0d0503325891e4378",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "WSM",
+          "cik": "0000719955"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000719955.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\08cd02e68050c90c7ce22b10e7de9bbc02885f5544b94dd56920f7ca140eb622.bin",
+        "expected_sha256": "08cd02e68050c90c7ce22b10e7de9bbc02885f5544b94dd56920f7ca140eb622",
+        "actual_sha256": "08cd02e68050c90c7ce22b10e7de9bbc02885f5544b94dd56920f7ca140eb622",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "WSM",
+          "cik": "0000719955"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000719955-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\e32a42fe4768c8295bc09b9b9612056073c966c1e05bbb51a800d19d2d4a6d4a.bin",
+        "expected_sha256": "e32a42fe4768c8295bc09b9b9612056073c966c1e05bbb51a800d19d2d4a6d4a",
+        "actual_sha256": "e32a42fe4768c8295bc09b9b9612056073c966c1e05bbb51a800d19d2d4a6d4a",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "TKR",
+          "cik": "0000098362"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000098362.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\6b437766da1f0cdcbfd00629856d384ddd5ede4a5b418d30280ebcdbe0e36329.bin",
+        "expected_sha256": "6b437766da1f0cdcbfd00629856d384ddd5ede4a5b418d30280ebcdbe0e36329",
+        "actual_sha256": "6b437766da1f0cdcbfd00629856d384ddd5ede4a5b418d30280ebcdbe0e36329",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "TKR",
+          "cik": "0000098362"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000098362-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\fd6fd8522f49b151da2ce553598f69b599a7626b1709f6d98c7a0dc3599f5798.bin",
+        "expected_sha256": "fd6fd8522f49b151da2ce553598f69b599a7626b1709f6d98c7a0dc3599f5798",
+        "actual_sha256": "fd6fd8522f49b151da2ce553598f69b599a7626b1709f6d98c7a0dc3599f5798",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "AWK",
+          "cik": "0001410636"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001410636.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\fae011b567e44396c6e35bdce5b1b5f2cb9d49d99a5e1861fcdd4b000b2e51dc.bin",
+        "expected_sha256": "fae011b567e44396c6e35bdce5b1b5f2cb9d49d99a5e1861fcdd4b000b2e51dc",
+        "actual_sha256": "fae011b567e44396c6e35bdce5b1b5f2cb9d49d99a5e1861fcdd4b000b2e51dc",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "AWK",
+          "cik": "0001410636"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001410636-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\8f934467998ffdb9276a8058618f9fc4ac95634a9b9114ec0b7698693a4c5eb2.bin",
+        "expected_sha256": "8f934467998ffdb9276a8058618f9fc4ac95634a9b9114ec0b7698693a4c5eb2",
+        "actual_sha256": "8f934467998ffdb9276a8058618f9fc4ac95634a9b9114ec0b7698693a4c5eb2",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "GMED",
+          "cik": "0001237831"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001237831.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\9ea220486e6c40c8d8dd2b92966f94d09caa6cbeed9c5e1f7ec0bb4d1254892a.bin",
+        "expected_sha256": "9ea220486e6c40c8d8dd2b92966f94d09caa6cbeed9c5e1f7ec0bb4d1254892a",
+        "actual_sha256": "9ea220486e6c40c8d8dd2b92966f94d09caa6cbeed9c5e1f7ec0bb4d1254892a",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "BIO",
+          "cik": "0000012208"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000012208.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\9de88d5892fbee64474dbfab52d2dacea7915dbb0378b12a02e5a2aa1139c243.bin",
+        "expected_sha256": "9de88d5892fbee64474dbfab52d2dacea7915dbb0378b12a02e5a2aa1139c243",
+        "actual_sha256": "9de88d5892fbee64474dbfab52d2dacea7915dbb0378b12a02e5a2aa1139c243",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "URBN",
+          "cik": "0000912615"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000912615.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\c4fb7309222db7013a8513b19d266d781051142fd70203978e019821a8d297af.bin",
+        "expected_sha256": "c4fb7309222db7013a8513b19d266d781051142fd70203978e019821a8d297af",
+        "actual_sha256": "c4fb7309222db7013a8513b19d266d781051142fd70203978e019821a8d297af",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "OLED",
+          "cik": "0001005284"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001005284.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\2b7f19453abad02139cd7e4f453beff6d1694c0d9e7336e48bc1a067481fdeb8.bin",
+        "expected_sha256": "2b7f19453abad02139cd7e4f453beff6d1694c0d9e7336e48bc1a067481fdeb8",
+        "actual_sha256": "2b7f19453abad02139cd7e4f453beff6d1694c0d9e7336e48bc1a067481fdeb8",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "OLED",
+          "cik": "0001005284"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001005284-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\1915a78039611d1df9145af451c810e0d23e29dfc7b9af9bdfbe1cb592bb92a7.bin",
+        "expected_sha256": "1915a78039611d1df9145af451c810e0d23e29dfc7b9af9bdfbe1cb592bb92a7",
+        "actual_sha256": "1915a78039611d1df9145af451c810e0d23e29dfc7b9af9bdfbe1cb592bb92a7",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "FIVE",
+          "cik": "0001177609"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001177609.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\cbca626910125686e448e3417143588a6f468052799d4ddd43a1614f42bc9ae8.bin",
+        "expected_sha256": "cbca626910125686e448e3417143588a6f468052799d4ddd43a1614f42bc9ae8",
+        "actual_sha256": "cbca626910125686e448e3417143588a6f468052799d4ddd43a1614f42bc9ae8",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "FIVE",
+          "cik": "0001177609"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001177609-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\ca18bbac42d23429c84e2f4e684331768799c4683ee6e6367157848d3a805226.bin",
+        "expected_sha256": "ca18bbac42d23429c84e2f4e684331768799c4683ee6e6367157848d3a805226",
+        "actual_sha256": "ca18bbac42d23429c84e2f4e684331768799c4683ee6e6367157848d3a805226",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "BCPC",
+          "cik": "0000009326"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000009326.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\2a9cb82e4959daf0eccbe0d88dd3e4b1505d68c57bc047c0347f2ec72498eaaa.bin",
+        "expected_sha256": "2a9cb82e4959daf0eccbe0d88dd3e4b1505d68c57bc047c0347f2ec72498eaaa",
+        "actual_sha256": "2a9cb82e4959daf0eccbe0d88dd3e4b1505d68c57bc047c0347f2ec72498eaaa",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "VEEV",
+          "cik": "0001393052"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001393052.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\e49ca9541eb80c83f1a41c24f61efe4b87f4d0fdf2360672b73b8bdee1e0d165.bin",
+        "expected_sha256": "e49ca9541eb80c83f1a41c24f61efe4b87f4d0fdf2360672b73b8bdee1e0d165",
+        "actual_sha256": "e49ca9541eb80c83f1a41c24f61efe4b87f4d0fdf2360672b73b8bdee1e0d165",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "VEEV",
+          "cik": "0001393052"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001393052-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\87951f434f7f8550227b0e52df7c96d8166e4447d923dd7cc9a62f5d6ad7ea45.bin",
+        "expected_sha256": "87951f434f7f8550227b0e52df7c96d8166e4447d923dd7cc9a62f5d6ad7ea45",
+        "actual_sha256": "87951f434f7f8550227b0e52df7c96d8166e4447d923dd7cc9a62f5d6ad7ea45",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "BAX",
+          "cik": "0000010456"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000010456.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\cc15f1740d7cc26f941d4740f26fee86ecabc2ebd1f0c87ae40496fb6a65df56.bin",
+        "expected_sha256": "cc15f1740d7cc26f941d4740f26fee86ecabc2ebd1f0c87ae40496fb6a65df56",
+        "actual_sha256": "cc15f1740d7cc26f941d4740f26fee86ecabc2ebd1f0c87ae40496fb6a65df56",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "BAX",
+          "cik": "0000010456"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000010456-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\c27355896676a3e2908f28d0c5a7b2d7f79b9bffdb8a133b022b5a0ee04cd8b3.bin",
+        "expected_sha256": "c27355896676a3e2908f28d0c5a7b2d7f79b9bffdb8a133b022b5a0ee04cd8b3",
+        "actual_sha256": "c27355896676a3e2908f28d0c5a7b2d7f79b9bffdb8a133b022b5a0ee04cd8b3",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CMP",
+          "cik": "0001227654"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001227654.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\be4c367499d0c855ec0527b06b6ce189111d1f5eff393cd95c03e6d58e6656d5.bin",
+        "expected_sha256": "be4c367499d0c855ec0527b06b6ce189111d1f5eff393cd95c03e6d58e6656d5",
+        "actual_sha256": "be4c367499d0c855ec0527b06b6ce189111d1f5eff393cd95c03e6d58e6656d5",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CMP",
+          "cik": "0001227654"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001227654-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\c6ec82b7bd3c4819d0a8e0202c6f5490538abb80b4cde4fdea201c3fe79e47a3.bin",
+        "expected_sha256": "c6ec82b7bd3c4819d0a8e0202c6f5490538abb80b4cde4fdea201c3fe79e47a3",
+        "actual_sha256": "c6ec82b7bd3c4819d0a8e0202c6f5490538abb80b4cde4fdea201c3fe79e47a3",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "EPD",
+          "cik": "0001061219"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001061219.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\2910d37adb4b58f87e1231f03eacec177046251150f6c8ec3f27715c3c4a2bb9.bin",
+        "expected_sha256": "2910d37adb4b58f87e1231f03eacec177046251150f6c8ec3f27715c3c4a2bb9",
+        "actual_sha256": "2910d37adb4b58f87e1231f03eacec177046251150f6c8ec3f27715c3c4a2bb9",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "EPD",
+          "cik": "0001061219"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001061219-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\011716b2d9dc65010ea0cbed57c3558b251a4004b629efb426e0e481e604ec26.bin",
+        "expected_sha256": "011716b2d9dc65010ea0cbed57c3558b251a4004b629efb426e0e481e604ec26",
+        "actual_sha256": "011716b2d9dc65010ea0cbed57c3558b251a4004b629efb426e0e481e604ec26",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "STZ",
+          "cik": "0000016918"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000016918.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\ac7abb058761dae7505b004c9a25692e11df356710e86c35af5c7e13ce1af950.bin",
+        "expected_sha256": "ac7abb058761dae7505b004c9a25692e11df356710e86c35af5c7e13ce1af950",
+        "actual_sha256": "ac7abb058761dae7505b004c9a25692e11df356710e86c35af5c7e13ce1af950",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "STZ",
+          "cik": "0000016918"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000016918-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\806a51fd35241958b85b82765770cc9dba5624837c2b933f96a3e0f15bb343f8.bin",
+        "expected_sha256": "806a51fd35241958b85b82765770cc9dba5624837c2b933f96a3e0f15bb343f8",
+        "actual_sha256": "806a51fd35241958b85b82765770cc9dba5624837c2b933f96a3e0f15bb343f8",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "OGS",
+          "cik": "0001587732"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001587732.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\f63a58e777f1f50d4291940a41bd42c76821b342af05b317aad364b31e84254b.bin",
+        "expected_sha256": "f63a58e777f1f50d4291940a41bd42c76821b342af05b317aad364b31e84254b",
+        "actual_sha256": "f63a58e777f1f50d4291940a41bd42c76821b342af05b317aad364b31e84254b",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "PCRX",
+          "cik": "0001396814"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001396814.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\ffe307754603dc9be67f0641e5ff3984e64c37d77ea7383a859162a2ca12a70a.bin",
+        "expected_sha256": "ffe307754603dc9be67f0641e5ff3984e64c37d77ea7383a859162a2ca12a70a",
+        "actual_sha256": "ffe307754603dc9be67f0641e5ff3984e64c37d77ea7383a859162a2ca12a70a",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "PCRX",
+          "cik": "0001396814"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001396814-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\e199b705db4bc42b95279e2528d7263e6cd404c9a2fcf694a71cec7dbe93d23b.bin",
+        "expected_sha256": "e199b705db4bc42b95279e2528d7263e6cd404c9a2fcf694a71cec7dbe93d23b",
+        "actual_sha256": "e199b705db4bc42b95279e2528d7263e6cd404c9a2fcf694a71cec7dbe93d23b",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "FLS",
+          "cik": "0000030625"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000030625.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\2fff0f3a00514e3cc720b7e10b29b8e28a1353cbf64eac0e7439eef8b832279c.bin",
+        "expected_sha256": "2fff0f3a00514e3cc720b7e10b29b8e28a1353cbf64eac0e7439eef8b832279c",
+        "actual_sha256": "2fff0f3a00514e3cc720b7e10b29b8e28a1353cbf64eac0e7439eef8b832279c",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "FLS",
+          "cik": "0000030625"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000030625-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\caa1382cf076ac7bbab7d1b9d7fa5741433e9c5a82eb9da20c4f00ba007f3493.bin",
+        "expected_sha256": "caa1382cf076ac7bbab7d1b9d7fa5741433e9c5a82eb9da20c4f00ba007f3493",
+        "actual_sha256": "caa1382cf076ac7bbab7d1b9d7fa5741433e9c5a82eb9da20c4f00ba007f3493",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CHH",
+          "cik": "0001046311"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001046311.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\42ea40f162889f74839c70098accfd5bd364abd5eb1bc5407f9ea490af9c05ac.bin",
+        "expected_sha256": "42ea40f162889f74839c70098accfd5bd364abd5eb1bc5407f9ea490af9c05ac",
+        "actual_sha256": "42ea40f162889f74839c70098accfd5bd364abd5eb1bc5407f9ea490af9c05ac",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CHH",
+          "cik": "0001046311"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001046311-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\39faa8633dfd1c82d9cd18bcba30cf85af561d362e0699d3d327c21235c2b800.bin",
+        "expected_sha256": "39faa8633dfd1c82d9cd18bcba30cf85af561d362e0699d3d327c21235c2b800",
+        "actual_sha256": "39faa8633dfd1c82d9cd18bcba30cf85af561d362e0699d3d327c21235c2b800",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CNMD",
+          "cik": "0000816956"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000816956.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\feee5f023d4c7674ef5e4c634c1c392f6f5c8b95cb451cf4c2be74b06a3eb042.bin",
+        "expected_sha256": "feee5f023d4c7674ef5e4c634c1c392f6f5c8b95cb451cf4c2be74b06a3eb042",
+        "actual_sha256": "feee5f023d4c7674ef5e4c634c1c392f6f5c8b95cb451cf4c2be74b06a3eb042",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CNMD",
+          "cik": "0000816956"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000816956-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\e95cd0727b423ec60dd09cdc2e093f7622503504b049a13616bb735b332d015a.bin",
+        "expected_sha256": "e95cd0727b423ec60dd09cdc2e093f7622503504b049a13616bb735b332d015a",
+        "actual_sha256": "e95cd0727b423ec60dd09cdc2e093f7622503504b049a13616bb735b332d015a",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "FMC",
+          "cik": "0000037785"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000037785.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\305a4447414f44bdf33130f4f42e8101e2a8557bd5ac42ca3033ddd0f5858d2d.bin",
+        "expected_sha256": "305a4447414f44bdf33130f4f42e8101e2a8557bd5ac42ca3033ddd0f5858d2d",
+        "actual_sha256": "305a4447414f44bdf33130f4f42e8101e2a8557bd5ac42ca3033ddd0f5858d2d",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "FMC",
+          "cik": "0000037785"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000037785-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\eedc84f97699ed656c4209e27c126d3fdce2fc4740fd393499261791e2406f45.bin",
+        "expected_sha256": "eedc84f97699ed656c4209e27c126d3fdce2fc4740fd393499261791e2406f45",
+        "actual_sha256": "eedc84f97699ed656c4209e27c126d3fdce2fc4740fd393499261791e2406f45",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "MLKN",
+          "cik": "0000066382"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000066382.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\2ad11341c5cfdd442945728abf11516845302bcfc429473cbf2d8f38b9f66b2f.bin",
+        "expected_sha256": "2ad11341c5cfdd442945728abf11516845302bcfc429473cbf2d8f38b9f66b2f",
+        "actual_sha256": "2ad11341c5cfdd442945728abf11516845302bcfc429473cbf2d8f38b9f66b2f",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "MLKN",
+          "cik": "0000066382"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000066382-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\3844911de293417600da113d2249da7c5bd697589d507b7d07be44079c522088.bin",
+        "expected_sha256": "3844911de293417600da113d2249da7c5bd697589d507b7d07be44079c522088",
+        "actual_sha256": "3844911de293417600da113d2249da7c5bd697589d507b7d07be44079c522088",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "FISV",
+          "cik": "0000798354"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000798354.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\4cbaeed925d21aa73739fd53f123977d4bd56a2b6c131b8a2983c0da098d8666.bin",
+        "expected_sha256": "4cbaeed925d21aa73739fd53f123977d4bd56a2b6c131b8a2983c0da098d8666",
+        "actual_sha256": "4cbaeed925d21aa73739fd53f123977d4bd56a2b6c131b8a2983c0da098d8666",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "FISV",
+          "cik": "0000798354"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000798354-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\a86ef93b83b70c959a1b3ba7c786848dbeed7faf3eeb27718492dc244be16a99.bin",
+        "expected_sha256": "a86ef93b83b70c959a1b3ba7c786848dbeed7faf3eeb27718492dc244be16a99",
+        "actual_sha256": "a86ef93b83b70c959a1b3ba7c786848dbeed7faf3eeb27718492dc244be16a99",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "SM",
+          "cik": "0000893538"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000893538.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\950a472358012354cb9f81ccf4878fd2b1e3760c659f28d0b38bc5741ce2933f.bin",
+        "expected_sha256": "950a472358012354cb9f81ccf4878fd2b1e3760c659f28d0b38bc5741ce2933f",
+        "actual_sha256": "950a472358012354cb9f81ccf4878fd2b1e3760c659f28d0b38bc5741ce2933f",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SM",
+          "cik": "0000893538"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000893538-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\958d0314cb2a24af9bd240b96623d7dc195bfce16f6232bce30284622aab7bdc.bin",
+        "expected_sha256": "958d0314cb2a24af9bd240b96623d7dc195bfce16f6232bce30284622aab7bdc",
+        "actual_sha256": "958d0314cb2a24af9bd240b96623d7dc195bfce16f6232bce30284622aab7bdc",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "ITGR",
+          "cik": "0001114483"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001114483.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\02f81cda7bc327ef628eec9f18f89d52ede339a790aae4d50ae48eeef33dda43.bin",
+        "expected_sha256": "02f81cda7bc327ef628eec9f18f89d52ede339a790aae4d50ae48eeef33dda43",
+        "actual_sha256": "02f81cda7bc327ef628eec9f18f89d52ede339a790aae4d50ae48eeef33dda43",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "ITGR",
+          "cik": "0001114483"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001114483-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\bb3c505d37b8b4e8e5ced0e407b2d1aa7a530c1abb04b66291d4f47db5ef536c.bin",
+        "expected_sha256": "bb3c505d37b8b4e8e5ced0e407b2d1aa7a530c1abb04b66291d4f47db5ef536c",
+        "actual_sha256": "bb3c505d37b8b4e8e5ced0e407b2d1aa7a530c1abb04b66291d4f47db5ef536c",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "ROP",
+          "cik": "0000882835"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000882835.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\bfd277b8d39342287da4512b0db29295eb995fa80728540d2d45cfb78ea87f40.bin",
+        "expected_sha256": "bfd277b8d39342287da4512b0db29295eb995fa80728540d2d45cfb78ea87f40",
+        "actual_sha256": "bfd277b8d39342287da4512b0db29295eb995fa80728540d2d45cfb78ea87f40",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "NKTR",
+          "cik": "0000906709"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000906709.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\bb411d93087a1691994222bf965abb97a4f603d0cd154cb0a76474f29ffd660d.bin",
+        "expected_sha256": "bb411d93087a1691994222bf965abb97a4f603d0cd154cb0a76474f29ffd660d",
+        "actual_sha256": "bb411d93087a1691994222bf965abb97a4f603d0cd154cb0a76474f29ffd660d",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "NKTR",
+          "cik": "0000906709"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000906709-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\cbc7bbada9bff23467cdfe9db68149da09d37db9fa6c43f4c0b75ff9b7a21c62.bin",
+        "expected_sha256": "cbc7bbada9bff23467cdfe9db68149da09d37db9fa6c43f4c0b75ff9b7a21c62",
+        "actual_sha256": "cbc7bbada9bff23467cdfe9db68149da09d37db9fa6c43f4c0b75ff9b7a21c62",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "GRPN",
+          "cik": "0001490281"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001490281.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\7ae04a9295f3bd2027d0cf91181915617793ed51e52e62283ceaa788cf978f8a.bin",
+        "expected_sha256": "7ae04a9295f3bd2027d0cf91181915617793ed51e52e62283ceaa788cf978f8a",
+        "actual_sha256": "7ae04a9295f3bd2027d0cf91181915617793ed51e52e62283ceaa788cf978f8a",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "GRPN",
+          "cik": "0001490281"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001490281-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\ce06d37ad5ae4a04563c9954fd503727488634085e7b43401469881c5d775e27.bin",
+        "expected_sha256": "ce06d37ad5ae4a04563c9954fd503727488634085e7b43401469881c5d775e27",
+        "actual_sha256": "ce06d37ad5ae4a04563c9954fd503727488634085e7b43401469881c5d775e27",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "MIDD",
+          "cik": "0000769520"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000769520.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\48dcfdf19a3182dfba7494dc23b5cc53a293954c4b10c1dfe6fdfdc196a4daca.bin",
+        "expected_sha256": "48dcfdf19a3182dfba7494dc23b5cc53a293954c4b10c1dfe6fdfdc196a4daca",
+        "actual_sha256": "48dcfdf19a3182dfba7494dc23b5cc53a293954c4b10c1dfe6fdfdc196a4daca",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "PAYC",
+          "cik": "0001590955"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001590955.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\7e822a803ca2908a1eb1f5cda2d9687361f669696a7b34c22bccd0992bab9039.bin",
+        "expected_sha256": "7e822a803ca2908a1eb1f5cda2d9687361f669696a7b34c22bccd0992bab9039",
+        "actual_sha256": "7e822a803ca2908a1eb1f5cda2d9687361f669696a7b34c22bccd0992bab9039",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "PAYC",
+          "cik": "0001590955"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001590955-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\849e08f69ed3aad81bde8c92b058fab6154758123d8bb935c6de17a072a37d6c.bin",
+        "expected_sha256": "849e08f69ed3aad81bde8c92b058fab6154758123d8bb935c6de17a072a37d6c",
+        "actual_sha256": "849e08f69ed3aad81bde8c92b058fab6154758123d8bb935c6de17a072a37d6c",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "ZUMZ",
+          "cik": "0001318008"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001318008.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\d9c55a7bcfba196be14b8407e879d1e0ccb6a430ba459f857d3593df87ba43d5.bin",
+        "expected_sha256": "d9c55a7bcfba196be14b8407e879d1e0ccb6a430ba459f857d3593df87ba43d5",
+        "actual_sha256": "d9c55a7bcfba196be14b8407e879d1e0ccb6a430ba459f857d3593df87ba43d5",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "ETD",
+          "cik": "0000896156"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000896156.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\328a73a0f28fa3b33b4514940ee93185198abdb05ffaa19401dcefaf6738b215.bin",
+        "expected_sha256": "328a73a0f28fa3b33b4514940ee93185198abdb05ffaa19401dcefaf6738b215",
+        "actual_sha256": "328a73a0f28fa3b33b4514940ee93185198abdb05ffaa19401dcefaf6738b215",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SMTC",
+          "cik": "0000088941"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000088941.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\deb78595600a37eef04d3b265ce6c7b1df8ab23b8f48404006f8116ed52cd998.bin",
+        "expected_sha256": "deb78595600a37eef04d3b265ce6c7b1df8ab23b8f48404006f8116ed52cd998",
+        "actual_sha256": "deb78595600a37eef04d3b265ce6c7b1df8ab23b8f48404006f8116ed52cd998",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SMTC",
+          "cik": "0000088941"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000088941-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\0c4d894712df27acd2d323bb617197ca4c3625f1e969d07ae2e1a5ab4867fc78.bin",
+        "expected_sha256": "0c4d894712df27acd2d323bb617197ca4c3625f1e969d07ae2e1a5ab4867fc78",
+        "actual_sha256": "0c4d894712df27acd2d323bb617197ca4c3625f1e969d07ae2e1a5ab4867fc78",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "MTX",
+          "cik": "0000891014"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000891014.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\ace1d54b9d6fd9c5fee613d672a83f072a33a4c5ef624b3079ae3669f225ddfd.bin",
+        "expected_sha256": "ace1d54b9d6fd9c5fee613d672a83f072a33a4c5ef624b3079ae3669f225ddfd",
+        "actual_sha256": "ace1d54b9d6fd9c5fee613d672a83f072a33a4c5ef624b3079ae3669f225ddfd",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "MTX",
+          "cik": "0000891014"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000891014-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\8e7aed5ccfe4559f143242d5507c94d2d1db2e24daf3dee3da8539be771711c5.bin",
+        "expected_sha256": "8e7aed5ccfe4559f143242d5507c94d2d1db2e24daf3dee3da8539be771711c5",
+        "actual_sha256": "8e7aed5ccfe4559f143242d5507c94d2d1db2e24daf3dee3da8539be771711c5",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CWT",
+          "cik": "0001035201"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001035201.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\3b2a755a027224f26e0bd97c30b6d5805f516f78241abddaf365cb714970fc7b.bin",
+        "expected_sha256": "3b2a755a027224f26e0bd97c30b6d5805f516f78241abddaf365cb714970fc7b",
+        "actual_sha256": "3b2a755a027224f26e0bd97c30b6d5805f516f78241abddaf365cb714970fc7b",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CWT",
+          "cik": "0001035201"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001035201-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\6ae59a71499b93f95bd7f3a47e3cc9e9fec90855368e0026fdd135dfdb185be2.bin",
+        "expected_sha256": "6ae59a71499b93f95bd7f3a47e3cc9e9fec90855368e0026fdd135dfdb185be2",
+        "actual_sha256": "6ae59a71499b93f95bd7f3a47e3cc9e9fec90855368e0026fdd135dfdb185be2",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "AN",
+          "cik": "0000350698"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000350698.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\df3ee60b29b69d6cb9e814d50fe60eba279f94b5f26fd49071c9a49c701939da.bin",
+        "expected_sha256": "df3ee60b29b69d6cb9e814d50fe60eba279f94b5f26fd49071c9a49c701939da",
+        "actual_sha256": "df3ee60b29b69d6cb9e814d50fe60eba279f94b5f26fd49071c9a49c701939da",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "AN",
+          "cik": "0000350698"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000350698-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\84022c3a5ba0c5f8900ce5d488fdf06b9c351a9bb6aac987aecf156aa8cf5013.bin",
+        "expected_sha256": "84022c3a5ba0c5f8900ce5d488fdf06b9c351a9bb6aac987aecf156aa8cf5013",
+        "actual_sha256": "84022c3a5ba0c5f8900ce5d488fdf06b9c351a9bb6aac987aecf156aa8cf5013",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "GPC",
+          "cik": "0000040987"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000040987.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\ab26028ad9bafb014266436fd195306263efc70b22c84d97db7d703a4665c727.bin",
+        "expected_sha256": "ab26028ad9bafb014266436fd195306263efc70b22c84d97db7d703a4665c727",
+        "actual_sha256": "ab26028ad9bafb014266436fd195306263efc70b22c84d97db7d703a4665c727",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "GPC",
+          "cik": "0000040987"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000040987-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\16787c42e0226c490053a495fd17ea029d0dbf7795c312507a4c25339c227229.bin",
+        "expected_sha256": "16787c42e0226c490053a495fd17ea029d0dbf7795c312507a4c25339c227229",
+        "actual_sha256": "16787c42e0226c490053a495fd17ea029d0dbf7795c312507a4c25339c227229",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "ACM",
+          "cik": "0000868857"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000868857.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\5c03630a94c29e28bed26db801a373c7e4323e50ab970fbe6659327a5f802f6c.bin",
+        "expected_sha256": "5c03630a94c29e28bed26db801a373c7e4323e50ab970fbe6659327a5f802f6c",
+        "actual_sha256": "5c03630a94c29e28bed26db801a373c7e4323e50ab970fbe6659327a5f802f6c",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "ACM",
+          "cik": "0000868857"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000868857-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\58ed545b5358f66d36ffbaa9872578b4a9c3928fbcba418deff78802ac0eee24.bin",
+        "expected_sha256": "58ed545b5358f66d36ffbaa9872578b4a9c3928fbcba418deff78802ac0eee24",
+        "actual_sha256": "58ed545b5358f66d36ffbaa9872578b4a9c3928fbcba418deff78802ac0eee24",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CRUS",
+          "cik": "0000772406"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000772406.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\d1a0b6cf114ef3d41ec6845031f28bdedd37e6807314838d1f001e0df5249048.bin",
+        "expected_sha256": "d1a0b6cf114ef3d41ec6845031f28bdedd37e6807314838d1f001e0df5249048",
+        "actual_sha256": "d1a0b6cf114ef3d41ec6845031f28bdedd37e6807314838d1f001e0df5249048",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CRUS",
+          "cik": "0000772406"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000772406-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\5fd42e69205a2057fd3eaeee3d80efe10a36fd7982525fc5c3e75b6d32fda0d3.bin",
+        "expected_sha256": "5fd42e69205a2057fd3eaeee3d80efe10a36fd7982525fc5c3e75b6d32fda0d3",
+        "actual_sha256": "5fd42e69205a2057fd3eaeee3d80efe10a36fd7982525fc5c3e75b6d32fda0d3",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CNK",
+          "cik": "0001385280"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001385280.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\db449b1f46efe7d1fffdbeca567e9e8446787c35f359a6864a523fb1eafeca89.bin",
+        "expected_sha256": "db449b1f46efe7d1fffdbeca567e9e8446787c35f359a6864a523fb1eafeca89",
+        "actual_sha256": "db449b1f46efe7d1fffdbeca567e9e8446787c35f359a6864a523fb1eafeca89",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SR",
+          "cik": "0001126956"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001126956.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\6d85de347f4d3c00894b9ce5b9dd4ce0dcb8badc6dc4079305c46fda37de6417.bin",
+        "expected_sha256": "6d85de347f4d3c00894b9ce5b9dd4ce0dcb8badc6dc4079305c46fda37de6417",
+        "actual_sha256": "6d85de347f4d3c00894b9ce5b9dd4ce0dcb8badc6dc4079305c46fda37de6417",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "EFOR",
+          "cik": "0000890564"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000890564.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\89c8fa45c8b4d37a82d516b0790827910aa19058ccfe904e0e729bf2dd453975.bin",
+        "expected_sha256": "89c8fa45c8b4d37a82d516b0790827910aa19058ccfe904e0e729bf2dd453975",
+        "actual_sha256": "89c8fa45c8b4d37a82d516b0790827910aa19058ccfe904e0e729bf2dd453975",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "EFOR",
+          "cik": "0000890564"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000890564-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\81c941c5b67a8e5d54447376e96af14c2bb158861ab487ea0f28df3706bcfc06.bin",
+        "expected_sha256": "81c941c5b67a8e5d54447376e96af14c2bb158861ab487ea0f28df3706bcfc06",
+        "actual_sha256": "81c941c5b67a8e5d54447376e96af14c2bb158861ab487ea0f28df3706bcfc06",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CSL",
+          "cik": "0000790051"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000790051.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\c8f4f0275ea04ae6f6eea6ef331acd8b7322a0373c120d1115490a91522a0e03.bin",
+        "expected_sha256": "c8f4f0275ea04ae6f6eea6ef331acd8b7322a0373c120d1115490a91522a0e03",
+        "actual_sha256": "c8f4f0275ea04ae6f6eea6ef331acd8b7322a0373c120d1115490a91522a0e03",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "CSL",
+          "cik": "0000790051"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000790051-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\93fbecad10e1e49f0cbf35d021545bb3d005bc7753d5e4e9727523e49dcc6064.bin",
+        "expected_sha256": "93fbecad10e1e49f0cbf35d021545bb3d005bc7753d5e4e9727523e49dcc6064",
+        "actual_sha256": "93fbecad10e1e49f0cbf35d021545bb3d005bc7753d5e4e9727523e49dcc6064",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "KBH",
+          "cik": "0000795266"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000795266.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\6a04754aea1195b6402c46bfeba7b9dffb2321c41d2f01520914caf87b57719f.bin",
+        "expected_sha256": "6a04754aea1195b6402c46bfeba7b9dffb2321c41d2f01520914caf87b57719f",
+        "actual_sha256": "6a04754aea1195b6402c46bfeba7b9dffb2321c41d2f01520914caf87b57719f",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "NTGR",
+          "cik": "0001122904"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001122904.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\037b6827e0645b3cec4d792b9b775374d2c4ec515ef324bdd85292c929eb4dad.bin",
+        "expected_sha256": "037b6827e0645b3cec4d792b9b775374d2c4ec515ef324bdd85292c929eb4dad",
+        "actual_sha256": "037b6827e0645b3cec4d792b9b775374d2c4ec515ef324bdd85292c929eb4dad",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "NTGR",
+          "cik": "0001122904"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001122904-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\843fb71e7376211a92fdc90b0ff8414954bbb4b2f493cc1d674f91c3c36833a0.bin",
+        "expected_sha256": "843fb71e7376211a92fdc90b0ff8414954bbb4b2f493cc1d674f91c3c36833a0",
+        "actual_sha256": "843fb71e7376211a92fdc90b0ff8414954bbb4b2f493cc1d674f91c3c36833a0",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "POST",
+          "cik": "0001530950"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001530950.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\67d85ca23dbd2f7256452f9be4665a955128799611ac24679745583167966d50.bin",
+        "expected_sha256": "67d85ca23dbd2f7256452f9be4665a955128799611ac24679745583167966d50",
+        "actual_sha256": "67d85ca23dbd2f7256452f9be4665a955128799611ac24679745583167966d50",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "POST",
+          "cik": "0001530950"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001530950-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\d321adb8f2eaa6224b8a6e838419c5a7bf8556f6725e5cb9da74344a6744ecbd.bin",
+        "expected_sha256": "d321adb8f2eaa6224b8a6e838419c5a7bf8556f6725e5cb9da74344a6744ecbd",
+        "actual_sha256": "d321adb8f2eaa6224b8a6e838419c5a7bf8556f6725e5cb9da74344a6744ecbd",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "RGR",
+          "cik": "0000095029"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000095029.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\4a403b0ca9c401363a66d50c4c42340c97d933c139c79df6c41fd181afc78637.bin",
+        "expected_sha256": "4a403b0ca9c401363a66d50c4c42340c97d933c139c79df6c41fd181afc78637",
+        "actual_sha256": "4a403b0ca9c401363a66d50c4c42340c97d933c139c79df6c41fd181afc78637",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "RGR",
+          "cik": "0000095029"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000095029-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\44635dc0b815ab5c5608ebb981d066e96d103c0d0f31c15c5fb872f2d7fed9fa.bin",
+        "expected_sha256": "44635dc0b815ab5c5608ebb981d066e96d103c0d0f31c15c5fb872f2d7fed9fa",
+        "actual_sha256": "44635dc0b815ab5c5608ebb981d066e96d103c0d0f31c15c5fb872f2d7fed9fa",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "VZ",
+          "cik": "0000732712"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000732712.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\54ae96760f32131df4dbd6a776ca9b4d568fc38b5eb26641e4b3d4caec2d923c.bin",
+        "expected_sha256": "54ae96760f32131df4dbd6a776ca9b4d568fc38b5eb26641e4b3d4caec2d923c",
+        "actual_sha256": "54ae96760f32131df4dbd6a776ca9b4d568fc38b5eb26641e4b3d4caec2d923c",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "VZ",
+          "cik": "0000732712"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000732712-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\a02ac55ae746f66f261d03b9df13e0237c575c270a23c0387edfba6a6059eb4e.bin",
+        "expected_sha256": "a02ac55ae746f66f261d03b9df13e0237c575c270a23c0387edfba6a6059eb4e",
+        "actual_sha256": "a02ac55ae746f66f261d03b9df13e0237c575c270a23c0387edfba6a6059eb4e",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "VZ",
+          "cik": "0000732712"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000732712-submissions-002.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\c03c71f37196ee322200cfee844d147842a32b1930b023780ec6598e4285d0e1.bin",
+        "expected_sha256": "c03c71f37196ee322200cfee844d147842a32b1930b023780ec6598e4285d0e1",
+        "actual_sha256": "c03c71f37196ee322200cfee844d147842a32b1930b023780ec6598e4285d0e1",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "VZ",
+          "cik": "0000732712"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000732712-submissions-003.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\163fa5936e008cdbdabba9577534dd359d541f96e6ddc6168f81c491f3ec0eba.bin",
+        "expected_sha256": "163fa5936e008cdbdabba9577534dd359d541f96e6ddc6168f81c491f3ec0eba",
+        "actual_sha256": "163fa5936e008cdbdabba9577534dd359d541f96e6ddc6168f81c491f3ec0eba",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "CENX",
+          "cik": "0000949157"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000949157.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\7786d453935ddab747d80df79337896bf347bd2e9d3e7afa0b2d4420d0a7d072.bin",
+        "expected_sha256": "7786d453935ddab747d80df79337896bf347bd2e9d3e7afa0b2d4420d0a7d072",
+        "actual_sha256": "7786d453935ddab747d80df79337896bf347bd2e9d3e7afa0b2d4420d0a7d072",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SGI",
+          "cik": "0001206264"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001206264.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\0fd7a0325985324fb0b37c1629167c15e544ff743d7ff99dfb9edd550f8a2c9d.bin",
+        "expected_sha256": "0fd7a0325985324fb0b37c1629167c15e544ff743d7ff99dfb9edd550f8a2c9d",
+        "actual_sha256": "0fd7a0325985324fb0b37c1629167c15e544ff743d7ff99dfb9edd550f8a2c9d",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SGI",
+          "cik": "0001206264"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001206264-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\a4a317e255161347d68d7a9ea50bc6e67dc42ee8a65f2c6b9fc1c800c111e7d5.bin",
+        "expected_sha256": "a4a317e255161347d68d7a9ea50bc6e67dc42ee8a65f2c6b9fc1c800c111e7d5",
+        "actual_sha256": "a4a317e255161347d68d7a9ea50bc6e67dc42ee8a65f2c6b9fc1c800c111e7d5",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "WDC",
+          "cik": "0000106040"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000106040.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\7d80a2dc0b5eb6c2df1e7934abb912da524e01fe98608920bd0fff9bbf9ee60f.bin",
+        "expected_sha256": "7d80a2dc0b5eb6c2df1e7934abb912da524e01fe98608920bd0fff9bbf9ee60f",
+        "actual_sha256": "7d80a2dc0b5eb6c2df1e7934abb912da524e01fe98608920bd0fff9bbf9ee60f",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "WDC",
+          "cik": "0000106040"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000106040-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\14ae8a262dc55a6cf2ea17f8dd69dca9f4a23b28cdc057fdb4b782834dc544db.bin",
+        "expected_sha256": "14ae8a262dc55a6cf2ea17f8dd69dca9f4a23b28cdc057fdb4b782834dc544db",
+        "actual_sha256": "14ae8a262dc55a6cf2ea17f8dd69dca9f4a23b28cdc057fdb4b782834dc544db",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "OLLI",
+          "cik": "0001639300"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001639300.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\0941084d0342d99828713854a7a12d61bfc9beb854e94e52f2de3295a95c2e13.bin",
+        "expected_sha256": "0941084d0342d99828713854a7a12d61bfc9beb854e94e52f2de3295a95c2e13",
+        "actual_sha256": "0941084d0342d99828713854a7a12d61bfc9beb854e94e52f2de3295a95c2e13",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "DBI",
+          "cik": "0001319947"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001319947.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\be9efe0ab467bb1185518236deb9c8d771dfc861a3e7e4df24d290c8e5f2229c.bin",
+        "expected_sha256": "be9efe0ab467bb1185518236deb9c8d771dfc861a3e7e4df24d290c8e5f2229c",
+        "actual_sha256": "be9efe0ab467bb1185518236deb9c8d771dfc861a3e7e4df24d290c8e5f2229c",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "DBI",
+          "cik": "0001319947"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001319947-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\e3b9ba822aa1e815a735b8b41c5847e205e21e30158b72ee7f49a15d1b3f4642.bin",
+        "expected_sha256": "e3b9ba822aa1e815a735b8b41c5847e205e21e30158b72ee7f49a15d1b3f4642",
+        "actual_sha256": "e3b9ba822aa1e815a735b8b41c5847e205e21e30158b72ee7f49a15d1b3f4642",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "PEP",
+          "cik": "0000077476"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000077476.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\cdc781a717f9cc96866638f7118410f383c184ed7c039087544dc82fb3337db9.bin",
+        "expected_sha256": "cdc781a717f9cc96866638f7118410f383c184ed7c039087544dc82fb3337db9",
+        "actual_sha256": "cdc781a717f9cc96866638f7118410f383c184ed7c039087544dc82fb3337db9",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "PEP",
+          "cik": "0000077476"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000077476-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\0eb4159dc59a315cc17f99884183e84dc30bd3e6c3a901acba05c08f2fa0e635.bin",
+        "expected_sha256": "0eb4159dc59a315cc17f99884183e84dc30bd3e6c3a901acba05c08f2fa0e635",
+        "actual_sha256": "0eb4159dc59a315cc17f99884183e84dc30bd3e6c3a901acba05c08f2fa0e635",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "AEE",
+          "cik": "0001002910"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001002910.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\d839039941685307ef3639297aefc5e6fcfcf0acee69b60ba85c31adf369de01.bin",
+        "expected_sha256": "d839039941685307ef3639297aefc5e6fcfcf0acee69b60ba85c31adf369de01",
+        "actual_sha256": "d839039941685307ef3639297aefc5e6fcfcf0acee69b60ba85c31adf369de01",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "AEE",
+          "cik": "0001002910"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001002910-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\d1cca3f7a87c34a66b2294854ae3d76f0b58bc0854b2fe1bd765145818bbed31.bin",
+        "expected_sha256": "d1cca3f7a87c34a66b2294854ae3d76f0b58bc0854b2fe1bd765145818bbed31",
+        "actual_sha256": "d1cca3f7a87c34a66b2294854ae3d76f0b58bc0854b2fe1bd765145818bbed31",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "OI",
+          "cik": "0000812074"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000812074.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\c7311ce80e595aff5f6b90d59f5713ca09993d44ea32aaa56498cc1fc4050e28.bin",
+        "expected_sha256": "c7311ce80e595aff5f6b90d59f5713ca09993d44ea32aaa56498cc1fc4050e28",
+        "actual_sha256": "c7311ce80e595aff5f6b90d59f5713ca09993d44ea32aaa56498cc1fc4050e28",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "IOSP",
+          "cik": "0001054905"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001054905.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\6ab3ae8deaaf1cd69a140a567f6b5a28f7ba206f44c53b4d9ce772c76752f043.bin",
+        "expected_sha256": "6ab3ae8deaaf1cd69a140a567f6b5a28f7ba206f44c53b4d9ce772c76752f043",
+        "actual_sha256": "6ab3ae8deaaf1cd69a140a567f6b5a28f7ba206f44c53b4d9ce772c76752f043",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "BJRI",
+          "cik": "0001013488"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001013488.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\e0f6086fa1822982c1941efaf36b3a3beb3579e192e238e72160ea2812e19447.bin",
+        "expected_sha256": "e0f6086fa1822982c1941efaf36b3a3beb3579e192e238e72160ea2812e19447",
+        "actual_sha256": "e0f6086fa1822982c1941efaf36b3a3beb3579e192e238e72160ea2812e19447",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "BJRI",
+          "cik": "0001013488"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001013488-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\33cbc373617c467e555631af9f4a29aeda4e109aed1a321b723ec2ece7cb9211.bin",
+        "expected_sha256": "33cbc373617c467e555631af9f4a29aeda4e109aed1a321b723ec2ece7cb9211",
+        "actual_sha256": "33cbc373617c467e555631af9f4a29aeda4e109aed1a321b723ec2ece7cb9211",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "FDS",
+          "cik": "0001013237"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001013237.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\3b9e9d0f6fcb75cd7a547d84bcc935d7d48e3d6dfd0a86a149d1c4c8b81404f5.bin",
+        "expected_sha256": "3b9e9d0f6fcb75cd7a547d84bcc935d7d48e3d6dfd0a86a149d1c4c8b81404f5",
+        "actual_sha256": "3b9e9d0f6fcb75cd7a547d84bcc935d7d48e3d6dfd0a86a149d1c4c8b81404f5",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "FDS",
+          "cik": "0001013237"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001013237-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\ba393c27667859e2d557f8dc79c3f6a3f4481166ad2e0a746024ca55b0a391df.bin",
+        "expected_sha256": "ba393c27667859e2d557f8dc79c3f6a3f4481166ad2e0a746024ca55b0a391df",
+        "actual_sha256": "ba393c27667859e2d557f8dc79c3f6a3f4481166ad2e0a746024ca55b0a391df",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "KMI",
+          "cik": "0001506307"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001506307.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\b8161875fa557ccf41bf45a26134b756fba24b9622f6cf732e1f3959c7fdf935.bin",
+        "expected_sha256": "b8161875fa557ccf41bf45a26134b756fba24b9622f6cf732e1f3959c7fdf935",
+        "actual_sha256": "b8161875fa557ccf41bf45a26134b756fba24b9622f6cf732e1f3959c7fdf935",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "KMI",
+          "cik": "0001506307"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001506307-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\5e8fd1025d331f5e2f167214e0a4db0ad9f3055e8623e5e9e4295a8ddc2321bb.bin",
+        "expected_sha256": "5e8fd1025d331f5e2f167214e0a4db0ad9f3055e8623e5e9e4295a8ddc2321bb",
+        "actual_sha256": "5e8fd1025d331f5e2f167214e0a4db0ad9f3055e8623e5e9e4295a8ddc2321bb",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "SYK",
+          "cik": "0000310764"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000310764.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\f9c9645576462318a405bc94fed05b45543e4064732222ebe8b6bd542556f1c9.bin",
+        "expected_sha256": "f9c9645576462318a405bc94fed05b45543e4064732222ebe8b6bd542556f1c9",
+        "actual_sha256": "f9c9645576462318a405bc94fed05b45543e4064732222ebe8b6bd542556f1c9",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "SYK",
+          "cik": "0000310764"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000310764-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\28e64af37481bcccd8bec5874531dbce4efeb4f6c28aa6dc7d23444c83071889.bin",
+        "expected_sha256": "28e64af37481bcccd8bec5874531dbce4efeb4f6c28aa6dc7d23444c83071889",
+        "actual_sha256": "28e64af37481bcccd8bec5874531dbce4efeb4f6c28aa6dc7d23444c83071889",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "EL",
+          "cik": "0001001250"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001001250.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\44b9d43cab9de6143862b72bb53fc3e2fc9bd9f7ca4e25385ff83cb484e26a1d.bin",
+        "expected_sha256": "44b9d43cab9de6143862b72bb53fc3e2fc9bd9f7ca4e25385ff83cb484e26a1d",
+        "actual_sha256": "44b9d43cab9de6143862b72bb53fc3e2fc9bd9f7ca4e25385ff83cb484e26a1d",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "EL",
+          "cik": "0001001250"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0001001250-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\7705ae5f294e9e4b482f15fd6518cf1e0e714fa5b9bffcbe8714312d20882565.bin",
+        "expected_sha256": "7705ae5f294e9e4b482f15fd6518cf1e0e714fa5b9bffcbe8714312d20882565",
+        "actual_sha256": "7705ae5f294e9e4b482f15fd6518cf1e0e714fa5b9bffcbe8714312d20882565",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "VSH",
+          "cik": "0000103730"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000103730.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\88fe0c9439d6f54d767fbf59519ba5080db4dcf9819a86fadf0c6f399edd5cfc.bin",
+        "expected_sha256": "88fe0c9439d6f54d767fbf59519ba5080db4dcf9819a86fadf0c6f399edd5cfc",
+        "actual_sha256": "88fe0c9439d6f54d767fbf59519ba5080db4dcf9819a86fadf0c6f399edd5cfc",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "INTU",
+          "cik": "0000896878"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000896878.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\be25c8a55f70886ab7f9d8063f1267280727d8729d763c4dba2c6bd4e139f3f8.bin",
+        "expected_sha256": "be25c8a55f70886ab7f9d8063f1267280727d8729d763c4dba2c6bd4e139f3f8",
+        "actual_sha256": "be25c8a55f70886ab7f9d8063f1267280727d8729d763c4dba2c6bd4e139f3f8",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "INTU",
+          "cik": "0000896878"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000896878-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\f27147e186748ac6b0e52b1a963aca11be192918ba97dd3f8d33972f9b0614b3.bin",
+        "expected_sha256": "f27147e186748ac6b0e52b1a963aca11be192918ba97dd3f8d33972f9b0614b3",
+        "actual_sha256": "f27147e186748ac6b0e52b1a963aca11be192918ba97dd3f8d33972f9b0614b3",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "LRCX",
+          "cik": "0000707549"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000707549.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\16347ab67e4c061fc9acf711ac1232dc3e08b7843b0232ae6286ecfd9d3fcd33.bin",
+        "expected_sha256": "16347ab67e4c061fc9acf711ac1232dc3e08b7843b0232ae6286ecfd9d3fcd33",
+        "actual_sha256": "16347ab67e4c061fc9acf711ac1232dc3e08b7843b0232ae6286ecfd9d3fcd33",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "LRCX",
+          "cik": "0000707549"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000707549-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\455643917be0efe4181e066f258f7e4d096f5124a804ea19df459285405070f3.bin",
+        "expected_sha256": "455643917be0efe4181e066f258f7e4d096f5124a804ea19df459285405070f3",
+        "actual_sha256": "455643917be0efe4181e066f258f7e4d096f5124a804ea19df459285405070f3",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "WTRG",
+          "cik": "0000078128"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000078128.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\84891812ed8c119dc4518d8e07231ef66e76debfbf2053f40afa3fbd81cb9874.bin",
+        "expected_sha256": "84891812ed8c119dc4518d8e07231ef66e76debfbf2053f40afa3fbd81cb9874",
+        "actual_sha256": "84891812ed8c119dc4518d8e07231ef66e76debfbf2053f40afa3fbd81cb9874",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "WTRG",
+          "cik": "0000078128"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000078128-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\310138941e0bb4d21d240797c45669c64f5b20a7fcff103c9e1d816c93955456.bin",
+        "expected_sha256": "310138941e0bb4d21d240797c45669c64f5b20a7fcff103c9e1d816c93955456",
+        "actual_sha256": "310138941e0bb4d21d240797c45669c64f5b20a7fcff103c9e1d816c93955456",
+        "reused": false
+      },
+      {
+        "issuer": {
+          "symbol": "ODFL",
+          "cik": "0000878927"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000878927.json",
+        "path": ".qualification\\earnings-quality20260928\\discovery\\profiles\\raw\\3a48f41c1c0072676cd787d0ac9bd81e9f3752f07bc076fc8a50f6f7b348bb02.bin",
+        "expected_sha256": "3a48f41c1c0072676cd787d0ac9bd81e9f3752f07bc076fc8a50f6f7b348bb02",
+        "actual_sha256": "3a48f41c1c0072676cd787d0ac9bd81e9f3752f07bc076fc8a50f6f7b348bb02",
+        "reused": true
+      },
+      {
+        "issuer": {
+          "symbol": "ODFL",
+          "cik": "0000878927"
+        },
+        "url": "https://data.sec.gov/submissions/CIK0000878927-submissions-001.json",
+        "path": ".qualification\\earnings-quality20260928\\source\\raw\\8b07c60b59ac8d9a17cea1157c66916f9ae386a6be9f78e4f7eda006de636869.bin",
+        "expected_sha256": "8b07c60b59ac8d9a17cea1157c66916f9ae386a6be9f78e4f7eda006de636869",
+        "actual_sha256": "8b07c60b59ac8d9a17cea1157c66916f9ae386a6be9f78e4f7eda006de636869",
+        "reused": false
+      }
+    ],
+    "purpose": "Read-only verification of path/hash formats from the current registry; not terminal corpus binding or source completeness qualification."
+  },
+  "remaining_findings": [],
+  "limitations": [
+    "Every recorded discovery source is bound; this does not prove that the upstream discovery list is complete.",
+    "Missing or incomplete discovery continues to have unknown undiscovered counts; no replacement issuer or invented zero was introduced.",
+    "Actual corpus execution and terminal-definition binding remain owned by root after source completion and writer-lock clearance.",
+    "No financial source semantics, model fit, account result or economic qualification was evaluated."
+  ],
+  "preserved_evidence": [
+    "qualification/verification.json",
+    "qualification-review/pre-fix-review.json",
+    "qualification-review/test_independent_boundaries.py"
+  ],
+  "source_or_real_corpus_runs": 0,
+  "network_requests": 0,
+  "code_edits": 0
+}

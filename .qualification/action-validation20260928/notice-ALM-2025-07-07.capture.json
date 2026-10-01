@@ -1,0 +1,16 @@
+{
+  "symbol": "ALM",
+  "effective_sessions": "2025-07-07",
+  "url": "https://www.sec.gov/Archives/edgar/data/1670061/000149315226037264/ex99-3.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:05.280860+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1670061/000149315226037264/ex99-3.htm",
+  "redirects": [],
+  "sha256": "801d13638de3b3e379a4e790e9b07b64e2c7731ee3cca5593254156739a17e68",
+  "raw_file": "notice-ALM-2025-07-07.801d13638de3b3e379a4e790e9b07b64e2c7731ee3cca5593254156739a17e68.raw.html",
+  "bytes": 659778,
+  "captured_at": "2026-09-28T19:14:05.733004+00:00",
+  "text_file": "notice-ALM-2025-07-07.text.txt"
+}

@@ -1,0 +1,66 @@
+{
+  "at": "2026-09-29T22:03:20.304839+00:00",
+  "milestone": "completed_cash_backed_earnings_comparison",
+  "source": {
+    "issuers": 100,
+    "originals": 4057,
+    "captured": 3867,
+    "retained_failures": 190,
+    "source_eligible_events": 2010
+  },
+  "execution": {
+    "attempt": "7487019bf15a4eb89e1a3702f5a0f7fb",
+    "definition_sha256": "518039219b5b7be3935fb788f14ffacc23b90cb73033411414d7fb1d70a1859f",
+    "fits_complete": 10,
+    "accounts_complete": 20,
+    "positive_accounts": 6,
+    "negative_accounts": 14,
+    "trades": 2885,
+    "weekly_target_hits": {
+      "5_percent": 0,
+      "10_percent": 0,
+      "15_percent": 0
+    },
+    "weeks_per_account": 264,
+    "entry_overlap_weeks": 261,
+    "promotion": false
+  },
+  "independent_reviews": {
+    "account": "passed",
+    "model_chronology": "passed",
+    "terminal_source": "passed",
+    "financial_qualification": "passed"
+  },
+  "operational_check": {
+    "research_processes_absent": true,
+    "locks": {
+      ".qualification/earnings-quality20260928/source/capture.lock.sqlite": "free",
+      ".qualification/earnings-quality20260928/sec-source.lock.sqlite": "free",
+      ".qualification/earnings-quality20260928/qualification/qualification.lock.sqlite": "free",
+      "data/historical/worker.lock.sqlite": "free"
+    },
+    "paper_parent_pid": 32328,
+    "paper_child_pid": 39892,
+    "paper_policy_migrated": false
+  },
+  "next_research": "Source-only original earlier8-K disclosure novelty/timing audit using saved100issuer discovery metadata; preserve unmatched/ambiguous cases and never backdate later10-Q S/Q. No unchanged model/account rerun.",
+  "evidence": {
+    ".qualification/earnings-quality20260928/source/completion.json": "7bf591e82405daf3a1b00c595c9da824e921aefcc5fb9cdfda70a9455f87b72c",
+    ".qualification/earnings-quality20260928/qualification/terminal-definition-20260929.json": "0d949837d8e12fe69e2255383cc7aa8a0a06b501d0c6e54c57d7067fabf06e1c",
+    ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/summary.json": "9b5417ab537ae79230944b30ff369b5dd7aa7e2af34ecff88e0e58e9f83833fe",
+    ".qualification/earnings-quality20260928/qualification-review/terminal-20260929T213900Z/terminal-review-reconciliation.json": "84ab95e1e30fd7afecb0b369b1b4fa55630659008cbb3645f351975ab904f11a",
+    ".qualification/earnings-quality20260928/qualification-review/collector-20260929T215000Z/collector-review.json": "fe7e28b3c5e3bd86aebe433daf44f547db2bd0cb9f50bb116d9339439a2d78ee",
+    ".qualification/earnings-quality20260928/economic/definition-20260929.json": "518039219b5b7be3935fb788f14ffacc23b90cb73033411414d7fb1d70a1859f",
+    ".qualification/earnings-quality20260928/economic/attempts/7487019bf15a4eb89e1a3702f5a0f7fb/completion.json": "3e3e10f8d8b6ca123a9388f9aa16618e2f0ddc2d1dcbcf40476eef96196cec68",
+    ".qualification/earnings-quality20260928/economic/review/review-20260929T2150Z.json": "77b830fcbf1273f6414cfdd0fa7a9ef7015a236532214150223c530b422805eb",
+    ".qualification/earnings-quality20260928/economic/actual-review-account/audit-20260929T215839Z.json": "28c3b8ef965067e1ca553670cf9fdac2b2f3b7b22e369fd67e16b5b319e47db0",
+    ".qualification/earnings-quality20260928/economic/actual-review-model/model-chronology-review.json": "718593238e73093ec30b64272d19cf42001614f8aa1d91a3d2058bf4449a3199",
+    ".qualification/earnings-quality20260928/economic/actual-analysis/report.json": "e12fbce1f92b00194d673b5bbbec0421126ed8c5c211c273937ac0d20507cb59",
+    ".qualification/earnings-quality20260928/economic/actual-analysis/report.md": "7a572c7bd6c220a0c3eeebf01e67d552b2e0d9d7f9cd6726c06915d5b7e20e3d",
+    ".qualification/earnings-quality20260928/archive-earnings-comparison-20260929.json": "de3bdb8b8cfaf733c8dff1a080fa6f0a9fc8492f75b08ba5827feeda0cd4ffb8",
+    ".qualification/earnings-quality20260928/operations/paper-health-20260929T214119Z.json": "3c29e7318caa6dc330fa2ba7130eba2438c219d207ec75a8f1bbb22edd72191f",
+    "docs/earnings-quality-results.md": "a67c53c6f6b6f59604666fe21e0ca0e5e3737ad683a7026aaea0b265bf339bb5",
+    "README.md": "f85a3b66ac38baa9bbb87b913e4436194248a3ed830d87d75a6c3b72c569b9ec",
+    "docs/earnings-quality-research.md": "84ff8b415fcae0bc39ea87c53d831a6910635b02d76a624a17c9062a85b4076e"
+  }
+}

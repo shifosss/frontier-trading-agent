@@ -1,0 +1,18 @@
+{
+  "declared_at": "2026-09-28T21:24:00.931042+00:00",
+  "reason": "Capture stopped after49cached sessions on WinError5 replacing status.json; original stderr/progress/launch copied to failed-launch",
+  "change": "Runtime wrapper only for top-level status.json and coverage-summary.json: existing historical_lab._save unique temp and6bounded PermissionError retries; append-only status event log. Frozen source-page writer, scientific capture code, request and coverage rules unchanged. Permanent failure still raises.",
+  "sha256": {
+    "wrapper": "afedcfec01d7bb7168556e28283d4776f54c366723aad4f3a6aa853e40e6cb06",
+    "existing_helper": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+    "frozen_capture": "93ea5a4eb41c6da66ca83ff95c12c33db5024dad45382ec2108cac7d4b6d5b6d",
+    "request": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+    "implementation": "056f53439f9e277fbd381e5a0e0d331d0a617a87e3d2bbc1d547a7fe7bf9ad9f",
+    "test": "3d0523917ae6646c702702b2b1df60ab669ace2a6e0613651129021ab523932f",
+    "test_result": "b6fffb48adc36cb2e1680e55c5defef47dee13daec352d22dd539baaac5360d1",
+    "inherited_cache": "2f5f89638db2d8fecf485f6918786b4d7a4096181bf58d6824b5e9062359a8e5"
+  },
+  "helper_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\src\\frontier\\historical_lab.py",
+  "inherited_completed_sessions": 49,
+  "new_source_requests_for_fix": 0
+}

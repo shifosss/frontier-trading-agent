@@ -1,0 +1,204 @@
+[
+  {
+    "name": "wjx-issuer-quote.html",
+    "url": "https://investors.wajax.com/historical-stock-quote",
+    "status_code": 200,
+    "bytes": 254410,
+    "sha256": "2d7837cd5b486b9a6725863cb3c24ec9798952bbea000773c1ad484835925d81",
+    "forms": [
+      "<form role=\"search\" method=\"get\" class=\"search-form\" action=\"https://www.wajax.com/\">\n\t\t\t\t<label>\n\t\t\t\t\t<span class=\"screen-reader-text\">Search for:</span>\n\t\t\t\t\t<input type=\"search\" class=\"search-field\" placeholder=\"Search \u2026\" value=\"\" name=\"s\">\n\t\t\t\t</label>\n\t\t\t\t<input type=\"submit\" class=\"search-submit\" value=\"Search\">\n\t\t\t</form>"
+    ],
+    "scripts": [
+      "js/jquery-webdriver.js",
+      "js/webdriver.js",
+      "js/jquery-ui.js",
+      "js/wd_datepicker.js",
+      "js/highstock/highstock.src.js",
+      "js/wd_wai_calendar_button.js",
+      "js/wd_wai_datepicker.js",
+      "js/wd_wai_datepicker_day.js",
+      "https://www.googletagmanager.com/gtag/js?id=AW-764539790",
+      "https://tag.simpli.fi/sifitag/089adcc0-3785-0137-e2d9-06a9ed4ca31b",
+      "js/jquery.min.js",
+      "js/jquery-migrate.min.js",
+      "js/nfpluginsettings.js",
+      "js/language-cookie.js",
+      "js/search-filter-build.min.js",
+      "js/chosen.jquery.min.js",
+      "js/iframeResizer.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js?ver=6.4.4",
+      "https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js",
+      "https://code.jquery.com/jquery-3.7.1.min.js",
+      "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
+      "js/core.min.js",
+      "js/datepicker.min.js",
+      "js/main.min.js",
+      "js/tabbed-navigation.js",
+      "js/accordion.min.js",
+      "js/tabs.min.js",
+      "js/hoverIntent.min.js",
+      "js/maxmegamenu.js",
+      "js/hero-slider.js",
+      "js/wd_js.js"
+    ]
+  },
+  {
+    "name": "wjx-stooq-probe.txt",
+    "url": "https://stooq.com/q/d/l/?s=wjx.ca&i=d&d1=20050613&d2=20050620",
+    "status_code": 200,
+    "bytes": 796,
+    "sha256": "7e9fd1ec0daa33c6406e538fee41f15a951e62a60be14d3b4b4fe860ecbaa43b",
+    "text": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"AShMZuRdRcp3PPimyPHYsQ\">\n(async()=>{const c=\"AAAAAGqtpe3k2V6Iv2RAw3INLezYxc46Quo5KPsznRqu78modhz0Oe1nxcU\",d=4,t=\"0\".repeat(d),e=new TextEncoder;let n=0;while(1){const h=await crypto.subtle.digest(\"SHA-256\",e.encode(c+n)),x=Array.from(new Uint8Array(h)).map(b=>b.toS"
+  },
+  {
+    "name": "wjx-yahoo-narrow-probe.json",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/WJX.TO?period1=1118620800&period2=1119398400&interval=1d&events=div%2Csplits",
+    "status_code": 200,
+    "bytes": 1725,
+    "sha256": "a92a9ad03f6c7fc57dce4703cb80c21b57d43b1e65ec237a9794b8c04f3d64f4",
+    "payload": {
+      "chart": {
+        "result": [
+          {
+            "meta": {
+              "currency": "CAD",
+              "symbol": "WJX.TO",
+              "exchangeName": "TOR",
+              "fullExchangeName": "Toronto",
+              "instrumentType": "EQUITY",
+              "firstTradeDate": 839943000,
+              "regularMarketTime": 1789761600,
+              "hasPrePostMarketData": false,
+              "gmtoffset": -14400,
+              "timezone": "EDT",
+              "exchangeTimezoneName": "America/Toronto",
+              "regularMarketPrice": 31.06,
+              "regularMarketChangePercent": 1.305,
+              "fulldayPrice": 31.06,
+              "fulldayChange": 0.4,
+              "fulldayChangePercent": 1.305,
+              "fiftyTwoWeekHigh": 35.0,
+              "fiftyTwoWeekLow": 22.43,
+              "regularMarketDayHigh": 31.26,
+              "regularMarketDayLow": 30.66,
+              "regularMarketVolume": 53755,
+              "longName": "Wajax Corporation",
+              "shortName": "WAJAX CORPORATION",
+              "chartPreviousClose": 19.5,
+              "priceHint": 2,
+              "currentTradingPeriod": {
+                "pre": {
+                  "timezone": "EDT",
+                  "end": 1789738200,
+                  "start": 1789732800,
+                  "gmtoffset": -14400
+                },
+                "regular": {
+                  "timezone": "EDT",
+                  "end": 1789761600,
+                  "start": 1789738200,
+                  "gmtoffset": -14400
+                },
+                "post": {
+                  "timezone": "EDT",
+                  "end": 1789765200,
+                  "start": 1789761600,
+                  "gmtoffset": -14400
+                }
+              },
+              "dataGranularity": "1d",
+              "range": "",
+              "validRanges": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "2y",
+                "5y",
+                "10y",
+                "ytd",
+                "max"
+              ]
+            },
+            "timestamp": [
+              1118669400,
+              1118755800,
+              1118842200,
+              1118928600,
+              1119015000,
+              1119274200,
+              1119360600
+            ],
+            "indicators": {
+              "quote": [
+                {
+                  "open": [
+                    19.5,
+                    19.75,
+                    null,
+                    null,
+                    null,
+                    19.200000762939453,
+                    19.209999084472656
+                  ],
+                  "low": [
+                    19.40999984741211,
+                    19.450000762939453,
+                    null,
+                    null,
+                    null,
+                    19.100000381469727,
+                    19.100000381469727
+                  ],
+                  "close": [
+                    19.729999542236328,
+                    19.450000762939453,
+                    null,
+                    null,
+                    null,
+                    19.190000534057617,
+                    19.18000030517578
+                  ],
+                  "volume": [
+                    97300,
+                    73600,
+                    null,
+                    null,
+                    null,
+                    139700,
+                    51500
+                  ],
+                  "high": [
+                    19.940000534057617,
+                    19.780000686645508,
+                    null,
+                    null,
+                    null,
+                    19.239999771118164,
+                    19.209999084472656
+                  ]
+                }
+              ],
+              "adjclose": [
+                {
+                  "adjclose": [
+                    3.8445820808410645,
+                    3.7900230884552,
+                    null,
+                    null,
+                    null,
+                    3.7393605709075928,
+                    3.737410545349121
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+]

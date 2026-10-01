@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "declared_at": "2026-09-29T00:26:41.854316+00:00",
+  "symbols": [
+    "DIA",
+    "IWM",
+    "QQQ",
+    "XLE",
+    "XLF",
+    "XLI",
+    "XLK",
+    "XLP",
+    "XLU",
+    "XLV",
+    "SPY"
+  ],
+  "windows": [
+    {
+      "id": "2016-01-04-1559",
+      "start": "2016-01-04T20:59:00+00:00",
+      "end": "2016-01-04T21:00:00+00:00"
+    },
+    {
+      "id": "2020-01-02-1559",
+      "start": "2020-01-02T20:59:00+00:00",
+      "end": "2020-01-02T21:00:00+00:00"
+    },
+    {
+      "id": "2024-01-02-1559",
+      "start": "2024-01-02T20:59:00+00:00",
+      "end": "2024-01-02T21:00:00+00:00"
+    }
+  ],
+  "expected_cells": 33,
+  "selection": "Fixed11equityETF scope and first trading sessions2016/2020/2024; final regular minute15:59-16:00ET matches the planned next-close execution convention. Fixed before ETF strategy outcomes or quote acquisition; no substitutions for missing/wide cells.",
+  "endpoint": "https://data.alpaca.markets/v2/stocks/quotes",
+  "feed": "sip",
+  "asof": "Explicit respective session date, an entity locator not a historical information vintage",
+  "currency": "USD provider default",
+  "max_pages_per_window": 20,
+  "max_total_request_starts": 60,
+  "max_response_bytes": 8388608,
+  "max_total_raw_bytes": 134217728,
+  "minimum_request_interval_seconds": 3,
+  "timeout_seconds": 30,
+  "byte_bound_note": "Streaming decoded payload cap; retain at most one extra byte as an overflow sentinel then stop globally. No subsequent GET after overflow.",
+  "attempt_policy": "One acquisition invocation; no automatic retries. Any prior request-start journal or capture metadata refuses reexecution pending separately reviewed reconciliation. Stop401/403/429 or byte budgets, retain every unattempted cell.",
+  "analysis": "Byte-identical verified analyzer: [start,end), preserve raw endpoint-inclusive terminal quotes but exclude terminal observations from calculations; no pre-window carry; no stale-age cap; positive finite prices/sizes and noncrossed states mechanically valid; locked retained; crossed/invalid duration not bridged; duplicate-time last record gets duration; preserve raw conditions, exchanges, tapes, failures and hashes.",
+  "cost_rule": {
+    "minimum_valid_seconds_per_cell": 59.0,
+    "requires_all_cells": true,
+    "round_trip_formula": "ceil(maximum duration-weighted mean full quoted spread in basis points across all33 complete qualifying cells))+10",
+    "additional_round_trip_bps": 10,
+    "same_uniform_allowance_all_symbols_brokers": true,
+    "failure": "Any cell source/statistic error, incomplete pagination, missing/nonfinite/negative mean, or valid quoted-state duration below59seconds => unqualified; no fee assignment, replacement or cheaper subset.",
+    "interpretation": "Quote-informed cost sensitivity, not realized execution calibration or upper bound. Tenbps roundtrip is an uncalibrated5bps-per-side adverse allowance. Quote states do not establish fill capacity, stale-quote executability, routing or closing-auction price. No change after seeing account returns."
+  },
+  "brokers": [
+    "wealthsimple_usd",
+    "moomoo_ca_us"
+  ],
+  "access": "Existing authorized credentials only, fixed historical data GET; no account/order endpoints, authentication flow, services or spending.",
+  "independent_verification": "Recompute all33 cells using Decimal from retained raw payloads; verify full pagination/token/hash/source identities and coverage before declaring the cost qualified."
+}

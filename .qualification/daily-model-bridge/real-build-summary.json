@@ -1,0 +1,144 @@
+{
+  "artifact_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\artifacts\\daily-candidates\\83d99338fd394e7cad44bdad045b25ad",
+  "status": "unqualified",
+  "model_id": "8f6baa20861931ca7c52f593d7c8057c8b8e6f5ab59cc0ff07540c9f8942ab7a",
+  "signal_session": "2026-09-18",
+  "planned_fill_session": "2026-09-21",
+  "planned_exit_session": "2026-09-28",
+  "universe_count": 5675,
+  "eligible_count": 2878,
+  "prediction_reload_exact": true,
+  "remaining_cash": 2000.0,
+  "requested_usd": 5675,
+  "usable_usd": 5664,
+  "fit_rows": 47808,
+  "calibration_rows": 23616,
+  "fit_latest_label": "2025-09-16",
+  "calibration_start": "2025-09-17",
+  "calibration_latest_label": "2026-09-17",
+  "score_min": -0.1702032028871726,
+  "score_max": -0.01106253217869278,
+  "positive_scores": 0,
+  "intents": 0,
+  "warnings": [
+    {
+      "model": "multi_head_mlp",
+      "category": "ConvergenceWarning",
+      "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+    }
+  ],
+  "calibration": {
+    "row_count": 23616,
+    "metric": "pooled_per_row_mse",
+    "interpretation": "Rows are not independent; this is not significance or qualification.",
+    "training_target_mean": [
+      0.00023501746584147823,
+      0.0015142138843809608,
+      0.0029696414551671022,
+      0.010007822902667107,
+      0.022570303412987876,
+      0.03162357861949542
+    ],
+    "baseline_mse": [
+      0.001814540074973197,
+      0.005095469772254473,
+      0.009421584420168463,
+      0.0005576169019021761,
+      0.0017857161167037026,
+      0.0029060127784331633
+    ],
+    "model_mse": {
+      "ridge": [
+        0.001842378133319817,
+        0.005140684050245052,
+        0.009501107951794915,
+        0.0005249166706877804,
+        0.0015671999225831239,
+        0.002479640709577447
+      ],
+      "extra_trees": [
+        0.0018137267745000712,
+        0.005092956400236827,
+        0.009388099208384243,
+        0.0004898361393815478,
+        0.001454379237387563,
+        0.0022759922422193432
+      ],
+      "hist_gradient_boosting": [
+        0.0018385825349937135,
+        0.0051890751868373846,
+        0.009470045602200324,
+        0.0004909365999230097,
+        0.001441007601059679,
+        0.0022482159680033646
+      ],
+      "multi_head_mlp": [
+        0.0019810838882006335,
+        0.006070878621829504,
+        0.010685012179950862,
+        0.0005334046401351462,
+        0.0018396768066306622,
+        0.0028589605779612763
+      ]
+    },
+    "horizons": {
+      "1": {
+        "weights": {
+          "ridge": 0.0,
+          "extra_trees": 1.0,
+          "hist_gradient_boosting": 0.0,
+          "multi_head_mlp": 0.0
+        },
+        "positive_mse_improvement": {
+          "ridge": 0.0,
+          "extra_trees": 8.133004731258799e-07,
+          "hist_gradient_boosting": 0.0,
+          "multi_head_mlp": 0.0
+        },
+        "equal_weight_fallback": false
+      },
+      "3": {
+        "weights": {
+          "ridge": 0.0,
+          "extra_trees": 1.0,
+          "hist_gradient_boosting": 0.0,
+          "multi_head_mlp": 0.0
+        },
+        "positive_mse_improvement": {
+          "ridge": 0.0,
+          "extra_trees": 2.51337201764585e-06,
+          "hist_gradient_boosting": 0.0,
+          "multi_head_mlp": 0.0
+        },
+        "equal_weight_fallback": false
+      },
+      "5": {
+        "weights": {
+          "ridge": 0.0,
+          "extra_trees": 1.0,
+          "hist_gradient_boosting": 0.0,
+          "multi_head_mlp": 0.0
+        },
+        "positive_mse_improvement": {
+          "ridge": 0.0,
+          "extra_trees": 3.3485211784220134e-05,
+          "hist_gradient_boosting": 0.0,
+          "multi_head_mlp": 0.0
+        },
+        "equal_weight_fallback": false
+      }
+    }
+  },
+  "code_identities_match": {
+    "candidate_daily.py": true,
+    "ensemble_study.py": true,
+    "model_artifact.py": true,
+    "historical_lab.py": true,
+    "daily_policy.py": true,
+    "ensemble_features.py": true,
+    "ensemble_models.py": true,
+    "historical_data.py": true,
+    "historical_study.py": true,
+    "strategy_study.py": true
+  }
+}

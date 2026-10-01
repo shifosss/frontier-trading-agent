@@ -1,0 +1,2180 @@
+[
+  {
+    "input_row": 90,
+    "symbol": "MSFT",
+    "accession": "0001564590-17-000654",
+    "selected": false,
+    "entry_session": "2017-01-27",
+    "exit_session": "2017-02-03",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "58.80508041381836",
+      "stock_exit": "56.927764892578125",
+      "benchmark_entry": "197.1802520751953",
+      "benchmark_exit": "197.4989471435547"
+    },
+    "stock_gross_return": "-0.0319243763979122537541525957885395210931",
+    "benchmark_gross_return": "0.001616262607463675664401659600843891232",
+    "stock_minus_benchmark": "-0.0335406390053759294185542553893834123251"
+  },
+  {
+    "input_row": 91,
+    "symbol": "AAPL",
+    "accession": "0001628280-17-000717",
+    "selected": false,
+    "entry_session": "2017-02-02",
+    "exit_session": "2017-02-09",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "29.54387664794922",
+      "stock_exit": "30.569995880126953",
+      "benchmark_entry": "196.14688110351562",
+      "benchmark_exit": "198.583984375"
+    },
+    "stock_gross_return": "0.034732044288066061289390067811938801987",
+    "benchmark_gross_return": "0.012424889234910698821751304660476065445",
+    "stock_minus_benchmark": "0.022307155053155362467638763151462736542"
+  },
+  {
+    "input_row": 92,
+    "symbol": "HRL",
+    "accession": "0001104659-17-015707",
+    "selected": false,
+    "entry_session": "2017-03-13",
+    "exit_session": "2017-03-20",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "26.878623962402344",
+      "stock_exit": "26.886316299438477",
+      "benchmark_entry": "204.7929229736328",
+      "benchmark_exit": "204.784423828125"
+    },
+    "stock_gross_return": "0.000286187903327677575335525983635888151",
+    "benchmark_gross_return": "-0.0000415011680305684664586559217615575145",
+    "stock_minus_benchmark": "0.0003276890713582460417941819053974456655"
+  },
+  {
+    "input_row": 94,
+    "symbol": "MSFT",
+    "accession": "0001564590-17-007547",
+    "selected": true,
+    "entry_session": "2017-04-28",
+    "exit_session": "2017-05-05",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "61.57196807861328",
+      "stock_exit": "62.05760192871094",
+      "benchmark_entry": "205.9174346923828",
+      "benchmark_exit": "207.31854248046875"
+    },
+    "stock_gross_return": "0.007887255601081598804842553843775903976",
+    "benchmark_gross_return": "0.006804221265572026447861120522489918758",
+    "stock_minus_benchmark": "0.001083034335509572356981433321285985218"
+  },
+  {
+    "input_row": 95,
+    "symbol": "AAPL",
+    "accession": "0001628280-17-004790",
+    "selected": false,
+    "entry_session": "2017-05-04",
+    "exit_session": "2017-05-11",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "33.82738494873047",
+      "stock_exit": "35.68703842163086",
+      "benchmark_entry": "206.50555419921875",
+      "benchmark_exit": "207.04177856445312"
+    },
+    "stock_gross_return": "0.054974792633806065120987007121667755023",
+    "benchmark_gross_return": "0.002596658319015802236043349460171124379",
+    "stock_minus_benchmark": "0.052378134314790262884943657661496630644"
+  },
+  {
+    "input_row": 97,
+    "symbol": "BANF",
+    "accession": "0001564590-17-009013",
+    "selected": true,
+    "entry_session": "2017-05-08",
+    "exit_session": "2017-05-15",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "40.388736724853516",
+      "stock_exit": "40.0355339050293",
+      "benchmark_entry": "207.28395080566406",
+      "benchmark_exit": "207.8375244140625"
+    },
+    "stock_gross_return": "-0.0087450821309513739095752884322422497494",
+    "benchmark_gross_return": "0.002670605255480848021334805376337309672",
+    "stock_minus_benchmark": "-0.0114156873864322219309100938085795594214"
+  },
+  {
+    "input_row": 98,
+    "symbol": "HRL",
+    "accession": "0001104659-17-038316",
+    "selected": false,
+    "entry_session": "2017-06-12",
+    "exit_session": "2017-06-19",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "26.8503475189209",
+      "stock_exit": "26.556560516357422",
+      "benchmark_entry": "210.4840850830078",
+      "benchmark_exit": "212.64041137695312"
+    },
+    "stock_gross_return": "-0.0109416461875010074506824236865605903115",
+    "benchmark_gross_return": "0.010244604921530945599020199431732100266",
+    "stock_minus_benchmark": "-0.0211862511090319530497026231182926905775"
+  },
+  {
+    "input_row": 100,
+    "symbol": "BANF",
+    "accession": "0001564590-17-014479",
+    "selected": true,
+    "entry_session": "2017-08-01",
+    "exit_session": "2017-08-08",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "44.80609130859375",
+      "stock_exit": "43.72141647338867",
+      "benchmark_entry": "214.95236206054688",
+      "benchmark_exit": "214.90016174316406"
+    },
+    "stock_gross_return": "-0.0242082003479076242979527396019359681135",
+    "benchmark_gross_return": "-0.0002428459816976397472090621174123342783",
+    "stock_minus_benchmark": "-0.0239653543662099845507436774845236338352"
+  },
+  {
+    "input_row": 101,
+    "symbol": "AAPL",
+    "accession": "0000320193-17-000009",
+    "selected": false,
+    "entry_session": "2017-08-03",
+    "exit_session": "2017-08-10",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "36.06257247924805",
+      "stock_exit": "36.1459846496582",
+      "benchmark_entry": "214.6394500732422",
+      "benchmark_exit": "211.85826110839844"
+    },
+    "stock_gross_return": "0.002312984478801364995657533480775265046",
+    "benchmark_gross_return": "-0.0129574920355727932438895569415239942731",
+    "stock_minus_benchmark": "0.0152704765143741582395470904222992593191"
+  },
+  {
+    "input_row": 103,
+    "symbol": "HRL",
+    "accession": "0001104659-17-056270",
+    "selected": false,
+    "entry_session": "2017-09-11",
+    "exit_session": "2017-09-18",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "24.620649337768555",
+      "stock_exit": "24.597333908081055",
+      "benchmark_entry": "216.594970703125",
+      "benchmark_exit": "218.11532592773438"
+    },
+    "stock_gross_return": "-0.0009469867901385394142460376344900353245",
+    "benchmark_gross_return": "0.007019346846669162023641386741931956901",
+    "stock_minus_benchmark": "-0.0079663336368077014378874243764219922255"
+  },
+  {
+    "input_row": 105,
+    "symbol": "MSFT",
+    "accession": "0001564590-17-020171",
+    "selected": false,
+    "entry_session": "2017-10-27",
+    "exit_session": "2017-11-03",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "76.21347045898438",
+      "stock_exit": "76.51353454589844",
+      "benchmark_entry": "225.09414672851562",
+      "benchmark_exit": "225.74044799804688"
+    },
+    "stock_gross_return": "0.003937152908888262313062565357037444147",
+    "benchmark_gross_return": "0.002871248670498567717694267491221098874",
+    "stock_minus_benchmark": "0.001065904238389694595368297865816345273"
+  },
+  {
+    "input_row": 106,
+    "symbol": "BANF",
+    "accession": "0001564590-17-021415",
+    "selected": true,
+    "entry_session": "2017-11-06",
+    "exit_session": "2017-11-13",
+    "entry_year": "2017",
+    "adjusted_endpoints": {
+      "stock_entry": "45.686485290527344",
+      "stock_exit": "43.80208206176758",
+      "benchmark_entry": "226.0897979736328",
+      "benchmark_exit": "225.63565063476562"
+    },
+    "stock_gross_return": "-0.0412464039808830948995749544821962500588",
+    "benchmark_gross_return": "-0.0020087033689160263811146518464142563751",
+    "stock_minus_benchmark": "-0.0392377006119670685184603026357819936837"
+  },
+  {
+    "input_row": 108,
+    "symbol": "MSFT",
+    "accession": "0001564590-18-001129",
+    "selected": false,
+    "entry_session": "2018-02-01",
+    "exit_session": "2018-02-08",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "86.14676666259766",
+      "stock_exit": "77.69293975830078",
+      "benchmark_entry": "247.20028686523438",
+      "benchmark_exit": "226.17442321777344"
+    },
+    "stock_gross_return": "-0.0981328404048770626929280859132024959084",
+    "benchmark_gross_return": "-0.0850559840123630698702877993672096944619",
+    "stock_minus_benchmark": "-0.0130768563925139928226402865459928014465"
+  },
+  {
+    "input_row": 109,
+    "symbol": "AAPL",
+    "accession": "0000320193-18-000007",
+    "selected": false,
+    "entry_session": "2018-02-05",
+    "exit_session": "2018-02-12",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "36.54920196533203",
+      "stock_exit": "38.15685272216797",
+      "benchmark_entry": "231.70516967773438",
+      "benchmark_exit": "232.9430694580078"
+    },
+    "stock_gross_return": "0.043985933218482937417905045366402516137",
+    "benchmark_gross_return": "0.005342564354499059361051543020840145101",
+    "stock_minus_benchmark": "0.038643368863983878056853502345562371036"
+  },
+  {
+    "input_row": 110,
+    "symbol": "HRL",
+    "accession": "0000048465-18-000014",
+    "selected": true,
+    "entry_session": "2018-03-12",
+    "exit_session": "2018-03-19",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "26.477405548095703",
+      "stock_exit": "26.477405548095703",
+      "benchmark_entry": "244.51388549804688",
+      "benchmark_exit": "238.41534423828125"
+    },
+    "stock_gross_return": "0",
+    "benchmark_gross_return": "-0.0249414925755385934022104275854948337088",
+    "stock_minus_benchmark": "0.0249414925755385934022104275854948337088"
+  },
+  {
+    "input_row": 112,
+    "symbol": "MSFT",
+    "accession": "0001564590-18-009307",
+    "selected": false,
+    "entry_session": "2018-04-27",
+    "exit_session": "2018-05-04",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "87.98385620117188",
+      "stock_exit": "87.3778305053711",
+      "benchmark_entry": "234.95138549804688",
+      "benchmark_exit": "234.4753875732422"
+    },
+    "stock_gross_return": "-0.0068879192384467025122598465769443386933",
+    "benchmark_gross_return": "-0.0020259421913842551407845876116383624976",
+    "stock_minus_benchmark": "-0.0048619770470624473714752589653059761957"
+  },
+  {
+    "input_row": 113,
+    "symbol": "AAPL",
+    "accession": "0000320193-18-000070",
+    "selected": false,
+    "entry_session": "2018-05-03",
+    "exit_session": "2018-05-10",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "41.48218536376953",
+      "stock_exit": "44.56597137451172",
+      "benchmark_entry": "231.47862243652344",
+      "benchmark_exit": "239.7638702392578"
+    },
+    "stock_gross_return": "0.074340008456631685711229201299749222972",
+    "benchmark_gross_return": "0.035792712586262078123627247599242614293",
+    "stock_minus_benchmark": "0.038547295870369607587601953700506608679"
+  },
+  {
+    "input_row": 115,
+    "symbol": "BANF",
+    "accession": "0001564590-18-011013",
+    "selected": true,
+    "entry_session": "2018-05-07",
+    "exit_session": "2018-05-14",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "48.798194885253906",
+      "stock_exit": "49.009273529052734",
+      "benchmark_entry": "235.26869201660156",
+      "benchmark_exit": "240.6101531982422"
+    },
+    "stock_gross_return": "0.004325542047101681821175599011617263194",
+    "benchmark_gross_return": "0.022703663355529361172218265143148533074",
+    "stock_minus_benchmark": "-0.018378121308427679351042666131531269880"
+  },
+  {
+    "input_row": 116,
+    "symbol": "HRL",
+    "accession": "0000048465-18-000033",
+    "selected": false,
+    "entry_session": "2018-06-11",
+    "exit_session": "2018-06-18",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "28.918663024902344",
+      "stock_exit": "28.1761474609375",
+      "benchmark_entry": "245.52841186523438",
+      "benchmark_exit": "244.8601531982422"
+    },
+    "stock_gross_return": "-0.0256759990365201682888626699765770783900",
+    "benchmark_gross_return": "-0.0027217162442242072461941663539201706280",
+    "stock_minus_benchmark": "-0.0229542827922959610426685036226569077620"
+  },
+  {
+    "input_row": 118,
+    "symbol": "AAPL",
+    "accession": "0000320193-18-000100",
+    "selected": true,
+    "entry_session": "2018-08-02",
+    "exit_session": "2018-08-09",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "48.822227478027344",
+      "stock_exit": "49.1729850769043",
+      "benchmark_entry": "250.02195739746094",
+      "benchmark_exit": "252.394775390625"
+    },
+    "stock_gross_return": "0.007184383363803218200664256157016487460",
+    "benchmark_gross_return": "0.009490438431341377829735692001235283130",
+    "stock_minus_benchmark": "-0.002306055067538159629071435844218795670"
+  },
+  {
+    "input_row": 120,
+    "symbol": "BANF",
+    "accession": "0001564590-18-020889",
+    "selected": true,
+    "entry_session": "2018-08-10",
+    "exit_session": "2018-08-17",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "52.57046890258789",
+      "stock_exit": "54.010746002197266",
+      "benchmark_entry": "250.7036590576172",
+      "benchmark_exit": "252.38589477539062"
+    },
+    "stock_gross_return": "0.027397075386148503282209456378674282092",
+    "benchmark_gross_return": "0.006710056502951978584636912935894797052",
+    "stock_minus_benchmark": "0.020687018883196524697572543442779485040"
+  },
+  {
+    "input_row": 121,
+    "symbol": "HRL",
+    "accession": "0000048465-18-000039",
+    "selected": false,
+    "entry_session": "2018-09-10",
+    "exit_session": "2018-09-17",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "32.96212387084961",
+      "stock_exit": "32.588993072509766",
+      "benchmark_entry": "255.07736206054688",
+      "benchmark_exit": "256.1753234863281"
+    },
+    "stock_gross_return": "-0.0113199865336901431358255349427024426523",
+    "benchmark_gross_return": "0.004304425202267069407003511431416196133",
+    "stock_minus_benchmark": "-0.0156244117359572125428290463741186387853"
+  },
+  {
+    "input_row": 122,
+    "symbol": "MSFT",
+    "accession": "0001564590-18-024893",
+    "selected": false,
+    "entry_session": "2018-10-25",
+    "exit_session": "2018-11-01",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "100.25859832763672",
+      "stock_exit": "98.05535888671875",
+      "benchmark_entry": "240.20541381835938",
+      "benchmark_exit": "243.2559814453125"
+    },
+    "stock_gross_return": "-0.0219755659631103922648396707126760236745",
+    "benchmark_gross_return": "0.012699828777630818816859407094804320928",
+    "stock_minus_benchmark": "-0.0346753947407412110816990778074803446025"
+  },
+  {
+    "input_row": 124,
+    "symbol": "BANF",
+    "accession": "0001564590-18-026459",
+    "selected": true,
+    "entry_session": "2018-11-05",
+    "exit_session": "2018-11-12",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "48.873802185058594",
+      "stock_exit": "49.027061462402344",
+      "benchmark_entry": "243.1492462158203",
+      "benchmark_exit": "242.41995239257812"
+    },
+    "stock_gross_return": "0.003135816541619581790791265040689208998",
+    "benchmark_gross_return": "-0.0029993669920525096588830456404827322597",
+    "stock_minus_benchmark": "0.0061351835336720914496743106811719412577"
+  },
+  {
+    "input_row": 125,
+    "symbol": "T",
+    "accession": "0000732717-18-000090",
+    "selected": true,
+    "entry_session": "2018-11-05",
+    "exit_session": "2018-11-12",
+    "entry_year": "2018",
+    "adjusted_endpoints": {
+      "stock_entry": "14.65",
+      "stock_exit": "14.72",
+      "benchmark_entry": "243.1492462158203",
+      "benchmark_exit": "242.41995239257812"
+    },
+    "stock_gross_return": "0.004778156996587030716723549488054607509",
+    "benchmark_gross_return": "-0.0029993669920525096588830456404827322597",
+    "stock_minus_benchmark": "0.0077775239886395403756065951285373397687"
+  },
+  {
+    "input_row": 126,
+    "symbol": "MSFT",
+    "accession": "0001564590-19-001392",
+    "selected": true,
+    "entry_session": "2019-01-31",
+    "exit_session": "2019-02-07",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "97.09361267089844",
+      "stock_exit": "97.87460327148438",
+      "benchmark_entry": "241.47384643554688",
+      "benchmark_exit": "241.6617431640625"
+    },
+    "stock_gross_return": "0.008043686696808057189825438278218855292",
+    "benchmark_gross_return": "0.000778124551744250924948588228066439282",
+    "stock_minus_benchmark": "0.007265562145063806264876850050152416010"
+  },
+  {
+    "input_row": 127,
+    "symbol": "AAPL",
+    "accession": "0000320193-19-000010",
+    "selected": false,
+    "entry_session": "2019-01-31",
+    "exit_session": "2019-02-07",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "39.456703186035156",
+      "stock_exit": "40.52347946166992",
+      "benchmark_entry": "241.47384643554688",
+      "benchmark_exit": "241.6617431640625"
+    },
+    "stock_gross_return": "0.027036629761108026807967850226297897728",
+    "benchmark_gross_return": "0.000778124551744250924948588228066439282",
+    "stock_minus_benchmark": "0.026258505209363775883019261998231458446"
+  },
+  {
+    "input_row": 128,
+    "symbol": "HRL",
+    "accession": "0000048465-19-000011",
+    "selected": false,
+    "entry_session": "2019-03-06",
+    "exit_session": "2019-03-13",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "34.837860107421875",
+      "stock_exit": "34.29288864135742",
+      "benchmark_entry": "248.09376525878906",
+      "benchmark_exit": "251.68104553222656"
+    },
+    "stock_gross_return": "-0.0156430809580165346755818975145567452458",
+    "benchmark_gross_return": "0.014459372929809713159478628383058702304",
+    "stock_minus_benchmark": "-0.0301024538878262478350605258976154475498"
+  },
+  {
+    "input_row": 129,
+    "symbol": "MSFT",
+    "accession": "0001564590-19-012709",
+    "selected": false,
+    "entry_session": "2019-04-25",
+    "exit_session": "2019-05-02",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "120.58981323242188",
+      "stock_exit": "117.84468078613281",
+      "benchmark_entry": "262.4127502441406",
+      "benchmark_exit": "261.6310119628906"
+    },
+    "stock_gross_return": "-0.0227642150916857987968354696290785532450",
+    "benchmark_gross_return": "-0.0029790407688753507566317206045265626483",
+    "stock_minus_benchmark": "-0.0197851743228104480402037490245519905967"
+  },
+  {
+    "input_row": 131,
+    "symbol": "AAPL",
+    "accession": "0000320193-19-000066",
+    "selected": false,
+    "entry_session": "2019-05-02",
+    "exit_session": "2019-05-09",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "49.794281005859375",
+      "stock_exit": "47.78727340698242",
+      "benchmark_entry": "261.6310119628906",
+      "benchmark_exit": "257.56982421875"
+    },
+    "stock_gross_return": "-0.0403059861159715733740934839938982348640",
+    "benchmark_gross_return": "-0.0155225778231390763013598603444521462214",
+    "stock_minus_benchmark": "-0.0247834082928324970727336236494460886426"
+  },
+  {
+    "input_row": 132,
+    "symbol": "BANF",
+    "accession": "0001564590-19-015594",
+    "selected": false,
+    "entry_session": "2019-05-06",
+    "exit_session": "2019-05-13",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "49.97239303588867",
+      "stock_exit": "46.84481430053711",
+      "benchmark_entry": "263.1046447753906",
+      "benchmark_exit": "252.3583526611328"
+    },
+    "stock_gross_return": "-0.0625861309684614662959227513557236698891",
+    "benchmark_gross_return": "-0.0408441748469768962302986801169916569199",
+    "stock_minus_benchmark": "-0.0217419561214845700656240712387320129692"
+  },
+  {
+    "input_row": 133,
+    "symbol": "T",
+    "accession": "0000732717-19-000018",
+    "selected": false,
+    "entry_session": "2019-05-07",
+    "exit_session": "2019-05-14",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "15.08",
+      "stock_exit": "15.35",
+      "benchmark_entry": "258.7109069824219",
+      "benchmark_exit": "254.640625"
+    },
+    "stock_gross_return": "0.017904509283819628647214854111405835544",
+    "benchmark_gross_return": "-0.0157329353829618598625810618369114069206",
+    "stock_minus_benchmark": "0.0336374446667814885097959159483172424646"
+  },
+  {
+    "input_row": 134,
+    "symbol": "HRL",
+    "accession": "0000048465-19-000036",
+    "selected": false,
+    "entry_session": "2019-06-05",
+    "exit_session": "2019-06-12",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "33.363521575927734",
+      "stock_exit": "33.46822738647461",
+      "benchmark_entry": "254.2451629638672",
+      "benchmark_exit": "259.1242370605469"
+    },
+    "stock_gross_return": "0.003138332094487974104473780922575170973",
+    "benchmark_gross_return": "0.019190430369655071795645814422741686863",
+    "stock_minus_benchmark": "-0.016052098275167097691172033500166515890"
+  },
+  {
+    "input_row": 136,
+    "symbol": "AAPL",
+    "accession": "0000320193-19-000076",
+    "selected": false,
+    "entry_session": "2019-08-01",
+    "exit_session": "2019-08-08",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "49.813961029052734",
+      "stock_exit": "48.61896896362305",
+      "benchmark_entry": "266.20819091796875",
+      "benchmark_exit": "265.10662841796875"
+    },
+    "stock_gross_return": "-0.0239890994561290774407908907996154230734",
+    "benchmark_gross_return": "-0.0041379737272601170912667615105163181480",
+    "stock_minus_benchmark": "-0.0198511257288689603495241292890991049254"
+  },
+  {
+    "input_row": 137,
+    "symbol": "BANF",
+    "accession": "0001564590-19-028271",
+    "selected": true,
+    "entry_session": "2019-08-05",
+    "exit_session": "2019-08-12",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "47.38741683959961",
+      "stock_exit": "47.43939971923828",
+      "benchmark_entry": "256.2583312988281",
+      "benchmark_exit": "260.0956726074219"
+    },
+    "stock_gross_return": "0.001096976436057391525780264898545737237",
+    "benchmark_gross_return": "0.014974503615724389994836696310895508920",
+    "stock_minus_benchmark": "-0.013877527179666998469056431412349771683"
+  },
+  {
+    "input_row": 138,
+    "symbol": "T",
+    "accession": "0001562762-19-000164",
+    "selected": false,
+    "entry_session": "2019-08-06",
+    "exit_session": "2019-08-13",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "17.02",
+      "stock_exit": "17.48",
+      "benchmark_entry": "259.85186767578125",
+      "benchmark_exit": "264.1405944824219"
+    },
+    "stock_gross_return": "0.027027027027027027027027027027027027027",
+    "benchmark_gross_return": "0.016504506375115688705793870597003391496",
+    "stock_minus_benchmark": "0.010522520651911338321233156430023635531"
+  },
+  {
+    "input_row": 139,
+    "symbol": "HRL",
+    "accession": "0000048465-19-000041",
+    "selected": false,
+    "entry_session": "2019-09-04",
+    "exit_session": "2019-09-11",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "34.433040618896484",
+      "stock_exit": "36.060367584228516",
+      "benchmark_entry": "265.4858703613281",
+      "benchmark_exit": "271.0928039550781"
+    },
+    "stock_gross_return": "0.047260623403643661548234633912997187127",
+    "benchmark_gross_return": "0.021119517909254171308375914183568477080",
+    "stock_minus_benchmark": "0.026141105494389490239858719729428710047"
+  },
+  {
+    "input_row": 140,
+    "symbol": "MSFT",
+    "accession": "0001564590-19-037549",
+    "selected": false,
+    "entry_session": "2019-10-24",
+    "exit_session": "2019-10-31",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "131.58506774902344",
+      "stock_exit": "134.81028747558594",
+      "benchmark_entry": "272.45355224609375",
+      "benchmark_exit": "275.1384582519531"
+    },
+    "stock_gross_return": "0.024510529817213518917675961253090175475",
+    "benchmark_gross_return": "0.009854545788539427345588892530465095492",
+    "stock_minus_benchmark": "0.014655984028674091572087068722625079983"
+  },
+  {
+    "input_row": 142,
+    "symbol": "T",
+    "accession": "0000732717-19-000056",
+    "selected": false,
+    "entry_session": "2019-11-06",
+    "exit_session": "2019-11-13",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "19.95",
+      "stock_exit": "19.9",
+      "benchmark_entry": "278.55804443359375",
+      "benchmark_exit": "280.37213134765625"
+    },
+    "stock_gross_return": "-0.0025062656641604010025062656641604010025",
+    "benchmark_gross_return": "0.006512419764258380177458070354379318543",
+    "stock_minus_benchmark": "-0.0090186854284187811799643360185397195455"
+  },
+  {
+    "input_row": 143,
+    "symbol": "BANF",
+    "accession": "0001564590-19-042054",
+    "selected": false,
+    "entry_session": "2019-11-11",
+    "exit_session": "2019-11-18",
+    "entry_year": "2019",
+    "adjusted_endpoints": {
+      "stock_entry": "51.54749298095703",
+      "stock_exit": "50.80686950683594",
+      "benchmark_entry": "279.6919250488281",
+      "benchmark_exit": "283.0208435058594"
+    },
+    "stock_gross_return": "-0.0143677884469511517148202992834350162217",
+    "benchmark_gross_return": "0.011902089974353544745788666161163417320",
+    "stock_minus_benchmark": "-0.0262698784213046964606089654445984335417"
+  },
+  {
+    "input_row": 144,
+    "symbol": "AAPL",
+    "accession": "0000320193-20-000010",
+    "selected": true,
+    "entry_session": "2020-01-30",
+    "exit_session": "2020-02-06",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "77.93102264404297",
+      "stock_exit": "78.25346374511719",
+      "benchmark_entry": "298.68670654296875",
+      "benchmark_exit": "304.4292297363281"
+    },
+    "stock_gross_return": "0.004137519182149053011222577267943027942",
+    "benchmark_gross_return": "0.019225908175907509824400150152758157813",
+    "stock_minus_benchmark": "-0.015088388993758456813177572884815129871"
+  },
+  {
+    "input_row": 145,
+    "symbol": "MSFT",
+    "accession": "0001564590-20-002450",
+    "selected": false,
+    "entry_session": "2020-01-30",
+    "exit_session": "2020-02-06",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "163.01718139648438",
+      "stock_exit": "173.254150390625",
+      "benchmark_entry": "298.68670654296875",
+      "benchmark_exit": "304.4292297363281"
+    },
+    "stock_gross_return": "0.062796871510387861100752351569262422435",
+    "benchmark_gross_return": "0.019225908175907509824400150152758157813",
+    "stock_minus_benchmark": "0.043570963334480351276352201416504264622"
+  },
+  {
+    "input_row": 146,
+    "symbol": "HRL",
+    "accession": "0000048465-20-000008",
+    "selected": false,
+    "entry_session": "2020-03-04",
+    "exit_session": "2020-03-11",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "36.85470962524414",
+      "stock_exit": "34.580448150634766",
+      "benchmark_entry": "285.1779479980469",
+      "benchmark_exit": "250.08447265625"
+    },
+    "stock_gross_return": "-0.0617088425803682723540771592766951722343",
+    "benchmark_gross_return": "-0.1230581662718088037597685139898096324218",
+    "stock_minus_benchmark": "0.0613493236914405314056913547131144601875"
+  },
+  {
+    "input_row": 148,
+    "symbol": "MSFT",
+    "accession": "0001564590-20-019706",
+    "selected": false,
+    "entry_session": "2020-04-30",
+    "exit_session": "2020-05-07",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "169.545654296875",
+      "stock_exit": "173.69894409179688",
+      "benchmark_entry": "266.3351745605469",
+      "benchmark_exit": "263.76788330078125"
+    },
+    "stock_gross_return": "0.024496586551545909088945495702410077485",
+    "benchmark_gross_return": "-0.0096393248244497978008778579020550228727",
+    "stock_minus_benchmark": "0.0341359113759957068898233536044651003577"
+  },
+  {
+    "input_row": 149,
+    "symbol": "AAPL",
+    "accession": "0000320193-20-000052",
+    "selected": false,
+    "entry_session": "2020-05-04",
+    "exit_session": "2020-05-11",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "70.70886993408203",
+      "stock_exit": "76.18467712402344",
+      "benchmark_entry": "259.99957275390625",
+      "benchmark_exit": "268.18719482421875"
+    },
+    "stock_gross_return": "0.077441588234208838155311082856459893934",
+    "benchmark_gross_return": "0.031490905864150073488796391783433763718",
+    "stock_minus_benchmark": "0.045950682370058764666514691073026130216"
+  },
+  {
+    "input_row": 150,
+    "symbol": "T",
+    "accession": "0001562762-20-000171",
+    "selected": false,
+    "entry_session": "2020-05-07",
+    "exit_session": "2020-05-14",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "15.14",
+      "stock_exit": "14.98",
+      "benchmark_entry": "263.76788330078125",
+      "benchmark_exit": "261.2831115722656"
+    },
+    "stock_gross_return": "-0.0105680317040951122853368560105680317041",
+    "benchmark_gross_return": "-0.0094202967299176502629945161171638197480",
+    "stock_minus_benchmark": "-0.0011477349741774620223423398934042119561"
+  },
+  {
+    "input_row": 151,
+    "symbol": "BANF",
+    "accession": "0001564590-20-024130",
+    "selected": false,
+    "entry_session": "2020-05-12",
+    "exit_session": "2020-05-19",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "29.36443328857422",
+      "stock_exit": "29.903799057006836",
+      "benchmark_entry": "262.841796875",
+      "benchmark_exit": "267.7013244628906"
+    },
+    "stock_gross_return": "0.018367995157001196808554147526192572827",
+    "benchmark_gross_return": "0.018488412595207038454393460895411480587",
+    "stock_minus_benchmark": "-0.000120417438205841645839313369218907760"
+  },
+  {
+    "input_row": 152,
+    "symbol": "HRL",
+    "accession": "0000048465-20-000027",
+    "selected": false,
+    "entry_session": "2020-06-03",
+    "exit_session": "2020-06-10",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "39.19087219238281",
+      "stock_exit": "39.486820220947266",
+      "benchmark_entry": "286.23138427734375",
+      "benchmark_exit": "292.4844665527344"
+    },
+    "stock_gross_return": "0.007551452978940766011241204615322809564",
+    "benchmark_gross_return": "0.021846249638829714081006649799610415780",
+    "stock_minus_benchmark": "-0.014294796659888948069765445184287606216"
+  },
+  {
+    "input_row": 153,
+    "symbol": "AAPL",
+    "accession": "0000320193-20-000062",
+    "selected": false,
+    "entry_session": "2020-08-03",
+    "exit_session": "2020-08-10",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "105.38545227050781",
+      "stock_exit": "109.24847412109375",
+      "benchmark_entry": "302.78741455078125",
+      "benchmark_exit": "309.03118896484375"
+    },
+    "stock_gross_return": "0.036656120625360823869103043514708358745",
+    "benchmark_gross_return": "0.020620983944546812262125849321963551144",
+    "stock_minus_benchmark": "0.016035136680814011606977194192744807601"
+  },
+  {
+    "input_row": 155,
+    "symbol": "T",
+    "accession": "0001562762-20-000279",
+    "selected": false,
+    "entry_session": "2020-08-06",
+    "exit_session": "2020-08-13",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "15.91",
+      "stock_exit": "15.95",
+      "benchmark_entry": "307.88922119140625",
+      "benchmark_exit": "310.1914367675781"
+    },
+    "stock_gross_return": "0.002514142049025769956002514142049025770",
+    "benchmark_gross_return": "0.007477415309516879695872122609034034783",
+    "stock_minus_benchmark": "-0.004963273260491109739869608466985009013"
+  },
+  {
+    "input_row": 156,
+    "symbol": "BANF",
+    "accession": "0001564590-20-038478",
+    "selected": false,
+    "entry_session": "2020-08-10",
+    "exit_session": "2020-08-17",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "40.42904281616211",
+      "stock_exit": "40.08121871948242",
+      "benchmark_entry": "309.03118896484375",
+      "benchmark_exit": "311.1861267089844"
+    },
+    "stock_gross_return": "-0.0086033225733615972279177184928726228158",
+    "benchmark_gross_return": "0.006973204715546694312077796367372437054",
+    "stock_minus_benchmark": "-0.0155765272889082915399955148602450598698"
+  },
+  {
+    "input_row": 157,
+    "symbol": "HRL",
+    "accession": "0000048465-20-000036",
+    "selected": false,
+    "entry_session": "2020-09-02",
+    "exit_session": "2020-09-10",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "42.41005325317383",
+      "stock_exit": "41.079837799072266",
+      "benchmark_entry": "329.4109802246094",
+      "benchmark_exit": "307.4840087890625"
+    },
+    "stock_gross_return": "-0.0313655690588413730877354530285328653086",
+    "benchmark_gross_return": "-0.0665641789493354462704829541943458774452",
+    "stock_minus_benchmark": "0.0351986098904940731827475011658130121366"
+  },
+  {
+    "input_row": 158,
+    "symbol": "MSFT",
+    "accession": "0001564590-20-047996",
+    "selected": false,
+    "entry_session": "2020-10-28",
+    "exit_session": "2020-11-04",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "192.74887084960938",
+      "stock_exit": "205.7870635986328",
+      "benchmark_entry": "302.0300598144531",
+      "benchmark_exit": "317.6372985839844"
+    },
+    "stock_gross_return": "0.067643419603720303052377674796523041563",
+    "benchmark_gross_return": "0.051674455115889242799019374908263661088",
+    "stock_minus_benchmark": "0.015968964487831060253358299888259380475"
+  },
+  {
+    "input_row": 160,
+    "symbol": "T",
+    "accession": "0000732717-20-000056",
+    "selected": false,
+    "entry_session": "2020-11-06",
+    "exit_session": "2020-11-13",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "14.9",
+      "stock_exit": "15.7",
+      "benchmark_entry": "323.75811767578125",
+      "benchmark_exit": "331.0994567871094"
+    },
+    "stock_gross_return": "0.053691275167785234899328859060402684564",
+    "benchmark_gross_return": "0.022675382362705524886354917274222243085",
+    "stock_minus_benchmark": "0.031015892805079710012973941786180441479"
+  },
+  {
+    "input_row": 161,
+    "symbol": "BANF",
+    "accession": "0001564590-20-052332",
+    "selected": false,
+    "entry_session": "2020-11-10",
+    "exit_session": "2020-11-17",
+    "entry_year": "2020",
+    "adjusted_endpoints": {
+      "stock_entry": "49.404319763183594",
+      "stock_exit": "50.42946243286133",
+      "benchmark_entry": "327.3455810546875",
+      "benchmark_exit": "333.4294128417969"
+    },
+    "stock_gross_return": "0.020750061423610141190458591108570364660",
+    "benchmark_gross_return": "0.018585348754388756327809920514316932147",
+    "stock_minus_benchmark": "0.002164712669221384862648670594253432513"
+  },
+  {
+    "input_row": 162,
+    "symbol": "MSFT",
+    "accession": "0001564590-21-002316",
+    "selected": false,
+    "entry_session": "2021-01-27",
+    "exit_session": "2021-02-03",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "222.06790161132812",
+      "stock_exit": "231.6982421875",
+      "benchmark_entry": "347.65533447265625",
+      "benchmark_exit": "354.5636901855469"
+    },
+    "stock_gross_return": "0.043366648247198177715648524771109052681",
+    "benchmark_gross_return": "0.019871277750907070436456556679836762211",
+    "stock_minus_benchmark": "0.023495370496291107279191968091272290470"
+  },
+  {
+    "input_row": 163,
+    "symbol": "AAPL",
+    "accession": "0000320193-21-000010",
+    "selected": true,
+    "entry_session": "2021-01-29",
+    "exit_session": "2021-02-05",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "128.10806274414062",
+      "stock_exit": "132.96632385253906",
+      "benchmark_entry": "343.6254577636719",
+      "benchmark_exit": "360.00494384765625"
+    },
+    "stock_gross_return": "0.037923148663183154245411318658961441303",
+    "benchmark_gross_return": "0.047666683925523721951414795098523086836",
+    "stock_minus_benchmark": "-0.009743535262340567706003476439561645533"
+  },
+  {
+    "input_row": 164,
+    "symbol": "HRL",
+    "accession": "0000048465-21-000019",
+    "selected": false,
+    "entry_session": "2021-03-03",
+    "exit_session": "2021-03-10",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "39.16438293457031",
+      "stock_exit": "40.257598876953125",
+      "benchmark_entry": "354.16436767578125",
+      "benchmark_exit": "361.7412414550781"
+    },
+    "stock_gross_return": "0.027913523984513894196017562639458110653",
+    "benchmark_gross_return": "0.021393664837093598505091399088240864615",
+    "stock_minus_benchmark": "0.006519859147420295690926163551217246038"
+  },
+  {
+    "input_row": 165,
+    "symbol": "MSFT",
+    "accession": "0001564590-21-020891",
+    "selected": false,
+    "entry_session": "2021-04-28",
+    "exit_session": "2021-05-05",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "243.2796173095703",
+      "stock_exit": "235.54806518554688",
+      "benchmark_entry": "388.84271240234375",
+      "benchmark_exit": "387.3056335449219"
+    },
+    "stock_gross_return": "-0.0317805174536472394961029060441984111847",
+    "benchmark_gross_return": "-0.0039529578628990791264957503760517322866",
+    "stock_minus_benchmark": "-0.0278275595907481603696071556681466788981"
+  },
+  {
+    "input_row": 166,
+    "symbol": "AAPL",
+    "accession": "0000320193-21-000056",
+    "selected": true,
+    "entry_session": "2021-04-30",
+    "exit_session": "2021-05-07",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "127.8133544921875",
+      "stock_exit": "126.81310272216797",
+      "benchmark_entry": "388.7495422363281",
+      "benchmark_exit": "393.23980712890625"
+    },
+    "stock_gross_return": "-0.0078258783989639335770027515479247827461",
+    "benchmark_gross_return": "0.011550534225062660504963293466509046808",
+    "stock_minus_benchmark": "-0.0193764126240265940819660450144338295541"
+  },
+  {
+    "input_row": 168,
+    "symbol": "BANF",
+    "accession": "0001564590-21-023832",
+    "selected": true,
+    "entry_session": "2021-05-06",
+    "exit_session": "2021-05-13",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "66.33431243896484",
+      "stock_exit": "66.6342544555664",
+      "benchmark_entry": "390.3985290527344",
+      "benchmark_exit": "382.2098083496094"
+    },
+    "stock_gross_return": "0.004521672202113212318640255026117575997",
+    "benchmark_gross_return": "-0.0209752857496521993584754031133924039505",
+    "stock_minus_benchmark": "0.0254969579517654116771156581395099799475"
+  },
+  {
+    "input_row": 169,
+    "symbol": "T",
+    "accession": "0000732717-21-000030",
+    "selected": true,
+    "entry_session": "2021-05-07",
+    "exit_session": "2021-05-14",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "18.08",
+      "stock_exit": "18.12",
+      "benchmark_entry": "393.23980712890625",
+      "benchmark_exit": "388.07879638671875"
+    },
+    "stock_gross_return": "0.002212389380530973451327433628318584071",
+    "benchmark_gross_return": "-0.0131243344356938189224287856863144690363",
+    "stock_minus_benchmark": "0.0153367238162247923737562193146330531073"
+  },
+  {
+    "input_row": 170,
+    "symbol": "HRL",
+    "accession": "0000048465-21-000038",
+    "selected": false,
+    "entry_session": "2021-06-02",
+    "exit_session": "2021-06-09",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "41.272891998291016",
+      "stock_exit": "40.50112533569336",
+      "benchmark_entry": "391.5722961425781",
+      "benchmark_exit": "392.8019104003906"
+    },
+    "stock_gross_return": "-0.0186991176346356463911399803413852358144",
+    "benchmark_gross_return": "0.003140197276277115985557961253978801515",
+    "stock_minus_benchmark": "-0.0218393149109127623766979415953640373294"
+  },
+  {
+    "input_row": 171,
+    "symbol": "AAPL",
+    "accession": "0000320193-21-000065",
+    "selected": true,
+    "entry_session": "2021-07-29",
+    "exit_session": "2021-08-05",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "141.84054565429688",
+      "stock_exit": "143.22348022460938",
+      "benchmark_entry": "411.8450012207031",
+      "benchmark_exit": "412.8825378417969"
+    },
+    "stock_gross_return": "0.009749924211960374291271007296180148572",
+    "benchmark_gross_return": "0.002519240534712222485719463399561838308",
+    "stock_minus_benchmark": "0.007230683677248151805551543896618310264"
+  },
+  {
+    "input_row": 173,
+    "symbol": "T",
+    "accession": "0000732717-21-000067",
+    "selected": false,
+    "entry_session": "2021-08-06",
+    "exit_session": "2021-08-13",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "16.0",
+      "stock_exit": "16.13",
+      "benchmark_entry": "413.5647888183594",
+      "benchmark_exit": "416.7705383300781"
+    },
+    "stock_gross_return": "0.008125",
+    "benchmark_gross_return": "0.007751504959786815922084346296166315822",
+    "stock_minus_benchmark": "0.000373495040213184077915653703833684178"
+  },
+  {
+    "input_row": 174,
+    "symbol": "BANF",
+    "accession": "0001564590-21-042459",
+    "selected": true,
+    "entry_session": "2021-08-10",
+    "exit_session": "2021-08-17",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "53.15027618408203",
+      "stock_exit": "52.23641586303711",
+      "benchmark_entry": "413.7423095703125",
+      "benchmark_exit": "415.013427734375"
+    },
+    "stock_gross_return": "-0.0171938959993327733770177304672626879603",
+    "benchmark_gross_return": "0.003072246020433843741784994705516677549",
+    "stock_minus_benchmark": "-0.0202661420197666171188027251727793655093"
+  },
+  {
+    "input_row": 175,
+    "symbol": "HRL",
+    "accession": "0000048465-21-000054",
+    "selected": false,
+    "entry_session": "2021-09-07",
+    "exit_session": "2021-09-14",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "35.60017776489258",
+      "stock_exit": "35.7603874206543",
+      "benchmark_entry": "421.9483642578125",
+      "benchmark_exit": "415.1349792480469"
+    },
+    "stock_gross_return": "0.004500248757738286443119850717119584427",
+    "benchmark_gross_return": "-0.0161474379021471657272563422853838206955",
+    "stock_minus_benchmark": "0.0206476866598854521703761930025034051225"
+  },
+  {
+    "input_row": 176,
+    "symbol": "MSFT",
+    "accession": "0001564590-21-051992",
+    "selected": true,
+    "entry_session": "2021-10-27",
+    "exit_session": "2021-11-03",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "310.1551208496094",
+      "stock_exit": "320.54888916015625",
+      "benchmark_entry": "425.6254577636719",
+      "benchmark_exit": "435.7331237792969"
+    },
+    "stock_gross_return": "0.033511516050662490933911622916732460843",
+    "benchmark_gross_return": "0.023747794760052325664300658502493552565",
+    "stock_minus_benchmark": "0.009763721290610165269610964414238908278"
+  },
+  {
+    "input_row": 179,
+    "symbol": "BANF",
+    "accession": "0000950170-21-003174",
+    "selected": true,
+    "entry_session": "2021-11-08",
+    "exit_session": "2021-11-15",
+    "entry_year": "2021",
+    "adjusted_endpoints": {
+      "stock_entry": "62.50735092163086",
+      "stock_exit": "62.08445358276367",
+      "benchmark_entry": "439.68048095703125",
+      "benchmark_exit": "438.2740478515625"
+    },
+    "stock_gross_return": "-0.0067655616920544473468928777953056514096",
+    "benchmark_gross_return": "-0.0031987617517326105591204550423565585860",
+    "stock_minus_benchmark": "-0.0035667999403218367877724227529490928236"
+  },
+  {
+    "input_row": 180,
+    "symbol": "MSFT",
+    "accession": "0001564590-22-002324",
+    "selected": true,
+    "entry_session": "2022-01-26",
+    "exit_session": "2022-02-02",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "285.2817077636719",
+      "stock_exit": "301.3865051269531",
+      "benchmark_entry": "407.7755126953125",
+      "benchmark_exit": "430.3293151855469"
+    },
+    "stock_gross_return": "0.056452260782953723522785294976098346515",
+    "benchmark_gross_return": "0.055309359655165146024678363728511056888",
+    "stock_minus_benchmark": "0.001142901127788577498106931247587289627"
+  },
+  {
+    "input_row": 181,
+    "symbol": "AAPL",
+    "accession": "0000320193-22-000007",
+    "selected": false,
+    "entry_session": "2022-01-31",
+    "exit_session": "2022-02-07",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "170.72415161132812",
+      "stock_exit": "167.89019775390625",
+      "benchmark_entry": "423.32891845703125",
+      "benchmark_exit": "420.83551025390625"
+    },
+    "stock_gross_return": "-0.0165996072065636649947258078235484210301",
+    "benchmark_gross_return": "-0.0058900020632020347699284626866812162540",
+    "stock_minus_benchmark": "-0.0107096051433616302247973451368672047761"
+  },
+  {
+    "input_row": 182,
+    "symbol": "HRL",
+    "accession": "0000048465-22-000013",
+    "selected": false,
+    "entry_session": "2022-03-09",
+    "exit_session": "2022-03-16",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "42.54971694946289",
+      "stock_exit": "42.08935546875",
+      "benchmark_entry": "402.15826416015625",
+      "benchmark_exit": "409.8831481933594"
+    },
+    "stock_gross_return": "-0.0108193782172433745469196026908680996009",
+    "benchmark_gross_return": "0.019208567177738707149731194341566143736",
+    "stock_minus_benchmark": "-0.0300279453949820816966507970324342433369"
+  },
+  {
+    "input_row": 183,
+    "symbol": "MSFT",
+    "accession": "0001564590-22-015675",
+    "selected": false,
+    "entry_session": "2022-04-27",
+    "exit_session": "2022-05-04",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "272.87432861328125",
+      "stock_exit": "279.3873291015625",
+      "benchmark_entry": "393.83697509765625",
+      "benchmark_exit": "404.9649353027344"
+    },
+    "stock_gross_return": "0.023868131976282401276020947607941624413",
+    "benchmark_gross_return": "0.028255244958447207082388950233432130335",
+    "stock_minus_benchmark": "-0.004387112982164805806368002625490505922"
+  },
+  {
+    "input_row": 185,
+    "symbol": "AAPL",
+    "accession": "0000320193-22-000059",
+    "selected": false,
+    "entry_session": "2022-05-02",
+    "exit_session": "2022-05-09",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "154.49110412597656",
+      "stock_exit": "148.93910217285156",
+      "benchmark_entry": "391.20367431640625",
+      "benchmark_exit": "375.80963134765625"
+    },
+    "stock_gross_return": "-0.0359373569406153987813379065405530297487",
+    "benchmark_gross_return": "-0.0393504559885581999540992476613941128775",
+    "stock_minus_benchmark": "0.0034130990479428011727613411208410831288"
+  },
+  {
+    "input_row": 187,
+    "symbol": "BANF",
+    "accession": "0000950170-22-008087",
+    "selected": false,
+    "entry_session": "2022-05-09",
+    "exit_session": "2022-05-16",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "77.85857391357422",
+      "stock_exit": "75.40865325927734",
+      "benchmark_entry": "375.80963134765625",
+      "benchmark_exit": "377.621826171875"
+    },
+    "stock_gross_return": "-0.0314662924216461871784199465420589779548",
+    "benchmark_gross_return": "0.004822108517336837053464484637253715733",
+    "stock_minus_benchmark": "-0.0362884009389830242318844311793126936878"
+  },
+  {
+    "input_row": 188,
+    "symbol": "HRL",
+    "accession": "0000048465-22-000034",
+    "selected": true,
+    "entry_session": "2022-06-03",
+    "exit_session": "2022-06-10",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "38.65609359741211",
+      "stock_exit": "39.27295684814453",
+      "benchmark_entry": "387.4849853515625",
+      "benchmark_exit": "367.90960693359375"
+    },
+    "stock_gross_return": "0.015957723435709935079990580938943008574",
+    "benchmark_gross_return": "-0.0505190630811362713461994652640585556963",
+    "stock_minus_benchmark": "0.0664767865168462064261900462030015642703"
+  },
+  {
+    "input_row": 190,
+    "symbol": "AAPL",
+    "accession": "0000320193-22-000070",
+    "selected": false,
+    "entry_session": "2022-08-01",
+    "exit_session": "2022-08-08",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "158.1951904296875",
+      "stock_exit": "161.71051025390625",
+      "benchmark_entry": "389.3768005371094",
+      "benchmark_exit": "391.481201171875"
+    },
+    "stock_gross_return": "0.022221407709491602588092766998344824393",
+    "benchmark_gross_return": "0.005404535226194198851549372154077047353",
+    "stock_minus_benchmark": "0.016816872483297403736543394844267777040"
+  },
+  {
+    "input_row": 192,
+    "symbol": "BANF",
+    "accession": "0000950170-22-015078",
+    "selected": false,
+    "entry_session": "2022-08-08",
+    "exit_session": "2022-08-15",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "103.23469543457031",
+      "stock_exit": "109.00981903076172",
+      "benchmark_entry": "391.481201171875",
+      "benchmark_exit": "406.5246887207031"
+    },
+    "stock_gross_return": "0.055941692585819247211955516845706332916",
+    "benchmark_gross_return": "0.038427100723601392198474967680215926716",
+    "stock_minus_benchmark": "0.017514591862217855013480549165490406200"
+  },
+  {
+    "input_row": 193,
+    "symbol": "HRL",
+    "accession": "0000048465-22-000044",
+    "selected": true,
+    "entry_session": "2022-09-02",
+    "exit_session": "2022-09-12",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "39.95904541015625",
+      "stock_exit": "40.553382873535156",
+      "benchmark_entry": "371.8119201660156",
+      "benchmark_exit": "389.5663757324219"
+    },
+    "stock_gross_return": "0.014873665205922194971963787386071860074",
+    "benchmark_gross_return": "0.047751173653816317279869595888674255298",
+    "stock_minus_benchmark": "-0.032877508447894122307905808502602395224"
+  },
+  {
+    "input_row": 194,
+    "symbol": "MSFT",
+    "accession": "0001564590-22-035087",
+    "selected": false,
+    "entry_session": "2022-10-26",
+    "exit_session": "2022-11-02",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "223.86343383789062",
+      "stock_exit": "213.005126953125",
+      "benchmark_entry": "363.61163330078125",
+      "benchmark_exit": "356.8061828613281"
+    },
+    "stock_gross_return": "-0.0485041558534682293528522639838030973205",
+    "benchmark_gross_return": "-0.0187162615719273465848347260799276464465",
+    "stock_minus_benchmark": "-0.0297878942815408827680175379038754508740"
+  },
+  {
+    "input_row": 197,
+    "symbol": "BANF",
+    "accession": "0000950170-22-022202",
+    "selected": false,
+    "entry_session": "2022-11-07",
+    "exit_session": "2022-11-14",
+    "entry_year": "2022",
+    "adjusted_endpoints": {
+      "stock_entry": "90.99053955078125",
+      "stock_exit": "92.87097930908203",
+      "benchmark_entry": "361.6413879394531",
+      "benchmark_exit": "376.0804138183594"
+    },
+    "stock_gross_return": "0.020666321659201925638034624618239066696",
+    "benchmark_gross_return": "0.039926364515899152559683501712795939744",
+    "stock_minus_benchmark": "-0.019260042856697226921648877094556873048"
+  },
+  {
+    "input_row": 198,
+    "symbol": "MSFT",
+    "accession": "0001564590-23-000733",
+    "selected": false,
+    "entry_session": "2023-01-25",
+    "exit_session": "2023-02-01",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "233.5101776123047",
+      "stock_exit": "245.2919464111328",
+      "benchmark_entry": "382.80828857421875",
+      "benchmark_exit": "392.8003234863281"
+    },
+    "stock_gross_return": "0.050455054761635647386336885084898074824",
+    "benchmark_gross_return": "0.026101929373904080003431160196118228979",
+    "stock_minus_benchmark": "0.024353125387731567382905724888779845845"
+  },
+  {
+    "input_row": 199,
+    "symbol": "AAPL",
+    "accession": "0000320193-23-000006",
+    "selected": false,
+    "entry_session": "2023-02-06",
+    "exit_session": "2023-02-13",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "149.0692138671875",
+      "stock_exit": "151.38282775878906",
+      "benchmark_entry": "391.8728942871094",
+      "benchmark_exit": "394.74139404296875"
+    },
+    "stock_gross_return": "0.015520400434008213007963641574712878989",
+    "benchmark_gross_return": "0.007319974914513266626395049224444937634",
+    "stock_minus_benchmark": "0.008200425519494946381568592350267941355"
+  },
+  {
+    "input_row": 200,
+    "symbol": "HRL",
+    "accession": "0000048465-23-000014",
+    "selected": false,
+    "entry_session": "2023-03-03",
+    "exit_session": "2023-03-10",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "35.40581512451172",
+      "stock_exit": "34.14225387573242",
+      "benchmark_entry": "386.47998046875",
+      "benchmark_exit": "369.0009765625"
+    },
+    "stock_gross_return": "-0.0356879581598596430057560005543538673141",
+    "benchmark_gross_return": "-0.0452261560483682475669952786505809773964",
+    "stock_minus_benchmark": "0.0095381978885086045612392780962271100823"
+  },
+  {
+    "input_row": 201,
+    "symbol": "MSFT",
+    "accession": "0000950170-23-014423",
+    "selected": false,
+    "entry_session": "2023-04-26",
+    "exit_session": "2023-05-03",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "287.3722839355469",
+      "stock_exit": "296.1578369140625",
+      "benchmark_entry": "388.1181945800781",
+      "benchmark_exit": "391.63116455078125"
+    },
+    "stock_gross_return": "0.030572026147400011124527888211412581569",
+    "benchmark_gross_return": "0.009051289065445603501817641322200618287",
+    "stock_minus_benchmark": "0.021520737081954407622710246889211963282"
+  },
+  {
+    "input_row": 204,
+    "symbol": "AAPL",
+    "accession": "0000320193-23-000064",
+    "selected": false,
+    "entry_session": "2023-05-08",
+    "exit_session": "2023-05-15",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "170.71771240234375",
+      "stock_exit": "169.54486083984375",
+      "benchmark_entry": "396.16156005859375",
+      "benchmark_exit": "396.4207458496094"
+    },
+    "stock_gross_return": "-0.0068701222971864174936423839638989660137",
+    "benchmark_gross_return": "0.000654242655388663830511017976304907120",
+    "stock_minus_benchmark": "-0.0075243649525750813241534019402038731337"
+  },
+  {
+    "input_row": 205,
+    "symbol": "BANF",
+    "accession": "0000950170-23-019484",
+    "selected": false,
+    "entry_session": "2023-05-10",
+    "exit_session": "2023-05-17",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "70.90917205810547",
+      "stock_exit": "76.60343933105469",
+      "benchmark_entry": "396.2671813964844",
+      "benchmark_exit": "398.55157470703125"
+    },
+    "stock_gross_return": "0.080303677333633751721157652896847048705",
+    "benchmark_gross_return": "0.005764780475881005325769345334746600114",
+    "stock_minus_benchmark": "0.074538896857752746395388307562100448591"
+  },
+  {
+    "input_row": 206,
+    "symbol": "HRL",
+    "accession": "0000048465-23-000046",
+    "selected": false,
+    "entry_session": "2023-06-02",
+    "exit_session": "2023-06-09",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "35.77283477783203",
+      "stock_exit": "35.86056900024414",
+      "benchmark_entry": "410.7318420410156",
+      "benchmark_exit": "412.6322326660156"
+    },
+    "stock_gross_return": "0.002452537601702110003829059795439596603",
+    "benchmark_gross_return": "0.004626840265309226671581461859314728740",
+    "stock_minus_benchmark": "-0.002174302663607116667752402063875132137"
+  },
+  {
+    "input_row": 209,
+    "symbol": "AAPL",
+    "accession": "0000320193-23-000077",
+    "selected": false,
+    "entry_session": "2023-08-07",
+    "exit_session": "2023-08-14",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "176.22537231445312",
+      "stock_exit": "177.06520080566406",
+      "benchmark_entry": "434.21337890625",
+      "benchmark_exit": "431.7085266113281"
+    },
+    "stock_gross_return": "0.004765650258989757770134612745416296821",
+    "benchmark_gross_return": "-0.0057687128416711379796214643712982235971",
+    "stock_minus_benchmark": "0.0105343631006608957497560771167145204181"
+  },
+  {
+    "input_row": 210,
+    "symbol": "BANF",
+    "accession": "0000950170-23-038417",
+    "selected": false,
+    "entry_session": "2023-08-07",
+    "exit_session": "2023-08-14",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "95.62512969970703",
+      "stock_exit": "92.50434875488281",
+      "benchmark_entry": "434.21337890625",
+      "benchmark_exit": "431.7085266113281"
+    },
+    "stock_gross_return": "-0.0326355734588225216698057062522719169474",
+    "benchmark_gross_return": "-0.0057687128416711379796214643712982235971",
+    "stock_minus_benchmark": "-0.0268668606171513836901842418809736933503"
+  },
+  {
+    "input_row": 211,
+    "symbol": "HRL",
+    "accession": "0000048465-23-000074",
+    "selected": false,
+    "entry_session": "2023-09-01",
+    "exit_session": "2023-09-11",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "33.927982330322266",
+      "stock_exit": "33.00910186767578",
+      "benchmark_entry": "434.6758117675781",
+      "benchmark_exit": "432.0361022949219"
+    },
+    "stock_gross_return": "-0.0270832628271342885134587589658745763554",
+    "benchmark_gross_return": "-0.0060728234725599527260030334434339411522",
+    "stock_minus_benchmark": "-0.0210104393545743357874557255224406352032"
+  },
+  {
+    "input_row": 212,
+    "symbol": "MSFT",
+    "accession": "0000950170-23-054855",
+    "selected": true,
+    "entry_session": "2023-10-25",
+    "exit_session": "2023-11-01",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "332.87359619140625",
+      "stock_exit": "338.14996337890625",
+      "benchmark_entry": "403.6860046386719",
+      "benchmark_exit": "408.62640380859375"
+    },
+    "stock_gross_return": "0.015850963392320328519504103651746735900",
+    "benchmark_gross_return": "0.012238222561973293341429912423646000656",
+    "stock_minus_benchmark": "0.003612740830347035178074191228100735244"
+  },
+  {
+    "input_row": 215,
+    "symbol": "BANF",
+    "accession": "0000950170-23-059271",
+    "selected": false,
+    "entry_session": "2023-11-07",
+    "exit_session": "2023-11-14",
+    "entry_year": "2023",
+    "adjusted_endpoints": {
+      "stock_entry": "79.73441314697266",
+      "stock_exit": "84.32933807373047",
+      "benchmark_entry": "422.42254638671875",
+      "benchmark_exit": "433.8307800292969"
+    },
+    "stock_gross_return": "0.057627876664597601997172320122984684582",
+    "benchmark_gross_return": "0.027006687356441807023898814198181151171",
+    "stock_minus_benchmark": "0.030621189308155794973273505924803533411"
+  },
+  {
+    "input_row": 216,
+    "symbol": "MSFT",
+    "accession": "0000950170-24-008814",
+    "selected": true,
+    "entry_session": "2024-01-31",
+    "exit_session": "2024-02-07",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "389.2696228027344",
+      "stock_exit": "405.3953552246094",
+      "benchmark_entry": "468.7396545410156",
+      "benchmark_exit": "483.5139465332031"
+    },
+    "stock_gross_return": "0.041425612165084991075999757154443406685",
+    "benchmark_gross_return": "0.031519185221600921128436137590242036489",
+    "stock_minus_benchmark": "0.009906426943484069947563619564201370196"
+  },
+  {
+    "input_row": 217,
+    "symbol": "AAPL",
+    "accession": "0000320193-24-000006",
+    "selected": false,
+    "entry_session": "2024-02-05",
+    "exit_session": "2024-02-12",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "185.41940307617188",
+      "stock_exit": "185.1317596435547",
+      "benchmark_entry": "478.1264343261719",
+      "benchmark_exit": "486.3096008300781"
+    },
+    "stock_gross_return": "-0.0015513124724008177963434689459929975325",
+    "benchmark_gross_return": "0.017115068141837449015729194682815798226",
+    "stock_minus_benchmark": "-0.0186663806142382668120726636288087957585"
+  },
+  {
+    "input_row": 218,
+    "symbol": "HRL",
+    "accession": "0000048465-24-000011",
+    "selected": false,
+    "entry_session": "2024-03-01",
+    "exit_session": "2024-03-08",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "30.001300811767578",
+      "stock_exit": "30.666603088378906",
+      "benchmark_entry": "497.8320007324219",
+      "benchmark_exit": "496.7351379394531"
+    },
+    "stock_gross_return": "0.022175781003148129074941182068897552422",
+    "benchmark_gross_return": "-0.0022032790004561181447874565752508797325",
+    "stock_minus_benchmark": "0.0243790600036042472197286386441484321545"
+  },
+  {
+    "input_row": 220,
+    "symbol": "MSFT",
+    "accession": "0000950170-24-048288",
+    "selected": false,
+    "entry_session": "2024-04-26",
+    "exit_session": "2024-05-03",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "398.5626525878906",
+      "stock_exit": "398.8961486816406",
+      "benchmark_entry": "494.9093933105469",
+      "benchmark_exit": "497.85980224609375"
+    },
+    "stock_gross_return": "0.000836746974621406119712483204368472592",
+    "benchmark_gross_return": "0.005961513310165686271828968180264375385",
+    "stock_minus_benchmark": "-0.005124766335544280152116484975895902793"
+  },
+  {
+    "input_row": 222,
+    "symbol": "AAPL",
+    "accession": "0000320193-24-000069",
+    "selected": false,
+    "entry_session": "2024-05-06",
+    "exit_session": "2024-05-13",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "179.7504425048828",
+      "stock_exit": "184.52108764648438",
+      "benchmark_entry": "503.0010986328125",
+      "benchmark_exit": "507.2270202636719"
+    },
+    "stock_gross_return": "0.026540380513789214343810419405237583680",
+    "benchmark_gross_return": "0.008401416303753036231505963352290997516",
+    "stock_minus_benchmark": "0.018138964210036178112304456052946586164"
+  },
+  {
+    "input_row": 223,
+    "symbol": "BANF",
+    "accession": "0000950170-24-054176",
+    "selected": false,
+    "entry_session": "2024-05-08",
+    "exit_session": "2024-05-15",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "88.4426040649414",
+      "stock_exit": "87.46109008789062",
+      "benchmark_entry": "503.6047668457031",
+      "benchmark_exit": "515.8641357421875"
+    },
+    "stock_gross_return": "-0.0110977507664753576045094422102554839933",
+    "benchmark_gross_return": "0.024343234424229518080856251164854579108",
+    "stock_minus_benchmark": "-0.0354409851907048756853656933751100631013"
+  },
+  {
+    "input_row": 224,
+    "symbol": "HRL",
+    "accession": "0000048465-24-000032",
+    "selected": false,
+    "entry_session": "2024-05-31",
+    "exit_session": "2024-06-07",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "28.079944610595703",
+      "stock_exit": "27.771772384643555",
+      "benchmark_entry": "513.5174560546875",
+      "benchmark_exit": "519.9829711914062"
+    },
+    "stock_gross_return": "-0.0109748160199668666359401938166561974113",
+    "benchmark_gross_return": "0.012590643337410031865567952343087929237",
+    "stock_minus_benchmark": "-0.0235654593573768985015081461597441266483"
+  },
+  {
+    "input_row": 227,
+    "symbol": "AAPL",
+    "accession": "0000320193-24-000081",
+    "selected": false,
+    "entry_session": "2024-08-05",
+    "exit_session": "2024-08-12",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "207.29397583007812",
+      "stock_exit": "215.7254180908203",
+      "benchmark_entry": "505.4151611328125",
+      "benchmark_exit": "520.9376831054688"
+    },
+    "stock_gross_return": "0.040673841229489252348251186994499330778",
+    "benchmark_gross_return": "0.030712418554807276370345484367184407350",
+    "stock_minus_benchmark": "0.009961422674681975977905702627314923428"
+  },
+  {
+    "input_row": 228,
+    "symbol": "BANF",
+    "accession": "0000950170-24-091314",
+    "selected": false,
+    "entry_session": "2024-08-07",
+    "exit_session": "2024-08-14",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "93.97130584716797",
+      "stock_exit": "96.06986236572266",
+      "benchmark_entry": "506.6654968261719",
+      "benchmark_exit": "531.1752319335938"
+    },
+    "stock_gross_return": "0.022331886309717963464755987149784754197",
+    "benchmark_gross_return": "0.048374588877582013193353906132620753788",
+    "stock_minus_benchmark": "-0.026042702567864049728597918982835999591"
+  },
+  {
+    "input_row": 229,
+    "symbol": "HRL",
+    "accession": "0000048465-24-000041",
+    "selected": false,
+    "entry_session": "2024-09-05",
+    "exit_session": "2024-09-12",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "29.372568130493164",
+      "stock_exit": "28.924341201782227",
+      "benchmark_entry": "536.8997192382812",
+      "benchmark_exit": "546.1605224609375"
+    },
+    "stock_gross_return": "-0.0152600523971756395248371247172037191637",
+    "benchmark_gross_return": "0.017248664677632784311842873202980584838",
+    "stock_minus_benchmark": "-0.0325087170748084238366799979201843040017"
+  },
+  {
+    "input_row": 231,
+    "symbol": "T",
+    "accession": "0000732717-24-000059",
+    "selected": false,
+    "entry_session": "2024-10-30",
+    "exit_session": "2024-11-06",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "20.34",
+      "stock_exit": "20.62",
+      "benchmark_entry": "568.3346557617188",
+      "benchmark_exit": "579.1426391601562"
+    },
+    "stock_gross_return": "0.013765978367748279252704031465093411996",
+    "benchmark_gross_return": "0.019016935337071505582161441930305455413",
+    "stock_minus_benchmark": "-0.005250956969323226329457410465212043417"
+  },
+  {
+    "input_row": 232,
+    "symbol": "MSFT",
+    "accession": "0000950170-24-118967",
+    "selected": false,
+    "entry_session": "2024-10-31",
+    "exit_session": "2024-11-07",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "400.03076171875",
+      "stock_exit": "418.81402587890625",
+      "benchmark_entry": "557.1934814453125",
+      "benchmark_exit": "583.6206665039062"
+    },
+    "stock_gross_return": "0.046954549393784413552180435342496853880",
+    "benchmark_gross_return": "0.047429099475542731878798447769747984951",
+    "stock_minus_benchmark": "-0.000474550081758318326618012427251131071"
+  },
+  {
+    "input_row": 233,
+    "symbol": "BANF",
+    "accession": "0000950170-24-121319",
+    "selected": false,
+    "entry_session": "2024-11-06",
+    "exit_session": "2024-11-13",
+    "entry_year": "2024",
+    "adjusted_endpoints": {
+      "stock_entry": "123.06105041503906",
+      "stock_exit": "119.05906677246094",
+      "benchmark_entry": "579.1426391601562",
+      "benchmark_exit": "585.1687622070312"
+    },
+    "stock_gross_return": "-0.0325203110901533885354883804942028848183",
+    "benchmark_gross_return": "0.010405248447280247567176098071034675453",
+    "stock_minus_benchmark": "-0.0429255595374336361026644785652375602713"
+  },
+  {
+    "input_row": 234,
+    "symbol": "MSFT",
+    "accession": "0000950170-25-010491",
+    "selected": false,
+    "entry_session": "2025-01-30",
+    "exit_session": "2025-02-06",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "409.35406494140625",
+      "stock_exit": "410.1728515625",
+      "benchmark_entry": "594.856201171875",
+      "benchmark_exit": "596.1146240234375"
+    },
+    "stock_gross_return": "0.002000191744061339014683032603796383313",
+    "benchmark_gross_return": "0.002115507662328121415241587322303717868",
+    "stock_minus_benchmark": "-0.000115315918266782400558554718507334555"
+  },
+  {
+    "input_row": 235,
+    "symbol": "AAPL",
+    "accession": "0000320193-25-000008",
+    "selected": false,
+    "entry_session": "2025-02-03",
+    "exit_session": "2025-02-10",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "226.36724853515625",
+      "stock_exit": "226.2583465576172",
+      "benchmark_entry": "587.70849609375",
+      "benchmark_exit": "594.6693725585938"
+    },
+    "stock_gross_return": "-0.0004810853966011644194444511851673896766",
+    "benchmark_gross_return": "0.011844097049999794288429887332205076822",
+    "stock_minus_benchmark": "-0.0123251824466009587078743385173724664986"
+  },
+  {
+    "input_row": 236,
+    "symbol": "HRL",
+    "accession": "0000048465-25-000008",
+    "selected": false,
+    "entry_session": "2025-02-28",
+    "exit_session": "2025-03-07",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "26.68627166748047",
+      "stock_exit": "27.907337188720703",
+      "benchmark_entry": "584.1788940429688",
+      "benchmark_exit": "566.2262573242188"
+    },
+    "stock_gross_return": "0.045756317572387114007565542607529094811",
+    "benchmark_gross_return": "-0.0307314024895762641378582489861627840169",
+    "stock_minus_benchmark": "0.0764877200619633781454237915936918788279"
+  },
+  {
+    "input_row": 237,
+    "symbol": "T",
+    "accession": "0000732717-25-000023",
+    "selected": false,
+    "entry_session": "2025-04-30",
+    "exit_session": "2025-05-07",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "26.19",
+      "stock_exit": "26.57",
+      "benchmark_entry": "546.84619140625",
+      "benchmark_exit": "553.3645629882812"
+    },
+    "stock_gross_return": "0.014509354715540282550591828942344406262",
+    "benchmark_gross_return": "0.011919935960912135192836051184839201351",
+    "stock_minus_benchmark": "0.002589418754628147357755777757505204911"
+  },
+  {
+    "input_row": 238,
+    "symbol": "MSFT",
+    "accession": "0000950170-25-061046",
+    "selected": false,
+    "entry_session": "2025-05-01",
+    "exit_session": "2025-05-08",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "420.4641418457031",
+      "stock_exit": "433.0859680175781",
+      "benchmark_entry": "550.7217407226562",
+      "benchmark_exit": "557.22021484375"
+    },
+    "stock_gross_return": "0.030018793318424777232902909495258449259",
+    "benchmark_gross_return": "0.011799922974833919762662399913991933922",
+    "stock_minus_benchmark": "0.018218870343590857470240509581266515337"
+  },
+  {
+    "input_row": 239,
+    "symbol": "AAPL",
+    "accession": "0000320193-25-000057",
+    "selected": false,
+    "entry_session": "2025-05-05",
+    "exit_session": "2025-05-12",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "197.6741485595703",
+      "stock_exit": "209.77613830566406",
+      "benchmark_entry": "555.6918334960938",
+      "benchmark_exit": "574.9015502929688"
+    },
+    "stock_gross_return": "0.061221914116133158451560057743681298277",
+    "benchmark_gross_return": "0.034569010445984956999739868300642182955",
+    "stock_minus_benchmark": "0.026652903670148201451820189443039115322"
+  },
+  {
+    "input_row": 241,
+    "symbol": "BANF",
+    "accession": "0000950170-25-067899",
+    "selected": false,
+    "entry_session": "2025-05-12",
+    "exit_session": "2025-05-19",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "124.76226043701172",
+      "stock_exit": "127.25924682617188",
+      "benchmark_entry": "574.9015502929688",
+      "benchmark_exit": "586.596923828125"
+    },
+    "stock_gross_return": "0.020013955986480420203544684270116519453",
+    "benchmark_gross_return": "0.020343263171226897197687954398922732467",
+    "stock_minus_benchmark": "-0.000329307184746476994143270128806213014"
+  },
+  {
+    "input_row": 242,
+    "symbol": "HRL",
+    "accession": "0000048465-25-000037",
+    "selected": false,
+    "entry_session": "2025-05-30",
+    "exit_session": "2025-06-06",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "28.87335205078125",
+      "stock_exit": "28.854528427124023",
+      "benchmark_entry": "581.2128295898438",
+      "benchmark_exit": "590.8274536132812"
+    },
+    "stock_gross_return": "-0.0006519375936718671968308526807325059559",
+    "benchmark_gross_return": "0.016542346510524115553057958551264518127",
+    "stock_minus_benchmark": "-0.0171942841041959827498888112319970240829"
+  },
+  {
+    "input_row": 243,
+    "symbol": "T",
+    "accession": "0000732717-25-000080",
+    "selected": false,
+    "entry_session": "2025-07-25",
+    "exit_session": "2025-08-01",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "26.74",
+      "stock_exit": "26.5",
+      "benchmark_entry": "630.1181030273438",
+      "benchmark_exit": "614.9065551757812"
+    },
+    "stock_gross_return": "-0.0089753178758414360508601346297681376215",
+    "benchmark_gross_return": "-0.0241407884942205812289949893266129616512",
+    "stock_minus_benchmark": "0.0151654706183791451781348546968448240297"
+  },
+  {
+    "input_row": 245,
+    "symbol": "AAPL",
+    "accession": "0000320193-25-000073",
+    "selected": false,
+    "entry_session": "2025-08-04",
+    "exit_session": "2025-08-11",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "202.37193298339844",
+      "stock_exit": "226.34388732910156",
+      "benchmark_entry": "624.2531127929688",
+      "benchmark_exit": "628.9510498046875"
+    },
+    "stock_gross_return": "0.118454935881200762782297026017812811104",
+    "benchmark_gross_return": "0.007525692568355286941528919667316199789",
+    "stock_minus_benchmark": "0.110929243312845475840768106350496611315"
+  },
+  {
+    "input_row": 246,
+    "symbol": "BANF",
+    "accession": "0000950170-25-102920",
+    "selected": false,
+    "entry_session": "2025-08-06",
+    "exit_session": "2025-08-13",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "120.22039794921875",
+      "stock_exit": "124.50556945800781",
+      "benchmark_entry": "625.845458984375",
+      "benchmark_exit": "637.82275390625"
+    },
+    "stock_gross_return": "0.035644296491175498613741952417917328149",
+    "benchmark_gross_return": "0.019137783537347720641959724013960802243",
+    "stock_minus_benchmark": "0.016506512953827777971782228403956525906"
+  },
+  {
+    "input_row": 247,
+    "symbol": "HRL",
+    "accession": "0000048465-25-000044",
+    "selected": false,
+    "entry_session": "2025-08-29",
+    "exit_session": "2025-09-08",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "24.17167091369629",
+      "stock_exit": "24.228679656982422",
+      "benchmark_entry": "637.98095703125",
+      "benchmark_exit": "641.7196044921875"
+    },
+    "stock_gross_return": "0.002358494102028725735105262582469428836",
+    "benchmark_gross_return": "0.005860123910805649842911100311116383549",
+    "stock_minus_benchmark": "-0.003501629808776924107805837728646954713"
+  },
+  {
+    "input_row": 249,
+    "symbol": "MSFT",
+    "accession": "0001193125-25-256321",
+    "selected": false,
+    "entry_session": "2025-10-30",
+    "exit_session": "2025-11-06",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "521.469482421875",
+      "stock_exit": "493.04339599609375",
+      "benchmark_entry": "674.2439575195312",
+      "benchmark_exit": "664.8021850585938"
+    },
+    "stock_gross_return": "-0.0545115052442977070038048839409739697622",
+    "benchmark_gross_return": "-0.0140034958498888659626684909239396916213",
+    "stock_minus_benchmark": "-0.0405080093944088410411363930170342781409"
+  },
+  {
+    "input_row": 250,
+    "symbol": "T",
+    "accession": "0000732717-25-000171",
+    "selected": true,
+    "entry_session": "2025-11-03",
+    "exit_session": "2025-11-10",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "23.68",
+      "stock_exit": "23.97",
+      "benchmark_entry": "677.7251586914062",
+      "benchmark_exit": "675.8407592773438"
+    },
+    "stock_gross_return": "0.012246621621621621621621621621621621622",
+    "benchmark_gross_return": "-0.0027804772921532311793655513265649579832",
+    "stock_minus_benchmark": "0.0150270989137748528009871729481865796052"
+  },
+  {
+    "input_row": 251,
+    "symbol": "BANF",
+    "accession": "0001193125-25-271672",
+    "selected": false,
+    "entry_session": "2025-11-10",
+    "exit_session": "2025-11-17",
+    "entry_year": "2025",
+    "adjusted_endpoints": {
+      "stock_entry": "111.22174835205078",
+      "stock_exit": "105.51908111572266",
+      "benchmark_entry": "675.8407592773438",
+      "benchmark_exit": "660.2003173828125"
+    },
+    "stock_gross_return": "-0.0512729508466045477144560668618382475481",
+    "benchmark_gross_return": "-0.0231421998153161910183947774914127700759",
+    "stock_minus_benchmark": "-0.0281307510312883566960612893704254774722"
+  }
+]

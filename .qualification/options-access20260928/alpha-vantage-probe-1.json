@@ -1,0 +1,28 @@
+{
+  "request": {
+    "symbol": "SPY",
+    "date": "2017-01-17",
+    "expiration": "2017-02-17",
+    "datatype": "json",
+    "return_full_data": true
+  },
+  "started_at": "2026-09-28T23:49:05.970Z",
+  "finished_at": "2026-09-28T23:49:06.962Z",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"error\": {\n    \"type\": \"rate_limit\",\n    \"message\": \"Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints\",\n    \"detail\": \"Alpha Vantage rate limit reached. Wait and retry, or use a premium API key for higher limits.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "error": {
+        "type": "rate_limit",
+        "message": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints",
+        "detail": "Alpha Vantage rate limit reached. Wait and retry, or use a premium API key for higher limits."
+      }
+    },
+    "isError": false
+  },
+  "interpretation": "The connector returned isError=false but a structured premium-entitlement error. No historical option rows were supplied. Stopped after first probe; second declared request was not sent. No new subscription was purchased."
+}

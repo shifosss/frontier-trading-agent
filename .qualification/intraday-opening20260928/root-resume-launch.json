@@ -1,0 +1,26 @@
+{
+  "pid": 43960,
+  "launcher_pid": 6276,
+  "launcher_parent_pid": 40204,
+  "launched_at": "2026-09-28T21:41:41.064608+00:00",
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\intraday-opening20260928\\operational_runner.py"
+  ],
+  "creationflags": 134217728,
+  "creationflags_name": "CREATE_NO_WINDOW",
+  "close_fds": true,
+  "stdin": "DEVNULL",
+  "stdout": "worker/stdout.log",
+  "stderr": "worker/stderr.log",
+  "launcher_job_membership_known": true,
+  "launcher_in_windows_job": true,
+  "source_request_sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+  "operational_amendment_sha256": "401ec21ecd12057b99bf25de561a68803e1852b61231e54540e87cd5f1d5642c",
+  "existing_launcher_sha256": "cadbd7712ccdbe57b5a6d128e61d36a7f98dfe0d127939fa201e8a0b098ed8d9",
+  "scope": "Resume same frozen DATA-only request and verified cache; not proof of activity after launcher exit"
+}

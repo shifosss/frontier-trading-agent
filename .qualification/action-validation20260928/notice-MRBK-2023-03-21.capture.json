@@ -1,0 +1,16 @@
+{
+  "symbol": "MRBK",
+  "effective_sessions": "2023-03-21",
+  "url": "https://investor.meridianbanker.com/documents/meridian-corporation-declares-two-for-one-stock-split/",
+  "method": "GET",
+  "started_at": "2026-09-28T19:13:59.320408+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://investor.meridianbanker.com/documents/meridian-corporation-declares-two-for-one-stock-split/",
+  "redirects": [],
+  "sha256": "3c03b1ce98f6d29e7d3d86ce65f80d095cd78ec8ec3afde4b2cee1befa80a4ec",
+  "raw_file": "notice-MRBK-2023-03-21.3c03b1ce98f6d29e7d3d86ce65f80d095cd78ec8ec3afde4b2cee1befa80a4ec.raw.html",
+  "bytes": 114603,
+  "captured_at": "2026-09-28T19:14:00.037586+00:00",
+  "text_file": "notice-MRBK-2023-03-21.text.txt"
+}

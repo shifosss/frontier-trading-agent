@@ -1,0 +1,54 @@
+{
+  "confirmed": true,
+  "workspace": ".qualification\\stateful-daily-agent\\cost-type-repro-8e8897f1185f4fbe81fbdcf7ead6a6f4",
+  "replay_id": "56cd88987f7b40bba63a444242e2a2c2",
+  "integer_and_float_specs_compare_equal": true,
+  "serialized_scope_differs": true,
+  "api_default_to_cli_equivalent_failure": "Resume cursor, market or policy differs from saved account",
+  "integer_resume_control_status": "complete",
+  "control_completed_trades": 18,
+  "attempts": [
+    {
+      "status": "paused",
+      "error": null,
+      "request": {
+        "candidate_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "chunk_sessions": 2,
+        "cost_profile": "proportional",
+        "end_session": null,
+        "max_chunks": 1,
+        "replay_id": null,
+        "round_trip_bps": 40,
+        "workspace": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\stateful-daily-agent\\cost-type-repro-8e8897f1185f4fbe81fbdcf7ead6a6f4"
+      }
+    },
+    {
+      "status": "failed",
+      "error": "ValueError: Resume cursor, market or policy differs from saved account",
+      "request": {
+        "candidate_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "chunk_sessions": 3,
+        "cost_profile": "proportional",
+        "end_session": null,
+        "max_chunks": null,
+        "replay_id": "56cd88987f7b40bba63a444242e2a2c2",
+        "round_trip_bps": 40.0,
+        "workspace": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\stateful-daily-agent\\cost-type-repro-8e8897f1185f4fbe81fbdcf7ead6a6f4"
+      }
+    },
+    {
+      "status": "complete",
+      "error": null,
+      "request": {
+        "candidate_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "chunk_sessions": 3,
+        "cost_profile": "proportional",
+        "end_session": null,
+        "max_chunks": null,
+        "replay_id": "56cd88987f7b40bba63a444242e2a2c2",
+        "round_trip_bps": 40,
+        "workspace": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\stateful-daily-agent\\cost-type-repro-8e8897f1185f4fbe81fbdcf7ead6a6f4"
+      }
+    }
+  ]
+}

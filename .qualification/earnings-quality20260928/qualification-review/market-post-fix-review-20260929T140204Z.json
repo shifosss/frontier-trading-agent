@@ -1,0 +1,69 @@
+{
+  "at": "2026-09-29T14:02:04.031421+00:00",
+  "status": "fix_verified_bounded_offline",
+  "resolved_finding": "Raw quote changes after initial hash verification could previously supply changed values and still produce terminal completion with the original hash.",
+  "repair_review": "Original raw quote JSON is now parsed from the same byte string whose SHA256 was compared with the frozen capture index. The initial definition identity and every source_inputs identity, including the cache and all original raw files, are rechecked before terminal completion.",
+  "verification": {
+    "passed": 14,
+    "failed": 0,
+    "original_tests": 7,
+    "independent_tests": 7,
+    "exit_code": 0,
+    "stdout": ".............. [100%]\n14 passed in 0.49s\n",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      ".qualification/earnings-quality20260928/model-inputs/test_prepare_market.py",
+      ".qualification/earnings-quality20260928/qualification-review/test_prepare_market_independent.py"
+    ]
+  },
+  "mutation_probes": [
+    {
+      "source": "raw original quote after verified read",
+      "mutation": "Change disk close from 5 to 999 inside the vendor_arrays boundary",
+      "verified_in_memory_price": 5.0,
+      "result": "ValueError; failure.json retained, no completion.json"
+    },
+    {
+      "source": "definition after initial identity binding",
+      "mutation": "Append whitespace during array extraction",
+      "result": "ValueError; failure.json retained, no completion.json"
+    },
+    {
+      "source": "cached price arrays after initial identity binding",
+      "mutation": "Append bytes during array extraction",
+      "result": "ValueError; failure.json retained, no completion.json"
+    }
+  ],
+  "retained_passing_checks": [
+    "All fixed 100 issuer columns and SPY remain present when histories are missing",
+    "Cached nominal prices stay separate from original vendor close/volume units",
+    "Missing future observations remain missing without membership filtering",
+    "Initial cache/raw changes and mixed source vintages are rejected"
+  ],
+  "current_files": {
+    ".qualification\\earnings-quality20260928\\model-inputs\\prepare_market.py": "de2d9776e8ec957f8c9ca823ca789f820b570563cb85ea9f9790529d7da5cc2d",
+    ".qualification\\earnings-quality20260928\\model-inputs\\test_prepare_market.py": "758b84128d6b88e15d25639d4626d2b43626afda0752e65a05d24d9dc9305a87",
+    ".qualification\\earnings-quality20260928\\qualification-review\\test_prepare_market_independent.py": "4a745334544660c76de8c8f75f24321bcaef9a1767737a9e4f4f19eae7fa97ae",
+    ".qualification\\earnings-quality20260928\\qualification-review\\test_prepare_market_independent.pre-fix.py.txt": "72ed821fef1d8824e7114f28f82dde4ccd8126f45188a9aa28e6bb20b2959197",
+    ".qualification\\earnings-quality20260928\\qualification-review\\market-pre-fix-review-20260929T135916Z.json": "c4bb1ec6b77ba8b2d74c452926e319cfcc0ce6c9cd7ec49e301dfed712ffbf74"
+  },
+  "remaining_material_findings": [],
+  "limitations": [
+    "All tests use temporary synthetic sources; the actual frozen market build has not been executed by this reviewer.",
+    "This review does not establish point-in-time prices, corporate-action completeness, economic performance or execution quality."
+  ],
+  "actual_market_builds": 0,
+  "actual_corpus_runs": 0,
+  "model_fits": 0,
+  "account_runs": 0,
+  "network_requests": 0,
+  "implementation_edits": 0
+}

@@ -1,0 +1,154 @@
+{
+  "readout_sha256": "7fc69189da20b0d4da7210aabc2b0615eafa1f5c22c8884350c13f31c9f02065",
+  "passed": true,
+  "pooled_mse_decimal_checks": 24,
+  "utility_independent_fee_expansion_decimal_checks": 99,
+  "selection": "First, middle, last saved row in every completed block; every horizon. Deterministic, no outcome filter.",
+  "scope": "Independent arithmetic of derived diagnostics; not independent market-source validation or profitability proof.",
+  "checks": [
+    {
+      "kind": "raw",
+      "head": "return_1",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "return_1",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "return_3",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "return_3",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "return_5",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "return_5",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "downside_1",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "downside_1",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "downside_3",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "downside_3",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "downside_5",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "raw",
+      "head": "downside_5",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "return_1",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "return_1",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "return_3",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "return_3",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "return_5",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "return_5",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "downside_1",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "downside_1",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "downside_3",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "downside_3",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "downside_5",
+      "metric": "forecast_mse",
+      "passed": true
+    },
+    {
+      "kind": "corrected",
+      "head": "downside_5",
+      "metric": "setup_baseline_mse",
+      "passed": true
+    }
+  ]
+}

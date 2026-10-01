@@ -1,0 +1,16 @@
+{
+  "retained_notice_payload_hashes": 25,
+  "all91_status_rows": 91,
+  "pending_unchanged": 67,
+  "primary_text_semantics_spot_checked": [
+    "DHR",
+    "IP",
+    "OLOX",
+    "ENOV",
+    "HON"
+  ],
+  "full_action_accounting_qualified": 0,
+  "notice_assessments_sha256": "af912c6741c8b16fc2148470eb2e5c0e23389c11a9e55366601619216f4d5317",
+  "status_ledger_sha256": "606ce301326954cea211a28962e784197bf2994e2a85a3e51aa7d10cc6d508af",
+  "limitation": "All retained notice hashes verified; five material distribution/composite classifications spot-checked in source text. This is not an independent full legal notice or entitlement audit."
+}

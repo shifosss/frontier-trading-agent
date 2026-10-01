@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": [
+    "ending_equity",
+    "total_return",
+    "max_drawdown",
+    "trade_metrics.fees",
+    "trade_metrics.completed_trades",
+    "trade_metrics.mean_holding_sessions",
+    "trade_metrics.net_pnl_total",
+    "trade_metrics.win_rate",
+    "trade_metrics.mean_exposure_fraction",
+    "trade_metrics.max_drawdown_duration_sessions",
+    "weekly:53 returns",
+    "monthly:13 returns"
+  ],
+  "summary_sha256": "9b0cd344fad9cf16f728faa2d1347cc10c1a0d05298e00c41e1faf74585fb188",
+  "independent_audit_sha256": "ed9a4a81308206ff6aacb5f9100e349ecfaa4612a95102e8c1c8baf14a5d4590",
+  "method": "Compare saved independently reconstructed arithmetic and period returns to published production summary; no rerun or model/feature rebuild"
+}

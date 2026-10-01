@@ -1,0 +1,53 @@
+{
+  "at": "2026-09-29T13:55:47.446405+00:00",
+  "status": "passed_no_material_findings",
+  "scope": "Independent synthetic review of causal five-input preparation and separately requested five-session labels against the frozen model specification.",
+  "verification": {
+    "passed": 32,
+    "failed": 0,
+    "original_tests": 17,
+    "independent_tests": 15,
+    "exit_code": 0,
+    "stdout": "................................ [100%]\n32 passed in 0.12s\n",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      ".qualification/earnings-quality20260928/model-inputs/test_event_inputs.py",
+      ".qualification/earnings-quality20260928/qualification-review/test_event_inputs_independent.py"
+    ]
+  },
+  "review_checks": [
+    "S and Q are copied as finite numeric values while original source fields and financial/industry qualification gates remain present; their upstream original-filing arithmetic is not reimplemented.",
+    "Independent Decimal arithmetic verifies unequal stock-versus-SPY five-session return, twenty-session activity median excluding current numerator, and exactly 200 SPY adjusted closes.",
+    "Guarded arrays verify that causal preparation accesses only p-5..p, p-20..p and p-199..p, never the decision-day entry or future labels.",
+    "Missing entry or any one of five future label closes preserves causal eligibility while the separate label result becomes unavailable.",
+    "Nonmonotonic synthetic future prices verify both target heads and the minimum of all five subsequent closes.",
+    "All original fields and all three synthetic qualified, excluded and unavailable events remain unchanged and present.",
+    "UTC-equivalent 09:00 ET decision timestamps, availability-floor equality and exact official early closes are accepted; naive, fractional-second and incorrect-offset decisions are unavailable."
+  ],
+  "current_files": {
+    ".qualification\\earnings-quality20260928\\cohort\\model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    ".qualification\\earnings-quality20260928\\model-inputs\\event_inputs.py": "4a1854ed9ea31b5a95e1a4c7a3c512be87ccba5bc0890de083c35801afb939ed",
+    ".qualification\\earnings-quality20260928\\model-inputs\\test_event_inputs.py": "5492ba8d2a50d401a8c5241a22c6df490dd0356261a4cb923eca52f507534ddb",
+    ".qualification\\earnings-quality20260928\\qualification-review\\test_event_inputs_independent.py": "27961fb7d2b5f20e17ccad168442269e947ba9e1c3d98d10f9517c57697d4560"
+  },
+  "material_findings": [],
+  "limitations": [
+    "Synthetic review does not establish the identity or completeness of the real 100-symbol market extraction or terminal financial corpus.",
+    "The adapter consumes frozen upstream S/Q and industry qualification; this review does not recalculate source financial facts.",
+    "Model fitting, calibration, persistent cash execution and economic outcomes are outside this review."
+  ],
+  "adapter_or_frozen_file_edits": 0,
+  "new_independent_tests": 15,
+  "source_or_real_corpus_runs": 0,
+  "real_model_fits": 0,
+  "account_runs": 0,
+  "network_requests": 0
+}

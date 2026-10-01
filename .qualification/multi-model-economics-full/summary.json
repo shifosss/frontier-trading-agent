@@ -1,0 +1,3169 @@
+{
+  "provenance": {
+    "source": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\artifacts\\historical-lab\\runs\\814780d48b4141b9a82a3fb917d1b85a\\summary.json",
+    "source_sha256": "107195ef703901cf3b5dc4971579c02e046cbe6a67c0beddaca965b7b236751d",
+    "script_sha256": "b096d86ec028647eab8758b4cfdcf97051db255082c24c12442465f7d9f6f883",
+    "run_id": "814780d48b4141b9a82a3fb917d1b85a",
+    "as_of": "2026-09-18T20:43:15.256344+00:00",
+    "model_signature": "sha256:1f9b0e8c467905c15b549eac09cf474ff2cb7b57f62aa81b9c6c9f72dbc99cff",
+    "generated_at": "2026-09-19T19:26:44.040563+00:00",
+    "operational_smoke_only": false
+  },
+  "integrity": {
+    "passed": true,
+    "errors": [],
+    "expected_accounts": 720,
+    "observed_accounts": 720
+  },
+  "global_counts": {
+    "attempted": 720,
+    "statuses": {
+      "complete": 569,
+      "incomplete": 151
+    },
+    "positive": 59,
+    "negative": 510,
+    "cash_only": 0,
+    "mean_exposure_below_10pct": 182,
+    "drawdown_above_30pct": 474,
+    "positive_and_drawdown_at_most_30pct": 37,
+    "total_return": {
+      "count": 569,
+      "positive": 59,
+      "zero": 0,
+      "minimum": -0.9985146095788793,
+      "median": -0.5841176661964809,
+      "maximum": 1.1602881767262292
+    },
+    "mean_exposure": {
+      "count": 569,
+      "positive": 569,
+      "zero": 0,
+      "minimum": 0.0018643857171432691,
+      "median": 0.21750314415745,
+      "maximum": 0.4577861503920654
+    }
+  },
+  "matched_groups": [
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.33820535131713136,
+          "median": -0.22082109030421593,
+          "maximum": -0.06496415989729853
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.014928176459861766,
+          "median": 0.03669152611388203,
+          "maximum": 0.04500118340410269
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 11,
+          "complete": 2
+        },
+        "positive": 0,
+        "negative": 2,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 2,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 2,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.8702582997081555,
+          "median": -0.8695331410319871,
+          "maximum": -0.8688079823558188
+        },
+        "mean_exposure": {
+          "count": 2,
+          "positive": 2,
+          "zero": 0,
+          "minimum": 0.2655005797654459,
+          "median": 0.26622141376757946,
+          "maximum": 0.26694224776971304
+        },
+        "matched_etf_comparisons": 2,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 3,
+        "negative": 3,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 3,
+        "drawdown_above_30pct": 0,
+        "positive_and_drawdown_at_most_30pct": 3,
+        "total_return": {
+          "count": 6,
+          "positive": 3,
+          "zero": 0,
+          "minimum": -0.19823442323226104,
+          "median": -0.013709026358712573,
+          "maximum": 0.5929610712004096
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.03801316400481498,
+          "median": 0.09970751817333857,
+          "maximum": 0.2690626162140408
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 8,
+          "complete": 5
+        },
+        "positive": 1,
+        "negative": 4,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 5,
+          "positive": 1,
+          "zero": 0,
+          "minimum": -0.5280890625910427,
+          "median": -0.14816057227149837,
+          "maximum": 0.42378940134894316
+        },
+        "mean_exposure": {
+          "count": 5,
+          "positive": 5,
+          "zero": 0,
+          "minimum": 0.3159667480745657,
+          "median": 0.369649896452112,
+          "maximum": 0.4032551436381316
+        },
+        "matched_etf_comparisons": 5,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "incomplete": 1,
+          "complete": 6
+        },
+        "positive": 6,
+        "negative": 0,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 0,
+        "positive_and_drawdown_at_most_30pct": 6,
+        "total_return": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.21459771975808817,
+          "median": 0.288358278087822,
+          "maximum": 1.050793530072375
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.06818618998191636,
+          "median": 0.13761203578245831,
+          "maximum": 0.28001140053286133
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 4,
+          "complete": 9
+        },
+        "positive": 8,
+        "negative": 1,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 7,
+        "positive_and_drawdown_at_most_30pct": 2,
+        "total_return": {
+          "count": 9,
+          "positive": 8,
+          "zero": 0,
+          "minimum": -0.5120210025371696,
+          "median": 0.43110461369841846,
+          "maximum": 0.7980238377270132
+        },
+        "mean_exposure": {
+          "count": 9,
+          "positive": 9,
+          "zero": 0,
+          "minimum": 0.31932740783766805,
+          "median": 0.3980274570362865,
+          "maximum": 0.44459240930726496
+        },
+        "matched_etf_comparisons": 9,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 4,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.909024540201903,
+          "median": -0.30235595705756635,
+          "maximum": -0.13119422727920438
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.006416422040035978,
+          "median": 0.018959127097506613,
+          "maximum": 0.11958846227717533
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 9,
+          "complete": 4
+        },
+        "positive": 0,
+        "negative": 4,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 4,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 4,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9833036076516259,
+          "median": -0.9804547425279531,
+          "maximum": -0.9716753102130748
+        },
+        "mean_exposure": {
+          "count": 4,
+          "positive": 4,
+          "zero": 0,
+          "minimum": 0.19760836937789067,
+          "median": 0.2213234654629767,
+          "maximum": 0.230865641675569
+        },
+        "matched_etf_comparisons": 4,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.5802703333034094,
+          "median": -0.19145805523926795,
+          "maximum": -0.06393773122493174
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.027169878120746487,
+          "median": 0.05810395242819119,
+          "maximum": 0.24492087156709533
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 9,
+          "complete": 4
+        },
+        "positive": 0,
+        "negative": 4,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 4,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 4,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.7813114714606515,
+          "median": -0.7214942402842934,
+          "maximum": -0.6790213458919748
+        },
+        "mean_exposure": {
+          "count": 4,
+          "positive": 4,
+          "zero": 0,
+          "minimum": 0.30522362736661646,
+          "median": 0.36926151771950944,
+          "maximum": 0.38635688527002954
+        },
+        "matched_etf_comparisons": 4,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 2,
+        "negative": 5,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 4,
+        "drawdown_above_30pct": 2,
+        "positive_and_drawdown_at_most_30pct": 1,
+        "total_return": {
+          "count": 7,
+          "positive": 2,
+          "zero": 0,
+          "minimum": -0.19088123924749711,
+          "median": -0.10840992061681132,
+          "maximum": 0.3837977512302251
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.03797245446698935,
+          "median": 0.09665761759625799,
+          "maximum": 0.26835859229422565
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 3,
+          "complete": 10
+        },
+        "positive": 1,
+        "negative": 9,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 10,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 10,
+          "positive": 1,
+          "zero": 0,
+          "minimum": -0.7292641054101028,
+          "median": -0.3861302064405439,
+          "maximum": 0.3125306866493369
+        },
+        "mean_exposure": {
+          "count": 10,
+          "positive": 10,
+          "zero": 0,
+          "minimum": 0.3135490127195758,
+          "median": 0.37976667518873425,
+          "maximum": 0.43891360478141095
+        },
+        "matched_etf_comparisons": 10,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 7,
+        "drawdown_above_30pct": 4,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9189632215863417,
+          "median": -0.3442815762036001,
+          "maximum": -0.014960493476395942
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.0018643857171432691,
+          "median": 0.005960398097635262,
+          "maximum": 0.04922016639159889
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 8,
+          "complete": 5
+        },
+        "positive": 0,
+        "negative": 5,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 5,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 5,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9917556062951192,
+          "median": -0.9889120305787914,
+          "maximum": -0.9785256774360717
+        },
+        "mean_exposure": {
+          "count": 5,
+          "positive": 5,
+          "zero": 0,
+          "minimum": 0.07777331950708745,
+          "median": 0.0920532022080724,
+          "maximum": 0.09831731025956937
+        },
+        "matched_etf_comparisons": 5,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 2,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.4546874256055228,
+          "median": -0.2173831978970422,
+          "maximum": -0.1553801501224713
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.014889121055171683,
+          "median": 0.024944140204159256,
+          "maximum": 0.0382092962631422
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 5,
+          "complete": 8
+        },
+        "positive": 0,
+        "negative": 8,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 8,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 8,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9876859872583886,
+          "median": -0.9820361088213687,
+          "maximum": -0.9569990991694365
+        },
+        "mean_exposure": {
+          "count": 8,
+          "positive": 8,
+          "zero": 0,
+          "minimum": 0.21177450664416494,
+          "median": 0.25825471124916655,
+          "maximum": 0.288347381309142
+        },
+        "matched_etf_comparisons": 8,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.44578148543216256,
+          "median": -0.16083432758558852,
+          "maximum": -0.036166672492902396
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.02186750695212363,
+          "median": 0.046673216564999884,
+          "maximum": 0.07375976773184065
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 5,
+          "incomplete": 8
+        },
+        "positive": 0,
+        "negative": 5,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 5,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9597790251510214,
+          "median": -0.9574119184733783,
+          "maximum": -0.9510519718401983
+        },
+        "mean_exposure": {
+          "count": 5,
+          "positive": 5,
+          "zero": 0,
+          "minimum": 0.29459682423758293,
+          "median": 0.35790879694586614,
+          "maximum": 0.3932578111358418
+        },
+        "matched_etf_comparisons": 5,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.33241213953235726,
+          "median": -0.22255926817293248,
+          "maximum": -0.06622128738110733
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.015712522380686416,
+          "median": 0.03908731027968829,
+          "maximum": 0.047339998522111924
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 13
+        },
+        "positive": 0,
+        "negative": 0,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 0,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 0,
+          "positive": 0,
+          "zero": 0,
+          "minimum": null,
+          "median": null,
+          "maximum": null
+        },
+        "mean_exposure": {
+          "count": 0,
+          "positive": 0,
+          "zero": 0,
+          "minimum": null,
+          "median": null,
+          "maximum": null
+        },
+        "matched_etf_comparisons": 0,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 3,
+        "negative": 3,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 3,
+        "drawdown_above_30pct": 0,
+        "positive_and_drawdown_at_most_30pct": 3,
+        "total_return": {
+          "count": 6,
+          "positive": 3,
+          "zero": 0,
+          "minimum": -0.22335595991484702,
+          "median": -0.021541467809998605,
+          "maximum": 0.4271049761659329
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.04028241591480846,
+          "median": 0.10520093145582944,
+          "maximum": 0.2788325287308282
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 7
+        },
+        "positive": 2,
+        "negative": 4,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 2,
+          "zero": 0,
+          "minimum": -0.49006972363282275,
+          "median": -0.1270725474383091,
+          "maximum": 0.14867227274071504
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.3277627309923578,
+          "median": 0.3968620618851759,
+          "maximum": 0.4327393871935376
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "incomplete": 1,
+          "complete": 6
+        },
+        "positive": 6,
+        "negative": 0,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 0,
+        "positive_and_drawdown_at_most_30pct": 6,
+        "total_return": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.1997770407729369,
+          "median": 0.2987236455072033,
+          "maximum": 1.1602881767262292
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.07101530455884955,
+          "median": 0.1442236271128136,
+          "maximum": 0.28842379796357287
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 9,
+          "incomplete": 4
+        },
+        "positive": 8,
+        "negative": 1,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 8,
+        "positive_and_drawdown_at_most_30pct": 1,
+        "total_return": {
+          "count": 9,
+          "positive": 8,
+          "zero": 0,
+          "minimum": -0.48236754910752755,
+          "median": 0.43210208325498844,
+          "maximum": 0.7244343574582446
+        },
+        "mean_exposure": {
+          "count": 9,
+          "positive": 9,
+          "zero": 0,
+          "minimum": 0.33783964690133106,
+          "median": 0.4206648362158429,
+          "maximum": 0.4577861503920654
+        },
+        "matched_etf_comparisons": 9,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.34730901431239924,
+          "median": -0.2411940943521162,
+          "maximum": -0.12001682836090855
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.0070630462783538754,
+          "median": 0.01955897680120717,
+          "maximum": 0.025040418351553895
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 12,
+          "complete": 1
+        },
+        "positive": 0,
+        "negative": 1,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 1,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 1,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9918701444219065,
+          "median": -0.9918701444219065,
+          "maximum": -0.9918701444219065
+        },
+        "mean_exposure": {
+          "count": 1,
+          "positive": 1,
+          "zero": 0,
+          "minimum": 0.2604475511843052,
+          "median": 0.2604475511843052,
+          "maximum": 0.2604475511843052
+        },
+        "matched_etf_comparisons": 1,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 5,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.5686204075422259,
+          "median": -0.17094800762634166,
+          "maximum": -0.10839204948104675
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.02862034136073508,
+          "median": 0.06191952213255459,
+          "maximum": 0.25944713923784124
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 7
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.8815033972063825,
+          "median": -0.8187024695546552,
+          "maximum": -0.6904601781150128
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.3235483535641733,
+          "median": 0.3911057057512265,
+          "maximum": 0.4253025681859492
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 3,
+        "negative": 4,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 3,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 2,
+        "total_return": {
+          "count": 7,
+          "positive": 3,
+          "zero": 0,
+          "minimum": -0.1997713817713188,
+          "median": -0.15716836368773401,
+          "maximum": 0.36800226909252
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.0398540937598845,
+          "median": 0.10119539509902223,
+          "maximum": 0.27894129049120997
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 4,
+          "complete": 9
+        },
+        "positive": 0,
+        "negative": 9,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 9,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 9,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.7700949247329538,
+          "median": -0.4476302529713412,
+          "maximum": -0.2613281252371067
+        },
+        "mean_exposure": {
+          "count": 9,
+          "positive": 9,
+          "zero": 0,
+          "minimum": 0.33428546191019576,
+          "median": 0.40937870746529786,
+          "maximum": 0.4522565062115151
+        },
+        "matched_etf_comparisons": 9,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 1,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 7,
+        "drawdown_above_30pct": 4,
+        "positive_and_drawdown_at_most_30pct": 1,
+        "total_return": {
+          "count": 7,
+          "positive": 1,
+          "zero": 0,
+          "minimum": -0.9582424457226566,
+          "median": -0.3432313859826496,
+          "maximum": 0.011979697274824064
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.0021141126293485594,
+          "median": 0.006494294060117179,
+          "maximum": 0.059009517905841954
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 8,
+          "complete": 5
+        },
+        "positive": 0,
+        "negative": 5,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 5,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9982213620081343,
+          "median": -0.9974741657960289,
+          "maximum": -0.9949767094541557
+        },
+        "mean_exposure": {
+          "count": 5,
+          "positive": 5,
+          "zero": 0,
+          "minimum": 0.10630830723522824,
+          "median": 0.1191493941648104,
+          "maximum": 0.12647065509765323
+        },
+        "matched_etf_comparisons": 5,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 3,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.4814641809664021,
+          "median": -0.22504831310740037,
+          "maximum": -0.17514693185230268
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.01609408034431099,
+          "median": 0.027114692256520963,
+          "maximum": 0.041201729117935015
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 8,
+          "incomplete": 5
+        },
+        "positive": 0,
+        "negative": 8,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 8,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 8,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9968545853649242,
+          "median": -0.995376035741211,
+          "maximum": -0.9847103509295702
+        },
+        "mean_exposure": {
+          "count": 8,
+          "positive": 8,
+          "zero": 0,
+          "minimum": 0.28636320734704945,
+          "median": 0.33584040006706306,
+          "maximum": 0.37081768055411507
+        },
+        "matched_etf_comparisons": 8,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.4944818819646676,
+          "median": -0.17880825995669375,
+          "maximum": -0.05011922553849091
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.023361452537792215,
+          "median": 0.05005066242938754,
+          "maximum": 0.07853926332578066
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "incomplete": 5,
+          "complete": 8
+        },
+        "positive": 0,
+        "negative": 8,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 8,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 8,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9683861063326304,
+          "median": -0.9577443234554721,
+          "maximum": -0.938025453022949
+        },
+        "mean_exposure": {
+          "count": 8,
+          "positive": 8,
+          "zero": 0,
+          "minimum": 0.35508348172721693,
+          "median": 0.3937181634204596,
+          "maximum": 0.4358644529181921
+        },
+        "matched_etf_comparisons": 8,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.828470002863126,
+          "median": -0.5279755637348893,
+          "maximum": -0.23753198494812144
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.023609208662181934,
+          "median": 0.05122012499616629,
+          "maximum": 0.161425234963299
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9545973083168691,
+          "median": -0.9146545233770211,
+          "maximum": -0.8354508995714764
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.18785446313551346,
+          "median": 0.2340858918235025,
+          "maximum": 0.2660364974890783
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 1,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 1,
+        "total_return": {
+          "count": 7,
+          "positive": 1,
+          "zero": 0,
+          "minimum": -0.531892303910523,
+          "median": -0.298755112132564,
+          "maximum": 0.034196208924005544
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.04772791291792813,
+          "median": 0.11308691638417478,
+          "maximum": 0.18322894616660187
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.6744330880610792,
+          "median": -0.44965432468754374,
+          "maximum": -0.12277233502707341
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.23677965528305367,
+          "median": 0.32414230399157534,
+          "maximum": 0.3780624866796767
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 20,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 2,
+        "negative": 5,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 2,
+        "total_return": {
+          "count": 7,
+          "positive": 2,
+          "zero": 0,
+          "minimum": -0.6235523978392082,
+          "median": -0.3051618627322421,
+          "maximum": 0.22456337633710333
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.06270339962970486,
+          "median": 0.1333195963908552,
+          "maximum": 0.18128199359436226
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 4,
+        "negative": 9,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 9,
+        "positive_and_drawdown_at_most_30pct": 3,
+        "total_return": {
+          "count": 13,
+          "positive": 4,
+          "zero": 0,
+          "minimum": -0.6908118945020368,
+          "median": -0.1765619714406751,
+          "maximum": 0.33433248536447824
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.23804370313956058,
+          "median": 0.33535517838610945,
+          "maximum": 0.38975883270495726
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9525949424477531,
+          "median": -0.6006739462932487,
+          "maximum": -0.21016068758927264
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.014070641685302658,
+          "median": 0.03537268858248389,
+          "maximum": 0.14796408341085115
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 11,
+          "incomplete": 2
+        },
+        "positive": 0,
+        "negative": 11,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 11,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 11,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9880725393195933,
+          "median": -0.9837041572536857,
+          "maximum": -0.9684250428104195
+        },
+        "mean_exposure": {
+          "count": 11,
+          "positive": 11,
+          "zero": 0,
+          "minimum": 0.16293864852054565,
+          "median": 0.1934663305832155,
+          "maximum": 0.22371796198400182
+        },
+        "matched_etf_comparisons": 11,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 5,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.7428204617703198,
+          "median": -0.5136863020363724,
+          "maximum": -0.15634743443620047
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.035459813591427705,
+          "median": 0.08969038024528968,
+          "maximum": 0.17718592468360964
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9022376034596148,
+          "median": -0.8662126743467046,
+          "maximum": -0.6588280753574765
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.23244886301083822,
+          "median": 0.3214914436972382,
+          "maximum": 0.37730228842461716
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 40,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 3,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.7437407937764633,
+          "median": -0.4691162653197527,
+          "maximum": -0.0196893039932291
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.047808522371528536,
+          "median": 0.11298204807618518,
+          "maximum": 0.17760273951974737
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.8003550286162076,
+          "median": -0.5937725588287304,
+          "maximum": -0.3513754328030476
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.2340811516756605,
+          "median": 0.32948451752147473,
+          "maximum": 0.3850606911782442
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 7,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9754364344436912,
+          "median": -0.539082157436281,
+          "maximum": -0.21701885242048713
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.004263651612751818,
+          "median": 0.012601870154726545,
+          "maximum": 0.06980980799115434
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 11,
+          "incomplete": 2
+        },
+        "positive": 0,
+        "negative": 11,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 11,
+        "drawdown_above_30pct": 11,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 11,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9930095988147908,
+          "median": -0.9906518124835842,
+          "maximum": -0.9846155182745255
+        },
+        "mean_exposure": {
+          "count": 11,
+          "positive": 11,
+          "zero": 0,
+          "minimum": 0.07723754242864692,
+          "median": 0.08582722831285197,
+          "maximum": 0.09620774762359575
+        },
+        "matched_etf_comparisons": 11,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 7,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.934827669298839,
+          "median": -0.5995580216268391,
+          "maximum": -0.3178524613909819
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.018413303424829438,
+          "median": 0.04478634331114802,
+          "maximum": 0.16111454335511696
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 11,
+          "incomplete": 2
+        },
+        "positive": 0,
+        "negative": 11,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 11,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 11,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9901286718700076,
+          "median": -0.9881631414467255,
+          "maximum": -0.9770987092496362
+        },
+        "mean_exposure": {
+          "count": 11,
+          "positive": 11,
+          "zero": 0,
+          "minimum": 0.23541546927262572,
+          "median": 0.26025134484248363,
+          "maximum": 0.29323111108225214
+        },
+        "matched_etf_comparisons": 11,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 2000.0,
+      "cost_bps": 100,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 6,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 6,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.7970427785069594,
+          "median": -0.791087252046524,
+          "maximum": -0.2634566561690379
+        },
+        "mean_exposure": {
+          "count": 6,
+          "positive": 6,
+          "zero": 0,
+          "minimum": 0.02787855707916596,
+          "median": 0.06481845276120152,
+          "maximum": 0.09124433545309617
+        },
+        "matched_etf_comparisons": 6,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9723180999519793,
+          "median": -0.9612906343955527,
+          "maximum": -0.9252200928933954
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.23774337153599467,
+          "median": 0.33309157448893056,
+          "maximum": 0.4041370501090883
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.8478013799678134,
+          "median": -0.5506266491940028,
+          "maximum": -0.2295025546129712
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.026116886110791174,
+          "median": 0.056492947949860574,
+          "maximum": 0.16446404844365098
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.960441174535529,
+          "median": -0.9132323217423003,
+          "maximum": -0.7908076475603452
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.1873019454547036,
+          "median": 0.24312554460555008,
+          "maximum": 0.26616985123113995
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 1,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 1,
+        "total_return": {
+          "count": 7,
+          "positive": 1,
+          "zero": 0,
+          "minimum": -0.588485540691477,
+          "median": -0.28615429215370014,
+          "maximum": 0.012011216875831732
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.052280312969674295,
+          "median": 0.12132523977120363,
+          "maximum": 0.19577466080248668
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.7115888700922139,
+          "median": -0.5150381338363099,
+          "maximum": -0.045168883827906625
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.25654726599563304,
+          "median": 0.3439530326440996,
+          "maximum": 0.40169178378465054
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 20,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 2,
+        "negative": 5,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 2,
+        "total_return": {
+          "count": 7,
+          "positive": 2,
+          "zero": 0,
+          "minimum": -0.6166294378907873,
+          "median": -0.35433713878603346,
+          "maximum": 0.17182748483170718
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.06855632565897346,
+          "median": 0.14143083761639472,
+          "maximum": 0.1937359266793343
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 4,
+        "negative": 9,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 11,
+        "positive_and_drawdown_at_most_30pct": 2,
+        "total_return": {
+          "count": 13,
+          "positive": 4,
+          "zero": 0,
+          "minimum": -0.760955059505113,
+          "median": -0.19145290930535863,
+          "maximum": 0.3198080525651068
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.25770107742651005,
+          "median": 0.3555832466424357,
+          "maximum": 0.4135791999833851
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9635264374110322,
+          "median": -0.6599862492190551,
+          "maximum": -0.2145025818354792
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.015705955791873175,
+          "median": 0.04015272669215339,
+          "maximum": 0.15345005211910173
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 12,
+          "incomplete": 1
+        },
+        "positive": 0,
+        "negative": 12,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 12,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 12,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9967263780473874,
+          "median": -0.9938056779479469,
+          "maximum": -0.9824607150604301
+        },
+        "mean_exposure": {
+          "count": 12,
+          "positive": 12,
+          "zero": 0,
+          "minimum": 0.19263702149107195,
+          "median": 0.22394863142730614,
+          "maximum": 0.26625976955360975
+        },
+        "matched_etf_comparisons": 12,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 4,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.8084026359222571,
+          "median": -0.5664573194702441,
+          "maximum": -0.16065539992337075
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.03947817039968071,
+          "median": 0.09709965205027374,
+          "maximum": 0.19168150751789323
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9239883239962821,
+          "median": -0.8590577175802359,
+          "maximum": -0.696329644968972
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.25121974360533433,
+          "median": 0.337630096416485,
+          "maximum": 0.39076666518301817
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 40,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 1,
+        "negative": 6,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 1,
+        "drawdown_above_30pct": 5,
+        "positive_and_drawdown_at_most_30pct": 1,
+        "total_return": {
+          "count": 7,
+          "positive": 1,
+          "zero": 0,
+          "minimum": -0.7522298329417033,
+          "median": -0.5156725410176423,
+          "maximum": 0.02784611572792084
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.05340910695415207,
+          "median": 0.12159380649169374,
+          "maximum": 0.19083940352096443
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.8583506752419774,
+          "median": -0.6525121051220395,
+          "maximum": -0.47831777458737224
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.25549842272082873,
+          "median": 0.351333119685066,
+          "maximum": 0.40765594270421945
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "horizon": 1,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 7,
+        "drawdown_above_30pct": 6,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9930611019978116,
+          "median": -0.6248274910723894,
+          "maximum": -0.21531603287082768
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.004744868356070294,
+          "median": 0.01432513552588038,
+          "maximum": 0.0886436425738474
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 11,
+          "incomplete": 2
+        },
+        "positive": 0,
+        "negative": 11,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 11,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 11,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9985146095788793,
+          "median": -0.9979423474176354,
+          "maximum": -0.9966710483102527
+        },
+        "mean_exposure": {
+          "count": 11,
+          "positive": 11,
+          "zero": 0,
+          "minimum": 0.10415464183751211,
+          "median": 0.11193573096120923,
+          "maximum": 0.12631075799895802
+        },
+        "matched_etf_comparisons": 11,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "horizon": 3,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 6,
+        "drawdown_above_30pct": 7,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9661040948652813,
+          "median": -0.6220602146957648,
+          "maximum": -0.32098524742856616
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.020569876949095765,
+          "median": 0.04972929140336512,
+          "maximum": 0.1693193201149032
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.997795860055201,
+          "median": -0.996965932487113,
+          "maximum": -0.9853977493958811
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.2421044887231029,
+          "median": 0.33185353386054034,
+          "maximum": 0.35247784628023365
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    },
+    {
+      "currency": "USD",
+      "budget": 10000.0,
+      "cost_bps": 100,
+      "horizon": 5,
+      "learned": {
+        "attempted": 7,
+        "statuses": {
+          "complete": 7
+        },
+        "positive": 0,
+        "negative": 7,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 5,
+        "drawdown_above_30pct": 7,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 7,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9225518252446031,
+          "median": -0.7905788757172045,
+          "maximum": -0.30457505240869476
+        },
+        "mean_exposure": {
+          "count": 7,
+          "positive": 7,
+          "zero": 0,
+          "minimum": 0.03132031280799384,
+          "median": 0.0751841502150346,
+          "maximum": 0.17794171197981706
+        },
+        "matched_etf_comparisons": 7,
+        "beat_etf": 0
+      },
+      "rules": {
+        "attempted": 13,
+        "statuses": {
+          "complete": 13
+        },
+        "positive": 0,
+        "negative": 13,
+        "cash_only": 0,
+        "mean_exposure_below_10pct": 0,
+        "drawdown_above_30pct": 13,
+        "positive_and_drawdown_at_most_30pct": 0,
+        "total_return": {
+          "count": 13,
+          "positive": 0,
+          "zero": 0,
+          "minimum": -0.9819889011381537,
+          "median": -0.9619468720420915,
+          "maximum": -0.9106343783289007
+        },
+        "mean_exposure": {
+          "count": 13,
+          "positive": 13,
+          "zero": 0,
+          "minimum": 0.24627543715048683,
+          "median": 0.3379923976871045,
+          "maximum": 0.39358351684921067
+        },
+        "matched_etf_comparisons": 13,
+        "beat_etf": 0
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "currency": "CAD",
+      "fold_count": 23,
+      "horizons": [
+        {
+          "horizon": 1,
+          "folds": 23,
+          "equal_weight_fallbacks": 15,
+          "weights_equal_fold_summary": {
+            "ridge": {
+              "count": 23,
+              "positive": 16,
+              "zero": 7,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.5730995016596624
+            },
+            "extra_trees": {
+              "count": 23,
+              "positive": 22,
+              "zero": 1,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 1.0
+            },
+            "hist_gradient_boosting": {
+              "count": 23,
+              "positive": 16,
+              "zero": 7,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            },
+            "multi_head_mlp": {
+              "count": 23,
+              "positive": 16,
+              "zero": 7,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 1.0
+            }
+          },
+          "models_beating_training_mean_return_mse": {
+            "ridge": 1,
+            "extra_trees": 7,
+            "hist_gradient_boosting": 1,
+            "multi_head_mlp": 1
+          },
+          "models_beating_training_mean_downside_mse": {
+            "ridge": 21,
+            "extra_trees": 21,
+            "hist_gradient_boosting": 21,
+            "multi_head_mlp": 15
+          }
+        },
+        {
+          "horizon": 3,
+          "folds": 23,
+          "equal_weight_fallbacks": 15,
+          "weights_equal_fold_summary": {
+            "ridge": {
+              "count": 23,
+              "positive": 16,
+              "zero": 7,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.4792357354600518
+            },
+            "extra_trees": {
+              "count": 23,
+              "positive": 23,
+              "zero": 0,
+              "minimum": 0.25,
+              "median": 0.25,
+              "maximum": 1.0
+            },
+            "hist_gradient_boosting": {
+              "count": 23,
+              "positive": 16,
+              "zero": 7,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            },
+            "multi_head_mlp": {
+              "count": 23,
+              "positive": 15,
+              "zero": 8,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            }
+          },
+          "models_beating_training_mean_return_mse": {
+            "ridge": 1,
+            "extra_trees": 8,
+            "hist_gradient_boosting": 1,
+            "multi_head_mlp": 0
+          },
+          "models_beating_training_mean_downside_mse": {
+            "ridge": 20,
+            "extra_trees": 21,
+            "hist_gradient_boosting": 21,
+            "multi_head_mlp": 12
+          }
+        },
+        {
+          "horizon": 5,
+          "folds": 23,
+          "equal_weight_fallbacks": 16,
+          "weights_equal_fold_summary": {
+            "ridge": {
+              "count": 23,
+              "positive": 17,
+              "zero": 6,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.564972182088183
+            },
+            "extra_trees": {
+              "count": 23,
+              "positive": 23,
+              "zero": 0,
+              "minimum": 0.22065008245070614,
+              "median": 0.25,
+              "maximum": 1.0
+            },
+            "hist_gradient_boosting": {
+              "count": 23,
+              "positive": 18,
+              "zero": 5,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            },
+            "multi_head_mlp": {
+              "count": 23,
+              "positive": 16,
+              "zero": 7,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            }
+          },
+          "models_beating_training_mean_return_mse": {
+            "ridge": 1,
+            "extra_trees": 7,
+            "hist_gradient_boosting": 2,
+            "multi_head_mlp": 0
+          },
+          "models_beating_training_mean_downside_mse": {
+            "ridge": 21,
+            "extra_trees": 21,
+            "hist_gradient_boosting": 21,
+            "multi_head_mlp": 12
+          }
+        }
+      ],
+      "fit_rows": 1068752,
+      "calibration_rows": 537424,
+      "prediction_rows": 1171421,
+      "excluded_label_rows": 165,
+      "purged_fit_rows": 25521,
+      "purged_calibration_rows": 27194,
+      "warnings": [
+        {
+          "test_start": "2003-10-22",
+          "test_end": "2004-10-20",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2004-10-21",
+          "test_end": "2005-10-20",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2005-10-21",
+          "test_end": "2006-10-20",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2006-10-23",
+          "test_end": "2007-10-22",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2007-10-23",
+          "test_end": "2008-10-22",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2008-10-23",
+          "test_end": "2009-10-23",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2009-10-26",
+          "test_end": "2010-10-26",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2010-10-27",
+          "test_end": "2011-10-27",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2011-10-28",
+          "test_end": "2012-10-29",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2012-10-30",
+          "test_end": "2013-10-30",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2013-10-31",
+          "test_end": "2014-10-31",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2014-11-03",
+          "test_end": "2015-11-03",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2015-11-04",
+          "test_end": "2016-11-03",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2016-11-04",
+          "test_end": "2017-11-06",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2017-11-07",
+          "test_end": "2018-11-07",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2018-11-08",
+          "test_end": "2019-11-08",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2019-11-11",
+          "test_end": "2020-11-10",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2020-11-11",
+          "test_end": "2021-11-11",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2021-11-12",
+          "test_end": "2022-11-14",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2022-11-15",
+          "test_end": "2023-11-15",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2023-11-16",
+          "test_end": "2024-11-15",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2024-11-18",
+          "test_end": "2025-11-18",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2025-11-19",
+          "test_end": "2026-09-18",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        }
+      ],
+      "warning_count": 23,
+      "mlp_convergence_warning_folds": 23,
+      "sample_count_interpretation": "Overlapping rolling windows reuse historical rows; totals are processing counts, not independent examples."
+    },
+    {
+      "currency": "USD",
+      "fold_count": 23,
+      "horizons": [
+        {
+          "horizon": 1,
+          "folds": 23,
+          "equal_weight_fallbacks": 18,
+          "weights_equal_fold_summary": {
+            "ridge": {
+              "count": 23,
+              "positive": 19,
+              "zero": 4,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.2750642181256946
+            },
+            "extra_trees": {
+              "count": 23,
+              "positive": 23,
+              "zero": 0,
+              "minimum": 0.2350406856300507,
+              "median": 0.25,
+              "maximum": 1.0
+            },
+            "hist_gradient_boosting": {
+              "count": 23,
+              "positive": 19,
+              "zero": 4,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.7649593143699492
+            },
+            "multi_head_mlp": {
+              "count": 23,
+              "positive": 18,
+              "zero": 5,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            }
+          },
+          "models_beating_training_mean_return_mse": {
+            "ridge": 1,
+            "extra_trees": 5,
+            "hist_gradient_boosting": 1,
+            "multi_head_mlp": 0
+          },
+          "models_beating_training_mean_downside_mse": {
+            "ridge": 16,
+            "extra_trees": 19,
+            "hist_gradient_boosting": 21,
+            "multi_head_mlp": 9
+          }
+        },
+        {
+          "horizon": 3,
+          "folds": 23,
+          "equal_weight_fallbacks": 18,
+          "weights_equal_fold_summary": {
+            "ridge": {
+              "count": 23,
+              "positive": 21,
+              "zero": 2,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 1.0
+            },
+            "extra_trees": {
+              "count": 23,
+              "positive": 22,
+              "zero": 1,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.8558033230800645
+            },
+            "hist_gradient_boosting": {
+              "count": 23,
+              "positive": 20,
+              "zero": 3,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.6176684534079218
+            },
+            "multi_head_mlp": {
+              "count": 23,
+              "positive": 18,
+              "zero": 5,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            }
+          },
+          "models_beating_training_mean_return_mse": {
+            "ridge": 3,
+            "extra_trees": 4,
+            "hist_gradient_boosting": 2,
+            "multi_head_mlp": 0
+          },
+          "models_beating_training_mean_downside_mse": {
+            "ridge": 17,
+            "extra_trees": 19,
+            "hist_gradient_boosting": 20,
+            "multi_head_mlp": 8
+          }
+        },
+        {
+          "horizon": 5,
+          "folds": 23,
+          "equal_weight_fallbacks": 18,
+          "weights_equal_fold_summary": {
+            "ridge": {
+              "count": 23,
+              "positive": 21,
+              "zero": 2,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            },
+            "extra_trees": {
+              "count": 23,
+              "positive": 23,
+              "zero": 0,
+              "minimum": 0.25,
+              "median": 0.25,
+              "maximum": 1.0
+            },
+            "hist_gradient_boosting": {
+              "count": 23,
+              "positive": 20,
+              "zero": 3,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.7384828876476551
+            },
+            "multi_head_mlp": {
+              "count": 23,
+              "positive": 18,
+              "zero": 5,
+              "minimum": 0.0,
+              "median": 0.25,
+              "maximum": 0.25
+            }
+          },
+          "models_beating_training_mean_return_mse": {
+            "ridge": 3,
+            "extra_trees": 5,
+            "hist_gradient_boosting": 2,
+            "multi_head_mlp": 0
+          },
+          "models_beating_training_mean_downside_mse": {
+            "ridge": 17,
+            "extra_trees": 20,
+            "hist_gradient_boosting": 21,
+            "multi_head_mlp": 8
+          }
+        }
+      ],
+      "fit_rows": 1099584,
+      "calibration_rows": 543168,
+      "prediction_rows": 8521800,
+      "excluded_label_rows": 0,
+      "purged_fit_rows": 180645,
+      "purged_calibration_rows": 193617,
+      "warnings": [
+        {
+          "test_start": "2003-10-23",
+          "test_end": "2004-10-22",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2004-10-25",
+          "test_end": "2005-10-21",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2005-10-24",
+          "test_end": "2006-10-23",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2006-10-24",
+          "test_end": "2007-10-24",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2007-10-25",
+          "test_end": "2008-10-23",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2008-10-24",
+          "test_end": "2009-10-23",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2009-10-26",
+          "test_end": "2010-10-25",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2010-10-26",
+          "test_end": "2011-10-24",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2011-10-25",
+          "test_end": "2012-10-23",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2012-10-24",
+          "test_end": "2013-10-25",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2013-10-28",
+          "test_end": "2014-10-27",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2014-10-28",
+          "test_end": "2015-10-27",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2015-10-28",
+          "test_end": "2016-10-26",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2016-10-27",
+          "test_end": "2017-10-26",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2017-10-27",
+          "test_end": "2018-10-26",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2018-10-29",
+          "test_end": "2019-10-29",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2019-10-30",
+          "test_end": "2020-10-28",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2020-10-29",
+          "test_end": "2021-10-28",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2021-10-29",
+          "test_end": "2022-10-28",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2022-10-31",
+          "test_end": "2023-10-31",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2023-11-01",
+          "test_end": "2024-10-31",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2024-11-01",
+          "test_end": "2025-11-04",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        },
+        {
+          "test_start": "2025-11-05",
+          "test_end": "2026-09-18",
+          "model": "multi_head_mlp",
+          "category": "ConvergenceWarning",
+          "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+        }
+      ],
+      "warning_count": 23,
+      "mlp_convergence_warning_folds": 23,
+      "sample_count_interpretation": "Overlapping rolling windows reuse historical rows; totals are processing counts, not independent examples."
+    }
+  ],
+  "cost_robustness_counts": {
+    "declared_groups": 240,
+    "all_declared_costs_complete": 168,
+    "positive_at_every_cost": 0,
+    "under_30pct_drawdown_at_every_cost": 14,
+    "beat_etf_at_every_cost": 0
+  },
+  "missing_reasons": {
+    "TNMG:2026-09-08:entry": 3,
+    "TNMG:2026-09-08:mark": 7,
+    "CPH.TO:2014-12-24:mark": 16,
+    "LGN.V:2026-09-17:entry": 8,
+    "CPH.TO:2014-12-24:entry": 1,
+    "SPB.TO:2009-01-07:entry": 18,
+    "AUXX.V:2026-09-17:mark": 15,
+    "WJX.TO:2005-06-15:entry": 20,
+    "PHOS.CN:2026-09-17:mark": 11,
+    "REI-UN.TO:2026-09-17:mark": 3,
+    "WTE.TO:2012-07-05:entry": 6,
+    "WJX.TO:2005-06-15:mark": 23,
+    "ARX.TO:2026-07-20:mark": 1,
+    "TECK-B.TO:2026-09-17:mark": 1,
+    "BIG.V:2026-09-17:mark": 1,
+    "KMP-UN.TO:2026-09-17:mark": 1,
+    "MAXX.CN:2026-09-17:mark": 3,
+    "ARX.TO:2026-07-20:entry": 2,
+    "DIR-UN.TO:2026-09-17:entry": 1,
+    "BIP-UN.TO:2026-09-17:mark": 1,
+    "TFII.TO:2008-05-20:entry": 7,
+    "MGA.TO:2006-09-06:mark": 1,
+    "CTC-A.TO:2006-05-08:mark": 2,
+    "HG.CN:2026-09-17:mark": 2,
+    "BEP-UN.TO:2026-09-17:mark": 1,
+    "CRON.TO:2018-05-24:mark": 4
+  },
+  "interpretation": [
+    "Every declared account is retained. Incomplete accounts have no profitability comparison; their observed fold prefixes remain explicitly labeled.",
+    "Matched references share currency, starting cash, proportional costs, first and last evaluation sessions. Rules also share holding period.",
+    "Cost changes alter eligibility and sizing; higher-cost outcomes are not assumed to decrease monotonically.",
+    "Cash-heavy means average invested fraction below 10%, a descriptive analysis threshold. A 30% observed drawdown screen is not an enforced future loss cap.",
+    "Calendar-year and fold summaries include partial terminal intervals. Positive counts use strictly greater than zero.",
+    "Pooled MSE and repeated account comparisons are descriptive, not independent tests or significance. Historical best rows remain exploratory.",
+    "Current-member and adjusted-vintage biases remain. Proportional costs omit fixed brokerage charges, FX, subscription, taxes and contributions.",
+    "Profit concentration retains only saved top/bottom symbols; it does not establish a complete per-symbol attribution.",
+    "No model training, study execution, new data access, broker calls or main-result mutation is performed by this script."
+  ]
+}

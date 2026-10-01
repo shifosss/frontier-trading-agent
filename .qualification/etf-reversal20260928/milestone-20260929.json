@@ -1,0 +1,49 @@
+{
+  "at": "2026-09-29T00:59:43.713631+00:00",
+  "goal_status": "active; no strategy economically qualified",
+  "study": {
+    "attempt": "42a36d81473b47e89fafe5d8a5ce38ec",
+    "complete_accounts": 12,
+    "positive_accounts": 1,
+    "positive_reversal_accounts": 0,
+    "weekly_target_hits_all_accounts": {
+      "5_percent": 0,
+      "10_percent": 0,
+      "15_percent": 0
+    },
+    "audited_trades": 4862,
+    "audited_daily_states": 27288
+  },
+  "source_latest_progress": {
+    "at": "2026-09-29T00:59:43.194798+00:00",
+    "issuer": "VEEV",
+    "accession": "0001393052-23-000034",
+    "status": "captured",
+    "completed": 768,
+    "registered_originals": 4057
+  },
+  "source_terminal_completion": false,
+  "source_stderr_bytes": 0,
+  "paper_recent_observation_utc": "2026-09-29T00:43:51.072957868+00:00",
+  "paper_saved_status": "ready",
+  "paper_no_policy_change": true,
+  "next": "Complete the fixed100issuer source capture and terminal S/Q/SIC qualification; test predeclared earnings models. Options contract evidence is separate; no historical quote assumption.",
+  "processes": {
+    "41176": true,
+    "12628": true,
+    "12676": true
+  },
+  "locks": {
+    ".qualification/earnings-quality20260928/source/capture.lock.sqlite": "held",
+    "data/historical/worker.lock.sqlite": "free"
+  },
+  "options_metadata": {
+    "status": "raw_identity_checks_passed_with_semantic_gaps",
+    "requests": 3,
+    "contracts": 6,
+    "historical_quote_requests": 0,
+    "no_extra_requests": true
+  },
+  "report_commit": "ce3186d",
+  "automation_status": "ACTIVE updated"
+}

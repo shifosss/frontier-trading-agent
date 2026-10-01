@@ -1,0 +1,167 @@
+{
+  "roots": [
+    {
+      "root": ".qualification/filing-source20260928",
+      "resource_records": 810,
+      "status_counts": {
+        "200": 805,
+        "503": 4,
+        "None": 1
+      },
+      "new_network_attempts": 799,
+      "unique_physical_raw_files": 795,
+      "physical_raw_bytes": 953198138,
+      "first_request_at": "2026-09-28T22:34:26.566234+00:00",
+      "last_request_at": "2026-09-28T22:49:19.421761+00:00"
+    },
+    {
+      "root": ".qualification/filing-source-supplement20260928",
+      "resource_records": 121,
+      "status_counts": {
+        "200": 121
+      },
+      "new_network_attempts": 95,
+      "unique_physical_raw_files": 95,
+      "physical_raw_bytes": 182385303,
+      "first_request_at": "2026-09-28T23:03:19.178800+00:00",
+      "last_request_at": "2026-09-28T23:04:59.593304+00:00"
+    }
+  ],
+  "successful_unique_urls": 900,
+  "url_payload_conflicts": {},
+  "observations": 931,
+  "per_issuer": [
+    {
+      "symbol": "AAPL",
+      "CIK": "0000320193",
+      "filings": 42,
+      "captured": 42,
+      "fact_representations": {
+        "original_xbrl_instance": 22,
+        "inline_primary": 20
+      },
+      "filing_source_bytes": 92550716,
+      "submissions_pages": 2,
+      "current_metadata_SIC": "3571",
+      "current_metadata_SIC_description": "Electronic Computers",
+      "current_metadata_entity_type": "operating",
+      "current_tickers": [
+        "AAPL"
+      ],
+      "metadata_raw_path": ".qualification/filing-feasibility20260928/raw/aapl_submissions.bin",
+      "metadata_sha256": "dabb28a7c4af8fac408a72345ec959c1a08255a6c5c1af99c4f22b2beacfc77f"
+    },
+    {
+      "symbol": "MSFT",
+      "CIK": "0000789019",
+      "filings": 42,
+      "captured": 41,
+      "fact_representations": {
+        "inline_primary": 19,
+        "original_xbrl_instance": 23
+      },
+      "filing_source_bytes": 247767547,
+      "submissions_pages": 2,
+      "current_metadata_SIC": "7372",
+      "current_metadata_SIC_description": "Services-Prepackaged Software",
+      "current_metadata_entity_type": "operating",
+      "current_tickers": [
+        "MSFT"
+      ],
+      "metadata_raw_path": ".qualification/filing-source20260928/raw/551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9.bin",
+      "metadata_sha256": "551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9"
+    },
+    {
+      "symbol": "F",
+      "CIK": "0000037996",
+      "filings": 42,
+      "captured": 42,
+      "fact_representations": {
+        "original_xbrl_instance": 22,
+        "inline_primary": 20
+      },
+      "filing_source_bytes": 230936462,
+      "submissions_pages": 2,
+      "current_metadata_SIC": "3711",
+      "current_metadata_SIC_description": "Motor Vehicles & Passenger Car Bodies",
+      "current_metadata_entity_type": "operating",
+      "current_tickers": [
+        "F",
+        "F-PB",
+        "F-PC",
+        "F-PD"
+      ],
+      "metadata_raw_path": ".qualification/filing-source20260928/raw/8f2b028ada902231fc5fa85a1439449258d2e7ed1b57b920d66ab7616b94bd7b.bin",
+      "metadata_sha256": "8f2b028ada902231fc5fa85a1439449258d2e7ed1b57b920d66ab7616b94bd7b"
+    },
+    {
+      "symbol": "T",
+      "CIK": "0000732717",
+      "filings": 42,
+      "captured": 42,
+      "fact_representations": {
+        "original_xbrl_instance": 22,
+        "inline_primary": 20
+      },
+      "filing_source_bytes": 147928115,
+      "submissions_pages": 3,
+      "current_metadata_SIC": "4813",
+      "current_metadata_SIC_description": "Telephone Communications (No Radiotelephone)",
+      "current_metadata_entity_type": "operating",
+      "current_tickers": [
+        "T",
+        "TBB",
+        "T-PA",
+        "T-PC"
+      ],
+      "metadata_raw_path": ".qualification/filing-source20260928/identity-raw/T-submissions.bin",
+      "metadata_sha256": "84eccf0171172ec4fe29525f0b3c7338b8268677e7ea36781301a1d912c7c56f"
+    },
+    {
+      "symbol": "HRL",
+      "CIK": "0000048465",
+      "filings": 42,
+      "captured": 42,
+      "fact_representations": {
+        "original_xbrl_instance": 21,
+        "inline_primary": 21
+      },
+      "filing_source_bytes": 108014870,
+      "submissions_pages": 2,
+      "current_metadata_SIC": "2011",
+      "current_metadata_SIC_description": "Meat Packing Plants",
+      "current_metadata_entity_type": "operating",
+      "current_tickers": [
+        "HRL"
+      ],
+      "metadata_raw_path": ".qualification/filing-source20260928/identity-raw/HRL-submissions.bin",
+      "metadata_sha256": "2ba0992e6944335be8c69c4bf7bcf7adc986e92a6f2f9f559a3f34a76b0d55f4"
+    },
+    {
+      "symbol": "BANF",
+      "CIK": "0000760498",
+      "filings": 42,
+      "captured": 42,
+      "fact_representations": {
+        "inline_primary": 20,
+        "original_xbrl_instance": 22
+      },
+      "filing_source_bytes": 317342273,
+      "submissions_pages": 2,
+      "current_metadata_SIC": "6021",
+      "current_metadata_SIC_description": "National Commercial Banks",
+      "current_metadata_entity_type": "operating",
+      "current_tickers": [
+        "BANF",
+        "BANFP"
+      ],
+      "metadata_raw_path": ".qualification/filing-source20260928/identity-raw/BANF-submissions.bin",
+      "metadata_sha256": "f27388aa6fa8b032567dbc890d36835ae208ff8d8b192ea9d56f8356d29eb5ef"
+    }
+  ],
+  "filing_bytes_total": 1144539983,
+  "filing_bytes_min": 745269,
+  "filing_bytes_median": 3879934.5,
+  "filing_bytes_max": 13529270,
+  "successful_payload_bytes_distinct": 1147336187
+}

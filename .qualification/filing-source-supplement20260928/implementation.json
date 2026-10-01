@@ -1,0 +1,58 @@
+{
+  "frozen_at_utc": "2026-09-28T23:02:25.846202+00:00",
+  "schema": 2,
+  "files": {
+    "capture_supplement.py": "0f4f42452c371479a9ca7fcfae0e3b9d9162f91aec42c695c2b3e35ceced1e91",
+    "msft-balance_sheet-original-table.html": "3574ea4b61956b9fbf4c964b4fd9213b9f527c00c85b95b0b6a8d54924c17b74",
+    "msft-income_statement-original-table.html": "f54248ddcc491bede948173d611b54600eafbd4c91e7393f8fa22d4a653ed37d",
+    "msft-original-html-assessment.json": "9881b1a014247ef8390f99f615055b48a45ecf86c4b8e5d800fbaf4519fe6a75",
+    "preflight-v1/archive-verification.json": "31f7737cf489fe5d44c1dc3037b9e72acd73e4874e358dfd23962f759b4d48f0",
+    "preflight-v1/capture_supplement.py": "4948f3d2e850e4b1f238236cc52fb550dbcf4534c74dd7ecb67ff643504d167b",
+    "preflight-v1/frozen-source.zip": "7d692410a14f66634a2087f4b0e814b887b0abd85b556780ef70a57f14dbb8a0",
+    "preflight-v1/implementation.json": "957e0084e2a82b59703d2232f73f0a12151e13d75fa53a0b6f444e3f2b50c64a",
+    "preflight-v1/msft-balance_sheet-original-table.html": "3574ea4b61956b9fbf4c964b4fd9213b9f527c00c85b95b0b6a8d54924c17b74",
+    "preflight-v1/msft-income_statement-original-table.html": "f54248ddcc491bede948173d611b54600eafbd4c91e7393f8fa22d4a653ed37d",
+    "preflight-v1/msft-original-html-assessment.json": "9881b1a014247ef8390f99f615055b48a45ecf86c4b8e5d800fbaf4519fe6a75",
+    "preflight-v1/report.md": "efe814f7018d2faebe1655a3d59e33bc3d7cd7587c41a1f53121b32a8dfc975f",
+    "preflight-v1/request.json": "438205d2b6f3c88f76b6966e27f50e8de87dce824a1e7cfd6155eed8f3834e5e",
+    "preflight-v1/test-result.json": "37628d14f777231ce26c0ffe7554d6509b77e853e5d505954198958783957e82",
+    "preflight-v1/test_supplement.py": "ea19d310eb41239b3fab8951dd46b18469900349a9c29c51960063da8629520d",
+    "report.md": "4b0d9190199330204351f774a1278c6acdcbac936b4ab3ac36f1b45bba5c250d",
+    "request.json": "469baa8fd32deb8d8dab0ffc117f85628c36f30a5b6eabcb58fdbd2253f50526",
+    "test-result.json": "168ab6f4fe5f6352d7a21cb8f5acebad4831dc3592e3ef285e2c289be91443ac",
+    "test_supplement.py": "27b8dd901672c02d005f74216d0f0a9dec55f3c6ae4e042b10ff8bc5e36cdc73",
+    "transient-failure-diagnosis.json": "ed2676c34218f325136eb5615f4c4bccd5cdc0521e543291358688ea2d213287"
+  },
+  "durable_writer_source_sha256": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+  "baseline_implementation_sha256": "f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5",
+  "baseline_code_sha256": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb",
+  "baseline_completion_sha256": "06011fd85bd28b3c2eb6fc4c7285a9685c8684a0fef54905cc84d00d4aa81fec",
+  "preflight_v1_preserved": {
+    "path": "preflight-v1",
+    "request_sha256": "438205d2b6f3c88f76b6966e27f50e8de87dce824a1e7cfd6155eed8f3834e5e",
+    "implementation_sha256": "957e0084e2a82b59703d2232f73f0a12151e13d75fa53a0b6f444e3f2b50c64a",
+    "archive_sha256": "7d692410a14f66634a2087f4b0e814b887b0abd85b556780ef70a57f14dbb8a0"
+  },
+  "tests": 9,
+  "independent_review": "passed; no remaining material finding",
+  "acquisition_started": false,
+  "launch_python": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+  "launch_arguments": [
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\capture_supplement.py"
+  ],
+  "working_directory": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent",
+  "scope_counts": {
+    "duplicate_primary": 26,
+    "one_time_transient_index_retry": 5,
+    "known_new_urls": 93,
+    "conditional_instance_urls_max": 5,
+    "new_GETs_max": 98,
+    "reused_indexes": 26,
+    "original_baseline_accessions": 252,
+    "original_baseline_captured": 220,
+    "original_baseline_incomplete": 32
+  }
+}

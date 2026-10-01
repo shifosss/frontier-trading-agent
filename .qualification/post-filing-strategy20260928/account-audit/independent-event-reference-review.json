@@ -1,0 +1,27 @@
+{
+  "at": "2026-09-28T23:31:48.107381+00:00",
+  "reviewer": "/root/strategy_design",
+  "scope": "Independent saved event-reference and executed-trade gross return comparison; no policy rerun or edits",
+  "status": "passed",
+  "event_count": 121,
+  "maximum_endpoint_error": 2.05e-16,
+  "maximum_executed_gross_return_error": 2.54e-16,
+  "checks": [
+    "Decimal.from_float recomputation of all121 saved stock/SPY adjusted endpoints",
+    "All/selected and issuer/year equal-event and equal-entry-date means within1e-12",
+    "Executed trade gross returns equal their accession event returns"
+  ],
+  "interpretation": {
+    "selected_events": 27,
+    "selected_dates": 26,
+    "executed_treatment_trades": 19,
+    "unexecuted_selected_events": 8,
+    "unexecuted_selected_average_stock_gross_percent": 1.995,
+    "executed_selected_average_stock_gross_percent": 0.248,
+    "selected_equal_event_spy_excess_bps": 4.36,
+    "selected_equal_date_spy_excess_bps": 1.86,
+    "all_equal_event_spy_excess_bps": 22.86,
+    "all_equal_date_spy_excess_bps": 21.1,
+    "limitation": "Rounded descriptive comparisons; nested samples, differing execution/weights and cash exposure, not causal evidence or executable account returns."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "symbol": "MRBK",
+  "effective_session": "2023-03-21",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/MRBK/bars?timeframe=1Day&start=2023-03-11T05%3A00%3A00%2B00%3A00&end=2023-04-01T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2023-03-11T05:00:00+00:00",
+    "end": "2023-04-01T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:29.509012+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "MRBK-2023-03-21-raw-1.c139b80b95bf163a586bfda2476159ad85e068e150e66194ba608f5e7989cd36.raw.json",
+  "sha256": "c139b80b95bf163a586bfda2476159ad85e068e150e66194ba608f5e7989cd36",
+  "bytes": 1582,
+  "captured_at": "2026-09-28T19:04:29.557148+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:29 GMT",
+  "bar_count": 15,
+  "response_symbol": "MRBK",
+  "pagination_complete": true
+}

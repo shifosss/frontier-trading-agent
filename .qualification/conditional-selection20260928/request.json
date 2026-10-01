@@ -1,0 +1,211 @@
+{
+  "study": "conditional-selection-20260928-v1",
+  "source_run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "history_start": "2010-01-04",
+  "first_signal": "2016-01-04",
+  "last_session": "2026-09-18",
+  "capital_usd": 2000,
+  "holding_sessions": [
+    1,
+    3,
+    5
+  ],
+  "round_trip_bps": 40,
+  "cost_profiles": [
+    "proportional",
+    "moomoo_ca_us"
+  ],
+  "policies": [
+    "static_setup_rank",
+    "conditional_net_fraction",
+    "conditional_net_dollars"
+  ],
+  "planned_accounts": 18,
+  "seed": 1729,
+  "fallback_policy": "abstain",
+  "feature_names": [
+    "return_1",
+    "return_2",
+    "return_5",
+    "return_20",
+    "return_60",
+    "momentum_12_1",
+    "relative_log_return_1",
+    "relative_log_return_2",
+    "relative_log_return_5",
+    "relative_log_return_20",
+    "realized_volatility_5",
+    "realized_volatility_20",
+    "volatility_ratio_5_20",
+    "atr_fraction",
+    "ma_distance_20",
+    "ma_distance_50",
+    "ma_distance_200",
+    "prior_breakout_distance_55",
+    "drawdown_20",
+    "dollar_activity_5_prior_20",
+    "log_dollar_turnover_20",
+    "benchmark_above_ma_200",
+    "benchmark_return_5",
+    "benchmark_return_20",
+    "benchmark_realized_volatility_20",
+    "cross_section_relative_rank_5",
+    "relative_daily_volatility_20_lagged",
+    "setup_reversal_5",
+    "setup_volume_continuation_5",
+    "setup_compression_continuation_5",
+    "percentile_reversal_5",
+    "percentile_volume_continuation_5",
+    "percentile_compression_continuation_5",
+    "context_benchmark_distance_ma200",
+    "context_benchmark_rv20",
+    "context_benchmark_rv20_to_prior252_median",
+    "context_stock_rv5_to_rv20"
+  ],
+  "head_names": [
+    "return_1",
+    "return_3",
+    "return_5",
+    "downside_1",
+    "downside_3",
+    "downside_5"
+  ],
+  "setup_names": [
+    "relative_reversal_5",
+    "relative_volume_continuation_5",
+    "compression_continuation_5"
+  ],
+  "feature_aliases": {
+    "context_benchmark_rv20": "benchmark_realized_volatility_20",
+    "context_stock_rv5_to_rv20": "volatility_ratio_5_20"
+  },
+  "learning": {
+    "families": {
+      "ridge": {
+        "alpha": 100.0
+      },
+      "hist_gradient_boosting": {
+        "max_iter": 60,
+        "max_leaf_nodes": 15,
+        "learning_rate": 0.05,
+        "l2_regularization": 10.0,
+        "min_samples_leaf": 64,
+        "early_stopping": false
+      }
+    },
+    "fitting_sessions": 504,
+    "calibration_sessions": 252,
+    "test_sessions": 252,
+    "inner_prefixes": [
+      252,
+      336,
+      420
+    ],
+    "inner_validation_sessions": 84,
+    "purge": "all six-head labels end strictly before every fit/validation/calibration/test boundary",
+    "sample_limit_per_date": 96,
+    "sampling": "unique eligible rows using SeedSequence(seed,absolute_session_index), before label availability; no replacement for missing labels",
+    "inner_selection_loss": "equal stocks within date, equal dates and horizons; squared Nref*((rhat-.5*dhat)-(r-.5*d))",
+    "reference_notional": "USD2000, USD400 entry cap including0.2%buy cost; USD10/(2ATR) risk, independent stock sizing; zero quantity retained with zero dollar loss weight",
+    "tie": "Ridge on exact family loss tie",
+    "family_eligibility": "all three inner folds complete; failed families retained and ineligible",
+    "final_failure": "abstain for entire test block, no alternate-family retry",
+    "calibration": "pooled per-row mean(target-raw) for six outputs; downside nonnegative before and after correction",
+    "test_predictions": "all eligible candidates regardless of future labels; same frozen forecasts for both ranking modes and both fees",
+    "unavailable_features": "training-only median imputation with missing indicators, keep empty features; Ridge training-only scaling",
+    "audit": "raw and corrected predictions, exact sampled IDs, failures, warnings, preprocessing, dependency and code identities, deterministic reload; calibration-defined bins; training-only setup means",
+    "reliability_bins": "five bins for each raw/corrected output from its own calibration prediction quintiles only; duplicate edges collapsed; test labels masked per head only in diagnostics; unavailable outcomes counted",
+    "setup_baseline": "six-output fitting-sample means for each setup; overlapping row once per setup; candidate baseline mean of its active setup means; absent setup fit mean falls back to pooled fitting mean, diagnostic only"
+  },
+  "execution": {
+    "daily_screening": true,
+    "entry": "next close",
+    "holding": "independent positions for1/3/5completed sessions after entry",
+    "model_refit_boundary": "one continuous account; retain holdings, reserved orders, due exits and settlement across annual refits",
+    "maximum_positions": 5,
+    "entry_cap_fraction": 0.2,
+    "nav_risk_fraction": 0.005,
+    "atr_multiple": 2,
+    "cash": "settled only; whole shares; no margin",
+    "utility": "N*mu-buy_cost(q,N)-sell_cost(q,N*(1+mu))-.5*N*d",
+    "qualification": "finite projections, positive projected exit notional and U>0",
+    "ranking": "stable alphabetical ties; static3setup percentile average; conditional U/N or U; recompute quantities/cost utility after reservations",
+    "fill": "quantity only decreases; original forecast utility recheck at fill price; simulated contingent-fill convention, no fill-time reranking",
+    "stop": "no research30%account halt; drawdowns assessed for qualification"
+  },
+  "limitations": [
+    "current-member survivorship",
+    "revised source vintages",
+    "unresolved entity/corporate actions",
+    "all evaluation dates previously researched",
+    "no automatic promotion",
+    "40bps sensitivity not calibrated minimum",
+    "moomoo tariff scenario not universal broker cost",
+    "gross paths retain cost-affected sizing",
+    "closing-auction fill guard needs separate execution qualification"
+  ],
+  "comparison": "report all18 including failure/cash paths, paired deltas, trade/cash ledgers, cost burden and yearly/weekly/monthly results; keep prior54 and timing81 results visible",
+  "frozen_at": "2026-09-28T20:27:08.755275+00:00",
+  "implementation_commit": "c5f45ba",
+  "coverage_preflight": {
+    "symbols": 5675,
+    "test_sessions": 2693,
+    "blocks": 11,
+    "earliest_fit_index": 754
+  },
+  "cost_specifications": {
+    "proportional": {
+      "schema_version": 2,
+      "name": "proportional",
+      "round_trip_bps": 40.0,
+      "currency": "USD",
+      "friction": "notional * (round_trip_bps / 20000) on each side; unrounded",
+      "friction_status": "declared sensitivity, not calibrated realized slippage",
+      "tariff_checked_at": null,
+      "historical_tariff": false,
+      "interpretation": "legacy proportional cost sensitivity",
+      "incomplete_cost_lower_bound": false,
+      "lower_bound_scope": "omitted costs; rounding/friction are scenarios, not a proven bound on actual fees",
+      "source_urls": [],
+      "rounding": "no monetary rounding for proportional friction",
+      "order_assumption": "one order per side per day; no multiday fills or promotion",
+      "excluded_charges": [
+        "initial funding and eventual FX conversion/spread",
+        "recurring account or subscription charges and applicable taxes",
+        "unverified venue, regulatory, clearing or service charges",
+        "actual spread, market impact and slippage beyond declared friction"
+      ],
+      "action_limitation": "engine uses original entry whole shares with synthetic adjusted exit notional; not action-complete current shares or realized broker fills; per-share fees and USD1 bracket can be distorted across corporate actions"
+    },
+    "moomoo_ca_us": {
+      "schema_version": 2,
+      "name": "moomoo_ca_us",
+      "round_trip_bps": 40.0,
+      "currency": "USD",
+      "friction": "notional * (round_trip_bps / 20000) on each side; unrounded",
+      "friction_status": "declared sensitivity, not calibrated realized slippage",
+      "tariff_checked_at": "2026-09-19",
+      "historical_tariff": false,
+      "interpretation": "current-tariff counterfactual; incomplete cost coverage",
+      "incomplete_cost_lower_bound": true,
+      "lower_bound_scope": "omitted costs; rounding/friction are scenarios, not a proven bound on actual fees",
+      "source_urls": [
+        "https://www.moomoo.com/ca/support/topic10_122",
+        "https://www.sec.gov/rules-regulations/fee-rate-advisories/2026-2"
+      ],
+      "rounding": "each explicit component rounded up to USD0.01 using Decimal; scenario rounding; broker convention unverified; friction unrounded",
+      "order_assumption": "one order per side per day; no multiday fills or promotion",
+      "excluded_charges": [
+        "initial funding and eventual FX conversion/spread",
+        "recurring account or subscription charges and applicable taxes",
+        "unverified venue, regulatory, clearing or service charges",
+        "actual spread, market impact and slippage beyond declared friction"
+      ],
+      "action_limitation": "engine uses original entry whole shares with synthetic adjusted exit notional; not action-complete current shares or realized broker fills; per-share fees and USD1 bracket can be distorted across corporate actions",
+      "source_access": "Moomoo indexed primary page; prior direct retrieval HTTP403",
+      "commission": "max(0.99,q*0.0049); price<1 uses q*0.0005",
+      "platform": "max(1.00,q*0.005); price<1 uses q*0.0005",
+      "sec_sell": "max(0.01,notional*0.0000206)"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "family": "ridge",
+  "test_decision_year": 2021,
+  "model_attempt_id": "5bf2a575ad1644e88266171a5c1959be",
+  "forecasts": [
+    {
+      "event_id": "0000000001:synthetic-2021-0",
+      "cik": "0000000001",
+      "prepared_row_sha256": "ed796d60e00131b2b357fca885d36629a8bbc06ddf00deb636ce10b20fe42ef0",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.10000000000000038,
+        0.0
+      ],
+      "uncalibrated": [
+        0.10000000000000038,
+        0.0
+      ],
+      "corrected": [
+        0.10000000000000009,
+        0.0
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000000002:synthetic-2021-1",
+      "cik": "0000000002",
+      "prepared_row_sha256": "08bc6560fa9696037edd635ebe109841473eb42220c1656535b1278e982b1871",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.10000000000000038,
+        0.0
+      ],
+      "uncalibrated": [
+        0.10000000000000038,
+        0.0
+      ],
+      "corrected": [
+        0.10000000000000009,
+        0.0
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "event_id": "0000000003:synthetic-2021-2",
+      "cik": "0000000003",
+      "prepared_row_sha256": "b5c347825273e6483c2379fdcab9c95e0f912627db5520008e653ec585a660b7",
+      "status": "predicted",
+      "reasons": [],
+      "raw": [
+        0.10000000000000038,
+        0.0
+      ],
+      "uncalibrated": [
+        0.10000000000000038,
+        0.0
+      ],
+      "corrected": [
+        0.10000000000000009,
+        0.0
+      ],
+      "quantile_bins": {
+        "raw": [
+          0,
+          0
+        ],
+        "corrected": [
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "warnings": []
+}

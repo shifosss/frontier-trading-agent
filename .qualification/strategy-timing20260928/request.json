@@ -1,0 +1,70 @@
+{
+  "experiment": "frozen-daily-signals-entry-timing-v1",
+  "status": "declared_before_timing_outcomes",
+  "purpose": "Determine whether next-close delay misses or avoids entry-session return; gross event diagnostics only, not an executable cash account.",
+  "source_run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "signal_request_sha256": "b978285712d9cac7d3c62cb93199941da8fe8573a27485767e1336b606f2427b",
+  "signal_implementation_sha256": "b10f406f73c7e0f57d65d6eefbaa03d14be96e74be6162781ad8184f21f70e86",
+  "signal_definition_sha256": "4c367273acf7c401e09c27f4ab65e8e927c805953f01d288dd61e6a83bec29a7",
+  "reuse_cache": ".qualification/strategy-interactions20260928/market-signals.joblib",
+  "cache_rule": "Run only after active54 finishes; verify cache bytes against its saved manifest and original source identities; no rebuild or signal adjustment.",
+  "policies": [
+    "relative_reversal_2",
+    "relative_reversal_5",
+    "trend_pullback",
+    "relative_volume_continuation_5",
+    "beta_residual_reversal_2",
+    "trend_conditioned_reversal_5",
+    "compression_continuation_5",
+    "equal_percentile_blend",
+    "volatility_regime_selector"
+  ],
+  "horizons": [
+    1,
+    3,
+    5
+  ],
+  "timings": [
+    "next_open_to_same_close_exit",
+    "next_close_to_close",
+    "next_open_to_open"
+  ],
+  "strategy_summary_cells": 81,
+  "primary_paired_contrasts": 9,
+  "reference_cells": 9,
+  "reference": "SPY same timing and horizons, separate exposure-free event reference",
+  "first_signal": "2016-01-04",
+  "last_session": "2026-09-18",
+  "signal_date_cutoff": "Require calendar t+1+5 no later than last_session for every horizon; do not require future prices to select candidates.",
+  "candidate_selection": "At every signal date, original stable score rank; plan_entries with USD2000 NAV,USD2000 available cash,no held/reserved names,five slots,original40bps proportional reference cost. Reuse its reference-price whole-share/ATR/cap choices across all horizons and timings; ignore future open availability when selecting; no replacement after missing outcomes.",
+  "adjusted_open": "provider_raw_open * provider_adjusted_close / provider_raw_close, all from the same symbol/session/raw response; do not combine nominal reconstructed close with provider open.",
+  "primary_identity": "log(Cadj_exit/Oadj_entry)-log(Cadj_exit/Cadj_entry)=log(raw_close_entry/raw_open_entry)",
+  "same_exit": "entry=t+1; fixed close exit=t+1+h",
+  "equal_clock": "entry=open(t+1); exit=open(t+1+h)",
+  "signal_gap": "log(Oadj[t+1]/Cadj[t]); attribution only, not available to a close+1minute signal",
+  "costs": "No fills,spread,fees,impact,taxes,FX or reinvestment cash modeled; gross price-event diagnostics only.",
+  "coverage_policy": "Retain every planned date-symbol event; missing/invalid opens or source hashes are reported,not imputed; never rerank or substitute another instrument because of future data.",
+  "cell_validation": "Same-source arrays align to timestamps; unique exchange session;finite positive required values;raw open and close within same-source low/high;finite positive close-adjustment factor. Inconsistency invalidates relevant cell,not signal membership.",
+  "aggregation": "Primary entry-day log return uses complete active dates (all selected entry-day open/close pairs valid),equal-stock within date then equal-date; report individual-event and available-pair summaries secondarily with denominators. No-signal days reported separately,not treated as profitable zero returns.",
+  "uncertainty": "Exploratory paired date bootstrap,2000 circular10-date blocks,seed1729; repeated hypotheses/previously seen data acknowledged. The common-exit log timing difference is algebraically identical across holds,so only9primary paired hypotheses.",
+  "diagnostics": [
+    "entry-day intraday",
+    "signal-close_to_entry-open gap",
+    "exit-day intraday",
+    "same-close-exit identity residual",
+    "equal-clock identity residual",
+    "yearly",
+    "frozen signal regime",
+    "selection/coverage counts",
+    "reported action crossings without deletion"
+  ],
+  "source_policy": "Original frozen raw sources unchanged; verified sample only proves practical open availability. AIXI and other source/action issues remain; paired entry-day ratio cancels subsequent adjustments algebraically but is not independent vendor validation.",
+  "forbidden": [
+    "modifying active54 artifacts",
+    "changing frozen signal formulas",
+    "network requests",
+    "price interpolation or action repair",
+    "paper/live account operations",
+    "claiming cash-ledger returns or promotion"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "earnings-frozen-market-preparation-v1",
+  "purpose": "Source-only reuse for the previously frozen100-issuer study; no new data request, financial event processing, strategy outcomes or cohort changes",
+  "paths": {
+    "cohort": ".qualification/earnings-quality20260928/source/cohort.json",
+    "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
+    "cache": ".qualification/conditional-selection20260928/preparation/market-features.joblib",
+    "cache_manifest": ".qualification/conditional-selection20260928/preparation/cache-manifest.json",
+    "cache_source_evidence": ".qualification/conditional-selection20260928/preparation/source-evidence.json",
+    "capture_index": "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json",
+    "capture_workspace": "data/historical/capture-workspace"
+  },
+  "inputs": {
+    ".qualification/conditional-selection20260928/preparation/cache-manifest.json": "aa6488a63eedc735ffda6839580bfb48c3dc3b7eb4daf53855bca3309ebe960e",
+    ".qualification/conditional-selection20260928/preparation/market-features.joblib": "257362db0f5f2eeb5c1ff07ebc0a0f8aadc360740f5bcd0ee1da4caa9c79e27b",
+    ".qualification/conditional-selection20260928/preparation/source-evidence.json": "ae2e3a1ce69a20e98961084f7104e39a50a5e5edcc8704f89efa46eee1fcf206",
+    ".qualification/earnings-quality20260928/cohort/model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    ".qualification/earnings-quality20260928/model-inputs/event_inputs.py": "4a1854ed9ea31b5a95e1a4c7a3c512be87ccba5bc0890de083c35801afb939ed",
+    ".qualification/earnings-quality20260928/model-inputs/prepare_market.py": "de2d9776e8ec957f8c9ca823ca789f820b570563cb85ea9f9790529d7da5cc2d",
+    ".qualification/earnings-quality20260928/model-inputs/test_event_inputs.py": "5492ba8d2a50d401a8c5241a22c6df490dd0356261a4cb923eca52f507534ddb",
+    ".qualification/earnings-quality20260928/model-inputs/test_prepare_market.py": "758b84128d6b88e15d25639d4626d2b43626afda0752e65a05d24d9dc9305a87",
+    ".qualification/earnings-quality20260928/qualification-review/market-post-fix-review-20260929T140204Z.json": "6d2b284d4966748e2f8a3f6c214ad6489bb77a562d7f67ef000d3f5ebcddb502",
+    ".qualification/earnings-quality20260928/source/cohort.json": "41a26bef5fa3c449a2f627c57e9da34aaeabdf551506c31f907e279339d0c76a",
+    ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+    "artifacts/historical-lab/runs/814780d48b4141b9a82a3fb917d1b85a/capture-index.json": "85202315acbf06dbdde838c98077bea198177617b0ef88a7584a7a9b1a0d6966"
+  },
+  "dependencies": {
+    "numpy": "2.5.3",
+    "joblib": "1.6.0"
+  },
+  "source_or_cohort_fallback": false,
+  "strategy_returns_computed": false
+}

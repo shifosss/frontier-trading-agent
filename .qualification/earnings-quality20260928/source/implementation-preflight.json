@@ -1,0 +1,16 @@
+{
+  "at": "2026-09-28T23:47:32.816958+00:00",
+  "status": "implemented_offline; cohort/request freeze pending",
+  "tests": 8,
+  "test_seconds": 0.769,
+  "network_requests": 0,
+  "files": {
+    "capture.py": "e6811627da248575b85e59ec015e91a9243d95e3ee61f8b9a93b58968857a231",
+    "test_capture.py": "1c7d3ba26f58e04bdf56dc99780a28a1fd22e798cb4cc3635a23b6e148522677",
+    "source-plan.md": "f3d211d9fc3aba9354c14a4c54956288ce00c9f2bdff403040d1fabcd6620dee",
+    "request-draft.json": "88b9df6a009f1bdfcfe40b330bb36b710e17bf551295316f14ccba3a9287f70e",
+    "reusable-source-catalog.json": "cab31a1af55fbf1d5861ec3c6ff823d8f1cc978016d0daf89daff555796be0aa",
+    "pilot-source-volume.json": "80faaabc0e4d3b32e6609d881b86e520aaf1ac429e2d5a67c700bf00df7e85d5",
+    "classification-evidence.json": "00ae256f810466f9500cd2a8e8509518fe9e3336812dab9e7c0caa69a2ec9622"
+  }
+}

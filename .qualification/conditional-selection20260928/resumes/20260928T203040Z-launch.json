@@ -1,0 +1,9 @@
+{
+  "pid": 53812,
+  "at": "2026-09-28T20:30:40.749878+00:00",
+  "reason": "Windows denied atomic status-file replacement; prior process exited and historical lock verified free. Monitor append-only stdout while worker runs.",
+  "code_changed": false,
+  "completed_blocks_reused": 3,
+  "interrupted_block": 3,
+  "preserve_partial_model_attempt": true
+}

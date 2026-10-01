@@ -1,0 +1,1 @@
+{"type":"object","properties":{"name":{"type":"string"},"family":{"type":"string","enum":["trend","reversion"]},"lookback":{"type":"integer"},"price_basis":{"type":"string","enum":["raw"]},"mechanism":{"type":"string"},"failure_condition":{"type":"string"}},"required":["name","family","lookback","price_basis","mechanism","failure_condition"],"additionalProperties":false}

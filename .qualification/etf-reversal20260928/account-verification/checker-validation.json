@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-29T00:46:56.579440+00:00",
+  "status": "passed",
+  "mutation_checks": [
+    {
+      "mutation": "entry_fee_plus_one_cent",
+      "detected": true
+    },
+    {
+      "mutation": "original_reservation_plus_one_cent",
+      "detected": true
+    },
+    {
+      "mutation": "daily_cash_plus_one_cent",
+      "detected": true
+    },
+    {
+      "mutation": "five_percent_week_count_plus_one",
+      "detected": true
+    },
+    {
+      "mutation": "halt_observed_drawdown_plus_one_percent",
+      "detected": true
+    }
+  ],
+  "original_accounts_unchanged": true,
+  "attempts_retained": 1,
+  "planned_accounts": 12,
+  "account_artifacts": 12,
+  "all_complete": true,
+  "manifest_covers_every_attempt_json": true,
+  "cash_references_unchanged": true,
+  "study_executions": 0,
+  "network_requests": 0
+}

@@ -1,0 +1,17 @@
+{
+  "pid": 25396,
+  "launched_at": "2026-09-28T21:24:35.391816+00:00",
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-u",
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\intraday-opening20260928\\operational_runner.py"
+  ],
+  "inherited_completed_sessions": 49,
+  "operational_amendment_sha256": "c0be32b42265a3fd0a650db27cde5e24ce6eb11786a3ee146cfc84e0a6bf5308",
+  "frozen_implementation_sha256": "056f53439f9e277fbd381e5a0e0d331d0a617a87e3d2bbc1d547a7fe7bf9ad9f",
+  "initial_exit_code": null,
+  "capture_lock_held": true
+}

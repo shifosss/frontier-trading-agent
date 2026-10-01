@@ -1,0 +1,1277 @@
+{
+  "run_id": "577a24e71a844022b3ac86ca66e32c34",
+  "source": "artifacts\\historical-lab\\runs\\577a24e71a844022b3ac86ca66e32c34\\cad-result.json",
+  "as_of": "2026-09-18T20:43:15.256344+00:00",
+  "coverage": {
+    "markets": [
+      {
+        "currency": "CAD",
+        "calendar_sessions": 6709,
+        "first_session": "2000-01-04",
+        "last_session": "2026-09-18",
+        "stock_count": 2753,
+        "discarded_rows": 0,
+        "benchmark": "XIU.TO"
+      }
+    ]
+  },
+  "methodology": {
+    "version": "historical-cash-walk-forward-v1",
+    "strategies": {
+      "momentum": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank",
+      "trend_pullback": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank",
+      "mean_reversion": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first",
+      "breakout": "Close at or above the previous 55-session maximum close; breakout distance rank",
+      "momentum_12_1": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank",
+      "momentum_market_trend": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank; benchmark must exceed its 200-session mean",
+      "trend_pullback_market_trend": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank; benchmark must exceed its 200-session mean",
+      "mean_reversion_market_trend": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first; benchmark must exceed its 200-session mean",
+      "breakout_market_trend": "Close at or above the previous 55-session maximum close; breakout distance rank; benchmark must exceed its 200-session mean",
+      "momentum_12_1_market_trend": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank; benchmark must exceed its 200-session mean"
+    },
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "round_trip_cost_bps": [
+      20,
+      40,
+      100
+    ],
+    "training_sessions": 756,
+    "test_sessions": 252,
+    "minimum_stock_sessions": 201,
+    "intermediate_momentum_minimum_sessions": 253,
+    "maximum_positions": 5,
+    "position_budget_fraction": 0.2,
+    "atr_risk_budget_fraction": 0.005,
+    "cash_settlement_sessions": 3,
+    "selection_cost_bps": 100,
+    "selection_score": "median three 252-session returns minus half maximum drawdown",
+    "selection_requirements": {
+      "minimum_completed_position_trades": 12,
+      "minimum_profitable_training_blocks": 2,
+      "maximum_drawdown": 0.3,
+      "minimum_score_exclusive": 0
+    },
+    "model_signature": "sha256:92569a27318793ddab52f3805531f60cff95a66c667318e00382d270e92e7c29",
+    "attempts": [
+      {
+        "strategy": "momentum",
+        "horizon": 5,
+        "description": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank"
+      },
+      {
+        "strategy": "momentum",
+        "horizon": 10,
+        "description": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank"
+      },
+      {
+        "strategy": "momentum",
+        "horizon": 20,
+        "description": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank"
+      },
+      {
+        "strategy": "trend_pullback",
+        "horizon": 5,
+        "description": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank"
+      },
+      {
+        "strategy": "trend_pullback",
+        "horizon": 10,
+        "description": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank"
+      },
+      {
+        "strategy": "trend_pullback",
+        "horizon": 20,
+        "description": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank"
+      },
+      {
+        "strategy": "mean_reversion",
+        "horizon": 5,
+        "description": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first"
+      },
+      {
+        "strategy": "mean_reversion",
+        "horizon": 10,
+        "description": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first"
+      },
+      {
+        "strategy": "mean_reversion",
+        "horizon": 20,
+        "description": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first"
+      },
+      {
+        "strategy": "breakout",
+        "horizon": 5,
+        "description": "Close at or above the previous 55-session maximum close; breakout distance rank"
+      },
+      {
+        "strategy": "breakout",
+        "horizon": 10,
+        "description": "Close at or above the previous 55-session maximum close; breakout distance rank"
+      },
+      {
+        "strategy": "breakout",
+        "horizon": 20,
+        "description": "Close at or above the previous 55-session maximum close; breakout distance rank"
+      },
+      {
+        "strategy": "momentum_12_1",
+        "horizon": 5,
+        "description": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank"
+      },
+      {
+        "strategy": "momentum_12_1",
+        "horizon": 10,
+        "description": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank"
+      },
+      {
+        "strategy": "momentum_12_1",
+        "horizon": 20,
+        "description": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank"
+      },
+      {
+        "strategy": "momentum_market_trend",
+        "horizon": 5,
+        "description": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "momentum_market_trend",
+        "horizon": 10,
+        "description": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "momentum_market_trend",
+        "horizon": 20,
+        "description": "Positive 20/60-session momentum, above 50-day mean; momentum / volatility rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "trend_pullback_market_trend",
+        "horizon": 5,
+        "description": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "trend_pullback_market_trend",
+        "horizon": 10,
+        "description": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "trend_pullback_market_trend",
+        "horizon": 20,
+        "description": "Above 200-day mean with negative 5-day momentum; pullback / volatility rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "mean_reversion_market_trend",
+        "horizon": 5,
+        "description": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "mean_reversion_market_trend",
+        "horizon": 10,
+        "description": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "mean_reversion_market_trend",
+        "horizon": 20,
+        "description": "Above 200-day mean and 20-day z-score below -1.5; lowest z-score first; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "breakout_market_trend",
+        "horizon": 5,
+        "description": "Close at or above the previous 55-session maximum close; breakout distance rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "breakout_market_trend",
+        "horizon": 10,
+        "description": "Close at or above the previous 55-session maximum close; breakout distance rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "breakout_market_trend",
+        "horizon": 20,
+        "description": "Close at or above the previous 55-session maximum close; breakout distance rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "momentum_12_1_market_trend",
+        "horizon": 5,
+        "description": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "momentum_12_1_market_trend",
+        "horizon": 10,
+        "description": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank; benchmark must exceed its 200-session mean"
+      },
+      {
+        "strategy": "momentum_12_1_market_trend",
+        "horizon": 20,
+        "description": "Positive 252-to-21-session return; skip the latest month, volatility-normalized rank; benchmark must exceed its 200-session mean"
+      }
+    ],
+    "budgets": [
+      500.0,
+      2000.0,
+      10000.0,
+      100000.0
+    ],
+    "cost_bps": [
+      20,
+      40,
+      100
+    ],
+    "limitations": [
+      "Retrospective research designed today, not a prospectively untouched historical test.",
+      "Current-listed membership omits historical delisted firms and introduces survivorship bias.",
+      "Provider-adjusted prices are today's vintage. Signals may reflect later corrections.",
+      "Historical availability is imputed at exchange close plus one minute, not verified provider publication time.",
+      "Historical capture reconstructs nominal prices using provider-reported splits; missing or revised actions can still distort historical share affordability.",
+      "Daily marks anchor raw entry notional to adjusted-close ratios: synthetic total-return units, not a corporate-action cash ledger.",
+      "Training uses only the preceding 756 sessions; a selected rule is frozen for the next 252 sessions. All attempts and training scores are reported.",
+      "Selection uses the declared initial budget at 100 bps costs; test accounts compound their own wealth. Cash is selected when no candidate qualifies.",
+      "Next-close entries, nonoverlapping batches, no margin, whole shares, maximum five stocks, conservative T+3 sale settlement in every era.",
+      "Portfolios are in cash at each predetermined fold boundary; entries that cannot finish their full horizon before that boundary are skipped.",
+      "Any missing selected entry or held daily adjusted price invalidates that portfolio result; losses are never dropped from an average.",
+      "Costs are symmetric proportional fees and slippage per executed notional; taxes, fixed commissions, FX, borrow, interest and monthly contributions are excluded.",
+      "Full-period fixed-rule comparisons are descriptive; selecting their best result would reuse test data.",
+      "Drawdown is a positive loss fraction from the preceding daily equity peak; all returns are native currency with no FX conversion."
+    ]
+  },
+  "views": [
+    {
+      "currency": "CAD",
+      "budget": 500.0,
+      "cost_bps": 40,
+      "status": "incomplete",
+      "missing": [
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark"
+      ],
+      "fees": 22.864568191404732,
+      "trades": 85,
+      "first_session": "2003-10-22",
+      "last_session": "2005-10-20",
+      "ending_equity": null,
+      "total_return": null,
+      "max_drawdown": null,
+      "cagr": null,
+      "annualized_volatility": null,
+      "yearly": [],
+      "curve_points": 504,
+      "valid_curve_points": 415,
+      "first_point": {
+        "session": "2003-10-22",
+        "equity": 500.0,
+        "cash": 500.0
+      },
+      "last_point": {
+        "session": "2005-10-20",
+        "equity": null,
+        "cash": null
+      },
+      "average_invested_fraction": 0.46170396014641985,
+      "fraction_sessions_holding_risk": 0.8192771084337349,
+      "minimum_cash": 178.79372054727367,
+      "audit_batch_count": 17,
+      "filled_batch_count": 17,
+      "first_trade_entry": "2003-10-23",
+      "last_trade_exit": "2005-06-09",
+      "gross_entry_notional": 5618.953623156698,
+      "entry_turnover_per_year_vs_mean_equity": 4.752887857501553,
+      "position_roundtrips_per_year": 42.58744855967078,
+      "fold_status": {
+        "complete": 1,
+        "incomplete": 1
+      },
+      "fold_selection": {
+        "momentum_12_1_market_trend:20": 2
+      },
+      "fold_count": 2,
+      "selection_changes": 0,
+      "cash_folds": 0,
+      "folds": [
+        {
+          "training_start": "2000-10-18",
+          "training_end": "2003-10-21",
+          "test_start": "2003-10-22",
+          "test_end": "2004-10-20",
+          "selected_strategy": "momentum_12_1_market_trend",
+          "selected_horizon": 20,
+          "training_score": 0.04653142695665635,
+          "test_return": 0.20930595262256246,
+          "test_status": "complete",
+          "starting_equity": 500.0,
+          "ending_equity": 604.6529763112812,
+          "eligible_candidates": 9,
+          "filled_batches": 10
+        },
+        {
+          "training_start": "2001-10-22",
+          "training_end": "2004-10-20",
+          "test_start": "2004-10-21",
+          "test_end": "2005-10-20",
+          "selected_strategy": "momentum_12_1_market_trend",
+          "selected_horizon": 20,
+          "training_score": 0.05212529245807307,
+          "test_return": null,
+          "test_status": "incomplete",
+          "starting_equity": 604.6529763112812,
+          "ending_equity": null,
+          "eligible_candidates": 5,
+          "filled_batches": 7
+        }
+      ],
+      "benchmark": {
+        "status": "complete",
+        "missing": [],
+        "fees": 9.296657605196238,
+        "trades": 1,
+        "first_session": "2003-10-22",
+        "last_session": "2026-09-18",
+        "ending_equity": 4190.172121494388,
+        "total_return": 7.380344242988777,
+        "max_drawdown": 0.4681956235020154,
+        "cagr": 0.09724532757926374,
+        "annualized_volatility": 0.1626498486867278,
+        "yearly": [
+          {
+            "year": "2003",
+            "return": 0.061902591329581425,
+            "max_drawdown": 0.020856357625381072
+          },
+          {
+            "year": "2004",
+            "return": 0.12660326692421253,
+            "max_drawdown": 0.08531314559353265
+          },
+          {
+            "year": "2005",
+            "return": 0.24426179232165257,
+            "max_drawdown": 0.07683594330632493
+          },
+          {
+            "year": "2006",
+            "return": 0.18487084827032363,
+            "max_drawdown": 0.11835691200660214
+          },
+          {
+            "year": "2007",
+            "return": 0.1053089755033545,
+            "max_drawdown": 0.10821962456760403
+          },
+          {
+            "year": "2008",
+            "return": -0.30301606109478996,
+            "max_drawdown": 0.4586442539843104
+          },
+          {
+            "year": "2009",
+            "return": 0.302157533739994,
+            "max_drawdown": 0.18432234448088491
+          },
+          {
+            "year": "2010",
+            "return": 0.13465520084011784,
+            "max_drawdown": 0.08919223628403594
+          },
+          {
+            "year": "2011",
+            "return": -0.09084790469589388,
+            "max_drawdown": 0.19985909666000246
+          },
+          {
+            "year": "2012",
+            "return": 0.07711144545910975,
+            "max_drawdown": 0.10732225898232794
+          },
+          {
+            "year": "2013",
+            "return": 0.12737295774731816,
+            "max_drawdown": 0.06828407561321492
+          },
+          {
+            "year": "2014",
+            "return": 0.11678246309664275,
+            "max_drawdown": 0.10372606295203113
+          },
+          {
+            "year": "2015",
+            "return": -0.0764691770938738,
+            "max_drawdown": 0.14934619904235102
+          },
+          {
+            "year": "2016",
+            "return": 0.19877966337828923,
+            "max_drawdown": 0.0885805568134792
+          },
+          {
+            "year": "2017",
+            "return": 0.0941097352586302,
+            "max_drawdown": 0.04783229754627083
+          },
+          {
+            "year": "2018",
+            "return": -0.0769159671820121,
+            "max_drawdown": 0.14446286796243546
+          },
+          {
+            "year": "2019",
+            "return": 0.2141852319098032,
+            "max_drawdown": 0.03719844949519868
+          },
+          {
+            "year": "2020",
+            "return": 0.05193480915429993,
+            "max_drawdown": 0.3496728938439766
+          },
+          {
+            "year": "2021",
+            "return": 0.276669579929552,
+            "max_drawdown": 0.05312841422483683
+          },
+          {
+            "year": "2022",
+            "return": -0.06278814857514947,
+            "max_drawdown": 0.16189349574780554
+          },
+          {
+            "year": "2023",
+            "return": 0.11715265772568428,
+            "max_drawdown": 0.0854702250113657
+          },
+          {
+            "year": "2024",
+            "return": 0.20518086082047904,
+            "max_drawdown": 0.04863965686886951
+          },
+          {
+            "year": "2025",
+            "return": 0.28644115156167493,
+            "max_drawdown": 0.12255626086679838
+          },
+          {
+            "year": "2026",
+            "return": 0.14398016543983339,
+            "max_drawdown": 0.07602794455928374
+          }
+        ],
+        "average_invested_fraction": 0.9781486403752854
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 500.0,
+      "cost_bps": 100,
+      "status": "incomplete",
+      "missing": [
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark"
+      ],
+      "fees": 55.89220743641302,
+      "trades": 85,
+      "first_session": "2003-10-22",
+      "last_session": "2005-10-20",
+      "ending_equity": null,
+      "total_return": null,
+      "max_drawdown": null,
+      "cagr": null,
+      "annualized_volatility": null,
+      "yearly": [],
+      "curve_points": 504,
+      "valid_curve_points": 415,
+      "first_point": {
+        "session": "2003-10-22",
+        "equity": 500.0,
+        "cash": 500.0
+      },
+      "last_point": {
+        "session": "2005-10-20",
+        "equity": null,
+        "cash": null
+      },
+      "average_invested_fraction": 0.46311232670309255,
+      "fraction_sessions_holding_risk": 0.8192771084337349,
+      "minimum_cash": 176.75681955948687,
+      "audit_batch_count": 17,
+      "filled_batch_count": 17,
+      "first_trade_entry": "2003-10-23",
+      "last_trade_exit": "2005-06-09",
+      "gross_entry_notional": 5493.010156410164,
+      "entry_turnover_per_year_vs_mean_equity": 4.767338665000825,
+      "position_roundtrips_per_year": 42.58744855967078,
+      "fold_status": {
+        "complete": 1,
+        "incomplete": 1
+      },
+      "fold_selection": {
+        "momentum_12_1_market_trend:20": 2
+      },
+      "fold_count": 2,
+      "selection_changes": 0,
+      "cash_folds": 0,
+      "folds": [
+        {
+          "training_start": "2000-10-18",
+          "training_end": "2003-10-21",
+          "test_start": "2003-10-22",
+          "test_end": "2004-10-20",
+          "selected_strategy": "momentum_12_1_market_trend",
+          "selected_horizon": 20,
+          "training_score": 0.04653142695665635,
+          "test_return": 0.1789927565825693,
+          "test_status": "complete",
+          "starting_equity": 500.0,
+          "ending_equity": 589.4963782912846,
+          "eligible_candidates": 9,
+          "filled_batches": 10
+        },
+        {
+          "training_start": "2001-10-22",
+          "training_end": "2004-10-20",
+          "test_start": "2004-10-21",
+          "test_end": "2005-10-20",
+          "selected_strategy": "momentum_12_1_market_trend",
+          "selected_horizon": 20,
+          "training_score": 0.05212529245807307,
+          "test_return": null,
+          "test_status": "incomplete",
+          "starting_equity": 589.4963782912846,
+          "ending_equity": null,
+          "eligible_candidates": 5,
+          "filled_batches": 7
+        }
+      ],
+      "benchmark": {
+        "status": "complete",
+        "missing": [],
+        "fees": 23.241644012990598,
+        "trades": 1,
+        "first_session": "2003-10-22",
+        "last_session": "2026-09-18",
+        "ending_equity": 4176.227135086594,
+        "total_return": 7.3524542701731885,
+        "max_drawdown": 0.46880525827409336,
+        "cagr": 0.09708566523426043,
+        "annualized_volatility": 0.16289146940228763,
+        "yearly": [
+          {
+            "year": "2003",
+            "return": 0.05905601125908588,
+            "max_drawdown": 0.020914543631935456
+          },
+          {
+            "year": "2004",
+            "return": 0.12694355708134775,
+            "max_drawdown": 0.08552586185041267
+          },
+          {
+            "year": "2005",
+            "return": 0.24484437537764037,
+            "max_drawdown": 0.07698556828254577
+          },
+          {
+            "year": "2006",
+            "return": 0.18522505408182033,
+            "max_drawdown": 0.11856158916556137
+          },
+          {
+            "year": "2007",
+            "return": 0.10547921166277874,
+            "max_drawdown": 0.10837324414269478
+          },
+          {
+            "year": "2008",
+            "return": -0.30345916083305413,
+            "max_drawdown": 0.45924145197422594
+          },
+          {
+            "year": "2009",
+            "return": 0.3027918746008649,
+            "max_drawdown": 0.1846907184938411
+          },
+          {
+            "year": "2010",
+            "return": 0.1348721896565428,
+            "max_drawdown": 0.08932953537931831
+          },
+          {
+            "year": "2011",
+            "return": -0.09097690245932777,
+            "max_drawdown": 0.200124966495003
+          },
+          {
+            "year": "2012",
+            "return": 0.07723189667572905,
+            "max_drawdown": 0.10747932000317328
+          },
+          {
+            "year": "2013",
+            "return": 0.12755765497482896,
+            "max_drawdown": 0.06837920373103545
+          },
+          {
+            "year": "2014",
+            "return": 0.11693264652554736,
+            "max_drawdown": 0.1038403557399783
+          },
+          {
+            "year": "2015",
+            "return": -0.07655722191520187,
+            "max_drawdown": 0.14950798453567293
+          },
+          {
+            "year": "2016",
+            "return": 0.19902750792147428,
+            "max_drawdown": 0.08869100175168565
+          },
+          {
+            "year": "2017",
+            "return": 0.0942075969721008,
+            "max_drawdown": 0.0478799399880524
+          },
+          {
+            "year": "2018",
+            "return": -0.07698906342298828,
+            "max_drawdown": 0.14459496702906716
+          },
+          {
+            "year": "2019",
+            "return": 0.21440575862782008,
+            "max_drawdown": 0.03723114588141885
+          },
+          {
+            "year": "2020",
+            "return": 0.051978840951640626,
+            "max_drawdown": 0.34995375205135104
+          },
+          {
+            "year": "2021",
+            "return": 0.276892558064874,
+            "max_drawdown": 0.053161483033545176
+          },
+          {
+            "year": "2022",
+            "return": -0.06282777858589073,
+            "max_drawdown": 0.16199124791400388
+          },
+          {
+            "year": "2023",
+            "return": 0.11723155813404484,
+            "max_drawdown": 0.08552343222174597
+          },
+          {
+            "year": "2024",
+            "return": 0.2053045468813599,
+            "max_drawdown": 0.04866607410494761
+          },
+          {
+            "year": "2025",
+            "return": 0.28658441076347096,
+            "max_drawdown": 0.12261453229632124
+          },
+          {
+            "year": "2026",
+            "return": 0.1406161941273243,
+            "max_drawdown": 0.07605554260945546
+          }
+        ],
+        "average_invested_fraction": 0.9793611560816385
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000.0,
+      "cost_bps": 40,
+      "status": "incomplete",
+      "missing": [
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark"
+      ],
+      "fees": 5304.308266431808,
+      "trades": 85,
+      "first_session": "2003-10-22",
+      "last_session": "2005-10-20",
+      "ending_equity": null,
+      "total_return": null,
+      "max_drawdown": null,
+      "cagr": null,
+      "annualized_volatility": null,
+      "yearly": [],
+      "curve_points": 504,
+      "valid_curve_points": 415,
+      "first_point": {
+        "session": "2003-10-22",
+        "equity": 100000.0,
+        "cash": 100000.0
+      },
+      "last_point": {
+        "session": "2005-10-20",
+        "equity": null,
+        "cash": null
+      },
+      "average_invested_fraction": 0.5002047126099042,
+      "fraction_sessions_holding_risk": 0.8192771084337349,
+      "minimum_cash": 29030.668338197967,
+      "audit_batch_count": 17,
+      "filled_batch_count": 17,
+      "first_trade_entry": "2003-10-23",
+      "last_trade_exit": "2005-06-09",
+      "gross_entry_notional": 1302457.5181002992,
+      "entry_turnover_per_year_vs_mean_equity": 5.151032544632009,
+      "position_roundtrips_per_year": 42.58744855967078,
+      "fold_status": {
+        "complete": 1,
+        "incomplete": 1
+      },
+      "fold_selection": {
+        "momentum_12_1_market_trend:20": 1,
+        "momentum_12_1:20": 1
+      },
+      "fold_count": 2,
+      "selection_changes": 1,
+      "cash_folds": 0,
+      "folds": [
+        {
+          "training_start": "2000-10-18",
+          "training_end": "2003-10-21",
+          "test_start": "2003-10-22",
+          "test_end": "2004-10-20",
+          "selected_strategy": "momentum_12_1_market_trend",
+          "selected_horizon": 20,
+          "training_score": 0.04230513152063098,
+          "test_return": 0.31743584908602496,
+          "test_status": "complete",
+          "starting_equity": 100000.0,
+          "ending_equity": 131743.5849086025,
+          "eligible_candidates": 7,
+          "filled_batches": 10
+        },
+        {
+          "training_start": "2001-10-22",
+          "training_end": "2004-10-20",
+          "test_start": "2004-10-21",
+          "test_end": "2005-10-20",
+          "selected_strategy": "momentum_12_1",
+          "selected_horizon": 20,
+          "training_score": 0.05403160041127636,
+          "test_return": null,
+          "test_status": "incomplete",
+          "starting_equity": 131743.5849086025,
+          "ending_equity": null,
+          "eligible_candidates": 4,
+          "filled_batches": 7
+        }
+      ],
+      "benchmark": {
+        "status": "complete",
+        "missing": [],
+        "fees": 1954.8335491653543,
+        "trades": 1,
+        "first_session": "2003-10-22",
+        "last_session": "2026-09-18",
+        "ending_equity": 875942.5560924108,
+        "total_return": 7.759425560924107,
+        "max_drawdown": 0.4788833768881915,
+        "cagr": 0.09936647991817815,
+        "annualized_volatility": 0.16676238864755646,
+        "yearly": [
+          {
+            "year": "2003",
+            "return": 0.06508213352060066,
+            "max_drawdown": 0.021902126845509295
+          },
+          {
+            "year": "2004",
+            "return": 0.13270871547140506,
+            "max_drawdown": 0.08911717659788876
+          },
+          {
+            "year": "2005",
+            "return": 0.2546612324861601,
+            "max_drawdown": 0.07948732379480172
+          },
+          {
+            "year": "2006",
+            "return": 0.19114415288031283,
+            "max_drawdown": 0.1219706795925708
+          },
+          {
+            "year": "2007",
+            "return": 0.10830902905110018,
+            "max_drawdown": 0.11091802259184325
+          },
+          {
+            "year": "2008",
+            "return": -0.31080482242290597,
+            "max_drawdown": 0.46911397311988434
+          },
+          {
+            "year": "2009",
+            "return": 0.3134267560013799,
+            "max_drawdown": 0.1908555779431944
+          },
+          {
+            "year": "2010",
+            "return": 0.138478847831774,
+            "max_drawdown": 0.09160874828190135
+          },
+          {
+            "year": "2011",
+            "return": -0.09311382487723063,
+            "max_drawdown": 0.20452233862013203
+          },
+          {
+            "year": "2012",
+            "return": 0.07923222612197822,
+            "max_drawdown": 0.11008311411381766
+          },
+          {
+            "year": "2013",
+            "return": 0.13061888841793068,
+            "max_drawdown": 0.06995431523084183
+          },
+          {
+            "year": "2014",
+            "return": 0.1194146904631106,
+            "max_drawdown": 0.10572317420793997
+          },
+          {
+            "year": "2015",
+            "return": -0.07800889508297859,
+            "max_drawdown": 0.15217231677116938
+          },
+          {
+            "year": "2016",
+            "return": 0.20312076534399015,
+            "max_drawdown": 0.09051504660368515
+          },
+          {
+            "year": "2017",
+            "return": 0.09581799287272608,
+            "max_drawdown": 0.04866333712637638
+          },
+          {
+            "year": "2018",
+            "return": -0.0781900477494959,
+            "max_drawdown": 0.14676402142203904
+          },
+          {
+            "year": "2019",
+            "return": 0.21803406002706027,
+            "max_drawdown": 0.037767686520962074
+          },
+          {
+            "year": "2020",
+            "return": 0.05270100201520633,
+            "max_drawdown": 0.35455650787568016
+          },
+          {
+            "year": "2021",
+            "return": 0.2805469382307477,
+            "max_drawdown": 0.0537017236661087
+          },
+          {
+            "year": "2022",
+            "return": -0.06347530672214541,
+            "max_drawdown": 0.16358769654836658
+          },
+          {
+            "year": "2023",
+            "return": 0.11852168447919609,
+            "max_drawdown": 0.08639267256520777
+          },
+          {
+            "year": "2024",
+            "return": 0.2073245026808106,
+            "max_drawdown": 0.04909705662355157
+          },
+          {
+            "year": "2025",
+            "return": 0.28891986760639,
+            "max_drawdown": 0.12356408648949024
+          },
+          {
+            "year": "2026",
+            "return": 0.14494681290664646,
+            "max_drawdown": 0.07650439013061561
+          }
+        ],
+        "average_invested_fraction": 0.9994784247821191
+      }
+    },
+    {
+      "currency": "CAD",
+      "budget": 100000.0,
+      "cost_bps": 100,
+      "status": "incomplete",
+      "missing": [
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark"
+      ],
+      "fees": 12847.471385209465,
+      "trades": 85,
+      "first_session": "2003-10-22",
+      "last_session": "2005-10-20",
+      "ending_equity": null,
+      "total_return": null,
+      "max_drawdown": null,
+      "cagr": null,
+      "annualized_volatility": null,
+      "yearly": [],
+      "curve_points": 504,
+      "valid_curve_points": 415,
+      "first_point": {
+        "session": "2003-10-22",
+        "equity": 100000.0,
+        "cash": 100000.0
+      },
+      "last_point": {
+        "session": "2005-10-20",
+        "equity": null,
+        "cash": null
+      },
+      "average_invested_fraction": 0.5009304094828727,
+      "fraction_sessions_holding_risk": 0.8192771084337349,
+      "minimum_cash": 27630.613983797448,
+      "audit_batch_count": 17,
+      "filled_batch_count": 17,
+      "first_trade_entry": "2003-10-23",
+      "last_trade_exit": "2005-06-09",
+      "gross_entry_notional": 1261675.1096653382,
+      "entry_turnover_per_year_vs_mean_equity": 5.15833761969094,
+      "position_roundtrips_per_year": 42.58744855967078,
+      "fold_status": {
+        "complete": 1,
+        "incomplete": 1
+      },
+      "fold_selection": {
+        "momentum_12_1_market_trend:20": 1,
+        "momentum_12_1:20": 1
+      },
+      "fold_count": 2,
+      "selection_changes": 1,
+      "cash_folds": 0,
+      "folds": [
+        {
+          "training_start": "2000-10-18",
+          "training_end": "2003-10-21",
+          "test_start": "2003-10-22",
+          "test_end": "2004-10-20",
+          "selected_strategy": "momentum_12_1_market_trend",
+          "selected_horizon": 20,
+          "training_score": 0.04230513152063098,
+          "test_return": 0.2704446726563805,
+          "test_status": "complete",
+          "starting_equity": 100000.0,
+          "ending_equity": 127044.46726563806,
+          "eligible_candidates": 7,
+          "filled_batches": 10
+        },
+        {
+          "training_start": "2001-10-22",
+          "training_end": "2004-10-20",
+          "test_start": "2004-10-21",
+          "test_end": "2005-10-20",
+          "selected_strategy": "momentum_12_1",
+          "selected_horizon": 20,
+          "training_score": 0.05403160041127636,
+          "test_return": null,
+          "test_status": "incomplete",
+          "starting_equity": 127044.46726563806,
+          "ending_equity": null,
+          "eligible_candidates": 4,
+          "filled_batches": 7
+        }
+      ],
+      "benchmark": {
+        "status": "complete",
+        "missing": [],
+        "fees": 4874.406612542663,
+        "trades": 1,
+        "first_session": "2003-10-22",
+        "last_session": "2026-09-18",
+        "ending_equity": 871005.0909677064,
+        "total_return": 7.710050909677063,
+        "max_drawdown": 0.47896682307345184,
+        "cagr": 0.09909523309068624,
+        "annualized_volatility": 0.16680371036461208,
+        "yearly": [
+          {
+            "year": "2003",
+            "return": 0.06192828089759583,
+            "max_drawdown": 0.02191051162972435
+          },
+          {
+            "year": "2004",
+            "return": 0.1327575777780028,
+            "max_drawdown": 0.08914751406449717
+          },
+          {
+            "year": "2005",
+            "return": 0.2547440077129641,
+            "max_drawdown": 0.07950826308115444
+          },
+          {
+            "year": "2006",
+            "return": 0.19119366863810883,
+            "max_drawdown": 0.12199910883141674
+          },
+          {
+            "year": "2007",
+            "return": 0.1083325830526145,
+            "max_drawdown": 0.1109391344637366
+          },
+          {
+            "year": "2008",
+            "return": -0.3108658066724411,
+            "max_drawdown": 0.4691957169710983
+          },
+          {
+            "year": "2009",
+            "return": 0.3135159965442802,
+            "max_drawdown": 0.19090722130789328
+          },
+          {
+            "year": "2010",
+            "return": 0.1385088653104829,
+            "max_drawdown": 0.09162769485392142
+          },
+          {
+            "year": "2011",
+            "return": -0.0931315532355027,
+            "max_drawdown": 0.204558765678862
+          },
+          {
+            "year": "2012",
+            "return": 0.07924886070503057,
+            "max_drawdown": 0.11010473143010158
+          },
+          {
+            "year": "2013",
+            "return": 0.13064429782004927,
+            "max_drawdown": 0.06996737684708265
+          },
+          {
+            "year": "2014",
+            "return": 0.11943523612908336,
+            "max_drawdown": 0.10573871203784857
+          },
+          {
+            "year": "2015",
+            "return": -0.07802088476373747,
+            "max_drawdown": 0.15219429721393674
+          },
+          {
+            "year": "2016",
+            "return": 0.2031546261064998,
+            "max_drawdown": 0.09053013569854651
+          },
+          {
+            "year": "2017",
+            "return": 0.09583126889687055,
+            "max_drawdown": 0.04866979072463584
+          },
+          {
+            "year": "2018",
+            "return": -0.07819993393497016,
+            "max_drawdown": 0.14678186589539133
+          },
+          {
+            "year": "2019",
+            "return": 0.21806396647835347,
+            "max_drawdown": 0.03777209797127168
+          },
+          {
+            "year": "2020",
+            "return": 0.05270693658603598,
+            "max_drawdown": 0.3545943045076866
+          },
+          {
+            "year": "2021",
+            "return": 0.2805769484033751,
+            "max_drawdown": 0.05370614678095931
+          },
+          {
+            "year": "2022",
+            "return": -0.06348060899519303,
+            "max_drawdown": 0.16360076315414152
+          },
+          {
+            "year": "2023",
+            "return": 0.11853225602075912,
+            "max_drawdown": 0.08639978931178471
+          },
+          {
+            "year": "2024",
+            "return": 0.20734103533668158,
+            "max_drawdown": 0.04910058060841194
+          },
+          {
+            "year": "2025",
+            "return": 0.28893895028952965,
+            "max_drawdown": 0.12357184201793692
+          },
+          {
+            "year": "2026",
+            "return": 0.1415125003558424,
+            "max_drawdown": 0.07650804935596556
+          }
+        ],
+        "average_invested_fraction": 0.9996455861729803
+      }
+    }
+  ],
+  "instrument_coverage_sample": [
+    {
+      "symbol": "AA.CN",
+      "currency": "CAD",
+      "valid_completed_rows": 266,
+      "first_session": "2025-08-26",
+      "last_session": "2026-09-16",
+      "missing_sessions_between_first_and_last": 0,
+      "latest_201_complete": false,
+      "latest_liquid": false
+    },
+    {
+      "symbol": "AAB.TO",
+      "currency": "CAD",
+      "valid_completed_rows": 6708,
+      "first_session": "2000-01-04",
+      "last_session": "2026-09-17",
+      "missing_sessions_between_first_and_last": 0,
+      "latest_201_complete": false,
+      "latest_liquid": false
+    }
+  ],
+  "instrument_coverage_count": 2759,
+  "latest_liquid_instruments": 375,
+  "portfolios_counts": {
+    "rows": 360,
+    "status": {
+      "complete": 263,
+      "incomplete": 97
+    },
+    "complete_positive_returns": 135,
+    "complete_drawdown_over_30pct": 185,
+    "incomplete_reasons": {
+      "mark": 145
+    }
+  },
+  "benchmarks_counts": {
+    "rows": 24,
+    "status": {
+      "complete": 24
+    },
+    "complete_positive_returns": 12,
+    "complete_drawdown_over_30pct": 12,
+    "incomplete_reasons": {}
+  },
+  "walk_forward_counts": {
+    "rows": 12,
+    "status": {
+      "incomplete": 12
+    },
+    "complete_positive_returns": 0,
+    "complete_drawdown_over_30pct": 0,
+    "incomplete_reasons": {
+      "mark": 36
+    }
+  },
+  "fixed_views": [
+    {
+      "budget": 500,
+      "cost_bps": 40,
+      "status": {
+        "complete": 20,
+        "incomplete": 10
+      },
+      "positive": 10,
+      "drawdown_over_30pct": 12,
+      "median_return": 0.045359199324611355,
+      "missing_samples": [
+        "CPH.TO:2014-12-24:mark",
+        "BIG.V:2026-09-17:mark",
+        "CPH.TO:2014-12-24:mark",
+        "CRON.TO:2018-05-24:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark",
+        "SPB.TO:2009-01-07:mark",
+        "BIG.V:2026-09-17:mark",
+        "CRON.TO:2018-05-24:mark"
+      ]
+    },
+    {
+      "budget": 500,
+      "cost_bps": 100,
+      "status": {
+        "complete": 23,
+        "incomplete": 7
+      },
+      "positive": 6,
+      "drawdown_over_30pct": 22,
+      "median_return": -0.655980764511668,
+      "missing_samples": [
+        "BIG.V:2026-09-17:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark",
+        "SPB.TO:2009-01-07:mark",
+        "BIG.V:2026-09-17:mark",
+        "CRON.TO:2018-05-24:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark"
+      ]
+    },
+    {
+      "budget": 100000,
+      "cost_bps": 40,
+      "status": {
+        "complete": 22,
+        "incomplete": 8
+      },
+      "positive": 11,
+      "drawdown_over_30pct": 14,
+      "median_return": -0.04543683675198462,
+      "missing_samples": [
+        "BIG.V:2026-09-17:mark",
+        "CRON.TO:2018-05-24:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark",
+        "SPB.TO:2009-01-07:mark",
+        "BIG.V:2026-09-17:mark",
+        "CRON.TO:2018-05-24:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark"
+      ]
+    },
+    {
+      "budget": 100000,
+      "cost_bps": 100,
+      "status": {
+        "complete": 22,
+        "incomplete": 8
+      },
+      "positive": 6,
+      "drawdown_over_30pct": 22,
+      "median_return": -0.7351979811435834,
+      "missing_samples": [
+        "BIG.V:2026-09-17:mark",
+        "CRON.TO:2018-05-24:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark",
+        "WJX.TO:2005-06-17:mark",
+        "SPB.TO:2009-01-07:mark",
+        "BIG.V:2026-09-17:mark",
+        "CRON.TO:2018-05-24:mark",
+        "WJX.TO:2005-06-15:mark",
+        "WJX.TO:2005-06-16:mark"
+      ]
+    }
+  ]
+}

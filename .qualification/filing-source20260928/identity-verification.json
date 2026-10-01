@@ -1,0 +1,67 @@
+{
+  "at": "2026-09-28T22:32:47.795409+00:00",
+  "verified": [
+    {
+      "symbol": "T",
+      "cik": "0000732717",
+      "url": "https://data.sec.gov/submissions/CIK0000732717.json",
+      "sha256": "84eccf0171172ec4fe29525f0b3c7338b8268677e7ea36781301a1d912c7c56f",
+      "raw_file": "identity-raw\\T-submissions.bin",
+      "retrieved_at_utc": "2026-09-28T22:20:43.926162+00:00",
+      "name": "AT&T INC.",
+      "all_current_tickers": [
+        "T",
+        "TBB",
+        "T-PA",
+        "T-PC"
+      ],
+      "all_current_exchanges": [
+        "NYSE",
+        "NYSE",
+        "NYSE",
+        "NYSE"
+      ],
+      "meaning": "Current issuer locator; security class and historical membership not inferred from ticker-array position. Original historical covers retained for later qualification."
+    },
+    {
+      "symbol": "HRL",
+      "cik": "0000048465",
+      "url": "https://data.sec.gov/submissions/CIK0000048465.json",
+      "sha256": "2ba0992e6944335be8c69c4bf7bcf7adc986e92a6f2f9f559a3f34a76b0d55f4",
+      "raw_file": "identity-raw\\HRL-submissions.bin",
+      "retrieved_at_utc": "2026-09-28T22:20:45.011997+00:00",
+      "name": "HORMEL FOODS CORP /DE/",
+      "all_current_tickers": [
+        "HRL"
+      ],
+      "all_current_exchanges": [
+        "NYSE"
+      ],
+      "meaning": "Current issuer locator; security class and historical membership not inferred from ticker-array position. Original historical covers retained for later qualification."
+    },
+    {
+      "symbol": "BANF",
+      "cik": "0000760498",
+      "url": "https://data.sec.gov/submissions/CIK0000760498.json",
+      "sha256": "f27388aa6fa8b032567dbc890d36835ae208ff8d8b192ea9d56f8356d29eb5ef",
+      "raw_file": "identity-raw\\BANF-submissions.bin",
+      "retrieved_at_utc": "2026-09-28T22:20:46.111347+00:00",
+      "name": "BANCFIRST CORP /OK/",
+      "all_current_tickers": [
+        "BANF",
+        "BANFP"
+      ],
+      "all_current_exchanges": [
+        "Nasdaq",
+        "Nasdaq"
+      ],
+      "meaning": "Current issuer locator; security class and historical membership not inferred from ticker-array position. Original historical covers retained for later qualification."
+    }
+  ],
+  "prior_three": "AAPL/MSFT/F original cover and accession evidence in ../filing-feasibility20260928/verification.json",
+  "official_discovery_references": [
+    "https://www.sec.gov/Archives/edgar/data/732717/000073271726000297/0000732717-26-000297-index.html",
+    "https://www.sec.gov/Archives/edgar/data/48465/000004846526000055/R1.htm",
+    "https://www.sec.gov/Archives/edgar/data/760498/000119312525271672/0001193125-25-271672-index.html"
+  ]
+}

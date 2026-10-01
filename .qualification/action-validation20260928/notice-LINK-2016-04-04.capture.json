@@ -1,0 +1,16 @@
+{
+  "symbol": "LINK",
+  "effective_sessions": "2016-04-04",
+  "url": "https://www.sec.gov/Archives/edgar/data/828146/000155837016004899/link-20160620xdef14a.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:13:59.319948+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/828146/000155837016004899/link-20160620xdef14a.htm",
+  "redirects": [],
+  "sha256": "fda56edeecc49282750b3c670b41bef97f94baab7717dcdc5c0e0698c2a204a6",
+  "raw_file": "notice-LINK-2016-04-04.fda56edeecc49282750b3c670b41bef97f94baab7717dcdc5c0e0698c2a204a6.raw.html",
+  "bytes": 804793,
+  "captured_at": "2026-09-28T19:14:06.239388+00:00",
+  "text_file": "notice-LINK-2016-04-04.text.txt"
+}

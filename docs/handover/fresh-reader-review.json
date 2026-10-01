@@ -1,0 +1,41 @@
+{
+  "review_date": "2026-10-01",
+  "reviewer": "Independent agent with no prior conversation context",
+  "purpose": "Can a contributor understand and continue the project using the handbook and indexed evidence alone?",
+  "continuation_questions_answered": 10,
+  "decision_count": 150,
+  "decision_breakdown": {
+    "owner": 17,
+    "research": 94,
+    "technical": 39
+  },
+  "study_entries": 28,
+  "production_test_files": 41,
+  "identity_checks": {
+    "original_documents": 137,
+    "research_sources": 170,
+    "production_modules": 46,
+    "frontend_files": 11,
+    "supporting_sources": 15
+  },
+  "local_markdown_links_checked": 402,
+  "chapter_anchors_checked": 4,
+  "decision_evidence_paths_checked": 248,
+  "recovery_paths_checked_before_synthetic_fixture_removal": 5570,
+  "corrections_applied": [
+    "Actual-minute architecture row and earnings morning timing exception",
+    "ETF outcomes and distinct drawdown-halt convention included",
+    "Strict known-split rejection distinguished from source reconstruction and supported dividends",
+    "Complete study recovery catalogue, navigation and superseded-document statuses",
+    "Exact ETF attemptID and cash-funded comparison/unavailable equity-short wording",
+    "Synthetic verification fixtures excluded from actual economic recovery definitions/results"
+  ],
+  "material_unresolved_findings": [],
+  "limitations": [
+    "Recorded decisions are not a recovery of undocumented rationale.",
+    "Full exact research reproduction requires separately retained raw/model/account assets.",
+    "Encrypted Actions secrets are not downloadable local-machine configuration.",
+    "GitHub code synchronization does not migrate the private paper journal."
+  ],
+  "research_or_broker_activity": false
+}

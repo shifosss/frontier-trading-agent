@@ -1,0 +1,965 @@
+{
+  "documents": [
+    {
+      "path": ".qualification/action-validation20260928/independent-verification/report.md",
+      "bytes": 2372,
+      "sha256": "1c21f0dec0cccb3fb7fb333ce990571a666eaeaf1535af77e2899f34862344ed",
+      "title": "Independent bounded source-batch verification",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/forecast-readout.md",
+      "bytes": 7019,
+      "sha256": "081387b60993197f45b5c1e5aab44c39403b6766487e64952a0e4e4b0c1a9713",
+      "title": "Conditional forecast evidence",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/next-alpha-research.md",
+      "bytes": 10956,
+      "sha256": "0de26d3bc938a95886c771874f2ac2b993fbb2ef01168a6c1d9238203a821a84",
+      "title": "Next distinct alpha source: bounded research decision",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/progress.md",
+      "bytes": 2265,
+      "sha256": "dc891f2b5b9e6b38f195fd70f8980b5075a50ee6f3e4ad0a1b41c79fff6906eb",
+      "title": "Research ledger \u2014 plan: docs/conditional-strategy-selection-plan.md",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/conditional-selection20260928/universe-scope-review.md",
+      "bytes": 4904,
+      "sha256": "a08c0f64e32f6184f84e0046049d45de324f74f232163d47cd7da4f5363ca421",
+      "title": "Universe interpretation \u2014 preserved study",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/conditional-shrinkage20260928/declaration-draft.md",
+      "bytes": 6744,
+      "sha256": "dbd8766a36625d63729dcb001293923bbcdc6261afaf6efec2d87296532a1598",
+      "title": "Conditional return shrinkage: bounded comparison",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/cost-access20260919/source-review.md",
+      "bytes": 3899,
+      "sha256": "69a9a174f64ee95c4d6bb3305f7c86d3b0e1909f0068c6c7b3f04941422656ad",
+      "title": "Historical SIP quote-access fixture",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/candidate-report.md",
+      "bytes": 2128,
+      "sha256": "5eefc27d4f756f09b498db7530c1bffe942a2b4c9059c3f91a9276075a3037aa",
+      "title": "Candidate bridge implementation evidence",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/core-review.md",
+      "bytes": 4891,
+      "sha256": "ce22f4add261b23a60745817ac0bacf1a68a83ccc2f6b64a447f36949a3e3246",
+      "title": "Independent core review: Tasks 1 and 2",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/cost-all-cells.md",
+      "bytes": 6262,
+      "sha256": "bd5a5bdc0fc243181b5af358df5dbab4d958726f6652547b96faa196e247c54f",
+      "title": "Untitled",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/cost-report.md",
+      "bytes": 2551,
+      "sha256": "d8ea3015247434e5c4673dbdbe244246b8e0288a5ef92f4b3aea918a22ee748f",
+      "title": "Task 4 execution-cost evidence",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/final-review.md",
+      "bytes": 8928,
+      "sha256": "aa998c3e44434cc626deeef80e862c4634ce35d9036f39795486cbbd66169484",
+      "title": "Independent integrated review",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/model-report.md",
+      "bytes": 2331,
+      "sha256": "23e1dc1b0fd96f9e0b706586784eebe174caed0a13f86b96c6e1a8a30529761d",
+      "title": "Model bundle implementation",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/daily-model-bridge/progress.md",
+      "bytes": 1495,
+      "sha256": "eab91ff880d0a415903f5090ec62178f7a2bcf8b291cb75c51f405b486516c42",
+      "title": "SDD ledger - plan: docs/superpowers/plans/2026-09-19-daily-model-bridge.md",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/accounts/interface.md",
+      "bytes": 6854,
+      "sha256": "70e87674d00c6226efeb6120fc9515abf4c4228ca4b52c40d636f91f49bf5fca",
+      "title": "Isolated earnings accounts interface",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/cohort/model-reasoning.md",
+      "bytes": 6022,
+      "sha256": "691618035c9c838a0d9bede18f4702f10d9708352e1827cee8673c30242b1fce",
+      "title": "Why this comparison is worth running",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/cohort/README.md",
+      "bytes": 3000,
+      "sha256": "27a730fcb3c2e10664c345a00eea72db6a4c40cb9ac5145e9ee9ea8cae018bcf",
+      "title": "Earnings-quality cohort preparation",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/discovery/profiles/README.md",
+      "bytes": 1072,
+      "sha256": "c2d773d69b116f616b7bce942eb42baa8f326525c322d97c13439998b1d69b0c",
+      "title": "Fixed-pool SEC profiles",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/economic/actual-analysis/report.md",
+      "bytes": 18158,
+      "sha256": "7a572c7bd6c220a0c3eeebf01e67d552b2e0d9d7f9cd6726c06915d5b7e20e3d",
+      "title": "Completed cash-backed earnings comparison: read-only economic analysis",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/economic/interface.md",
+      "bytes": 3753,
+      "sha256": "b89f04e5a27065243064273824b81d2c3ee52a5bfac5d08c76656805d0d1a224",
+      "title": "Frozen economic runner",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/features/interface.md",
+      "bytes": 2698,
+      "sha256": "822062012d90f6f42b158b57bb0c4d831377ccb7361252e8567a72f530ef369a",
+      "title": "Original cash-backing Q feature contract",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/model-inputs/interface.md",
+      "bytes": 2899,
+      "sha256": "579bc9c6aeb8c8ea92ff592e7f14139b3397fa8c43c8ea459a10b3cdc048a987",
+      "title": "Five causal earnings inputs and source-only market preparation",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/account-review/review.md",
+      "bytes": 1883,
+      "sha256": "5694b5f8cdd4d942aebd2ef2793d05dccb9433b51ce6f300c394883a2d9e488e",
+      "title": "Independent account adapter review",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/interface.md",
+      "bytes": 6472,
+      "sha256": "86c74f27b339103b6bdb0884367f354d96f52a852ebba39680d539cf9e32edc3",
+      "title": "Fixed two-output earnings model adapter",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/review-before-causal-disposition/interface.md",
+      "bytes": 6342,
+      "sha256": "1be305e6311e7de148a81f29beb483174d5b84ac08a9aa6f224882916ad9ce4f",
+      "title": "Fixed two-output earnings model adapter",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/models/review-before-row-binding/interface.md",
+      "bytes": 5702,
+      "sha256": "9146bc6da0079ebfffa034bba38f579c439598c082a9943e3656d2c9a9e20997",
+      "title": "Fixed two-output earnings model adapter",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/qualification/interface.md",
+      "bytes": 4179,
+      "sha256": "04a308a5374a6f470102e31dbf2f8b30aaa5b7c89b618144329d09b194998f6f",
+      "title": "Original-event industry qualification interface",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/earnings-quality20260928/source/source-plan.md",
+      "bytes": 7663,
+      "sha256": "f3d211d9fc3aba9354c14a4c54956288ce00c9f2bdff403040d1fabcd6620dee",
+      "title": "Bounded source plan for the100-issuer earnings-quality study",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/account-verification/report.md",
+      "bytes": 3758,
+      "sha256": "2c0b34f115f7b58441da1002751c62fa7409cc3af03f85c1b82c500ebff721c0",
+      "title": "Independent ETF account-ledger audit",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/costs/cost-all-cells.md",
+      "bytes": 3907,
+      "sha256": "c2a653d18482a01a55e49b45c10cc33ce34333ea7d566060506da452c71875de",
+      "title": "Untitled",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/costs/independent-verification/report.md",
+      "bytes": 2851,
+      "sha256": "30f28aa0f4ab3d87674e54f5551d469989a45d421bbf2c92ff9f1dcad77b59a9",
+      "title": "ETF quote-cost qualification",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/costs/README.md",
+      "bytes": 2618,
+      "sha256": "937c66353e2372cbc6b090e1366fb07eea8d12d1fb172280d33f5d8fee559394",
+      "title": "Predeclared ETF execution-cost sample",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/strategy/interpretation.md",
+      "bytes": 7411,
+      "sha256": "646d5ee2a040fd2647ddd1284bdf06773ef9b1d3c2d2219f49cb9fe8860f2757",
+      "title": "ETF reversal: completed comparison and next priorities",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/strategy/reasoning.md",
+      "bytes": 5537,
+      "sha256": "af56960235621ee5e76febba1cbdf87c2d37da50c0c6c0932c052d88c3e8fabf",
+      "title": "Fixed ETF residual-reversal comparison",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/etf-reversal20260928/strategy/research-note.md",
+      "bytes": 3702,
+      "sha256": "0cafa30d6f68f674e7efd9c639ec5e89856cc455ec8138c1f7e152f2176a9d43",
+      "title": "Can short ETF dislocations pay after costs?",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/filing-feasibility20260928/results.md",
+      "bytes": 10375,
+      "sha256": "fe613972d1b5d7b3bbc2933a8008ac657576bd2fa83e2ec4e12b4fa623db6551",
+      "title": "SEC filing strategy: source feasibility",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/filing-feasibility20260928/strategy-memo.md",
+      "bytes": 16609,
+      "sha256": "de1e7474f339d5de3c8a0f882072f8ede8d37e0e52a6de2022afbf1e44f874f1",
+      "title": "One fundamental experiment: five-session post-filing income surprise",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/filing-features20260928/interface.md",
+      "bytes": 1949,
+      "sha256": "341061414fd82b3d893fd5ac199f07e711dbad1d67625f3af8fcd4ff436824c6",
+      "title": "Filing feature contract",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/filing-source-supplement20260928/preflight-v1/report.md",
+      "bytes": 3642,
+      "sha256": "efe814f7018d2faebe1655a3d59e33bc3d7cd7587c41a1f53121b32a8dfc975f",
+      "title": "Original-accession filing supplement",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/filing-source-supplement20260928/report.md",
+      "bytes": 4946,
+      "sha256": "4b0d9190199330204351f774a1278c6acdcbac936b4ab3ac36f1b45bba5c250d",
+      "title": "Original-accession filing supplement",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/filing-source20260928/README.md",
+      "bytes": 5098,
+      "sha256": "ba3c335b700cb5af5fcb7c8ccb9571338cfbd4fe8c464872ce8d5afcdb06da5e",
+      "title": "Bounded original SEC filing capture",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/hourly-expansion20260919/source-review.md",
+      "bytes": 5963,
+      "sha256": "015b87291d66169733ee92f46b7a4cb19ddd0855b82a06b2619f825766a9c448",
+      "title": "Existing-access US hourly stock data",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/intraday-cost-windows20260928/cost-all-cells.md",
+      "bytes": 16172,
+      "sha256": "122cb84ed1e669dde80676f0fc4a8e780b4db8abf59ad0b53056f29535d60099",
+      "title": "Untitled",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/intraday-cost-windows20260928/independent-verification/report.md",
+      "bytes": 2820,
+      "sha256": "9b2b1c69bdb6339c0a52657716a968bbe9ce44f2167652b4c725a79fea686681",
+      "title": "Independent verification of intraday quote windows",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/intraday-opening-strategy20260928/design-draft.md",
+      "bytes": 7436,
+      "sha256": "aecbd59993d5c5aa160c35b9bd22fff45794bcf472d7a7a95a697292a2a7d1f6",
+      "title": "Delayed opening continuation versus reversal",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/intraday-opening20260928/README.md",
+      "bytes": 5135,
+      "sha256": "1cef53a40b99b7c7c27bdfd4d70082e10bb0917a3e0f07a97afbb67209808cfd",
+      "title": "Intraday opening source qualification",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/options-access20260928/broker-feasibility.md",
+      "bytes": 12159,
+      "sha256": "4094a9ac2748bd44a3318d81a2d9214f9a68262f723b9b2d7f8b93bb27f98c64",
+      "title": "Canadian broker feasibility: cash-funded options structures",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/options-access20260928/strategy-proposal.md",
+      "bytes": 7534,
+      "sha256": "02be5c2c54f6d8f02eee5671e9e2265d712e85719e39e1092f7d4f059e330893",
+      "title": "Three proposed tests for the options and ETF extension",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/options-evidence20260928/findings.md",
+      "bytes": 1735,
+      "sha256": "fdbed98e4353fbec8daad80297dc326c94c7c015a0defb6f19281720ec8d7fc4",
+      "title": "Untitled",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/options-evidence20260928/rationale.md",
+      "bytes": 3833,
+      "sha256": "d7129ab135853f7b2a673df1f9c6d9b2d6ea2517540c84e3d5d2ed988c286afb",
+      "title": "Untitled",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/final-review/report.md",
+      "bytes": 1626,
+      "sha256": "f84dfeb79f71b29a4fc0952c4826caa2ce2da0509ed4c2b2d24dd4957baa0820",
+      "title": "Final source binding and definition review",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/next-stage-design.md",
+      "bytes": 7823,
+      "sha256": "11f25c514e6bd8e75f00e5e4e27ba8a366dd02360a1efbdc1e063bbc6f17ae44",
+      "title": "Next stage: cash-backed earnings changes and the preceding price response",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/plan.md",
+      "bytes": 4291,
+      "sha256": "34ad74b877de8bbe11492d84c4832cadff8e67fa01ecaadc49566dcc90a1bb4b",
+      "title": "Original filing event accounts: execution design",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/price-audit/report.md",
+      "bytes": 2858,
+      "sha256": "b3ab7c53ce90726a88de4e14ca73ef1235eeaf7f7e40ee1e7f03b5327b86ce90",
+      "title": "Independent AT&T and market-input verification",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/reference-audit/report.md",
+      "bytes": 2491,
+      "sha256": "813018a87dda57cece0705a1901e5736d819a2300623fa3184940637f70797bb",
+      "title": "Independent descriptive event-reference audit",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/post-filing-strategy20260928/runner-review/report.md",
+      "bytes": 940,
+      "sha256": "a6b9bb7354b973b51863f4415354117aeea6431a788bc022ec523926b5034cf7",
+      "title": "Bounded runner review",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/cost-report.md",
+      "bytes": 2367,
+      "sha256": "f4f2dc1fc9434eb5b7a70854b3609b6914dbf8bba507477aac854b44fd3d9d69",
+      "title": "Execution cost implementation report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/diagnostics-report.md",
+      "bytes": 2785,
+      "sha256": "c324e3842fd114ae9223d4563d21f4d9c4844c3a699659ae3df88875d57c72a0",
+      "title": "Forecast diagnostics task report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/independent-ledger-report.md",
+      "bytes": 7877,
+      "sha256": "a7aceb2a8452b23e7ee0cc4790e8c10b8bf4c3d0cce50fc85c6e997f5abbdc25",
+      "title": "Independent real replay audit \u2014 2026-09-28",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/progress.md",
+      "bytes": 11849,
+      "sha256": "eb42946bba0e5012d407e1b540e4e554236fd6426514d23654695412a7d87fd6",
+      "title": "Plan:docs/superpowers/plans/2026-09-19-stateful-daily-agent.md",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/replay-report.md",
+      "bytes": 1801,
+      "sha256": "de37d1385ca025385dd3de03b04287e0460ed3237ccde59bfdf9119559d965fe",
+      "title": "Replay implementation report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": ".qualification/stateful-daily-agent/review.md",
+      "bytes": 5220,
+      "sha256": "4f8622201002a4f4b4c0d74bca7779959c3dd53a7ac94abf632ace6e2bd173f4",
+      "title": "Independent stateful daily agent review",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/action-source-validation-plan.md",
+      "bytes": 6118,
+      "sha256": "15f627e224462de4c1c88283210800207320b3e5621e94a40bc5fa4e1061a1a2",
+      "title": "Corporate-action source validation plan",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/action-source-validation-results.md",
+      "bytes": 12528,
+      "sha256": "0042336ef778dc1ad31f39912f69731035758126c81aace335572949bd8ad6b7",
+      "title": "Bounded corporate-action source validation",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/active-account-readiness.md",
+      "bytes": 10597,
+      "sha256": "9191c8e37a41a1d3bc5d0b055e0cb2f99c21afdd96b1e0c867fbe4cabd8800e2",
+      "title": "Active account readiness",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/aixi-source-continuity.md",
+      "bytes": 6729,
+      "sha256": "7edba45f86a57a4aa1ffeef5b6df75fb167f3dc536a784cb3334ec7c900ee568",
+      "title": "AIXI source-continuity audit",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/automated-trading-plan.md",
+      "bytes": 12575,
+      "sha256": "ff7bbf3fd9756db725fac228e0e3e7c92df9b5d3faa78a68affa74827f387c23",
+      "title": "Automated hourly/daily trading: delivery plan and current implementation",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/broad-research-results.md",
+      "bytes": 4723,
+      "sha256": "d4da80b819deaf7c03a96a5fa614265993eb4b75cd0dc56c93f84a41208dc984",
+      "title": "First broad strategy study - September 18, 2026",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/broad-research.md",
+      "bytes": 7190,
+      "sha256": "1974f1e66aadf7cb2e33ffe90e1118d9369583780b318b19954bcb723c76cf8c",
+      "title": "Broad market research",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/calibration-shrinkage-results.md",
+      "bytes": 7487,
+      "sha256": "0fd64d451dd9bab8b689e0b0f7d046b45d3034626695ff16188bc0d8a054e63d",
+      "title": "Return calibration: six controlled account comparisons",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/candidate-replay-results.md",
+      "bytes": 6592,
+      "sha256": "5ecf8ecbc02777149cf9fcf24295247d62a95a580c51d06194c5e9c5a62e0983",
+      "title": "Saved-model daily account rehearsal",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/candidate-replay.md",
+      "bytes": 4988,
+      "sha256": "661bfda325b99273174fcf6d839e36b9ef5fcfcdcf0f6df6ffdf2043a424bee0",
+      "title": "Saved candidate replay",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/capital-and-return-objective.md",
+      "bytes": 9350,
+      "sha256": "46c7065664d248d4d392e143aa03fe4301b5c2ea4023a6892ba101461a15225d",
+      "title": "Capital, weekly targets and expanded strategy research",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/code-quality-review.md",
+      "bytes": 34297,
+      "sha256": "454876f825931773cc4df138ea595f2cebc703258c3e4a12cadbcbda20782313",
+      "title": "Standard code-quality review",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/conditional-strategy-selection-plan.md",
+      "bytes": 9737,
+      "sha256": "1b7a797ac044cf8ded124d8597390a53419c9207e18799f081f6c9cae56cd939",
+      "title": "Conditional strategy selection: follow-up design",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/conditional-strategy-selection-results.md",
+      "bytes": 13954,
+      "sha256": "391ac89e5927699ce09c2d519129c582f055585e7d1976436758ba80886951c6",
+      "title": "Conditional strategy selection \u2014 completed results",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/daily-model-bridge.md",
+      "bytes": 6939,
+      "sha256": "bdc5ada60f093cda98c07d1ca14aea4824c2e6185d9cf535dedd97cf3a679d02",
+      "title": "Daily model decision bridge",
+      "current_role_or_status": "Implemented saved-model interface. Early preview/next-economic-work statements are dated; later completed results and handbook govern."
+    },
+    {
+      "path": "docs/data-access.md",
+      "bytes": 3532,
+      "sha256": "8ebcd0acfdda756bc965ec14e5ee151573cf1f3b632f8b5643146de7cbb6806a",
+      "title": "Sample market data: source and limits",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/design-review.md",
+      "bytes": 8989,
+      "sha256": "9dd27661746696f028d3f90ecb3cd14236b742064a9daf887288be294f9e5c16",
+      "title": "Design Review",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/earnings-quality-research.md",
+      "bytes": 11169,
+      "sha256": "84ff8b415fcae0bc39ea87c53d831a6910635b02d76a624a17c9062a85b4076e",
+      "title": "Cash-backed earnings and short-term price response",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/earnings-quality-results.md",
+      "bytes": 10666,
+      "sha256": "a67c53c6f6b6f59604666fe21e0ca0e5e3737ad683a7026aaea0b265bf339bb5",
+      "title": "Cash-backed earnings: completed strategy comparison",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/engine-qualification.md",
+      "bytes": 13417,
+      "sha256": "43fd367756cf5d5a657dc507731bae7bef44e553122d940cec050cecd491b64d",
+      "title": "Engine qualification (2026-09-18)",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/etf-reversal-results.md",
+      "bytes": 9812,
+      "sha256": "cf0a03fc531345611204109d10237ad81002146524f5d20e45977dfa1d7fc6eb",
+      "title": "ETF residual reversal: declared comparison and results",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/execution-cost-model.md",
+      "bytes": 4092,
+      "sha256": "4c635099509f7f3a802d8c26c5670b84fdd2fe3f54fcaaae835b4b69c3ec9d52",
+      "title": "Declared execution-cost scenarios",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/existing-connectors.md",
+      "bytes": 5583,
+      "sha256": "d6e021a1845e6c2e308133cc3d0c301cf6c78f481e7908f067456859d7fad502",
+      "title": "Existing market-data connectors",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/forecast-calibration-diagnostics.md",
+      "bytes": 12555,
+      "sha256": "15c014bc354092f2ed8c97c75ce4512fcc73bf357d19c9cea815001604c8d066",
+      "title": "Frozen-model forecast diagnostics",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/historical-research-results.md",
+      "bytes": 13913,
+      "sha256": "46462025897ab62fb8066dfa32c1600f6d5af95b0cc4009f5595aff922d7c663",
+      "title": "First extended historical study",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/historical-research-sources.md",
+      "bytes": 19796,
+      "sha256": "cab8d9bc70c3e4140234f7971860c3f4e36b2104969f6dbee7b19b7c91b61496",
+      "title": "Historical research: sources and design decisions",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/historical-research.md",
+      "bytes": 11475,
+      "sha256": "2dc18f6e660f1f2d82df3a688101e19e7a0fdb303050ce0adc978fd3b29fed59",
+      "title": "Historical-first strategy development",
+      "current_role_or_status": "Retained historical-lab interfaces/default commands. Priority statements are superseded by the October1 handbook; do not restart completed default grids."
+    },
+    {
+      "path": "docs/hourly-data-access.md",
+      "bytes": 6264,
+      "sha256": "31fbde9d68bd2497903dc8e253abf412737767df4bf49792457108abbef51d05",
+      "title": "Existing-access US hourly stock data",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/interface-design.md",
+      "bytes": 1926,
+      "sha256": "a866c020849abf757e4f7b2340bf886680d111a042242b51cee31a074cc2fde3",
+      "title": "Interface design",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/intraday-opening-results.md",
+      "bytes": 7152,
+      "sha256": "f8d450747d5da6c746a1a702f86893cb02e68fcb3d42fdfb8522fcb1aa4aeadd",
+      "title": "Intraday continuation and reversal: completed pilot",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/intraday-opening-study.md",
+      "bytes": 5984,
+      "sha256": "28f169c28db17971ab5c4401b68fb4d5bfba34d4e1cda8b20d71325951b6e584",
+      "title": "Intraday opening continuation versus reversal",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/multi-model-research-results.md",
+      "bytes": 21581,
+      "sha256": "b25b540dc7ff0c6e14b7fc2392434168c9a9742ab458916dde1948ec6a3353e8",
+      "title": "Daily multi-model historical research results",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/multi-model-research.md",
+      "bytes": 6107,
+      "sha256": "3bfe75baad2c19652fae6111088ca4ce787a645cbd9f153ba17408dbba29ce17",
+      "title": "Learned stock models and ensembles",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/paper-operator.md",
+      "bytes": 7646,
+      "sha256": "38356b15e7efb89830fa7cdb19cbd45024531beee380d70a666b52e873025f70",
+      "title": "Run the paper operator",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/post-filing-research.md",
+      "bytes": 7356,
+      "sha256": "370e573a26bf8b11c687f758f298ad1aec2d7b142de4855d8ab4ba78315b6a1f",
+      "title": "Next information source: original quarterly filings",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/post-filing-results.md",
+      "bytes": 8167,
+      "sha256": "87e48d726717b7c6dfb5419b281b27a072f5445e22ea853bbf4867f104784ab6",
+      "title": "Original-filing strategy results",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/progress.md",
+      "bytes": 9311,
+      "sha256": "ed9c553be197b333a4e3b77b344d9e538a645c23a4cfff85d4bd025b7d727004",
+      "title": "Execution ledger \u2014 Frontier Research",
+      "current_role_or_status": "Append-only dated milestone ledger; not fresh process/worker proof."
+    },
+    {
+      "path": "docs/roadmap.md",
+      "bytes": 21697,
+      "sha256": "73462c3546130b605c234c0aba63d4fc12f58945b613ec37764b139d0c54bc6f",
+      "title": "Delivery Roadmap",
+      "current_role_or_status": "Retained acceptance framework; milestone state may be older than the October1 handbook."
+    },
+    {
+      "path": "docs/scanner-study.md",
+      "bytes": 11118,
+      "sha256": "13a12a7e842d94e1eb655871551063963181c9763399d55aea93c76b2ac4c178",
+      "title": "Scanner study and dividend repair",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/short-hold-research-results.md",
+      "bytes": 12431,
+      "sha256": "b8308a42eed40a43c35dff7c6c478874e3c5a5d40d6a1867305751db3df34fcd",
+      "title": "Daily short-hold historical study",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/strategy-action-attribution-results.md",
+      "bytes": 6021,
+      "sha256": "548bd81614e62692b0fe2143fe78cee311be38fd955f3a0a669ac15f316117a6",
+      "title": "Strategy action-crossing attribution",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/strategy-experiment-2026-09-28.md",
+      "bytes": 10638,
+      "sha256": "9338edbdf7bb65266e8fe3b30ec0d7885dc4f675441dc64817c485f14179a74d",
+      "title": "Daily strategy interaction experiment \u2014 September 28, 2026",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/strategy-interaction-results.md",
+      "bytes": 14857,
+      "sha256": "3c0eba31301ecad9190535f55ec8be1866930623cbd6b48321a1f80a65f3667d",
+      "title": "Strategy interaction economic results",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/strategy-timing-results.md",
+      "bytes": 7694,
+      "sha256": "3fd0af86c6b64e6b77b9d294f1d56af9a7c5a9381b81ca3b8c5d9e7452a0d2e1",
+      "title": "Daily strategy timing results",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/strategy-timing-study-2026-09-28.md",
+      "bytes": 7188,
+      "sha256": "76c1ec7b5fd845089134836cc8030aebffd74b604c6a587ec789c3c2f07d128e",
+      "title": "Separately declared timing diagnostic \u2014 September 28, 2026",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-broad-research.md",
+      "bytes": 4336,
+      "sha256": "1f20e81566701175980f8b846cdd84a99914b06bd1775c1a6b7790836927f689",
+      "title": "Broad market research and durable operation",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-historical-first.md",
+      "bytes": 5601,
+      "sha256": "490e8a50515206d703f4b82554d3bb58ef2211abb19d3fe61195c7fda3ea55f5",
+      "title": "Historical-first research implementation plan",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-research-kernel.md",
+      "bytes": 4263,
+      "sha256": "0657dfdd796388841ce0b74031c3e4a3234ad3f5cfe26498b3d37d8ea6f2f532",
+      "title": "Research Kernel Implementation Plan",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-short-hold-study.md",
+      "bytes": 3414,
+      "sha256": "8606716e04531dd3df9fc838dfdb03869a04c8717db9ff848e5c8ad74f6afff0",
+      "title": "Run the short-hold study for the owner",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-18-short-term-signal-study.md",
+      "bytes": 8872,
+      "sha256": "345fd6f6bcb365d9fc9351850ec2c36721e6aa0a6bdac78ac270674daaca5240",
+      "title": "Short-term signal study: frozen research declaration",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-19-daily-model-bridge.md",
+      "bytes": 3870,
+      "sha256": "99c953e4e17349d9881bb0e909b583dbfe7ac138261d3e532e56b4a838729cb1",
+      "title": "Daily Model Decision Bridge Implementation Plan",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-19-multi-model-study.md",
+      "bytes": 8268,
+      "sha256": "7067b57edced92ccc1992050ce0701dd8c68a9bfa44757300f2b10845bc1928e",
+      "title": "Multi-model daily stock research: declared experiment",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-19-stateful-daily-agent.md",
+      "bytes": 1908,
+      "sha256": "c25069d5b4cac6542a072bef87a394f4260daca314a7a42347be5a8081ec4093",
+      "title": "Stateful daily agent implementation plan",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-18-frontier-trading-system-design.md",
+      "bytes": 32845,
+      "sha256": "9693fa9e4b8ee6adaca2de19d568b73759f40ecfcdd49016248dfe650c78f54e",
+      "title": "Frontier Trading System Design",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-19-daily-model-bridge-design.md",
+      "bytes": 5281,
+      "sha256": "b2f332d70d7dc01e4340d0bdefd9093382d91bb33199212059f5a148e79752fa",
+      "title": "Daily model decision bridge",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-19-stateful-daily-agent-design.md",
+      "bytes": 5262,
+      "sha256": "f02e4188e1010282b73cf38d04ed49bcf26e3e854093449e36dbca7ec0b23a3a",
+      "title": "Stateful daily research agent and execution costs",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/tasks/01-engine-qualification-report.md",
+      "bytes": 2964,
+      "sha256": "f93b8dcfdca4889213db153e35ab9f6d32bc2a80fed90b75014ab66ed0f9bf04",
+      "title": "Task 1 report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tasks/01-engine-qualification.md",
+      "bytes": 3485,
+      "sha256": "ec03da25ab7787e07d0f875d703a4390efd4e6015ce29b3ac45fdc04782dae13",
+      "title": "Task 1: Engine qualification",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/tasks/02-data-evidence-report.md",
+      "bytes": 8190,
+      "sha256": "eb84123f49aeefa370c599dd4ebaa7c43dfa9dd0c60e9fe8aa5fee0c3373ad96",
+      "title": "Task 2 data and evidence foundation report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tasks/02-data-evidence.md",
+      "bytes": 6577,
+      "sha256": "8f1bd53d8384cc6c1e35867aa742ac72c340477fb7bd9b8c7ab7020599daa57c",
+      "title": "Task 2: Data and experiment foundation",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/tasks/03-replay-report.md",
+      "bytes": 9178,
+      "sha256": "c332e9d8ca89b045b0bb609349da4273c3b3d66882e7e2fa5ebd2180e7c16b61",
+      "title": "Task 3 executable replay and campaigns report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tasks/03-replay.md",
+      "bytes": 9054,
+      "sha256": "fad56dac4a55e2dd1fdbebedcbe3549112e3d8e431c22c0a3503c1268ecd75e1",
+      "title": "Task 3: Executable research replay and campaigns",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/tasks/04-interface-report.md",
+      "bytes": 3999,
+      "sha256": "cf3bf9e8f411a9f9cdcdb26715021394e62ce5a096b1a14e94c9ce8e3fde9948",
+      "title": "Interface implementation and verification",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tasks/04-interface.md",
+      "bytes": 6765,
+      "sha256": "eb38b761a815162ca100fca1ae8cf4aa15c8147669004e4f7cd93ab8eaf7be0f",
+      "title": "Task 4: Local research workstation",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/tasks/05-research-report.md",
+      "bytes": 4531,
+      "sha256": "f60dea0b15db20a26fc64bc96e30e4dd2f199473f7dee0a7bc9f965c808becb4",
+      "title": "Task 5: bounded model research and frozen observations",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tasks/05-research.md",
+      "bytes": 6230,
+      "sha256": "c033411ab883b53efde67152c4e6b8ab74c2d705c4a817398d5bd78ab3e4c58f",
+      "title": "Task 5: Bounded model research and frozen observations",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/tasks/05a-provider-report.md",
+      "bytes": 2624,
+      "sha256": "cd1b1a89abf67127558ee74e9744877933708186e1583f0bd9cd003df463b033",
+      "title": "Task 5a: Codex proposal provider",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tasks/06-sources-report.md",
+      "bytes": 3452,
+      "sha256": "10f04cae86471e6ff2650b95664641e77294a69ad129f6e6ad3daf3a63a8157a",
+      "title": "Task6: Existing connector source integration report",
+      "current_role_or_status": "Completed result/verification under stated limits."
+    },
+    {
+      "path": "docs/tpx-source-continuity.md",
+      "bytes": 4244,
+      "sha256": "764d0163ee93ce85d2b042d3bf23da2df1a2f1bf11ee641d77624295365b0a0f",
+      "title": "TPX-B historical issuer and corporate-action continuity",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/trading-cadence.md",
+      "bytes": 8372,
+      "sha256": "0c0b654d7a4552cac497239fb0a6a61e109dafbd136ac216a04e63e775ef2db8",
+      "title": "Active-trading cadence and next experiment design",
+      "current_role_or_status": "Active cadence contract. Retained Concrete-next-tests items are historical and completed; current next work is in the handbook."
+    },
+    {
+      "path": "docs/trading-cost-evidence.md",
+      "bytes": 18522,
+      "sha256": "9e3af254c7e8f5ce2aea302fcc0c16e40bcc849152a691bf2ea412e72b134463",
+      "title": "Execution-cost evidence for the next short-hold study",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/universe-coverage.md",
+      "bytes": 6921,
+      "sha256": "539188192d5e350118e53734bbb9a3ee2b9148f2a77e1347410f14fcef25d1e6",
+      "title": "Research universe coverage",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/usd-funding-study.md",
+      "bytes": 6829,
+      "sha256": "ddeab2d82c39c9c593007353d7bcf326f3a157482d3d78d471845385ae8d5984",
+      "title": "Planned USD funding \u2014 September 18, 2026",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/validation.md",
+      "bytes": 7452,
+      "sha256": "823cf4c215d30554a449bfb820b9a714c92dabcf863c83518e993e910e37cce3",
+      "title": "Validated local release",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    },
+    {
+      "path": "docs/weekly-data-refresh.md",
+      "bytes": 6562,
+      "sha256": "12b9c8b18b801423d5160d9dbe8c08f5537d56a955b7f64145172eb8e575c22e",
+      "title": "Bounded weekly market-data refresh",
+      "current_role_or_status": "Retained dated definition/interface/rationale. Consult handbook for current authority and priorities."
+    }
+  ],
+  "original_documents_preserved": true,
+  "historical_plans_may_be_superseded": true
+}

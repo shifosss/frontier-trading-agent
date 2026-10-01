@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-09-28T21:40:55.363373+00:00",
+  "lock_verified_free": true,
+  "completed_manifests_verified": 311,
+  "last_completed_session": "2017-03-28",
+  "pending_attempts": [
+    {
+      "path": "cells\\2017-03-29\\page-001-attempt-001.json",
+      "state": "request_started",
+      "metadata_sha256": "784f966099260f13b07d5df1cafcd3b0f4e82943b6bc4e6be8033e57fd985653"
+    }
+  ],
+  "root_reported_parent_exit_code": 3221225786,
+  "exit_hex": "0xC000013A",
+  "exit_diagnosis": "Windows control-C/termination code reported from root-owned process handle; no new Python error recorded. External cancellation/subagent-lifetime cleanup is plausible, not established.",
+  "no_new_source_requests": true,
+  "all_completed_raw_hashes_verified": true
+}

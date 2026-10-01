@@ -1,0 +1,26 @@
+[
+  {
+    "file": "wjx-2005-annual-report.pdf",
+    "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/w/TSX_WJX_2005.pdf",
+    "status_code": 404,
+    "bytes": 146,
+    "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0",
+    "is_pdf": false
+  },
+  {
+    "file": "wjx-2006-annual-report.pdf",
+    "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/w/TSX_WJX_2006.pdf",
+    "status_code": 200,
+    "bytes": 1172979,
+    "sha256": "120b1082735e76acc85470fc91618ad3e552089dcc49d6e423d46dda4040202a",
+    "is_pdf": true
+  },
+  {
+    "file": "empire-2005-annual-report.pdf",
+    "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/e/TSX_EMP-A_2005.pdf",
+    "status_code": 200,
+    "bytes": 2929584,
+    "sha256": "dcc2fa81a9b428aa4b610f0f4ad98ef01573717514122fc84bd0e66ffa3a438b",
+    "is_pdf": true
+  }
+]

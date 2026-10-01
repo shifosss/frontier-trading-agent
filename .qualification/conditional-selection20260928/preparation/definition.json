@@ -1,0 +1,23 @@
+{
+  "source_run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "history_start": "2010-01-04",
+  "first_signal": "2016-01-04",
+  "last_session": "2026-09-18",
+  "files": {
+    ".qualification/conditional-selection20260928/prepare_data.py": "c1f3e64476af9c31e986c021e8e10b2e58f978cbbe3a203d29415ae512d92f34",
+    "src/frontier/candidate_daily.py": "e5710ab019a509f86fad97b7dafadf32d482eac28257d26357ef5c486a18a49c",
+    "src/frontier/historical_data.py": "930923cbbab8c7152b769f76034a7ef502a0fbc163c9c0344be2702a2a19379d",
+    "src/frontier/historical_lab.py": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+    "src/frontier/historical_study.py": "9c22a45569d36c5a79c9607ffcc5e65b529d16a17af6b3643618647c6d4534dd",
+    "src/frontier/strategy_study.py": "a6aeff9faf0eea9f152c07f73df11bc7b8b631a3e966bef72e4bdb9db9e8fb04",
+    "src/frontier/ensemble_features.py": "f1ae31e1c5ad506f5a32a7323e407653265f2155554600e7b7a5c61172702076",
+    "src/frontier/historical_settlement.py": "fbaaec13818dc3fa5393f4ca94247edee58d642dd50d7eed8ce83565f88d52a8"
+  },
+  "dependencies": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "exchange-calendars": "4.13.2",
+    "joblib": "1.6.0"
+  },
+  "mode": "data/causal-feature preparation only; no conditional learner or account outcomes"
+}

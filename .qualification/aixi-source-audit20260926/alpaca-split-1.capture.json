@@ -1,0 +1,22 @@
+{
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/AIXI/bars?timeframe=1Day&start=2023-03-09T00%3A00%3A00Z&end=2026-09-18T23%3A59%3A59Z&feed=sip&asof=2026-09-18&currency=USD&limit=10000&sort=asc&adjustment=split",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2023-03-09T00:00:00Z",
+    "end": "2026-09-18T23:59:59Z",
+    "feed": "sip",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc",
+    "adjustment": "split"
+  },
+  "captured_at": "2026-09-28T18:39:26.385673+00:00",
+  "status_code": 200,
+  "sha256": "ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608",
+  "bytes": 86853,
+  "content_type": "application/json",
+  "response_date": "Mon, 28 Sep 2026 18:39:26 GMT",
+  "raw_file": "alpaca-split-1.ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608.raw"
+}

@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "study": "cash-backed-earnings-v1",
+  "status": "predeclared_before_new_financial_capture_or_model_fitting",
+  "purpose": "One fixed fundamental/price interaction comparison; no model, threshold, horizon or capital-dependent cohort search",
+  "cohort": {
+    "criteria": ".qualification/earnings-quality20260928/cohort/criteria.json",
+    "criteria_sha256": "e16af5da1b8df311b053a9aca0ccbc198d6c44ab87dedabdca8b1be8022b9260",
+    "pool_sha256": "6323aaed09d657bd96d99d4ecced4b51cf8726833782ef619766cf5f2b32aaa9",
+    "target_unique_ciks": 100,
+    "final_cohort_and_source_hashes_required_before_financial_capture": true,
+    "capital_changes_membership": false
+  },
+  "inputs_in_order": [
+    {"name": "S", "formula": "Current original quarterly (NetIncomeLoss - same-original prior-year-quarter NetIncomeLoss) / exact prior-FY assets, divided by sample standard deviation of the eight earlier scheduled qualified Q1/Q2/Q3 innovations; frozen S methodology unchanged", "source": "Original accession facts available by the event decision; no later replacement"},
+    {"name": "Q", "formula": "((CFO_current_YTD - NI_current_YTD) - (CFO_prior_year_YTD - NI_prior_year_YTD)) / exact prior_FY_assets", "source": "Same-original exact USD entity-wide NetCashProvidedByUsedInOperatingActivities and NetIncomeLoss; unique matching YTD periods and frozen qualification bounds"},
+    {"name": "prior_relative_return_5", "formula": "(stock_adjusted_close[p] / stock_adjusted_close[p-5] - 1) - (SPY_adjusted_close[p] / SPY_adjusted_close[p-5] - 1)", "requirements": "p is the last completed session before the09:00ET decision; all six closes for each instrument finite and positive; no forward fill"},
+    {"name": "prior_dollar_activity_ratio_20", "formula": "vendor_quote_close[p] * vendor_quote_volume[p] / median(vendor_quote_close[j] * vendor_quote_volume[j] for j=p-20,...,p-1)", "requirements": "Twenty denominator sessions are consecutive and exclude the numerator session; all21same-row products finite with positive closes and nonnegative volumes; median strictly positive; preserve original price/volume unit identities"},
+    {"name": "prior_spy_sma200_distance", "formula": "SPY_adjusted_close[p] / mean(SPY_adjusted_close[j] for j=p-199,...,p]) - 1", "requirements": "All200consecutive prior-or-current completed-session closes finite and positive; no forward fill"}
+  ],
+  "feature_population": {
+    "shared_across_all_five_recipes": true,
+    "requirements": "Original S feature, same-accession Q, original same-CIK event-header industry classification, execution clock, and all five causal numeric inputs must be qualified/finite. Keep the wider structural population and each missing-feature reason. No future price or label availability may affect test candidate eligibility.",
+    "original_event_SIC": "For every one of the five recipes, require one unambiguous numeric SIC in 0100-5999 or 7000-8999 from the event's ORIGINAL header FILER block bound to the exact event CIK. Exclude financial 6000-6999 and other out-of-range codes. Missing/conflicting/malformed SIC or unmatched/ambiguous filer-CIK linkage is unavailable. Never take the first flat SIC from a multi-filer document, substitute current submissions SIC, remove a preserved filing, or replace an issuer.",
+    "prior_S_history_classification": "The original-event SIC gate applies to the candidate event only. Frozen S arithmetic and its eight-earlier-event history remain unchanged; prior-industry changes or missing prior-header classification remain explicit limitations, not a hidden history rewrite.",
+    "financial_vintage": "Original first filing, strict clock, no amendments/later facts/modern companyfacts fallback",
+    "price_vintage": "Retrospective saved provider prices; raw source/adjustment identities retained, not point-in-time vendor vintages",
+    "row_identity": "One retained original event with CIK, symbol, accession, original filing/acceptance clocks, decision timestamp, entry session, planned exit session and source identities",
+    "sort_order": ["decision_timestamp", "CIK10", "accession"],
+    "label_based_test_filter": false,
+    "imputation_of_unqualified_financial_facts": false
+  },
+  "outputs_in_order": [
+    {"name": "return_5", "formula": "adjusted_close[e+5] / adjusted_close[e] - 1", "unit": "fractional gross return"},
+    {"name": "downside_5", "formula": "max(0, -min(adjusted_close[e+k] / adjusted_close[e] - 1 for k=1,...,5))", "unit": "nonnegative fractional adverse close return", "limitation": "Close-sampled adverse movement, not intraday loss, a stop price, or a guaranteed maximum loss"}
+  ],
+  "label_requirements": "e is the planned decision-day close entry; e+5 is the fifth subsequent official trading-session close. Fit/calibration rows require finite positive entry and every one of the five following closes, hence both finite targets. Preserve every unavailable/purged training row and reason. Test forecasts are produced before accessing test outcomes; missing test labels remain separately counted.",
+  "recipes": [
+    {"name": "filing_control", "selection": "Every shared-population event", "rank": "symbol ascending, accession ascending for an exact same-symbol tie"},
+    {"name": "income_surprise", "selection": "S >= 1", "rank": "S descending, then symbol/accession ascending"},
+    {"name": "income_cash_confirmation", "selection": "S >= 1 and Q > 0", "rank": "S descending, then symbol/accession ascending"},
+    {"name": "ridge", "selection": "Valid calibrated two-output forecast and strictly positive quantity-aware expected net-dollar utility", "rank": "Expected net-dollar utility descending under that account's current NAV, cash and cost profile; frozen deterministic symbol/accession tie order"},
+    {"name": "hist_gradient_boosting", "selection": "Valid calibrated two-output forecast and strictly positive quantity-aware expected net-dollar utility", "rank": "Same utility and tie convention as ridge"}
+  ],
+  "models": {
+    "reuse_fit_helper": "frontier.conditional_models._fit_family",
+    "seed": 1729,
+    "ridge": {"alpha": 100.0},
+    "hist_gradient_boosting": {"max_iter": 60, "max_leaf_nodes": 15, "learning_rate": 0.05, "l2_regularization": 10.0, "min_samples_leaf": 64, "early_stopping": false, "random_state": 1729},
+    "hgb_output_wrapper": {"class": "MultiOutputRegressor", "n_jobs": 1},
+    "fit_thread_limit": 2,
+    "preprocessing": "Existing training-only SimpleImputer(strategy=median,add_indicator=True,keep_empty_features=True); StandardScaler for Ridge only. Shared population requires five finite inputs, so no missing financial values are admitted to obtain more rows. Fit all preprocessing exclusively on retained fitting rows.",
+    "targets": "Two original fractional targets without target standardization, winsorization or clipping",
+    "fit_weights": "One equal weight per retained original event; no outcome-based row sampling or resampling",
+    "model_family_selection": "None: fit and retain both predeclared families independently in every eligible fold",
+    "hyperparameter_search": false,
+    "forecast_sharing": "Each family/year has one fitted model and one calibration shared across both balances and both fee profiles. Capital and fees only affect downstream sizing/utility, never training, preprocessing or calibration.",
+    "two_output_adapter": "Use the existing fit helper with an n-by-2 target. Call the fitted model's predict and validate n-by-2 finite output. Do not call the existing six-head _targets/_family_prediction/predict_conditional wrappers or duplicate horizons to satisfy their shapes. Preserve raw unbounded model output separately from downside-clipped and calibrated output."
+  },
+  "calibration": {
+    "method": "Per-output pooled mean residual from that fold's purged calibration rows only",
+    "steps": ["Preserve raw model predictions for both heads", "Set uncalibrated downside=max(0,raw_downside); leave raw return unchanged", "For each head b=mean(calibration_target-uncalibrated_prediction)", "Corrected return=raw_return+b_return; corrected downside=max(0,uncalibrated_downside+b_downside)"],
+    "return_clip": "None; a corrected return <=-1 is invalid for the existing utility planner and is retained as an abstention",
+    "slope_or_ensemble_calibration": false,
+    "calibration_error_is_holdout_evidence": false,
+    "test_adjustment_of_bias_or_threshold": false
+  },
+  "chronology": {
+    "partition_clock": "09:00ET decision timestamp, not a backward-assigned preceding close and not an earlier unverified earnings-release time",
+    "folds": [
+      {"fit_decision_years": [2017,2018,2019], "calibration_decision_year": 2020, "test_decision_year": 2021},
+      {"fit_decision_years": [2017,2018,2019,2020], "calibration_decision_year": 2021, "test_decision_year": 2022},
+      {"fit_decision_years": [2017,2018,2019,2020,2021], "calibration_decision_year": 2022, "test_decision_year": 2023},
+      {"fit_decision_years": [2017,2018,2019,2020,2021,2022], "calibration_decision_year": 2023, "test_decision_year": 2024},
+      {"fit_decision_years": [2017,2018,2019,2020,2021,2022,2023], "calibration_decision_year": 2024, "test_decision_year": 2025}
+    ],
+    "purging": "Every fitting row's planned label-end session must precede the first calibration session; every calibration row's planned label-end session must precede the first test session. Use actual scheduled trading sessions. Retain the purged rows/reasons. Previous-year test events may enter a later year's calibration/fitting only when their outcomes are already available.",
+    "minimum_fit": {"rows_after_purge_and_joint_label_validation": 256, "distinct_CIKs": 25},
+    "minimum_calibration": {"rows_after_purge_and_joint_label_validation": 64, "distinct_CIKs": 16},
+    "test_minimum_for_prediction": "None: predict every causally eligible test event even if later outcomes are missing",
+    "insufficient_fold": "No new entries for that learned family during the fold; preserve reason, row/issuer counts, warnings and sampled/source identities. No last-year-model reuse, alternate-family fallback, smaller window, relaxed sample gate or threshold change. Controls continue on their shared causal population. Existing holdings still follow their original scheduled exits.",
+    "fit_or_prediction_failure": "Retain the failed model/fold attempt and abstain rather than substituting a profitable variant. Row-level invalid forecasts remain explicit; no candidate replacement at fill.",
+    "test_status": "Exploratory historical research, not an untouched prospective holdout"
+  },
+  "accounts": {
+    "count": 20,
+    "matrix": "5recipes x 2costprofiles x 2startingbalances",
+    "primary_starting_USD": 10000,
+    "comparison_starting_USD": 2000,
+    "cost_profiles": ["proportional_40bps", "moomoo_ca_us_plus_40bps"],
+    "cost_definition": "Unchanged frozen proportional40bps round-trip scenario, or independently specified current Moomoo charges plus the same40bps execution scenario; exact tariff/code identities bound by final experiment definition. Not calibrated fills or an assertion of historical tariffs.",
+    "identical_new_entry_period": "First official2021session through final official2025session for all20accounts;2017-2020supplies fit/cal only",
+    "liquidation_tail": "Existing planned five-session exits may continue into January2026; retain cash/settlement marks through2026-01-16 and label the tail separately. Events with decision times in2026are outside the declared entry period, regardless of filing date.",
+    "state": "One continuous cash/positions/reservations/settlement ledger per account, with no capital reset or forced flattening at model-year boundaries",
+    "entry_clock": "Frozen post-filing public-availability floor;09:00ET decision using the preceding completed session's price/ATR and known settlements; hypothetical decision-session close fill",
+    "holding_sessions": 5,
+    "maximum_positions": 5,
+    "position_budget_fraction": 0.2,
+    "atr_risk_budget_fraction": 0.005,
+    "atr_multiple": 2,
+    "whole_shares_only": true,
+    "settled_cash_only": true,
+    "margin_or_borrowing": false,
+    "reservation_rule": "Original fee-inclusive reservation is immutable; fill quantity may only decrease. Existing cash engine and historical settlement calendars apply. No fill-time reranking or replacement.",
+    "learned_utility": "U=N*mu - buy_fee(q,N) - sell_fee(q,N*(1+mu)) - 0.5*N*downside; N=q*reference_price; require U>0 and valid mu>-1/downside>=0. Fee-inclusive quantity comes from the same cash/risk planner. Recheck frozen forecasts at the hypothetical fill price with no quantity increase; this is a simulated contingent-fill convention.",
+    "controls_fill_convention": "Existing unconditional planned next-close fill sizing/reservation convention; no learned utility guard",
+    "missing_required_prices": "Preserve invalid account status and the retained ledger prefix; never remove a candidate using its future entry or exit availability",
+    "maximum_acceptable_drawdown": 0.3,
+    "drawdown_interpretation": "Qualification limit, not a promise that a stop prevents30%loss. Report full observed drawdown and failures; no risk-limit relaxation to seek the owner's weekly return aspiration.",
+    "exclusions_from_reported_net_return": ["personal income taxes", "CAD/USD funding and conversion costs", "unverified venue or account charges", "unmodeled market impact", "complete corporate-action cash ledger"]
+  },
+  "declared_attempt_denominator": {"scheduled_family_year_fits": 10, "output_heads_per_fit": 2, "account_paths": 20, "holding_periods": 1, "threshold_searches": 0, "hyperparameter_searches": 0},
+  "reporting": ["All 20 completed/invalid/failed account paths and fold abstentions", "Primary 10k and paired 2k outcomes, costs, gross/net P&L, trade counts, exposure and settled cash", "Weekly/monthly/yearly stability, drawdowns and issuer/trade profit concentration", "All calendar weeks in the full-account evaluation interval, including idle and losing weeks: retain raw weekly series, exact fractions with returns >=5%, >=10% and >=15%, median/worst week and longest consecutive losing-week streak; never infer target-hit rates from annualized or aggregated returns. Label initialization and liquidation-tail weeks separately while preserving them.", "Requested/structural/joint-feature/predicted/label-available denominators by issuer and year", "Raw versus corrected per-head test errors against fitting-only mean-target baselines", "Calibration-defined five prediction-quantile bins per head; collapse duplicate edges, retain test missing-outcome counts and report overlapping/clustered events", "Every raw source/model/preprocessing/calibration/sample/code identity and warning"],
+  "promotion": false,
+  "live_orders_or_new_spending": false,
+  "weekly_return_targets_are_guarantees_or_training_thresholds": false
+}

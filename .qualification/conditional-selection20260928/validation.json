@@ -1,0 +1,15 @@
+{
+  "at": "2026-09-28T20:27:11.346266+00:00",
+  "integrated_tests": {
+    "passed": 533,
+    "warnings": 96,
+    "seconds": 121.56
+  },
+  "old_engine_exact_comparisons": 54,
+  "independent_ranking_cases": 160,
+  "review": "no open material findings",
+  "EOF_cleanup": "extra trailing blank lines removed in policy and its test after suite; Python AST unchanged",
+  "paper_seven_files": "unchanged from verified prior archive",
+  "code_archive_sha256": "5f72a21b19bfda998168ed4fc3d229ab1ad7c77d4c1df52a5f7dbed14f1c8225",
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc"
+}

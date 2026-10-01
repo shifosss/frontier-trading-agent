@@ -1,0 +1,29 @@
+{
+  "at": "2026-09-28T23:51:26.582489+00:00",
+  "scope": "Independent scientific/source review only; no acquisition or outcomes",
+  "cohort": {
+    "status": "passed",
+    "focused_tests": 7,
+    "code_sha256": "77aef2706cc1a2195407f57f25c11711a0e618d1f4da0e7f217b998ec0403b61",
+    "test_sha256": "4f534cca84cc6ecc6313c9a4e1b7f00117b74ac694edaeab54f1263ecbdca416",
+    "checks": [
+      "2016-only quote-close times volume selection, later bars/actions excluded",
+      "Exact ticker to uniqueCIK; explicit common-title andexchangeflags",
+      "WithinCIK highest2016liquidity thenalphabetical representative",
+      "DeterministicCIKhash pool andno refill",
+      "Current classification explicitly not historical eligibility"
+    ]
+  },
+  "source": {
+    "status": "one_final_binding_requested",
+    "focused_tests": 8,
+    "code_sha256": "e6811627da248575b85e59ec015e91a9243d95e3ee61f8b9a93b58968857a231",
+    "finding": "Beforelaunch assert request issuers equal exact ordered selected100 from the hashed cohort; hashing cohort alone doesnot bind request membership.",
+    "checks": [
+      "Exact officialSEC/requestedCIK/history/accession scope",
+      "Originalsource reuse andcompletedfailure retention",
+      "403429globalstop; twoattemptinterrupted-only resume",
+      "SharedSEC andcapture lockexclusion"
+    ]
+  }
+}

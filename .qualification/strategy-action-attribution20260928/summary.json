@@ -1,0 +1,12 @@
+{
+  "accounts": 54,
+  "attribution_status": {
+    "complete": 54
+  },
+  "account_trade_observations": 191947,
+  "crossing_trade_observations": 174,
+  "events_crossed": 63,
+  "profitable_accounts": 0,
+  "known_issue_accounts": 0,
+  "note": "Account paths are alternative simulations, not additive independent investments. Full crossing-trade PnL is attribution, not causal action PnL or corrected account profit."
+}

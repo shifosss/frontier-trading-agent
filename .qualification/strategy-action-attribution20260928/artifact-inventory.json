@@ -1,0 +1,83 @@
+{
+  "files": [
+    {
+      "path": "account-attribution.csv",
+      "bytes": 18419,
+      "sha256": "e1bb7005603ad1659d25cfcdc535a2d124cb1dbd07a5c6bfc169f371843ac83f"
+    },
+    {
+      "path": "account-attribution.json",
+      "bytes": 45977,
+      "sha256": "1d0a04c1f2df3030f2116f61a39c4c2e187ea7f1e271063097136ed2b13746fd"
+    },
+    {
+      "path": "attribute_actions.py",
+      "bytes": 11951,
+      "sha256": "a8acf90c282ff31abec4ab03650b8ad3dda8e7e1fd4067cb03ecd4edb1ffe292"
+    },
+    {
+      "path": "category-attribution.csv",
+      "bytes": 70070,
+      "sha256": "6662e7eb8df2c9aab3205752d61668c7a4340d978cecbdd5f33572b2b257eb32"
+    },
+    {
+      "path": "crossing-trades.csv",
+      "bytes": 34718,
+      "sha256": "e344b6923de82c725cbc8a4596ee68868115da7fc0050b8017adece12e48cdf2"
+    },
+    {
+      "path": "definition.json",
+      "bytes": 4213,
+      "sha256": "402114d7cbae08dc271777c977a0839e0fff67af9415a8b3d0328743286a0871"
+    },
+    {
+      "path": "direct-verification.json",
+      "bytes": 504,
+      "sha256": "6de9265e4ad6d6627e3263e372bcffd707a1364dd6d14af08a509ee31ccb331c"
+    },
+    {
+      "path": "event-attribution.csv",
+      "bytes": 36612,
+      "sha256": "07c39bdcb7cdc14b5222486280382404d95cf3045b5c3cbd76a2019d7fe08609"
+    },
+    {
+      "path": "input-result-hashes.json",
+      "bytes": 7193,
+      "sha256": "e057877459e1d309b0598b8cdb0d15ae98aee22c234b1a94a8a21c5d818097c3"
+    },
+    {
+      "path": "largest-contributions-all54.json",
+      "bytes": 413409,
+      "sha256": "c4ab5889d5a1657ce0049cbe5ce140533add56bc52bb8e0838597aecbfbb685c"
+    },
+    {
+      "path": "matched-event-definitions.json",
+      "bytes": 1654067,
+      "sha256": "e15056c2fc41d5c97cdcda308ca7e036bde3f91788e099576630740d2c5ba8c3"
+    },
+    {
+      "path": "scope-clarifications.json",
+      "bytes": 480,
+      "sha256": "08d8fdcfa8b8d91d67580fb59e3be0693734369c84fffed50a90ea75bfa190dd"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 425,
+      "sha256": "fde4810dafc04578855f2b4ba6bcec15d448752e61ae964bc283ea8421a88d6c"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 19014,
+      "sha256": "9000a90d37f1c1c710e86505380bd3c65857787001fa7dad4873fac69fd4d574"
+    },
+    {
+      "path": "verify_direct.py",
+      "bytes": 3310,
+      "sha256": "5148b8e7bd7b6d5359338f12c1c561b4e24c03e6b4b343668c04e54448e73e23"
+    }
+  ],
+  "results_doc": {
+    "path": "docs\\strategy-action-attribution-results.md",
+    "sha256": "548bd81614e62692b0fe2143fe78cee311be38fd955f3a0a669ac15f316117a6"
+  }
+}

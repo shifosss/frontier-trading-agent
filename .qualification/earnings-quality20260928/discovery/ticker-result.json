@@ -1,0 +1,25 @@
+{
+  "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+  "requested_at": "2026-09-28T23:40:38.223037+00:00",
+  "request_sha256": "dcfe882e6146568de1d71fbed86bcbba8fe1ab7b1142d391c71b5dcdd5b2cd6f",
+  "status_code": 200,
+  "received_at": "2026-09-28T23:40:38.698184+00:00",
+  "headers": {
+    "Content-Type": "application/json",
+    "Content-Length": null,
+    "ETag": null,
+    "Last-Modified": "Fri, 25 Sep 2026 20:36:06 GMT",
+    "Location": null
+  },
+  "path": ".qualification\\earnings-quality20260928\\discovery\\company-tickers-exchange.json",
+  "bytes": 523297,
+  "sha256": "affa8f025ab31bab39b60e06cf0bcc401bb87f23151412d686258fc9b99ef091",
+  "status": "complete",
+  "fields": [
+    "cik",
+    "name",
+    "ticker",
+    "exchange"
+  ],
+  "rows": 10428
+}

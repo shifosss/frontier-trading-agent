@@ -1,0 +1,34 @@
+{
+  "refit_reproducibility": [
+    {
+      "block": 3,
+      "retained_model_attempts": 2,
+      "attempt_definitions_equal": true,
+      "calibration_arrays_exact_equal": {
+        "rows": true,
+        "columns": true,
+        "targets": true,
+        "reference_notional": true,
+        "raw": true,
+        "corrected": true
+      },
+      "model_bytes_equal": false
+    },
+    {
+      "block": 5,
+      "retained_model_attempts": 2,
+      "attempt_definitions_equal": true,
+      "calibration_arrays_exact_equal": {
+        "rows": true,
+        "columns": true,
+        "targets": true,
+        "reference_notional": true,
+        "raw": true,
+        "corrected": true
+      },
+      "model_bytes_equal": true
+    }
+  ],
+  "five_inherited_block_manifests": "unchanged",
+  "reason": "Only interrupted unmanifested blocks3and5were refit; every completed block reused unchanged."
+}

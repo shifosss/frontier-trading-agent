@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "status": "design_only_pending_root_review",
+  "created_at": "2026-09-29T00:46:00.718040+00:00",
+  "purpose": "Existing-access source feasibility for the six already captured expired SPY contracts. No authenticated calls are authorized or executed by this design task.",
+  "scope": {
+    "symbols": [
+      "SPY240315C00495000",
+      "SPY240315C00500000",
+      "SPY240315C00505000",
+      "SPY240315P00495000",
+      "SPY240315P00500000",
+      "SPY240315P00505000"
+    ],
+    "existing_bar_window": {
+      "start": "2024-02-15T00:00:00Z",
+      "end": "2024-02-24T00:00:00Z"
+    },
+    "sessions": [
+      "2024-02-15",
+      "2024-02-16",
+      "2024-02-20",
+      "2024-02-21",
+      "2024-02-22",
+      "2024-02-23"
+    ],
+    "expired_on": "2024-03-15",
+    "denominator_contracts": 6,
+    "denominator_contract_sessions": 36,
+    "metadata_time_semantics": "Retrospective contract record retrieved now; not a February 2024 metadata snapshot."
+  },
+  "existing_input_sha256": {
+    ".qualification/options-access20260928/alpaca-request.json": "0f6f92aa8cb25141d063e02bacd41523c2e439c10674def1d5b7f8ac8e07b0ee",
+    ".qualification/options-access20260928/alpaca-summary.json": "3f8541be380cb1e23d52dfad1f0255ae440833101e8f064fcbdb1066f33e4b21",
+    ".qualification/options-access20260928/review.json": "6ba8d35b05eeae17f791cc7d7370bc81b0ad74505d34ecdf4dcd074ec744073b",
+    ".qualification/options-access20260928/probe_alpaca.py": "d2499ca579c0bfba526ea032f1faf9d5d6df9a60e8b3dbd74d6297af81eed687",
+    ".qualification/options-access20260928/alpaca-raw-6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08.json": "6cf62315ce7489a4593598b724291db39008d4ac026986c59cfb4da481195a08",
+    "src/frontier/paper_broker.py": "a89cee7f9fa17ae0bfd76850a338d43a740ab578322862bfda8a1a36aa313921",
+    "src/frontier/historical_lab.py": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a"
+  },
+  "credential_names_only": [
+    "FRONTIER_ALPACA_PAPER_KEY",
+    "FRONTIER_ALPACA_PAPER_SECRET"
+  ],
+  "credential_handling": "Reuse frontier.paper_broker._paper_credentials only after root execution approval. Never print, serialize, or mix credential values. No environment read in this design.",
+  "historical_opra_quotes": {
+    "status": "blocked_documented_historical_endpoint_not_found",
+    "approved_calls": 0,
+    "url": null,
+    "requested_feed": "opra",
+    "requested_symbols": [
+      "SPY240315C00495000",
+      "SPY240315C00500000",
+      "SPY240315C00505000",
+      "SPY240315P00495000",
+      "SPY240315P00500000",
+      "SPY240315P00505000"
+    ],
+    "requested_window": {
+      "start": "2024-02-15T00:00:00Z",
+      "end": "2024-02-24T00:00:00Z"
+    },
+    "evidence": [
+      {
+        "url": "https://docs.alpaca.markets/us/docs/historical-option-data",
+        "finding": "Historical option data begins February 2024. OPRA is subscription-based; indicative quotes are modified derivatives, not actual OPRA quotes."
+      },
+      {
+        "url": "https://docs.alpaca.markets/us/reference/optionlatestquotes",
+        "finding": "Documented quote endpoint is GET /v1beta1/options/quotes/latest with symbols and feed; no historical start/end selectors are documented."
+      },
+      {
+        "url": "https://alpaca.markets/sdks/python/api_reference/data/option/requests.html",
+        "finding": "Documented historical request classes cover bars and trades; quotes use OptionLatestQuoteRequest. No historical option quote request class found."
+      },
+      {
+        "url": "https://docs.alpaca.markets/us/reference/optionchain",
+        "finding": "Chain returns latest quote/trade/Greeks. updated_since is a lower-bound freshness filter, not an as-of historical chain selector."
+      }
+    ],
+    "prohibited_substitutes": [
+      "Invented /v1beta1/options/quotes endpoint",
+      "Latest quote for an expired contract labeled as February 2024 history",
+      "Current chain/snapshot plus updated_since treated as historical chain",
+      "Indicative feed or missing feed default labeled OPRA",
+      "Bars/trades used to manufacture bid/ask observations"
+    ],
+    "next_gate": "Identify a primary documented historical quote endpoint and its entitlement semantics, then separately declare and review exact timestamps/page caps. No authenticated endpoint guessing."
+  },
+  "metadata_probe": {
+    "status": "proposed_not_executed",
+    "requests": [
+      {
+        "id": "metadata-SPY-20240315-495",
+        "method": "GET",
+        "url": "https://paper-api.alpaca.markets/v2/options/contracts",
+        "params": {
+          "underlying_symbols": "SPY",
+          "root_symbol": "SPY",
+          "status": "inactive",
+          "expiration_date": "2024-03-15",
+          "strike_price_gte": "495",
+          "strike_price_lte": "495",
+          "show_deliverables": "true",
+          "limit": 10
+        },
+        "expected_symbols": [
+          "SPY240315C00495000",
+          "SPY240315P00495000"
+        ]
+      },
+      {
+        "id": "metadata-SPY-20240315-500",
+        "method": "GET",
+        "url": "https://paper-api.alpaca.markets/v2/options/contracts",
+        "params": {
+          "underlying_symbols": "SPY",
+          "root_symbol": "SPY",
+          "status": "inactive",
+          "expiration_date": "2024-03-15",
+          "strike_price_gte": "500",
+          "strike_price_lte": "500",
+          "show_deliverables": "true",
+          "limit": 10
+        },
+        "expected_symbols": [
+          "SPY240315C00500000",
+          "SPY240315P00500000"
+        ]
+      },
+      {
+        "id": "metadata-SPY-20240315-505",
+        "method": "GET",
+        "url": "https://paper-api.alpaca.markets/v2/options/contracts",
+        "params": {
+          "underlying_symbols": "SPY",
+          "root_symbol": "SPY",
+          "status": "inactive",
+          "expiration_date": "2024-03-15",
+          "strike_price_gte": "505",
+          "strike_price_lte": "505",
+          "show_deliverables": "true",
+          "limit": 10
+        },
+        "expected_symbols": [
+          "SPY240315C00505000",
+          "SPY240315P00505000"
+        ]
+      }
+    ],
+    "maximum_http_calls": 3,
+    "maximum_pages_per_request": 1,
+    "follow_next_page_token": false,
+    "maximum_response_bytes_per_call": 1048576,
+    "maximum_retained_bytes_total": 3145728,
+    "http_timeout_seconds": 30,
+    "maximum_wall_seconds_per_call": 60,
+    "minimum_seconds_between_request_starts": 3,
+    "concurrent_requests": 1,
+    "attempts_per_request": 1,
+    "retries": false,
+    "follow_redirects": false,
+    "allowed_methods": [
+      "GET"
+    ],
+    "allowed_host": "paper-api.alpaca.markets",
+    "allowed_path": "/v2/options/contracts",
+    "stop_policy": "Stop the remaining probe on first non-200 response, transport failure, malformed JSON, response-size cap, or schema failure. In particular preserve 401/403/429 and stop without retries, host/feed substitution, purchase or entitlement changes. Empty 200 data is recorded missing, not silently replaced; other predeclared strikes may still be queried.",
+    "pagination_policy": "Retain any returned page_token or next_page_token without following. If present, classify that strike as page-limited/incomplete; do not infer absent contracts do not exist.",
+    "full_denominator": "Retain all three request statuses and all six requested contract statuses, including unattempted after stop. Keep unexpected returned symbols/raw records but never substitute them for missing expected symbols.",
+    "response_retention": [
+      "Exact URL/query, request/code/source identities, UTC send/receive clocks and HTTP status",
+      "Raw response bytes and SHA256, or explicitly labeled bounded prefix if truncated",
+      "Response Date/content-type/request-id/rate-limit headers only; never request authentication headers",
+      "Original payload keys, nulls, errors and pagination markers",
+      "Per-contract matched/missing/ambiguous/unexpected state and each qualified/unavailable field"
+    ],
+    "field_checks": [
+      "Exact symbol/root/underlying/expiry/type/strike identity against the fixed six symbols; Decimal strike comparison",
+      "Retain size and all deliverables/cash/currency/asset identifiers with original values; no assumed multiplier or deliverable",
+      "Record actual status/tradable as retrieval-time values only",
+      "Keep open_interest_date and close_price_date separate from retrieval time and desired February window",
+      "Duplicate or conflicting records remain ambiguous; missing deliverables do not establish standard deliverables"
+    ],
+    "qualification": "A successful response can establish retrospective metadata access and provider-reported contract terms only. It does not qualify historical OPRA quotes, historical chain completeness or executable options accounting."
+  },
+  "reuse_plan": {
+    "basis": "Adapt the existing single-request probe locally; do not call its unchanged main because its endpoint is hard-locked to bars and would collide with retained attempt files.",
+    "reuse": [
+      "Existing _paper_credentials resolver, raw SHA preservation, UTC timestamps, httpx streamed GET with redirects disabled, historical_lab._save"
+    ],
+    "minimal_changes": [
+      "Separate new output directory and immutable reviewed definition/code identity",
+      "Exact three metadata URL/query allowlist with one retained status per request and six-contract denominator",
+      "Enforce fixed streaming byte prefix cap and per-call deadline without silently treating truncation as success",
+      "Contract-specific response inspection instead of bar_counts; no SDK normalization that could drop deliverables"
+    ],
+    "prior_to_any_execution": "Root reviews and freezes the request plus adapted wrapper. Offline mocked checks must cover exact scope, empty/missing/duplicate records, pagination, 401/403/429 global stop, truncation and no retained-attempt overwrite."
+  },
+  "unknowns": [
+    "Whether existing paper credentials can retrieve these inactive 2024 contracts",
+    "Whether the provider retains exact historical deliverable terms or only a current archived contract record",
+    "Historical first listing/de-listing dates and as-of chain membership",
+    "Actual OPRA historical quote endpoint and entitlement",
+    "Quote timestamp precision, conditions, sizes, crossed/locked/zero markets and observation gaps",
+    "Executable bid/ask fills, assignment/exercise cashflows and historical transaction tariffs"
+  ],
+  "network_actions_this_task": {
+    "public_documentation_browsing": true,
+    "authenticated_requests": 0,
+    "market_data_requests": 0,
+    "broker_account_or_order_requests": 0,
+    "credential_reads": 0,
+    "purchases": 0
+  },
+  "documentation": [
+    {
+      "url": "https://docs.alpaca.markets/us/docs/historical-option-data",
+      "finding": "Historical option data begins February 2024. OPRA is subscription-based; indicative quotes are modified derivatives, not actual OPRA quotes."
+    },
+    {
+      "url": "https://docs.alpaca.markets/us/reference/optionlatestquotes",
+      "finding": "Documented quote endpoint is GET /v1beta1/options/quotes/latest with symbols and feed; no historical start/end selectors are documented."
+    },
+    {
+      "url": "https://alpaca.markets/sdks/python/api_reference/data/option/requests.html",
+      "finding": "Documented historical request classes cover bars and trades; quotes use OptionLatestQuoteRequest. No historical option quote request class found."
+    },
+    {
+      "url": "https://docs.alpaca.markets/us/reference/optionchain",
+      "finding": "Chain returns latest quote/trade/Greeks. updated_since is a lower-bound freshness filter, not an as-of historical chain selector."
+    },
+    {
+      "url": "https://docs.alpaca.markets/us/reference/get-options-contracts",
+      "finding": "Paper GET list supports inactive status, underlying/root, exact expiration and strike bounds, show_deliverables, pagination and limit. No historical as-of parameter documented."
+    },
+    {
+      "url": "https://docs.alpaca.markets/us/reference/get-option-contract-symbol_or_id",
+      "finding": "Paper GET by symbol or ID is documented, but the list endpoint documents show_deliverables and can request both call/put at an exact strike."
+    },
+    {
+      "url": "https://alpaca.markets/sdks/python/api_reference/trading/models.html#optioncontract",
+      "finding": "Contract model documents identity, expiry, type/style, strike, size, and separately dated open interest/close price. Size is not silently assumed to be 100."
+    }
+  ]
+}

@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "snapshot": "2026-10-01",
+  "scope": "All recorded owner/product, research and technical decisions synthesized from retained evidence. Undocumented rationale is not invented.",
+  "owner_decisions": [
+    {
+      "id": "OWN-001",
+      "decision": "Treat autonomous trading as the product objective",
+      "reason": "Owner explicitly redirected from article-based research to an automated agent",
+      "evidence_or_status": "Owner instructions; product goal, unfinished",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-002",
+      "decision": "Preserve historical evidence ahead of new forward observation",
+      "reason": "Historical experiments can reject/refine hypotheses now",
+      "evidence_or_status": "Owner instructions; implemented research factory",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-003",
+      "decision": "Keep daily short-hold and intraday studies separate from legacy long-hold/paper baselines",
+      "reason": "Changing a global horizon or watcher frequency does not implement a new trading cadence",
+      "evidence_or_status": "`docs/trading-cadence.md`; implemented daily lane",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-004",
+      "decision": "Evaluate whole-account weekly outcomes including idle and losing weeks",
+      "reason": "Avoid turning sparse profitable trades into a misleading weekly return promise",
+      "evidence_or_status": "`docs/capital-and-return-objective.md`; implemented experiment reporting",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-005",
+      "decision": "Compare USD10,000 and USD2,000 without claiming broker funds exist",
+      "reason": "Affordability, fixed fees and risk sizing depend on account scale",
+      "evidence_or_status": "Owner instructions and earnings/ETF definitions",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-006",
+      "decision": "Keep CAD risk and ETF reserves separate from USD active simulation",
+      "reason": "Conversion and risk base are different from quote currency",
+      "evidence_or_status": "`config/mandate.json`, funding study",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-007",
+      "decision": "Retain all failed variants and source exclusions",
+      "reason": "Selecting only successful paths creates hindsight bias",
+      "evidence_or_status": "Every frozen comparison; no promoted winner",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-008",
+      "decision": "Use training-only choices, explicit chronology and purged labels",
+      "reason": "Prevent information from future outcomes entering decisions",
+      "evidence_or_status": "Multi-model, conditional and earnings specifications",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-009",
+      "decision": "Test richer models without requiring a simple profitable baseline first",
+      "reason": "Owner authorized complexity; simple baselines remain controls",
+      "evidence_or_status": "Multi-model/earnings comparisons complete; complex models did not establish an edge",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-010",
+      "decision": "Preserve immutable code/source/policy identities",
+      "reason": "A changed model or journal is a different experiment or operation",
+      "evidence_or_status": "Model artifacts, research attempts, paper seven-file identity",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-011",
+      "decision": "Distinguish fees, quoted spreads and realized fills",
+      "reason": "A quote sample is not an execution guarantee; fee assumptions must not be chosen from profits",
+      "evidence_or_status": "Cost-evidence and broker-feasibility documents",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-012",
+      "decision": "Keep free/existing-access spending boundary",
+      "reason": "Owner explicitly withheld new spending authority",
+      "evidence_or_status": "Premium access failures retained, no purchases",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-013",
+      "decision": "Use a private repository for publication",
+      "reason": "Owner will create it and supply its URL",
+      "evidence_or_status": "Private `shifosss/frontier-trading-agent` provided and verified October1",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-014",
+      "decision": "Document actual reasoning and mark gaps rather than invent it",
+      "reason": "New readers need trustworthy recorded decisions, not retrospective certainty",
+      "evidence_or_status": "This handover; unknown rationale remains unknown",
+      "basis": "Recorded owner instruction or project-level policy, synthesized in handover."
+    },
+    {
+      "id": "OWN-015",
+      "decision": "Store the two existing paper keys as encrypted GitHub Actions repository secrets.",
+      "reason": "Owner explicitly requested private-repository credential synchronization; encrypted secrets preserve access without plaintext Git history. Local machines still need local variables.",
+      "evidence_or_status": "docs/handover/github-secrets-status.json",
+      "basis": "Explicit October1 owner request and verified repository state."
+    },
+    {
+      "id": "OWN-016",
+      "decision": "Keep large raw/model assets elsewhere while publishing all key facts/results.",
+      "reason": "Owner explicitly accepted external storage for large research files and required complete GitHub summaries. Exact path/size/SHA inventory preserves recoverability.",
+      "evidence_or_status": "docs/handover/artifact-inventory.csv; docs/handover/study-catalogue.json",
+      "basis": "Explicit October1 owner request and verified repository state."
+    },
+    {
+      "id": "OWN-017",
+      "decision": "Preserve local history and the owner-created initial repository history/license.",
+      "reason": "Publication should retain prior decisions and user-created content rather than force-overwrite it.",
+      "evidence_or_status": "Original35 local commits plus remote initial commit81148c2",
+      "basis": "Explicit October1 owner request and verified repository state."
+    }
+  ],
+  "research_decisions": [
+    {
+      "id": "R001",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "US and Canadian stocks/ETFs are the first proving ground.",
+      "rationale": "The owner chose these markets and hours-to-weeks workflows.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json",
+        "docs/trading-cadence.md"
+      ],
+      "limitation_or_rejected_inference": "A generic multi-asset architecture does not prove these markets are executable.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R002",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "Keep the reserved ETF portfolios separate from active cash.",
+      "rationale": "The owner excluded XGRO and described a distinct regular allocation.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json"
+      ],
+      "limitation_or_rejected_inference": "Owner-reported balances are not broker reconciliation.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R003",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "Use existing authorized access and free resources; request authority before new spending.",
+      "rationale": "The owner explicitly set this spending scope.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json",
+        "docs/historical-research-sources.md"
+      ],
+      "limitation_or_rejected_inference": "Do not purchase premium data to fill an inconvenient gap.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R004",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "USD funding is acceptable but not presumed executed.",
+      "rationale": "The owner accepts CAD-to-USD trading opportunities.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/usd-funding-study.md",
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "No funding transfer was made.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R005",
+      "category": "mandate",
+      "date_or_period": "2026-09-28",
+      "decision": "USD10,000 is primary simulated research capital; USD2,000 remains a comparison.",
+      "rationale": "The owner expanded research capital before the new outcomes.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        "config/mandate.json"
+      ],
+      "limitation_or_rejected_inference": "These are not reconciled broker balances.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R006",
+      "category": "mandate",
+      "date_or_period": "2026-09-28",
+      "decision": "Measure 5/10/15% weekly targets on whole account after costs.",
+      "rationale": "The owner specified the earning ratio, and idle cash belongs to account performance.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "Targets are aspirational, not a guaranteed minimum.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R007",
+      "category": "mandate",
+      "date_or_period": "2026-09",
+      "decision": "Cash-only, no borrowing and roughly30% drawdown remain constraints.",
+      "rationale": "Owner authority does not include margin or a risk relaxation to chase weekly targets.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "config/mandate.json",
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "Qualification limits and automatic halt implementations differ by study.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R008",
+      "category": "mandate",
+      "date_or_period": "2026-09-18",
+      "decision": "Treat five-year history as repeated short trades, not five-year individual-stock holdings.",
+      "rationale": "The owner clarified hourly/daily decisions and approximately one-week maximum holdings.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cadence.md"
+      ],
+      "limitation_or_rejected_inference": "Annual training is not annual holding.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R009",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Keep software, source, exploratory history, prospective evidence and profitability claims separate.",
+      "rationale": "Different checks support different conclusions.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/design-review.md",
+        "docs/historical-research.md"
+      ],
+      "limitation_or_rejected_inference": "Arithmetic review alone does not validate alpha or fills.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R010",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Retain every trial, failed path, warning and access refusal.",
+      "rationale": "Selection history is necessary to assess overfitting and source completeness.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/multi-model-research.md"
+      ],
+      "limitation_or_rejected_inference": "Renaming campaigns does not restore an untouched test.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R011",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Use fit-only preprocessing and purged causal partitions.",
+      "rationale": "Outcomes must not leak across fitting, calibration and test windows.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md",
+        "docs/earnings-quality-research.md"
+      ],
+      "limitation_or_rejected_inference": "Timestamped retrieval alone cannot prove LLM historical ignorance.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R012",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Do not loosen thresholds solely to force trades.",
+      "rationale": "Trading activity is not evidence of positive utility.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/forecast-calibration-diagnostics.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Abstention is reported, not presented as alpha.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R013",
+      "category": "research-governance",
+      "date_or_period": "2026-09",
+      "decision": "Do not rerun unchanged completed grids without a reproducibility reason.",
+      "rationale": "Completed negative evidence should guide a new hypothesis instead of repeated identical work.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/short-hold-research-results.md",
+        "docs/multi-model-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Historical development continues without waiting solely for forward data.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R014",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Expand the41-instrument starter into official uncapped listing capture.",
+      "rationale": "The owner requested broader useful discovery.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md",
+        "docs/broad-research.md"
+      ],
+      "limitation_or_rejected_inference": "Large membership is not complete historical tradability.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R015",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Keep source classifications and exclusions explicit.",
+      "rationale": "Stock-labelled directories contain ADRs, funds, units and other instruments.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md"
+      ],
+      "limitation_or_rejected_inference": "Do not silently call every label a common share.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R016",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Preserve current-membership and revised-vintage limitations.",
+      "rationale": "Current listings omit past delisted names and later revisions may alter prices.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-sources.md",
+        "docs/historical-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "No complete free US/Canadian delisted panel was obtained.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R017",
+      "category": "universe",
+      "date_or_period": "2026-09-18",
+      "decision": "Retain all200 extended-capture failures.",
+      "rationale": "Missing histories are part of the requested denominator.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md",
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Invalid accounts are not quietly dropped from success rates.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R018",
+      "category": "universe",
+      "date_or_period": "2026-09",
+      "decision": "Do not infer Canadian securities count from the owner's estimate.",
+      "rationale": "Official issuer/issue counts differ and include funds/security classes.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/universe-coverage.md"
+      ],
+      "limitation_or_rejected_inference": "Hundreds of thousands of Canadian stocks is not supported.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R019",
+      "category": "sources",
+      "date_or_period": "2026-09",
+      "decision": "Keep tested delisted-source failures instead of paying or fabricating terminal histories.",
+      "rationale": "Alpha Vantage entitlement and other tested mappings did not yield complete histories.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-sources.md"
+      ],
+      "limitation_or_rejected_inference": "Aggregate French factors cannot substitute for individual-stock histories.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R020",
+      "category": "sources",
+      "date_or_period": "2026-09-18",
+      "decision": "Reconstruct nominal historical prices only under declared source conventions.",
+      "rationale": "Adjusted historical prices can falsely make high-price old stocks affordable.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/aixi-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "Nominal reconstruction is not complete action accounting.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R021",
+      "category": "sources",
+      "date_or_period": "2026-09-18",
+      "decision": "Use a separately declared WJX issuer bridge sensitivity.",
+      "rationale": "Three missing rows had specific issuer evidence; the original attempt remains preserved.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "The bridge was not silently applied to later frozen captures.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R022",
+      "category": "sources",
+      "date_or_period": "2026-09",
+      "decision": "Preserve TPX merger uncertainty rather than inventing a split or deleting a winner.",
+      "rationale": "Conversion classes, dates, fractions and cash terms remain unresolved.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/tpx-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "Subtracting one P&L does not recreate the account cash path.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R023",
+      "category": "sources",
+      "date_or_period": "2026-09-26",
+      "decision": "Treat AIXI's ADS conversion as a material source/label issue.",
+      "rationale": "Independent prices and depositary terms contradict an apparent large gain.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/aixi-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "A common-unit diagnostic is not a corrected full broker ledger.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R024",
+      "category": "sources",
+      "date_or_period": "2026-09-28",
+      "decision": "Review deterministic upward/downward action cases without return selection.",
+      "rationale": "Provider-labelled splits include complex actions and missing boundaries.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/action-source-validation-plan.md",
+        "docs/action-source-validation-results.md"
+      ],
+      "limitation_or_rejected_inference": "Price-factor agreement does not qualify cash/share actions.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R025",
+      "category": "sources",
+      "date_or_period": "2026-09-28",
+      "decision": "Attribute known action crossings without rewriting results.",
+      "rationale": "This identifies whether known issues plausibly dominate losing account paths.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/strategy-action-attribution-results.md"
+      ],
+      "limitation_or_rejected_inference": "Clean held intervals do not establish clean features or dividends.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R026",
+      "category": "execution",
+      "date_or_period": "2026-09-18",
+      "decision": "Use daily signal at close t, entry next close, independent1/3/5-session exits.",
+      "rationale": "The cadence needs causal every-session short-hold decisions.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cadence.md",
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "The old5/10/20-session lane remains a baseline.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R027",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Use whole shares, five positions, fee-inclusive20% caps and ATR-based quantity limits.",
+      "rationale": "The owner has a small cash account with constrained tickets.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/execution-cost-model.md"
+      ],
+      "limitation_or_rejected_inference": "ATR is not a guaranteed maximum loss.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R028",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Freeze selected candidate, quantity and reservation before fill.",
+      "rationale": "Fill-time future prices must not rerank or replace candidates.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/candidate-replay.md",
+        "docs/conditional-strategy-selection-plan.md"
+      ],
+      "limitation_or_rejected_inference": "A simulated contingent utility guard is not an auction fill guarantee.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R029",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Invalidate a path when a required price is missing.",
+      "rationale": "A guessed held/exit price can manufacture account performance.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md",
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Retain the prefix and null final profitability.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R030",
+      "category": "execution",
+      "date_or_period": "2026-09",
+      "decision": "Use dated settlement calendars and settled cash.",
+      "rationale": "Selling does not make proceeds immediately reusable throughout historical eras.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/execution-cost-model.md",
+        "docs/trading-cadence.md"
+      ],
+      "limitation_or_rejected_inference": "Bank/calendar conventions remain a conservative approximation.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R031",
+      "category": "execution",
+      "date_or_period": "2026-09-28",
+      "decision": "Carry positions and settlements through later refits.",
+      "rationale": "Account resets or year-stitching can erase funded execution constraints.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-plan.md",
+        "docs/earnings-quality-research.md"
+      ],
+      "limitation_or_rejected_inference": "Earlier broad-model fold flattening remains disclosed.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R032",
+      "category": "metrics",
+      "date_or_period": "2026-09-28",
+      "decision": "Report every calendar week, including idle/losing weeks and tail.",
+      "rationale": "Weekly aspirations concern the account, not selected favorable trades.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Deposits are not strategy gains.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R033",
+      "category": "metrics",
+      "date_or_period": "2026-09",
+      "decision": "Report concentration, yearly stability, costs, exposure and drawdown together.",
+      "rationale": "A small cumulative gain may depend on one issuer or long inactivity.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research-results.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "A costless SPY reference has different execution conventions.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R034",
+      "category": "costs",
+      "date_or_period": "2026-09-19",
+      "decision": "Keep20/40/100bps as sensitivities, not universal broker tariffs.",
+      "rationale": "They expose friction dependence without claiming calibrated fills.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cost-evidence.md",
+        "docs/execution-cost-model.md"
+      ],
+      "limitation_or_rejected_inference": "Do not select a cheaper value after seeing losses.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R035",
+      "category": "costs",
+      "date_or_period": "2026-09-28",
+      "decision": "Apply independently checked Moomoo current tariffs with Decimal component rounding.",
+      "rationale": "Fixed minima and share-based charges matter to small tickets.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/execution-cost-model.md"
+      ],
+      "limitation_or_rejected_inference": "Current tariffs are counterfactual historical scenarios.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R036",
+      "category": "costs",
+      "date_or_period": "2026-09-28",
+      "decision": "Separate Wealthsimple existing-USD execution from CAD-funded conversion.",
+      "rationale": "FX funding and subscriptions are different from share execution fees.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/execution-cost-model.md",
+        "docs/usd-funding-study.md"
+      ],
+      "limitation_or_rejected_inference": "Waivers, variable spread and tax are separate.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R037",
+      "category": "costs",
+      "date_or_period": "2026-09",
+      "decision": "Compare Norbert's Gambit costs/delay without executing it.",
+      "rationale": "A fixed journal fee can dominate a small contribution.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/usd-funding-study.md",
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "No universally cheapest transfer was established.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R038",
+      "category": "costs",
+      "date_or_period": "2026-09-19",
+      "decision": "Use historical duration-weighted full spreads and retain uncovered/crossed intervals.",
+      "rationale": "A snapshot or invented stale fill would misstate quoted liquidity.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/trading-cost-evidence.md"
+      ],
+      "limitation_or_rejected_inference": "Quotes are not slippage, fills or capacity.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R039",
+      "category": "costs",
+      "date_or_period": "2026-09-28",
+      "decision": "Freeze the ETF15bps allowance before account outcomes.",
+      "rationale": "The rule ceil(maximum weighted full spread)+10bps was independently quote-informed.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "The extra10bps is a sensitivity, not calibrated slippage or a stock/option bound.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R040",
+      "category": "starter",
+      "date_or_period": "2026-09",
+      "decision": "Treat scanner cohorts as reference-budget observations, not compounded profit.",
+      "rationale": "The starter study resets capital and can stay in cash.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/scanner-study.md",
+        "docs/usd-funding-study.md"
+      ],
+      "limitation_or_rejected_inference": "Selected-cohort means cannot be called account CAGR.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R041",
+      "category": "legacy",
+      "date_or_period": "2026-09-18",
+      "decision": "Retain the legacy720 fixed/24 rolling/48 reference study.",
+      "rationale": "It supplies a documented baseline and failures.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "A20-session winner does not fulfill one-week holdings.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R042",
+      "category": "legacy",
+      "date_or_period": "2026-09-18",
+      "decision": "Select rolling rules only from stressed training scores or cash.",
+      "rationale": "Test outcomes must not determine the next selected strategy.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/historical-research.md"
+      ],
+      "limitation_or_rejected_inference": "Training activity and drawdown filters do not guarantee future performance.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R043",
+      "category": "short-hold",
+      "date_or_period": "2026-09-18",
+      "decision": "Do not promote the versioned short-hold grid.",
+      "rationale": "509 paths completed,211 were invalid, and economically acceptable winners were sparse/cost-sensitive.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/short-hold-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "18 of24 rolling paths remained entirely in cash.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R044",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Compare four fixed learned families plus three ensembles against13 controls.",
+      "rationale": "The owner explicitly broadened scope beyond simple rules.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md",
+        "docs/superpowers/plans/2026-09-19-multi-model-study.md"
+      ],
+      "limitation_or_rejected_inference": "Complexity itself is not evidence of better economics.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R045",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Predict return and daily-close downside at1/3/5 horizons.",
+      "rationale": "Different outputs support utility and risk-aware ranking.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md"
+      ],
+      "limitation_or_rejected_inference": "The MLP is shared-hidden multi-output, not transformer attention.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R046",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Retain fixed presets, seeds, sample identities and all MLP convergence warnings.",
+      "rationale": "A controlled family comparison should not retune on test outcomes.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md",
+        "docs/multi-model-research-results.md"
+      ],
+      "limitation_or_rejected_inference": "Warnings do not become a favorable-family selection rule.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R047",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Weight adaptive ensembles from calibration error improvement over fit mean.",
+      "rationale": "Weights should use calibration evidence, not final account profit.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research.md"
+      ],
+      "limitation_or_rejected_inference": "Small estimated improvements can be unstable; fallback is fixed equal weights.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R048",
+      "category": "models",
+      "date_or_period": "2026-09-19",
+      "decision": "Do not promote broad learned models.",
+      "rationale": "All21 learned USD2,00040bps variants lost; the CAD gain has stability/source issues.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/multi-model-research-results.md",
+        "docs/tpx-source-continuity.md"
+      ],
+      "limitation_or_rejected_inference": "The only USD10,00040bps gain is cumulative over decades.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R049",
+      "category": "bridge",
+      "date_or_period": "2026-09-19",
+      "decision": "Save fitted preprocessing, model, calibration and deterministic forecasts.",
+      "rationale": "Reusable decisions need exact replay without accidental refits.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/daily-model-bridge.md"
+      ],
+      "limitation_or_rejected_inference": "The isolated preview is not active-paper migration.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R050",
+      "category": "bridge",
+      "date_or_period": "2026-09-19",
+      "decision": "Explain zero entries through a declared diagnostic, not a threshold reduction.",
+      "rationale": "Saved return estimates were small relative to cost and downside.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/forecast-calibration-diagnostics.md"
+      ],
+      "limitation_or_rejected_inference": "Positive MLP scores do not qualify it after observing alternatives.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R051",
+      "category": "replay",
+      "date_or_period": "2026-09-28",
+      "decision": "Rehearse the saved policy through persistent positions/orders/settlement.",
+      "rationale": "Stateful execution is required before daily operator integration.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/candidate-replay.md",
+        "docs/candidate-replay-results.md"
+      ],
+      "limitation_or_rejected_inference": "Paper partial-fill broker handling remains separate.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R052",
+      "category": "replay",
+      "date_or_period": "2026-09-28",
+      "decision": "Keep proportional and fixed-fee rehearsal losses visible.",
+      "rationale": "Both gross P&L and minimum-fee effects were unfavorable.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/candidate-replay-results.md"
+      ],
+      "limitation_or_rejected_inference": "Small tickets explain costs but do not explain away negative gross results.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R053",
+      "category": "interactions",
+      "date_or_period": "2026-09-28",
+      "decision": "Test residual, trend, compression, blend and regime additions in a fixed54-account grid.",
+      "rationale": "These are economically motivated changes to the observed setup controls.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/strategy-experiment-2026-09-28.md",
+        "docs/strategy-interaction-results.md"
+      ],
+      "limitation_or_rejected_inference": "All54 paths lost; favorable subcells cannot be pruned into a claimed winner.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R054",
+      "category": "timing",
+      "date_or_period": "2026-09-28",
+      "decision": "Compare next open/close timing before building an earlier-entry account rescue.",
+      "rationale": "A common-exit diagnostic isolates entry timing.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/strategy-timing-study-2026-09-28.md",
+        "docs/strategy-timing-results.md"
+      ],
+      "limitation_or_rejected_inference": "All nine primary stock differences disfavored earlier open; this is not a fill backtest.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R055",
+      "category": "conditional",
+      "date_or_period": "2026-09-28",
+      "decision": "Compare static percentile, utility-per-dollar and dollar utility with continuous accounts.",
+      "rationale": "Unequal ticket sizes can make average percentage trades misleading.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-plan.md",
+        "docs/conditional-strategy-selection-results.md"
+      ],
+      "limitation_or_rejected_inference": "All18 accounts lost.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R056",
+      "category": "conditional",
+      "date_or_period": "2026-09-28",
+      "decision": "Use nested fit-only model selection and calibration-only bins.",
+      "rationale": "Final test P&L must not select Ridge versus boosted trees.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-plan.md"
+      ],
+      "limitation_or_rejected_inference": "Model failures abstain without alternate-family rescue.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R057",
+      "category": "conditional",
+      "date_or_period": "2026-09-28",
+      "decision": "Retain writer interruptions and resume only the scoped writer change.",
+      "rationale": "Windows operational errors did not authorize changing frozen economics.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/conditional-strategy-selection-results.md"
+      ],
+      "limitation_or_rejected_inference": "58 frozen economic files stayed unchanged.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R058",
+      "category": "calibration",
+      "date_or_period": "2026-09-28",
+      "decision": "Test a single declared calibration attenuation rule without refitting.",
+      "rationale": "Overestimated return bins motivated a calibration-only correction.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/calibration-shrinkage-results.md"
+      ],
+      "limitation_or_rejected_inference": "A three-trade early gain followed by abstention is not repeatable alpha.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R059",
+      "category": "intraday",
+      "date_or_period": "2026-09-28",
+      "decision": "Use actual minutes and a fixed six-stock pilot.",
+      "rationale": "Daily bars cannot manufacture hourly observations.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/intraday-opening-study.md",
+        "docs/hourly-data-access.md"
+      ],
+      "limitation_or_rejected_inference": "BANF gaps and absent Canadian hourly coverage remain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R060",
+      "category": "intraday",
+      "date_or_period": "2026-09-28",
+      "decision": "Allow the free SIP delay before10:46 entry and12:46 exit.",
+      "rationale": "Observed data must be available before simulated decisions.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/intraday-opening-study.md"
+      ],
+      "limitation_or_rejected_inference": "Vendor09:00 hourly buckets mix premarket and regular activity.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R061",
+      "category": "intraday",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not promote opening continuation/reversal.",
+      "rationale": "All four funded accounts lost before/after costs and exceeded30% drawdown.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/intraday-opening-results.md"
+      ],
+      "limitation_or_rejected_inference": "Tiny unfunded event means do not establish an account edge.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R062",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Use exact original filing facts instead of revised company-facts values.",
+      "rationale": "Historical EPS and concept differences demonstrated revision/unit contamination.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-research.md",
+        ".qualification/filing-feasibility20260928/strategy-memo.md"
+      ],
+      "limitation_or_rejected_inference": "Ford ProfitLoss and split-adjusted later EPS are not silently substituted.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R063",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Define S from seasonal quarterly income innovation over prior-fiscal-year assets and prior eight innovations.",
+      "rationale": "The pilot declares an income surprise proxy without consensus data.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-research.md"
+      ],
+      "limitation_or_rejected_inference": "It is not a centered z-score; Q4 and missing scheduled history are not fabricated.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R064",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Keep the six-issuer source supplement separate from its original failures.",
+      "rationale": "Bounded original-document recovery is auditable only if failed original attempts survive.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-results.md"
+      ],
+      "limitation_or_rejected_inference": "One early2012 MSFT original remained unavailable.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R065",
+      "category": "filings",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not promote the tiny positive six-issuer income account.",
+      "rationale": "Only27 selected events fell below the sample floor; USD2.53 gain is economically weak.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/post-filing-results.md"
+      ],
+      "limitation_or_rejected_inference": "Lower activity/fees does not by itself establish earnings alpha.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R066",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Fix100 issuers in deterministic source-only order without refilling.",
+      "rationale": "The cohort must not be selected by extraction success or future returns.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "Current membership and profile-classification biases remain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R067",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Require exact matching original FILER-header nonfinancial SIC for every recipe.",
+      "rationale": "The signal definition excludes financial-company accounting differences causally.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/qualification/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Current SIC cannot fill missing historical header evidence.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R068",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Append current-event industry eligibility without rewriting the original S history.",
+      "rationale": "A new eligibility gate must not silently change previously declared seasonal innovations.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/qualification/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Older industry changes remain a history caveat.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R069",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Define Q as change in original YTD CFO-minus-NI over prior-fiscal-year assets.",
+      "rationale": "The cash-backing hypothesis is distinct from the income-only recipe.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "Continuing-operations CFO is not an allowed silent substitute.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R070",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Freeze original filing/request/storage/pacing envelope and source identities.",
+      "rationale": "Large acquisition must remain bounded and reproducible.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-research.md"
+      ],
+      "limitation_or_rejected_inference": "Global STOP requires reconciliation, not identity/endpoint substitution.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R071",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Resume only unfinished CNMD request under its declared second-attempt allowance.",
+      "rationale": "Absent processes/free locks and unfinished journal state justified a narrow recovery.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/milestone-20260929-preparation.json"
+      ],
+      "limitation_or_rejected_inference": "Completed failures were not retried.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R072",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Treat terminal incomplete as finished with190 retained failures.",
+      "rationale": "All4057 registered originals and100 registries reached terminal processing.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md",
+        ".qualification/earnings-quality20260928/milestone-20260929-results.json"
+      ],
+      "limitation_or_rejected_inference": "Do not restart the completed source worker.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R073",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Bind original discovery roots/history and all issuer/event denominators in the collector.",
+      "rationale": "A transient registry snapshot cannot establish terminal completeness.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/qualification/interface.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Eleven issuers with no eligible event remain without replacements.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R074",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Use original same-row vendor close and volume for dollar activity.",
+      "rationale": "Nominal reconstruction differs from original quotes on71057 rows.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/model-inputs/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Mixing reconstructed price with original volume would change units.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R075",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Use five causal inputs and two explicit model outputs.",
+      "rationale": "S/Q and prior price/activity/market context implement the declared hypothesis.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/cohort/model-specification.json",
+        ".qualification/earnings-quality20260928/models/interface.md"
+      ],
+      "limitation_or_rejected_inference": "Daily-close downside is not intraday guaranteed loss.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R076",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Use fixed Ridge and shallow boosted trees, annual expanding fit/calibration/test chronology.",
+      "rationale": "A controlled pair avoids an outcome-selected preset search.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "Minimum256/25 and64/16 samples must pass or abstain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R077",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Save both families' eligible test forecasts before reading test labels.",
+      "rationale": "The chronology barrier prevents test outcomes from influencing fitted forecasts.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/models/interface.md",
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "One forecast is shared across both costs and balances.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R078",
+      "category": "earnings",
+      "date_or_period": "2026-09-28",
+      "decision": "Run all20 accounts continuously without a retrospective drawdown halt.",
+      "rationale": "The frozen design uses30% as a qualification limit only.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/earnings-quality20260928/accounts/interface.md",
+        ".qualification/earnings-quality20260928/cohort/model-specification.json"
+      ],
+      "limitation_or_rejected_inference": "The large fixed-fee drawdown remains a failed qualification.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R079",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Do not promote any earnings recipe.",
+      "rationale": "No path reached5/10/15% weekly; learned pooled errors were worse than simple fitting means.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md",
+        ".qualification/earnings-quality20260928/economic/actual-analysis/report.md"
+      ],
+      "limitation_or_rejected_inference": "Six cumulative gains do not establish repeatable weekly profit.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R080",
+      "category": "earnings",
+      "date_or_period": "2026-09-29",
+      "decision": "Interpret Q filter failure and issuer concentration descriptively.",
+      "rationale": "Q reduced candidates without improved economics; VSH dominated boosted gains.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Do not retune thresholds or remove issuers around these outcomes.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R081",
+      "category": "earnings",
+      "date_or_period": "2026-10-01",
+      "decision": "Propose a cached source-only8-K Item2.02 novelty/timing audit before more acquisitions/outcomes.",
+      "rationale": "Later10-Q information may already have been public, but that explanation is unverified.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Proposed, not yet declared/extracted/executed in this handover.",
+      "status": "Proposed and unexecuted"
+    },
+    {
+      "id": "R082",
+      "category": "earnings",
+      "date_or_period": "2026-10-01",
+      "decision": "Never backdate later10-Q S/Q to an earlier earnings release.",
+      "rationale": "Only original earlier document/exhibit facts and fiscal-period linkage can support an earlier-time decision.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/earnings-quality-results.md"
+      ],
+      "limitation_or_rejected_inference": "Same CIK, date proximity and Item2.02 alone are only candidates.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R083",
+      "category": "etf",
+      "date_or_period": "2026-09-28",
+      "decision": "Compare residual reversal, trend-gated reversal and date/count hash control.",
+      "rationale": "Fixed ETF structure tests a distinct economic hypothesis rather than the failed stock grid.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/etf-reversal20260928/strategy/research-note.md",
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "Control matching does not match dollar exposure.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R084",
+      "category": "etf",
+      "date_or_period": "2026-09-28",
+      "decision": "Use a fixed three-session hold and explicitly declared30% halt.",
+      "rationale": "The ETF account specification freezes exit/risk behavior before returns.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "Gap overshoot and subsequent idle years remain.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R085",
+      "category": "etf",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not promote ETF reversal or retrospectively select DIA.",
+      "rationale": "All eight reversal accounts lost; one control's small gain was concentrated.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/etf-reversal-results.md"
+      ],
+      "limitation_or_rejected_inference": "No account met any weekly5/10/15% target.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R086",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Stop the Alpha Vantage probe after a premium error and do not send the second request.",
+      "rationale": "Existing/free access did not entitle the requested chain.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        ".qualification/options-access20260928/broker-feasibility.md"
+      ],
+      "limitation_or_rejected_inference": "No purchase or replacement success was invented.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R087",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Treat36 Alpaca option bars as a bounded feasibility result.",
+      "rationale": "Six contracts/six days show access to those aggregates only.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md"
+      ],
+      "limitation_or_rejected_inference": "Bars do not establish chain membership or executable bid/ask.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R088",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Preserve literal multiplier0 in inactive-contract metadata.",
+      "rationale": "size100 and100-share deliverables do not resolve this field's cash semantics.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-evidence20260928/findings.md",
+        "docs/capital-and-return-objective.md",
+        ".qualification/options-evidence20260928/summary.json"
+      ],
+      "limitation_or_rejected_inference": "Do not silently substitute100 or date current T+1 terms to2024.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R089",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not invent a historical option quote endpoint or derive quotes from bars.",
+      "rationale": "Checked documentation did not expose the required historical quote source.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/capital-and-return-objective.md",
+        ".qualification/options-access20260928/strategy-proposal.md"
+      ],
+      "limitation_or_rejected_inference": "Latest/indicative quotes are not historical OPRA.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R090",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Do not treat a debit spread payoff as cash-account permission.",
+      "rationale": "Checked Canadian broker pages require a margin account type for spreads.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-access20260928/broker-feasibility.md"
+      ],
+      "limitation_or_rejected_inference": "No account change or option order is authorized.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R091",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Model exercise/expiry cash and deliverables before option economics.",
+      "rationale": "Premium alone can understate funding needs at exercise.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-access20260928/strategy-proposal.md"
+      ],
+      "limitation_or_rejected_inference": "Proposed premium limits are hypotheses, not adopted live policy.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R092",
+      "category": "options",
+      "date_or_period": "2026-09-28",
+      "decision": "Keep directional options and event straddles as proposals until dated sources qualify.",
+      "rationale": "Underlying signals and attractive payoff shapes do not establish option fills/performance.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        ".qualification/options-access20260928/strategy-proposal.md"
+      ],
+      "limitation_or_rejected_inference": "Abstain on an unaffordable unit; do not force far-OTM selection.",
+      "status": "Proposed and unexecuted"
+    },
+    {
+      "id": "R093",
+      "category": "operations-boundary",
+      "date_or_period": "2026-09",
+      "decision": "Keep the existing eleven-stock USD100000 paper baseline separate.",
+      "rationale": "The owner authorized this fixed paper account, not automatic winner migration.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/paper-operator.md",
+        "docs/daily-model-bridge.md"
+      ],
+      "limitation_or_rejected_inference": "Daily broker partial fills and reservations remain unfinished.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    },
+    {
+      "id": "R094",
+      "category": "handover",
+      "date_or_period": "2026-10-01",
+      "decision": "Document before continuing research and retain original sources/history.",
+      "rationale": "The owner explicitly requested every decision for no-context readers and agents.",
+      "rationale_basis": "Recorded requirement, study declaration or finding; wording synthesized for handover.",
+      "evidence_paths": [
+        "docs/handover/context-and-decisions.md"
+      ],
+      "limitation_or_rejected_inference": "Documentation is not permission for a new experiment or live operation.",
+      "status": "Retained decision or completed finding; consult source for exact operational status."
+    }
+  ],
+  "technical_decisions": [
+    {
+      "id": "T01",
+      "title": "Local modular application",
+      "decision": "Compose a Python CLI/FastAPI application with a React dashboard and workspace-owned files.",
+      "reason": "A single local workspace provides direct inspection, source retention and reproducible research without paid hosting or broker credentials in a browser.",
+      "basis": "Verified implementation and authorized free/local scope",
+      "evidence": [
+        "pyproject.toml",
+        "src/frontier/cli.py",
+        "src/frontier/web.py",
+        "frontend/src/main.tsx"
+      ],
+      "consequence": "Host availability is required; no built-in remote multi-user authentication or cloud/OS startup service."
+    },
+    {
+      "id": "T02",
+      "title": "Reuse NautilusTrader",
+      "decision": "Use a pinned external engine for strict event replay rather than recreate exchange/account primitives.",
+      "reason": "A mature engine supplies fill/account mechanics while Frontier owns source timing, narrow actions, signals and qualification.",
+      "basis": "Dependency and code structure; rationale inferred",
+      "evidence": [
+        "pyproject.toml",
+        "src/frontier/replay.py",
+        "uv.lock"
+      ],
+      "consequence": "Pin/version and engine identity are material; synthetic quote assumptions remain Frontier's responsibility."
+    },
+    {
+      "id": "T03",
+      "title": "Separate execution contracts",
+      "decision": "Retain strict opening replay, next-close historical accounts, actual-minute intraday pilot, saved-model rehearsal and weekly paper baseline as distinct lanes.",
+      "reason": "They use different timing, fill truth, action coverage and state persistence; one result cannot silently certify another.",
+      "basis": "Verified implementations and explicit cadence mandate",
+      "evidence": [
+        "src/frontier/replay.py",
+        "src/frontier/short_horizon_study.py",
+        "src/frontier/candidate_replay.py",
+        "src/frontier/swing_policy.py",
+        "docs/trading-cadence.md",
+        "docs/intraday-opening-results.md",
+        ".qualification/intraday-opening-strategy20260928"
+      ],
+      "consequence": "Daily migration and faster reselection need separate definitions and qualification."
+    },
+    {
+      "id": "T04",
+      "title": "Current one-account engine construction",
+      "decision": "Use the current NETTING/CASH venue account with separate USD/CAD starting balances.",
+      "reason": "Native-currency cash avoids implicit FX funding and is the actual current engine configuration.",
+      "basis": "Current constructor verified; older two-account notes are dated",
+      "evidence": [
+        "src/frontier/replay.py"
+      ],
+      "consequence": "Do not reproduce old two-account qualification as current behavior."
+    },
+    {
+      "id": "T05",
+      "title": "Content-addressed raw datasets",
+      "decision": "Strictly validate source tables, retain originals and atomically store a content-identified manifest/Parquet bundle.",
+      "reason": "Data identity and semantic rechecks prevent an edited cache or changed input from masquerading as the same experiment.",
+      "basis": "Verified implementation",
+      "evidence": [
+        "src/frontier/data.py",
+        "src/frontier/domain.py"
+      ],
+      "consequence": "Raw adjustment/action metadata and all input identities are part of reproducibility."
+    },
+    {
+      "id": "T06",
+      "title": "Separate timestamp domains",
+      "decision": "Keep event, availability, retrieval and ingestion clocks distinct and require event and availability <= decision.",
+      "reason": "An original period/date or later downloaded file must not become an earlier public observation.",
+      "basis": "Verified schema and as-of filtering",
+      "evidence": [
+        "src/frontier/domain.py",
+        "src/frontier/data.py",
+        "src/frontier/observation.py"
+      ],
+      "consequence": "Inferred availability and revised-vintage sources remain explicit limitations."
+    },
+    {
+      "id": "T07",
+      "title": "Official session calendars",
+      "decision": "Use exchange schedules and final partial hourly sessions; report missing observations without fill-forward.",
+      "reason": "Holiday/early-close/session errors otherwise change signals, holdings and settlement chronology.",
+      "basis": "Verified implementation",
+      "evidence": [
+        "src/frontier/data.py",
+        "src/frontier/sources.py",
+        "src/frontier/historical_settlement.py"
+      ],
+      "consequence": "Missing required price paths remain invalid rather than retrospectively removed."
+    },
+    {
+      "id": "T08",
+      "title": "No implicit FX execution",
+      "decision": "Use dated available FX for CAD reporting and hypothetical funding; never automatically transfer or convert funds.",
+      "reason": "The owner allows planned CAD/USD funding but native settled cash and existing authorization must govern execution.",
+      "basis": "Owner mandate and implementation",
+      "evidence": [
+        "config/mandate.json",
+        "src/frontier/funding.py",
+        "src/frontier/sources.py",
+        "src/frontier/paper_risk.py"
+      ],
+      "consequence": "Research balances/monthly contributions are not current broker cash."
+    },
+    {
+      "id": "T09",
+      "title": "Refuse unsupported known actions",
+      "decision": "Reject known splits in strict replay and keep the incomplete-action opt-in limited to unknown coverage.",
+      "reason": "Accepting a known unimplemented transformation would manufacture holdings/value continuity.",
+      "basis": "Verified validation",
+      "evidence": [
+        "src/frontier/replay.py",
+        "src/frontier/domain.py"
+      ],
+      "consequence": "The replay error is a real constraint; enabling unknown coverage does not correct known actions."
+    },
+    {
+      "id": "T10",
+      "title": "Narrow cash dividends",
+      "decision": "Account for pre-ex entitlement as receivable and only convert to cash at explicit payment time.",
+      "reason": "Ex-date entitlement, NAV and spendable cash are different; immediate cash permits premature reinvestment.",
+      "basis": "Verified action implementation",
+      "evidence": [
+        "src/frontier/replay.py"
+      ],
+      "consequence": "Gross dividends are implemented only under strict declared clocks; broader actions/tax/fractional mechanics remain unfinished."
+    },
+    {
+      "id": "T11",
+      "title": "Retain failures and exposed evaluation windows",
+      "decision": "Save terminal failures and enforce dataset-global closed-window evaluation access.",
+      "reason": "Changing campaign names or erasing inconvenient outcomes would compromise experiment interpretation.",
+      "basis": "Verified registry and historical workflow",
+      "evidence": [
+        "src/frontier/store.py",
+        "src/frontier/campaign.py",
+        "src/frontier/historical_lab.py"
+      ],
+      "consequence": "New studies must give a reproducibility or independent-hypothesis reason, not repeat unchanged grids."
+    },
+    {
+      "id": "T12",
+      "title": "Typed bounded model proposals",
+      "decision": "Accept restricted strategy configuration from a bounded Codex subprocess, not generated executable trading code.",
+      "reason": "Typed family/parameter/known-input boundaries allow auditable proposals without arbitrary execution or silent API billing.",
+      "basis": "Verified provider/schema",
+      "evidence": [
+        "src/frontier/providers.py",
+        "src/frontier/domain.py"
+      ],
+      "consequence": "Authentication/version/events/attempt evidence is retained; unexpected tools/events refuse the proposal."
+    },
+    {
+      "id": "T13",
+      "title": "Universe and active execution are separate",
+      "decision": "Broaden dated research listing capture without automatically changing the frozen eleven-stock paper universe.",
+      "reason": "Exploration should be extensive while an operational policy retains stable reviewed assumptions and identities.",
+      "basis": "Mandate and implementations",
+      "evidence": [
+        "src/frontier/research_universe.py",
+        "src/frontier/operator.py",
+        "config/scanner_universe.json"
+      ],
+      "consequence": "A listing snapshot is not historical delisted membership and a broad scan is not a broker migration."
+    },
+    {
+      "id": "T14",
+      "title": "Version short-hold research",
+      "decision": "Implement daily 1/3/5-session accounts separately from the retained legacy 5/10/20-session grid.",
+      "reason": "Every-session screening, independent positions and settled cash alter semantics beyond horizon constants.",
+      "basis": "Verified versioned lane and explicit mandate",
+      "evidence": [
+        "src/frontier/short_horizon_study.py",
+        "src/frontier/strategy_study.py",
+        "docs/trading-cadence.md"
+      ],
+      "consequence": "Completed short-hold failures remain visible; no unchanged rerun or paper promotion."
+    },
+    {
+      "id": "T15",
+      "title": "Date-specific settled cash",
+      "decision": "Model historical T+3/T+2/T+1 using bank/exchange-session intersections and conservative session-open availability.",
+      "reason": "Cash-only accounts cannot fund new positions with unavailable sale proceeds.",
+      "basis": "Verified implementation",
+      "evidence": [
+        "src/frontier/historical_settlement.py",
+        "src/frontier/short_horizon_study.py"
+      ],
+      "consequence": "This declared convention can be more conservative than actual broker/CDS availability."
+    },
+    {
+      "id": "T16",
+      "title": "Fit-only preprocessing and purged partitions",
+      "decision": "Fit feature/target transforms only on training, calibrate only on the calibration partition and purge labels spanning boundaries.",
+      "reason": "Imputation, normalization and cross-boundary outcomes can leak future information even when model inputs look causal.",
+      "basis": "Verified models and studies",
+      "evidence": [
+        "src/frontier/ensemble_models.py",
+        "src/frontier/ensemble_study.py",
+        "src/frontier/conditional_models.py"
+      ],
+      "consequence": "Sample floors, unavailable labels, warnings and all rejected rows remain recorded."
+    },
+    {
+      "id": "T17",
+      "title": "Broader fixed families, explicit head semantics",
+      "decision": "Compare Ridge, ExtraTrees, boosted trees, shared-hidden multi-output MLP and declared ensemble variants.",
+      "reason": "Different inductive biases test nonlinear/linear/context combinations without claiming sophistication itself supplies alpha.",
+      "basis": "Implemented fixed family design and owner expansion",
+      "evidence": [
+        "src/frontier/ensemble_models.py",
+        "src/frontier/ensemble_features.py"
+      ],
+      "consequence": "Six return/downside outputs do not mean transformer attention; daily-close downside does not guarantee intraday loss."
+    },
+    {
+      "id": "T18",
+      "title": "Calibration improvement and fallback are defined",
+      "decision": "Use only calibration improvement against fitting mean for ensemble weights and preserve equal fallback.",
+      "reason": "Weights must not exploit test returns; fallback makes unsuccessful/no-improvement cases explicit.",
+      "basis": "Verified implementation",
+      "evidence": [
+        "src/frontier/ensemble_models.py"
+      ],
+      "consequence": "Fallback, calibration bins and forecasts are diagnostics, not qualified buy instructions."
+    },
+    {
+      "id": "T19",
+      "title": "Immutable trusted-local fitted artifacts",
+      "decision": "Save model/preprocessing/calibration/sample/source/runtime identities and verify exact bytes before reload.",
+      "reason": "Rehearsal must use the same fitted decision function and cannot silently refit or deserialize a substituted path.",
+      "basis": "Verified model artifact implementation",
+      "evidence": [
+        "src/frontier/model_artifact.py",
+        "src/frontier/candidate_daily.py"
+      ],
+      "consequence": "Joblib is trusted-local only; a valid hash does not make malicious content safe."
+    },
+    {
+      "id": "T20",
+      "title": "Share scoring and cash planning",
+      "decision": "Reuse daily forecast scoring and whole-share cash planning for build/rehearsal callers.",
+      "reason": "Duplicated policy equations could make model previews and persistent accounts disagree despite identical forecasts.",
+      "basis": "Verified shared interfaces",
+      "evidence": [
+        "src/frontier/daily_policy.py",
+        "src/frontier/candidate_daily.py",
+        "src/frontier/candidate_replay.py"
+      ],
+      "consequence": "Caller-provided reconciled positions, reserves and correlations must be correct."
+    },
+    {
+      "id": "T21",
+      "title": "Explicit long-only cash risk sizing",
+      "decision": "Use whole shares, five-slot/20% caps and 0.5% ATR-based sizing in the new daily historical lane.",
+      "reason": "Discrete affordability, limited cash and independent holds are actual account constraints rather than return-only ranking.",
+      "basis": "Verified daily policy",
+      "evidence": [
+        "src/frontier/daily_policy.py",
+        "src/frontier/short_horizon_study.py"
+      ],
+      "consequence": "These are design constraints, not calibrated optimal risk or guaranteed losses; paper retains a separate four-slot policy."
+    },
+    {
+      "id": "T22",
+      "title": "Quantity-aware utility and frozen reservations",
+      "decision": "Price entry/exit fees at candidate quantity, freeze fee-inclusive reservations and permit only quantity decreases at fill.",
+      "reason": "Small-account minimum fees and fill-price changes can invalidate nominal percentage scores; fill-time replacement would introduce selection bias.",
+      "basis": "Verified conditional/account policy",
+      "evidence": [
+        "src/frontier/conditional_policy.py",
+        "src/frontier/execution_costs.py",
+        ".qualification/earnings-quality20260928/accounts/account_adapter.py"
+      ],
+      "consequence": "No fill-time reranking, runner-up promotion or account reset at refit boundaries."
+    },
+    {
+      "id": "T23",
+      "title": "Continuous saved-model state journal",
+      "decision": "Chain model/policy/state identities and retain attempts in SQLite across historical replay chunks.",
+      "reason": "Account state must survive restart and scheduled exits/reservations cannot disappear at chunk or fold boundaries.",
+      "basis": "Verified candidate rehearsal",
+      "evidence": [
+        "src/frontier/candidate_replay.py"
+      ],
+      "consequence": "Chunk size is checkpoint size; atomic research fills do not implement broker partial fills."
+    },
+    {
+      "id": "T24",
+      "title": "Broker fees are declared scenarios",
+      "decision": "Separate proportional and verified current-tariff broker scenarios from slippage, FX, tax, subscriptions and unverified venue costs.",
+      "reason": "Economic comparisons require transparent fixed assumptions; a current fee schedule is not an archived historical charge or a fill observation.",
+      "basis": "Verified cost implementation and research declarations",
+      "evidence": [
+        "src/frontier/execution_costs.py",
+        "docs/trading-cost-evidence.md",
+        "docs/etf-reversal-results.md"
+      ],
+      "consequence": "Do not select cheaper assumptions from profitable outcomes or transfer an ETF quote allowance to stocks/options."
+    },
+    {
+      "id": "T25",
+      "title": "Literal paper-only endpoint",
+      "decision": "Hard-code Alpaca's PAPER transport and provide no live endpoint override.",
+      "reason": "Current authority is only the existing paper account; a configurable endpoint could change the meaning of execution without a reviewed migration.",
+      "basis": "Verified literal host and user authorization",
+      "evidence": [
+        "src/frontier/paper_broker.py",
+        "docs/paper-operator.md"
+      ],
+      "consequence": "No live orders, options orders, funds transfer or automatic broker authentication."
+    },
+    {
+      "id": "T26",
+      "title": "Freeze seven operational source members",
+      "decision": "Bind the initialized paper policy to normalized-text identity of its seven operational files and saved universe.",
+      "reason": "Changing source under persistent orders/state can invalidate reconciliation and policy assumptions.",
+      "basis": "Verified operator identity",
+      "evidence": [
+        "src/frontier/operator.py",
+        "src/frontier/operator_store.py"
+      ],
+      "consequence": "Code mismatch needs a separately reviewed migration; never edit and silently restart or reinitialize."
+    },
+    {
+      "id": "T27",
+      "title": "Broker owns fill truth",
+      "decision": "Reconcile order/fill/position/cash observations before new planning or submission.",
+      "reason": "Local intent, HTTP success and hypothetical simulation do not establish actual broker execution.",
+      "basis": "Verified operator reconciliation",
+      "evidence": [
+        "src/frontier/operator.py",
+        "src/frontier/paper_broker.py"
+      ],
+      "consequence": "Unknown open orders, rejected exits, unsupported actions and unexplained cash/holdings block."
+    },
+    {
+      "id": "T28",
+      "title": "Persist durable ID before POST",
+      "decision": "Save deterministic client ID and SUBMITTING state before sending an order; never automatically retry uncertain POST.",
+      "reason": "A timeout/5xx can occur after broker acceptance, so repetition can duplicate economic exposure.",
+      "basis": "Verified order transition/transport",
+      "evidence": [
+        "src/frontier/operator.py",
+        "src/frontier/paper_broker.py"
+      ],
+      "consequence": "Resolve by saved ID; a missing uncertain order remains UNKNOWN rather than authorizing resubmission."
+    },
+    {
+      "id": "T29",
+      "title": "Reconciliation over journal replacement",
+      "decision": "Retain failures, terminal acknowledgments and funding evidence instead of deleting or reinitializing the journal.",
+      "reason": "Durable state is required to explain orders and cash, including uncertainty and external changes.",
+      "basis": "Verified store/operation contract",
+      "evidence": [
+        "src/frontier/operator_store.py",
+        "src/frontier/operator.py",
+        "docs/paper-operator.md"
+      ],
+      "consequence": "Resume only the initialized launcher once after process/state inspection; no duplicate cycle or blind recovery."
+    },
+    {
+      "id": "T30",
+      "title": "Unitized CAD sampled risk latch",
+      "decision": "Track CAD risk NAV with dated available FX, adjust declared external flows and latch a sampled 30% drawdown halt.",
+      "reason": "Deposits or FX reporting must not erase losses/high-water state; owner risk context is CAD.",
+      "basis": "Verified risk implementation and mandate",
+      "evidence": [
+        "src/frontier/paper_risk.py",
+        "config/mandate.json"
+      ],
+      "consequence": "Sampling and gaps mean no intraday hard loss guarantee; deposits/ordinary resume do not clear halt."
+    },
+    {
+      "id": "T31",
+      "title": "Polling is not trading cadence",
+      "decision": "Keep broker watch interval separate from the weekly-entry/daily-exit paper decision clock.",
+      "reason": "A five-minute health poll does not create five-minute signals or short-hold execution.",
+      "basis": "Verified watch loop and policy",
+      "evidence": [
+        "src/frontier/cli.py",
+        "src/frontier/swing_policy.py",
+        "docs/trading-cadence.md"
+      ],
+      "consequence": "Desired daily/hourly system still needs a separately qualified migration."
+    },
+    {
+      "id": "T32",
+      "title": "Actual locks plus detached workers",
+      "decision": "Use durable worker locks and inspect command ownership while background processes append evidence logs.",
+      "reason": "Status files and stale PIDs do not establish a running owner; duplicate workers can race source/broker journals.",
+      "basis": "Verified job/process/store implementation",
+      "evidence": [
+        "src/frontier/processes.py",
+        "src/frontier/historical_lab.py",
+        "src/frontier/research_lab.py",
+        "src/frontier/operator_store.py"
+      ],
+      "consequence": "A returned PID means launch, not health; main historical completion does not describe another source worker."
+    },
+    {
+      "id": "T33",
+      "title": "Local web path and origin boundary",
+      "decision": "Bind loopback, restrict hosts/origins/JSON mutations and resolve imports/artifacts inside allowed roots.",
+      "reason": "Local UI operations should not become cross-site or arbitrary-filesystem access.",
+      "basis": "Verified FastAPI boundary",
+      "evidence": [
+        "src/frontier/web.py",
+        "tests/test_web.py"
+      ],
+      "consequence": "This is not a remotely authenticated service; public hosting requires new access design."
+    },
+    {
+      "id": "T34",
+      "title": "Two-output earnings adapter",
+      "decision": "Reuse the shared family fitter with explicit n-by-2 targets and persist causal five-input prepared rows before outcomes.",
+      "reason": "The original six-output wrappers cannot correctly represent the earnings return/downside pair; duplicating horizons would change target semantics.",
+      "basis": "Implemented isolated adapter and frozen model design",
+      "evidence": [
+        ".qualification/earnings-quality20260928/models/earnings_models.py",
+        ".qualification/earnings-quality20260928/model-inputs/event_inputs.py"
+      ],
+      "consequence": "All event/CIK/eligibility/prepared-row/code identities and abstentions remain part of reload."
+    },
+    {
+      "id": "T35",
+      "title": "Earnings source boundary and corpus completeness",
+      "decision": "Use original filings/header SIC, exact original contexts and a terminal corpus binding all discovery identities and requested denominators.",
+      "reason": "Current SIC, revised financial values or replacement documents can change historical eligibility and public information.",
+      "basis": "Qualified original-source implementation",
+      "evidence": [
+        "docs/earnings-quality-research.md",
+        ".qualification/earnings-quality20260928/qualification/interface.md",
+        ".qualification/earnings-quality20260928/source/registry.json"
+      ],
+      "consequence": "Terminal incomplete means finished with failures; never restart completed capture or refill failed issuers."
+    },
+    {
+      "id": "T36",
+      "title": "Earlier-release hypothesis remains undeclared",
+      "decision": "Freeze a metadata-only novelty/timing definition before matching preserved original 8-K Item2.02 candidates.",
+      "reason": "Earlier timestamps are an unverified explanation for weak later-filing signals, not permission to move later S/Q backward.",
+      "basis": "Latest research direction; actual matching not executed",
+      "evidence": [
+        "docs/earnings-quality-results.md",
+        ".qualification/earnings-quality20260928/source/registry.json",
+        ".qualification/earnings-quality20260928/milestone-20260929-results.json"
+      ],
+      "consequence": "Retain every missing/duplicate/ambiguous/late candidate; verify original fiscal period/components before any separately declared earlier-time strategy."
+    },
+    {
+      "id": "T37",
+      "title": "Software qualification versus economic evidence",
+      "decision": "Keep source/chronology/arithmetic tests, exploratory profits, prospective observations and promoted strategy states separate.",
+      "reason": "Correct calculations can still describe biased sources, hypothetical costs or a losing/unqualified strategy.",
+      "basis": "Explicit research mandate and retained results",
+      "evidence": [
+        "docs/multi-model-research-results.md",
+        "docs/earnings-quality-results.md",
+        "docs/etf-reversal-results.md",
+        "docs/daily-model-bridge.md"
+      ],
+      "consequence": "No strategy is automatically promoted and no reliable weekly profit is promised."
+    },
+    {
+      "id": "T38",
+      "title": "Material verification without cosmetic churn",
+      "decision": "Run scoped meaningful engine/account/chronology checks for changes and separately select current qualification tests.",
+      "reason": "Preserved prior-version tests and reports are historical evidence, not duplicate current discovery targets; minor code churn should not displace strategy research.",
+      "basis": "Repository tests/verify launcher and owner preference",
+      "evidence": [
+        "scripts/verify.ps1",
+        "tests",
+        ".qualification/earnings-quality20260928/integration-review"
+      ],
+      "consequence": "This documentation inventory did not rerun tests; report latest actual checks as dated evidence."
+    },
+    {
+      "id": "T39",
+      "title": "Source clone and evidence package are distinct",
+      "decision": "Curate project-authored isolated scripts/docs and compact evidence while inventorying local ignored data/models/journals separately.",
+      "reason": "A source-only clone cannot reproduce retained market/SEC data or resume the initialized paper account.",
+      "basis": "Verified ignore boundaries and publication handoff",
+      "evidence": [
+        ".gitignore",
+        ".qualification/handover-20261001/technical.md",
+        ".qualification/handover-20261001/technical-decisions.json"
+      ],
+      "consequence": "Protect secrets/private state, preserve exact original authored paths and obtain missing trusted assets before reproduction."
+    }
+  ],
+  "counts": {
+    "owner": 17,
+    "research": 94,
+    "technical": 39
+  },
+  "source_registers": [
+    "docs/handover/research-decisions.json",
+    "docs/handover/technical-decisions.json"
+  ]
+}

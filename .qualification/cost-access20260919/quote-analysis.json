@@ -1,0 +1,288 @@
+{
+  "window_start": "2024-11-29T17:59:00Z",
+  "window_end_exclusive": "2024-11-29T18:00:00Z",
+  "feed": "sip",
+  "capture_hashes": [
+    {
+      "page": 1,
+      "sha256": "279bfabfd175f89924f3b44dccc68acec54c5e212eb9634d8b6783c47f0236df",
+      "raw_file": "quotes-page-1.279bfabfd175f89924f3b44dccc68acec54c5e212eb9634d8b6783c47f0236df.json"
+    },
+    {
+      "page": 2,
+      "sha256": "24672da7049153da3aba71aceb5bce0d47150a37074e4d5f39dd81a9cfd8543d",
+      "raw_file": "quotes-page-2.24672da7049153da3aba71aceb5bce0d47150a37074e4d5f39dd81a9cfd8543d.json"
+    }
+  ],
+  "pagination_complete": true,
+  "quantiles": "inverse empirical weighted CDF; no interpolation",
+  "quote_size_units": "raw provider round-lot units; no share-capacity inference",
+  "symbols": {
+    "AAPL": {
+      "quotes": 7814,
+      "quotes_exactly_at_end": 0,
+      "first_timestamp": "2024-11-29T17:59:00.001479179Z",
+      "last_timestamp": "2024-11-29T17:59:59.997251897Z",
+      "mechanically_valid_quotes": 7809,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "noninteger_positive_size_quotes": 0,
+      "locked_quotes": 46,
+      "crossed_quotes": 5,
+      "exact_duplicate_records": 0,
+      "equal_timestamp_updates": 0,
+      "conditions": [
+        {
+          "codes": [
+            "R"
+          ],
+          "count": 7814
+        }
+      ],
+      "bid_exchange_codes": [
+        "H",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "B",
+        "H",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "U",
+        "V",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "tapes": [
+        "C"
+      ],
+      "bid_size_raw": {
+        "min": 1.0,
+        "median": 8.0,
+        "max": 58.0
+      },
+      "ask_size_raw": {
+        "min": 1.0,
+        "median": 8.0,
+        "max": 111.0
+      },
+      "count_weighted_spread_bps": {
+        "mean": 0.7258014766176115,
+        "min": 0.0,
+        "max": 4.633822693092876,
+        "p05": 0.42104376749924866,
+        "p50": 0.4212388634983604,
+        "p90": 1.2632376781691954,
+        "p95": 1.6842105263166511,
+        "p99": 2.527592889038768
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 0.6196998152407355,
+        "min": 0.0,
+        "max": 4.633822693092876,
+        "p05": 0.42104376749924866,
+        "p50": 0.42118563757057287,
+        "p90": 0.8423890152476721,
+        "p95": 1.2633440717579913,
+        "p99": 2.1053961302811945
+      },
+      "valid_observed_seconds": 59.998268105,
+      "valid_duration_fraction_of_window": 0.9999711350833334,
+      "invalid_observed_seconds": 0.000252716,
+      "uncovered_leading_seconds": 0.001479179,
+      "longest_quote_state_seconds": 0.35503826,
+      "locked_observed_seconds": 0.024684684000000002
+    },
+    "MSFT": {
+      "quotes": 4317,
+      "quotes_exactly_at_end": 0,
+      "first_timestamp": "2024-11-29T17:59:00.003286187Z",
+      "last_timestamp": "2024-11-29T17:59:59.991333247Z",
+      "mechanically_valid_quotes": 4316,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "noninteger_positive_size_quotes": 0,
+      "locked_quotes": 0,
+      "crossed_quotes": 1,
+      "exact_duplicate_records": 0,
+      "equal_timestamp_updates": 0,
+      "conditions": [
+        {
+          "codes": [
+            "R"
+          ],
+          "count": 4317
+        }
+      ],
+      "bid_exchange_codes": [
+        "B",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "U",
+        "V",
+        "X",
+        "Z"
+      ],
+      "ask_exchange_codes": [
+        "A",
+        "B",
+        "H",
+        "J",
+        "K",
+        "L",
+        "N",
+        "P",
+        "Q",
+        "U",
+        "V",
+        "X",
+        "Z"
+      ],
+      "tapes": [
+        "C"
+      ],
+      "bid_size_raw": {
+        "min": 1.0,
+        "median": 5.0,
+        "max": 80.0
+      },
+      "ask_size_raw": {
+        "min": 1.0,
+        "median": 2.0,
+        "max": 51.0
+      },
+      "count_weighted_spread_bps": {
+        "mean": 1.5043849946435788,
+        "min": 0.23586852688424156,
+        "max": 4.958033785459654,
+        "p05": 0.47195412605851783,
+        "p50": 1.4160962945480828,
+        "p90": 2.359269570141621,
+        "p95": 2.5952271413576256,
+        "p99": 4.013741160915981
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 1.4766668682070694,
+        "min": 0.23586852688424156,
+        "max": 4.958033785459654,
+        "p05": 0.4718761796913612,
+        "p50": 1.4160962945480828,
+        "p90": 2.359269570141621,
+        "p95": 2.596084632357995,
+        "p99": 4.72087808332323
+      },
+      "valid_observed_seconds": 59.996630836,
+      "valid_duration_fraction_of_window": 0.9999438472666667,
+      "invalid_observed_seconds": 8.2977e-05,
+      "uncovered_leading_seconds": 0.003286187,
+      "longest_quote_state_seconds": 0.61701582,
+      "locked_observed_seconds": 0.0
+    },
+    "F": {
+      "quotes": 207,
+      "quotes_exactly_at_end": 0,
+      "first_timestamp": "2024-11-29T17:59:00.002465792Z",
+      "last_timestamp": "2024-11-29T17:59:59.995285504Z",
+      "mechanically_valid_quotes": 207,
+      "invalid_price_quotes": 0,
+      "invalid_size_quotes": 0,
+      "noninteger_positive_size_quotes": 0,
+      "locked_quotes": 16,
+      "crossed_quotes": 0,
+      "exact_duplicate_records": 0,
+      "equal_timestamp_updates": 3,
+      "conditions": [
+        {
+          "codes": [
+            "R"
+          ],
+          "count": 207
+        }
+      ],
+      "bid_exchange_codes": [
+        "L",
+        "N",
+        "P",
+        "T",
+        "V"
+      ],
+      "ask_exchange_codes": [
+        "L",
+        "N",
+        "P",
+        "T",
+        "V"
+      ],
+      "tapes": [
+        "A"
+      ],
+      "bid_size_raw": {
+        "min": 1.0,
+        "median": 719.0,
+        "max": 1676.0
+      },
+      "ask_size_raw": {
+        "min": 1.0,
+        "median": 571.0,
+        "max": 1115.0
+      },
+      "count_weighted_spread_bps": {
+        "mean": 8.290821533898201,
+        "min": 0.0,
+        "max": 8.988764044945226,
+        "p05": 0.0,
+        "p50": 8.988764044945226,
+        "p90": 8.988764044945226,
+        "p95": 8.988764044945226,
+        "p99": 8.988764044945226
+      },
+      "duration_weighted_spread_bps": {
+        "mean": 8.985530217005412,
+        "min": 0.0,
+        "max": 8.988764044945226,
+        "p05": 8.980691513246327,
+        "p50": 8.988764044945226,
+        "p90": 8.988764044945226,
+        "p95": 8.988764044945226,
+        "p99": 8.988764044945226
+      },
+      "valid_observed_seconds": 59.997534208,
+      "valid_duration_fraction_of_window": 0.9999589034666666,
+      "invalid_observed_seconds": 0.0,
+      "uncovered_leading_seconds": 0.002465792,
+      "longest_quote_state_seconds": 4.828519936,
+      "locked_observed_seconds": 0.000391168
+    }
+  },
+  "limitations": [
+    "One fixed early-close minute for three stocks, selected independently of strategy results; not a representative liquidity distribution.",
+    "Full quoted spread divided by contemporaneous midpoint, not actual fills, effective spread, slippage, impact, latency, broker charges or all-in round-trip costs.",
+    "Time weighting assumes a quote persists to the next observed update; equal-timestamp updates give zero time to all but the last provider record.",
+    "Mechanically positive/noncrossed quotes retain all raw conditions; eligibility for execution was not independently certified.",
+    "No pre-window quote is available; the leading milliseconds remain uncovered. No terminal quote is carried beyond the declared close.",
+    "Historical corrected quotes are the retrieved provider vintage; asof maps symbol identity, not a historical information vintage.",
+    "The current daily study cost scenarios and completed results are unchanged; any expanded execution-cost experiment requires its own predeclared sampling design."
+  ]
+}

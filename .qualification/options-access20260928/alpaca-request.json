@@ -1,0 +1,21 @@
+{
+  "purpose": "One bounded historical option-bar access probe using existing Alpaca paper credentials against the data host only. No orders, account changes or paid services.",
+  "url": "https://data.alpaca.markets/v1beta1/options/bars",
+  "params": {
+    "symbols": "SPY240315C00495000,SPY240315C00500000,SPY240315C00505000,SPY240315P00495000,SPY240315P00500000,SPY240315P00505000",
+    "timeframe": "1Day",
+    "start": "2024-02-15T00:00:00Z",
+    "end": "2024-02-24T00:00:00Z",
+    "limit": 1000,
+    "sort": "asc"
+  },
+  "selection_reason": "Three fixed round strikes, calls and puts, a standard monthly expiration and a short interval in Alpaca's first documented availability month. This is an access fixture, not a profitable contract selection or strategy.",
+  "maximum_calls": 1,
+  "maximum_response_bytes": 8388608,
+  "timeout_seconds": 30,
+  "pagination": "Record any next_page_token; do not follow during this probe.",
+  "retry": false,
+  "redirects": false,
+  "qualification": "Bars aggregate trades and do not supply verified bid/ask execution prices, spreads, contract deliverables, multipliers, complete chains or cost-qualified returns. The endpoint has no documented feed parameter. Do not label its response verified OPRA quotes.",
+  "documentation": ["https://docs.alpaca.markets/us/reference/optionbars", "https://docs.alpaca.markets/us/docs/historical-option-data"]
+}

@@ -1,0 +1,532 @@
+{
+  "kind": "actual completed multi-model UI checks",
+  "run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "widths": [
+    {
+      "width": 1440,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        }
+      ],
+      "diagnostics_windows": 23,
+      "forecasts_verified": 10,
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        }
+      ],
+      "diagnostics_windows": 23,
+      "forecasts_verified": 10,
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        }
+      ],
+      "diagnostics_windows": 23,
+      "forecasts_verified": 10,
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "filter_checks": [
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": false,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "USD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 2000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 20,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 40,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        },
+        {
+          "currency": "CAD",
+          "budget": 10000,
+          "cost_bps": 100,
+          "account_table_rows_verified": 60,
+          "benchmark_rows_verified": 2,
+          "selected_metrics_verified": true,
+          "incomplete_detail_verified": true,
+          "benchmark_comparison": true
+        }
+      ],
+      "diagnostics_windows": 23,
+      "forecasts_verified": 10,
+      "page_errors": [],
+      "mutations": [],
+      "overflow": false
+    }
+  ],
+  "download": {
+    "status": 206,
+    "content_range": "bytes 0-0/691108930",
+    "content_disposition": "attachment; filename=\"frontier-historical-814780d48b4141b9a82a3fb917d1b85a.json\"",
+    "read_bytes": 1
+  }
+}

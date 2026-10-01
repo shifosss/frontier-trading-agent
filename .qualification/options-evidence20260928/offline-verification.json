@@ -1,0 +1,28 @@
+{
+  "status": "offline_tests_passed_pending_root_code_review",
+  "hashes": {
+    "request-definition.json": "10726a45ec026cb023e248b303908575496fc837afb838823e09b042a3d56766",
+    "probe_metadata.py": "ef634df90c909fe65da3bbffe06b065228ea2b91de4348af3cc60a489f75d8a9",
+    "test_probe_metadata.py": "abe52dbfbacc4b068cacff4f972835e460f00e179a5ba4c05db3f47391a991ab"
+  },
+  "tests": {
+    "passed": 11,
+    "seconds": 0.84,
+    "initial_result": "Expected missing-module collection failure before implementation",
+    "command": "rtk proxy .venv/Scripts/python.exe -B -X utf8 -m pytest .qualification/options-evidence20260928/test_probe_metadata.py -q -p no:cacheprovider"
+  },
+  "checked": [
+    "Exact three fixed GET scopes and six-contract coverage",
+    "401/403/429 stop without retries, preserving all request/contract statuses",
+    "Empty and page-limited responses remain coverage gaps without extra calls",
+    "Duplicate and conflicting contract identities remain ambiguous/unqualified",
+    "Mutated request rejected before credential access",
+    "Existing interrupted/completed attempt cannot be overwritten",
+    "Response byte cap retains labeled bounded prefix and stops",
+    "Malformed 200 body stops; whole-request deadline cancels blocked I/O"
+  ],
+  "transport": "All tests used httpx.MockTransport and dummy credentials; production main not invoked",
+  "authenticated_calls": 0,
+  "historical_quote_calls": 0,
+  "original_probe_unchanged": true
+}

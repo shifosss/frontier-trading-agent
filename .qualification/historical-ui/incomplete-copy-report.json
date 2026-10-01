@@ -1,0 +1,23 @@
+[
+  {
+    "width": 1440,
+    "expected_copy": true,
+    "errors": [],
+    "app_mutations": [],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "expected_copy": true,
+    "errors": [],
+    "app_mutations": [],
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "expected_copy": true,
+    "errors": [],
+    "app_mutations": [],
+    "overflow": false
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-09-28T23:03:18.371347+00:00",
+  "parent_pid": 55836,
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source-supplement20260928\\capture_supplement.py"
+  ],
+  "implementation_sha256": "39d267077833d7b2d1d1c8490ae781c991bd6efa1b7f3183ff509d9188af2b67",
+  "request_sha256": "469baa8fd32deb8d8dab0ffc117f85628c36f30a5b6eabcb58fdbd2253f50526",
+  "scope": "31 preserved original source gaps;26exact-primary selections and5reviewedone-timeindexretries",
+  "maximum_gets": 98
+}

@@ -1,0 +1,16 @@
+{
+  "symbol": "WMT",
+  "effective_sessions": "2024-02-26",
+  "url": "https://corporate.walmart.com/news/2024/01/30/walmart-announces-3-for-1-stock-split",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:02.534317+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://corporate.walmart.com/news/2024/01/30/walmart-announces-3-for-1-stock-split",
+  "redirects": [],
+  "sha256": "d153cd1f13fa2fd32168ec5f9f5c6351910e4e11de1a912da93cbee9849f669c",
+  "raw_file": "notice-WMT-2024-02-26.d153cd1f13fa2fd32168ec5f9f5c6351910e4e11de1a912da93cbee9849f669c.raw.html",
+  "bytes": 177151,
+  "captured_at": "2026-09-28T19:14:03.530499+00:00",
+  "text_file": "notice-WMT-2024-02-26.text.txt"
+}

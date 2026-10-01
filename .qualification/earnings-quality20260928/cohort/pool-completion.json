@@ -1,0 +1,26 @@
+{
+  "status": "classification_pool_complete",
+  "definition_sha256": "ca898bb126d8fc1c6f4423dd40e30ec8f225253c7db31201db84049c76786585",
+  "attempt": ".qualification/earnings-quality20260928/cohort/attempts/509df0f8e7a74c0bb7207ec197b5db6b",
+  "members": 300,
+  "requested_symbols": 5661,
+  "liquid_unique_ciks": 1222,
+  "exclusion_counts": {
+    "common_share_title_not_explicit": 904,
+    "security_title_excluded": 551,
+    "insufficient_2016_observations": 1671,
+    "below_2016_liquidity_threshold": 1292,
+    "exact_cik_mapping_absent": 7,
+    "liquidity_source_unavailable_or_invalid": 8,
+    "another_qualifying_share_class_selected": 6,
+    "outside_frozen_discovery_pool": 922
+  },
+  "outputs": {
+    ".qualification/earnings-quality20260928/cohort/attempts/509df0f8e7a74c0bb7207ec197b5db6b/attempt.json": "99feeccf4f2cbe0050af33a666476d6792c606fe5e32155e1a08c207694becf9",
+    ".qualification/earnings-quality20260928/cohort/attempts/509df0f8e7a74c0bb7207ec197b5db6b/liquidity.json": "dd08eec8b077e2ecb9bc53a87da86dbc4e8804f0cf739e1f045c9566a0d2f0e0",
+    ".qualification/earnings-quality20260928/cohort/attempts/509df0f8e7a74c0bb7207ec197b5db6b/pool.json": "6323aaed09d657bd96d99d4ecced4b51cf8726833782ef619766cf5f2b32aaa9",
+    ".qualification/earnings-quality20260928/cohort/attempts/509df0f8e7a74c0bb7207ec197b5db6b/source-inputs.json": "305381c3b657cd07b23e5bc53250218e5a078528c5d3f6c4c3ead8bb57a8b135"
+  },
+  "network_requests": 0,
+  "financial_facts_or_returns_used": false
+}

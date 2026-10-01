@@ -1,0 +1,28 @@
+{
+  "symbol": "WHLR",
+  "effective_session": "2024-11-19",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/WHLR/bars?timeframe=1Day&start=2024-11-09T05%3A00%3A00%2B00%3A00&end=2024-11-30T04%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2024-11-09T05:00:00+00:00",
+    "end": "2024-11-30T04:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:31.149027+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "WHLR-2024-11-19-raw-1.5c5a4c679db3b8d7b8e0d36193b54105a84a0be1580c63abe86c86720b78a027.raw.json",
+  "sha256": "5c5a4c679db3b8d7b8e0d36193b54105a84a0be1580c63abe86c86720b78a027",
+  "bytes": 1441,
+  "captured_at": "2026-09-28T19:04:31.252011+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:31 GMT",
+  "bar_count": 14,
+  "response_symbol": "WHLR",
+  "pagination_complete": true
+}

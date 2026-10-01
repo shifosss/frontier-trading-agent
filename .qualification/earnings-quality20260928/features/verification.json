@@ -1,0 +1,38 @@
+{
+  "at": "2026-09-28T23:51:26.581682+00:00",
+  "status": "passed",
+  "test_history": [
+    {
+      "stage": "before implementation",
+      "tests": 11,
+      "failed": 11,
+      "reason": "cash_backing.py absent"
+    },
+    {
+      "stage": "first implementation",
+      "tests": 11,
+      "passed": 11
+    },
+    {
+      "stage": "expanded source identities and three SEC examples plus frozen S tests",
+      "tests": 44,
+      "passed": 44
+    },
+    {
+      "stage": "independent peer repeat",
+      "tests": 44,
+      "passed": 44,
+      "reviewer": "/root/strategy_design",
+      "seconds": 0.73
+    }
+  ],
+  "compatibility_summary": ".qualification\\earnings-quality20260928\\features\\compatibility\\86b8406531564d54ba01540b9622b936\\summary.json",
+  "compatibility_summary_sha256": "16f744630e641a6138550747afb8e29037cdd6f944a37286d1d3a0663c2ee61c",
+  "code_sha256": "b8f54a439a3e119be7f93842b04a4b40fc1c5ae718c203a4b929d0d98dce4673",
+  "test_sha256": "a392a2cc85ab720dfa5410cce6839a6ebbca6479dcc2b5500399005ba4c1f64f",
+  "frozen_S_parser_sha256": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+  "no_material_review_findings": true,
+  "original_artifacts_modified": false,
+  "new_network_requests": 0,
+  "returns_read": false
+}

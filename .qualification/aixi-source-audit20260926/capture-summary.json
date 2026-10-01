@@ -1,0 +1,118 @@
+[
+  {
+    "method": "GET",
+    "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-643",
+    "params": null,
+    "captured_at": "2026-09-28T18:39:25.427507+00:00",
+    "status_code": 200,
+    "sha256": "34291f74d1ec36be6d791abc569e2ca0c816ce737ad252e19539f6c3a8ff87a1",
+    "bytes": 59150,
+    "content_type": "text/html; charset=utf-8",
+    "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+    "raw_file": "nasdaq-sep2026.34291f74d1ec36be6d791abc569e2ca0c816ce737ad252e19539f6c3a8ff87a1.raw"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.sec.gov/Archives/edgar/data/1935172/000121390026096964/ea0304260-6k_xiao1.htm",
+    "params": null,
+    "captured_at": "2026-09-28T18:39:25.465918+00:00",
+    "status_code": 200,
+    "sha256": "7c78b677bf021161f9ea0a1f87071d6947c08df512a26f05b8650c519ffcca3f",
+    "bytes": 13585,
+    "content_type": "text/html",
+    "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+    "raw_file": "sec-sep2026-6k.7c78b677bf021161f9ea0a1f87071d6947c08df512a26f05b8650c519ffcca3f.raw"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.sec.gov/Archives/edgar/data/1935172/000121390026096964/ea030426001ex99-1.htm",
+    "params": null,
+    "captured_at": "2026-09-28T18:39:25.484112+00:00",
+    "status_code": 200,
+    "sha256": "38d9b9dc3c450e8247ffe0bbd32cedb36f665a25e0b7d557c4e8a8a564b229cc",
+    "bytes": 8739,
+    "content_type": "text/html",
+    "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+    "raw_file": "sec-sep2026-release.38d9b9dc3c450e8247ffe0bbd32cedb36f665a25e0b7d557c4e8a8a564b229cc.raw"
+  },
+  {
+    "method": "GET",
+    "url": "https://depositaryreceipts.citi.com/adr/common/file.aspx?idf=7973",
+    "params": null,
+    "captured_at": "2026-09-28T18:39:25.797813+00:00",
+    "status_code": 200,
+    "sha256": "f3fb264ab64263ea0aca909efdb37be8741b1a75caae8fa2f76b9599bffc7a17",
+    "bytes": 162756,
+    "content_type": "application/pdf",
+    "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+    "raw_file": "citi-sep2026-notice.f3fb264ab64263ea0aca909efdb37be8741b1a75caae8fa2f76b9599bffc7a17.pdf"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-312",
+    "params": null,
+    "captured_at": "2026-09-28T18:39:25.881817+00:00",
+    "status_code": 200,
+    "sha256": "e0531dcb213e747b75e0238acd00f631755b3129347172bd53717a6d171fa30e",
+    "bytes": 59059,
+    "content_type": "text/html; charset=utf-8",
+    "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+    "raw_file": "nasdaq-may2026.e0531dcb213e747b75e0238acd00f631755b3129347172bd53717a6d171fa30e.raw"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2024-396",
+    "params": null,
+    "captured_at": "2026-09-28T18:39:25.963287+00:00",
+    "status_code": 200,
+    "sha256": "398062872e1c05352440f06f5380525ede4e2d52ff1627a6cb401af785719c69",
+    "bytes": 58877,
+    "content_type": "text/html; charset=utf-8",
+    "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+    "raw_file": "nasdaq-aug2024.398062872e1c05352440f06f5380525ede4e2d52ff1627a6cb401af785719c69.raw"
+  },
+  {
+    "method": "GET",
+    "url": "https://data.alpaca.markets/v2/stocks/AIXI/bars?timeframe=1Day&start=2023-03-09T00%3A00%3A00Z&end=2026-09-18T23%3A59%3A59Z&feed=sip&asof=2026-09-18&currency=USD&limit=10000&sort=asc&adjustment=raw",
+    "params": {
+      "timeframe": "1Day",
+      "start": "2023-03-09T00:00:00Z",
+      "end": "2026-09-18T23:59:59Z",
+      "feed": "sip",
+      "asof": "2026-09-18",
+      "currency": "USD",
+      "limit": 10000,
+      "sort": "asc",
+      "adjustment": "raw"
+    },
+    "captured_at": "2026-09-28T18:39:26.340875+00:00",
+    "status_code": 200,
+    "sha256": "757d119ebbe757d0e851fb11bfe4629471be7f135c65966f3827b77dd060e46e",
+    "bytes": 88179,
+    "content_type": "application/json",
+    "response_date": "Mon, 28 Sep 2026 18:39:26 GMT",
+    "raw_file": "alpaca-raw-1.757d119ebbe757d0e851fb11bfe4629471be7f135c65966f3827b77dd060e46e.raw"
+  },
+  {
+    "method": "GET",
+    "url": "https://data.alpaca.markets/v2/stocks/AIXI/bars?timeframe=1Day&start=2023-03-09T00%3A00%3A00Z&end=2026-09-18T23%3A59%3A59Z&feed=sip&asof=2026-09-18&currency=USD&limit=10000&sort=asc&adjustment=split",
+    "params": {
+      "timeframe": "1Day",
+      "start": "2023-03-09T00:00:00Z",
+      "end": "2026-09-18T23:59:59Z",
+      "feed": "sip",
+      "asof": "2026-09-18",
+      "currency": "USD",
+      "limit": 10000,
+      "sort": "asc",
+      "adjustment": "split"
+    },
+    "captured_at": "2026-09-28T18:39:26.385673+00:00",
+    "status_code": 200,
+    "sha256": "ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608",
+    "bytes": 86853,
+    "content_type": "application/json",
+    "response_date": "Mon, 28 Sep 2026 18:39:26 GMT",
+    "raw_file": "alpaca-split-1.ab78adf74bc99155475879b28815d1b84026b1c406d8921533f6f8f61838f608.raw"
+  }
+]

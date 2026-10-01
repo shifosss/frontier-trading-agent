@@ -1,0 +1,63 @@
+{
+  "at": "2026-09-28T23:14:45.614389+00:00",
+  "status": "passed",
+  "attempt": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-features20260928\\attempts\\657ca3491cb34dd59f29c37f3eca96c0",
+  "summary_sha256": "25d7d43eb41a3b4b47c60712b8924ee8635349b2b28b8e5016eacccbf9622d55",
+  "original_records": 252,
+  "financial_status": {
+    "qualified": 223,
+    "unavailable": 29
+  },
+  "feature_status": {
+    "unavailable": 102,
+    "qualified": 150
+  },
+  "source_fact_context_unit_spans": 3727,
+  "evaluation_originals": 162,
+  "execution_eligible": 121,
+  "selected_eligible": 27,
+  "by_issuer": {
+    "AAPL": {
+      "financial_qualified": 42,
+      "eligible": 27,
+      "selected": 5
+    },
+    "BANF": {
+      "financial_qualified": 42,
+      "eligible": 27,
+      "selected": 10
+    },
+    "F": {
+      "financial_qualified": 20,
+      "eligible": 0,
+      "selected": 0
+    },
+    "HRL": {
+      "financial_qualified": 40,
+      "eligible": 27,
+      "selected": 3
+    },
+    "MSFT": {
+      "financial_qualified": 41,
+      "eligible": 27,
+      "selected": 6
+    },
+    "T": {
+      "financial_qualified": 38,
+      "eligible": 13,
+      "selected": 3
+    }
+  },
+  "unavailable_reasons": {
+    "source_capture_unavailable:Non-inline original requires exactly one EX-101.INS; no substitute selected": 1,
+    "invalid_fiscal_YTD_period": 5,
+    "missing_or_ambiguous_current_quarter": 21,
+    "missing_or_ambiguous_prior_year_quarter": 1,
+    "not_Q1_Q2_Q3": 1
+  },
+  "limitations": [
+    "Recomputes arithmetic and original byte-span identities, not an independent full XBRL parser",
+    "Source metadata and conservative availability remain retrospective proxies",
+    "No returns, prices or trading outcomes accessed"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-09-28T23:01:04.907931+00:00",
+  "tests": 9,
+  "result": "passed",
+  "seconds": 0.469,
+  "independent_review": "strategy_design independently passed9tests; no remaining material finding",
+  "original_failure_hashes_verified": 31,
+  "source_index_hashes_verified": 26,
+  "transient_failure_record_hashes_verified": 5,
+  "new_public_requests": 0,
+  "independent_seconds": 0.94,
+  "reviewed_hashes": {
+    "request.json": "469baa8fd32deb8d8dab0ffc117f85628c36f30a5b6eabcb58fdbd2253f50526",
+    "capture_supplement.py": "0f4f42452c371479a9ca7fcfae0e3b9d9162f91aec42c695c2b3e35ceced1e91",
+    "test_supplement.py": "27b8dd901672c02d005f74216d0f0a9dec55f3c6ae4e042b10ff8bc5e36cdc73"
+  }
+}

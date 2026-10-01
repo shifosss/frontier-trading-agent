@@ -1,0 +1,79 @@
+{
+  "at": "2026-09-29T14:10:53.249401+00:00",
+  "status": "interfaces_and_source_only_market_preparation_verified",
+  "source_progress_snapshot": {
+    "at": "2026-09-29T14:10:47.358277+00:00",
+    "issuer": "MIDD",
+    "accession": "0000769520-17-000009",
+    "status": "captured",
+    "completed": 1500,
+    "registered_originals": 4057
+  },
+  "source_worker_parent_pid": 38856,
+  "source_worker_child_pid": 2500,
+  "paper_worker_parent_pid": 44812,
+  "paper_worker_child_pid": 46468,
+  "paper_snapshot": {
+    "status": "ready",
+    "clock": "2026-09-29T10:09:48.134651909-04:00",
+    "cash_usd": "81194.12",
+    "positions": [
+      [
+        "META",
+        "6"
+      ],
+      [
+        "MSFT",
+        "15"
+      ],
+      [
+        "XOM",
+        "42"
+      ]
+    ],
+    "open_orders": 0
+  },
+  "source_recovery_record": "source/recoveries/20260929T134513Z/recovery.json",
+  "market_attempt": "model-inputs/market-attempts/fd5e59aac98c4fc298f0c7ce9a860c18",
+  "market_definition_sha256": "2ce0cac8cded227b612ff63c9181f64e1e84a0d6fd98e1ffb52c56a75ef75544",
+  "current_test_result": {
+    "tests_passed": 147,
+    "subtests_passed": 20,
+    "evidence": "integration-review/current-tests/verification.json",
+    "sha256": "310c1e8421c8ef0df1af2cec2218ef9691c879a12dae6aa47d3ea7eedafab93a",
+    "first_collection_failure_preserved": "integration-review/verification.json"
+  },
+  "market_verification": "qualification-review/market-artifact-verification-20260929T140819Z.json",
+  "source_gaps": {
+    "leading_missing_rows": 16025,
+    "symbols_with_leading_gaps": 18,
+    "invalid_vendor_observation": "FISV 2025-11-12"
+  },
+  "archive": {
+    "path": "implementation-preparation-20260929.zip",
+    "sha256": "d37f44cc0b0fee77dbbf70617eb7e1a644b80c2f3042c7646fa2a7e140ba3831",
+    "members": 68,
+    "all_member_bytes_verified": true
+  },
+  "implementation_sha256": {
+    "model-inputs\\event_inputs.py": "4a1854ed9ea31b5a95e1a4c7a3c512be87ccba5bc0890de083c35801afb939ed",
+    "model-inputs\\prepare_market.py": "de2d9776e8ec957f8c9ca823ca789f820b570563cb85ea9f9790529d7da5cc2d",
+    "models\\earnings_models.py": "0d6ecc98a92368ef7bd8bf8802979790a539636adb769f9e9f4b49fa8a38b4de",
+    "accounts\\account_adapter.py": "f1a67cd923188891c93514601fa210b5183d11c60b8d69a64389bdc421351aa7",
+    "qualification\\run_qualification.py": "7791eb616d0f8e354fc995be9a3a6756e96ccb2c5afab1b98086ff1669a16519"
+  },
+  "real_financial_corpus_qualified": false,
+  "actual_family_year_fits_completed": 0,
+  "actual_account_paths_completed": 0,
+  "synthetic_account_matrix_size": 20,
+  "next_steps": [
+    "Wait for terminal SEC capture, with no active source writer or unresolved STOP. Never duplicate or reset its worker.",
+    "Root bind/review the terminal qualification definition using final registry/completion/code/calendar hashes, then run collector retaining all100issuer denominators and failures.",
+    "Reuse prepared market artifact and reviewed event_inputs; preserve full structural event population. Check actual same-issuer decision collisions without dropping events.",
+    "Freeze enclosing economic attempt identities and run the10declaredfamily/yearfits once with purged fitting/calibration labels. Save/reload all forecasts before test-label diagnostics.",
+    "Run all20continuous2021-2025accounts using the exact saved family forecasts, bothcapitallevels/costs, with fullweeklyreturns and all failures. Add raw/corrected/baseline errors, calibration-defined bins, denominators, yearly and issuer concentration. No promotion."
+  ],
+  "paper_policy_migrated": false,
+  "live_trading": false,
+  "new_spending": false
+}

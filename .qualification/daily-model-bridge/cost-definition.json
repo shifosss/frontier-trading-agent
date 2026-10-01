@@ -1,0 +1,63 @@
+{
+  "declared_at": "2026-09-19T20:47:18.822063+00:00",
+  "selection": "Return-independent purposive variation: AAPL/MSFT high-activity/high-price candidates, F/T lower-price active candidates, HRL/BANF lower-activity candidates. These are hypotheses, not measured liquidity bins. Fixed first trading sessions of 2016/2020/2024; no strategy outcomes inspected. No substitutions for empty/error cells.",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "F",
+    "T",
+    "HRL",
+    "BANF"
+  ],
+  "windows": [
+    {
+      "id": "2016-01-04-0930",
+      "start": "2016-01-04T14:30:00+00:00",
+      "end": "2016-01-04T14:31:00+00:00"
+    },
+    {
+      "id": "2016-01-04-1200",
+      "start": "2016-01-04T17:00:00+00:00",
+      "end": "2016-01-04T17:01:00+00:00"
+    },
+    {
+      "id": "2016-01-04-1559",
+      "start": "2016-01-04T20:59:00+00:00",
+      "end": "2016-01-04T21:00:00+00:00"
+    },
+    {
+      "id": "2020-01-02-0930",
+      "start": "2020-01-02T14:30:00+00:00",
+      "end": "2020-01-02T14:31:00+00:00"
+    },
+    {
+      "id": "2020-01-02-1200",
+      "start": "2020-01-02T17:00:00+00:00",
+      "end": "2020-01-02T17:01:00+00:00"
+    },
+    {
+      "id": "2020-01-02-1559",
+      "start": "2020-01-02T20:59:00+00:00",
+      "end": "2020-01-02T21:00:00+00:00"
+    },
+    {
+      "id": "2024-01-02-0930",
+      "start": "2024-01-02T14:30:00+00:00",
+      "end": "2024-01-02T14:31:00+00:00"
+    },
+    {
+      "id": "2024-01-02-1200",
+      "start": "2024-01-02T17:00:00+00:00",
+      "end": "2024-01-02T17:01:00+00:00"
+    },
+    {
+      "id": "2024-01-02-1559",
+      "start": "2024-01-02T20:59:00+00:00",
+      "end": "2024-01-02T21:00:00+00:00"
+    }
+  ],
+  "max_pages_per_window": 10,
+  "endpoint": "https://data.alpaca.markets/v2/stocks/quotes",
+  "feed": "sip",
+  "analysis": "[start,end), no pre-window carry; mechanical positive price/size and noncrossed; locked retained; persist each quote to next update, equal timestamp last record receives time; no stale timeout; all conditions retained; missing is uncovered leading/empty time, not proof missing feed updates."
+}

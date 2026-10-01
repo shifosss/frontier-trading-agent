@@ -1,0 +1,5 @@
+{
+  "revision": "independent-review-1",
+  "finding": "TOPS split volumes1+/-1 yield a zero lower bound; a missing bounded interval is insufficient precision, not inconsistent evidence.",
+  "changed": "Only derived volume classification; preserved pre-review files. No tolerance/source change."
+}

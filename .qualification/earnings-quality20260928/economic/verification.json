@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-29T21:50:21.480237+00:00",
+  "command": ".venv/Scripts/python.exe -B -X utf8 -m pytest .qualification/earnings-quality20260928/economic/test_run_study.py -q -p no:cacheprovider",
+  "result": "8 passed in 7.54s",
+  "synthetic_only": true,
+  "actual_cohort_financial_outcomes_used": false,
+  "initial_test_run": "Initial presence test failed before implementation; first meaningful runner run passed6/7 and exposed unmatched baseline diagnostics. Matched-row baseline correction passed7/7, then clustering and declared matrix check passed8/8.",
+  "files": {
+    "run_study.py": "fe88ccd61666643b0344bb435368839bf78b17fe90325178c0e850230655e200",
+    "test_run_study.py": "14910074a4e89c2db60969279f0754ff6b7138e7dee10a55fe1cab7a955ab96b",
+    "interface.md": "b89f04e5a27065243064273824b81d2c3ee52a5bfac5d08c76656805d0d1a224"
+  },
+  "scope": [
+    "fixed ten model/fold attempts using two actual sklearn fits and eight insufficient fixtures",
+    "twenty continuous synthetic cash accounts over the full date window",
+    "both-family forecast persistence before test-label access",
+    "purged/unavailable/future label refusal",
+    "source read-lock writer refusal",
+    "retained twenty-account failure matrix",
+    "matched-row baseline and calibration-only bin arithmetic",
+    "missing benchmark marks and scheduled interval clustering"
+  ],
+  "qualification": "Software orchestration checks only; no economic validation, source capture, live or paper orders"
+}

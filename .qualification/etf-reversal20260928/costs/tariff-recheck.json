@@ -1,0 +1,111 @@
+{
+  "checked_at_utc": "2026-09-29T00:26:41.854997+00:00",
+  "wealthsimple": {
+    "url": "https://www.wealthsimple.com/en-ca/legal/fees/trade",
+    "access": "Direct primary page read by web tool",
+    "listed_security_commission_usd": 0,
+    "existing_usd_account_trade_fx": 0,
+    "usd_subscription_cad_per_month": 10,
+    "applicable_tax_extra": true,
+    "owner_waiver_or_existing_subscription_unverified": true,
+    "cash_conversion_fee_tiers": "Below10000:1.5%;10000-24999.99:1%;25000-99999.99:0.5%;100000+:0%; applied to corporate exchange rate containing variable spread. Funding/withdrawal separate from per-order costs."
+  },
+  "moomoo_ca": {
+    "url": "https://www.moomoo.com/ca/support/topic10_122",
+    "access": "Direct page redirected to403; no repeated direct request. Indexed Canadian-entity primary schedule checked; completeness remains unverified.",
+    "commission": "price>=1: max(0.99,0.0049*q); price<1: max(0.99,0.0005*q) USD/order",
+    "platform": "price>=1: max(1,0.005*q); price<1:max(1,0.0005*q) USD/order",
+    "sell_SEC": "max(0.01,0.0000206*proceeds) USD/trade",
+    "other": "Venue/ECN/specialist charges may apply. MultidayGTC fills repeat per-day minima. Owner promotions, taxes, rounding and other carrying-broker charges unverified."
+  },
+  "SEC": {
+    "url": "https://www.sec.gov/rules-regulations/fee-rate-advisories/2026-2",
+    "access": "Direct primary page read",
+    "effective": "2026-04-04",
+    "usd_per_million_covered_sales": "20.60"
+  },
+  "tariff_time": "Current-tariff counterfactual applied to past research prices, not historical fees.",
+  "execution_costs_code_sha256": "5563f6eb14196f4b12d1a7b103e9bfced733976fd0b93f197dafd795e2381483",
+  "profiles_explicit_only": {
+    "wealthsimple_usd": {
+      "schema_version": 2,
+      "name": "wealthsimple_usd",
+      "round_trip_bps": 0.0,
+      "currency": "USD",
+      "friction": "notional * (round_trip_bps / 20000) on each side; unrounded",
+      "friction_status": "declared sensitivity, not calibrated realized slippage",
+      "tariff_checked_at": "2026-09-19",
+      "historical_tariff": false,
+      "interpretation": "current-tariff counterfactual; incomplete cost coverage",
+      "incomplete_cost_lower_bound": true,
+      "lower_bound_scope": "omitted costs; rounding/friction are scenarios, not a proven bound on actual fees",
+      "source_urls": [
+        "https://www.wealthsimple.com/en-ca/legal/fees/trade"
+      ],
+      "rounding": "no monetary rounding for proportional friction",
+      "order_assumption": "one order per side per day; no multiday fills or promotion",
+      "excluded_charges": [
+        "initial funding and eventual FX conversion/spread",
+        "recurring account or subscription charges and applicable taxes",
+        "unverified venue, regulatory, clearing or service charges",
+        "actual spread, market impact and slippage beyond declared friction"
+      ],
+      "action_limitation": "engine uses original entry whole shares with synthetic adjusted exit notional; not action-complete current shares or realized broker fills; per-share fees and USD1 bracket can be distorted across corporate actions",
+      "source_access": "primary legal page retrieved directly",
+      "commission": "0 for listed US/Canadian securities",
+      "funding_assumption": "existing USD cash in an active USD account; no trade FX",
+      "account_charge": "ordinary CAD10/month plus tax excluded; waiver unverified"
+    },
+    "moomoo_ca_us": {
+      "schema_version": 2,
+      "name": "moomoo_ca_us",
+      "round_trip_bps": 0.0,
+      "currency": "USD",
+      "friction": "notional * (round_trip_bps / 20000) on each side; unrounded",
+      "friction_status": "declared sensitivity, not calibrated realized slippage",
+      "tariff_checked_at": "2026-09-19",
+      "historical_tariff": false,
+      "interpretation": "current-tariff counterfactual; incomplete cost coverage",
+      "incomplete_cost_lower_bound": true,
+      "lower_bound_scope": "omitted costs; rounding/friction are scenarios, not a proven bound on actual fees",
+      "source_urls": [
+        "https://www.moomoo.com/ca/support/topic10_122",
+        "https://www.sec.gov/rules-regulations/fee-rate-advisories/2026-2"
+      ],
+      "rounding": "each explicit component rounded up to USD0.01 using Decimal; scenario rounding; broker convention unverified; friction unrounded",
+      "order_assumption": "one order per side per day; no multiday fills or promotion",
+      "excluded_charges": [
+        "initial funding and eventual FX conversion/spread",
+        "recurring account or subscription charges and applicable taxes",
+        "unverified venue, regulatory, clearing or service charges",
+        "actual spread, market impact and slippage beyond declared friction"
+      ],
+      "action_limitation": "engine uses original entry whole shares with synthetic adjusted exit notional; not action-complete current shares or realized broker fills; per-share fees and USD1 bracket can be distorted across corporate actions",
+      "source_access": "Moomoo indexed primary page; prior direct retrieval HTTP403",
+      "commission": "max(0.99,q*0.0049); price<1 uses q*0.0005",
+      "platform": "max(1.00,q*0.005); price<1 uses q*0.0005",
+      "sec_sell": "max(0.01,notional*0.0000206)"
+    }
+  },
+  "annual_account_fee_context": {
+    "BoC_url": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?start_date=2026-09-28&end_date=2026-09-28",
+    "source_date": "2026-09-28",
+    "CAD_per_USD": "1.4168",
+    "raw_sha256": "09e81f749143326dba64ea4e54ec54b7ceec9a9c7019c21a918f7985e058e34d",
+    "CAD_excluding_tax": 120,
+    "USD_equivalent_excluding_tax": "84.69791078486730660643704122",
+    "percentage_of_initial_capital_excluding_tax": {
+      "2000": "4.234895539243365330321852061",
+      "10000": "0.8469791078486730660643704122"
+    },
+    "illustrative13percent_tax_only_if_applicable": {
+      "CAD": "135.60",
+      "USD": "95.70863918690005646527385658",
+      "percentage_of_capital": {
+        "2000": "4.785431959345002823263692829",
+        "10000": "0.9570863918690005646527385658"
+      }
+    },
+    "limits": "One-date indicative daily average, not realized broker FX or historical annual conversion. Tax residence and waiver unknown; potential shared subscription is an account-level cost, not per-trade cost. Not charged to the research engine; gross trading returns exclude it and funding/withdrawal FX."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "at": "2026-09-28T20:36:01.337100+00:00",
+  "base_definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "scope": "effective runtime supplement: replace only runner.status with same-schema progress writing through existing historical_lab._save; scientific code, parameters and all58frozen identities unchanged",
+  "reason": "two Windows PermissionError failures during replaceable status.json progress updates",
+  "files": {
+    ".qualification/conditional-selection20260928/resume_with_persistence.py": "5469fa1480195fc72f65c67554eba8fd9a57000a4d64fef42e74459dc91ccbe2",
+    ".qualification/conditional-selection20260928/test_persistence_continuation.py": "d0f7bda2d64787d48cddf6a5081ca52570e47e0d9fdeb6a1f66a8712c266ac28",
+    "src/frontier/historical_lab.py": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a"
+  },
+  "completed_block_manifests": {
+    "blocks/block-000.json": "d3bc2ab6074d8b7e46e971747b31a0fb51cf8263cb2064e7862d66fc49ef429a",
+    "blocks/block-001.json": "13e7dcd544d1c454d9d4048007b5e07c2553170df2bcc607f0f4b93c80899d5a",
+    "blocks/block-002.json": "edcb8bb16006b2c7f52d011bd2de73080d11d28ce8ad16228e2ec10d058a0bd8",
+    "blocks/block-003.json": "2fe3b828df6995e51f443cf992cf8c76f2a95295958905abbda1489f887fc540",
+    "blocks/block-004.json": "0c6a19c499aa250e72d9f1feb2433572cb5c34d4a7b4d4291b3569c8b583bda9"
+  },
+  "prior_failed_attempts": {
+    "attempts/35dd92d47efa4f8d94a4dc00cf73a953.json": "e9b2b418972aa610f322ba836dc9d8da5190158015cdfa99ee4e09d42ac8c3bf",
+    "attempts/8686939bc5704c5b9f84e2f52b2efb1f.json": "9ce9e74099a3521d39253f5d1565c4ac61dec0f8be545f89386f3bda5ad79727"
+  },
+  "validation": {
+    "original58files_verified": true,
+    "completed_block_files_verified": true,
+    "runner_checks": 6,
+    "persistence_collision_and_propagation_checks": 3,
+    "independent_review": "approved as status-only operational continuation; no new strategy version"
+  }
+}

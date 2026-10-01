@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-09-28T22:39:12.717725+00:00",
+  "symbol": "MSFT",
+  "accession": "0001193125-12-017029",
+  "capture_status": "incomplete",
+  "reason": "Original non-inline index contains no EX-101.INS document row",
+  "saved_source_status": "Original index, SGML header and complete primary HTML retained, each HTTP200",
+  "disposition": "Preserve gap; no capture-code change, future amendment substitution or automatic refetch. Assess original HTML fact extraction separately during source qualification.",
+  "worker_continues": true,
+  "feature_qualified": false
+}

@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "attempt": ".qualification/etf-reversal20260928/strategy/attempts/a53c9b644fad4734be469fa6854c2e23",
+  "files": {
+    "definition.json": "9da18db4a982779369a4f3002f03d3fda7f865e236a88e8b494747dc01528e76",
+    "market-arrays.npz": "5bbce6e93eeeb65520e33904ce579653dbd3b59ab1e7db21fa65595458a6c3a4",
+    "market-inputs.json": "0b1fb403c39722557cc6c3633305741e77407f9e259e3f0961fdb1c7b904e59c",
+    "signals.npz": "6097f95a3cfa70c3f0be7a86e91716b50c346bb588734cca9f8f244e313812d8",
+    "source-audits.json": "369aa8051564d8a3f416bd920db0500dbbc1bd76640a8e8fa82a147d323a00c0"
+  },
+  "sessions": 2525,
+  "symbols": [
+    "DIA",
+    "IWM",
+    "QQQ",
+    "SPY",
+    "XLE",
+    "XLF",
+    "XLI",
+    "XLK",
+    "XLP",
+    "XLU",
+    "XLV"
+  ],
+  "source_missing_sessions": {
+    "DIA": 0,
+    "IWM": 0,
+    "QQQ": 0,
+    "SPY": 0,
+    "XLE": 0,
+    "XLF": 0,
+    "XLI": 0,
+    "XLK": 0,
+    "XLP": 0,
+    "XLU": 0,
+    "XLV": 0
+  },
+  "causal_candidates": {
+    "residual_reversal": 789,
+    "residual_reversal_trend": 595,
+    "matched_count_control": 789
+  },
+  "network_requests": 0,
+  "account_runs": 0,
+  "forward_labels_computed": false
+}

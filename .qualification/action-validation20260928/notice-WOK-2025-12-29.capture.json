@@ -1,0 +1,16 @@
+{
+  "symbol": "WOK",
+  "effective_sessions": "2025-12-29",
+  "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2025-708",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:06.277973+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2025-708",
+  "redirects": [],
+  "sha256": "74aeb96fedd6a046e45416cdab3f2de2916d0bfec0ae9f2eedbf78dc737831f3",
+  "raw_file": "notice-WOK-2025-12-29.74aeb96fedd6a046e45416cdab3f2de2916d0bfec0ae9f2eedbf78dc737831f3.raw.html",
+  "bytes": 58667,
+  "captured_at": "2026-09-28T19:14:06.680029+00:00",
+  "text_file": "notice-WOK-2025-12-29.text.txt"
+}

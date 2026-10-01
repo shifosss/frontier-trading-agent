@@ -1,0 +1,364 @@
+{
+  "run_id": null,
+  "artifact_directory": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\multi-model-smoke",
+  "passed": true,
+  "limitations": [
+    "Corporate-action source normalization is shared with the frozen loader; the independent audit validates arithmetic, not completeness of provider actions.",
+    "Sample digests and calendar purge constraints are checked, but exact training membership is not reconstructed without the full feature matrices.",
+    "Incomplete accounts retain completed trades only; open positions at failure prevent full independent daily-ledger reconstruction for those accounts."
+  ],
+  "full_and_compact_exactly_match": true,
+  "raw_files_verified": 8,
+  "raw_bytes_verified": 5501258,
+  "capture_index_sha256": "ba881d47d7c209fcda8662e55d3174e744e48d30fb67cc18160b7dfd6e5e0fb0",
+  "portfolios_verified": 360,
+  "references_verified": 12,
+  "portfolio_statuses": {
+    "complete": 360
+  },
+  "audit_accounts": 42,
+  "fold_boundary_checks": [
+    {
+      "currency": "USD",
+      "test_start": "2023-10-19",
+      "latest_allowed_fit_signal": "2022-10-07",
+      "latest_allowed_calibration_signal": "2023-10-10",
+      "sample_digests_recorded": true
+    },
+    {
+      "currency": "USD",
+      "test_start": "2024-10-21",
+      "latest_allowed_fit_signal": "2023-10-10",
+      "latest_allowed_calibration_signal": "2024-10-10",
+      "sample_digests_recorded": true
+    },
+    {
+      "currency": "USD",
+      "test_start": "2025-10-23",
+      "latest_allowed_fit_signal": "2024-10-10",
+      "latest_allowed_calibration_signal": "2025-10-14",
+      "sample_digests_recorded": true
+    },
+    {
+      "currency": "CAD",
+      "test_start": "2023-10-24",
+      "latest_allowed_fit_signal": "2022-10-12",
+      "latest_allowed_calibration_signal": "2023-10-13",
+      "sample_digests_recorded": true
+    },
+    {
+      "currency": "CAD",
+      "test_start": "2024-10-24",
+      "latest_allowed_fit_signal": "2023-10-13",
+      "latest_allowed_calibration_signal": "2024-10-15",
+      "sample_digests_recorded": true
+    },
+    {
+      "currency": "CAD",
+      "test_start": "2025-10-27",
+      "latest_allowed_fit_signal": "2024-10-15",
+      "latest_allowed_calibration_signal": "2025-10-16",
+      "sample_digests_recorded": true
+    }
+  ],
+  "source_price_symbols_reconstructed": 7,
+  "audited_accounts": [
+    {
+      "account": "USD/ridge//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 2,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/ridge//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 16,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/ridge//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 24,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/extra_trees//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/extra_trees//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 2,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/extra_trees//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 7,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/hist_gradient_boosting//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 20,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/hist_gradient_boosting//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 20,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/hist_gradient_boosting//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 37,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/multi_head_mlp//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 32,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/multi_head_mlp//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 52,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/multi_head_mlp//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 51,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/equal_ensemble//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/equal_ensemble//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 2,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/equal_ensemble//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 12,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/calibrated_ensemble//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/calibrated_ensemble//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 2,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/calibrated_ensemble//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 9,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/diversified_ensemble//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/diversified_ensemble//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 2,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "USD/diversified_ensemble//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 9,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 731
+    },
+    {
+      "account": "CAD/ridge//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 21,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/ridge//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 125,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/ridge//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 112,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/extra_trees//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/extra_trees//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/extra_trees//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 10,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/hist_gradient_boosting//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 8,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/hist_gradient_boosting//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 94,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/hist_gradient_boosting//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 107,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/multi_head_mlp//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 111,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/multi_head_mlp//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 188,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/multi_head_mlp//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 129,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/equal_ensemble//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 1,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/equal_ensemble//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 115,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/equal_ensemble//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 103,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/calibrated_ensemble//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/calibrated_ensemble//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 97,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/calibrated_ensemble//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 90,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/diversified_ensemble//1/2000.0/40",
+      "status": "complete",
+      "completed_records": 0,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/diversified_ensemble//3/2000.0/40",
+      "status": "complete",
+      "completed_records": 87,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    },
+    {
+      "account": "CAD/diversified_ensemble//5/2000.0/40",
+      "status": "complete",
+      "completed_records": 80,
+      "daily_ledger_reconstructed": true,
+      "daily_points": 730
+    }
+  ],
+  "detailed_trades_verified": 1777,
+  "daily_ledgers_reconstructed": 42,
+  "elapsed_seconds": 6.596095399989281
+}

@@ -1,0 +1,29 @@
+{
+  "name": "iex-hourly-20160104-20160108",
+  "url": "https://data.alpaca.markets/v2/stocks/bars",
+  "params": {
+    "symbols": "AAPL,MSFT",
+    "adjustment": "raw",
+    "sort": "asc",
+    "limit": 10000,
+    "feed": "iex",
+    "timeframe": "1Hour",
+    "start": "2016-01-04T00:00:00Z",
+    "end": "2016-01-08T23:59:59Z",
+    "asof": "2016-01-08"
+  },
+  "requested_at": "2026-09-19T19:09:30.558289+00:00",
+  "retrieved_at": "2026-09-19T19:09:30.588165+00:00",
+  "status_code": 200,
+  "raw_file": "iex-hourly-20160104-20160108.c700148960d500511ad0040f8b1c3c6ebbac07572176aff49cfc66b69eec9aee.json",
+  "sha256": "c700148960d500511ad0040f8b1c3c6ebbac07572176aff49cfc66b69eec9aee",
+  "bytes": 34,
+  "headers": {
+    "date": "Sat, 19 Sep 2026 19:09:30 GMT",
+    "content-type": "application/json",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "198",
+    "x-ratelimit-reset": "1789844971",
+    "x-request-id": "70491bcad4933defa76c626da84aeea2"
+  }
+}

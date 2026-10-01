@@ -1,0 +1,16 @@
+{
+  "launched_at": "2026-09-28T22:34:25.744203+00:00",
+  "parent_pid": 34948,
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\filing-source20260928\\capture.py"
+  ],
+  "implementation_sha256": "f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5",
+  "request_sha256": "dd266c7cd2e2e1c029ad9ddec39cabfe745722fcd5c97c6ca4667f1f5c9b3764",
+  "frozen_archive_sha256": "cf5f7f662a3f90f9a74a65c6fb93ea79b2c044ef75da1f4da06f2c41dbb22be4",
+  "purpose": "source capture only; no backtest or trading",
+  "launcher": "frontier.processes.start_background"
+}

@@ -1,0 +1,176 @@
+{
+  "models": [
+    {
+      "family": "ridge",
+      "test_decision_year": 2021,
+      "status": "declared"
+    },
+    {
+      "family": "hist_gradient_boosting",
+      "test_decision_year": 2021,
+      "status": "declared"
+    },
+    {
+      "family": "ridge",
+      "test_decision_year": 2022,
+      "status": "declared"
+    },
+    {
+      "family": "hist_gradient_boosting",
+      "test_decision_year": 2022,
+      "status": "declared"
+    },
+    {
+      "family": "ridge",
+      "test_decision_year": 2023,
+      "status": "declared"
+    },
+    {
+      "family": "hist_gradient_boosting",
+      "test_decision_year": 2023,
+      "status": "declared"
+    },
+    {
+      "family": "ridge",
+      "test_decision_year": 2024,
+      "status": "declared"
+    },
+    {
+      "family": "hist_gradient_boosting",
+      "test_decision_year": 2024,
+      "status": "declared"
+    },
+    {
+      "family": "ridge",
+      "test_decision_year": 2025,
+      "status": "declared"
+    },
+    {
+      "family": "hist_gradient_boosting",
+      "test_decision_year": 2025,
+      "status": "declared"
+    }
+  ],
+  "accounts": [
+    {
+      "recipe": "filing_control",
+      "starting_capital": 10000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "filing_control",
+      "starting_capital": 10000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "filing_control",
+      "starting_capital": 2000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "filing_control",
+      "starting_capital": 2000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_surprise",
+      "starting_capital": 10000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_surprise",
+      "starting_capital": 10000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_surprise",
+      "starting_capital": 2000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_surprise",
+      "starting_capital": 2000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "starting_capital": 10000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "starting_capital": 10000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "starting_capital": 2000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "income_cash_confirmation",
+      "starting_capital": 2000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "ridge",
+      "starting_capital": 10000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "ridge",
+      "starting_capital": 10000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "ridge",
+      "starting_capital": 2000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "ridge",
+      "starting_capital": 2000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "starting_capital": 10000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "starting_capital": 10000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "starting_capital": 2000,
+      "cost_profile": "proportional_40bps",
+      "status": "declared"
+    },
+    {
+      "recipe": "hist_gradient_boosting",
+      "starting_capital": 2000,
+      "cost_profile": "moomoo_ca_us_plus_40bps",
+      "status": "declared"
+    }
+  ]
+}

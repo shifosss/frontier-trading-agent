@@ -1,0 +1,16 @@
+{
+  "symbol": "CZFS",
+  "effective_sessions": "2024-06-14",
+  "url": "https://www.nasdaq.com/press-release/citizens-financial-services-inc-reports-unaudited-second-quarter-2024-financial",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:01.011625+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.nasdaq.com/press-release/citizens-financial-services-inc-reports-unaudited-second-quarter-2024-financial",
+  "redirects": [],
+  "sha256": "f82cb38809d1e73620ba6abc5cb073d9fb61d69e6bd8c93610589a82f55b5abc",
+  "raw_file": "notice-CZFS-2024-06-14.f82cb38809d1e73620ba6abc5cb073d9fb61d69e6bd8c93610589a82f55b5abc.raw.html",
+  "bytes": 1015443,
+  "captured_at": "2026-09-28T19:14:01.643338+00:00",
+  "text_file": "notice-CZFS-2024-06-14.text.txt"
+}

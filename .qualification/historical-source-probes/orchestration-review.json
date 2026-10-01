@@ -1,0 +1,13 @@
+{
+  "callback": "<lambda>() takes 0 positional arguments but 1 was given",
+  "combined_benchmarks": [
+    "USD"
+  ],
+  "combined_instruments": [
+    "USD"
+  ],
+  "combined_portfolios": [
+    "USD",
+    "CAD"
+  ]
+}

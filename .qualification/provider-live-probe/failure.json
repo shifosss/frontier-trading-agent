@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "requested_model": "gpt-6-astra",
+  "auth_method": "unknown",
+  "cli_version": "codex-cli 0.154.0",
+  "prompt_sha256": "9c4af26978214c73abff3cbaeada29a289c8cc9d647c3dd2f46d306fd5fd6f29",
+  "schema_sha256": "2efb043e6d6d5a75d8a9324f4837aaf80dae3fc2f6c6f51b19a46a8a0605cd14",
+  "output_sha256": null,
+  "charge_usd": null,
+  "usage": null,
+  "elapsed_seconds": 0.9854713000022457,
+  "timed_out": false,
+  "event_log": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\provider-live-probe\\events.jsonl",
+  "error": "RuntimeError: Codex CLI must be logged in using ChatGPT"
+}

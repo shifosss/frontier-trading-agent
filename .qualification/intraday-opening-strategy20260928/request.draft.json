@@ -1,0 +1,80 @@
+{
+  "study": "intraday-opening-strategy-20260928-v1",
+  "state": "draft_before_source_qualification_and_strategy_outcomes",
+  "stocks": ["AAPL", "MSFT", "F", "T", "HRL", "BANF"],
+  "reference": "SPY",
+  "source_study": "intraday-opening-source-20260928-v1",
+  "first_source_session": "2016-01-04",
+  "warmup_year": 2016,
+  "first_signal": "2017-01-03",
+  "last_session": "2025-12-31",
+  "arms": ["continuation", "reversal"],
+  "cost_profiles": ["proportional", "moomoo_ca_us"],
+  "round_trip_bps": 40,
+  "planned_accounts": 4,
+  "initial_cash": 2000,
+  "currency": "USD",
+  "feature_clock": {
+    "timezone": "America/New_York",
+    "opening_minutes": 60,
+    "signal_completion_offset_minutes": 60,
+    "data_delay_minutes": 15,
+    "processing_latency_minutes": 1,
+    "entry_offset_minutes": 76,
+    "exit_offset_minutes": 196,
+    "entry_and_exit_reference": "Observed raw minute open; no guaranteed fill or contemporaneous execution entitlement",
+    "sessions": "Actual XNYS opens/closes; retained DST and early-close calendar; no generated bars"
+  },
+  "signals": {
+    "current_hours": "All60 valid unique stock and SPY minutes in [open,open+60min)",
+    "activity": "Sum(minute close * minute volume), a raw dollar-activity proxy",
+    "activity_refinement": "Pre-outcome replacement of original memo share-volume comparison for cross-session split-unit consistency; original memo retained",
+    "history": "Immediately previous20 consecutive exchange-session complete stock opening hours; no skipping missing sessions",
+    "activity_gate": "Current dollar activity strictly greater than prior20 median",
+    "relative_return": "log(stock opening-hour C/O) - log(SPY opening-hour C/O)",
+    "location": "(C-L)/(H-L); require H>L",
+    "continuation": "relative_return>0 and location>=0.75",
+    "reversal": "relative_return<0 and location<=0.25",
+    "ranking": "Descending abs(relative_return), alphabetical symbol tie-break"
+  },
+  "cash_policy": {
+    "max_positions": 5,
+    "max_entry_cash_fraction": 0.2,
+    "risk_fraction": 0.005,
+    "risk_distance": "Known opening-hour raw H-L; sizing proxy, not stop or guaranteed loss limit",
+    "quantity": "Whole shares; floor(0.005*NAV/(H-L)); reduce for fee-inclusive20%NAV and unreserved settled-cash budgets using signal C",
+    "reservations": "Fixed per-order planned notional plus buy fee; total never exceeds settled cash",
+    "fill": "At observed10:46 open quantity may only decrease to fit original reservation and remaining settled cash; zero affordability cancels without replacement",
+    "settlement": "Reuse frontier.historical_settlement.build_settlement_indices(sessions,'USD'); same bank/exchange T+3/T+2/T+1 model; no unsettled sale reuse",
+    "holding": "Independent same-session two-hour positions, no short, margin, overnight, stop/target or trailing exit",
+    "research_drawdown_stop": null
+  },
+  "missing_data": {
+    "opening_or_warmup": "Causal abstention, retained in source/candidate denominators",
+    "planned_entry": "Missing required price invalidates account; no convenient candidate replacement",
+    "held_exit": "Missing required price retains unresolved position and invalidates account; no future exit availability selection",
+    "held_intermediate_minute": "No invented bar; valuation can carry last observed price with explicit age",
+    "source_identity_or_transport": "Root adapter retains explicit failure and prevents qualified outcome claims"
+  },
+  "valuation": {
+    "marks": "Every observed held-symbol minute-close boundary plus exact entry/exit opens and post-fee marks, with session-open/close cash marks",
+    "unobserved_other_position": "Carry only its valuation price; report stale-position count and age",
+    "drawdown": "Sampled-mark maximum drawdown, not intrabar maximum loss",
+    "exposure": "Integrate marked held-value/NAV over regular-session elapsed seconds"
+  },
+  "references": {
+    "cash": "Zero return, funded comparator",
+    "event": "Same current/hour/warmup/activity/nonzero-range eligibility without arm sign/location tests; unfunded gross10:46-to12:46 event return",
+    "event_aggregation": "Equal matched stocks within each date, then equal dates; unavailable dates are not zero",
+    "denominators": "Retain eligible events, separate missing entry/exit, matched events and matched dates; no reranking"
+  },
+  "report": ["All4 account outcomes and failures", "Net trade dollars and fees", "Sampled intraday drawdown and stale valuation ages", "Weekly, monthly and yearly stability with continuous period-to-period capital", "Explicit raw same-session price convention beside inherited shared cost metadata", "Stock/trade concentration", "Settled/unsettled cash and exposure", "Signal-to-entry gaps", "Event-reference missing denominators"],
+  "limitations": [
+    "Six surviving purposive pilot stocks, not a broad historical universe or final strategy universe",
+    "Provider historical revisions and session-asof ticker mapping do not establish original publication vintage or independently verified issuer identity",
+    "Dollar activity reduces split-share-unit inconsistency but is a proxy, not exact traded notional or corporate-action completeness",
+    "Minute reference prices and declared costs are simulations, not measured executable fills",
+    "Current Moomoo tariff counterfactual and40bps sensitivity are not historical realized fees",
+    "No model fitting, parameter sweep, source-driven name replacement or promotion"
+  ]
+}

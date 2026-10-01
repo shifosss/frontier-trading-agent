@@ -1,0 +1,28 @@
+{
+  "page": 2,
+  "url": "https://data.alpaca.markets/v2/stocks/quotes",
+  "params": {
+    "symbols": "AAPL,MSFT,F",
+    "start": "2024-11-29T17:59:00Z",
+    "end": "2024-11-29T18:00:00Z",
+    "asof": "2024-11-29",
+    "feed": "sip",
+    "sort": "asc",
+    "limit": 10000,
+    "page_token": "TVNGVHwxNzMyOTAzMTcwMjA4ODM0MzI2fEx8NDIzLjg3fDd8UXw0MjMuOTF8OXxS"
+  },
+  "requested_at": "2026-09-19T19:24:08.526154+00:00",
+  "retrieved_at": "2026-09-19T19:24:08.586401+00:00",
+  "status_code": 200,
+  "raw_file": "quotes-page-2.24672da7049153da3aba71aceb5bce0d47150a37074e4d5f39dd81a9cfd8543d.json",
+  "sha256": "24672da7049153da3aba71aceb5bce0d47150a37074e4d5f39dd81a9cfd8543d",
+  "bytes": 263756,
+  "headers": {
+    "date": "Sat, 19 Sep 2026 19:24:08 GMT",
+    "content-type": "application/json",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "199",
+    "x-ratelimit-reset": "1789845848",
+    "x-request-id": "338014078c830326e80f56af9d838142"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "saved_at": "2026-09-28T18:58:58.980269+00:00",
+  "reason": "User requested: pause the goal",
+  "goal_status": "paused",
+  "research_automation": {
+    "id": "frontier-daily-research-scan",
+    "status": "PAUSED"
+  },
+  "research_agents": "All three current agents completed; no active research agents.",
+  "research_processes": "No Python research process found; only the existing paper-watch parent/child were running.",
+  "paper_worker": {
+    "left_running": true,
+    "observed_pids": [
+      12628,
+      12676
+    ]
+  },
+  "artifacts_preserved": true,
+  "uncommitted_changes_preserved": true,
+  "completed_reports": [
+    "docs/candidate-replay-results.md",
+    "docs/weekly-data-refresh.md",
+    "docs/aixi-source-continuity.md",
+    "docs/action-source-validation-plan.md"
+  ],
+  "unfixed_finding": "API integer 40 versus CLI float 40.0 round-trip cost serialization causes replay resume scope mismatch. Reproduced in isolated synthetic journal; production fix and regression tests deferred until explicit resume. Preserve frozen code and journal identities.",
+  "reproduction": ".qualification/stateful-daily-agent/cost-type-resume-repro.json",
+  "next_work_on_resume": "Read completed reports and independent audits; preserve qualified code before versioned numeric identity fix. Source action validation remains required before economic promotion. Research automation stays paused until resume."
+}

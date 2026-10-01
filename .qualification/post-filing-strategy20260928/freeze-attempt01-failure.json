@@ -1,0 +1,6 @@
+{
+  "error": "PackageNotFoundError: lxml metadata is absent",
+  "stage": "building dependency manifest before definition/archive writing",
+  "account_outcomes_computed": false,
+  "resolution": "Exclude unused lxml dependency; financial parser uses standard-library XML/HTML parsing. No dependency installation or strategy change."
+}

@@ -1,0 +1,1877 @@
+{
+  "schema": 1,
+  "declared_at_utc": "2026-09-28T22:46:25.307221+00:00",
+  "purpose": "Supplement exactly20 original Ford accessions rejected because HTML and printable PDF both typed10-Q; no changed original outputs/features/returns",
+  "issuers": [
+    {
+      "symbol": "F",
+      "cik": "0000037996"
+    }
+  ],
+  "filed_from": "2012-01-01",
+  "filed_through": "2025-12-31",
+  "original_form": "10-Q",
+  "retain_amendment_metadata": "All10-Q/A rows in discovered pages including later amendments, never substitute or use for features",
+  "membership": "All matching original10-Q accessions, including duplicate report periods. First filing and fiscal Q eligibility qualified later. No replacement issuers.",
+  "history": "Fetch every submissions-history file whose declared filing range overlaps the requested filing dates. Preserve root metadata and all discovered source rows, including out-of-scope originals and amendments.",
+  "documents": "Each original accession index and SGML header plus complete primary10-Q. Inline primary is fact source; non-inline also requires exactly one original EX-101.INS row; zero/multiple is unresolved, no alternative later accession. No images/taxonomy/linkbase download.",
+  "clock": "Preserve API acceptanceDateTime, index local accepted/date and header accepted/date/CIK. Compare awareUTC API toAmerica/New_York index/header; missing/mismatch flagged separately from bytes captured. No acceptance timestamp treated as proven public availability.",
+  "warmup_filed_years": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016
+  ],
+  "evaluation_filed_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "max_history_pages_per_issuer": 8,
+  "max_original_accessions_per_issuer": 20,
+  "max_original_accessions_total": 20,
+  "max_lifetime_network_attempts": 60,
+  "max_attempts_per_url": 2,
+  "attempt_policy": "No automatic retry of completed HTTP/transport failures. An interrupted request with no durable resource result may be attempted once on a later resume; all request starts retained.",
+  "max_response_bytes": 33554432,
+  "max_total_raw_bytes": 536870912,
+  "minimum_request_interval_seconds": 1,
+  "timeout_seconds": 30,
+  "stop_http_status": [
+    403,
+    429
+  ],
+  "user_agent": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
+  "redirect_policy": "No automatic redirects; save response as failure. Only data.sec.gov/submissions and www.sec.gov/Archives/edgar/data permitted.",
+  "reuse": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023-index.html",
+      "path": ".qualification/filing-source20260928/raw/db2a71ae2b908829a19531966b59ddd43babe2533ed1df01308b4ca3d4b51524.bin",
+      "sha256": "db2a71ae2b908829a19531966b59ddd43babe2533ed1df01308b4ca3d4b51524",
+      "bytes": 17615,
+      "retrieved_at_utc": "2026-09-28T22:39:34.326936+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/0000037996-12-000049-index.html",
+      "path": ".qualification/filing-source20260928/raw/f8776c97909a200d02dc417fd6f9206217b228d32f826bf6f44fd694baee61a0.bin",
+      "sha256": "f8776c97909a200d02dc417fd6f9206217b228d32f826bf6f44fd694baee61a0",
+      "bytes": 17323,
+      "retrieved_at_utc": "2026-09-28T22:39:39.218713+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/0000037996-13-000027-index.html",
+      "path": ".qualification/filing-source20260928/raw/ca3f0265aa1f16448f1d22e0095d76c66cf804244ffa7f9d89fc2727dd5cb937.bin",
+      "sha256": "ca3f0265aa1f16448f1d22e0095d76c66cf804244ffa7f9d89fc2727dd5cb937",
+      "bytes": 17976,
+      "retrieved_at_utc": "2026-09-28T22:39:40.229123+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/0000037996-13-000042-index.html",
+      "path": ".qualification/filing-source20260928/raw/377e162c4fc02446f87921ec67dccf8b585037e075b2237ef46ab09b408bb139.bin",
+      "sha256": "377e162c4fc02446f87921ec67dccf8b585037e075b2237ef46ab09b408bb139",
+      "bytes": 17992,
+      "retrieved_at_utc": "2026-09-28T22:39:41.240819+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/0000037996-13-000055-index.html",
+      "path": ".qualification/filing-source20260928/raw/65606bc219d8aa0e8f23d27b452ac0e9520d77aa10f38ffa2ab735c0a70de4fa.bin",
+      "sha256": "65606bc219d8aa0e8f23d27b452ac0e9520d77aa10f38ffa2ab735c0a70de4fa",
+      "bytes": 17637,
+      "retrieved_at_utc": "2026-09-28T22:39:42.192954+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/0000037996-14-000023-index.html",
+      "path": ".qualification/filing-source20260928/raw/0cc2642ce2ef51802ecd398d520d1502b7b2b0c7544db9cb70d9fad46314a0c8.bin",
+      "sha256": "0cc2642ce2ef51802ecd398d520d1502b7b2b0c7544db9cb70d9fad46314a0c8",
+      "bytes": 19794,
+      "retrieved_at_utc": "2026-09-28T22:39:43.414946+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/0000037996-14-000043-index.html",
+      "path": ".qualification/filing-source20260928/raw/2415b871f716793c81291ac7d264d01bb0e41bd6e27db41d22e8090e4e2169cc.bin",
+      "sha256": "2415b871f716793c81291ac7d264d01bb0e41bd6e27db41d22e8090e4e2169cc",
+      "bytes": 18027,
+      "retrieved_at_utc": "2026-09-28T22:39:44.281945+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/0000037996-14-000057-index.html",
+      "path": ".qualification/filing-source20260928/raw/46627b3e41c79e5e0e1bee9ca2a9ae22e769ad888fc8bbb91763a6db53f807c0.bin",
+      "sha256": "46627b3e41c79e5e0e1bee9ca2a9ae22e769ad888fc8bbb91763a6db53f807c0",
+      "bytes": 18093,
+      "retrieved_at_utc": "2026-09-28T22:39:45.255310+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/0000037996-15-000029-index.html",
+      "path": ".qualification/filing-source20260928/raw/1f8f94424d4046667ebea19ea08b57802e68a6d5057803c171a0e6a8f2b9f1c0.bin",
+      "sha256": "1f8f94424d4046667ebea19ea08b57802e68a6d5057803c171a0e6a8f2b9f1c0",
+      "bytes": 17379,
+      "retrieved_at_utc": "2026-09-28T22:39:46.266143+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/0000037996-15-000046-index.html",
+      "path": ".qualification/filing-source20260928/raw/658c2ba6f180dc26c032f8856de4d6828987c67f146ab58d0053ac32d7ca6d57.bin",
+      "sha256": "658c2ba6f180dc26c032f8856de4d6828987c67f146ab58d0053ac32d7ca6d57",
+      "bytes": 17400,
+      "retrieved_at_utc": "2026-09-28T22:39:47.360742+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/0000037996-15-000064-index.html",
+      "path": ".qualification/filing-source20260928/raw/57a0320135fb5810fd02ff1d3a7d788d673eece3482a502eb7191b1e0aa06c67.bin",
+      "sha256": "57a0320135fb5810fd02ff1d3a7d788d673eece3482a502eb7191b1e0aa06c67",
+      "bytes": 17153,
+      "retrieved_at_utc": "2026-09-28T22:39:48.353816+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107-index.html",
+      "path": ".qualification/filing-source20260928/raw/0ea10450917d91bda945a4fdef21ad914b3b472901ea718bffec179469bd31ce.bin",
+      "sha256": "0ea10450917d91bda945a4fdef21ad914b3b472901ea718bffec179469bd31ce",
+      "bytes": 19406,
+      "retrieved_at_utc": "2026-09-28T22:39:49.345907+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/0000037996-16-000133-index.html",
+      "path": ".qualification/filing-source20260928/raw/db7a09f9474e98f3caeda77ba251daa2b434d201d45d648bfb426f4a57a0fc95.bin",
+      "sha256": "db7a09f9474e98f3caeda77ba251daa2b434d201d45d648bfb426f4a57a0fc95",
+      "bytes": 22375,
+      "retrieved_at_utc": "2026-09-28T22:39:50.322948+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/0000037996-16-000158-index.html",
+      "path": ".qualification/filing-source20260928/raw/1793aeb78ccca6abe7df52012a289630a82948273b1e89ebcd2959a4f798a348.bin",
+      "sha256": "1793aeb78ccca6abe7df52012a289630a82948273b1e89ebcd2959a4f798a348",
+      "bytes": 22647,
+      "retrieved_at_utc": "2026-09-28T22:39:51.252245+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/0000037996-17-000036-index.html",
+      "path": ".qualification/filing-source20260928/raw/e9660afdb9ffdbed01ae984e527b10f4e2742e791ab8699a5da84383063216c3.bin",
+      "sha256": "e9660afdb9ffdbed01ae984e527b10f4e2742e791ab8699a5da84383063216c3",
+      "bytes": 25714,
+      "retrieved_at_utc": "2026-09-28T22:39:52.265275+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/0000037996-17-000068-index.html",
+      "path": ".qualification/filing-source20260928/raw/5d8ec8f198a51532103ca56aa316840a6775c75518da772d26c23ad6495e1365.bin",
+      "sha256": "5d8ec8f198a51532103ca56aa316840a6775c75518da772d26c23ad6495e1365",
+      "bytes": 23948,
+      "retrieved_at_utc": "2026-09-28T22:39:53.253557+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/0000037996-17-000092-index.html",
+      "path": ".qualification/filing-source20260928/raw/3c267bdee3ae454a88c41279908b237794f252d44eed9859b7a6417ae9604bef.bin",
+      "sha256": "3c267bdee3ae454a88c41279908b237794f252d44eed9859b7a6417ae9604bef",
+      "bytes": 23267,
+      "retrieved_at_utc": "2026-09-28T22:39:54.650564+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/0000037996-18-000036-index.html",
+      "path": ".qualification/filing-source20260928/raw/d0ae6a6067175dd4751634c8d3007dc7004075e91b31de10c26a0c7dfa9c0096.bin",
+      "sha256": "d0ae6a6067175dd4751634c8d3007dc7004075e91b31de10c26a0c7dfa9c0096",
+      "bytes": 23623,
+      "retrieved_at_utc": "2026-09-28T22:39:55.293710+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/0000037996-18-000063-index.html",
+      "path": ".qualification/filing-source20260928/raw/3d6a453c827cfcf9092a145e19814d5d9dbf58d5b5d54d6dbc17bcd55df83aea.bin",
+      "sha256": "3d6a453c827cfcf9092a145e19814d5d9dbf58d5b5d54d6dbc17bcd55df83aea",
+      "bytes": 22624,
+      "retrieved_at_utc": "2026-09-28T22:39:56.299092+00:00"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/0000037996-18-000084-index.html",
+      "path": ".qualification/filing-source20260928/raw/5681d30d5ad6357d961a571aa8b1a8fd32c1371e81a1e87a7116a3d9a09c950d.bin",
+      "sha256": "5681d30d5ad6357d961a571aa8b1a8fd32c1371e81a1e87a7116a3d9a09c950d",
+      "bytes": 22288,
+      "retrieved_at_utc": "2026-09-28T22:39:57.279478+00:00"
+    }
+  ],
+  "index_url_overrides": {
+    "0000037996-12-000023": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023-index.html",
+    "0000037996-12-000049": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/0000037996-12-000049-index.html",
+    "0000037996-13-000027": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/0000037996-13-000027-index.html",
+    "0000037996-13-000042": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/0000037996-13-000042-index.html",
+    "0000037996-13-000055": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/0000037996-13-000055-index.html",
+    "0000037996-14-000023": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/0000037996-14-000023-index.html",
+    "0000037996-14-000043": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/0000037996-14-000043-index.html",
+    "0000037996-14-000057": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/0000037996-14-000057-index.html",
+    "0000037996-15-000029": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/0000037996-15-000029-index.html",
+    "0000037996-15-000046": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/0000037996-15-000046-index.html",
+    "0000037996-15-000064": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/0000037996-15-000064-index.html",
+    "0000037996-16-000107": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107-index.html",
+    "0000037996-16-000133": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/0000037996-16-000133-index.html",
+    "0000037996-16-000158": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/0000037996-16-000158-index.html",
+    "0000037996-17-000036": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/0000037996-17-000036-index.html",
+    "0000037996-17-000068": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/0000037996-17-000068-index.html",
+    "0000037996-17-000092": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/0000037996-17-000092-index.html",
+    "0000037996-18-000036": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/0000037996-18-000036-index.html",
+    "0000037996-18-000063": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/0000037996-18-000063-index.html",
+    "0000037996-18-000084": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/0000037996-18-000084-index.html"
+  },
+  "strategy_memo": {
+    "path": ".qualification/filing-feasibility20260928/strategy-memo.md",
+    "sha256": "de1e7474f339d5de3c8a0f882072f8ede8d37e0e52a6de2022afbf1e44f874f1"
+  },
+  "qualification_limits": [
+    "Current six surviving issuers; not historical universe membership",
+    "Historical original archive retrieved now; later SEC corrections possible",
+    "Original quarterly facts,8-event history,security/action continuity and dissemination time remain separate qualification",
+    "Primary inline marker and EX101INS classification only; no general XBRL parser"
+  ],
+  "original_capture_implementation_sha256": "f6055b5646eee461ea6fa81373c6d93e78806fd900bfa2b533c4489b69adafa5",
+  "original_capture_code_sha256": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb",
+  "items": [
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-12-000023",
+        "filingDate": "2012-05-04",
+        "reportDate": "2012-03-31",
+        "acceptanceDateTime": "2012-05-04T15:53:31.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "12812778",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 33665699,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f03312012-10q.htm",
+        "primaryDocDescription": ""
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-12-000023.json",
+      "original_manifest_sha256": "22071f16350f93f01342679ba67801075e92e8557546569bf339e5edf161c44d",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "db2a71ae2b908829a19531966b59ddd43babe2533ed1df01308b4ca3d4b51524",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "",
+          "document": "f03312012-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f03312012-10q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "15",
+          "description": "PRINTABLE PDF OF FORM 10-Q REPORT",
+          "document": "f0331201210q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f0331201210q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "9",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20120331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f-20120331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "",
+        "document": "f03312012-10q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f03312012-10q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "15",
+          "description": "PRINTABLE PDF OF FORM 10-Q REPORT",
+          "document": "f0331201210q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f0331201210q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "9",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20120331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f-20120331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f03312012-10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f-20120331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-12-000049",
+        "filingDate": "2012-11-02",
+        "reportDate": "2012-09-30",
+        "acceptanceDateTime": "2012-11-02T15:33:11.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "121175634",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 38830438,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f09302012-10q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-12-000049.json",
+      "original_manifest_sha256": "c17ae14fa8c954dd26d1d053e6fb43049a938b7d1df3408f3db236cc629abc3c",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "f8776c97909a200d02dc417fd6f9206217b228d32f826bf6f44fd694baee61a0",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f09302012-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f09302012-10q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q REPORT",
+          "document": "f0930201210q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f0930201210q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20120930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f-20120930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f09302012-10q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f09302012-10q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q REPORT",
+          "document": "f0930201210q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f0930201210q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20120930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f-20120930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/0000037996-12-000049.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f09302012-10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f-20120930.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-13-000027",
+        "filingDate": "2013-05-01",
+        "reportDate": "2013-03-31",
+        "acceptanceDateTime": "2013-05-01T15:57:24.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "13801447",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 29943638,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f03312013-10q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-13-000027.json",
+      "original_manifest_sha256": "5c2fc716afa05cc4b7e9bbd9ca7bf3fa4d0a9c286630156a1142b0a4ec8b7c53",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "ca3f0265aa1f16448f1d22e0095d76c66cf804244ffa7f9d89fc2727dd5cb937",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f03312013-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f03312013-10q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "15",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201310q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f0331201310q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "9",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20130331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f-20130331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f03312013-10q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f03312013-10q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "15",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201310q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f0331201310q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "9",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20130331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f-20130331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/0000037996-13-000027.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f03312013-10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f-20130331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-13-000042",
+        "filingDate": "2013-07-31",
+        "reportDate": "2013-06-30",
+        "acceptanceDateTime": "2013-07-31T15:29:24.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "13998076",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 47756844,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f06302013-10q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-13-000042.json",
+      "original_manifest_sha256": "04548a3338f732f8bc20451e0871de4a39da0dfab66cae115892cbe522088b7a",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "377e162c4fc02446f87921ec67dccf8b585037e075b2237ef46ab09b408bb139",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f06302013-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f06302013-10q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201310q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f0630201310q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "26",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20130630.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f-20130630.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f06302013-10q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f06302013-10q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "8",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201310q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f0630201310q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "26",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20130630.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f-20130630.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/0000037996-13-000042.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f06302013-10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f-20130630.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-13-000055",
+        "filingDate": "2013-10-31",
+        "reportDate": "2013-09-30",
+        "acceptanceDateTime": "2013-10-31T15:37:29.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "131181488",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 35464263,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f09302013-10q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-13-000055.json",
+      "original_manifest_sha256": "6fbc65cb701205f021ee34d3859b40067a5fa0efd5fa3fc28164543a7b36b761",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "65606bc219d8aa0e8f23d27b452ac0e9520d77aa10f38ffa2ab735c0a70de4fa",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f09302013-10q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f09302013-10q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201310q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f0930201310q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20130930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f-20130930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f09302013-10q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f09302013-10q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201310q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f0930201310q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20130930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f-20130930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/0000037996-13-000055.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f09302013-10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f-20130930.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-14-000023",
+        "filingDate": "2014-05-01",
+        "reportDate": "2014-03-31",
+        "acceptanceDateTime": "2014-05-01T18:32:11.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "14804182",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 31640263,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0331201410-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-14-000023.json",
+      "original_manifest_sha256": "895ec082c455d8a001f54f5f3bb8176f43c8e2e972aac621f858575dc2af1c44",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "0cc2642ce2ef51802ecd398d520d1502b7b2b0c7544db9cb70d9fad46314a0c8",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0331201410-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "17",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201410q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "11",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20140331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f-20140331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0331201410-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "17",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201410q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "11",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20140331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f-20140331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/0000037996-14-000023.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f-20140331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-14-000043",
+        "filingDate": "2014-07-31",
+        "reportDate": "2014-06-30",
+        "acceptanceDateTime": "2014-07-31T15:43:21.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "141005274",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 29075391,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0630201410-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-14-000043.json",
+      "original_manifest_sha256": "0bb7671174a2db97dd0002f19d06c3451f5d973dc9b7fb98d312b8db71ccd6ba",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "2415b871f716793c81291ac7d264d01bb0e41bd6e27db41d22e8090e4e2169cc",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0630201410-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201410q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20140630.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f-20140630.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0630201410-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201410q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20140630.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f-20140630.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/0000037996-14-000043.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f-20140630.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-14-000057",
+        "filingDate": "2014-10-31",
+        "reportDate": "2014-09-30",
+        "acceptanceDateTime": "2014-10-31T15:26:10.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "141185439",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 27579747,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0930201410-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-14-000057.json",
+      "original_manifest_sha256": "dce5fe6a0e6d61661575d3368f59cf9e79cc282d8212f7a9a95cce284f162643",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "46627b3e41c79e5e0e1bee9ca2a9ae22e769ad888fc8bbb91763a6db53f807c0",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0930201410-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201410q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20140930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f-20140930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0930201410-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201410q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20140930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f-20140930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/0000037996-14-000057.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f-20140930.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-15-000029",
+        "filingDate": "2015-04-28",
+        "reportDate": "2015-03-31",
+        "acceptanceDateTime": "2015-04-28T15:46:33.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "15797384",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 27899773,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0331201510-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-15-000029.json",
+      "original_manifest_sha256": "7a6e843666fc5cfc780f7f5f40a76fd75d0c4a64a7eadf6ce256edb37676eed5",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "1f8f94424d4046667ebea19ea08b57802e68a6d5057803c171a0e6a8f2b9f1c0",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0331201510-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201510q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20150331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f-20150331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0331201510-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201510q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20150331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f-20150331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/0000037996-15-000029.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f-20150331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-15-000046",
+        "filingDate": "2015-07-28",
+        "reportDate": "2015-06-30",
+        "acceptanceDateTime": "2015-07-28T15:48:20.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "151008786",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 26187024,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0630201510-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-15-000046.json",
+      "original_manifest_sha256": "4faafcb168f2cbd808d44da23f69d30b3e0db8d1fae3374af29029291c91b2f1",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "658c2ba6f180dc26c032f8856de4d6828987c67f146ab58d0053ac32d7ca6d57",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0630201510-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201510q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20150630.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f-20150630.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0630201510-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201510q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20150630.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f-20150630.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/0000037996-15-000046.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f-20150630.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-15-000064",
+        "filingDate": "2015-10-27",
+        "reportDate": "2015-09-30",
+        "acceptanceDateTime": "2015-10-27T17:10:57.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "151176916",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 25412337,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0930201510-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-15-000064.json",
+      "original_manifest_sha256": "2a89a64cce5c7d9ad537d689f65e369264c3216acdcb6086cc133a6801bbeeea",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "57a0320135fb5810fd02ff1d3a7d788d673eece3482a502eb7191b1e0aa06c67",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0930201510-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201510q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20150930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f-20150930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0930201510-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201510q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20150930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f-20150930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/0000037996-15-000064.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f-20150930.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-16-000107",
+        "filingDate": "2016-04-28",
+        "reportDate": "2016-03-31",
+        "acceptanceDateTime": "2016-04-28T16:09:12.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "161598308",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 27007337,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0331201610-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-16-000107.json",
+      "original_manifest_sha256": "ad9c1373560cce7557e01b53d4fec16be07ca10694ab5c22b1c562f6071a58e3",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "0ea10450917d91bda945a4fdef21ad914b3b472901ea718bffec179469bd31ce",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0331201610-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201610q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20160331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f-20160331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0331201610-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0331201610q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20160331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f-20160331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f-20160331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-16-000133",
+        "filingDate": "2016-07-28",
+        "reportDate": "2016-06-30",
+        "acceptanceDateTime": "2016-07-28T17:16:14.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "161789351",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 35379818,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0630201610-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-16-000133.json",
+      "original_manifest_sha256": "243b5f13dedff1c34d4e3633284e789b906484286549112abcac1c523cea9aa0",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "db7a09f9474e98f3caeda77ba251daa2b434d201d45d648bfb426f4a57a0fc95",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0630201610-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201610q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20160630.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f-20160630.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0630201610-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0630201610q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20160630.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f-20160630.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/0000037996-16-000133.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f-20160630.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-16-000158",
+        "filingDate": "2016-10-27",
+        "reportDate": "2016-09-30",
+        "acceptanceDateTime": "2016-10-27T16:20:41.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "161954665",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 37274069,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0930201610-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-16-000158.json",
+      "original_manifest_sha256": "eaea3f52b5d8bc462d3b316bb18087bc57b9721144463329d1d04661f9e137a3",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "1793aeb78ccca6abe7df52012a289630a82948273b1e89ebcd2959a4f798a348",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0930201610-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201610q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20160930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f-20160930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0930201610-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "14",
+          "description": "PRINTABLE PDF OF FORM 10-Q",
+          "document": "f0930201610q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20160930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f-20160930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/0000037996-16-000158.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f-20160930.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-17-000036",
+        "filingDate": "2017-04-27",
+        "reportDate": "2017-03-31",
+        "acceptanceDateTime": "2017-04-27T16:23:59.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "17787422",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 40379569,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0331201710-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-17-000036.json",
+      "original_manifest_sha256": "8ce2af37b856efc8f1a474528bbe536c8cfde6e83e6254116e8a72acee0d6b7e",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "e9660afdb9ffdbed01ae984e527b10f4e2742e791ab8699a5da84383063216c3",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0331201710-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0331201710q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "14",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20170331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f-20170331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0331201710-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0331201710q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "14",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20170331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f-20170331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/0000037996-17-000036.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f-20170331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-17-000068",
+        "filingDate": "2017-07-26",
+        "reportDate": "2017-06-30",
+        "acceptanceDateTime": "2017-07-26T16:17:15.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "17982094",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 48317285,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0630201710-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-17-000068.json",
+      "original_manifest_sha256": "d9d3380f5622da714ed44637b31f86df7cc54a3922e30f66bc750c0450e372e0",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "5d8ec8f198a51532103ca56aa316840a6775c75518da772d26c23ad6495e1365",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0630201710-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0630201710q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "10",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20170630.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f-20170630.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0630201710-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0630201710q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "10",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20170630.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f-20170630.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/0000037996-17-000068.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f-20170630.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-17-000092",
+        "filingDate": "2017-10-26",
+        "reportDate": "2017-09-30",
+        "acceptanceDateTime": "2017-10-26T15:35:06.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "171155409",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 45109837,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0930201710-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-17-000092.json",
+      "original_manifest_sha256": "2fcd65b01e45be8e308baea36681cd6a7a6654dbec2c4f3d11039416594afc09",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "3c267bdee3ae454a88c41279908b237794f252d44eed9859b7a6417ae9604bef",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0930201710-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0930201710q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "9",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20170930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f-20170930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0930201710-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0930201710q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "9",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20170930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f-20170930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/0000037996-17-000092.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f-20170930.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-18-000036",
+        "filingDate": "2018-04-26",
+        "reportDate": "2018-03-31",
+        "acceptanceDateTime": "2018-04-25T23:38:26.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "18775624",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 43283286,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0331201810-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-18-000036.json",
+      "original_manifest_sha256": "b9a6f4f3a382dd0e936ae2e0b8d5ef0fdb6c3c37230cf807774adf45c0769ea1",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "d0ae6a6067175dd4751634c8d3007dc7004075e91b31de10c26a0c7dfa9c0096",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0331201810-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0331201810q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "12",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20180331.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f-20180331.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0331201810-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0331201810q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "12",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20180331.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f-20180331.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/0000037996-18-000036.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f-20180331.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-18-000063",
+        "filingDate": "2018-07-26",
+        "reportDate": "2018-06-30",
+        "acceptanceDateTime": "2018-07-25T23:41:30.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "18969706",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 46526937,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0630201810-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-18-000063.json",
+      "original_manifest_sha256": "036af292ca88f007e6647d93e14f567713eaab0b13344315c7ba2a986e5d5ddd",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "3d6a453c827cfcf9092a145e19814d5d9dbf58d5b5d54d6dbc17bcd55df83aea",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0630201810-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0630201810q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20180630.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f-20180630.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0630201810-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0630201810q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20180630.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f-20180630.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/0000037996-18-000063.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f-20180630.xml"
+      ]
+    },
+    {
+      "issuer": {
+        "symbol": "F",
+        "cik": "0000037996"
+      },
+      "registry_row": {
+        "accessionNumber": "0000037996-18-000084",
+        "filingDate": "2018-10-25",
+        "reportDate": "2018-09-30",
+        "acceptanceDateTime": "2018-10-24T23:14:10.000Z",
+        "act": "34",
+        "form": "10-Q",
+        "fileNumber": "001-03950",
+        "filmNumber": "181137368",
+        "items": "",
+        "core_type": "10-Q",
+        "size": 44392307,
+        "isXBRL": 1,
+        "isInlineXBRL": 0,
+        "isXBRLNumeric": null,
+        "primaryDocument": "f0930201810-q.htm",
+        "primaryDocDescription": "10-Q"
+      },
+      "original_manifest_path": ".qualification/filing-source20260928/filings/F/0000037996-18-000084.json",
+      "original_manifest_sha256": "fd239e30f46ded85dbcd9100d8e5f15c20d03057bddf408f4cdfec5ff6e7d3bb",
+      "original_error": "Ambiguous/mismatched original10-Q document rows",
+      "index_source_sha256": "5681d30d5ad6357d961a571aa8b1a8fd32c1371e81a1e87a7116a3d9a09c950d",
+      "index_rows": [
+        {
+          "sequence": "1",
+          "description": "10-Q",
+          "document": "f0930201810-q.htm",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810-q.htm",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0930201810q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810q.pdf",
+          "type": "10-Q"
+        },
+        {
+          "sequence": "8",
+          "description": "XBRL INSTANCE DOCUMENT",
+          "document": "f-20180930.xml",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f-20180930.xml",
+          "type": "EX-101.INS"
+        }
+      ],
+      "selected_primary": {
+        "sequence": "1",
+        "description": "10-Q",
+        "document": "f0930201810-q.htm",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810-q.htm",
+        "type": "10-Q"
+      },
+      "retained_other_10q_metadata": [
+        {
+          "sequence": "2",
+          "description": "PRINTABLE PDF OF COMPLETE 10-Q",
+          "document": "f0930201810q.pdf",
+          "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810q.pdf",
+          "type": "10-Q"
+        }
+      ],
+      "original_instance": {
+        "sequence": "8",
+        "description": "XBRL INSTANCE DOCUMENT",
+        "document": "f-20180930.xml",
+        "url": "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f-20180930.xml",
+        "type": "EX-101.INS"
+      },
+      "new_resource_urls": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/0000037996-18-000084.hdr.sgml",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810-q.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f-20180930.xml"
+      ]
+    }
+  ],
+  "planned_new_resource_urls": [
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f03312012-10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/f-20120331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/0000037996-12-000049.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f09302012-10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799612000049/f-20120930.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/0000037996-13-000027.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f03312013-10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000027/f-20130331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/0000037996-13-000042.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f06302013-10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000042/f-20130630.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/0000037996-13-000055.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f09302013-10q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799613000055/f-20130930.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/0000037996-14-000023.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f0331201410-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000023/f-20140331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/0000037996-14-000043.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f0630201410-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000043/f-20140630.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/0000037996-14-000057.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f0930201410-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799614000057/f-20140930.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/0000037996-15-000029.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f0331201510-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000029/f-20150331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/0000037996-15-000046.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f0630201510-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000046/f-20150630.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/0000037996-15-000064.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f0930201510-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799615000064/f-20150930.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f0331201610-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/f-20160331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/0000037996-16-000133.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f0630201610-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000133/f-20160630.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/0000037996-16-000158.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f0930201610-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799616000158/f-20160930.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/0000037996-17-000036.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f0331201710-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000036/f-20170331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/0000037996-17-000068.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f0630201710-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000068/f-20170630.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/0000037996-17-000092.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f0930201710-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799617000092/f-20170930.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/0000037996-18-000036.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f0331201810-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000036/f-20180331.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/0000037996-18-000063.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f0630201810-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000063/f-20180630.xml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/0000037996-18-000084.hdr.sgml",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f0930201810-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/37996/000003799618000084/f-20180930.xml"
+  ],
+  "selection_rule": "Exactly one index row typed10-Q whose resolved original-accession URL equals the registry primaryDocument; preserve all other10-Q rows. Exactly one original EX-101.INS; no fallback toPDF/later accession.",
+  "launch_condition": "Root launches only after baseline source worker releases its lock; no duplicate or concurrent source capture.",
+  "msft_scope": "NoMSFTnetworkrequests; original-HTML source assessment only in separate evidence file.",
+  "limits_note": "60new network attempts total, inclusive of interrupted-start resume attempts. No automatic retry of completed failures. Any exhausted bound remains incomplete."
+}

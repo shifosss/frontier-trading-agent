@@ -1,0 +1,54 @@
+{
+  "requests": [
+    {
+      "name": "sip-hourly-20160104-20160108",
+      "status_code": 200,
+      "sha256": "5105426c917fccd4b8e4137ec5c7c79f456720bfdc4e2fe693ad989df401b266",
+      "bytes": 16004,
+      "counts": {
+        "AAPL": 79,
+        "MSFT": 73
+      },
+      "first_timestamp": {
+        "AAPL": "2016-01-04T09:00:00Z",
+        "MSFT": "2016-01-04T09:00:00Z"
+      },
+      "last_timestamp": {
+        "AAPL": "2016-01-08T23:00:00Z",
+        "MSFT": "2016-01-08T22:00:00Z"
+      },
+      "pagination_incomplete": false
+    },
+    {
+      "name": "iex-hourly-20160104-20160108",
+      "status_code": 200,
+      "sha256": "c700148960d500511ad0040f8b1c3c6ebbac07572176aff49cfc66b69eec9aee",
+      "bytes": 34,
+      "counts": {},
+      "first_timestamp": {},
+      "last_timestamp": {},
+      "pagination_incomplete": false
+    },
+    {
+      "name": "sip-minute-20241129-regular-early-close",
+      "status_code": 200,
+      "sha256": "53be89a5212a3c9fedf49b98c1e0d00547f74d4e6de52755ae444fbd539cab0f",
+      "bytes": 45621,
+      "counts": {
+        "AAPL": 210,
+        "MSFT": 210
+      },
+      "first_timestamp": {
+        "AAPL": "2024-11-29T14:30:00Z",
+        "MSFT": "2024-11-29T14:30:00Z"
+      },
+      "last_timestamp": {
+        "AAPL": "2024-11-29T17:59:00Z",
+        "MSFT": "2024-11-29T17:59:00Z"
+      },
+      "pagination_incomplete": false
+    }
+  ],
+  "stopped_on_block": false,
+  "completed_at": "2026-09-19T19:09:30.630060+00:00"
+}

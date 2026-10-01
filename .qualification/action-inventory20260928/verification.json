@@ -1,0 +1,747 @@
+{
+  "all_source_coverage_reconciled": true,
+  "all_event_counts_reconciled": true,
+  "unique_event_keys": 7143,
+  "sample_minimum_ranks_verified": 91,
+  "sample_helper_factor_checks": [
+    {
+      "stratum": "CAD|forward|2010-2019|<=2|<1000000",
+      "symbol": "CVG.TO",
+      "effective_session": "2019-07-04",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2010-2019|<=2|>=1000000",
+      "symbol": "FCR-UN.TO",
+      "effective_session": "2010-05-25",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2010-2019|<=2|unavailable",
+      "symbol": "FSV.TO",
+      "effective_session": "2015-06-02",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2010-2019|>2|<1000000",
+      "symbol": "BLLG.CN",
+      "effective_session": "2019-08-23",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2010-2019|>2|>=1000000",
+      "symbol": "DOL.TO",
+      "effective_session": "2018-06-20",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2010-2019|>2|unavailable",
+      "symbol": "SVE.V",
+      "effective_session": "2016-09-01",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2020-2023|<=2|<1000000",
+      "symbol": "SHL.V",
+      "effective_session": "2021-08-05",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2020-2023|<=2|>=1000000",
+      "symbol": "BN.TO",
+      "effective_session": "2020-04-02",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2020-2023|<=2|unavailable",
+      "symbol": "REE.V",
+      "effective_session": "2021-10-21",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2020-2023|>2|<1000000",
+      "symbol": "KIP.V",
+      "effective_session": "2021-12-02",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2020-2023|>2|>=1000000",
+      "symbol": "X.TO",
+      "effective_session": "2023-06-14",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2020-2023|>2|unavailable",
+      "symbol": "KAS.CN",
+      "effective_session": "2020-10-06",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2024-2026|<=2|<1000000",
+      "symbol": "MCS.V",
+      "effective_session": "2026-04-22",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2024-2026|<=2|>=1000000",
+      "symbol": "LUG.TO",
+      "effective_session": "2026-06-04",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2024-2026|<=2|unavailable",
+      "symbol": "GC.CN",
+      "effective_session": "2026-08-19",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2024-2026|>2|<1000000",
+      "symbol": "BGX.CN",
+      "effective_session": "2025-03-03",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2024-2026|>2|>=1000000",
+      "symbol": "WN.TO",
+      "effective_session": "2025-08-19",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|2024-2026|>2|unavailable",
+      "symbol": "UAV-X.CN",
+      "effective_session": "2026-03-11",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|<=2009|<=2|<1000000",
+      "symbol": "GDL.TO",
+      "effective_session": "2007-01-17",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|<=2009|<=2|>=1000000",
+      "symbol": "BHC.TO",
+      "effective_session": "2000-10-05",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|<=2009|<=2|unavailable",
+      "symbol": "ATD.TO",
+      "effective_session": "2001-07-18",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|<=2009|>2|<1000000",
+      "symbol": "WPK.TO",
+      "effective_session": "2005-05-09",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|<=2009|>2|>=1000000",
+      "symbol": "CCO.TO",
+      "effective_session": "2004-12-29",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|forward|<=2009|>2|unavailable",
+      "symbol": "BDT.TO",
+      "effective_session": "2001-05-09",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2010-2019|<=2|<1000000",
+      "symbol": "DCOP.V",
+      "effective_session": "2017-11-17",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2010-2019|<=2|>=1000000",
+      "symbol": "CRR-UN.TO",
+      "effective_session": "2019-12-30",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2010-2019|<=2|unavailable",
+      "symbol": "VM.V",
+      "effective_session": "2017-03-07",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2010-2019|>2|<1000000",
+      "symbol": "GGM.V",
+      "effective_session": "2017-12-01",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2010-2019|>2|>=1000000",
+      "symbol": "WCN.TO",
+      "effective_session": "2016-06-01",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2010-2019|>2|unavailable",
+      "symbol": "BEM.V",
+      "effective_session": "2014-08-08",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2020-2023|<=2|<1000000",
+      "symbol": "RGX.CN",
+      "effective_session": "2022-09-20",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2020-2023|<=2|>=1000000",
+      "symbol": "XIC.TO",
+      "effective_session": "2021-12-30",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2020-2023|<=2|unavailable",
+      "symbol": "JOLT-X.CN",
+      "effective_session": "2021-09-30",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2020-2023|>2|<1000000",
+      "symbol": "VSBY.CN",
+      "effective_session": "2023-11-03",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2020-2023|>2|>=1000000",
+      "symbol": "HIVE.TO",
+      "effective_session": "2022-05-24",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2020-2023|>2|unavailable",
+      "symbol": "CSR.CN",
+      "effective_session": "2023-12-27",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2024-2026|<=2|<1000000",
+      "symbol": "ZEUS.CN",
+      "effective_session": "2026-04-30",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2024-2026|<=2|>=1000000",
+      "symbol": "HR-UN.TO",
+      "effective_session": "2024-12-31",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2024-2026|<=2|unavailable",
+      "symbol": "MEAT.CN",
+      "effective_session": "2026-07-31",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2024-2026|>2|<1000000",
+      "symbol": "NAM.V",
+      "effective_session": "2024-08-26",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2024-2026|>2|>=1000000",
+      "symbol": "USA.TO",
+      "effective_session": "2025-08-26",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|2024-2026|>2|unavailable",
+      "symbol": "VITA.V",
+      "effective_session": "2024-01-26",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|<=2009|<=2|<1000000",
+      "symbol": "BDGI.TO",
+      "effective_session": "2004-04-05",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|<=2009|<=2|unavailable",
+      "symbol": "UGD.V",
+      "effective_session": "2003-02-11",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|<=2009|>2|<1000000",
+      "symbol": "WEB.V",
+      "effective_session": "2009-12-11",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|<=2009|>2|>=1000000",
+      "symbol": "K.TO",
+      "effective_session": "2003-02-03",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "CAD|reverse|<=2009|>2|unavailable",
+      "symbol": "BRAU.V",
+      "effective_session": "2002-04-19",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2010-2019|<=2|<1000000",
+      "symbol": "WSBF",
+      "effective_session": "2014-01-23",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2010-2019|<=2|>=1000000",
+      "symbol": "DHR",
+      "effective_session": "2016-07-05",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2010-2019|<=2|unavailable",
+      "symbol": "LINK",
+      "effective_session": "2016-04-04",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2010-2019|>2|<1000000",
+      "symbol": "JHX",
+      "effective_session": "2015-09-22",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2010-2019|>2|>=1000000",
+      "symbol": "EBAY",
+      "effective_session": "2015-07-20",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2010-2019|>2|unavailable",
+      "symbol": "LINK",
+      "effective_session": "2014-05-30",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2020-2023|<=2|<1000000",
+      "symbol": "MRBK",
+      "effective_session": "2023-03-21",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2020-2023|<=2|>=1000000",
+      "symbol": "IP",
+      "effective_session": "2021-10-01",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2020-2023|>2|<1000000",
+      "symbol": "OLOX",
+      "effective_session": "2023-09-28",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2020-2023|>2|>=1000000",
+      "symbol": "NTES",
+      "effective_session": "2020-10-02",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2020-2023|>2|unavailable",
+      "symbol": "EVO",
+      "effective_session": "2021-10-20",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2024-2026|<=2|<1000000",
+      "symbol": "CZFS",
+      "effective_session": "2024-06-14",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2024-2026|<=2|>=1000000",
+      "symbol": "ODFL",
+      "effective_session": "2024-03-28",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2024-2026|<=2|unavailable",
+      "symbol": "DIT",
+      "effective_session": "2026-03-23",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2024-2026|>2|<1000000",
+      "symbol": "BRAI",
+      "effective_session": "2026-04-29",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|2024-2026|>2|>=1000000",
+      "symbol": "WMT",
+      "effective_session": "2024-02-26",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|<=2009|<=2|<1000000",
+      "symbol": "IBCP",
+      "effective_session": "2003-10-02",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|<=2009|<=2|>=1000000",
+      "symbol": "FLEX",
+      "effective_session": "2000-10-17",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|<=2009|<=2|unavailable",
+      "symbol": "COST",
+      "effective_session": "2000-01-14",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|<=2009|>2|<1000000",
+      "symbol": "BCDA",
+      "effective_session": "2004-01-06",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|<=2009|>2|>=1000000",
+      "symbol": "TKC",
+      "effective_session": "2004-08-11",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|forward|<=2009|>2|unavailable",
+      "symbol": "CRDF",
+      "effective_session": "2004-07-27",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 1
+    },
+    {
+      "stratum": "USD|reverse|2010-2019|<=2|<1000000",
+      "symbol": "TOPS",
+      "effective_session": "2017-10-06",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2010-2019|<=2|>=1000000",
+      "symbol": "AOD",
+      "effective_session": "2014-01-21",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2010-2019|<=2|unavailable",
+      "symbol": "SBET",
+      "effective_session": "2010-03-02",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2010-2019|>2|<1000000",
+      "symbol": "AMTX",
+      "effective_session": "2014-05-15",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2010-2019|>2|>=1000000",
+      "symbol": "THC",
+      "effective_session": "2012-10-11",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2010-2019|>2|unavailable",
+      "symbol": "BGMS",
+      "effective_session": "2012-08-27",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2020-2023|<=2|<1000000",
+      "symbol": "CRVO",
+      "effective_session": "2023-08-17",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2020-2023|<=2|>=1000000",
+      "symbol": "ENOV",
+      "effective_session": "2022-04-05",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2020-2023|>2|<1000000",
+      "symbol": "CYPH",
+      "effective_session": "2023-06-21",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2020-2023|>2|>=1000000",
+      "symbol": "NUWE",
+      "effective_session": "2022-12-12",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2020-2023|>2|unavailable",
+      "symbol": "QXL",
+      "effective_session": "2022-09-06",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2024-2026|<=2|<1000000",
+      "symbol": "ALM",
+      "effective_session": "2025-07-07",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2024-2026|<=2|>=1000000",
+      "symbol": "HON",
+      "effective_session": "2026-06-29",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2024-2026|<=2|unavailable",
+      "symbol": "WHLR",
+      "effective_session": "2024-11-19",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2024-2026|>2|<1000000",
+      "symbol": "STKH",
+      "effective_session": "2025-04-28",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2024-2026|>2|>=1000000",
+      "symbol": "WOK",
+      "effective_session": "2025-12-29",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|2024-2026|>2|unavailable",
+      "symbol": "QXL",
+      "effective_session": "2025-03-14",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|<=2009|<=2|<1000000",
+      "symbol": "ADAM",
+      "effective_session": "2008-05-29",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|<=2009|<=2|>=1000000",
+      "symbol": "UMC",
+      "effective_session": "2007-10-09",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|<=2009|>2|<1000000",
+      "symbol": "RDCM",
+      "effective_session": "2008-06-16",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|<=2009|>2|>=1000000",
+      "symbol": "LH",
+      "effective_session": "2000-05-04",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    },
+    {
+      "stratum": "USD|reverse|<=2009|>2|unavailable",
+      "symbol": "MRKR",
+      "effective_session": "2009-07-27",
+      "hash_rank_minimum": true,
+      "normalizer_helper_factors_match": true,
+      "tested_boundaries": 2
+    }
+  ],
+  "price_volume_product_checks": 14229,
+  "empty_predeclared_cells": [
+    "CAD|reverse|<=2009|<=2|>=1000000",
+    "USD|forward|2020-2023|<=2|unavailable",
+    "USD|forward|2024-2026|>2|unavailable",
+    "USD|reverse|2020-2023|<=2|unavailable",
+    "USD|reverse|<=2009|<=2|unavailable"
+  ],
+  "network_requests": 0,
+  "trading_outputs_read": false,
+  "corrections_applied": false
+}

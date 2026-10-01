@@ -1,0 +1,172 @@
+{
+  "status": "raw_identity_checks_passed_with_semantic_gaps",
+  "http_requests": 3,
+  "historical_quote_requests": 0,
+  "raw_bytes": 4421,
+  "raw_sha256": {
+    "raw-metadata-SPY-20240315-495-9514ea138144620e058eb42737393454813a577c7573ea46e205fbf254227fa8.json": "9514ea138144620e058eb42737393454813a577c7573ea46e205fbf254227fa8",
+    "raw-metadata-SPY-20240315-500-71f8f73d13190ef6046d24912dd55761d4f3deb0351765feeb835065cb6ab2b1.json": "71f8f73d13190ef6046d24912dd55761d4f3deb0351765feeb835065cb6ab2b1",
+    "raw-metadata-SPY-20240315-505-f8be9d359b0c9ae4a054ef718c531b7bf8befe3f52d1fd0cce1220c7fe7d65fd.json": "f8be9d359b0c9ae4a054ef718c531b7bf8befe3f52d1fd0cce1220c7fe7d65fd"
+  },
+  "request_start_spacing_seconds": [
+    3.011065,
+    3.004954
+  ],
+  "source_review_precedes_first_request": true,
+  "contracts": [
+    {
+      "symbol": "SPY240315C00495000",
+      "source_sha256": "9514ea138144620e058eb42737393454813a577c7573ea46e205fbf254227fa8",
+      "id": "422902bc-2e8f-40f0-8414-acb92bcc2ebc",
+      "size": "100",
+      "multiplier": "0",
+      "deliverables": [
+        {
+          "type": "equity",
+          "symbol": "SPY",
+          "asset_id": "b28f4066-5c6d-479b-a2af-85dc1a8f16fb",
+          "amount": "100",
+          "allocation_percentage": "100",
+          "settlement_type": "T+1",
+          "settlement_method": "CCC",
+          "delayed_settlement": false
+        }
+      ],
+      "open_interest_date": "2024-03-15",
+      "close_price_date": "2024-03-15",
+      "identity_qualified": true,
+      "pricing_multiplier_semantics_qualified": false,
+      "historical_term_vintage_qualified": false
+    },
+    {
+      "symbol": "SPY240315P00495000",
+      "source_sha256": "9514ea138144620e058eb42737393454813a577c7573ea46e205fbf254227fa8",
+      "id": "3075ade0-fbb6-449f-bc7e-a7d3f600c201",
+      "size": "100",
+      "multiplier": "0",
+      "deliverables": [
+        {
+          "type": "equity",
+          "symbol": "SPY",
+          "asset_id": "b28f4066-5c6d-479b-a2af-85dc1a8f16fb",
+          "amount": "100",
+          "allocation_percentage": "100",
+          "settlement_type": "T+1",
+          "settlement_method": "CCC",
+          "delayed_settlement": false
+        }
+      ],
+      "open_interest_date": "2024-03-15",
+      "close_price_date": "2024-03-15",
+      "identity_qualified": true,
+      "pricing_multiplier_semantics_qualified": false,
+      "historical_term_vintage_qualified": false
+    },
+    {
+      "symbol": "SPY240315C00500000",
+      "source_sha256": "71f8f73d13190ef6046d24912dd55761d4f3deb0351765feeb835065cb6ab2b1",
+      "id": "393f6eda-4697-4cd6-af90-717a509af9ec",
+      "size": "100",
+      "multiplier": "0",
+      "deliverables": [
+        {
+          "type": "equity",
+          "symbol": "SPY",
+          "asset_id": "b28f4066-5c6d-479b-a2af-85dc1a8f16fb",
+          "amount": "100",
+          "allocation_percentage": "100",
+          "settlement_type": "T+1",
+          "settlement_method": "CCC",
+          "delayed_settlement": false
+        }
+      ],
+      "open_interest_date": "2024-03-15",
+      "close_price_date": "2024-03-15",
+      "identity_qualified": true,
+      "pricing_multiplier_semantics_qualified": false,
+      "historical_term_vintage_qualified": false
+    },
+    {
+      "symbol": "SPY240315P00500000",
+      "source_sha256": "71f8f73d13190ef6046d24912dd55761d4f3deb0351765feeb835065cb6ab2b1",
+      "id": "e4823bf4-a2fc-46e4-bbbb-9856fcd6c578",
+      "size": "100",
+      "multiplier": "0",
+      "deliverables": [
+        {
+          "type": "equity",
+          "symbol": "SPY",
+          "asset_id": "b28f4066-5c6d-479b-a2af-85dc1a8f16fb",
+          "amount": "100",
+          "allocation_percentage": "100",
+          "settlement_type": "T+1",
+          "settlement_method": "CCC",
+          "delayed_settlement": false
+        }
+      ],
+      "open_interest_date": "2024-03-15",
+      "close_price_date": "2024-03-15",
+      "identity_qualified": true,
+      "pricing_multiplier_semantics_qualified": false,
+      "historical_term_vintage_qualified": false
+    },
+    {
+      "symbol": "SPY240315C00505000",
+      "source_sha256": "f8be9d359b0c9ae4a054ef718c531b7bf8befe3f52d1fd0cce1220c7fe7d65fd",
+      "id": "40655d9c-fde2-489f-a499-7d8b632c2502",
+      "size": "100",
+      "multiplier": "0",
+      "deliverables": [
+        {
+          "type": "equity",
+          "symbol": "SPY",
+          "asset_id": "b28f4066-5c6d-479b-a2af-85dc1a8f16fb",
+          "amount": "100",
+          "allocation_percentage": "100",
+          "settlement_type": "T+1",
+          "settlement_method": "CCC",
+          "delayed_settlement": false
+        }
+      ],
+      "open_interest_date": "2024-03-15",
+      "close_price_date": "2024-03-15",
+      "identity_qualified": true,
+      "pricing_multiplier_semantics_qualified": false,
+      "historical_term_vintage_qualified": false
+    },
+    {
+      "symbol": "SPY240315P00505000",
+      "source_sha256": "f8be9d359b0c9ae4a054ef718c531b7bf8befe3f52d1fd0cce1220c7fe7d65fd",
+      "id": "95194671-b017-4cbc-a0b8-f38828b21f52",
+      "size": "100",
+      "multiplier": "0",
+      "deliverables": [
+        {
+          "type": "equity",
+          "symbol": "SPY",
+          "asset_id": "b28f4066-5c6d-479b-a2af-85dc1a8f16fb",
+          "amount": "100",
+          "allocation_percentage": "100",
+          "settlement_type": "T+1",
+          "settlement_method": "CCC",
+          "delayed_settlement": false
+        }
+      ],
+      "open_interest_date": "2024-03-15",
+      "close_price_date": "2024-03-15",
+      "identity_qualified": true,
+      "pricing_multiplier_semantics_qualified": false,
+      "historical_term_vintage_qualified": false
+    }
+  ],
+  "missing_or_ambiguous_contracts": [],
+  "summary_sha256": "da88ff92a77f955f8283422ae2d594c25be898844c8accb75c5d8a213754dc6a",
+  "checker_sha256": "5fc11e7e2215253a0ecd9d85e18b38fb8888659f1cae802039e3b5cc9d1975e9",
+  "limitations": [
+    "All six provider records literally report multiplier=0 although size=100 and the deliverable is 100 SPY shares. This verifies source fields, not pricing multiplier semantics; no replacement or cash conversion is authorized.",
+    "All six deliverables report T+1 at retrospective retrieval; this does not establish settlement rules or terms known in February/March 2024.",
+    "Open-interest and close-price dates are March 15, 2024, later than the February fixture; these are not historical features for that fixture.",
+    "No historical OPRA quotes, historical as-of chain membership, complete contract-action history, fills, exercise cashflows or performance are qualified."
+  ],
+  "new_network_requests_by_checker": 0
+}

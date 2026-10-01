@@ -1,0 +1,20 @@
+{
+  "at": "2026-09-29T21:42:10.791806+00:00",
+  "pid": 12752,
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-u",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\qualification\\run_qualification.py",
+    "--definition",
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\earnings-quality20260928\\qualification\\terminal-definition-20260929.json"
+  ],
+  "definition_sha256": "0d949837d8e12fe69e2255383cc7aa8a0a06b501d0c6e54c57d7067fabf06e1c",
+  "root_reviewed": true,
+  "independent_terminal_gate_review_passed": true,
+  "original_records": 4057,
+  "network_requests_authorized": false,
+  "prices_or_returns_authorized": false
+}

@@ -1,0 +1,169 @@
+{
+  "fixture": true,
+  "errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8765/api/research-lab/start"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/runs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8765/api/research-lab/status"
+    }
+  ],
+  "widths": [
+    {
+      "width": 1440,
+      "status": "running",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "status": "failed",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "status": "interrupted",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "status": "completed",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status": "running",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status": "failed",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status": "interrupted",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status": "completed",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status": "running",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status": "failed",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status": "interrupted",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status": "completed",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "status": "running",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "status": "failed",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "status": "interrupted",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "status": "completed",
+      "overflow": false
+    }
+  ],
+  "active_polling_verified": true
+}

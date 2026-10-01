@@ -1,0 +1,16 @@
+{
+  "symbol": "ODFL",
+  "effective_sessions": "2024-03-28",
+  "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017024040017/odfl-20240402.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:01.641557+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/878927/000095017024040017/odfl-20240402.htm",
+  "redirects": [],
+  "sha256": "b641eb84b9e0dce67546df86cd8f835c9c1ad4cd76c4ff4699298d30f266686c",
+  "raw_file": "notice-ODFL-2024-03-28.b641eb84b9e0dce67546df86cd8f835c9c1ad4cd76c4ff4699298d30f266686c.raw.html",
+  "bytes": 2272522,
+  "captured_at": "2026-09-28T19:14:02.607134+00:00",
+  "text_file": "notice-ODFL-2024-03-28.text.txt"
+}

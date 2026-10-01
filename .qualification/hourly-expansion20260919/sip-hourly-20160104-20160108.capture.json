@@ -1,0 +1,29 @@
+{
+  "name": "sip-hourly-20160104-20160108",
+  "url": "https://data.alpaca.markets/v2/stocks/bars",
+  "params": {
+    "symbols": "AAPL,MSFT",
+    "adjustment": "raw",
+    "sort": "asc",
+    "limit": 10000,
+    "feed": "sip",
+    "timeframe": "1Hour",
+    "start": "2016-01-04T00:00:00Z",
+    "end": "2016-01-08T23:59:59Z",
+    "asof": "2016-01-08"
+  },
+  "requested_at": "2026-09-19T19:09:30.417842+00:00",
+  "retrieved_at": "2026-09-19T19:09:30.557438+00:00",
+  "status_code": 200,
+  "raw_file": "sip-hourly-20160104-20160108.5105426c917fccd4b8e4137ec5c7c79f456720bfdc4e2fe693ad989df401b266.json",
+  "sha256": "5105426c917fccd4b8e4137ec5c7c79f456720bfdc4e2fe693ad989df401b266",
+  "bytes": 16004,
+  "headers": {
+    "date": "Sat, 19 Sep 2026 19:09:30 GMT",
+    "content-type": "application/json",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "199",
+    "x-ratelimit-reset": "1789844970",
+    "x-request-id": "2cc38eaa3b7cdefd22d1a670336c7cd2"
+  }
+}

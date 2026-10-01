@@ -1,0 +1,67 @@
+[
+  {
+    "file": "definition.json",
+    "sha256": "1edf1d072ad11a9e2e57100c0a65771135a96fd775a13f1104922133905b257f",
+    "bytes": 2562
+  },
+  {
+    "file": "events.csv",
+    "sha256": "14964795336c79b608d95f11b31c2faaf7f8e1b0baf42073af2e2e3f092d4668",
+    "bytes": 7777802
+  },
+  {
+    "file": "events.jsonl",
+    "sha256": "c8d471e4eb17fe8b44c8a77da77f7f82bdf63397787db9d7db27a5f259ef566d",
+    "bytes": 20480286
+  },
+  {
+    "file": "failures.json",
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "bytes": 2
+  },
+  {
+    "file": "inventory_actions.py",
+    "sha256": "77eb3f2c68e3f11b8558cfd5d3522ee005603dbe1a5f9088312d5464c37507ae",
+    "bytes": 14502
+  },
+  {
+    "file": "original-capture-failures.json",
+    "sha256": "a611069a79e763ec19fcbefc90f58adfb8397a3c516055a349ef61b1bf4c58b6",
+    "bytes": 13258
+  },
+  {
+    "file": "sample-strata.csv",
+    "sha256": "ef63fc0f37c5095d5e6fffac356d840ffcd3b893ff28081a9b61a2c6b0f124dc",
+    "bytes": 11046
+  },
+  {
+    "file": "source-coverage.jsonl",
+    "sha256": "3bbff6658385b18dd0000b3f2cba63b614a8f117996d39e8562e3d5feea6148c",
+    "bytes": 3768087
+  },
+  {
+    "file": "summary.json",
+    "sha256": "b874ee05329748fd4ab89a49d725092f0d7cbcaf9e91ecc9cdddde176d8813b9",
+    "bytes": 1255
+  },
+  {
+    "file": "triage-flags.csv",
+    "sha256": "4ef01c8bc96bb2abfc2106be4abbf2a5736f150d544ef0d0a2d51c4cae9cf602",
+    "bytes": 686387
+  },
+  {
+    "file": "validation-sample.csv",
+    "sha256": "62547a1e32b17dfced5585387a9acac5f76f5acc1b3f4d18a97e92db02e31214",
+    "bytes": 109662
+  },
+  {
+    "file": "verification.json",
+    "sha256": "f6a3f5366b0ed78c6ca618cc8b12927b284ab47dad12ec2c82048a1e09ceec0a",
+    "bytes": 23417
+  },
+  {
+    "file": "verify_inventory.py",
+    "sha256": "5ae295fb2ab0187a10d590c518b9df90cacd1aaa06513ae7e2a003c55ad74dfb",
+    "bytes": 4085
+  }
+]

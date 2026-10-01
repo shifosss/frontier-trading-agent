@@ -1,0 +1,239 @@
+{
+  "run_id": "577a24e71a844022b3ac86ca66e32c34",
+  "raw_path": "data\\historical\\capture-workspace\\data\\scanner\\raw\\WJX.TO.035955aeb5010fd87d8d6a0e63f60fa79eb64457d69fa8e924c3afa17535af81.json",
+  "record": {
+    "symbol": "WJX.TO",
+    "path": "data/scanner/raw/WJX.TO.035955aeb5010fd87d8d6a0e63f60fa79eb64457d69fa8e924c3afa17535af81.json",
+    "sha256": "035955aeb5010fd87d8d6a0e63f60fa79eb64457d69fa8e924c3afa17535af81",
+    "captured_at": "2026-09-18T20:30:45.881296+00:00",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/WJX.TO?period1=946684800&interval=1d&events=div%2Csplits&period2=1789763445",
+    "rows": 6706,
+    "first_session": "2000-01-04",
+    "last_session": "2026-09-18",
+    "requested_start": "2000-01-01",
+    "requested_as_of": "2026-09-18T20:24:16.596614+00:00",
+    "split_events_requested_through": "2026-09-18T20:30:45.418774+00:00",
+    "split_reconstruction": {
+      "method": "nominal OHLC = provider OHLC * later reported split ratios; volume inverse",
+      "reported_effective_events": 0,
+      "last_reported_split_session": null,
+      "minimum_factor": 1.0,
+      "maximum_factor": 1.0,
+      "event_completeness": "Provider-reported events; independently complete history unverified"
+    },
+    "spec": {
+      "source_id": "tsx",
+      "source_symbol": "WJX",
+      "symbol": "WJX.TO",
+      "name": "Wajax Corporation",
+      "currency": "CAD",
+      "calendar": "XTSE",
+      "exchange": "TSX",
+      "sector": "Industrial Products & Services",
+      "listing_type": "",
+      "product_type": "",
+      "is_etf": false,
+      "is_test": false,
+      "symbol_identity": "exchange_security_symbol",
+      "source_vintage": "August 2026",
+      "market_cap_cad": 653625290.5,
+      "ytd_value_cad": 350707735.0,
+      "listing_date": "19660815",
+      "interlisted": [],
+      "security_name": "Wajax Corporation",
+      "issuer_root": "WJX",
+      "symbol_mapping_source": "TMX current company directory",
+      "asset_type": "stock",
+      "group": "Industrial Products & Services",
+      "security_type": "common_ordinary_or_equity_depositary_shares"
+    }
+  },
+  "neighboring_raw_rows": [
+    {
+      "date": "2005-06-06",
+      "timestamp": 1118064600,
+      "open": 19.790000915527344,
+      "low": 19.719999313354492,
+      "close": 20.0,
+      "high": 20.0,
+      "volume": 61500,
+      "adjusted_close": 3.8971965312957764
+    },
+    {
+      "date": "2005-06-07",
+      "timestamp": 1118151000,
+      "open": 20.729999542236328,
+      "low": 19.799999237060547,
+      "close": 20.010000228881836,
+      "high": 20.729999542236328,
+      "volume": 56300,
+      "adjusted_close": 3.899144172668457
+    },
+    {
+      "date": "2005-06-08",
+      "timestamp": 1118237400,
+      "open": 20.010000228881836,
+      "low": 19.81999969482422,
+      "close": 19.81999969482422,
+      "high": 20.100000381469727,
+      "volume": 86000,
+      "adjusted_close": 3.8621222972869873
+    },
+    {
+      "date": "2005-06-09",
+      "timestamp": 1118323800,
+      "open": 19.770000457763672,
+      "low": 19.75,
+      "close": 19.799999237060547,
+      "high": 20.0,
+      "volume": 62400,
+      "adjusted_close": 3.8582234382629395
+    },
+    {
+      "date": "2005-06-10",
+      "timestamp": 1118410200,
+      "open": 19.739999771118164,
+      "low": 19.25,
+      "close": 19.5,
+      "high": 19.75,
+      "volume": 351100,
+      "adjusted_close": 3.799766778945923
+    },
+    {
+      "date": "2005-06-13",
+      "timestamp": 1118669400,
+      "open": 19.5,
+      "low": 19.40999984741211,
+      "close": 19.729999542236328,
+      "high": 19.940000534057617,
+      "volume": 97300,
+      "adjusted_close": 3.8445792198181152
+    },
+    {
+      "date": "2005-06-14",
+      "timestamp": 1118755800,
+      "open": 19.75,
+      "low": 19.450000762939453,
+      "close": 19.450000762939453,
+      "high": 19.780000686645508,
+      "volume": 73600,
+      "adjusted_close": 3.7900230884552
+    },
+    {
+      "date": "2005-06-15",
+      "timestamp": 1118842200,
+      "open": null,
+      "low": null,
+      "close": null,
+      "high": null,
+      "volume": null,
+      "adjusted_close": null
+    },
+    {
+      "date": "2005-06-16",
+      "timestamp": 1118928600,
+      "open": null,
+      "low": null,
+      "close": null,
+      "high": null,
+      "volume": null,
+      "adjusted_close": null
+    },
+    {
+      "date": "2005-06-17",
+      "timestamp": 1119015000,
+      "open": null,
+      "low": null,
+      "close": null,
+      "high": null,
+      "volume": null,
+      "adjusted_close": null
+    },
+    {
+      "date": "2005-06-20",
+      "timestamp": 1119274200,
+      "open": 19.200000762939453,
+      "low": 19.100000381469727,
+      "close": 19.190000534057617,
+      "high": 19.239999771118164,
+      "volume": 139700,
+      "adjusted_close": 3.739358425140381
+    },
+    {
+      "date": "2005-06-21",
+      "timestamp": 1119360600,
+      "open": 19.209999084472656,
+      "low": 19.100000381469727,
+      "close": 19.18000030517578,
+      "high": 19.209999084472656,
+      "volume": 51500,
+      "adjusted_close": 3.737410068511963
+    },
+    {
+      "date": "2005-06-22",
+      "timestamp": 1119447000,
+      "open": 19.18000030517578,
+      "low": 19.139999389648438,
+      "close": 19.350000381469727,
+      "high": 19.399999618530273,
+      "volume": 102700,
+      "adjusted_close": 3.770536184310913
+    },
+    {
+      "date": "2005-06-23",
+      "timestamp": 1119533400,
+      "open": 19.479999542236328,
+      "low": 19.350000381469727,
+      "close": 19.540000915527344,
+      "high": 19.549999237060547,
+      "volume": 67500,
+      "adjusted_close": 3.8075599670410156
+    },
+    {
+      "date": "2005-06-24",
+      "timestamp": 1119619800,
+      "open": 19.540000915527344,
+      "low": 19.5,
+      "close": 19.809999465942383,
+      "high": 19.899999618530273,
+      "volume": 67800,
+      "adjusted_close": 3.860170841217041
+    }
+  ],
+  "events_in_2005": {
+    "dividends": [
+      {
+        "amount": 0.07,
+        "date": 1110551400
+      },
+      {
+        "amount": 0.07,
+        "date": 1115904600
+      },
+      {
+        "amount": 0.275,
+        "date": 1122471000
+      },
+      {
+        "amount": 0.183,
+        "date": 1125322200
+      },
+      {
+        "amount": 0.183,
+        "date": 1127914200
+      },
+      {
+        "amount": 0.183,
+        "date": 1130419800
+      },
+      {
+        "amount": 0.21,
+        "date": 1133188200
+      },
+      {
+        "amount": 0.21,
+        "date": 1135780200
+      }
+    ]
+  }
+}

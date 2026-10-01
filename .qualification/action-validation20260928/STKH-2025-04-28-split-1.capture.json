@@ -1,0 +1,28 @@
+{
+  "symbol": "STKH",
+  "effective_session": "2025-04-28",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/STKH/bars?timeframe=1Day&start=2025-04-18T04%3A00%3A00%2B00%3A00&end=2025-05-09T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=split&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2025-04-18T04:00:00+00:00",
+    "end": "2025-05-09T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "split",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:31.391782+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "STKH-2025-04-28-split-1.8b8cf352b404432806712357680e909c7ab09e2b7e91b533983663b8a3104793.raw.json",
+  "sha256": "8b8cf352b404432806712357680e909c7ab09e2b7e91b533983663b8a3104793",
+  "bytes": 1371,
+  "captured_at": "2026-09-28T19:04:31.419567+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:31 GMT",
+  "bar_count": 14,
+  "response_symbol": "STKH",
+  "pagination_complete": true
+}

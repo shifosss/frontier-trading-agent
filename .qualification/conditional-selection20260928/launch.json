@@ -1,0 +1,10 @@
+{
+  "pid": 31112,
+  "started_at": "2026-09-28T20:27:47.005918+00:00",
+  "script": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.qualification\\conditional-selection20260928\\run_and_analyze.py",
+  "pipeline": [
+    "run_study.py",
+    "economic_analysis.py"
+  ],
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc"
+}

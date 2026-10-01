@@ -1,0 +1,48 @@
+{
+  "run_id": "577a24e71a844022b3ac86ca66e32c34",
+  "identity_matches": true,
+  "checked_rows": {
+    "USD_portfolios": 360,
+    "USD_walk_forward": 12,
+    "USD_benchmarks": 24,
+    "CAD_portfolios": 360,
+    "CAD_walk_forward": 12,
+    "CAD_benchmarks": 24
+  },
+  "complete_metrics_recomputed": 683,
+  "issues": [],
+  "raw_source_batch_samples": [
+    {
+      "currency": "USD",
+      "entry_session": "2001-01-29",
+      "symbols": [
+        "DVA",
+        "EWBC",
+        "EHC",
+        "PLD",
+        "KIM"
+      ],
+      "entry_notional": 174.4499992553711,
+      "exit_notional": 171.37945420612272,
+      "fee": 0.6916589069229876,
+      "ending_cash": 496.23779604382867,
+      "matches": true
+    },
+    {
+      "currency": "CAD",
+      "entry_session": "2001-01-29",
+      "symbols": [
+        "CAE.TO",
+        "AGF-B.TO",
+        "REI-UN.TO",
+        "ARX.TO",
+        "NA.TO"
+      ],
+      "entry_notional": 315.2899971008301,
+      "exit_notional": 322.18676763039826,
+      "fee": 1.2749535294624565,
+      "ending_cash": 505.6218170001057,
+      "matches": true
+    }
+  ]
+}

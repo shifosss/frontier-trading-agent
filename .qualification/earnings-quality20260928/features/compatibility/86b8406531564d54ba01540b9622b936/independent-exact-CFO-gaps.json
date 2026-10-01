@@ -1,0 +1,519 @@
+{
+  "at": "2026-09-28T23:51:26.580508+00:00",
+  "status": "passed",
+  "cases": [
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-14-157311",
+      "source_sha256": "b01cf9c18db73df2f279f857ac082838bccbc7c1b03bdb6824e3d520cc381266",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-14-277160",
+      "source_sha256": "75441fcefe3855282e85985b377e7c79f54213901e016e31fce79e7df67efd9b",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-15-023697",
+      "source_sha256": "6b758262e972290516213859bf2a8a7390d411fad0d216c5bbfcc4d6f3093908",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-15-153166",
+      "source_sha256": "beac779f34951edebef175289c67073664292287a1821c6c8d38376e489ffb5d",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-15-259935",
+      "source_sha256": "5bd190de18335966307add202ee29af00807d5e3de74756678da35dcef4e8c7e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-16-439878",
+      "source_sha256": "aca977be49bb294c5636dd44d0ee493616e7f5cb6ab8ab8c298e4981aa502dcc",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001193125-16-559625",
+      "source_sha256": "3f6683cc073fab86654b4a686b32f7f710ae797dc8a59ae5d09952bbaa69f0ee",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001628280-16-017809",
+      "source_sha256": "0fdd565f7b3c825fda827aa80b79425d3a7d5463e589b2083c07713bb7cc9425",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "AAPL",
+      "accession": "0001628280-17-000717",
+      "source_sha256": "f50b83e3244750ee1d13825060bb612843a7ef603fcf408c258987e5f2b362a6",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-13-409855",
+      "source_sha256": "dff002ba5ddc23b6880c54341220de70e31009fbc858ae2f9a75a6346d6a6241",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-14-018634",
+      "source_sha256": "fd2568dd6261a123fa391f8e3b4d08e78da3ee845c1bd6948d8f193c3d182e74",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-14-157088",
+      "source_sha256": "38b04e3c4b9cdd8cf422a8a3bb29971af50665238f1a1fce565e1a51df7742c4",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-14-380252",
+      "source_sha256": "21c4490d923731b08c115bf231070110a1b4bb3b72bcd365b8ad6dbe3f866c03",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-15-020351",
+      "source_sha256": "1a426e874e02cc00dbbd5721c3a1c8e3fafbf17b74ac19d473f4ac9231ec2fab",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-15-144151",
+      "source_sha256": "065a0a440830bcadef9be0fa434c55da1834cc213d7ee86b4a4063ba80457816",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-15-350718",
+      "source_sha256": "8dda87f307de1b7ee8f4600a906b2b5c00ad8275ff067295913407017c73c7d6",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-16-441821",
+      "source_sha256": "3f75cd7bd34c861691b096c84f8f7b05b812a950e4cb9b96ff46a65ba79b85f3",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-16-550254",
+      "source_sha256": "2115aa1f8ee9e5f5c4c422c9b4e32f9b8c3f6af9e326e087918490c668530dad",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 20
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001193125-16-742796",
+      "source_sha256": "20e45d2398ccb851d63ae28553a1c14b84a341b2a98281fa273341337c1868e7",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001564590-17-000654",
+      "source_sha256": "cf41f2746400c92ccf8bdda3f42ba34bb9e86c1b87f79bc1e8fdc0f4a7212401",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001564590-17-007547",
+      "source_sha256": "b8060ecad90e4425b4512db6f0e2b5aeab86a82001833066162ee28e1548f398",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 8
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0001564590-17-020171",
+      "source_sha256": "a775e2c18ae6fb36f3ef111981e643d8b48ddd65cdb05dfe8e4d2cfa42266664",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-12-000023",
+      "source_sha256": "30fcbdbf2278044cb039913ae4fcc5451487530e42bf7b2cee69152791b2a3a5",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-13-000027",
+      "source_sha256": "aa5fc59411685b9e9c1ff9eeb197b1349d95add40711d220a1b832379ef5eca0",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-13-000042",
+      "source_sha256": "46ff22ffc332fa69ecc46ea46de733619458dd8420a9d75fe040288fd67d8ada",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-13-000055",
+      "source_sha256": "9989c6d08b89870a7438bbb0d0aab2316434562ae2f421b9c752b5950bc1bd82",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-14-000023",
+      "source_sha256": "d058a3ff1cca99b981e0ba6d2854cf0ec63381b2d8a07cf6269cfdca8b45e6c6",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-14-000043",
+      "source_sha256": "488fdb0435084284a755fb829c6acff2c6b11ebae17d0892b09b4a35e60ab5b9",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-14-000057",
+      "source_sha256": "8c9226c41cddb85368b1398b8511e2ae3f195cdd1595f835a15d29dfef94c7ca",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-15-000029",
+      "source_sha256": "ac0948930947d32269462eedfa30a2c9f3ca216e10039eadae363bd16696dd17",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 12
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-15-000046",
+      "source_sha256": "80bb0f9b6a69bc745e20656f42a692af38f4e4fda55e4c2c0f1edb812dacd0cd",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 12
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-15-000064",
+      "source_sha256": "b1b91c82f6cee902de79b9e621ddea4c327ad0170aa286c4919f615c76f3b79f",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 12
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-16-000107",
+      "source_sha256": "425d32867ff5372bc6cd198aae526459a5538e016a16beaee42c8fc5df64ab2b",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 12
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-16-000133",
+      "source_sha256": "034b41037fbf1ef22b9733650aa5697d699416742dbf5172b047057e222d3208",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 48
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-16-000158",
+      "source_sha256": "93fee1ebc2294dd3a9197af9b358cac14677f1dc5fb10d358c75f6e6f3d4637c",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 48
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-16-000233",
+      "source_sha256": "6ddf6fb5356c3ee24bded177b42da5e789b96f7c4e09600a0bc2e35ab5623081",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-17-000055",
+      "source_sha256": "54cbf0141a9b001a6b93f0e6e50864c07912ffef50a2d0823647a9658b555829",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-17-000080",
+      "source_sha256": "f9f4a0e519b5d1c3ec8fa011f9f1845162532669e6a62b80fd04f6a7824bb47e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-17-000101",
+      "source_sha256": "56f651bf426d2e1ecc5bd2ed2ab05dfffec76c9fc4f4cb5ac6254d577ff96fb5",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-18-000024",
+      "source_sha256": "280f3a86fd2d719b1082017b5aa2855f7a14642c59f1744c9d6173f2c8d7769e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 16
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-22-000093",
+      "source_sha256": "5ee13d430bb044ca64f1b4d485b588564665d78bd80e2db85e84c34c094cbda4",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 2
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-22-000102",
+      "source_sha256": "09cd9c98a48e80857e8c645af22fca29361e3b2b19d19a78ba574717726ab56e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 2
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-23-000022",
+      "source_sha256": "d4eae2e21f4d27b4a0b2ee9320d99d0a89f6fa037e1005c14929378d98b7f1bd",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 2
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-23-000047",
+      "source_sha256": "d2b945534b4c15a8dbf6b781740b03e19baa73a420d87dc3fc0b9eee4dc6cf8c",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 2
+    },
+    {
+      "symbol": "T",
+      "accession": "0000732717-23-000057",
+      "source_sha256": "fe497cf065466503a67bc2c357acc777be1dcfe3ba6d698c4a9abc379469a61c",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 2
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-12-062265",
+      "source_sha256": "1242f125273abf518cf3667a69701345b517b741f72f29d7759afec5c3df83dd",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-13-018570",
+      "source_sha256": "0f153af3c4986ed16bded710022702a619fad9216629c6f245a7d30e846fa495",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-13-047589",
+      "source_sha256": "55f486fb3935dd2e7d04fafb3377b454847f6a1650016c22b8f169e922ad4884",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-13-068325",
+      "source_sha256": "1de54cf8e26afc5c1df61082d483655d3ac3ebf76d7cdf77be13c86b9cc50fc1",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-14-017341",
+      "source_sha256": "af1b3d0af21ae420fba884ead84b741fcf1d6cf4ed3db281a8b47540fafe0fa1",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-14-044370",
+      "source_sha256": "af3d2e4cbe6838be90ca15d63cb7bed31bfab3982d1ff1af4be18c1b274243d8",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-14-064833",
+      "source_sha256": "43333c41c596191d11b854781eff6f511fc63941977c1c9e9f538eab4e3e6d72",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-15-017330",
+      "source_sha256": "e7ade689c30efb2f835937fdf474398d876d93ad44f2e8dd265b9cf0414026bd",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-15-043601",
+      "source_sha256": "f3656ba2f0ff4d059f88347614a524cc309ee502e4b04cccdf43323bf3bbf190",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-15-063671",
+      "source_sha256": "9e39b0a0e79e2dca328469fe4c33c7edadd3b6046ea4ede9a724cf85f9fc8f2e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-16-102502",
+      "source_sha256": "96b231dcc9444249a03bbde3383b1bc7ea4221e00aedab84a882ceb6679560c0",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-16-125370",
+      "source_sha256": "32f6734c44f7094881f1c998636156db3a4820a9970ddd5e1aa70eaa8ed76e5d",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-16-142847",
+      "source_sha256": "d7092067cdd8ad5a507bbd2a8ac28f7a549dbcd77ee8c9d34a338a145302275e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-17-015707",
+      "source_sha256": "d6d094cdfdc67b3df1a99b8d79e597b69963ae97d56c7aebb865159be1a5c092",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "HRL",
+      "accession": "0001104659-17-038316",
+      "source_sha256": "f150213a085ce2100bb47d09ee833324d863349b30e05cd1f4826fb9183f9a17",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001193125-14-191806",
+      "source_sha256": "107d0556c579c95b61057e6ecfd03709ea7eaa4b0abb238c43ca23870174cef8",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001193125-14-302585",
+      "source_sha256": "674d0dc3e25facdfc8addf124691f4c04d5772990083e5e930ed009995a3d434",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001193125-14-402770",
+      "source_sha256": "40bb51892659fd49a057bf60543b369a39237ad3f8f5b8d8d66d4008211fbc71",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-15-003687",
+      "source_sha256": "8e026bda0d535714c62ebea4ae390b503314be4453e89d70112ac9b7d9aa1753",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-15-006633",
+      "source_sha256": "b837db6017becd436c93a70bc47a22b03f53a340f95e7526443b7945c93bc599",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-15-009858",
+      "source_sha256": "10667cc763de39feaae9333a24e29ed0efa1d353b961abcb5253faa9f9cef337",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-16-018258",
+      "source_sha256": "c6ccd117409d5d1e7756f26f998a3e62e6825dcc88daf4b32c3e6881386ad854",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-16-022874",
+      "source_sha256": "8c7f3fd62bc153c64fe9547ebdef09e5e9153fbe11ae6645d8cd5f5912ad0823",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-16-027602",
+      "source_sha256": "7b59f45e0cae702296bff6dba399a35e1149abbfd38c56611fb26268b74e8465",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-17-009013",
+      "source_sha256": "d57537dc3e31a55ef89835971dca78902e0036a1e32280d33838b538e6ce169e",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-17-014479",
+      "source_sha256": "401ef0719c393abeaf4fed37bb3465949414098cbd2486fc9492e677bdbe9f8b",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-17-021415",
+      "source_sha256": "e530eb8c206295e19852560318577e83cb5c0dc0ee64190cee73f2060a03cb8a",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    },
+    {
+      "symbol": "BANF",
+      "accession": "0001564590-18-011013",
+      "source_sha256": "7bfc743499d3e41ce0df160b9482353d547dc19caca7d4f6d9726bad1105dcbd",
+      "exact_CFO_token_count": 0,
+      "alternative_continuing_operations_token_count": 4
+    }
+  ],
+  "count": 73,
+  "interpretation": "All73 current-CFO gaps genuinely lack the exact source QName; each has the forbidden ContinuingOperations alternative. No missingness was repaired or source changed."
+}

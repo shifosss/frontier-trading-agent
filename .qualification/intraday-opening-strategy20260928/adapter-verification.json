@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-09-28T21:31:52.665938+00:00",
+  "scope": "Read-only adapter; no strategy outcomes or network",
+  "returncode": 0,
+  "stdout": "........                                                                 [100%]\n8 passed in 0.12s\n",
+  "stderr": "",
+  "files_sha256": {
+    "source_adapter.py": "7214790befa1c83e952f1678806541685d6f0c4c9ac24c1cfc0d62ab3151273e",
+    "test_source_adapter.py": "964c5467025fc68cce5753622f2e8c02cd2d6832760dfff4d88058f867538277"
+  },
+  "source_request_sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+  "checks": [
+    "Actual valid and sparse first-session rows preserve exact raw values",
+    "Missing request and missing continuation page remain explicit; known partial bars retained",
+    "Malformed/invalid/duplicate/out-of-session rows remain linked to raw source indices",
+    "Hash or entity-asof mismatch refuses source input",
+    "Existing early-close fixture is reused at exact offsets without synthetic rows",
+    "Generator order matches session order; audit callback receives every session",
+    "Failed request-attempt metadata references/hashes retained separately from minute gaps"
+  ]
+}

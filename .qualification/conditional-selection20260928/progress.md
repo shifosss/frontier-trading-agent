@@ -1,0 +1,11 @@
+# Research ledger — plan: docs/conditional-strategy-selection-plan.md
+
+Previous goal turn: progress — completed54account and81timing comparisons with economic evidence that changes next action. Both jobs terminal and current historical lock free.
+
+Ruling: implement the reviewed18account conditional-selection study, preserving original captures and prior code in prior-strategy-code.zip. No active paper module changes. Preserve this ledger and every attempt as requested by owner. Use separate feature, learner and cash-policy tasks with one integrated review.
+
+2026-09-28T20:10:23.820309+00:00 — Data-only preparation started durably (parent19808, worker8200); exclusive historical lock. Conditional feature implementation verified17tests. Economic policy verified15tests; integrated review underway. Declarationdraft fixes final-fit failure=abstain, Ridge exact ties, same forecasts/cost-neutral selection across both tariffs, continuous accounts across refits. No fitting before frozen declaration. Paperprocess12628/12676 remains ready.
+
+2026-09-28T20:39:57.794307+00:00 — All11modelblocks completed,3,133,575candidateforecasts. Accountcomparisons running through declared progress-writercontinuation. TwoWindowsprogresswritefailures retained; fivecompletedblocks reused. Interruptedblock3and5refits produced exactlyequal calibrationarrays; block3serializedmodelbytes differ and are preserved, block5bytes equal. No scientificcode/threshold/cost changes. Integrated533tests+3operationalcollision/propagationchecks passed. Automatic economicreadout queued; no promotion.
+
+2026-09-28T21:01:50.158665+00:00 — COMPLETE: all18accounts,0failed,0profitable; automatic economic readout and independent38,849-trade/day-ledger audit passed. Fourteen accounts exceeded30%drawdown. Dollar ranking worsened5/6paired endpoints and tied1. Return-tail optimism remains; downside estimates outperform simple priors more reliably. Scope clarified as4,434US-listed equity instruments including fund shares/ADRs/REITs; preserve original membership. Next bounded calibration comparison and distinct intraday pilot are designed but unexecuted. Read completion-checkpoint.json and docs/conditional-strategy-selection-results.md. No active paper policy changes.

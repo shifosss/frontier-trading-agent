@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-09-19T20:52:02.758388+00:00",
+  "sources": [
+    {
+      "url": "https://www.moomoo.com/ca/support/topic10_122",
+      "retrieval": "Direct web retrieval redirected to /403 Operations too frequent. Indexed primary-page result crawled last week retrieved September 19 2026.",
+      "commission_per_side_usd": "price >=1: max(.99,.0049*shares); price <1: max(.99,.0005*shares)",
+      "platform_per_side_usd": "price >=1: max(1,.005*shares); price <1: max(1,.0005*shares)",
+      "SEC_sell_only": "max(.01,.0000206*proceeds); carrying-broker actual charge prevails",
+      "caveats": "venue fees may apply; multiple days on GTC repeat minima; no promotion or user tariff verified"
+    },
+    {
+      "url": "https://www.wealthsimple.com/en-ca/legal/fees/trade",
+      "retrieval": "Direct primary legal page read September 19 2026.",
+      "commission": "listed US/Canadian securities zero",
+      "USD_account_trade_FX": "none; separate cash conversions under 10000 carry 1.5% plus variable corporate-rate spread",
+      "CAD_account_US_trade_FX": "1.5% each conversion plus variable corporate-rate spread",
+      "USD_account_fee": "CAD10/month plus tax; user eligibility for waiver not verified"
+    }
+  ]
+}

@@ -1,0 +1,437 @@
+{
+  "full_suite": {
+    "command": ".venv/Scripts/python.exe -X utf8 -m pytest -q",
+    "passed": 394,
+    "warnings": 96,
+    "duration_seconds": 119.3,
+    "notes": "Existing FastAPI/httpx, anyio and replay-engine pandas deprecations. Candidate P2 provenance additions additionally covered by 17 focused tests."
+  },
+  "lint": {
+    "command": ".venv/Scripts/ruff.exe check src tests",
+    "passed": true
+  },
+  "model_focused": {
+    "passed": 32,
+    "exact_reload": true,
+    "exact_repeat_inference": true,
+    "legacy_max_absolute_delta": 1.39e-17
+  },
+  "candidate_focused": {
+    "passed": 17
+  },
+  "policy_differential": {
+    "cases": 240,
+    "trades": 69491,
+    "comparison": "exact all arrays, trades, fees, activities, cash state and metrics",
+    "baseline_seconds": 8.490957399859326,
+    "shared_planner_seconds": 6.95762780008954,
+    "passed": true
+  },
+  "review": {
+    "core": "P1 deterministic inference fixed",
+    "integrated": "P1 and P2 fixes reviewed; no remaining material code findings"
+  },
+  "real_build": {
+    "artifact_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\artifacts\\daily-candidates\\83d99338fd394e7cad44bdad045b25ad",
+    "status": "unqualified",
+    "model_id": "8f6baa20861931ca7c52f593d7c8057c8b8e6f5ab59cc0ff07540c9f8942ab7a",
+    "signal_session": "2026-09-18",
+    "planned_fill_session": "2026-09-21",
+    "planned_exit_session": "2026-09-28",
+    "universe_count": 5675,
+    "eligible_count": 2878,
+    "prediction_reload_exact": true,
+    "remaining_cash": 2000.0,
+    "requested_usd": 5675,
+    "usable_usd": 5664,
+    "fit_rows": 47808,
+    "calibration_rows": 23616,
+    "fit_latest_label": "2025-09-16",
+    "calibration_start": "2025-09-17",
+    "calibration_latest_label": "2026-09-17",
+    "score_min": -0.1702032028871726,
+    "score_max": -0.01106253217869278,
+    "positive_scores": 0,
+    "intents": 0,
+    "warnings": [
+      {
+        "model": "multi_head_mlp",
+        "category": "ConvergenceWarning",
+        "message": "Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet."
+      }
+    ],
+    "calibration": {
+      "row_count": 23616,
+      "metric": "pooled_per_row_mse",
+      "interpretation": "Rows are not independent; this is not significance or qualification.",
+      "training_target_mean": [
+        0.00023501746584147823,
+        0.0015142138843809608,
+        0.0029696414551671022,
+        0.010007822902667107,
+        0.022570303412987876,
+        0.03162357861949542
+      ],
+      "baseline_mse": [
+        0.001814540074973197,
+        0.005095469772254473,
+        0.009421584420168463,
+        0.0005576169019021761,
+        0.0017857161167037026,
+        0.0029060127784331633
+      ],
+      "model_mse": {
+        "ridge": [
+          0.001842378133319817,
+          0.005140684050245052,
+          0.009501107951794915,
+          0.0005249166706877804,
+          0.0015671999225831239,
+          0.002479640709577447
+        ],
+        "extra_trees": [
+          0.0018137267745000712,
+          0.005092956400236827,
+          0.009388099208384243,
+          0.0004898361393815478,
+          0.001454379237387563,
+          0.0022759922422193432
+        ],
+        "hist_gradient_boosting": [
+          0.0018385825349937135,
+          0.0051890751868373846,
+          0.009470045602200324,
+          0.0004909365999230097,
+          0.001441007601059679,
+          0.0022482159680033646
+        ],
+        "multi_head_mlp": [
+          0.0019810838882006335,
+          0.006070878621829504,
+          0.010685012179950862,
+          0.0005334046401351462,
+          0.0018396768066306622,
+          0.0028589605779612763
+        ]
+      },
+      "horizons": {
+        "1": {
+          "weights": {
+            "ridge": 0.0,
+            "extra_trees": 1.0,
+            "hist_gradient_boosting": 0.0,
+            "multi_head_mlp": 0.0
+          },
+          "positive_mse_improvement": {
+            "ridge": 0.0,
+            "extra_trees": 8.133004731258799e-07,
+            "hist_gradient_boosting": 0.0,
+            "multi_head_mlp": 0.0
+          },
+          "equal_weight_fallback": false
+        },
+        "3": {
+          "weights": {
+            "ridge": 0.0,
+            "extra_trees": 1.0,
+            "hist_gradient_boosting": 0.0,
+            "multi_head_mlp": 0.0
+          },
+          "positive_mse_improvement": {
+            "ridge": 0.0,
+            "extra_trees": 2.51337201764585e-06,
+            "hist_gradient_boosting": 0.0,
+            "multi_head_mlp": 0.0
+          },
+          "equal_weight_fallback": false
+        },
+        "5": {
+          "weights": {
+            "ridge": 0.0,
+            "extra_trees": 1.0,
+            "hist_gradient_boosting": 0.0,
+            "multi_head_mlp": 0.0
+          },
+          "positive_mse_improvement": {
+            "ridge": 0.0,
+            "extra_trees": 3.3485211784220134e-05,
+            "hist_gradient_boosting": 0.0,
+            "multi_head_mlp": 0.0
+          },
+          "equal_weight_fallback": false
+        }
+      }
+    },
+    "code_identities_match": {
+      "candidate_daily.py": true,
+      "ensemble_study.py": true,
+      "model_artifact.py": true,
+      "historical_lab.py": true,
+      "daily_policy.py": true,
+      "ensemble_features.py": true,
+      "ensemble_models.py": true,
+      "historical_data.py": true,
+      "historical_study.py": true,
+      "strategy_study.py": true
+    }
+  },
+  "format": {
+    "changed_files": 12,
+    "passed": true,
+    "preexisting_unrelated_format_differences": 4
+  },
+  "frozen_paper": {
+    "unchanged_code": true,
+    "identity": "9fd509d8ce514b9fe3e3136684c7475637a12304670cc517b285e48aebbc26a2",
+    "saved_status": "ready",
+    "latest_cycle": {
+      "session": "2026-09-18",
+      "created_at": "2026-09-18T20:02:33.729985+00:00",
+      "plan": {
+        "decision_at": "2026-09-18T20:02:33.729985+00:00",
+        "decisions": [
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.21860406680507516,
+              "atr_14": 7.700714111328125,
+              "average_dollar_volume_20": 13736721343.384577,
+              "close": 336.1300048828125,
+              "history_complete": true,
+              "mean_200": 285.9436454772949,
+              "mean_50": 320.02528564453127,
+              "momentum_20": 0.07976234520881853,
+              "momentum_60": 0.147877481314163,
+              "score": 0.5206669524724885
+            },
+            "reason": "Position count or existing exposure-group limit reached",
+            "symbol": "AAPL"
+          },
+          {
+            "action": "buy",
+            "indicators": {
+              "annualized_volatility": 0.22016616263372818,
+              "atr_14": 9.864290509905134,
+              "average_dollar_volume_20": 10243725815.912197,
+              "close": 493.7799987792969,
+              "history_complete": true,
+              "mean_200": 430.0756800842285,
+              "mean_50": 464.19948120117186,
+              "momentum_20": 0.026249620789831507,
+              "momentum_60": 0.3536626115253112,
+              "score": 0.8627852431328663
+            },
+            "reason": "Weekly positive 20/60 momentum / volatility rank; capped limit entry",
+            "symbol": "MSFT"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.464520853243517,
+              "atr_14": 5.914962845578166,
+              "average_dollar_volume_20": 29197480429.72837,
+              "close": 222.27000427246094,
+              "history_complete": true,
+              "mean_200": 198.0213687133789,
+              "mean_50": 214.06697814941407,
+              "momentum_20": 0.02614113191990919,
+              "momentum_60": 0.11818451815052744,
+              "score": 0.1553489461912019
+            },
+            "reason": "Position count or existing exposure-group limit reached",
+            "symbol": "NVDA"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.2622238914909948,
+              "atr_14": 5.572854178292411,
+              "average_dollar_volume_20": 8316106743.948178,
+              "close": 253.7100067138672,
+              "history_complete": true,
+              "mean_200": 240.30074989318848,
+              "mean_50": 255.8397998046875,
+              "momentum_20": -0.024604894076039274,
+              "momentum_60": 0.08298118447463354,
+              "score": 0.11131001463419096
+            },
+            "reason": "Both 20-session and 60-session adjusted momentum must be positive",
+            "symbol": "AMZN"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.23191214764540932,
+              "atr_14": 8.162889743988684,
+              "average_dollar_volume_20": 8594517811.542301,
+              "close": 349.5400085449219,
+              "history_complete": true,
+              "mean_200": 337.087029876709,
+              "mean_50": 345.3990576171875,
+              "momentum_20": 0.02669644701137619,
+              "momentum_60": 0.012959182184441032,
+              "score": 0.08549709361591995
+            },
+            "reason": "Position count or existing exposure-group limit reached",
+            "symbol": "GOOGL"
+          },
+          {
+            "action": "buy",
+            "indicators": {
+              "annualized_volatility": 0.3037929337657606,
+              "atr_14": 21.78857421875,
+              "average_dollar_volume_20": 11496114821.73269,
+              "close": 665.75,
+              "history_complete": true,
+              "mean_200": 623.5469723510743,
+              "mean_50": 607.3789965820313,
+              "momentum_20": 0.2197020668623606,
+              "momentum_60": 0.19380640952887007,
+              "score": 0.6805761925819943
+            },
+            "reason": "Weekly positive 20/60 momentum / volatility rank; capped limit entry",
+            "symbol": "META"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.3419547298005854,
+              "atr_14": 11.030838012695312,
+              "average_dollar_volume_20": 9489819224.29665,
+              "close": 357.6099853515625,
+              "history_complete": true,
+              "mean_200": 368.38610382080077,
+              "mean_50": 379.75519897460936,
+              "momentum_20": -0.01763594607384733,
+              "momentum_60": -0.06401973853943432,
+              "score": -0.11939546012552604
+            },
+            "reason": "Both 20-session and 60-session adjusted momentum must be positive",
+            "symbol": "AVGO"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.13847116359072012,
+              "atr_14": 6.988741193498884,
+              "average_dollar_volume_20": 2253669476.3546066,
+              "close": 349.3500061035156,
+              "history_complete": true,
+              "mean_200": 318.7067192077637,
+              "mean_50": 353.1926000976562,
+              "momentum_20": -0.006257948416566905,
+              "momentum_60": 0.052402999663157424,
+              "score": 0.16662332448863384
+            },
+            "reason": "Both 20-session and 60-session adjusted momentum must be positive",
+            "symbol": "JPM"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.1875192685201074,
+              "atr_14": 12.505174909319196,
+              "average_dollar_volume_20": 1885515511.7923431,
+              "close": 895.3099975585938,
+              "history_complete": true,
+              "mean_200": 958.2284494018554,
+              "mean_50": 936.2445935058594,
+              "momentum_20": -0.04092083834925575,
+              "momentum_60": -0.06696204554997065,
+              "score": -0.28765812908356747
+            },
+            "reason": "Both 20-session and 60-session adjusted momentum must be positive",
+            "symbol": "COST"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.19265768972628572,
+              "atr_14": 25.499982561383927,
+              "average_dollar_volume_20": 2606813198.1882567,
+              "close": 1152.25,
+              "history_complete": true,
+              "mean_200": 1063.623549194336,
+              "mean_50": 1176.5024975585939,
+              "momentum_20": -0.07405177001459173,
+              "momentum_60": 0.032795568508857675,
+              "score": -0.107071255666846
+            },
+            "reason": "Both 20-session and 60-session adjusted momentum must be positive",
+            "symbol": "LLY"
+          },
+          {
+            "action": "wait",
+            "indicators": {
+              "annualized_volatility": 0.2594483258395002,
+              "atr_14": 3.8814283098493303,
+              "average_dollar_volume_20": 2195020353.079965,
+              "close": 163.17999267578125,
+              "history_complete": true,
+              "mean_200": 145.33754550933838,
+              "mean_50": 157.26592712402345,
+              "momentum_20": -0.017875421786374024,
+              "momentum_60": 0.19968302109969338,
+              "score": 0.35037342932362775
+            },
+            "reason": "Both 20-session and 60-session adjusted momentum must be positive",
+            "symbol": "XOM"
+          }
+        ],
+        "eligible_at": "2026-09-21T13:30:00+00:00",
+        "entry_data_complete": true,
+        "expires_at": "2026-09-21T20:00:00+00:00",
+        "intents": [
+          {
+            "limit_price": "498.72",
+            "qty": 16,
+            "reason": "Weekly positive 20/60 momentum / volatility rank; capped limit entry",
+            "side": "buy",
+            "symbol": "MSFT",
+            "time_in_force": "day",
+            "type": "limit"
+          },
+          {
+            "limit_price": "672.41",
+            "qty": 8,
+            "reason": "Weekly positive 20/60 momentum / volatility rank; capped limit entry",
+            "side": "buy",
+            "symbol": "META",
+            "time_in_force": "day",
+            "type": "limit"
+          }
+        ],
+        "next_position_state": {},
+        "policy": {
+          "commission_per_order": 0.0,
+          "entry_limit_buffer": 0.01,
+          "max_drawdown": 0.3,
+          "max_gross_fraction": 0.8,
+          "max_position_fraction": 0.2,
+          "max_positions": 4,
+          "maximum_holding_sessions": 20,
+          "min_dollar_volume": 5000000.0,
+          "name": "weekly-momentum-daily-exits",
+          "risk_fraction": 0.005,
+          "version": "1"
+        },
+        "policy_version": "1",
+        "regime": {
+          "mean_200": 714.2438327026367,
+          "reason": "SPY adjusted close above 200-session mean",
+          "status": "risk_on",
+          "symbol": "SPY"
+        },
+        "risk_halted": false,
+        "source_session": "2026-09-18"
+      },
+      "capture": {
+        "capture_id": "b911f0ce25f8443ea7fffc944c2e706a",
+        "captured_at": "2026-09-18T20:02:31.244671+00:00"
+      },
+      "status": "PLANNED"
+    },
+    "baseline_worker_verified": "45332 -> 17608",
+    "historical_worker_lock": false
+  }
+}

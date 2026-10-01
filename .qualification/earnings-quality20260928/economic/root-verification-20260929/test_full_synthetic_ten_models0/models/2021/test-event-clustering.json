@@ -1,0 +1,15 @@
+{
+  "causally_eligible_rows": 3,
+  "distinct_ciks": 3,
+  "counts_by_cik": {
+    "0000000001": 1,
+    "0000000002": 1,
+    "0000000003": 1
+  },
+  "counts_by_decision_date": {
+    "2021-01-04": 3
+  },
+  "overlapping_closed_label_interval_pairs": 3,
+  "same_issuer_overlapping_pairs": 0,
+  "interpretation": "Scheduled interval overlap, including shared endpoints; counts do not assert independent samples or valid future prices"
+}

@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-09-28T21:18:17.449679+00:00",
+  "request_sha256": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+  "files": {
+    "capture.py": "93ea5a4eb41c6da66ca83ff95c12c33db5024dad45382ec2108cac7d4b6d5b6d",
+    "declare.py": "15f25900e269222dad2782dfb07b7ba4f9506f82f7f44f93aa6a83aada2e9ce3",
+    "test_capture.py": "cd6b369d7844d725d2432a30175dad756973dff4e37f40b7fd4cacb98e2c0aa6",
+    "coverage-manifest.json": "16b8b3b83f696d5fefc86783205b0d278b5a47f3304c85bf94995be2c635c16c"
+  },
+  "fixture_test_sha256": "d93f40086e64634859e76a733c595a9fd8abdcc63fe321218d910adb5d51ab69",
+  "credentials": "Read exact existing Alpaca paper credential pair; never retained/printed; used solely with fixed historical DATA endpoint"
+}

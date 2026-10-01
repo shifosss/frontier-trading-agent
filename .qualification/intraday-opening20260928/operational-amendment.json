@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "declared_at": "2026-09-28T21:34:58.704912+00:00",
+  "supersedes_sha256": "c0be32b42265a3fd0a650db27cde5e24ce6eb11786a3ee146cfc84e0a6bf5308",
+  "reason": "The same Windows sharing violation occurred finalizing page metadata after250sessions; retained success metadata/raw were verified and reconciled without another GET.",
+  "change": "Runtime wrapper uses existing historical_lab._save unique temp and6bounded PermissionError retries for every JSON metadata/status/coverage write. Raw response byte writer, original capture code, request and coverage rules remain unchanged. Permanent errors still propagate.",
+  "sha256": {
+    "wrapper": "828a58bbffeb87a9a3ef63e06f969da400cfc85f3ea7211e3975ee95dfe989aa",
+    "existing_helper": "cbcfb4bd445d4582e687de6fb49fcdd144e6ea865aaa8ae45657fe3da241616a",
+    "frozen_capture": "93ea5a4eb41c6da66ca83ff95c12c33db5024dad45382ec2108cac7d4b6d5b6d",
+    "request": "092e82a1bfcb7e5fc0990e72c4bed590d295a2f2e619c4d2c0e8aaef03c43447",
+    "implementation": "056f53439f9e277fbd381e5a0e0d331d0a617a87e3d2bbc1d547a7fe7bf9ad9f",
+    "test": "3ff084172b41d5252398ca8409b312724a3971958f0435e2ce62a17092cec757",
+    "test_result": "2db17a2d107d90f85520dd6498d1426dd7be1df21a1781c6725b6e5d5f92cf12",
+    "reconciliation": "ebd5961855d51c15b9b848d14477769c89244aa1ec68b24a8c742afaeb7e63f1"
+  },
+  "helper_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\src\\frontier\\historical_lab.py",
+  "inherited_completed_sessions": 250,
+  "additional_reconciled_complete_response_sessions": 1,
+  "new_source_requests_for_fix": 0
+}

@@ -1,0 +1,16 @@
+{
+  "symbol": "STKH",
+  "effective_sessions": "2025-04-28",
+  "url": "https://www.sec.gov/Archives/edgar/data/1828098/000121390026050174/ea0287480-20f_steakholder.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:06.186683+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/1828098/000121390026050174/ea0287480-20f_steakholder.htm",
+  "redirects": [],
+  "sha256": "6def2c03d5a95df849c1ef9eb9ef570f9b80e2e21c59c06875126e1c2ab8bada",
+  "raw_file": "notice-STKH-2025-04-28.6def2c03d5a95df849c1ef9eb9ef570f9b80e2e21c59c06875126e1c2ab8bada.raw.html",
+  "bytes": 2306225,
+  "captured_at": "2026-09-28T19:14:06.714812+00:00",
+  "text_file": "notice-STKH-2025-04-28.text.txt"
+}

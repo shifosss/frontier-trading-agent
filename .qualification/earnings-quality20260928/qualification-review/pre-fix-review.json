@@ -1,0 +1,18 @@
+{
+  "at": "2026-09-29T01:04:32.540825+00:00",
+  "status": "material_finding_confirmed",
+  "finding": "Original submissions root/history response bytes in discovery.sources are not verified or bound by collector",
+  "affected_file": "qualification/run_qualification.py",
+  "verification": {
+    "passed": 38,
+    "failed": 1,
+    "failed_test": "test_discovery_source_corruption_refused",
+    "result": "DID NOT RAISE ValueError for changed discovery raw source"
+  },
+  "original_files": {
+    "run_qualification.py": "571bf002f55d5c23467013f37b3b778792578b757c0135aaad2adff022e34ea0",
+    "test_collector.py": "bffda91d50a06dd283217a4f1cb47a8e046d0d7438abdbdaadf9cf0e7661cdeb",
+    "verification.json": "57f5830c3b8f6c1ac099a2dd41ee3830780895654063f0ba7b62fe8af1ddf0e8"
+  },
+  "source_or_real_corpus_runs": 0
+}

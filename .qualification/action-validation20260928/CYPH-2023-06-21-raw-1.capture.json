@@ -1,0 +1,28 @@
+{
+  "symbol": "CYPH",
+  "effective_session": "2023-06-21",
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/CYPH/bars?timeframe=1Day&start=2023-06-11T04%3A00%3A00%2B00%3A00&end=2023-07-02T03%3A59%3A59.999999%2B00%3A00&feed=sip&adjustment=raw&asof=2026-09-18&currency=USD&limit=10000&sort=asc",
+  "params": {
+    "timeframe": "1Day",
+    "start": "2023-06-11T04:00:00+00:00",
+    "end": "2023-07-02T03:59:59.999999+00:00",
+    "feed": "sip",
+    "adjustment": "raw",
+    "asof": "2026-09-18",
+    "currency": "USD",
+    "limit": 10000,
+    "sort": "asc"
+  },
+  "started_at": "2026-09-28T19:04:30.800554+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "raw_file": "CYPH-2023-06-21-raw-1.8ac90f78af15e1625d5a86ea1feed1d8d507f0e5a3d9f915407b7a5ff73ecf53.raw.json",
+  "sha256": "8ac90f78af15e1625d5a86ea1feed1d8d507f0e5a3d9f915407b7a5ff73ecf53",
+  "bytes": 1464,
+  "captured_at": "2026-09-28T19:04:30.831704+00:00",
+  "response_date": "Mon, 28 Sep 2026 19:04:30 GMT",
+  "bar_count": 14,
+  "response_symbol": "CYPH",
+  "pagination_complete": true
+}

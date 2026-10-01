@@ -1,0 +1,1425 @@
+{
+  "attempt": ".qualification\\etf-reversal20260928\\attempts\\42a36d81473b47e89fafe5d8a5ce38ec",
+  "summary_sha256": "0f7be5afcc9de8bebda4f337ad8c8106513fc184819bd842d32ddb8935862db9",
+  "definition_sha256": "c3cf9398debf716a0796f03b863c1c483c9356f5738053704efeb0cee692a6e4",
+  "method": "Descriptive recomputation from immutable saved account ledgers only; no reruns, thresholds or cost changes",
+  "account_count": 12,
+  "all_accounts_complete": true,
+  "ledger_identity_and_arithmetic_checks_passed": true,
+  "weekly_denominators": {
+    "full": 473,
+    "entry_period_including_boundary_week": 470
+  },
+  "accounts": [
+    {
+      "arm": "residual_reversal",
+      "capital": 10000,
+      "broker": "wealthsimple_usd",
+      "status": "complete",
+      "return": -0.009103666963984458,
+      "net_pnl_usd": -91.03666963985769,
+      "gross_pnl_usd": 1016.9266196804857,
+      "fees_usd": 1107.9632893203436,
+      "max_drawdown": 0.10220868580422204,
+      "trades": 535,
+      "mean_exposure": 0.09913089807433785,
+      "invested_session_fraction": 0.4467897977132806,
+      "median_entry_notional": 1464.210048675537,
+      "positive_years": 4,
+      "negative_years": 5,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.009381586381915996,
+        "2018": -0.04654363098859715,
+        "2019": 0.02748126434604825,
+        "2020": 0.003891218199955304,
+        "2021": 0.03408568927788269,
+        "2022": -0.011480151000390237,
+        "2023": 0.004096756419656122,
+        "2024": -0.00705894586952871,
+        "2025": -0.002025417326099288
+      },
+      "recent_2021_2025_return": 0.01709245843185503,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05631295137240122,
+        "longest_losing_week_streak": 6
+      },
+      "best_week": 0.03019493131028228,
+      "positive_weeks": 183,
+      "negative_weeks": 177,
+      "idle_weeks": 110,
+      "best_trade_positive_pnl_share": 0.01787232455251792,
+      "contributions": [
+        {
+          "symbol": "XLP",
+          "trades": 53,
+          "net_pnl_usd": 416.6013626988158
+        },
+        {
+          "symbol": "XLE",
+          "trades": 51,
+          "net_pnl_usd": 145.3903236451209
+        },
+        {
+          "symbol": "XLK",
+          "trades": 65,
+          "net_pnl_usd": 130.7259699748282
+        },
+        {
+          "symbol": "IWM",
+          "trades": 47,
+          "net_pnl_usd": 80.55638928585715
+        },
+        {
+          "symbol": "DIA",
+          "trades": 47,
+          "net_pnl_usd": 3.1950449907133893
+        },
+        {
+          "symbol": "XLI",
+          "trades": 52,
+          "net_pnl_usd": -36.25518938758278
+        },
+        {
+          "symbol": "XLV",
+          "trades": 50,
+          "net_pnl_usd": -50.772203270737215
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 60,
+          "net_pnl_usd": -107.46145385755312
+        },
+        {
+          "symbol": "XLF",
+          "trades": 50,
+          "net_pnl_usd": -284.98211717857936
+        },
+        {
+          "symbol": "XLU",
+          "trades": 60,
+          "net_pnl_usd": -388.0347965407407
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/residual_reversal-10000-wealthsimple_usd.json",
+      "sha256": "4431bdae6d47ae8fcb38227fc8aad10e12d2c2cc1281f87b73c6c134a9986e5c"
+    },
+    {
+      "arm": "residual_reversal",
+      "capital": 10000,
+      "broker": "moomoo_ca_us",
+      "status": "complete",
+      "return": -0.2238255164572024,
+      "net_pnl_usd": -2238.255164572009,
+      "gross_pnl_usd": 881.6585786009101,
+      "fees_usd": 3119.9137431729187,
+      "max_drawdown": 0.22603395433788653,
+      "trades": 534,
+      "mean_exposure": 0.0979709257476375,
+      "invested_session_fraction": 0.44591029023746703,
+      "median_entry_notional": 1252.1850109100342,
+      "positive_years": 2,
+      "negative_years": 7,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.030190550917862158,
+        "2018": -0.07813044389252966,
+        "2019": 0.005252337977189603,
+        "2020": -0.031689485460229205,
+        "2021": 0.008636157484683826,
+        "2022": -0.033447534047856164,
+        "2023": -0.022487731612066075,
+        "2024": -0.038921135176280486,
+        "2025": -0.026193815885170557
+      },
+      "recent_2021_2025_return": -0.10810498302927174,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05879837523277631,
+        "longest_losing_week_streak": 7
+      },
+      "best_week": 0.028127713886768824,
+      "positive_weeks": 160,
+      "negative_weeks": 199,
+      "idle_weeks": 111,
+      "best_trade_positive_pnl_share": 0.023029818316051894,
+      "contributions": [
+        {
+          "symbol": "XLP",
+          "trades": 53,
+          "net_pnl_usd": 146.12468175825356
+        },
+        {
+          "symbol": "XLE",
+          "trades": 51,
+          "net_pnl_usd": -91.94909216508336
+        },
+        {
+          "symbol": "IWM",
+          "trades": 47,
+          "net_pnl_usd": -117.39613953532167
+        },
+        {
+          "symbol": "XLK",
+          "trades": 65,
+          "net_pnl_usd": -152.94887774040933
+        },
+        {
+          "symbol": "DIA",
+          "trades": 47,
+          "net_pnl_usd": -164.18179062799922
+        },
+        {
+          "symbol": "XLI",
+          "trades": 52,
+          "net_pnl_usd": -246.11454759794069
+        },
+        {
+          "symbol": "XLV",
+          "trades": 50,
+          "net_pnl_usd": -255.3266462082378
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 59,
+          "net_pnl_usd": -321.3554757690788
+        },
+        {
+          "symbol": "XLF",
+          "trades": 50,
+          "net_pnl_usd": -455.90594341664405
+        },
+        {
+          "symbol": "XLU",
+          "trades": 60,
+          "net_pnl_usd": -579.2013332695478
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/residual_reversal-10000-moomoo_ca_us.json",
+      "sha256": "462ba066e5560ee67d68e61dd270cab843d7641622270756e3b4b263e0579240"
+    },
+    {
+      "arm": "residual_reversal",
+      "capital": 2000,
+      "broker": "wealthsimple_usd",
+      "status": "complete",
+      "return": -0.02667134945277916,
+      "net_pnl_usd": -53.342698905553995,
+      "gross_pnl_usd": 93.57863988621989,
+      "fees_usd": 146.9213387917738,
+      "max_drawdown": 0.08413543895091824,
+      "trades": 415,
+      "mean_exposure": 0.06638671306226049,
+      "invested_session_fraction": 0.3834652594547054,
+      "median_entry_notional": 243.0,
+      "positive_years": 4,
+      "negative_years": 5,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.010608906050460054,
+        "2018": -0.029125749975450477,
+        "2019": 0.011902019860069446,
+        "2020": -0.016261451524561932,
+        "2021": 0.02203187580366417,
+        "2022": -0.0038571233727050513,
+        "2023": -0.0031181935550372852,
+        "2024": 0.0018728458873444875,
+        "2025": 0.001078247249338693
+      },
+      "recent_2021_2025_return": 0.017912330508261576,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.050753515659125004,
+        "longest_losing_week_streak": 4
+      },
+      "best_week": 0.016770652029610922,
+      "positive_weeks": 163,
+      "negative_weeks": 164,
+      "idle_weeks": 143,
+      "best_trade_positive_pnl_share": 0.02145627139205669,
+      "contributions": [
+        {
+          "symbol": "XLP",
+          "trades": 53,
+          "net_pnl_usd": 71.32482838187359
+        },
+        {
+          "symbol": "DIA",
+          "trades": 17,
+          "net_pnl_usd": 19.87871752199464
+        },
+        {
+          "symbol": "IWM",
+          "trades": 31,
+          "net_pnl_usd": 9.110419635742
+        },
+        {
+          "symbol": "XLE",
+          "trades": 46,
+          "net_pnl_usd": 8.842922107565032
+        },
+        {
+          "symbol": "XLK",
+          "trades": 47,
+          "net_pnl_usd": 6.3354273649335875
+        },
+        {
+          "symbol": "XLI",
+          "trades": 49,
+          "net_pnl_usd": 4.860622512131177
+        },
+        {
+          "symbol": "XLV",
+          "trades": 47,
+          "net_pnl_usd": -22.70997299137185
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 15,
+          "net_pnl_usd": -34.63529433126955
+        },
+        {
+          "symbol": "XLF",
+          "trades": 50,
+          "net_pnl_usd": -47.09267229378242
+        },
+        {
+          "symbol": "XLU",
+          "trades": 60,
+          "net_pnl_usd": -69.2576968133702
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/residual_reversal-2000-wealthsimple_usd.json",
+      "sha256": "0cdeea6b3d2278107bf025f25a41cf9d9d5b12b5614c9a643c45411dda2ce56f"
+    },
+    {
+      "arm": "residual_reversal",
+      "capital": 2000,
+      "broker": "moomoo_ca_us",
+      "status": "complete",
+      "return": -0.299433972488648,
+      "net_pnl_usd": -598.8679449772951,
+      "gross_pnl_usd": -27.106124678951034,
+      "fees_usd": 571.7618202983441,
+      "max_drawdown": 0.30009500954507873,
+      "trades": 132,
+      "mean_exposure": 0.02305084952718213,
+      "invested_session_fraction": 0.13192612137203166,
+      "median_entry_notional": 228.16500091552734,
+      "positive_years": 0,
+      "negative_years": 3,
+      "idle_years": 6,
+      "annual_returns": {
+        "2017": -0.1061885124930334,
+        "2018": -0.1615466167230747,
+        "2019": -0.0651881269081489,
+        "2020": 0.0,
+        "2021": 0.0,
+        "2022": 0.0,
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "recent_2021_2025_return": 0.0,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0196083140353136,
+        "longest_losing_week_streak": 18
+      },
+      "best_week": 0.0017607584351309047,
+      "positive_weeks": 7,
+      "negative_weeks": 101,
+      "idle_weeks": 362,
+      "best_trade_positive_pnl_share": 0.4944154108814218,
+      "contributions": [
+        {
+          "symbol": "DIA",
+          "trades": 4,
+          "net_pnl_usd": -16.563746688046088
+        },
+        {
+          "symbol": "IWM",
+          "trades": 7,
+          "net_pnl_usd": -20.973857711247245
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 10,
+          "net_pnl_usd": -48.89372489572501
+        },
+        {
+          "symbol": "XLF",
+          "trades": 13,
+          "net_pnl_usd": -59.3762643423924
+        },
+        {
+          "symbol": "XLE",
+          "trades": 13,
+          "net_pnl_usd": -62.26586202272796
+        },
+        {
+          "symbol": "XLK",
+          "trades": 18,
+          "net_pnl_usd": -63.64527022890219
+        },
+        {
+          "symbol": "XLI",
+          "trades": 14,
+          "net_pnl_usd": -66.79717078427001
+        },
+        {
+          "symbol": "XLP",
+          "trades": 19,
+          "net_pnl_usd": -77.15037606636645
+        },
+        {
+          "symbol": "XLU",
+          "trades": 20,
+          "net_pnl_usd": -88.32785032763421
+        },
+        {
+          "symbol": "XLV",
+          "trades": 14,
+          "net_pnl_usd": -94.8738219099835
+        }
+      ],
+      "halt": {
+        "session": "2019-06-26",
+        "nav": 1400.41731137371,
+        "peak": 2000.8677327239411,
+        "observed_drawdown": 0.30009500954507873,
+        "canceled_intents": [
+          {
+            "signal_session": "2019-06-26",
+            "symbol": "XLU"
+          }
+        ],
+        "exit_instructions": [
+          {
+            "symbol": "IWM",
+            "previous_exit_index": 877,
+            "new_exit_index": 876
+          }
+        ],
+        "timing": "Observed after close fills/marks; liquidate at next session close, with gap risk"
+      },
+      "artifact": "accounts/residual_reversal-2000-moomoo_ca_us.json",
+      "sha256": "ef15589870fe5d4b2195efb6524120532263b756cff542122a2e26554a88123d"
+    },
+    {
+      "arm": "residual_reversal_trend",
+      "capital": 10000,
+      "broker": "wealthsimple_usd",
+      "status": "complete",
+      "return": -0.05239755183641215,
+      "net_pnl_usd": -523.9755183641266,
+      "gross_pnl_usd": 434.0899984984557,
+      "fees_usd": 958.0655168625824,
+      "max_drawdown": 0.09245447751379232,
+      "trades": 427,
+      "mean_exposure": 0.0868445941345038,
+      "invested_session_fraction": 0.36807387862796836,
+      "median_entry_notional": 1581.75,
+      "positive_years": 3,
+      "negative_years": 6,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.009381586381915996,
+        "2018": -0.041436350190122484,
+        "2019": 0.013367072328723362,
+        "2020": 0.004788246071944613,
+        "2021": 0.033151364320337606,
+        "2022": -0.015068708092854655,
+        "2023": -0.01339127245571814,
+        "2024": -0.005066240298399971,
+        "2025": -0.01882047278881538
+      },
+      "recent_2021_2025_return": -0.0199291162656563,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05593881245934662,
+        "longest_losing_week_streak": 6
+      },
+      "best_week": 0.03021696601269319,
+      "positive_weeks": 152,
+      "negative_weeks": 151,
+      "idle_weeks": 167,
+      "best_trade_positive_pnl_share": 0.02408350909894826,
+      "contributions": [
+        {
+          "symbol": "XLP",
+          "trades": 40,
+          "net_pnl_usd": 172.94420268057303
+        },
+        {
+          "symbol": "XLK",
+          "trades": 53,
+          "net_pnl_usd": 32.06559999258708
+        },
+        {
+          "symbol": "IWM",
+          "trades": 40,
+          "net_pnl_usd": 20.712651207797947
+        },
+        {
+          "symbol": "XLE",
+          "trades": 36,
+          "net_pnl_usd": 16.958421431921394
+        },
+        {
+          "symbol": "XLI",
+          "trades": 40,
+          "net_pnl_usd": -24.116255529301284
+        },
+        {
+          "symbol": "XLV",
+          "trades": 40,
+          "net_pnl_usd": -38.86527637779223
+        },
+        {
+          "symbol": "DIA",
+          "trades": 40,
+          "net_pnl_usd": -54.06855436453722
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 52,
+          "net_pnl_usd": -76.53650016087245
+        },
+        {
+          "symbol": "XLF",
+          "trades": 39,
+          "net_pnl_usd": -184.7711240182817
+        },
+        {
+          "symbol": "XLU",
+          "trades": 47,
+          "net_pnl_usd": -388.29868322622127
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/residual_reversal_trend-10000-wealthsimple_usd.json",
+      "sha256": "60536e2965afb90876985fb7770e9b27a1c8997564b4c623842c4accf49370f0"
+    },
+    {
+      "arm": "residual_reversal_trend",
+      "capital": 10000,
+      "broker": "moomoo_ca_us",
+      "status": "complete",
+      "return": -0.21423216614316154,
+      "net_pnl_usd": -2142.3216614316107,
+      "gross_pnl_usd": 444.02315532663255,
+      "fees_usd": 2586.3448167582414,
+      "max_drawdown": 0.21650012028957777,
+      "trades": 427,
+      "mean_exposure": 0.08619534064482569,
+      "invested_session_fraction": 0.36807387862796836,
+      "median_entry_notional": 1442.9999542236328,
+      "positive_years": 1,
+      "negative_years": 8,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.030190550917862158,
+        "2018": -0.06558351424826447,
+        "2019": -0.0057817766790168035,
+        "2020": -0.016618289757811655,
+        "2021": 0.010210625325625555,
+        "2022": -0.0184581361969286,
+        "2023": -0.03464410382037342,
+        "2024": -0.037485445487683955,
+        "2025": -0.03739529715391521
+      },
+      "recent_2021_2025_return": -0.11312278495024464,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.05865273693557349,
+        "longest_losing_week_streak": 6
+      },
+      "best_week": 0.028832449075257616,
+      "positive_weeks": 131,
+      "negative_weeks": 172,
+      "idle_weeks": 167,
+      "best_trade_positive_pnl_share": 0.02980626151141155,
+      "contributions": [
+        {
+          "symbol": "XLP",
+          "trades": 40,
+          "net_pnl_usd": 1.2308174827559513
+        },
+        {
+          "symbol": "XLE",
+          "trades": 36,
+          "net_pnl_usd": -133.42451212805437
+        },
+        {
+          "symbol": "IWM",
+          "trades": 40,
+          "net_pnl_usd": -141.12182365777855
+        },
+        {
+          "symbol": "XLK",
+          "trades": 53,
+          "net_pnl_usd": -168.88730893665024
+        },
+        {
+          "symbol": "XLI",
+          "trades": 40,
+          "net_pnl_usd": -178.96558288919454
+        },
+        {
+          "symbol": "XLV",
+          "trades": 40,
+          "net_pnl_usd": -194.8657015780244
+        },
+        {
+          "symbol": "DIA",
+          "trades": 40,
+          "net_pnl_usd": -203.61050610276135
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 52,
+          "net_pnl_usd": -265.4428824358879
+        },
+        {
+          "symbol": "XLF",
+          "trades": 39,
+          "net_pnl_usd": -323.03360512339555
+        },
+        {
+          "symbol": "XLU",
+          "trades": 47,
+          "net_pnl_usd": -534.2005560626196
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/residual_reversal_trend-10000-moomoo_ca_us.json",
+      "sha256": "9d12839ab8fcf7ca84173aa5add6af35811c37f4c49bd3d35348abf07505ac36"
+    },
+    {
+      "arm": "residual_reversal_trend",
+      "capital": 2000,
+      "broker": "wealthsimple_usd",
+      "status": "complete",
+      "return": -0.05660933671179125,
+      "net_pnl_usd": -113.21867342358028,
+      "gross_pnl_usd": 16.03091960751027,
+      "fees_usd": 129.2495930310905,
+      "max_drawdown": 0.07796976430182112,
+      "trades": 339,
+      "mean_exposure": 0.05877883428853721,
+      "invested_session_fraction": 0.3201407211961302,
+      "median_entry_notional": 265.6400146484375,
+      "positive_years": 3,
+      "negative_years": 6,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.010608906050460054,
+        "2018": -0.02251955634075231,
+        "2019": 0.0029783720128742086,
+        "2020": -0.014470063197162486,
+        "2021": 0.022037541523808102,
+        "2022": -0.012215944909132914,
+        "2023": -0.013201012760998165,
+        "2024": 0.0014600799166579748,
+        "2025": -0.010848273899357053
+      },
+      "recent_2021_2025_return": -0.013143262398736422,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.050858706112199004,
+        "longest_losing_week_streak": 4
+      },
+      "best_week": 0.01677507330872352,
+      "positive_weeks": 135,
+      "negative_weeks": 141,
+      "idle_weeks": 194,
+      "best_trade_positive_pnl_share": 0.02833900702364474,
+      "contributions": [
+        {
+          "symbol": "XLP",
+          "trades": 40,
+          "net_pnl_usd": 34.00636814703232
+        },
+        {
+          "symbol": "DIA",
+          "trades": 15,
+          "net_pnl_usd": 10.05285966824592
+        },
+        {
+          "symbol": "IWM",
+          "trades": 29,
+          "net_pnl_usd": 4.416992317623982
+        },
+        {
+          "symbol": "XLI",
+          "trades": 40,
+          "net_pnl_usd": 0.6771671385777733
+        },
+        {
+          "symbol": "XLE",
+          "trades": 36,
+          "net_pnl_usd": -0.14891974837119148
+        },
+        {
+          "symbol": "XLK",
+          "trades": 39,
+          "net_pnl_usd": -9.827316911993167
+        },
+        {
+          "symbol": "XLV",
+          "trades": 39,
+          "net_pnl_usd": -17.047900974548945
+        },
+        {
+          "symbol": "XLF",
+          "trades": 39,
+          "net_pnl_usd": -32.60179590255093
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 15,
+          "net_pnl_usd": -34.63529433126955
+        },
+        {
+          "symbol": "XLU",
+          "trades": 47,
+          "net_pnl_usd": -68.1108328263265
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/residual_reversal_trend-2000-wealthsimple_usd.json",
+      "sha256": "1859b6b6df93f588dfbba77592868fbd1e3a83f0e085e7290c9964e4233a083b"
+    },
+    {
+      "arm": "residual_reversal_trend",
+      "capital": 2000,
+      "broker": "moomoo_ca_us",
+      "status": "complete",
+      "return": -0.2999295768009921,
+      "net_pnl_usd": -599.8591536019834,
+      "gross_pnl_usd": -8.452573093716438,
+      "fees_usd": 591.4065805082672,
+      "max_drawdown": 0.3002331820845088,
+      "trades": 136,
+      "mean_exposure": 0.0251574300166286,
+      "invested_session_fraction": 0.13500439753737906,
+      "median_entry_notional": 250.16499423980713,
+      "positive_years": 0,
+      "negative_years": 4,
+      "idle_years": 5,
+      "annual_returns": {
+        "2017": -0.1061885124930334,
+        "2018": -0.12471579004693234,
+        "2019": -0.0903101079115618,
+        "2020": -0.016321147721647944,
+        "2021": 0.0,
+        "2022": 0.0,
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "recent_2021_2025_return": 0.0,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0196083140353136,
+        "longest_losing_week_streak": 18
+      },
+      "best_week": 0.00215861919707927,
+      "positive_weeks": 8,
+      "negative_weeks": 106,
+      "idle_weeks": 356,
+      "best_trade_positive_pnl_share": 0.47763946428372855,
+      "contributions": [
+        {
+          "symbol": "DIA",
+          "trades": 6,
+          "net_pnl_usd": -23.05447914234857
+        },
+        {
+          "symbol": "IWM",
+          "trades": 8,
+          "net_pnl_usd": -24.933043720330062
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 10,
+          "net_pnl_usd": -48.89372489572501
+        },
+        {
+          "symbol": "XLF",
+          "trades": 12,
+          "net_pnl_usd": -51.632746108057646
+        },
+        {
+          "symbol": "XLE",
+          "trades": 11,
+          "net_pnl_usd": -55.316804011063944
+        },
+        {
+          "symbol": "XLK",
+          "trades": 18,
+          "net_pnl_usd": -67.36821511334136
+        },
+        {
+          "symbol": "XLP",
+          "trades": 17,
+          "net_pnl_usd": -69.99720887852662
+        },
+        {
+          "symbol": "XLI",
+          "trades": 16,
+          "net_pnl_usd": -72.90448605372859
+        },
+        {
+          "symbol": "XLU",
+          "trades": 22,
+          "net_pnl_usd": -87.11720225177909
+        },
+        {
+          "symbol": "XLV",
+          "trades": 16,
+          "net_pnl_usd": -98.64124342708254
+        }
+      ],
+      "halt": {
+        "session": "2020-01-31",
+        "nav": 1400.4909333409125,
+        "peak": 2000.8677327239411,
+        "observed_drawdown": 0.30005821452559867,
+        "canceled_intents": [],
+        "exit_instructions": [
+          {
+            "symbol": "XLV",
+            "previous_exit_index": 1029,
+            "new_exit_index": 1027
+          }
+        ],
+        "timing": "Observed after close fills/marks; liquidate at next session close, with gap risk"
+      },
+      "artifact": "accounts/residual_reversal_trend-2000-moomoo_ca_us.json",
+      "sha256": "b7c58882293594ea859eaa8cbd2bc02d98d06e1669e2ba8b7b35be64261e8b8f"
+    },
+    {
+      "arm": "matched_count_control",
+      "capital": 10000,
+      "broker": "wealthsimple_usd",
+      "status": "complete",
+      "return": 0.041540892918180194,
+      "net_pnl_usd": 415.408929181811,
+      "gross_pnl_usd": 1783.8187132893327,
+      "fees_usd": 1368.4097841075227,
+      "max_drawdown": 0.08924279182542583,
+      "trades": 643,
+      "mean_exposure": 0.11915440244028469,
+      "invested_session_fraction": 0.47185576077396657,
+      "median_entry_notional": 1510.4499740600586,
+      "positive_years": 6,
+      "negative_years": 3,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": 0.013113785209610374,
+        "2018": -0.03163605974961137,
+        "2019": 0.040100113764344636,
+        "2020": -0.031083500129033936,
+        "2021": 0.029001881026828658,
+        "2022": -0.017643885515643776,
+        "2023": 0.02165831129201634,
+        "2024": 0.014542103243529114,
+        "2025": 0.005442243569695471
+      },
+      "recent_2021_2025_return": 0.05345987058016943,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0480293796972836,
+        "longest_losing_week_streak": 5
+      },
+      "best_week": 0.025817192618194262,
+      "positive_weeks": 190,
+      "negative_weeks": 172,
+      "idle_weeks": 108,
+      "best_trade_positive_pnl_share": 0.01326658802363481,
+      "contributions": [
+        {
+          "symbol": "DIA",
+          "trades": 65,
+          "net_pnl_usd": 382.2552833736534
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 77,
+          "net_pnl_usd": 226.1448968601235
+        },
+        {
+          "symbol": "XLK",
+          "trades": 65,
+          "net_pnl_usd": 196.4365869699403
+        },
+        {
+          "symbol": "IWM",
+          "trades": 59,
+          "net_pnl_usd": 145.47109570147748
+        },
+        {
+          "symbol": "XLI",
+          "trades": 60,
+          "net_pnl_usd": 81.78466728039628
+        },
+        {
+          "symbol": "XLV",
+          "trades": 72,
+          "net_pnl_usd": -7.545784870236539
+        },
+        {
+          "symbol": "XLF",
+          "trades": 70,
+          "net_pnl_usd": -37.15732210161745
+        },
+        {
+          "symbol": "XLU",
+          "trades": 57,
+          "net_pnl_usd": -46.135329221407545
+        },
+        {
+          "symbol": "XLE",
+          "trades": 63,
+          "net_pnl_usd": -226.9180152374268
+        },
+        {
+          "symbol": "XLP",
+          "trades": 55,
+          "net_pnl_usd": -298.9271495730916
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/matched_count_control-10000-wealthsimple_usd.json",
+      "sha256": "9e4d7fc9300623d3a0304fff8d7f093e6e4cce7b6c9b34e3f58eed99d61210a9"
+    },
+    {
+      "arm": "matched_count_control",
+      "capital": 10000,
+      "broker": "moomoo_ca_us",
+      "status": "complete",
+      "return": -0.2218068866975793,
+      "net_pnl_usd": -2218.068866975784,
+      "gross_pnl_usd": 1531.2760151654802,
+      "fees_usd": 3749.3448821412644,
+      "max_drawdown": 0.23795266537430249,
+      "trades": 641,
+      "mean_exposure": 0.11711753688297824,
+      "invested_session_fraction": 0.4727352682497801,
+      "median_entry_notional": 1261.3999786376953,
+      "positive_years": 1,
+      "negative_years": 8,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": -0.012803027960320845,
+        "2018": -0.06749847387191377,
+        "2019": 0.009879556827417701,
+        "2020": -0.07356743485454975,
+        "2021": -0.0005305898001485287,
+        "2022": -0.04109566201122716,
+        "2023": -0.016006158467998022,
+        "2024": -0.026699547835319692,
+        "2025": -0.015611506779185658
+      },
+      "recent_2021_2025_return": -0.0964532587239878,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.0501347924282034,
+        "longest_losing_week_streak": 8
+      },
+      "best_week": 0.022789622952470667,
+      "positive_weeks": 165,
+      "negative_weeks": 198,
+      "idle_weeks": 107,
+      "best_trade_positive_pnl_share": 0.017440819126770007,
+      "contributions": [
+        {
+          "symbol": "DIA",
+          "trades": 65,
+          "net_pnl_usd": 51.177340592307154
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 74,
+          "net_pnl_usd": -33.41887343963825
+        },
+        {
+          "symbol": "XLK",
+          "trades": 65,
+          "net_pnl_usd": -96.35318895239709
+        },
+        {
+          "symbol": "IWM",
+          "trades": 59,
+          "net_pnl_usd": -130.24785509449117
+        },
+        {
+          "symbol": "XLI",
+          "trades": 60,
+          "net_pnl_usd": -175.04065787754908
+        },
+        {
+          "symbol": "XLU",
+          "trades": 57,
+          "net_pnl_usd": -256.30631769027207
+        },
+        {
+          "symbol": "XLV",
+          "trades": 73,
+          "net_pnl_usd": -301.29692082307446
+        },
+        {
+          "symbol": "XLF",
+          "trades": 70,
+          "net_pnl_usd": -345.7169260425269
+        },
+        {
+          "symbol": "XLE",
+          "trades": 63,
+          "net_pnl_usd": -443.6905104479714
+        },
+        {
+          "symbol": "XLP",
+          "trades": 55,
+          "net_pnl_usd": -487.1749572001709
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/matched_count_control-10000-moomoo_ca_us.json",
+      "sha256": "e33e1e31f9b72a43370c38d572b3259ffd7414e84a141d9bfd589185bf9b10cc"
+    },
+    {
+      "arm": "matched_count_control",
+      "capital": 2000,
+      "broker": "wealthsimple_usd",
+      "status": "complete",
+      "return": -0.01820999800051537,
+      "net_pnl_usd": -36.41999600102849,
+      "gross_pnl_usd": 137.9638568115863,
+      "fees_usd": 174.3838528126145,
+      "max_drawdown": 0.07481851483446522,
+      "trades": 486,
+      "mean_exposure": 0.07832441660741839,
+      "invested_session_fraction": 0.40325417766051014,
+      "median_entry_notional": 249.66500091552734,
+      "positive_years": 6,
+      "negative_years": 3,
+      "idle_years": 0,
+      "annual_returns": {
+        "2017": 0.00434316617706787,
+        "2018": -0.02780064347061517,
+        "2019": 0.019811479122565423,
+        "2020": -0.043157325553030534,
+        "2021": 0.019493274325642185,
+        "2022": -0.020855941227726937,
+        "2023": 0.00412462602735264,
+        "2024": 0.0126869857879357,
+        "2025": 0.015142264189141885
+      },
+      "recent_2021_2025_return": 0.03043526811669439,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.04477554880485468,
+        "longest_losing_week_streak": 5
+      },
+      "best_week": 0.01586076513684609,
+      "positive_weeks": 173,
+      "negative_weeks": 151,
+      "idle_weeks": 146,
+      "best_trade_positive_pnl_share": 0.017150348389005966,
+      "contributions": [
+        {
+          "symbol": "XLK",
+          "trades": 40,
+          "net_pnl_usd": 22.54744158308742
+        },
+        {
+          "symbol": "DIA",
+          "trades": 23,
+          "net_pnl_usd": 16.947385520011323
+        },
+        {
+          "symbol": "IWM",
+          "trades": 35,
+          "net_pnl_usd": 14.381249288233539
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 26,
+          "net_pnl_usd": 11.471275485629972
+        },
+        {
+          "symbol": "XLI",
+          "trades": 58,
+          "net_pnl_usd": 6.4198900683388365
+        },
+        {
+          "symbol": "XLU",
+          "trades": 57,
+          "net_pnl_usd": -3.433632731394767
+        },
+        {
+          "symbol": "XLF",
+          "trades": 70,
+          "net_pnl_usd": -9.923467889517811
+        },
+        {
+          "symbol": "XLV",
+          "trades": 65,
+          "net_pnl_usd": -20.86829187166648
+        },
+        {
+          "symbol": "XLE",
+          "trades": 57,
+          "net_pnl_usd": -31.8626897550088
+        },
+        {
+          "symbol": "XLP",
+          "trades": 55,
+          "net_pnl_usd": -42.09915569874172
+        }
+      ],
+      "halt": null,
+      "artifact": "accounts/matched_count_control-2000-wealthsimple_usd.json",
+      "sha256": "0eac859f6f17549decdb6ea622458aa6f9c30e44503966bd3326fb72f94978ae"
+    },
+    {
+      "arm": "matched_count_control",
+      "capital": 2000,
+      "broker": "moomoo_ca_us",
+      "status": "complete",
+      "return": -0.3004519678783698,
+      "net_pnl_usd": -600.9039357567382,
+      "gross_pnl_usd": 37.004847874131954,
+      "fees_usd": 637.9087836308702,
+      "max_drawdown": 0.3004519678783698,
+      "trades": 147,
+      "mean_exposure": 0.02611032802286812,
+      "invested_session_fraction": 0.12532981530343007,
+      "median_entry_notional": 240.49999237060547,
+      "positive_years": 0,
+      "negative_years": 3,
+      "idle_years": 6,
+      "annual_returns": {
+        "2017": -0.11670524036754426,
+        "2018": -0.19717778234845995,
+        "2019": -0.01351041950079368,
+        "2020": 0.0,
+        "2021": 0.0,
+        "2022": 0.0,
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "recent_2021_2025_return": 0.0,
+      "entry_period_weekly_targets": {
+        "weeks": 470,
+        "includes_idle_and_losing_weeks": true,
+        "thresholds": [
+          {
+            "return_at_least": 0.05,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.1,
+            "count": 0,
+            "fraction": 0.0
+          },
+          {
+            "return_at_least": 0.15,
+            "count": 0,
+            "fraction": 0.0
+          }
+        ],
+        "median_return": 0.0,
+        "worst_return": -0.024074997899536266,
+        "longest_losing_week_streak": 16
+      },
+      "best_week": 0.0035195140460908547,
+      "positive_weeks": 16,
+      "negative_weeks": 81,
+      "idle_weeks": 373,
+      "best_trade_positive_pnl_share": 0.2630806809189723,
+      "contributions": [
+        {
+          "symbol": "DIA",
+          "trades": 7,
+          "net_pnl_usd": -25.513031252840538
+        },
+        {
+          "symbol": "QQQ",
+          "trades": 13,
+          "net_pnl_usd": -48.6787363972817
+        },
+        {
+          "symbol": "IWM",
+          "trades": 12,
+          "net_pnl_usd": -49.650962932707706
+        },
+        {
+          "symbol": "XLU",
+          "trades": 15,
+          "net_pnl_usd": -49.74927648181599
+        },
+        {
+          "symbol": "XLI",
+          "trades": 11,
+          "net_pnl_usd": -49.79057345094155
+        },
+        {
+          "symbol": "XLK",
+          "trades": 19,
+          "net_pnl_usd": -65.46519508710813
+        },
+        {
+          "symbol": "XLE",
+          "trades": 15,
+          "net_pnl_usd": -69.11295099952342
+        },
+        {
+          "symbol": "XLF",
+          "trades": 17,
+          "net_pnl_usd": -71.98539080685849
+        },
+        {
+          "symbol": "XLP",
+          "trades": 17,
+          "net_pnl_usd": -79.0899667297246
+        },
+        {
+          "symbol": "XLV",
+          "trades": 21,
+          "net_pnl_usd": -91.86785161793607
+        }
+      ],
+      "halt": {
+        "session": "2019-03-19",
+        "nav": 1399.0960642432603,
+        "peak": 2000.0,
+        "observed_drawdown": 0.3004519678783698,
+        "canceled_intents": [],
+        "exit_instructions": [],
+        "timing": "Observed after close fills/marks; liquidate at next session close, with gap risk"
+      },
+      "artifact": "accounts/matched_count_control-2000-moomoo_ca_us.json",
+      "sha256": "cd62d012f398b0517da79e4c11de9fda3c0bbf021efe91c8d9d7546ad997f3db"
+    }
+  ],
+  "promotion": false
+}

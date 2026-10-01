@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "snapshot_utc": "2026-10-01T15:31:57.197520+00:00",
+  "workspace": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent",
+  "source_read_only": true,
+  "research_executed": false,
+  "records": 83641,
+  "inventoried_bytes": 31764902437,
+  "publication_files": 13331,
+  "publication_bytes": 150175836,
+  "decisions": {
+    "publish compact declaration, result, table or verification unchanged": 13066,
+    "local-only large evidence; recover from retained archive": 327,
+    "publish authored source or documentation unchanged": 265,
+    "local-only original/vendor payload or operational snapshot": 26632,
+    "local-only binary, media, model or runtime artifact": 23842,
+    "local-only row-level or original source payload": 20,
+    "local-only possible broker/authentication payload; review required": 3,
+    "local-only operational/private evidence": 18,
+    "local-only unparsable evidence; original retained": 3,
+    "local-only dataset, source, model, runtime or journal": 19465
+  },
+  "traversal_errors": [],
+  "file_errors": [],
+  "excluded_directory_names": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "nautilus",
+    "node_modules",
+    "ponytail"
+  ],
+  "private_mutable_journal_excluded": true,
+  "limits": [
+    "Inventory does not include excluded runtimes/plugins/dependencies or the live paper journal.",
+    "Hashes record retained bytes, not redistributability, data completeness or profitable strategy qualification.",
+    "Publication set must pass a separate privacy/history/Markdown review before staging."
+  ],
+  "publication_review_exclusions": [],
+  "reviewed_publication_files": 13333,
+  "reviewed_publication_bytes": 150182790,
+  "publication_review_overrides": [
+    {
+      "path": ".qualification/operator_actual_browser.py",
+      "reason": "Authored UI verification source; exact credential/private-identifier scan clear. Keep source code, omit private runtime outputs."
+    },
+    {
+      "path": ".qualification/operator_ui_smoke.py",
+      "reason": "Authored UI verification source; exact credential/private-identifier scan clear. Keep source code, omit private runtime outputs."
+    }
+  ]
+}

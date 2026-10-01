@@ -1,0 +1,222 @@
+[
+  {
+    "close": "111.938",
+    "open": "104.875",
+    "low": "101.688",
+    "high": "112.5",
+    "volume": 4784100,
+    "turnover": "0",
+    "timestamp": "2000-01-03T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "102.5",
+    "open": "108.25",
+    "low": "101.188",
+    "high": "110.625",
+    "volume": 4569000,
+    "turnover": "0",
+    "timestamp": "2000-01-04T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "104",
+    "open": "103.75",
+    "low": "103",
+    "high": "110.563",
+    "volume": 6949300,
+    "turnover": "0",
+    "timestamp": "2000-01-05T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "95",
+    "open": "106.125",
+    "low": "95",
+    "high": "107",
+    "volume": 6857000,
+    "turnover": "0",
+    "timestamp": "2000-01-06T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "99.5",
+    "open": "96.5",
+    "low": "95.5",
+    "high": "101",
+    "volume": 4113700,
+    "turnover": "0",
+    "timestamp": "2000-01-07T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "97.75",
+    "open": "102",
+    "low": "94.75",
+    "high": "102.25",
+    "volume": 4509500,
+    "turnover": "0",
+    "timestamp": "2000-01-10T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "92.75",
+    "open": "95.938",
+    "low": "90.5",
+    "high": "99.375",
+    "volume": 3941900,
+    "turnover": "0",
+    "timestamp": "2000-01-11T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "87.188",
+    "open": "95",
+    "low": "86.5",
+    "high": "95.5",
+    "volume": 8714900,
+    "turnover": "0",
+    "timestamp": "2000-01-12T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "96.75",
+    "open": "94.484",
+    "low": "92.5",
+    "high": "98.75",
+    "volume": 9220400,
+    "turnover": "0",
+    "timestamp": "2000-01-13T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "100.438",
+    "open": "100",
+    "low": "99.375",
+    "high": "102.25",
+    "volume": 3485500,
+    "turnover": "0",
+    "timestamp": "2000-01-14T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "103.938",
+    "open": "101",
+    "low": "100.438",
+    "high": "106",
+    "volume": 4099800,
+    "turnover": "0",
+    "timestamp": "2000-01-18T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "106.563",
+    "open": "105.625",
+    "low": "103.375",
+    "high": "108.75",
+    "volume": 5336100,
+    "turnover": "0",
+    "timestamp": "2000-01-19T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "113.5",
+    "open": "115.5",
+    "low": "113.5",
+    "high": "121.5",
+    "volume": 16349400,
+    "turnover": "0",
+    "timestamp": "2000-01-20T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "111.313",
+    "open": "114.25",
+    "low": "110.188",
+    "high": "114.25",
+    "volume": 4427900,
+    "turnover": "0",
+    "timestamp": "2000-01-21T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "106.25",
+    "open": "108.438",
+    "low": "105.125",
+    "high": "112.75",
+    "volume": 3937400,
+    "turnover": "0",
+    "timestamp": "2000-01-24T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "112.25",
+    "open": "105",
+    "low": "102.375",
+    "high": "113.125",
+    "volume": 4439300,
+    "turnover": "0",
+    "timestamp": "2000-01-25T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "110.188",
+    "open": "110",
+    "low": "109.75",
+    "high": "114.188",
+    "volume": 3278200,
+    "turnover": "0",
+    "timestamp": "2000-01-26T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "110",
+    "open": "108.813",
+    "low": "107",
+    "high": "113",
+    "volume": 3037000,
+    "turnover": "0",
+    "timestamp": "2000-01-27T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "101.625",
+    "open": "108.188",
+    "low": "100.625",
+    "high": "110.875",
+    "volume": 3780000,
+    "turnover": "0",
+    "timestamp": "2000-01-28T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  },
+  {
+    "close": "103.75",
+    "open": "101",
+    "low": "94.5",
+    "high": "103.875",
+    "volume": 6265000,
+    "turnover": "0",
+    "timestamp": "2000-01-31T05:00:00Z",
+    "trade_session": "Intraday",
+    "open_updated": true
+  }
+]

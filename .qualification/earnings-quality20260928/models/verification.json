@@ -1,0 +1,24 @@
+{
+  "command": [
+    "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    ".qualification\\earnings-quality20260928\\models\\test_earnings_models.py"
+  ],
+  "completed_utc": "2026-09-29T13:57:11.750820+00:00",
+  "exit_code": 0,
+  "files": {
+    ".qualification/earnings-quality20260928/cohort/model-specification.json": "7e837043e034305fe3aa15aefd3d28d8389f63e923fc7ef0739d1883e8a30ffb",
+    ".qualification/earnings-quality20260928/models/earnings_models.py": "e9ccff7065da92fc72e9816c92d294296451cc3654337f448cc410e9575e37fd",
+    ".qualification/earnings-quality20260928/models/interface.md": "9146bc6da0079ebfffa034bba38f579c439598c082a9943e3656d2c9a9e20997",
+    ".qualification/earnings-quality20260928/models/synthetic-tests.txt": "e921b3af86af895e85001929ce8a57a0f98e5999ce4a213ca03dd909822bd07e",
+    ".qualification/earnings-quality20260928/models/test_earnings_models.py": "a15805efde55a946a019a38824eecd236fe3f0ef30555731cc140bc15f88ab69",
+    "src/frontier/conditional_models.py": "3b5c1c31c6d6b9bbb424838071c0f80ef9603f8fc6df5ce9103c829d71b72d4f",
+    "src/frontier/ensemble_models.py": "c2627c0b33fc9cb3c3c6158f2d51fe7bc14fbe49cceddcdafe124b64499c265f"
+  },
+  "scope": "Synthetic fixtures only; zero original-cohort fits, source requests or account runs",
+  "started_utc": "2026-09-29T13:57:09.529221+00:00",
+  "status": "passed",
+  "tests": 17
+}

@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-643",
+  "params": null,
+  "captured_at": "2026-09-28T18:39:25.427507+00:00",
+  "status_code": 200,
+  "sha256": "34291f74d1ec36be6d791abc569e2ca0c816ce737ad252e19539f6c3a8ff87a1",
+  "bytes": 59150,
+  "content_type": "text/html; charset=utf-8",
+  "response_date": "Mon, 28 Sep 2026 18:39:25 GMT",
+  "raw_file": "nasdaq-sep2026.34291f74d1ec36be6d791abc569e2ca0c816ce737ad252e19539f6c3a8ff87a1.raw"
+}

@@ -1,0 +1,1315 @@
+{
+  "reviewed_at": "2026-09-28T20:58:06.386685+00:00",
+  "snapshot_accounts": 18,
+  "planned_accounts": 18,
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "script_sha256": "eae4dd99299b0b5c2e361dcc2eca040a64e04e04efbbb882c23f22d0ec339482",
+  "preparation_cache_sha256": "257362db0f5f2eeb5c1ff07ebc0a0f8aadc360740f5bcd0ee1da4caa9c79e27b",
+  "forecast_identity": "e83a9c60a9a3ecc59dcf2a73f1faaec8b806aae2c83468bed64c39decb98aed8",
+  "records": [
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-1-moomoo_ca_us.json",
+      "account_sha256": "24caeeb414dbb56007812e2dc98cf51ed523e3ddc876d8446848b1b906e4f440",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_dollars-1-moomoo_ca_us.json",
+      "manifest_sha256": "270f1a4fadef15139090f14baa49e8fe65b44b449dc274e1dc292345435d933b",
+      "status": "passed",
+      "policy": "conditional_net_dollars",
+      "horizon": 1,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 37,
+      "net_pnl": -243.00326276552997,
+      "ending_equity": 1756.9967372344706,
+      "total_return": -0.12150163138276471,
+      "max_drawdown": 0.12150163138276471,
+      "fees": 181.22591396580697,
+      "minimum_settled_cash": 89.50624633425832,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 37,
+      "forecast_row_subset_sha256": "253a42c0ca7dafaa0a3bd2e096f7c23e9e58fecb84df4a1a6f10ccb30ebe10ce"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-1-proportional.json",
+      "account_sha256": "a5d0a7dc476be583ff7b4dc416345790652b30a4cee60b14e2d7bb5d382f8c72",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_dollars-1-proportional.json",
+      "manifest_sha256": "1aa611f470e5886e9c2f09f9be2aab4231f5cbc0e0b8363082302116a6b39950",
+      "status": "passed",
+      "policy": "conditional_net_dollars",
+      "horizon": 1,
+      "cost_profile": "proportional",
+      "trades": 4526,
+      "net_pnl": -778.3069664260283,
+      "ending_equity": 1221.6930335739614,
+      "total_return": -0.38915348321301924,
+      "max_drawdown": 0.41434906261663296,
+      "fees": 1028.987371098975,
+      "minimum_settled_cash": 5.197186692385003e-05,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 4,
+          "pending_entries": 2
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 1,
+          "pending_entries": 5
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 5,
+          "pending_entries": 3
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 2,
+          "pending_entries": 5
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 3,
+          "pending_entries": 5
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 3,
+          "pending_entries": 3
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 3,
+          "pending_entries": 2
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 4526,
+      "forecast_row_subset_sha256": "7759e0b32a8f163f83722594cd21712dec419772bbcf1ef8af334660e55d969f"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-3-moomoo_ca_us.json",
+      "account_sha256": "2e9d0454c1d6f05554b746de3754e6809e1b64e379680639101bdfc32ea8dea4",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_dollars-3-moomoo_ca_us.json",
+      "manifest_sha256": "fc8b84aafcbfbf64d0d5730c982147e724e4f1bbc56966360773106c705e5f9b",
+      "status": "passed",
+      "policy": "conditional_net_dollars",
+      "horizon": 3,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 165,
+      "net_pnl": -923.9076326684287,
+      "ending_equity": 1076.09236733157,
+      "total_return": -0.46195381633421506,
+      "max_drawdown": 0.4628797592872703,
+      "fees": 800.1245465444343,
+      "minimum_settled_cash": 1.4036372176697114,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 4,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 165,
+      "forecast_row_subset_sha256": "989d38756404e08f0b5cce234ed1048c2206c398a9addb324717791796d1a8f4"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-3-proportional.json",
+      "account_sha256": "6d7a9d1a1c7cadf787473e8a00749506783a42b145da9929078278828d47f386",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_dollars-3-proportional.json",
+      "manifest_sha256": "fd03faee6c3c17ddda5d0741856c81b802a286b6260387d6d055ab2485f96645",
+      "status": "passed",
+      "policy": "conditional_net_dollars",
+      "horizon": 3,
+      "cost_profile": "proportional",
+      "trades": 1931,
+      "net_pnl": -742.9369511628013,
+      "ending_equity": 1257.0630488372003,
+      "total_return": -0.37146847558139984,
+      "max_drawdown": 0.37317145570968824,
+      "fees": 846.0054927511253,
+      "minimum_settled_cash": 0.013227701607434028,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 3,
+          "pending_entries": 2
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 1,
+          "pending_entries": 1
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 3,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 1931,
+      "forecast_row_subset_sha256": "1ccc602550140b6712de4931194f670c53b4e61fc22569b5f0724515d6cb7b33"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-5-moomoo_ca_us.json",
+      "account_sha256": "324a1b27753f1e7c30f8e422b533236c3baecb2ced0c966c8f2de57339484447",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_dollars-5-moomoo_ca_us.json",
+      "manifest_sha256": "61e08bd284c7abe6164c699b3564fbd8227963c7d6731d91393118a95c3b8f86",
+      "status": "passed",
+      "policy": "conditional_net_dollars",
+      "horizon": 5,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 259,
+      "net_pnl": -1287.3355357490404,
+      "ending_equity": 712.6644642509584,
+      "total_return": -0.6436677678745208,
+      "max_drawdown": 0.6436677678745208,
+      "fees": 1187.2264192404875,
+      "minimum_settled_cash": 0.6437706276898325,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 2,
+          "pending_entries": 3
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 259,
+      "forecast_row_subset_sha256": "5536b475b29ab961119a91acb43fd57bf4a4b308d1c100f12373f85e47f1cf08"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_dollars-5-proportional.json",
+      "account_sha256": "df9645e6fb8d04f40311aa25495c596b82cfa35e1ef6ad1e4d3ebc664b74c650",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_dollars-5-proportional.json",
+      "manifest_sha256": "4f3499400e82340ae53735d09930eeb748d87b0a87008e470d6759219720217d",
+      "status": "passed",
+      "policy": "conditional_net_dollars",
+      "horizon": 5,
+      "cost_profile": "proportional",
+      "trades": 1578,
+      "net_pnl": -525.7853047454835,
+      "ending_equity": 1474.2146952545158,
+      "total_return": -0.26289265237274206,
+      "max_drawdown": 0.34108165810883495,
+      "fees": 598.1334774379357,
+      "minimum_settled_cash": 0.0016532627041669912,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 4,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 5,
+          "pending_entries": 1
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 1578,
+      "forecast_row_subset_sha256": "6f810600298eecc50c9b625e3b85120d2509cbf2e76cb54d5aec192e33dda2e2"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-1-moomoo_ca_us.json",
+      "account_sha256": "b28c12bf6ba621adec8b503b0c1a5b43556a91018f011cfd0992c17c9231d4af",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-1-moomoo_ca_us.json",
+      "manifest_sha256": "2ff1122bf02212bc5d0956e1009c2a6de498c1ce43b654cbee7fe88e299fa30e",
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 1,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 37,
+      "net_pnl": -243.00326276552997,
+      "ending_equity": 1756.9967372344706,
+      "total_return": -0.12150163138276471,
+      "max_drawdown": 0.12150163138276471,
+      "fees": 181.22591396580697,
+      "minimum_settled_cash": 89.50624633425832,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 37,
+      "forecast_row_subset_sha256": "4864662fa5b0bdb2627d50b0c3bd3c2a3449f08822c3d8e86e66f1c6717885b1"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-1-proportional.json",
+      "account_sha256": "0d858370e563b66c956b1d3d89ece9e9514bebf049f13b9eed7b8cde11186b5f",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-1-proportional.json",
+      "manifest_sha256": "0be1ef0864d68cbe4650c82372b82c650f89439cb0a2edc421b72d620991ef84",
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 1,
+      "cost_profile": "proportional",
+      "trades": 4757,
+      "net_pnl": -672.7368312203159,
+      "ending_equity": 1327.2631687796743,
+      "total_return": -0.33636841561016284,
+      "max_drawdown": 0.3581317818189548,
+      "fees": 815.4863236888797,
+      "minimum_settled_cash": 0.38628400012589736,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 4,
+          "pending_entries": 2
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 5
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 5,
+          "pending_entries": 3
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 1,
+          "pending_entries": 5
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 3,
+          "pending_entries": 5
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 3,
+          "pending_entries": 3
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 3,
+          "pending_entries": 2
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 4757,
+      "forecast_row_subset_sha256": "fcf3cf47d7a960fbc9de5580e2c4d85a7fb064a37fe73093e4c4992fa01de9a2"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-3-moomoo_ca_us.json",
+      "account_sha256": "96d83a3353345770b30e6ca4cb4d0a85925357f008a719bc64b09b0eb52cb04b",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-3-moomoo_ca_us.json",
+      "manifest_sha256": "855295bd3f6cd238d40af76325f655f5bd1bacc443ab1daa800b4efc32763435",
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 3,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 177,
+      "net_pnl": -891.0690526310422,
+      "ending_equity": 1108.9309473689586,
+      "total_return": -0.4455345263155207,
+      "max_drawdown": 0.4457619367040858,
+      "fees": 852.5648352577949,
+      "minimum_settled_cash": 2.9759946934707386,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 177,
+      "forecast_row_subset_sha256": "abe77a64ae1948065d6295cb27c4c33c0d0b887de84c1005b30e862b2a56831b"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-3-proportional.json",
+      "account_sha256": "8c53996842f8873a9b858f0b365d1ad80ca661c7bbbcff553f5f202287cf998a",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-3-proportional.json",
+      "manifest_sha256": "13bfa29e2062657847fad4e3d7d5312d81e48983022735f5a4a0e9feb16e3503",
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 3,
+      "cost_profile": "proportional",
+      "trades": 1967,
+      "net_pnl": -330.28101820648317,
+      "ending_equity": 1669.7189817935102,
+      "total_return": -0.16514050910324485,
+      "max_drawdown": 0.2185446677195908,
+      "fees": 565.51331965651,
+      "minimum_settled_cash": 0.9737556876689268,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 1,
+          "pending_entries": 1
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 3,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 1967,
+      "forecast_row_subset_sha256": "38d2f12e310d31013da4b8101269346788ca824f1ea089209878097e35472553"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-5-moomoo_ca_us.json",
+      "account_sha256": "528b0980b551033c188670e553ad875713918908e48b34aba5295ac925678817",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-5-moomoo_ca_us.json",
+      "manifest_sha256": "7fcc41ce46890bc058d6fb09cb01343b43ac250f560d70c1bad4f0b6589757a0",
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 5,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 270,
+      "net_pnl": -1286.412714361469,
+      "ending_equity": 713.5872856385317,
+      "total_return": -0.6432063571807342,
+      "max_drawdown": 0.6432063571807342,
+      "fees": 1219.46282447725,
+      "minimum_settled_cash": 0.6514440544785884,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 3,
+          "pending_entries": 3
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 270,
+      "forecast_row_subset_sha256": "c6f863178de98734a65e8bb88eec7d4702db7524d6b8d39d24852d79213be375"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/conditional_net_fraction-5-proportional.json",
+      "account_sha256": "82c47fca899d16c16d8a61924b72ad8efd6caab38ab80db64f929c7dab225491",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/conditional_net_fraction-5-proportional.json",
+      "manifest_sha256": "d39528c30e6be62709e2f78c157050467c1153d6df5b2eae28f8999463ea0023",
+      "status": "passed",
+      "policy": "conditional_net_fraction",
+      "horizon": 5,
+      "cost_profile": "proportional",
+      "trades": 1589,
+      "net_pnl": -256.8825002318617,
+      "ending_equity": 1743.1174997681396,
+      "total_return": -0.12844125011593022,
+      "max_drawdown": 0.24786083918376645,
+      "fees": 390.1037983485384,
+      "minimum_settled_cash": 0.40191581912267793,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 1,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 4,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 2,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 5,
+          "pending_entries": 1
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 1589,
+      "forecast_row_subset_sha256": "0df7a47b7f09e3ef911a63eec797b18da77c6b181116447c863fc94296abdeb7"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/static_setup_rank-1-moomoo_ca_us.json",
+      "account_sha256": "ab9f1347d80a242dc56a85414da664b634c11947fd3b67a3a46ea5a5dc9c481e",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/static_setup_rank-1-moomoo_ca_us.json",
+      "manifest_sha256": "e35263ba38a977f8dcff5f60781d564bf869d11d2af3afe9823d939503ea3972",
+      "status": "passed",
+      "policy": "static_setup_rank",
+      "horizon": 1,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 471,
+      "net_pnl": -1990.8650155463622,
+      "ending_equity": 9.134984453637525,
+      "total_return": -0.9954325077731813,
+      "max_drawdown": 0.9954325077731813,
+      "fees": 1984.4733986483293,
+      "minimum_settled_cash": 0.017483234990052665,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/static_setup_rank-1-proportional.json",
+      "account_sha256": "cada9fc8feea7bcd41e3289be4d87cf7d97cd537d02b7903a1f1b331982d4976",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/static_setup_rank-1-proportional.json",
+      "manifest_sha256": "bee938628f7aa5b14151a906d51482857cddb7116c59a031343914259379b47f",
+      "status": "passed",
+      "policy": "static_setup_rank",
+      "horizon": 1,
+      "cost_profile": "proportional",
+      "trades": 13015,
+      "net_pnl": -1873.5560118971964,
+      "ending_equity": 126.44398810279503,
+      "total_return": -0.9367780059486025,
+      "max_drawdown": 0.9367780059486025,
+      "fees": 1682.2157478141123,
+      "minimum_settled_cash": 0.004453707472066526,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 3,
+          "pending_entries": 5
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 5,
+          "pending_entries": 3
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 5,
+          "pending_entries": 5
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 5,
+          "pending_entries": 5
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/static_setup_rank-3-moomoo_ca_us.json",
+      "account_sha256": "43c85e259d122336a07ee7016baf589e4ede45a7a5aa6136553d8aef97ee5a3e",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/static_setup_rank-3-moomoo_ca_us.json",
+      "manifest_sha256": "c10cd27e70041598b9aa338ca010047779dc82d0bdceaa8b76b81cfd31b030c6",
+      "status": "passed",
+      "policy": "static_setup_rank",
+      "horizon": 3,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 429,
+      "net_pnl": -1990.4480536154806,
+      "ending_equity": 9.551946384519244,
+      "total_return": -0.9952240268077404,
+      "max_drawdown": 0.9952240268077404,
+      "fees": 1841.081580191454,
+      "minimum_settled_cash": 0.019825709405495218,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 4,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/static_setup_rank-3-proportional.json",
+      "account_sha256": "0f43a48fbdb762cab9585ba39f12b7e0190021bf0b7413e45591396bc966cca5",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/static_setup_rank-3-proportional.json",
+      "manifest_sha256": "a10764da727ffaaef0419fcfc7d5a38689581f2fb7d18796aa48b767e9005de1",
+      "status": "passed",
+      "policy": "static_setup_rank",
+      "horizon": 3,
+      "cost_profile": "proportional",
+      "trades": 4482,
+      "net_pnl": -1319.0097530340124,
+      "ending_equity": 680.9902469659905,
+      "total_return": -0.6595048765170047,
+      "max_drawdown": 0.6932887471814255,
+      "fees": 1386.3654784475793,
+      "minimum_settled_cash": 0.11191031076577929,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 5,
+          "pending_entries": 1
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 5,
+          "pending_entries": 2
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 5,
+          "pending_entries": 2
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/static_setup_rank-5-moomoo_ca_us.json",
+      "account_sha256": "130e80a7bd7b4f211284d2a42e147b536c778dfedadf5a88e223d09f2453f7b3",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/static_setup_rank-5-moomoo_ca_us.json",
+      "manifest_sha256": "62a64cb7deb56b0933c42243feec664b81dc36b46dab7ecf77a9840e4bf5ee5e",
+      "status": "passed",
+      "policy": "static_setup_rank",
+      "horizon": 5,
+      "cost_profile": "moomoo_ca_us",
+      "trades": 470,
+      "net_pnl": -1990.684946762402,
+      "ending_equity": 9.315053237597985,
+      "total_return": -0.995342473381201,
+      "max_drawdown": 0.995342473381201,
+      "fees": 2029.5583590490917,
+      "minimum_settled_cash": 0.2234992113158114,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 5,
+          "pending_entries": 1
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 0,
+          "pending_entries": 0
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 0,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "account_path": ".qualification/conditional-selection20260928/accounts/static_setup_rank-5-proportional.json",
+      "account_sha256": "f9e1e5b2a9115aa46b5513b5be697a2bff35eaa810743c2795cbc63330312297",
+      "manifest_path": ".qualification/conditional-selection20260928/account-manifests/static_setup_rank-5-proportional.json",
+      "manifest_sha256": "0e5b58318f328279db3b518ea02a9a6d8894a6519e5c4e4d901fbe29d7f57956",
+      "status": "passed",
+      "policy": "static_setup_rank",
+      "horizon": 5,
+      "cost_profile": "proportional",
+      "trades": 2689,
+      "net_pnl": -393.1258104937406,
+      "ending_equity": 1606.8741895062537,
+      "total_return": -0.19656290524687314,
+      "max_drawdown": 0.39751092231858476,
+      "fees": 1118.565234684479,
+      "minimum_settled_cash": 0.06040599690527415,
+      "maximum_positions": 5,
+      "model_boundary_attribution": [
+        {
+          "session": "2017-01-03",
+          "held_trades": 5,
+          "pending_entries": 1
+        },
+        {
+          "session": "2018-01-03",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2019-01-04",
+          "held_trades": 5,
+          "pending_entries": 4
+        },
+        {
+          "session": "2020-01-06",
+          "held_trades": 5,
+          "pending_entries": 1
+        },
+        {
+          "session": "2021-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2022-01-04",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2023-01-05",
+          "held_trades": 5,
+          "pending_entries": 0
+        },
+        {
+          "session": "2024-01-08",
+          "held_trades": 5,
+          "pending_entries": 4
+        },
+        {
+          "session": "2025-01-08",
+          "held_trades": 5,
+          "pending_entries": 1
+        },
+        {
+          "session": "2026-01-12",
+          "held_trades": 5,
+          "pending_entries": 0
+        }
+      ],
+      "exact_frozen_forecast_trade_checks": 0,
+      "forecast_row_subset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "qualification": [
+    "Independent accounting reconstruction from committed trade records and verified preparation-cache prices.",
+    "Fees independently reconstructed using Decimal component rounding; these are declared scenarios, not actual fills.",
+    "All recorded learned trade forecasts checked exactly against the frozen signal-date forecast map.",
+    "Source consistency is not action completeness, delisting coverage, point-in-time history or proof of profitability.",
+    "Annual boundary attribution describes preserved positions/pending entries, not an account restart.",
+    "No model fit, engine replay, source correction, broker operation or live status-file read."
+  ]
+}

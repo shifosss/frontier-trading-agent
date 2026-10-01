@@ -1,0 +1,77 @@
+[
+  {
+    "symbol": "T",
+    "cik": "0000732717",
+    "url": "https://data.sec.gov/submissions/CIK0000732717.json",
+    "requested_at_utc": "2026-09-28T22:20:43.498853+00:00",
+    "status": 200,
+    "final_url": "https://data.sec.gov/submissions/CIK0000732717.json",
+    "headers": {
+      "x-amzn-RequestId": "8d109f72-73df-4d64-9fea-13dbff6113b9",
+      "Access-Control-Allow-Origin": "*",
+      "x-amz-apigw-id": "EbkzHHTSIAMEeZA=",
+      "X-Amzn-Trace-Id": "Root=1-6abae813-0c47cf83f10dca1b3e98f2c5",
+      "Content-Type": "application/json",
+      "Vary": "Accept-Encoding",
+      "Date": "Mon, 28 Sep 2026 22:20:43 GMT",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Strict-Transport-Security": "max-age=31536000 ; preload",
+      "Set-Cookie": "ak_bmsc=AC252B781E74C7D0EB0C73DA1574F3DC~000000000000000000000000000000~YAAQDpYqF1mZ59SgAQAA+ykb6gH2j5DXZNVN7Tf77mpaUQAFuNVvZZpSQZ5SCQevZIGX3ryq4RS63CKuptyGw7+06XowaD7u1qjWu1eoeB0xHvefxpJpUbKq0eZjHGkxmkSZktg5e3jkr7lZgWD1tlX+yqWcR8KIe5rzymytLxU2tkPi8hIVRl9u4nS4DxHe8YQYk4UzuEfT776YJx2jPZje/E18jE2cCDKuaISKgd46DUSSJlO7tAPznv/SuzTwSPWtTvop4rd5qmWybTD/crddFJ8wLCyvh8SHtgCAnkoC4sK6qgZhRwfJ1tTKNYmDXbwB9Eo6MswVBNnS9m68GfmL5rg73L7dvLuy3qJrueR+4x1wMZ2hA4nEsbkvia728ykD; Domain=.sec.gov; Path=/; Expires=Tue, 29 Sep 2026 00:20:43 GMT; Max-Age=7200; SameSite=None; Secure; HttpOnly"
+    },
+    "bytes": 159868,
+    "sha256": "84eccf0171172ec4fe29525f0b3c7338b8268677e7ea36781301a1d912c7c56f",
+    "raw_file": "identity-raw\\T-submissions.bin",
+    "retrieved_at_utc": "2026-09-28T22:20:43.926162+00:00"
+  },
+  {
+    "symbol": "HRL",
+    "cik": "0000048465",
+    "url": "https://data.sec.gov/submissions/CIK0000048465.json",
+    "requested_at_utc": "2026-09-28T22:20:44.927635+00:00",
+    "status": 200,
+    "final_url": "https://data.sec.gov/submissions/CIK0000048465.json",
+    "headers": {
+      "x-amzn-RequestId": "5eb6752b-73e1-4a66-98ec-692dd6e54783",
+      "Access-Control-Allow-Origin": "*",
+      "x-amz-apigw-id": "EbkyRFIcoAMEc_g=",
+      "X-Amzn-Trace-Id": "Root=1-6abae80e-925214df66ee0346b80258a1",
+      "Content-Type": "application/json",
+      "Vary": "Accept-Encoding",
+      "Date": "Mon, 28 Sep 2026 22:20:44 GMT",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Strict-Transport-Security": "max-age=31536000 ; preload",
+      "Set-Cookie": "ak_bmsc=348DCF6F4B07239B4E132FB42642B4CA~000000000000000000000000000000~YAAQDpYqF5qZ59SgAQAAOC4b6gHsEjv7Wk/mjalfHPIDwy3XBHr72pdLvN7L+e14+j0L6Z14/GXse/V48yFLrmqtJzNrQRSWciwX0X40k9reCSkof+1MRBKnbNa3BftheAwj7pFscZsu3toMS0Kb2A5rC6+tULravmmrqJ/QtIFbcMGSyZpBMW7nmujh/0ERoyVzFsDqdX4osCL5Wqu2X5v9efxqOA+BzALpdxUrZ+bPqOrj9ZdQsbWiXtVubiFIqbAbQ7LeVnZUMXZIZ7SQG8bgB2Z+D1cLxy/b1VnHI67K0Wmcyah2P7uqQyZCohBAL8cngDh2CMT9CKkMOa2R+8tTo+5rPz0PrRDlLjejh0LmeyOh9t8XEO/7RvTblmwk+0BT; Domain=.sec.gov; Path=/; Expires=Tue, 29 Sep 2026 00:20:44 GMT; Max-Age=7200; SameSite=None; Secure; HttpOnly"
+    },
+    "bytes": 156119,
+    "sha256": "2ba0992e6944335be8c69c4bf7bcf7adc986e92a6f2f9f559a3f34a76b0d55f4",
+    "raw_file": "identity-raw\\HRL-submissions.bin",
+    "retrieved_at_utc": "2026-09-28T22:20:45.011997+00:00"
+  },
+  {
+    "symbol": "BANF",
+    "cik": "0000760498",
+    "url": "https://data.sec.gov/submissions/CIK0000760498.json",
+    "requested_at_utc": "2026-09-28T22:20:46.013309+00:00",
+    "status": 200,
+    "final_url": "https://data.sec.gov/submissions/CIK0000760498.json",
+    "headers": {
+      "x-amzn-RequestId": "6c62a5f8-1045-4556-bce0-b22a5fa34419",
+      "Access-Control-Allow-Origin": "*",
+      "x-amz-apigw-id": "Ebk4wH-sIAMELIw=",
+      "X-Amzn-Trace-Id": "Root=1-6abae837-01dcc089360abc8341934208",
+      "Content-Type": "application/json",
+      "Vary": "Accept-Encoding",
+      "Date": "Mon, 28 Sep 2026 22:20:46 GMT",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Strict-Transport-Security": "max-age=31536000 ; preload",
+      "Set-Cookie": "ak_bmsc=6DB52DE8F4F41F3DCE55B57AF8E0D28C~000000000000000000000000000000~YAAQDpYqF8+Z59SgAQAAijIb6gHwIO4MMdjPsSEaaS5CxUKAo88KHAHT9YA0h1/EnZSYaTmE9zMXCdgY7FZWBXiQlECP2HMcHcgbqGwIMOiuou6dUrNymiLRDtBolxaEqD0W4Yd5zzCR3N+ZN57B8bBpS3N28KdyT9WjSqh03ZjuDJprtd7j8SHE2R/ooaS3HuPztrJxVaQ0zGxmDW6kxEkOzw3E8gEJJLdpKWsoXMe8OrectKSRHVyknDknRvSDEvYUluiEIQMG43CBgJE12ax5tp561akyO4rhrmBlcoPSFjKLD2Gfgw+ZQ6/3CepK7DQdFUOMjlaLWgOKIORW+cwmUn6JrJ8J9a40MQpnAEznON+vPSZyfDNRN1nbSa51SSaG; Domain=.sec.gov; Path=/; Expires=Tue, 29 Sep 2026 00:20:46 GMT; Max-Age=7200; SameSite=None; Secure; HttpOnly"
+    },
+    "bytes": 162327,
+    "sha256": "f27388aa6fa8b032567dbc890d36835ae208ff8d8b192ea9d56f8356d29eb5ef",
+    "raw_file": "identity-raw\\BANF-submissions.bin",
+    "retrieved_at_utc": "2026-09-28T22:20:46.111347+00:00"
+  }
+]

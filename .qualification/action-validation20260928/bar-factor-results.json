@@ -1,0 +1,2729 @@
+[
+  {
+    "symbol": "DHR",
+    "effective_session": "2016-07-05",
+    "prior_session": "2016-07-01",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\DHR.83c2f636271f14fdf1f0df4ace5454e71d79af2bb84a64c1ba9a4f31eb4412ff.json",
+    "source_sha256": "83c2f636271f14fdf1f0df4ace5454e71d79af2bb84a64c1ba9a4f31eb4412ff",
+    "raw_capture_files": [
+      "DHR-2016-07-05-raw-1.54762b64e034590441519debccd6aea7330d32f5b674d75b2355ebfb51293912.raw.json"
+    ],
+    "split_capture_files": [
+      "DHR-2016-07-05-split-1.9fd9e9fd8803f02f5bebebf0080d8c0f4ce494e4ccd1b2c185a64ba6f677a1ee.raw.json"
+    ],
+    "expected_price_factor": "0.75815011372251705837755875663381349507202426080364",
+    "expected_volume_factor": "1.319",
+    "raw_sessions": [
+      "2016-06-27",
+      "2016-06-28",
+      "2016-06-29",
+      "2016-06-30",
+      "2016-07-01",
+      "2016-07-05",
+      "2016-07-06",
+      "2016-07-07",
+      "2016-07-08",
+      "2016-07-11",
+      "2016-07-12",
+      "2016-07-13",
+      "2016-07-14",
+      "2016-07-15"
+    ],
+    "split_sessions": [
+      "2016-06-27",
+      "2016-06-28",
+      "2016-06-29",
+      "2016-06-30",
+      "2016-07-01",
+      "2016-07-05",
+      "2016-07-06",
+      "2016-07-07",
+      "2016-07-08",
+      "2016-07-11",
+      "2016-07-12",
+      "2016-07-13",
+      "2016-07-14",
+      "2016-07-15"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2016-07-01",
+        "source_timestamp": "1467379800",
+        "source_provider_close": "68.77120208740234",
+        "source_adjusted_close": "42.00966262817383",
+        "source_nominal_close": "102.319995144104",
+        "source_provider_volume": "6205747.0",
+        "source_nominal_volume": "4170999.817183661",
+        "raw": {
+          "c": "102.32",
+          "h": "102.79",
+          "l": "101.02",
+          "n": 28700,
+          "o": "101.34",
+          "t": "2016-07-01T04:00:00Z",
+          "v": 4403382,
+          "vw": "102.195389"
+        },
+        "split": {
+          "c": "77.57",
+          "h": "77.93",
+          "l": "76.59",
+          "n": 28700,
+          "o": "76.83",
+          "t": "2016-07-01T04:00:00Z",
+          "v": 5808060,
+          "vw": "77.48"
+        },
+        "nominal_delta": "-0.000004855896",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-232382.182816339"
+      },
+      "effective": {
+        "session": "2016-07-05",
+        "source_timestamp": "1467725400",
+        "source_provider_close": "71.27659606933594",
+        "source_adjusted_close": "67.72732543945312",
+        "source_nominal_close": "80.40000036621093",
+        "source_provider_volume": "17648801.0",
+        "source_nominal_volume": "15646100.177304966",
+        "raw": {
+          "c": "80.4",
+          "h": "80.4",
+          "l": "77.34",
+          "n": 72272,
+          "o": "77.42",
+          "t": "2016-07-05T04:00:00Z",
+          "v": 20829184,
+          "vw": "79.98732"
+        },
+        "split": {
+          "c": "80.4",
+          "h": "80.4",
+          "l": "77.34",
+          "n": 72272,
+          "o": "77.42",
+          "t": "2016-07-05T04:00:00Z",
+          "v": 20829184,
+          "vw": "79.98732"
+        },
+        "nominal_delta": "3.6621093E-7",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-5183083.822695034"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.75811180609851446442533229085222830336200156372166",
+    "price_factor_interval": [
+      "0.75809378581245997426905199688645093709287496021048",
+      "0.75812982679952513963568541082096982482743069468206"
+    ],
+    "relative_interval_width": "0.000047538061938953118589472979630412921879013768014020",
+    "volume_factor_interval": [
+      "1.3189991518601243227103024569927720886800771317583",
+      "1.3190004584397661174783442363546942779135214491484"
+    ],
+    "observed_volume_factor": "1.3189998051497689730302753656167009812003591784678",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "LINK",
+    "effective_session": "2016-04-04",
+    "prior_session": "2016-04-01",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\LINK.c7cfa9cd58e796daea992e029dd8c34f070707c87705454ab62931f4adda95b2.json",
+    "source_sha256": "c7cfa9cd58e796daea992e029dd8c34f070707c87705454ab62931f4adda95b2",
+    "raw_capture_files": [
+      "LINK-2016-04-04-raw-1.118382d63f23d350cc1640a7d911203fecaf5f99fe5aca4c364d87f810dbe3a7.raw.json"
+    ],
+    "split_capture_files": [
+      "LINK-2016-04-04-split-1.118382d63f23d350cc1640a7d911203fecaf5f99fe5aca4c364d87f810dbe3a7.raw.json"
+    ],
+    "expected_price_factor": "0.8",
+    "expected_volume_factor": "1.25",
+    "raw_sessions": [],
+    "split_sessions": [],
+    "boundaries": {},
+    "price_factor_status": "unresolved_missing_boundary",
+    "missing_boundaries": [
+      {
+        "boundary": "prior",
+        "required_session": "2016-04-01",
+        "raw_present": false,
+        "split_present": false
+      },
+      {
+        "boundary": "effective",
+        "required_session": "2016-04-04",
+        "raw_present": false,
+        "split_present": false
+      }
+    ]
+  },
+  {
+    "symbol": "MRBK",
+    "effective_session": "2023-03-21",
+    "prior_session": "2023-03-20",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\MRBK.996b89674aaf101651da0cbbcbe179e9620148e9606b0cd8d331c468f453f0e7.json",
+    "source_sha256": "996b89674aaf101651da0cbbcbe179e9620148e9606b0cd8d331c468f453f0e7",
+    "raw_capture_files": [
+      "MRBK-2023-03-21-raw-1.c139b80b95bf163a586bfda2476159ad85e068e150e66194ba608f5e7989cd36.raw.json"
+    ],
+    "split_capture_files": [
+      "MRBK-2023-03-21-split-1.6659a19591d5fdf6e9e30fa1d711ada6120a855b973feb2591d49973bd975838.raw.json"
+    ],
+    "expected_price_factor": "0.5",
+    "expected_volume_factor": "2",
+    "raw_sessions": [
+      "2023-03-13",
+      "2023-03-14",
+      "2023-03-15",
+      "2023-03-16",
+      "2023-03-17",
+      "2023-03-20",
+      "2023-03-21",
+      "2023-03-22",
+      "2023-03-23",
+      "2023-03-24",
+      "2023-03-27",
+      "2023-03-28",
+      "2023-03-29",
+      "2023-03-30",
+      "2023-03-31"
+    ],
+    "split_sessions": [
+      "2023-03-13",
+      "2023-03-14",
+      "2023-03-15",
+      "2023-03-16",
+      "2023-03-17",
+      "2023-03-20",
+      "2023-03-21",
+      "2023-03-22",
+      "2023-03-23",
+      "2023-03-24",
+      "2023-03-27",
+      "2023-03-28",
+      "2023-03-29",
+      "2023-03-30",
+      "2023-03-31"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2023-03-20",
+        "source_timestamp": "1679319000",
+        "source_provider_close": "13.375",
+        "source_adjusted_close": "11.645334243774414",
+        "source_nominal_close": "26.75",
+        "source_provider_volume": "36200.0",
+        "source_nominal_volume": "18100.0",
+        "raw": {
+          "c": "26.75",
+          "h": "27.9",
+          "l": "26.54",
+          "n": 309,
+          "o": "27.9",
+          "t": "2023-03-20T04:00:00Z",
+          "v": 20624,
+          "vw": "26.945879"
+        },
+        "split": {
+          "c": "13.38",
+          "h": "13.95",
+          "l": "13.27",
+          "n": 309,
+          "o": "13.95",
+          "t": "2023-03-20T04:00:00Z",
+          "v": 41248,
+          "vw": "13.47"
+        },
+        "nominal_delta": "0.00",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-2524.0"
+      },
+      "effective": {
+        "session": "2023-03-21",
+        "source_timestamp": "1679405400",
+        "source_provider_close": "13.460000038146973",
+        "source_adjusted_close": "11.719342231750488",
+        "source_nominal_close": "13.460000038146973",
+        "source_provider_volume": "32900.0",
+        "source_nominal_volume": "32900.0",
+        "raw": {
+          "c": "13.46",
+          "h": "15.11",
+          "l": "13.2801",
+          "n": 512,
+          "o": "13.98",
+          "t": "2023-03-21T04:00:00Z",
+          "v": 35787,
+          "vw": "13.608602"
+        },
+        "split": {
+          "c": "13.46",
+          "h": "15.11",
+          "l": "13.2801",
+          "n": 512,
+          "o": "13.98",
+          "t": "2023-03-21T04:00:00Z",
+          "v": 35787,
+          "vw": "13.608602"
+        },
+        "nominal_delta": "3.8146973E-8",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-2887.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.50018691588785046728971962616822429906542056074766",
+    "price_factor_interval": [
+      "0.50012171800927356668459933748780040105258012696227",
+      "0.50025212174207994356902548045445325483349797605486"
+    ],
+    "relative_interval_width": "0.00026080746561275376885228593330570756183569818518",
+    "volume_factor_interval": [
+      "1.9997427842750744281983803611164737799363931028176",
+      "2.0002572523361113964185953494003543382100592855689"
+    ],
+    "observed_volume_factor": "2",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "IP",
+    "effective_session": "2021-10-01",
+    "prior_session": "2021-09-30",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\IP.8ca8789bc06380c2b783b1b49744c3d6778324fd4c20e0d607ed408864e60f92.json",
+    "source_sha256": "8ca8789bc06380c2b783b1b49744c3d6778324fd4c20e0d607ed408864e60f92",
+    "raw_capture_files": [
+      "IP-2021-10-01-raw-1.d292f176200ee1743462cb8a6bf382cbe66b6507ab7c67c81537e29f9c40c11d.raw.json"
+    ],
+    "split_capture_files": [
+      "IP-2021-10-01-split-1.d292f176200ee1743462cb8a6bf382cbe66b6507ab7c67c81537e29f9c40c11d.raw.json"
+    ],
+    "expected_price_factor": "0.94696969696969696969696969696969696969696969696970",
+    "expected_volume_factor": "1.056",
+    "raw_sessions": [
+      "2021-09-21",
+      "2021-09-22",
+      "2021-09-23",
+      "2021-09-24",
+      "2021-09-27",
+      "2021-09-28",
+      "2021-09-29",
+      "2021-09-30",
+      "2021-10-01",
+      "2021-10-04",
+      "2021-10-05",
+      "2021-10-06",
+      "2021-10-07",
+      "2021-10-08",
+      "2021-10-11"
+    ],
+    "split_sessions": [
+      "2021-09-21",
+      "2021-09-22",
+      "2021-09-23",
+      "2021-09-24",
+      "2021-09-27",
+      "2021-09-28",
+      "2021-09-29",
+      "2021-09-30",
+      "2021-10-01",
+      "2021-10-04",
+      "2021-10-05",
+      "2021-10-06",
+      "2021-10-07",
+      "2021-10-08",
+      "2021-10-11"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2021-09-30",
+        "source_timestamp": "1633008600",
+        "source_provider_close": "52.95454406738281",
+        "source_adjusted_close": "42.28783416748047",
+        "source_nominal_close": "55.91999853515625",
+        "source_provider_volume": "3046771.0",
+        "source_nominal_volume": "2885199.8106060605",
+        "raw": {
+          "c": "55.92",
+          "h": "57.49",
+          "l": "55.86",
+          "n": 29889,
+          "o": "57.46",
+          "t": "2021-09-30T04:00:00Z",
+          "v": 3346317,
+          "vw": "56.191032"
+        },
+        "split": {
+          "c": "55.92",
+          "h": "57.49",
+          "l": "55.86",
+          "n": 29889,
+          "o": "57.46",
+          "t": "2021-09-30T04:00:00Z",
+          "v": 3346317,
+          "vw": "56.191032"
+        },
+        "nominal_delta": "-0.00000146484375",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-461117.1893939395"
+      },
+      "effective": {
+        "session": "2021-10-01",
+        "source_timestamp": "1633095000",
+        "source_provider_close": "53.2599983215332",
+        "source_adjusted_close": "42.53175735473633",
+        "source_nominal_close": "53.2599983215332",
+        "source_provider_volume": "2733000.0",
+        "source_nominal_volume": "2733000.0",
+        "raw": {
+          "c": "53.26",
+          "h": "53.675",
+          "l": "52.44",
+          "n": 28436,
+          "o": "53.3",
+          "t": "2021-10-01T04:00:00Z",
+          "v": 3142998,
+          "vw": "53.246481"
+        },
+        "split": {
+          "c": "53.26",
+          "h": "53.675",
+          "l": "52.44",
+          "n": 28436,
+          "o": "53.3",
+          "t": "2021-10-01T04:00:00Z",
+          "v": 3142998,
+          "vw": "53.246481"
+        },
+        "nominal_delta": "-0.0000016784668",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-409998.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1",
+    "price_factor_interval": [
+      "0.99996334216560926580135991283616444431571673320955",
+      "1.0000366591782368189043548022316109553681345405534"
+    ],
+    "relative_interval_width": "0.000077422765334696076762603201591515671353204555105600",
+    "volume_factor_interval": [
+      "0.99999876599363664320924264911493768139636256423830",
+      "1.0000012340078861303746746952894797820227200775881"
+    ],
+    "observed_volume_factor": "1",
+    "volume_factor_status": "inconsistent"
+  },
+  {
+    "symbol": "OLOX",
+    "effective_session": "2023-09-28",
+    "prior_session": "2023-09-27",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\OLOX.7aaec7b2f93eb8bd2742cb4879839723f939f5e3076729f91eb866321b59d1e4.json",
+    "source_sha256": "7aaec7b2f93eb8bd2742cb4879839723f939f5e3076729f91eb866321b59d1e4",
+    "raw_capture_files": [
+      "OLOX-2023-09-28-raw-1.1fbf7e5b74be3130c57993da79aed6e3b8250a09ebd3b7514ff76032822d9d64.raw.json"
+    ],
+    "split_capture_files": [
+      "OLOX-2023-09-28-split-1.11f88dfd4dc3ac910c81f1615f45e2861ef8af161e9adab333500602d2bf58f8.raw.json"
+    ],
+    "expected_price_factor": "0.46882325363338021565869667135489920300046882325363",
+    "expected_volume_factor": "2.133",
+    "raw_sessions": [
+      "2023-09-18",
+      "2023-09-19",
+      "2023-09-20",
+      "2023-09-21",
+      "2023-09-22",
+      "2023-09-25",
+      "2023-09-26",
+      "2023-09-27",
+      "2023-09-28",
+      "2023-09-29",
+      "2023-10-02",
+      "2023-10-03",
+      "2023-10-04",
+      "2023-10-05",
+      "2023-10-06"
+    ],
+    "split_sessions": [
+      "2023-09-18",
+      "2023-09-19",
+      "2023-09-20",
+      "2023-09-21",
+      "2023-09-22",
+      "2023-09-25",
+      "2023-09-26",
+      "2023-09-27",
+      "2023-09-28",
+      "2023-09-29",
+      "2023-10-02",
+      "2023-10-03",
+      "2023-10-04",
+      "2023-10-05",
+      "2023-10-06"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2023-09-27",
+        "source_timestamp": "1695821400",
+        "source_provider_close": "5760.89990234375",
+        "source_adjusted_close": "5760.89990234375",
+        "source_nominal_close": "0.9599999602890016",
+        "source_provider_volume": "39.0",
+        "source_nominal_volume": "234036.56821378338",
+        "raw": {
+          "c": "0.96",
+          "h": "0.9707",
+          "l": "0.86",
+          "n": 1175,
+          "o": "0.9",
+          "t": "2023-09-27T04:00:00Z",
+          "v": 234464,
+          "vw": "0.892763"
+        },
+        "split": {
+          "c": 12288,
+          "h": "12424.96",
+          "l": 11008,
+          "n": 1175,
+          "o": 11520,
+          "t": "2023-09-27T04:00:00Z",
+          "v": 18,
+          "vw": "11427.37"
+        },
+        "nominal_delta": "-3.97109984E-8",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-427.43178621662"
+      },
+      "effective": {
+        "session": "2023-09-28",
+        "source_timestamp": "1695907800",
+        "source_provider_close": "7680.0",
+        "source_adjusted_close": "7680.0",
+        "source_nominal_close": "0.6000000000000001",
+        "source_provider_volume": "62.0",
+        "source_nominal_volume": "793599.9999999999",
+        "raw": {
+          "c": "0.6",
+          "h": "0.6272",
+          "l": "0.4701",
+          "n": 3026,
+          "o": "0.5327",
+          "t": "2023-09-28T04:00:00Z",
+          "v": 794309,
+          "vw": "0.544473"
+        },
+        "split": {
+          "c": 7680,
+          "h": "8028.16",
+          "l": "6017.28",
+          "n": 3026,
+          "o": "6818.56",
+          "t": "2023-09-28T04:00:00Z",
+          "v": 62,
+          "vw": "6969.25"
+        },
+        "nominal_delta": "1E-16",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-709.0000000001"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1",
+    "price_factor_interval": [
+      "0.99864553961528328970348789161888604896405516399011",
+      "1.0013558736847112040022929860344554976863210161673"
+    ],
+    "relative_interval_width": "0.0057811425700897411993512663884096341245930626939463",
+    "volume_factor_interval": [
+      "0.91415383688430838325278860113483618057861548361197",
+      "1.0552114098466932774111025802036785418902475646652"
+    ],
+    "observed_volume_factor": "0.98354476043092935100842222975561005032205232965127",
+    "volume_factor_status": "inconsistent"
+  },
+  {
+    "symbol": "NTES",
+    "effective_session": "2020-10-02",
+    "prior_session": "2020-10-01",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\NTES.c318f5811eefe86fb6c23db20fc5c05f901818de8cd541708145d36ea0680614.json",
+    "source_sha256": "c318f5811eefe86fb6c23db20fc5c05f901818de8cd541708145d36ea0680614",
+    "raw_capture_files": [
+      "NTES-2020-10-02-raw-1.84a4cc13ff947604fcf280c7740573bc2684fadce4b530916b16eecdfcbeddcb.raw.json"
+    ],
+    "split_capture_files": [
+      "NTES-2020-10-02-split-1.3f24d3a0c72a286e0d1c0e8ee9482889309f39e2f248dd169e6d0924c536a36f.raw.json"
+    ],
+    "expected_price_factor": "0.2",
+    "expected_volume_factor": "5",
+    "raw_sessions": [
+      "2020-09-22",
+      "2020-09-23",
+      "2020-09-24",
+      "2020-09-25",
+      "2020-09-28",
+      "2020-09-29",
+      "2020-09-30",
+      "2020-10-01",
+      "2020-10-02",
+      "2020-10-05",
+      "2020-10-06",
+      "2020-10-07",
+      "2020-10-08",
+      "2020-10-09",
+      "2020-10-12"
+    ],
+    "split_sessions": [
+      "2020-09-22",
+      "2020-09-23",
+      "2020-09-24",
+      "2020-09-25",
+      "2020-09-28",
+      "2020-09-29",
+      "2020-09-30",
+      "2020-10-01",
+      "2020-10-02",
+      "2020-10-05",
+      "2020-10-06",
+      "2020-10-07",
+      "2020-10-08",
+      "2020-10-09",
+      "2020-10-12"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2020-10-01",
+        "source_timestamp": "1601559000",
+        "source_provider_close": "92.71800231933594",
+        "source_adjusted_close": "82.45465087890625",
+        "source_nominal_close": "463.5900115966797",
+        "source_provider_volume": "1709500.0",
+        "source_nominal_volume": "341900.0",
+        "raw": {
+          "c": "463.59",
+          "h": "466.0448",
+          "l": "454.82",
+          "n": 7723,
+          "o": "459.05",
+          "t": "2020-10-01T04:00:00Z",
+          "v": 387340,
+          "vw": "462.38926"
+        },
+        "split": {
+          "c": "92.72",
+          "h": "93.21",
+          "l": "90.96",
+          "n": 7723,
+          "o": "91.81",
+          "t": "2020-10-01T04:00:00Z",
+          "v": 1936700,
+          "vw": "92.48"
+        },
+        "nominal_delta": "0.0000115966797",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-45440.0"
+      },
+      "effective": {
+        "session": "2020-10-02",
+        "source_timestamp": "1601645400",
+        "source_provider_close": "89.0999984741211",
+        "source_adjusted_close": "79.2371597290039",
+        "source_nominal_close": "89.0999984741211",
+        "source_provider_volume": "1648300.0",
+        "source_nominal_volume": "1648300.0",
+        "raw": {
+          "c": "89.1",
+          "h": "92.09",
+          "l": "88.12",
+          "n": 20621,
+          "o": "91.28",
+          "t": "2020-10-02T04:00:00Z",
+          "v": 1793755,
+          "vw": "89.371621"
+        },
+        "split": {
+          "c": "89.1",
+          "h": "92.09",
+          "l": "88.12",
+          "n": 20621,
+          "o": "91.28",
+          "t": "2020-10-02T04:00:00Z",
+          "v": 1793755,
+          "vw": "89.371621"
+        },
+        "nominal_delta": "-0.0000015258789",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-145455.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.20000431415690588666709808235725533337647490239220",
+    "price_factor_interval": [
+      "0.20000077521636871115783626074902489632956923339654",
+      "0.20000785315447976682012287322051908425026011114952"
+    ],
+    "relative_interval_width": "0.0000353896905552783114330623574709396034543887649",
+    "volume_factor_interval": [
+      "4.9999789348960693772608315813716785084549325501424",
+      "5.0000210652246719681666644606662098627953735131728"
+    ],
+    "observed_volume_factor": "5",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "EVO",
+    "effective_session": "2021-10-20",
+    "prior_session": "2021-10-19",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\EVO.a04fa73994639d010f999eb3099c0204735f193f7a4a9754d251ab170d92bcb6.json",
+    "source_sha256": "a04fa73994639d010f999eb3099c0204735f193f7a4a9754d251ab170d92bcb6",
+    "raw_capture_files": [
+      "EVO-2021-10-20-raw-1.89be2a274146d97bbe2bc60615eadf87591c8d1c288f9191983c4544496808c2.raw.json"
+    ],
+    "split_capture_files": [
+      "EVO-2021-10-20-split-1.89be2a274146d97bbe2bc60615eadf87591c8d1c288f9191983c4544496808c2.raw.json"
+    ],
+    "expected_price_factor": "0.25",
+    "expected_volume_factor": "4",
+    "raw_sessions": [
+      "2021-10-11",
+      "2021-10-12",
+      "2021-10-13",
+      "2021-10-14",
+      "2021-10-15",
+      "2021-10-18",
+      "2021-10-19",
+      "2021-10-20",
+      "2021-10-21",
+      "2021-10-22",
+      "2021-10-25",
+      "2021-10-26",
+      "2021-10-27",
+      "2021-10-28",
+      "2021-10-29"
+    ],
+    "split_sessions": [
+      "2021-10-11",
+      "2021-10-12",
+      "2021-10-13",
+      "2021-10-14",
+      "2021-10-15",
+      "2021-10-18",
+      "2021-10-19",
+      "2021-10-20",
+      "2021-10-21",
+      "2021-10-22",
+      "2021-10-25",
+      "2021-10-26",
+      "2021-10-27",
+      "2021-10-28",
+      "2021-10-29"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2021-10-19",
+        "source_timestamp": "1634650200",
+        "source_provider_close": "24.975000381469727",
+        "source_adjusted_close": "24.975000381469727",
+        "source_nominal_close": "99.9000015258789",
+        "source_provider_volume": "400.0",
+        "source_nominal_volume": "100.0",
+        "raw": {
+          "c": "12.62",
+          "h": "12.62",
+          "l": "12.62",
+          "n": 0,
+          "o": "12.62",
+          "t": "2021-10-19T04:00:00Z",
+          "v": 0,
+          "vw": 0
+        },
+        "split": {
+          "c": "12.62",
+          "h": "12.62",
+          "l": "12.62",
+          "n": 0,
+          "o": "12.62",
+          "t": "2021-10-19T04:00:00Z",
+          "v": 0,
+          "vw": 0
+        },
+        "nominal_delta": "87.2800015258789",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "discrepancy",
+        "volume_nominal_delta": "100.0"
+      },
+      "effective": {
+        "session": "2021-10-20",
+        "source_timestamp": "1634736600",
+        "source_provider_close": "25.6299991607666",
+        "source_adjusted_close": "25.6299991607666",
+        "source_nominal_close": "25.6299991607666",
+        "source_provider_volume": "1000.0",
+        "source_nominal_volume": "1000.0",
+        "raw": {
+          "c": "12.62",
+          "h": "12.62",
+          "l": "12.62",
+          "n": 0,
+          "o": "12.62",
+          "t": "2021-10-20T04:00:00Z",
+          "v": 0,
+          "vw": 0
+        },
+        "split": {
+          "c": "12.62",
+          "h": "12.62",
+          "l": "12.62",
+          "n": 0,
+          "o": "12.62",
+          "t": "2021-10-20T04:00:00Z",
+          "v": 0,
+          "vw": 0
+        },
+        "nominal_delta": "13.0099991607666",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "discrepancy",
+        "volume_nominal_delta": "1000.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1",
+    "price_factor_interval": [
+      "0.99984153395159965016987439529902933376856665549027",
+      "1.0001584911638687944902895363394218633860452558426"
+    ],
+    "relative_interval_width": "0.00126782884907657728166056416157011846991440140932",
+    "volume_factor_interval": null,
+    "volume_factor_status": "unresolved_zero_volume"
+  },
+  {
+    "symbol": "CZFS",
+    "effective_session": "2024-06-14",
+    "prior_session": "2024-06-13",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\CZFS.552981b4783aff7ad0c317a39836012d6b6b876decdba24cf6a9004dc00347ee.json",
+    "source_sha256": "552981b4783aff7ad0c317a39836012d6b6b876decdba24cf6a9004dc00347ee",
+    "raw_capture_files": [
+      "CZFS-2024-06-14-raw-1.98bd7dc26dbc92abfcc3e11f32fcd6f190cc45882da08365ff7a2fad6d632df6.raw.json"
+    ],
+    "split_capture_files": [
+      "CZFS-2024-06-14-split-1.98bd7dc26dbc92abfcc3e11f32fcd6f190cc45882da08365ff7a2fad6d632df6.raw.json"
+    ],
+    "expected_price_factor": "0.99009900990099009900990099009900990099009900990099",
+    "expected_volume_factor": "1.01",
+    "raw_sessions": [
+      "2024-06-04",
+      "2024-06-05",
+      "2024-06-06",
+      "2024-06-07",
+      "2024-06-10",
+      "2024-06-11",
+      "2024-06-12",
+      "2024-06-13",
+      "2024-06-14",
+      "2024-06-17",
+      "2024-06-18",
+      "2024-06-20",
+      "2024-06-21",
+      "2024-06-24"
+    ],
+    "split_sessions": [
+      "2024-06-04",
+      "2024-06-05",
+      "2024-06-06",
+      "2024-06-07",
+      "2024-06-10",
+      "2024-06-11",
+      "2024-06-12",
+      "2024-06-13",
+      "2024-06-14",
+      "2024-06-17",
+      "2024-06-18",
+      "2024-06-20",
+      "2024-06-21",
+      "2024-06-24"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2024-06-13",
+        "source_timestamp": "1718285400",
+        "source_provider_close": "42.74257278442383",
+        "source_adjusted_close": "39.36046600341797",
+        "source_nominal_close": "43.169998512268066",
+        "source_provider_volume": "9292.0",
+        "source_nominal_volume": "9200.0",
+        "raw": {
+          "c": "43.17",
+          "h": "43.2",
+          "l": "41.01",
+          "n": 418,
+          "o": "41.45",
+          "t": "2024-06-13T04:00:00Z",
+          "v": 9241,
+          "vw": "42.067056"
+        },
+        "split": {
+          "c": "43.17",
+          "h": "43.2",
+          "l": "41.01",
+          "n": 418,
+          "o": "41.45",
+          "t": "2024-06-13T04:00:00Z",
+          "v": 9241,
+          "vw": "42.067056"
+        },
+        "nominal_delta": "-0.000001487731934",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-41.0"
+      },
+      "effective": {
+        "session": "2024-06-14",
+        "source_timestamp": "1718371800",
+        "source_provider_close": "42.36000061035156",
+        "source_adjusted_close": "39.455867767333984",
+        "source_nominal_close": "42.36000061035156",
+        "source_provider_volume": "8200.0",
+        "source_nominal_volume": "8200.0",
+        "raw": {
+          "c": "42.36",
+          "h": "43.7004",
+          "l": "41.1446",
+          "n": 319,
+          "o": "43.7004",
+          "t": "2024-06-14T04:00:00Z",
+          "v": 8233,
+          "vw": "42.445339"
+        },
+        "split": {
+          "c": "42.36",
+          "h": "43.7004",
+          "l": "41.1446",
+          "n": 319,
+          "o": "43.7004",
+          "t": "2024-06-14T04:00:00Z",
+          "v": 8233,
+          "vw": "42.445339"
+        },
+        "nominal_delta": "6.1035156E-7",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-33.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1",
+    "price_factor_interval": [
+      "0.99995322968275952602792631882691952379662182589205",
+      "1.0000467725048053618504407403738015683272836863008"
+    ],
+    "relative_interval_width": "0.000094478250266294180739565762350864975968479012837500",
+    "volume_factor_interval": [
+      "0.99954075387535239137294301810539869391600594954222",
+      "1.0004594571285533384658749090235970702443005650003"
+    ],
+    "observed_volume_factor": "1",
+    "volume_factor_status": "inconsistent"
+  },
+  {
+    "symbol": "ODFL",
+    "effective_session": "2024-03-28",
+    "prior_session": "2024-03-27",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\ODFL.232ad2c5b8cb28e06cec96c19081dd58a7935c75900d6b4dc0adab9d7f796f4e.json",
+    "source_sha256": "232ad2c5b8cb28e06cec96c19081dd58a7935c75900d6b4dc0adab9d7f796f4e",
+    "raw_capture_files": [
+      "ODFL-2024-03-28-raw-1.60b78d0a4dd2eeaa1255afd2f731c418f57046a243a597da0074ef4bf432881c.raw.json"
+    ],
+    "split_capture_files": [
+      "ODFL-2024-03-28-split-1.c0fed974ef74f45a397f7395c72ab44c73e141ef023f9fe08a1fa798155b030d.raw.json"
+    ],
+    "expected_price_factor": "0.5",
+    "expected_volume_factor": "2",
+    "raw_sessions": [
+      "2024-03-18",
+      "2024-03-19",
+      "2024-03-20",
+      "2024-03-21",
+      "2024-03-22",
+      "2024-03-25",
+      "2024-03-26",
+      "2024-03-27",
+      "2024-03-28",
+      "2024-04-01",
+      "2024-04-02",
+      "2024-04-03",
+      "2024-04-04",
+      "2024-04-05"
+    ],
+    "split_sessions": [
+      "2024-03-18",
+      "2024-03-19",
+      "2024-03-20",
+      "2024-03-21",
+      "2024-03-22",
+      "2024-03-25",
+      "2024-03-26",
+      "2024-03-27",
+      "2024-03-28",
+      "2024-04-01",
+      "2024-04-02",
+      "2024-04-03",
+      "2024-04-04",
+      "2024-04-05"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2024-03-27",
+        "source_timestamp": "1711546200",
+        "source_provider_close": "213.97500610351562",
+        "source_adjusted_close": "210.70021057128906",
+        "source_nominal_close": "427.95001220703125",
+        "source_provider_volume": "1017600.0",
+        "source_nominal_volume": "508800.0",
+        "raw": {
+          "c": "427.95",
+          "h": "439.32",
+          "l": "423.75",
+          "n": 16082,
+          "o": "438.27",
+          "t": "2024-03-27T04:00:00Z",
+          "v": 508876,
+          "vw": "428.054298"
+        },
+        "split": {
+          "c": "213.98",
+          "h": "219.66",
+          "l": "211.88",
+          "n": 16082,
+          "o": "219.14",
+          "t": "2024-03-27T04:00:00Z",
+          "v": 1017752,
+          "vw": "214.03"
+        },
+        "nominal_delta": "0.00001220703125",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-76.0"
+      },
+      "effective": {
+        "session": "2024-03-28",
+        "source_timestamp": "1711632600",
+        "source_provider_close": "219.30999755859375",
+        "source_adjusted_close": "215.9535369873047",
+        "source_nominal_close": "219.30999755859375",
+        "source_provider_volume": "1213300.0",
+        "source_nominal_volume": "1213300.0",
+        "raw": {
+          "c": "219.31",
+          "h": "220.71",
+          "l": "213.21",
+          "n": 27742,
+          "o": "216.05",
+          "t": "2024-03-28T04:00:00Z",
+          "v": 1213490,
+          "vw": "218.884532"
+        },
+        "split": {
+          "c": "219.31",
+          "h": "220.71",
+          "l": "213.21",
+          "n": 27742,
+          "o": "216.05",
+          "t": "2024-03-28T04:00:00Z",
+          "v": 1213490,
+          "vw": "218.884532"
+        },
+        "nominal_delta": "-0.00000244140625",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-190.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.50001168360789811893912840285080032714102114733030",
+    "price_factor_interval": [
+      "0.50000765113722654574943533506929182532588251292186",
+      "0.50001571610904329674298468078156347415734675768843"
+    ],
+    "relative_interval_width": "0.00001612994363350198709869142454329766292848953314",
+    "volume_factor_interval": [
+      "1.9999908084005182745727525944878916817273556693404",
+      "2.0000091916475172137631514308061619745073726712728"
+    ],
+    "observed_volume_factor": "2",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "DIT",
+    "effective_session": "2026-03-23",
+    "prior_session": "2026-03-20",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\DIT.e732d8148b6799bfc0591f20bbb6a6f02769960999bd73865df28bf9876d17d0.json",
+    "source_sha256": "e732d8148b6799bfc0591f20bbb6a6f02769960999bd73865df28bf9876d17d0",
+    "raw_capture_files": [
+      "DIT-2026-03-23-raw-1.038679b53ca77dd81baa4ba83ea2516fd3d35a9368f05be7ce86a683cdbcb6fb.raw.json"
+    ],
+    "split_capture_files": [
+      "DIT-2026-03-23-split-1.a2d4ad6cff7e483684f429ddde2eee435de6ed50d61a24a5427a05addf81aad5.raw.json"
+    ],
+    "expected_price_factor": "0.66666666666666666666666666666666666666666666666667",
+    "expected_volume_factor": "1.5",
+    "raw_sessions": [
+      "2026-03-13",
+      "2026-03-16",
+      "2026-03-17",
+      "2026-03-18",
+      "2026-03-19",
+      "2026-03-20",
+      "2026-03-23",
+      "2026-03-24",
+      "2026-03-25",
+      "2026-03-26",
+      "2026-03-27",
+      "2026-03-30",
+      "2026-03-31",
+      "2026-04-01",
+      "2026-04-02"
+    ],
+    "split_sessions": [
+      "2026-03-13",
+      "2026-03-16",
+      "2026-03-17",
+      "2026-03-18",
+      "2026-03-19",
+      "2026-03-20",
+      "2026-03-23",
+      "2026-03-24",
+      "2026-03-25",
+      "2026-03-26",
+      "2026-03-27",
+      "2026-03-30",
+      "2026-03-31",
+      "2026-04-01",
+      "2026-04-02"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2026-03-20",
+        "source_timestamp": "1774013400",
+        "source_provider_close": "76.66666412353516",
+        "source_adjusted_close": "76.43028259277344",
+        "source_nominal_close": "114.99999618530273",
+        "source_provider_volume": "900.0",
+        "source_nominal_volume": "600.0",
+        "raw": {
+          "c": 115,
+          "h": 115,
+          "l": 115,
+          "n": 120,
+          "o": 115,
+          "t": "2026-03-20T04:00:00Z",
+          "v": 575,
+          "vw": 115
+        },
+        "split": {
+          "c": "76.67",
+          "h": "76.67",
+          "l": "76.67",
+          "n": 120,
+          "o": "76.67",
+          "t": "2026-03-20T04:00:00Z",
+          "v": 862,
+          "vw": "76.67"
+        },
+        "nominal_delta": "-0.00000381469727",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "25.0"
+      },
+      "effective": {
+        "session": "2026-03-23",
+        "source_timestamp": "1774272600",
+        "source_provider_close": "84.80000305175781",
+        "source_adjusted_close": "84.53854370117188",
+        "source_nominal_close": "84.80000305175781",
+        "source_provider_volume": "2100.0",
+        "source_nominal_volume": "2100.0",
+        "raw": {
+          "c": "84.8",
+          "h": "85.2",
+          "l": "80.1",
+          "n": 184,
+          "o": "80.1",
+          "t": "2026-03-23T04:00:00Z",
+          "v": 2104,
+          "vw": "83.593464"
+        },
+        "split": {
+          "c": "84.8",
+          "h": "85.2",
+          "l": "80.1",
+          "n": 184,
+          "o": "80.1",
+          "t": "2026-03-23T04:00:00Z",
+          "v": 2104,
+          "vw": "83.593464"
+        },
+        "nominal_delta": "0.00000305175781",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-4.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.66669565217391304347826086956521739130434782608696",
+    "price_factor_interval": [
+      "0.66668054385736243986135328556618474330933113330522",
+      "0.66671076081709679427455638121552956686831908873666"
+    ],
+    "relative_interval_width": "0.000045325439601531619804643474017235338481933147160000",
+    "volume_factor_interval": [
+      "1.4933714370546318289786223277909738717339667458432",
+      "1.5049141677477504345045488359917224605300872654131"
+    ],
+    "observed_volume_factor": "1.4991304347826086956521739130434782608695652173913",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "BRAI",
+    "effective_session": "2026-04-29",
+    "prior_session": "2026-04-28",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\BRAI.24ed8a7b02a429726d170b2ccf781b0f9f3abf3928ddd0ddf1c9c9dd0415b899.json",
+    "source_sha256": "24ed8a7b02a429726d170b2ccf781b0f9f3abf3928ddd0ddf1c9c9dd0415b899",
+    "raw_capture_files": [
+      "BRAI-2026-04-29-raw-1.fb50ffdf07c98bb26a176d2fa8994308e311078c43cfcc13a1998f2411b75d13.raw.json"
+    ],
+    "split_capture_files": [
+      "BRAI-2026-04-29-split-1.1497eb288f84a17c2b09c890f2e11658fce8eccb4688a55961bbe9db9b4b1944.raw.json"
+    ],
+    "expected_price_factor": "0.33333333333333333333333333333333333333333333333333",
+    "expected_volume_factor": "3",
+    "raw_sessions": [
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-04-30",
+      "2026-05-01",
+      "2026-05-04",
+      "2026-05-05",
+      "2026-05-06",
+      "2026-05-07",
+      "2026-05-08"
+    ],
+    "split_sessions": [
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-04-30",
+      "2026-05-01",
+      "2026-05-04",
+      "2026-05-05",
+      "2026-05-06",
+      "2026-05-07",
+      "2026-05-08"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2026-04-28",
+        "source_timestamp": "1777383000",
+        "source_provider_close": "7.823332786560059",
+        "source_adjusted_close": "7.823332786560059",
+        "source_nominal_close": "23.469998359680176",
+        "source_provider_volume": "83400.0",
+        "source_nominal_volume": "27800.0",
+        "raw": {
+          "c": "23.47",
+          "h": "26.61",
+          "l": 23,
+          "n": 1620,
+          "o": "23.39",
+          "t": "2026-04-28T04:00:00Z",
+          "v": 27850,
+          "vw": "25.130243"
+        },
+        "split": {
+          "c": "7.823",
+          "h": "8.87",
+          "l": "7.667",
+          "n": 1620,
+          "o": "7.797",
+          "t": "2026-04-28T04:00:00Z",
+          "v": 83550,
+          "vw": "8.377"
+        },
+        "nominal_delta": "-0.000001640319824",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-50.0"
+      },
+      "effective": {
+        "session": "2026-04-29",
+        "source_timestamp": "1777469400",
+        "source_provider_close": "7.119999885559082",
+        "source_adjusted_close": "7.119999885559082",
+        "source_nominal_close": "7.119999885559082",
+        "source_provider_volume": "38900.0",
+        "source_nominal_volume": "38900.0",
+        "raw": {
+          "c": "7.12",
+          "h": "7.9899",
+          "l": "7.05",
+          "n": 2977,
+          "o": "7.59",
+          "t": "2026-04-29T04:00:00Z",
+          "v": 38945,
+          "vw": "7.449528"
+        },
+        "split": {
+          "c": "7.12",
+          "h": "7.9899",
+          "l": "7.05",
+          "n": 2977,
+          "o": "7.59",
+          "t": "2026-04-29T04:00:00Z",
+          "v": 38945,
+          "vw": "7.449528"
+        },
+        "nominal_delta": "-1.14440918E-7",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-45.0"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.33331913080528334043459735832978270132083510864934",
+    "price_factor_interval": [
+      "0.33324391944857320970719389588049311030430084151508",
+      "0.33339435792618290793189902608535172161715053351112"
+    ],
+    "relative_interval_width": "0.00045131543282909467411539061457583393854907598812000",
+    "volume_factor_interval": [
+      "2.9997023264945057608916275222623471108497240221011",
+      "3.0002977064833703934467817449502368285972777302694"
+    ],
+    "observed_volume_factor": "3",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "WMT",
+    "effective_session": "2024-02-26",
+    "prior_session": "2024-02-23",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\WMT.f09ad5cb15db95f2b8daba568d1ceb3dec00f32e77b68efb5e9bfb7b86acf2fd.json",
+    "source_sha256": "f09ad5cb15db95f2b8daba568d1ceb3dec00f32e77b68efb5e9bfb7b86acf2fd",
+    "raw_capture_files": [
+      "WMT-2024-02-26-raw-1.8a927771afd25067a15689464c2ad8bbe5059f7f305fef0969719f96cc4cdd54.raw.json"
+    ],
+    "split_capture_files": [
+      "WMT-2024-02-26-split-1.f82fe67446e4a7fc9bac4dc0a3dbb1a71ab561ffbdc3c94430d60750a6db7606.raw.json"
+    ],
+    "expected_price_factor": "0.33333333333333333333333333333333333333333333333333",
+    "expected_volume_factor": "3",
+    "raw_sessions": [
+      "2024-02-16",
+      "2024-02-20",
+      "2024-02-21",
+      "2024-02-22",
+      "2024-02-23",
+      "2024-02-26",
+      "2024-02-27",
+      "2024-02-28",
+      "2024-02-29",
+      "2024-03-01",
+      "2024-03-04",
+      "2024-03-05",
+      "2024-03-06",
+      "2024-03-07"
+    ],
+    "split_sessions": [
+      "2024-02-16",
+      "2024-02-20",
+      "2024-02-21",
+      "2024-02-22",
+      "2024-02-23",
+      "2024-02-26",
+      "2024-02-27",
+      "2024-02-28",
+      "2024-02-29",
+      "2024-03-01",
+      "2024-03-04",
+      "2024-03-05",
+      "2024-03-06",
+      "2024-03-07"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2024-02-23",
+        "source_timestamp": "1708698600",
+        "source_provider_close": "58.52000045776367",
+        "source_adjusted_close": "56.91615676879883",
+        "source_nominal_close": "175.56000137329102",
+        "source_provider_volume": "74365800.0",
+        "source_nominal_volume": "24788600.0",
+        "raw": {
+          "c": "175.56",
+          "h": "177.65",
+          "l": "175.31",
+          "n": 163462,
+          "o": "176.09",
+          "t": "2024-02-23T05:00:00Z",
+          "v": 24788589,
+          "vw": "175.842402"
+        },
+        "split": {
+          "c": "58.52",
+          "h": "59.22",
+          "l": "58.44",
+          "n": 163462,
+          "o": "58.7",
+          "t": "2024-02-23T05:00:00Z",
+          "v": 74365767,
+          "vw": "58.61"
+        },
+        "nominal_delta": "0.00000137329102",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "11.0"
+      },
+      "effective": {
+        "session": "2024-02-26",
+        "source_timestamp": "1708957800",
+        "source_provider_close": "59.599998474121094",
+        "source_adjusted_close": "57.966552734375",
+        "source_nominal_close": "59.599998474121094",
+        "source_provider_volume": "32154800.0",
+        "source_nominal_volume": "32154800.0",
+        "raw": {
+          "c": "59.6",
+          "h": "59.84",
+          "l": "58.18",
+          "n": 286392,
+          "o": "59.12",
+          "t": "2024-02-26T05:00:00Z",
+          "v": 32154765,
+          "vw": "59.369526"
+        },
+        "split": {
+          "c": "59.6",
+          "h": "59.84",
+          "l": "58.18",
+          "n": 286392,
+          "o": "59.12",
+          "t": "2024-02-26T05:00:00Z",
+          "v": 32154765,
+          "vw": "59.369526"
+        },
+        "nominal_delta": "-0.000001525878906",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "35.0"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "0.33333333333333333333333333333333333333333333333333",
+    "price_factor_interval": [
+      "0.33332394324139959133894265763627145414571297863439",
+      "0.33334272366816534376324413328015547251292691783404"
+    ],
+    "relative_interval_width": "0.000056341280297257272904426931652055101641817598950001",
+    "volume_factor_interval": [
+      "2.9999996520379140482477550853699152548406241851333",
+      "3.0000003479621306507159139940862883120195402905959"
+    ],
+    "observed_volume_factor": "3",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "TOPS",
+    "effective_session": "2017-10-06",
+    "prior_session": "2017-10-05",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\TOPS.4ef140325f4dfc32ff134d2c24e40eb8d118af8143c0396f1e127a0ee9ee0442.json",
+    "source_sha256": "4ef140325f4dfc32ff134d2c24e40eb8d118af8143c0396f1e127a0ee9ee0442",
+    "raw_capture_files": [
+      "TOPS-2017-10-06-raw-1.416d44779b2e98177ebfc4c9352f1676da46aae081eb4432fc2d05174bf0269b.raw.json"
+    ],
+    "split_capture_files": [
+      "TOPS-2017-10-06-split-1.35b0c3876e82dd351b461d883ad119d31fbb814618047b1572877fb495053153.raw.json"
+    ],
+    "expected_price_factor": "2",
+    "expected_volume_factor": "0.5",
+    "raw_sessions": [
+      "2017-09-26",
+      "2017-09-27",
+      "2017-09-28",
+      "2017-09-29",
+      "2017-10-02",
+      "2017-10-03",
+      "2017-10-04",
+      "2017-10-05",
+      "2017-10-06",
+      "2017-10-09",
+      "2017-10-10",
+      "2017-10-11",
+      "2017-10-12",
+      "2017-10-13",
+      "2017-10-16"
+    ],
+    "split_sessions": [
+      "2017-09-26",
+      "2017-09-27",
+      "2017-09-28",
+      "2017-09-29",
+      "2017-10-02",
+      "2017-10-03",
+      "2017-10-04",
+      "2017-10-05",
+      "2017-10-06",
+      "2017-10-09",
+      "2017-10-10",
+      "2017-10-11",
+      "2017-10-12",
+      "2017-10-13",
+      "2017-10-16"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2017-10-05",
+        "source_timestamp": "1507210200",
+        "source_provider_close": "648000.0",
+        "source_adjusted_close": "648000.0",
+        "source_nominal_close": "0.2700000000000001",
+        "source_provider_volume": "1.0",
+        "source_nominal_volume": "2399999.9999999995",
+        "raw": {
+          "c": "0.271",
+          "h": "0.294",
+          "l": "0.265",
+          "n": 2913,
+          "o": "0.2786",
+          "t": "2017-10-05T04:00:00Z",
+          "v": 3097606,
+          "vw": "0.280234"
+        },
+        "split": {
+          "c": 650400,
+          "h": 705600,
+          "l": 636000,
+          "n": 2913,
+          "o": 668640,
+          "t": "2017-10-05T04:00:00Z",
+          "v": 1,
+          "vw": "672561.6"
+        },
+        "nominal_delta": "-0.0009999999999999",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-697606.0000000005"
+      },
+      "effective": {
+        "session": "2017-10-06",
+        "source_timestamp": "1507296600",
+        "source_provider_close": "636000.0",
+        "source_adjusted_close": "636000.0",
+        "source_nominal_close": "0.5300000000000001",
+        "source_provider_volume": "2.0",
+        "source_nominal_volume": "2399999.9999999995",
+        "raw": {
+          "c": "0.5325",
+          "h": "0.64",
+          "l": "0.465",
+          "n": 3970,
+          "o": "0.5005",
+          "t": "2017-10-06T04:00:00Z",
+          "v": 2393252,
+          "vw": "0.532647"
+        },
+        "split": {
+          "c": 639000,
+          "h": 768000,
+          "l": 558000,
+          "n": 3970,
+          "o": 600600,
+          "t": "2017-10-06T04:00:00Z",
+          "v": 1,
+          "vw": "639176.4"
+        },
+        "nominal_delta": "-0.0024999999999999",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "discrepancy",
+        "volume_nominal_delta": "6747.9999999995"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "2.0",
+    "price_factor_interval": [
+      "1.9944402884766022319260172475500011482652331110913",
+      "2.0055802687504061723445300294934128618297028942324"
+    ],
+    "relative_interval_width": "0.00556999013690197020925639097170585678223489157055",
+    "volume_factor_interval": null,
+    "observed_volume_factor": "0.77261343114650475237974099998514982215297878426114",
+    "volume_factor_status": "unresolved_precision_insufficient"
+  },
+  {
+    "symbol": "CRVO",
+    "effective_session": "2023-08-17",
+    "prior_session": "2023-08-16",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\CRVO.4e5aa6470011d6f7de00ed634102324c34236297bcf21e788c0e3daf91a36be1.json",
+    "source_sha256": "4e5aa6470011d6f7de00ed634102324c34236297bcf21e788c0e3daf91a36be1",
+    "raw_capture_files": [
+      "CRVO-2023-08-17-raw-1.85e431d71200d1765eba69ff9af613718dc466c6c4490d8e98f5ac09e027da68.raw.json"
+    ],
+    "split_capture_files": [
+      "CRVO-2023-08-17-split-1.ad163a23a1895f29719969105b8188e0136a89eca6dc87b93add4c595ab54536.raw.json"
+    ],
+    "expected_price_factor": "1.5",
+    "expected_volume_factor": "0.66666666666666666666666666666666666666666666666667",
+    "raw_sessions": [
+      "2023-08-07",
+      "2023-08-08",
+      "2023-08-09",
+      "2023-08-10",
+      "2023-08-11",
+      "2023-08-14",
+      "2023-08-15",
+      "2023-08-16",
+      "2023-08-17",
+      "2023-08-18",
+      "2023-08-21",
+      "2023-08-22",
+      "2023-08-23",
+      "2023-08-24",
+      "2023-08-25"
+    ],
+    "split_sessions": [
+      "2023-08-07",
+      "2023-08-08",
+      "2023-08-09",
+      "2023-08-10",
+      "2023-08-11",
+      "2023-08-14",
+      "2023-08-15",
+      "2023-08-16",
+      "2023-08-17",
+      "2023-08-18",
+      "2023-08-21",
+      "2023-08-22",
+      "2023-08-23",
+      "2023-08-24",
+      "2023-08-25"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2023-08-16",
+        "source_timestamp": "1692192600",
+        "source_provider_close": "6.599999904632568",
+        "source_adjusted_close": "6.599999904632568",
+        "source_nominal_close": "4.399999936421712",
+        "source_provider_volume": "233000.0",
+        "source_nominal_volume": "349500.0",
+        "raw": {
+          "c": "4.4",
+          "h": "5.19",
+          "l": "4.165",
+          "n": 19545,
+          "o": "4.23",
+          "t": "2023-08-16T04:00:00Z",
+          "v": 351124,
+          "vw": "4.775001"
+        },
+        "split": {
+          "c": "6.6",
+          "h": "7.785",
+          "l": "6.248",
+          "n": 19545,
+          "o": "6.345",
+          "t": "2023-08-16T04:00:00Z",
+          "v": 234082,
+          "vw": "7.163"
+        },
+        "nominal_delta": "-6.3578288E-8",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-1624.0"
+      },
+      "effective": {
+        "session": "2023-08-17",
+        "source_timestamp": "1692279000",
+        "source_provider_close": "7.590000152587891",
+        "source_adjusted_close": "7.590000152587891",
+        "source_nominal_close": "7.590000152587891",
+        "source_provider_volume": "1625000.0",
+        "source_nominal_volume": "1625000.0",
+        "raw": {
+          "c": "7.59",
+          "h": "14.37",
+          "l": "7.4",
+          "n": 38421,
+          "o": "13.5",
+          "t": "2023-08-17T04:00:00Z",
+          "v": 1627441,
+          "vw": "11.968612"
+        },
+        "split": {
+          "c": "7.59",
+          "h": "14.37",
+          "l": "7.4",
+          "n": 38421,
+          "o": "13.5",
+          "t": "2023-08-17T04:00:00Z",
+          "v": 1627441,
+          "vw": "11.968612"
+        },
+        "nominal_delta": "1.52587891E-7",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-2441.0"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1.5",
+    "price_factor_interval": [
+      "1.4995183633528598864165157918223463013036623912459",
+      "1.5004818021105282695335904447035089939076903858827"
+    ],
+    "relative_interval_width": "0.00064229250511225541138310192077512840268532975786667",
+    "volume_factor_interval": [
+      "0.66665920208645183796571040297185489050554990191196",
+      "0.66667033395763298802619459799552156077422739850870"
+    ],
+    "observed_volume_factor": "0.66666476800218726148027477472345951857463460202094",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "ENOV",
+    "effective_session": "2022-04-05",
+    "prior_session": "2022-04-04",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\ENOV.82e587585c4cd1d498097f2da7aca6dc7992d5ec2538236567cbf49cd2b6a2b3.json",
+    "source_sha256": "82e587585c4cd1d498097f2da7aca6dc7992d5ec2538236567cbf49cd2b6a2b3",
+    "raw_capture_files": [
+      "ENOV-2022-04-05-raw-1.88abd3d5d5dfe83bd64942670900ba76f4ed629101bcd7a03bfee149766ab4f3.raw.json"
+    ],
+    "split_capture_files": [
+      "ENOV-2022-04-05-split-1.a1039792d0cded1c05faf9fb71dddec51b7663c261fc9d81b4c6cdc73cfbfa6a.raw.json"
+    ],
+    "expected_price_factor": "1.7211703958691910499139414802065404475043029259897",
+    "expected_volume_factor": "0.581",
+    "raw_sessions": [
+      "2022-03-28",
+      "2022-03-29",
+      "2022-03-30",
+      "2022-03-31",
+      "2022-04-01",
+      "2022-04-04",
+      "2022-04-05",
+      "2022-04-06",
+      "2022-04-07",
+      "2022-04-08",
+      "2022-04-11",
+      "2022-04-12",
+      "2022-04-13",
+      "2022-04-14"
+    ],
+    "split_sessions": [
+      "2022-03-28",
+      "2022-03-29",
+      "2022-03-30",
+      "2022-03-31",
+      "2022-04-01",
+      "2022-04-04",
+      "2022-04-05",
+      "2022-04-06",
+      "2022-04-07",
+      "2022-04-08",
+      "2022-04-11",
+      "2022-04-12",
+      "2022-04-13",
+      "2022-04-14"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2022-04-04",
+        "source_timestamp": "1649079000",
+        "source_provider_close": "67.22891235351562",
+        "source_adjusted_close": "67.22891235351562",
+        "source_nominal_close": "39.05999807739258",
+        "source_provider_volume": "1715867.0",
+        "source_nominal_volume": "2953299.4836488813",
+        "raw": {
+          "c": "39.06",
+          "h": "40.63",
+          "l": "38.88",
+          "n": 21373,
+          "o": "40.6",
+          "t": "2022-04-04T04:00:00Z",
+          "v": 3199721,
+          "vw": "39.300748"
+        },
+        "split": {
+          "c": "117.18",
+          "h": "121.89",
+          "l": "116.64",
+          "n": 21373,
+          "o": "121.8",
+          "t": "2022-04-04T04:00:00Z",
+          "v": 1066573,
+          "vw": "117.9"
+        },
+        "nominal_delta": "-0.00000192260742",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-246421.5163511187"
+      },
+      "effective": {
+        "session": "2022-04-05",
+        "source_timestamp": "1649165400",
+        "source_provider_close": "70.44999694824219",
+        "source_adjusted_close": "70.44999694824219",
+        "source_nominal_close": "70.44999694824219",
+        "source_provider_volume": "2578800.0",
+        "source_nominal_volume": "2578800.0",
+        "raw": {
+          "c": "70.45",
+          "h": "71.96",
+          "l": "59.15",
+          "n": 18331,
+          "o": "59.15",
+          "t": "2022-04-05T04:00:00Z",
+          "v": 2739609,
+          "vw": "67.75328"
+        },
+        "split": {
+          "c": "70.45",
+          "h": "71.96",
+          "l": "59.15",
+          "n": 18331,
+          "o": "59.15",
+          "t": "2022-04-05T04:00:00Z",
+          "v": 2739609,
+          "vw": "67.75328"
+        },
+        "nominal_delta": "-0.00000305175781",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-160809.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "3",
+    "price_factor_interval": [
+      "2.9999062150149595341980709559950849033651146213184",
+      "3.0000937883539828537133130188332913467040991861895"
+    ],
+    "relative_interval_width": "0.00010898010997254863835563850899794357995003219010910",
+    "volume_factor_interval": [
+      "0.33333246493584911340504465225405871686809056297078",
+      "0.33333378502886611667120409903914868070665572318059"
+    ],
+    "observed_volume_factor": "0.33333312498183435368271171142734007121245883625479",
+    "volume_factor_status": "inconsistent"
+  },
+  {
+    "symbol": "CYPH",
+    "effective_session": "2023-06-21",
+    "prior_session": "2023-06-20",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\CYPH.3e22fac9234da41da3d29fc70894319bf5f0ffa941b7c4630dd3b978a9774d5b.json",
+    "source_sha256": "3e22fac9234da41da3d29fc70894319bf5f0ffa941b7c4630dd3b978a9774d5b",
+    "raw_capture_files": [
+      "CYPH-2023-06-21-raw-1.8ac90f78af15e1625d5a86ea1feed1d8d507f0e5a3d9f915407b7a5ff73ecf53.raw.json"
+    ],
+    "split_capture_files": [
+      "CYPH-2023-06-21-split-1.3ff52af681fdb8beeffa0c36c4f501a91bd6a04f9f74d2bfa9992c11ee3c9ebf.raw.json"
+    ],
+    "expected_price_factor": "10",
+    "expected_volume_factor": "0.1",
+    "raw_sessions": [
+      "2023-06-12",
+      "2023-06-13",
+      "2023-06-14",
+      "2023-06-15",
+      "2023-06-16",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22",
+      "2023-06-23",
+      "2023-06-26",
+      "2023-06-27",
+      "2023-06-28",
+      "2023-06-29",
+      "2023-06-30"
+    ],
+    "split_sessions": [
+      "2023-06-12",
+      "2023-06-13",
+      "2023-06-14",
+      "2023-06-15",
+      "2023-06-16",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22",
+      "2023-06-23",
+      "2023-06-26",
+      "2023-06-27",
+      "2023-06-28",
+      "2023-06-29",
+      "2023-06-30"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2023-06-20",
+        "source_timestamp": "1687267800",
+        "source_provider_close": "5.21999979019165",
+        "source_adjusted_close": "5.21999979019165",
+        "source_nominal_close": "0.5219999790191651",
+        "source_provider_volume": "317690.0",
+        "source_nominal_volume": "3176900.0",
+        "raw": {
+          "c": "0.5221",
+          "h": "0.695",
+          "l": "0.51",
+          "n": 5114,
+          "o": "0.682",
+          "t": "2023-06-20T04:00:00Z",
+          "v": 3178261,
+          "vw": "0.55586"
+        },
+        "split": {
+          "c": "5.221",
+          "h": "6.95",
+          "l": "5.1",
+          "n": 5114,
+          "o": "6.82",
+          "t": "2023-06-20T04:00:00Z",
+          "v": 317826,
+          "vw": "5.559"
+        },
+        "nominal_delta": "-0.0001000209808349",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-1361.0"
+      },
+      "effective": {
+        "session": "2023-06-21",
+        "source_timestamp": "1687354200",
+        "source_provider_close": "4.460000038146973",
+        "source_adjusted_close": "4.460000038146973",
+        "source_nominal_close": "4.460000038146973",
+        "source_provider_volume": "466000.0",
+        "source_nominal_volume": "466000.0",
+        "raw": {
+          "c": "4.46",
+          "h": "5.18",
+          "l": "4.4",
+          "n": 3153,
+          "o": "5.17",
+          "t": "2023-06-21T04:00:00Z",
+          "v": 465955,
+          "vw": "4.57825"
+        },
+        "split": {
+          "c": "4.46",
+          "h": "5.18",
+          "l": "4.4",
+          "n": 3153,
+          "o": "5.17",
+          "t": "2023-06-21T04:00:00Z",
+          "v": 465955,
+          "vw": "4.57825"
+        },
+        "nominal_delta": "3.8146973E-8",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "45.0"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1E+1",
+    "price_factor_interval": [
+      "9.9872361567431225307074176168899837854693661970472",
+      "10.012789246882473963008590607904679951877738088605"
+    ],
+    "relative_interval_width": "0.00255530901393514323011729910146961664083718915578",
+    "volume_factor_interval": [
+      "0.099999193211698368121979483159578008665725612155757",
+      "0.10000074386583888890841860162912408079272066709553"
+    ],
+    "observed_volume_factor": "0.099999968536253001248166843440485221320715951270207",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "NUWE",
+    "effective_session": "2022-12-12",
+    "prior_session": "2022-12-09",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\NUWE.92eb813ce1736a7a7f12de6ff235a76d51f24d52eb83984170f73cb34159aca9.json",
+    "source_sha256": "92eb813ce1736a7a7f12de6ff235a76d51f24d52eb83984170f73cb34159aca9",
+    "raw_capture_files": [
+      "NUWE-2022-12-12-raw-1.d8836a7435cd6c6c4fd0e036bb07b85add6a4fcfb6180f5d18b4aea6dd087c34.raw.json"
+    ],
+    "split_capture_files": [
+      "NUWE-2022-12-12-split-1.c3c26e6665e2b9dd6dcba61abcaecc4a1b11c85b8c07955a0675bf617c488b2f.raw.json"
+    ],
+    "expected_price_factor": "100",
+    "expected_volume_factor": "0.01",
+    "raw_sessions": [
+      "2022-12-02",
+      "2022-12-05",
+      "2022-12-06",
+      "2022-12-07",
+      "2022-12-08",
+      "2022-12-09",
+      "2022-12-12",
+      "2022-12-13",
+      "2022-12-14",
+      "2022-12-15",
+      "2022-12-16",
+      "2022-12-19",
+      "2022-12-20",
+      "2022-12-21",
+      "2022-12-22"
+    ],
+    "split_sessions": [
+      "2022-12-02",
+      "2022-12-05",
+      "2022-12-06",
+      "2022-12-07",
+      "2022-12-08",
+      "2022-12-09",
+      "2022-12-12",
+      "2022-12-13",
+      "2022-12-14",
+      "2022-12-15",
+      "2022-12-16",
+      "2022-12-19",
+      "2022-12-20",
+      "2022-12-21",
+      "2022-12-22"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2022-12-09",
+        "source_timestamp": "1670596200",
+        "source_provider_close": "617400.0",
+        "source_adjusted_close": "617400.0",
+        "source_nominal_close": "0.12",
+        "source_provider_volume": "7.0",
+        "source_nominal_volume": "36015000.0",
+        "raw": {
+          "c": "0.12",
+          "h": "0.1346",
+          "l": "0.1021",
+          "n": 15868,
+          "o": "0.1221",
+          "t": "2022-12-09T05:00:00Z",
+          "v": 33326064,
+          "vw": "0.122121"
+        },
+        "split": {
+          "c": 617400,
+          "h": 692517,
+          "l": "525304.5",
+          "n": 15868,
+          "o": "628204.5",
+          "t": "2022-12-09T05:00:00Z",
+          "v": 6,
+          "vw": "628312.55"
+        },
+        "nominal_delta": "0.00",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "2688936.0"
+      },
+      "effective": {
+        "session": "2022-12-12",
+        "source_timestamp": "1670855400",
+        "source_provider_close": "578812.5",
+        "source_adjusted_close": "578812.5",
+        "source_nominal_close": "11.249999999999998",
+        "source_provider_volume": "7.0",
+        "source_nominal_volume": "360150.00000000006",
+        "raw": {
+          "c": "11.25",
+          "h": 12,
+          "l": "9.5505",
+          "n": 3965,
+          "o": "11.76",
+          "t": "2022-12-12T05:00:00Z",
+          "v": 372651,
+          "vw": "10.881139"
+        },
+        "split": {
+          "c": "578812.5",
+          "h": 617400,
+          "l": "491373.23",
+          "n": 3965,
+          "o": 605052,
+          "t": "2022-12-12T05:00:00Z",
+          "v": 7,
+          "vw": "559834.6"
+        },
+        "nominal_delta": "-2E-15",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-12500.99999999994"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "1.0E+2",
+    "price_factor_interval": [
+      "99.580536657311201081605544951031120611687273686100",
+      "100.42297350521060197768592608145676457775467381457"
+    ],
+    "relative_interval_width": "0.0084243684789940089608038113042564396606740012847",
+    "volume_factor_interval": [
+      "0.0069887113885182664079902622766894321306760939222798",
+      "0.013045665390078229962737172604716814784472641327800"
+    ],
+    "observed_volume_factor": "0.0095845444831751765567892188785673236762330271842826",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "QXL",
+    "effective_session": "2022-09-06",
+    "prior_session": "2022-09-02",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\QXL.ecdd44ffae95488f885d926bf9fc05bf266d21792b6a86691f949df29250ef5b.json",
+    "source_sha256": "ecdd44ffae95488f885d926bf9fc05bf266d21792b6a86691f949df29250ef5b",
+    "raw_capture_files": [
+      "QXL-2022-09-06-raw-1.823926b96d35ed647d5a33e999d2775add0c945827f088c0fced2010dcae6fb9.raw.json"
+    ],
+    "split_capture_files": [
+      "QXL-2022-09-06-split-1.823926b96d35ed647d5a33e999d2775add0c945827f088c0fced2010dcae6fb9.raw.json"
+    ],
+    "expected_price_factor": "28",
+    "expected_volume_factor": "0.035714285714285714285714285714285714285714285714286",
+    "raw_sessions": [],
+    "split_sessions": [],
+    "boundaries": {},
+    "price_factor_status": "unresolved_missing_boundary",
+    "missing_boundaries": [
+      {
+        "boundary": "prior",
+        "required_session": "2022-09-02",
+        "raw_present": false,
+        "split_present": false
+      },
+      {
+        "boundary": "effective",
+        "required_session": "2022-09-06",
+        "raw_present": false,
+        "split_present": false
+      }
+    ]
+  },
+  {
+    "symbol": "ALM",
+    "effective_session": "2025-07-07",
+    "prior_session": "2025-07-03",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\ALM.fff2a6b75896cd4ff533944d1981f198b2f27e748b99f4dc6f1d9f22ea8e339a.json",
+    "source_sha256": "fff2a6b75896cd4ff533944d1981f198b2f27e748b99f4dc6f1d9f22ea8e339a",
+    "raw_capture_files": [
+      "ALM-2025-07-07-raw-1.beb0b3cdde443b9de8ea55dc125d47a08379f02d64901eda3a98e568dc4183e6.raw.json"
+    ],
+    "split_capture_files": [
+      "ALM-2025-07-07-split-1.beb0b3cdde443b9de8ea55dc125d47a08379f02d64901eda3a98e568dc4183e6.raw.json"
+    ],
+    "expected_price_factor": "1.5",
+    "expected_volume_factor": "0.66666666666666666666666666666666666666666666666667",
+    "raw_sessions": [
+      "2025-07-14",
+      "2025-07-15",
+      "2025-07-16",
+      "2025-07-17"
+    ],
+    "split_sessions": [
+      "2025-07-14",
+      "2025-07-15",
+      "2025-07-16",
+      "2025-07-17"
+    ],
+    "boundaries": {},
+    "price_factor_status": "unresolved_missing_boundary",
+    "missing_boundaries": [
+      {
+        "boundary": "prior",
+        "required_session": "2025-07-03",
+        "raw_present": false,
+        "split_present": false
+      },
+      {
+        "boundary": "effective",
+        "required_session": "2025-07-07",
+        "raw_present": false,
+        "split_present": false
+      }
+    ]
+  },
+  {
+    "symbol": "HON",
+    "effective_session": "2026-06-29",
+    "prior_session": "2026-06-26",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\HON.2a41472e060fe10221d627c33cc3e4e22a0c701584bf5ca96ad3623d09795520.json",
+    "source_sha256": "2a41472e060fe10221d627c33cc3e4e22a0c701584bf5ca96ad3623d09795520",
+    "raw_capture_files": [
+      "HON-2026-06-29-raw-1.9cfa1884a2f9ed3e670072a27bd9af6b1270e4c650815917de91e88804dc99e1.raw.json"
+    ],
+    "split_capture_files": [
+      "HON-2026-06-29-split-1.80865328a7482415630afd35955d614289c471b9cc708dfea89a71210c593ef5.raw.json"
+    ],
+    "expected_price_factor": "1.0487676979549029889879391714735186156266386995281",
+    "expected_volume_factor": "0.9535",
+    "raw_sessions": [
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-07-01",
+      "2026-07-02",
+      "2026-07-06",
+      "2026-07-07",
+      "2026-07-08",
+      "2026-07-09"
+    ],
+    "split_sessions": [
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-07-01",
+      "2026-07-02",
+      "2026-07-06",
+      "2026-07-07",
+      "2026-07-08",
+      "2026-07-09"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2026-06-26",
+        "source_timestamp": "1782480600",
+        "source_provider_close": "243.5343475341797",
+        "source_adjusted_close": "242.80580139160156",
+        "source_nominal_close": "232.21000037384033",
+        "source_provider_volume": "17047627.0",
+        "source_nominal_volume": "17879000.52438385",
+        "raw": {
+          "c": "232.21",
+          "h": "233.66",
+          "l": "226.29",
+          "n": 136160,
+          "o": "229.53",
+          "t": "2026-06-26T04:00:00Z",
+          "v": 17880432,
+          "vw": "231.423412"
+        },
+        "split": {
+          "c": "464.42",
+          "h": "467.32",
+          "l": "452.58",
+          "n": 136160,
+          "o": "459.06",
+          "t": "2026-06-26T04:00:00Z",
+          "v": 8940216,
+          "vw": "462.85"
+        },
+        "nominal_delta": "3.7384033E-7",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-1431.47561615"
+      },
+      "effective": {
+        "session": "2026-06-29",
+        "source_timestamp": "1782739800",
+        "source_provider_close": "227.8000030517578",
+        "source_adjusted_close": "227.1185302734375",
+        "source_nominal_close": "227.8000030517578",
+        "source_provider_volume": "7773000.0",
+        "source_nominal_volume": "7773000.0",
+        "raw": {
+          "c": "227.8",
+          "h": 252,
+          "l": "227.16",
+          "n": 105837,
+          "o": "240.645",
+          "t": "2026-06-29T04:00:00Z",
+          "v": 7775351,
+          "vw": "234.293948"
+        },
+        "split": {
+          "c": "227.8",
+          "h": 252,
+          "l": "227.16",
+          "n": 105837,
+          "o": "240.645",
+          "t": "2026-06-29T04:00:00Z",
+          "v": 7775351,
+          "vw": "234.293948"
+        },
+        "nominal_delta": "0.0000030517578",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-2351.0"
+      }
+    },
+    "price_factor_status": "inconsistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "2",
+    "price_factor_interval": [
+      "1.9999847607601544931245208940230836888003987365529",
+      "2.0000152393629182165337320171706458889391774320577"
+    ],
+    "relative_interval_width": "0.000029061347735210270682805921200557832325486163826799",
+    "volume_factor_interval": [
+      "0.49999978749789503377931969462129861802380286484124",
+      "0.50000021250219058879217707856843189445655868194134"
+    ],
+    "observed_volume_factor": "0.5",
+    "volume_factor_status": "inconsistent"
+  },
+  {
+    "symbol": "WHLR",
+    "effective_session": "2024-11-19",
+    "prior_session": "2024-11-18",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\WHLR.3b1ec4f547b8649879aaa64e6d280c4c05281d82e9cd624c566a907fe99cfd06.json",
+    "source_sha256": "3b1ec4f547b8649879aaa64e6d280c4c05281d82e9cd624c566a907fe99cfd06",
+    "raw_capture_files": [
+      "WHLR-2024-11-19-raw-1.5c5a4c679db3b8d7b8e0d36193b54105a84a0be1580c63abe86c86720b78a027.raw.json"
+    ],
+    "split_capture_files": [
+      "WHLR-2024-11-19-split-1.c63a5194c95e72c31025f2f7cdbf474f5f6b5667a138264b7b45bc6b58c1c4fa.raw.json"
+    ],
+    "expected_price_factor": "2",
+    "expected_volume_factor": "0.5",
+    "raw_sessions": [
+      "2024-11-11",
+      "2024-11-12",
+      "2024-11-13",
+      "2024-11-14",
+      "2024-11-15",
+      "2024-11-18",
+      "2024-11-19",
+      "2024-11-20",
+      "2024-11-21",
+      "2024-11-22",
+      "2024-11-25",
+      "2024-11-26",
+      "2024-11-27",
+      "2024-11-29"
+    ],
+    "split_sessions": [
+      "2024-11-11",
+      "2024-11-12",
+      "2024-11-13",
+      "2024-11-14",
+      "2024-11-15",
+      "2024-11-18",
+      "2024-11-19",
+      "2024-11-20",
+      "2024-11-21",
+      "2024-11-22",
+      "2024-11-25",
+      "2024-11-26",
+      "2024-11-27",
+      "2024-11-29"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2024-11-18",
+        "source_timestamp": "1731940200",
+        "source_provider_close": "11652480.0",
+        "source_adjusted_close": "11652480.0",
+        "source_nominal_close": "5.779999999999999",
+        "source_provider_volume": "0.0",
+        "source_nominal_volume": "0.0",
+        "raw": {
+          "c": "5.78",
+          "h": "7.18",
+          "l": "5.5806",
+          "n": 2165,
+          "o": "6.27",
+          "t": "2024-11-18T05:00:00Z",
+          "v": 192275,
+          "vw": "6.348025"
+        },
+        "split": {
+          "c": 209744640,
+          "h": 260547840,
+          "l": "202508812.8",
+          "n": 2165,
+          "o": 227525760,
+          "t": "2024-11-18T05:00:00Z",
+          "v": 0,
+          "vw": "230357131.2"
+        },
+        "nominal_delta": "-1E-15",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-192275.0"
+      },
+      "effective": {
+        "session": "2024-11-19",
+        "source_timestamp": "1732026600",
+        "source_provider_close": "10584000.0",
+        "source_adjusted_close": "10584000.0",
+        "source_nominal_close": "10.5",
+        "source_provider_volume": "0.0",
+        "source_nominal_volume": "0.0",
+        "raw": {
+          "c": "10.5",
+          "h": "11.2787",
+          "l": "9.51",
+          "n": 2695,
+          "o": "10.12",
+          "t": "2024-11-19T05:00:00Z",
+          "v": 203856,
+          "vw": "10.251847"
+        },
+        "split": {
+          "c": 190512000,
+          "h": "204640732.8",
+          "l": 172549440,
+          "n": 2695,
+          "o": 183617280,
+          "t": "2024-11-19T05:00:00Z",
+          "v": 0,
+          "vw": "186009511.97"
+        },
+        "nominal_delta": "0.0",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-203856.0"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "2",
+    "price_factor_interval": [
+      "1.9997297749962424914578399491190812150051765579437",
+      "2.0002702719520257217891885551679802028523361721298"
+    ],
+    "relative_interval_width": "0.00027024847789161516567430302444949392357980709305",
+    "volume_factor_interval": null,
+    "volume_factor_status": "unresolved_zero_volume"
+  },
+  {
+    "symbol": "STKH",
+    "effective_session": "2025-04-28",
+    "prior_session": "2025-04-25",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\STKH.39ebb9badcde03685938ea35255acae038d08c9392d43b03331fc7b580268847.json",
+    "source_sha256": "39ebb9badcde03685938ea35255acae038d08c9392d43b03331fc7b580268847",
+    "raw_capture_files": [
+      "STKH-2025-04-28-raw-1.8b9612c5f00997a8857980de22d9cc2b774ade6d03acec0bb134da98c2866896.raw.json"
+    ],
+    "split_capture_files": [
+      "STKH-2025-04-28-split-1.8b8cf352b404432806712357680e909c7ab09e2b7e91b533983663b8a3104793.raw.json"
+    ],
+    "expected_price_factor": "5",
+    "expected_volume_factor": "0.2",
+    "raw_sessions": [
+      "2025-04-21",
+      "2025-04-22",
+      "2025-04-23",
+      "2025-04-24",
+      "2025-04-25",
+      "2025-04-28",
+      "2025-04-29",
+      "2025-04-30",
+      "2025-05-01",
+      "2025-05-02",
+      "2025-05-05",
+      "2025-05-06",
+      "2025-05-07",
+      "2025-05-08"
+    ],
+    "split_sessions": [
+      "2025-04-21",
+      "2025-04-22",
+      "2025-04-23",
+      "2025-04-24",
+      "2025-04-25",
+      "2025-04-28",
+      "2025-04-29",
+      "2025-04-30",
+      "2025-05-01",
+      "2025-05-02",
+      "2025-05-05",
+      "2025-05-06",
+      "2025-05-07",
+      "2025-05-08"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2025-04-25",
+        "source_timestamp": "1745587800",
+        "source_provider_close": "85.19999694824219",
+        "source_adjusted_close": "85.19999694824219",
+        "source_nominal_close": "0.7099999745686849",
+        "source_provider_volume": "448.0",
+        "source_nominal_volume": "53760.0",
+        "raw": {
+          "c": "0.71",
+          "h": "0.75",
+          "l": "0.603",
+          "n": 1349,
+          "o": "0.75",
+          "t": "2025-04-25T04:00:00Z",
+          "v": 53841,
+          "vw": "0.685675"
+        },
+        "split": {
+          "c": "85.2",
+          "h": 90,
+          "l": "72.36",
+          "n": 1349,
+          "o": 90,
+          "t": "2025-04-25T04:00:00Z",
+          "v": 448,
+          "vw": "82.28"
+        },
+        "nominal_delta": "-2.54313151E-8",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-81.0"
+      },
+      "effective": {
+        "session": "2025-04-28",
+        "source_timestamp": "1745847000",
+        "source_provider_close": "77.27999877929688",
+        "source_adjusted_close": "77.27999877929688",
+        "source_nominal_close": "3.2199999491373696",
+        "source_provider_volume": "3142.0",
+        "source_nominal_volume": "75408.0",
+        "raw": {
+          "c": "3.22",
+          "h": "3.6383",
+          "l": "2.76",
+          "n": 815,
+          "o": "3.6",
+          "t": "2025-04-28T04:00:00Z",
+          "v": 75385,
+          "vw": "3.255996"
+        },
+        "split": {
+          "c": "77.28",
+          "h": "87.32",
+          "l": "66.24",
+          "n": 815,
+          "o": "86.4",
+          "t": "2025-04-28T04:00:00Z",
+          "v": 3141,
+          "vw": "78.14"
+        },
+        "nominal_delta": "-5.08626304E-8",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "23.0"
+      }
+    },
+    "price_factor_status": "consistent",
+    "missing_boundaries": [],
+    "observed_price_factor": "5",
+    "price_factor_interval": [
+      "4.9956438607867796330795125123877560900608188233527",
+      "5.0043622989158802456260776158784550853388267323821"
+    ],
+    "relative_interval_width": "0.00174368762582012250931302069813979905560158180588",
+    "volume_factor_interval": [
+      "0.19918624148914293893978541216300394314496022511207",
+      "0.20021764179782511995911452664653940432136739194216"
+    ],
+    "observed_volume_factor": "0.19970176314956544166939691616537783930056273503702",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "WOK",
+    "effective_session": "2025-12-29",
+    "prior_session": "2025-12-26",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\WOK.60f46e36c815e98b4108441d4bdbffa29957b0ff2acb2f24e40845e12259862d.json",
+    "source_sha256": "60f46e36c815e98b4108441d4bdbffa29957b0ff2acb2f24e40845e12259862d",
+    "raw_capture_files": [
+      "WOK-2025-12-29-raw-1.fc20f6e04c7502fc9ae6efd5edd278380dd3e1e133d920fb468fbbdf709d6c1b.raw.json"
+    ],
+    "split_capture_files": [
+      "WOK-2025-12-29-split-1.9bf2c3d716372e3d9e753e80a80bd574321dff7b7020cf4189654058b8afea16.raw.json"
+    ],
+    "expected_price_factor": "100",
+    "expected_volume_factor": "0.01",
+    "raw_sessions": [
+      "2025-12-19",
+      "2025-12-22",
+      "2025-12-23",
+      "2025-12-24",
+      "2025-12-26",
+      "2025-12-29",
+      "2025-12-30",
+      "2025-12-31",
+      "2026-01-02",
+      "2026-01-05",
+      "2026-01-06",
+      "2026-01-07",
+      "2026-01-08"
+    ],
+    "split_sessions": [
+      "2025-12-19",
+      "2025-12-22",
+      "2025-12-23",
+      "2025-12-24",
+      "2025-12-26",
+      "2025-12-29",
+      "2025-12-30",
+      "2025-12-31",
+      "2026-01-02",
+      "2026-01-05",
+      "2026-01-06",
+      "2026-01-07",
+      "2026-01-08"
+    ],
+    "boundaries": {
+      "prior": {
+        "session": "2025-12-26",
+        "source_timestamp": "1766759400",
+        "source_provider_close": "280.0",
+        "source_adjusted_close": "280.0",
+        "source_nominal_close": "0.028",
+        "source_provider_volume": "7106.0",
+        "source_nominal_volume": "71060000.0",
+        "raw": {
+          "c": "0.0275",
+          "h": "0.0336",
+          "l": "0.0266",
+          "n": 32564,
+          "o": "0.0336",
+          "t": "2025-12-26T05:00:00Z",
+          "v": 71060723,
+          "vw": "0.028412"
+        },
+        "split": {
+          "c": 275,
+          "h": 336,
+          "l": 266,
+          "n": 32564,
+          "o": 336,
+          "t": "2025-12-26T05:00:00Z",
+          "v": 7106,
+          "vw": "284.12"
+        },
+        "nominal_delta": "0.0005",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-723.0"
+      },
+      "effective": {
+        "session": "2025-12-29",
+        "source_timestamp": "1767018600",
+        "source_provider_close": "341.0",
+        "source_adjusted_close": "341.0",
+        "source_nominal_close": "3.41",
+        "source_provider_volume": "180899.0",
+        "source_nominal_volume": "18089900.0",
+        "raw": {
+          "c": "3.41",
+          "h": "5.94",
+          "l": "2.9",
+          "n": 217839,
+          "o": "5.4",
+          "t": "2025-12-29T05:00:00Z",
+          "v": 18089913,
+          "vw": "4.073384"
+        },
+        "split": {
+          "c": 341,
+          "h": 594,
+          "l": 290,
+          "n": 217839,
+          "o": 540,
+          "t": "2025-12-29T05:00:00Z",
+          "v": 180899,
+          "vw": "407.34"
+        },
+        "nominal_delta": "0.00",
+        "nominal_precision_band": "0.0010",
+        "nominal_comparison": "agrees_within_precision",
+        "volume_nominal_delta": "-13.0"
+      }
+    },
+    "price_factor_status": "unresolved_precision_insufficient",
+    "missing_boundaries": [],
+    "observed_price_factor": "1E+2",
+    "price_factor_interval": [
+      "98.199562259753703754519002590486356639192192219240",
+      "101.86712071859777354946702702344572787198069639833"
+    ],
+    "relative_interval_width": "0.0366755845884406979494802443295937123278850417909",
+    "volume_factor_interval": [
+      "0.0099984422298570356193726985181263494706322401924212",
+      "0.010001368671092084248766261089448843034043064517893"
+    ],
+    "observed_volume_factor": "0.0099999054422883495041645097442104891335610851554573",
+    "volume_factor_status": "consistent"
+  },
+  {
+    "symbol": "QXL",
+    "effective_session": "2025-03-14",
+    "prior_session": "2025-03-13",
+    "source_path": "E:\\Alex's Local Codebases\\One_Person-Trading_Agent\\data\\historical\\capture-workspace\\data\\scanner\\raw\\QXL.ecdd44ffae95488f885d926bf9fc05bf266d21792b6a86691f949df29250ef5b.json",
+    "source_sha256": "ecdd44ffae95488f885d926bf9fc05bf266d21792b6a86691f949df29250ef5b",
+    "raw_capture_files": [
+      "QXL-2025-03-14-raw-1.823926b96d35ed647d5a33e999d2775add0c945827f088c0fced2010dcae6fb9.raw.json"
+    ],
+    "split_capture_files": [
+      "QXL-2025-03-14-split-1.823926b96d35ed647d5a33e999d2775add0c945827f088c0fced2010dcae6fb9.raw.json"
+    ],
+    "expected_price_factor": "4",
+    "expected_volume_factor": "0.25",
+    "raw_sessions": [],
+    "split_sessions": [],
+    "boundaries": {},
+    "price_factor_status": "unresolved_missing_boundary",
+    "missing_boundaries": [
+      {
+        "boundary": "prior",
+        "required_session": "2025-03-13",
+        "raw_present": false,
+        "split_present": false
+      },
+      {
+        "boundary": "effective",
+        "required_session": "2025-03-14",
+        "raw_present": false,
+        "split_present": false
+      }
+    ]
+  }
+]

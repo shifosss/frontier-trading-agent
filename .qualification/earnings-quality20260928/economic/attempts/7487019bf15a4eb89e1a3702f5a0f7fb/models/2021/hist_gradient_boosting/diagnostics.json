@@ -1,0 +1,319 @@
+{
+  "family": "hist_gradient_boosting",
+  "year": 2021,
+  "requested_test_rows": 253,
+  "predicted_rows": 208,
+  "joint_label_available": 253,
+  "model_status": "complete",
+  "heads": {
+    "return_5": {
+      "raw": {
+        "count": 208,
+        "mae": 0.03365745698996271,
+        "mse": 0.0019673763485821625,
+        "mean_error": -0.010196765428440105,
+        "numeric_forecasts": 208,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 208,
+          "mae": 0.03207435409702837,
+          "mse": 0.001850017245966968,
+          "mean_error": -0.004288515581923364
+        },
+        "calibration_only_edges": [
+          -0.011372636967158664,
+          -0.007148803027520574,
+          -0.0026702885892704764,
+          0.0017225489822889047
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": -0.013295173444643812,
+            "mean_target": 0.003383529750836332,
+            "count": 71,
+            "mae": 0.03585972052903374,
+            "mse": 0.0021018214020477825,
+            "mean_error": -0.01667870319548015
+          },
+          {
+            "bin": 1,
+            "missing_labels": 0,
+            "mean_prediction": -0.009615356912108103,
+            "mean_target": -0.002569134095049357,
+            "count": 70,
+            "mae": 0.03601612693081841,
+            "mse": 0.0023969921135378242,
+            "mean_error": -0.007046222817058749
+          },
+          {
+            "bin": 2,
+            "missing_labels": 0,
+            "mean_prediction": -0.005090986894151709,
+            "mean_target": 0.004308630003585471,
+            "count": 41,
+            "mae": 0.03497041299625663,
+            "mse": 0.001863510413231825,
+            "mean_error": -0.00939961689773718
+          },
+          {
+            "bin": 3,
+            "missing_labels": 0,
+            "mean_prediction": -0.0001250216636716336,
+            "mean_target": 0.004726398960268152,
+            "count": 19,
+            "mae": 0.019213068312202975,
+            "mse": 0.0006461939884294017,
+            "mean_error": -0.004851420623939785
+          },
+          {
+            "bin": 4,
+            "missing_labels": 0,
+            "mean_prediction": 0.006547662889948911,
+            "mean_target": 0.0016822915157001914,
+            "count": 7,
+            "mae": 0.019249540059311454,
+            "mse": 0.0005019857556265833,
+            "mean_error": 0.004865371374248718
+          }
+        ]
+      },
+      "corrected": {
+        "count": 208,
+        "mae": 0.032759995619058804,
+        "mse": 0.001941619631064694,
+        "mean_error": 0.00884405493454007,
+        "numeric_forecasts": 208,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 208,
+          "mae": 0.03207435409702837,
+          "mse": 0.001850017245966968,
+          "mean_error": -0.004288515581923364
+        },
+        "calibration_only_edges": [
+          0.007668183395821513,
+          0.011892017335459602,
+          0.0163705317737097,
+          0.02076336934526908
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": 0.0057456469183363645,
+            "mean_target": 0.003383529750836332,
+            "count": 71,
+            "mae": 0.03008296082806754,
+            "mse": 0.001829221859277862,
+            "mean_error": 0.002362117167500031
+          },
+          {
+            "bin": 1,
+            "missing_labels": 0,
+            "mean_prediction": 0.00942546345087207,
+            "mean_target": -0.002569134095049357,
+            "count": 70,
+            "mae": 0.037137029734674094,
+            "mse": 0.00249121322783881,
+            "mean_error": 0.011994597545921429
+          },
+          {
+            "bin": 2,
+            "missing_labels": 0,
+            "mean_prediction": 0.013949833468828466,
+            "mean_target": 0.004308630003585471,
+            "count": 41,
+            "mae": 0.036473475520721284,
+            "mse": 0.001868110419665812,
+            "mean_error": 0.009641203465242998
+          },
+          {
+            "bin": 3,
+            "missing_labels": 0,
+            "mean_prediction": 0.018915798699308546,
+            "mean_target": 0.004726398960268152,
+            "count": 19,
+            "mae": 0.02158513377598233,
+            "mse": 0.0008239967713132929,
+            "mean_error": 0.01418939973904039
+          },
+          {
+            "bin": 4,
+            "missing_labels": 0,
+            "mean_prediction": 0.025588483252929086,
+            "mean_target": 0.0016822915157001914,
+            "count": 7,
+            "mae": 0.02472382149300181,
+            "mse": 0.0010498199203943757,
+            "mean_error": 0.023906191737228893
+          }
+        ]
+      },
+      "training_mean": {
+        "count": 208,
+        "mae": 0.03207435409702837,
+        "mse": 0.001850017245966968,
+        "mean_error": -0.004288515581923364,
+        "numeric_forecasts": 208,
+        "missing_labels": 0
+      }
+    },
+    "downside_5": {
+      "raw": {
+        "count": 208,
+        "mae": 0.022247580463887136,
+        "mse": 0.0008853923471602669,
+        "mean_error": -0.001565816435452441,
+        "numeric_forecasts": 208,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 208,
+          "mae": 0.02226169948619836,
+          "mse": 0.0008813211891222478,
+          "mean_error": -0.0010010757687011257
+        },
+        "calibration_only_edges": [
+          0.020939293244454597,
+          0.02347669572383519,
+          0.026100775002138303,
+          0.028657111170704894
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": 0.01736832311449435,
+            "mean_target": 0.02003064852348829,
+            "count": 76,
+            "mae": 0.018709106547928827,
+            "mse": 0.0006066270971122906,
+            "mean_error": -0.002662325408993941
+          },
+          {
+            "bin": 1,
+            "missing_labels": 0,
+            "mean_prediction": 0.02209092979989609,
+            "mean_target": 0.028164447843427927,
+            "count": 47,
+            "mae": 0.02305853762231294,
+            "mse": 0.0009724248196674606,
+            "mean_error": -0.006073518043531842
+          },
+          {
+            "bin": 2,
+            "missing_labels": 0,
+            "mean_prediction": 0.024984346264812413,
+            "mean_target": 0.029741799863438473,
+            "count": 35,
+            "mae": 0.02647248382429532,
+            "mse": 0.0011211293110104518,
+            "mean_error": -0.004757453598626056
+          },
+          {
+            "bin": 3,
+            "missing_labels": 0,
+            "mean_prediction": 0.027411379580506347,
+            "mean_target": 0.018540303122405052,
+            "count": 22,
+            "mae": 0.02008045098506263,
+            "mse": 0.0005353243909304214,
+            "mean_error": 0.008871076458101295
+          },
+          {
+            "bin": 4,
+            "missing_labels": 0,
+            "mean_prediction": 0.03100659831481128,
+            "mean_target": 0.02624054637091443,
+            "count": 28,
+            "mae": 0.026912375538411092,
+            "mse": 0.0014763328506641326,
+            "mean_error": 0.004766051943896851
+          }
+        ]
+      },
+      "corrected": {
+        "count": 208,
+        "mae": 0.025350424938665787,
+        "mse": 0.0009504748653852886,
+        "mean_error": 0.008217925488501011,
+        "numeric_forecasts": 208,
+        "missing_labels": 0,
+        "training_mean_on_same_rows": {
+          "count": 208,
+          "mae": 0.02226169948619836,
+          "mse": 0.0008813211891222478,
+          "mean_error": -0.0010010757687011257
+        },
+        "calibration_only_edges": [
+          0.030723035168408047,
+          0.03326043764778864,
+          0.03588451692609176,
+          0.03844085309465835
+        ],
+        "bins": [
+          {
+            "bin": 0,
+            "missing_labels": 0,
+            "mean_prediction": 0.027152065038447804,
+            "mean_target": 0.02003064852348829,
+            "count": 76,
+            "mae": 0.022170370023703923,
+            "mse": 0.0006502536937084539,
+            "mean_error": 0.007121416514959514
+          },
+          {
+            "bin": 1,
+            "missing_labels": 0,
+            "mean_prediction": 0.03187467172384954,
+            "mean_target": 0.028164447843427927,
+            "count": 47,
+            "mae": 0.02390883566655218,
+            "mse": 0.0009493029594852046,
+            "mean_error": 0.003710223880421611
+          },
+          {
+            "bin": 2,
+            "missing_labels": 0,
+            "mean_prediction": 0.03476808818876587,
+            "mean_target": 0.029741799863438473,
+            "count": 35,
+            "mae": 0.02830721937353429,
+            "mse": 0.0011237595205966942,
+            "mean_error": 0.0050262883253273955
+          },
+          {
+            "bin": 3,
+            "missing_labels": 0,
+            "mean_prediction": 0.0371951215044598,
+            "mean_target": 0.018540303122405052,
+            "count": 22,
+            "mae": 0.025372067312268324,
+            "mse": 0.00080463064227239,
+            "mean_error": 0.018654818382054746
+          },
+          {
+            "bin": 4,
+            "missing_labels": 0,
+            "mean_prediction": 0.04079034023876473,
+            "mean_target": 0.02624054637091443,
+            "count": 28,
+            "mae": 0.032688815363193936,
+            "mse": 0.0016653141011291439,
+            "mean_error": 0.014549793867850306
+          }
+        ]
+      },
+      "training_mean": {
+        "count": 208,
+        "mae": 0.02226169948619836,
+        "mse": 0.0008813211891222478,
+        "mean_error": -0.0010010757687011257,
+        "numeric_forecasts": 208,
+        "missing_labels": 0
+      }
+    }
+  },
+  "interpretation": "Repeated retrospective tests with overlapping events and issuer clustering; no independent-event significance claim"
+}

@@ -1,0 +1,16 @@
+{
+  "symbol": "WHLR",
+  "effective_sessions": "2024-11-19",
+  "url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2024-561",
+  "method": "GET",
+  "started_at": "2026-09-28T19:14:05.943593+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2024-561",
+  "redirects": [],
+  "sha256": "5f2e433fdb97e16425b08c322726b631fe187989bc656e65e2f6e33e208a0389",
+  "raw_file": "notice-WHLR-2024-11-19.5f2e433fdb97e16425b08c322726b631fe187989bc656e65e2f6e33e208a0389.raw.html",
+  "bytes": 58282,
+  "captured_at": "2026-09-28T19:14:06.446298+00:00",
+  "text_file": "notice-WHLR-2024-11-19.text.txt"
+}

@@ -1,0 +1,31 @@
+{
+  "definition_sha256": "27bc563d3a65af1328155d917e4ef673fd2f52c892c9d258f33f8d691a7230fc",
+  "block": 8,
+  "bounds": {
+    "fit_start": 2770,
+    "calibration_start": 3274,
+    "test_start": 3526,
+    "test_end": 3777
+  },
+  "model_directory": "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model",
+  "forecast_path": "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/forecasts.npz",
+  "family": "ridge",
+  "available": true,
+  "candidates": 352743,
+  "invalid_feature_rows": 0,
+  "finite_corrected_rows": 352743,
+  "fit_rows": 47808,
+  "calibration_rows": 23616,
+  "files": {
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/attempt.json": "11e27b1461a8f78c534757fec5644897fb4609bf6f208ccf6cbc0ca061d71bd8",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/forecasts.npz": "927799c6b9d163cf83706b238633c7933c87d742338fd849a9ecdbd26a80a381",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model/attempt.json": "0d9cb008afc239d841423e13c72852f19ed0bbc1bdc820177a1c82e7a607c222",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model/calibration-predictions.npz": "c19e3f52e01025b3531eef8cbc3bea98c9ee24c1065cf14ddb40b22103c76151",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model/diagnostics.json": "4669eea01348b330d3e617e618913fd739bfa8f1bea75950cd15f2c58ba1d10f",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model/manifest.json": "f493a2ee823e81bfcb811c05bd576c41069d8e3d869e812d39c0659bd7f356c8",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model/model.joblib": "bc0daaf5195f4a773b91d9bc177837775874c156780b5de675eff1a9d14340f1",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/model/samples.json": "3222c7a61cc74035b6cbb2ba605910fbca67eeddad3c77d363e4070dec2d83ce",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/sample-arrays.npz": "a8b96af471b89e1b557600864ae0c6e10df42dbd8991de131f23c28b8db96be9",
+    "blocks/block-008/attempt-c9ef2cf729624c5babee19aa32a14afe/test-diagnostics.json": "8306e4be884aed2d34bbce84a1cdd60052156e1601d1280fe806da90f54f070c"
+  }
+}

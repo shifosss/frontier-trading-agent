@@ -1,0 +1,699 @@
+{
+  "status": "complete_schema_audit",
+  "histories_checked": 36,
+  "all_raw_hashes_verified": true,
+  "histories_with_open": 36,
+  "histories_with_aligned_ohlc_lengths": 36,
+  "window_rows": 78414,
+  "positive_finite_opens": 78413,
+  "missing_or_nonpositive_opens": 1,
+  "open_outside_ohlc_range": 3,
+  "source_failures": [],
+  "interpretation": "Sample verifies a practical retained-open path, not all-universe open coverage or opening-auction fill accuracy.",
+  "rows": [
+    {
+      "symbol": "SPY",
+      "sha256": "de2059c96084c77f4e759176b7310b2869e1c58973ba2efe182489bf0e1afb66",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "AAPL",
+      "sha256": "189380846a17e07da0e2ee5d6bc052e817a9d9e3cdca3de62f8e00da880165d9",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "MSFT",
+      "sha256": "645938fe948c8c1654bd490a0a1143993649b3d568d0a3972c8b907243a80388",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "AIXI",
+      "sha256": "78718566befb39a31c0bd12742a0a8c1d64bbe0dd7cfa456703b564cff37207e",
+      "timestamps": 886,
+      "window_rows": 886,
+      "open_present": true,
+      "array_lengths": {
+        "open": 886,
+        "close": 886,
+        "high": 886,
+        "low": 886
+      },
+      "positive_finite_opens": 886,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 886,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 886,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "REKR",
+      "sha256": "f451397f69ae10b616852fd7d63059efa72fcc8c1d87456b72b08ab52f43284a",
+      "timestamps": 2276,
+      "window_rows": 2276,
+      "open_present": true,
+      "array_lengths": {
+        "open": 2276,
+        "close": 2276,
+        "high": 2276,
+        "low": 2276
+      },
+      "positive_finite_opens": 2276,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 2276,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 2276,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "RKLB",
+      "sha256": "098367cd54502e47c6be990d01c7099a9f53792a7fd67735f4f5321bc43a17c3",
+      "timestamps": 1460,
+      "window_rows": 1460,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1460,
+        "close": 1460,
+        "high": 1460,
+        "low": 1460
+      },
+      "positive_finite_opens": 1460,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1460,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1460,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "ECL",
+      "sha256": "bb1735857437aa05518cd385d0dbe78aececaf50a673d7604235bc0d42332fa5",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "CPOP",
+      "sha256": "284ba89f1c6a2cf910237d7d35f29b398d3490b7ca42c4651cc4bbd0a89fd4b3",
+      "timestamps": 1311,
+      "window_rows": 1311,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1311,
+        "close": 1311,
+        "high": 1311,
+        "low": 1311
+      },
+      "positive_finite_opens": 1310,
+      "missing_or_nonpositive_opens": 1,
+      "complete_positive_ohlc": 1310,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1310,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "CAPR",
+      "sha256": "216c98fcc45a31d5fa3c498df1e64d9f61f6d227e95db3b0bb1fa70ee59ee11f",
+      "timestamps": 4931,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 4931,
+        "close": 4931,
+        "high": 4931,
+        "low": 4931
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "BORR",
+      "sha256": "e05f6052c7cf0f42310c03edec525c21ceaf68319b71a7c2ddf3d9d814ae8250",
+      "timestamps": 1795,
+      "window_rows": 1795,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1795,
+        "close": 1795,
+        "high": 1795,
+        "low": 1795
+      },
+      "positive_finite_opens": 1795,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1795,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1795,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "BF-A",
+      "sha256": "a369d78b1b1cd48c59bd222bc7559d1a812eb497a5c538d6afbb527729accaca",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 1,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "AURE",
+      "sha256": "617c0f4a0f3ce530ea0e67b22dc7bebd0b686d1c7084feb4f00bf5ed67a5f9fe",
+      "timestamps": 804,
+      "window_rows": 804,
+      "open_present": true,
+      "array_lengths": {
+        "open": 804,
+        "close": 804,
+        "high": 804,
+        "low": 804
+      },
+      "positive_finite_opens": 804,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 804,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 804,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "CHEC",
+      "sha256": "f62b21e820f35f33f733e0aeec8676cb4c051b0251de90941e6874dab09014a9",
+      "timestamps": 214,
+      "window_rows": 214,
+      "open_present": true,
+      "array_lengths": {
+        "open": 214,
+        "close": 214,
+        "high": 214,
+        "low": 214
+      },
+      "positive_finite_opens": 214,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 214,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 214,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "PXLW",
+      "sha256": "9dbf1714230621ed7cfa46ca4b8e115e2ca35258c34c92db761cae426f21074f",
+      "timestamps": 6622,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6622,
+        "close": 6622,
+        "high": 6622,
+        "low": 6622
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "WAFD",
+      "sha256": "bf1255c1a505602c75bbf07028b4e19156c01304be1aa562ffdc79dc181926a3",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "CBOE",
+      "sha256": "f7856a4c7ccc9b684fe9b86036b2d2d2e17590479cc22ee5724582ba75a02c59",
+      "timestamps": 4091,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 4091,
+        "close": 4091,
+        "high": 4091,
+        "low": 4091
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "DFNS",
+      "sha256": "e056ad9b4dfcd6f53e7aa5084d9bf77bbd44d0331994afea79229d0a3cbd0b99",
+      "timestamps": 1548,
+      "window_rows": 1548,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1548,
+        "close": 1548,
+        "high": 1548,
+        "low": 1548
+      },
+      "positive_finite_opens": 1548,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1548,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1548,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "WLDS",
+      "sha256": "ef7e77e5b393ce965289bb1eb57a7dd8cbf869b6e7e1f13d37dbbfef5c385261",
+      "timestamps": 1008,
+      "window_rows": 1008,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1008,
+        "close": 1008,
+        "high": 1008,
+        "low": 1008
+      },
+      "positive_finite_opens": 1008,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1008,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1008,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "TRIB",
+      "sha256": "f32a31b25f8d1f5ba350d165c96f2a0d63b48ed9053d7517b0326b60af143e6a",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "NPV",
+      "sha256": "7760b79d834c615d013e4e6b7a4dfb7250ad2e10eab728871694dc55f77726a3",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 1,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "TECX",
+      "sha256": "26b2f2065aa48521ba21ca272fc5fdaece037bbe40d9fe04027dbce028875a27",
+      "timestamps": 2072,
+      "window_rows": 2072,
+      "open_present": true,
+      "array_lengths": {
+        "open": 2072,
+        "close": 2072,
+        "high": 2072,
+        "low": 2072
+      },
+      "positive_finite_opens": 2072,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 2072,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 2072,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "SRZN",
+      "sha256": "d6915204759951e03884c5cd4293b4722bbb0125c275277344ed41aeaf9aecb3",
+      "timestamps": 1429,
+      "window_rows": 1429,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1429,
+        "close": 1429,
+        "high": 1429,
+        "low": 1429
+      },
+      "positive_finite_opens": 1429,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1429,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1429,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "AKBA",
+      "sha256": "64a192c02fee911b979c34b017c1dff3746c126e8121fc23628de52e6d25c5ab",
+      "timestamps": 3144,
+      "window_rows": 3144,
+      "open_present": true,
+      "array_lengths": {
+        "open": 3144,
+        "close": 3144,
+        "high": 3144,
+        "low": 3144
+      },
+      "positive_finite_opens": 3144,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3144,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3144,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "CXAI",
+      "sha256": "9d8d7233e127023c4989f3c10420bb2aa52cb59bac871e2e342559b158ea2bfd",
+      "timestamps": 1412,
+      "window_rows": 1412,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1412,
+        "close": 1412,
+        "high": 1412,
+        "low": 1412
+      },
+      "positive_finite_opens": 1412,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1412,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1412,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "SNGX",
+      "sha256": "71285a6fb59d2c144ccdb06c33d16cf926dbeea677930690b087fba79c26cc37",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "SPH",
+      "sha256": "a0c014682b6856cc5da1f05e496a1adb034ed616887ef0a78fc8a0aa4902b869",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 1,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "IFBD",
+      "sha256": "258ff57f79f2cfe5a883986d550661a067f4bbcba0d086823ef43db756a801c7",
+      "timestamps": 1361,
+      "window_rows": 1361,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1361,
+        "close": 1361,
+        "high": 1361,
+        "low": 1361
+      },
+      "positive_finite_opens": 1361,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1361,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1361,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "ALGS",
+      "sha256": "3d2958196cdb4a97339f98a6054bc3c98a69f58d02c3d260f4f87690558a758b",
+      "timestamps": 1487,
+      "window_rows": 1487,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1487,
+        "close": 1487,
+        "high": 1487,
+        "low": 1487
+      },
+      "positive_finite_opens": 1487,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1487,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1487,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "IMSR",
+      "sha256": "372a094122a5de9641588d38fcfd09429bbdf06a389ce650b3db4c0697efa136",
+      "timestamps": 486,
+      "window_rows": 486,
+      "open_present": true,
+      "array_lengths": {
+        "open": 486,
+        "close": 486,
+        "high": 486,
+        "low": 486
+      },
+      "positive_finite_opens": 486,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 486,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 486,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "ANDE",
+      "sha256": "b54aea9971fa7c5a66a6af65e0335929ae4b583ad743d5782704246372d9eb80",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "DSY",
+      "sha256": "4f7865b8e32e507b9569e0171450689214382fa2f87f6385170c28fd0e76561b",
+      "timestamps": 925,
+      "window_rows": 925,
+      "open_present": true,
+      "array_lengths": {
+        "open": 925,
+        "close": 925,
+        "high": 925,
+        "low": 925
+      },
+      "positive_finite_opens": 925,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 925,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 925,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "TEVA",
+      "sha256": "4a5ec1aaa5da71c64d38ecc4e6f168e1205eb19f644a6d9fe77b99026958ee86",
+      "timestamps": 6718,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 6718,
+        "close": 6718,
+        "high": 6718,
+        "low": 6718
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "DAL",
+      "sha256": "387665b50410c8e9d7ebb69e49c56d1dd98cbe581304d2dba0fde9a81b6c579b",
+      "timestamps": 4876,
+      "window_rows": 3197,
+      "open_present": true,
+      "array_lengths": {
+        "open": 4876,
+        "close": 4876,
+        "high": 4876,
+        "low": 4876
+      },
+      "positive_finite_opens": 3197,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 3197,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 3197,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "SDHC",
+      "sha256": "749bacd63287732c16155f3219c820b88c3d69a308ca1da0c7c2d79568bd1b06",
+      "timestamps": 674,
+      "window_rows": 674,
+      "open_present": true,
+      "array_lengths": {
+        "open": 674,
+        "close": 674,
+        "high": 674,
+        "low": 674
+      },
+      "positive_finite_opens": 674,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 674,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 674,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "AVIR",
+      "sha256": "af988ad5bba9b890113a26de517c77c9ffaeafe44658d0ad5444fbedfe1e77b4",
+      "timestamps": 1477,
+      "window_rows": 1477,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1477,
+        "close": 1477,
+        "high": 1477,
+        "low": 1477
+      },
+      "positive_finite_opens": 1477,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1477,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1477,
+      "provider_timezone": "America/New_York"
+    },
+    {
+      "symbol": "ELUT",
+      "sha256": "5c014bad757951bfe264c786be85635e6041da1f5ef957040377eef1c23c640c",
+      "timestamps": 1493,
+      "window_rows": 1493,
+      "open_present": true,
+      "array_lengths": {
+        "open": 1493,
+        "close": 1493,
+        "high": 1493,
+        "low": 1493
+      },
+      "positive_finite_opens": 1493,
+      "missing_or_nonpositive_opens": 0,
+      "complete_positive_ohlc": 1493,
+      "open_outside_ohlc_range": 0,
+      "positive_finite_close_adjustment_factors": 1493,
+      "provider_timezone": "America/New_York"
+    }
+  ]
+}

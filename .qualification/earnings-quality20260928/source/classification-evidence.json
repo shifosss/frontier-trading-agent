@@ -1,0 +1,258 @@
+{
+  "purpose": "Dated SIC availability spotcheck only, not historical classification of the new cohort",
+  "samples": [
+    {
+      "symbol": "AAPL",
+      "filed": "2012-01-25",
+      "accession": "0001193125-12-023398",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/320193/000119312512023398/0001193125-12-023398.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/21bf2986f158d4b4dca2e7c3f1fada6486595f9436c1b42fa667c9e184a82a4f.bin",
+      "header_sha256": "21bf2986f158d4b4dca2e7c3f1fada6486595f9436c1b42fa667c9e184a82a4f",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "3571"
+        }
+      ]
+    },
+    {
+      "symbol": "AAPL",
+      "filed": "2016-01-27",
+      "accession": "0001193125-16-439878",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516439878/0001193125-16-439878.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/57a4e409227a949bb6352be34a0f033e5f59cab97ed31782d3e81b7fadc54d01.bin",
+      "header_sha256": "57a4e409227a949bb6352be34a0f033e5f59cab97ed31782d3e81b7fadc54d01",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "3571"
+        }
+      ]
+    },
+    {
+      "symbol": "AAPL",
+      "filed": "2025-01-31",
+      "accession": "0000320193-25-000008",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000008/0000320193-25-000008.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/e4b5a19fba78163e08776bc8e1d2ac9fbd48b686aa0d3cb2ec47ef25b3810fe1.bin",
+      "header_sha256": "e4b5a19fba78163e08776bc8e1d2ac9fbd48b686aa0d3cb2ec47ef25b3810fe1",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "3571"
+        }
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "filed": "2012-01-19",
+      "accession": "0001193125-12-017029",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312512017029/0001193125-12-017029.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/47a76b500bbb18986e639b8668b4ae724d5fbe3dfc5315e99eaa5d83cd1871ca.bin",
+      "header_sha256": "47a76b500bbb18986e639b8668b4ae724d5fbe3dfc5315e99eaa5d83cd1871ca",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "7372"
+        }
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "filed": "2016-01-28",
+      "accession": "0001193125-16-441821",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312516441821/0001193125-16-441821.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/a752d5577b363e9027c458ff9ec7fbf2707649cb277d49df724c83291544cb99.bin",
+      "header_sha256": "a752d5577b363e9027c458ff9ec7fbf2707649cb277d49df724c83291544cb99",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "7372"
+        }
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "filed": "2025-01-29",
+      "accession": "0000950170-25-010491",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025010491/0000950170-25-010491.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/6a2966541c430b744e4d14477f0f7c3651f6bada01ec4fda6d76cf85c4e57809.bin",
+      "header_sha256": "6a2966541c430b744e4d14477f0f7c3651f6bada01ec4fda6d76cf85c4e57809",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "7372"
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "filed": "2012-05-04",
+      "accession": "0000037996-12-000023",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/37996/000003799612000023/0000037996-12-000023.hdr.sgml",
+      "header_path": ".qualification/filing-source-supplement20260928/raw/4f6cadf1dbc3667a36a8c32be0ceff7c1ec7bde03e799110280b24b27c168ecb.bin",
+      "header_sha256": "4f6cadf1dbc3667a36a8c32be0ceff7c1ec7bde03e799110280b24b27c168ecb",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "3711"
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "filed": "2016-04-28",
+      "accession": "0000037996-16-000107",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/37996/000003799616000107/0000037996-16-000107.hdr.sgml",
+      "header_path": ".qualification/filing-source-supplement20260928/raw/3fc4ac82f9f0cf9b43fcb02b633a2769b5a18bf676bbf25781331a97c648e6ef.bin",
+      "header_sha256": "3fc4ac82f9f0cf9b43fcb02b633a2769b5a18bf676bbf25781331a97c648e6ef",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "3711"
+        }
+      ]
+    },
+    {
+      "symbol": "F",
+      "filed": "2025-05-06",
+      "accession": "0000037996-25-000072",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/37996/000003799625000072/0000037996-25-000072.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/05302ba4b27660d336735ead317bcb8d14879e69ce0fcc6d25dc032ad4a02416.bin",
+      "header_sha256": "05302ba4b27660d336735ead317bcb8d14879e69ce0fcc6d25dc032ad4a02416",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "3711"
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "filed": "2012-05-04",
+      "accession": "0000732717-12-000037",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/732717/000073271712000037/0000732717-12-000037.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/d2cf731bbe9ecd9537f82b1a80f8cf583317b53ceff7f8436d93fb63239f6cc6.bin",
+      "header_sha256": "d2cf731bbe9ecd9537f82b1a80f8cf583317b53ceff7f8436d93fb63239f6cc6",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "4813"
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "filed": "2016-05-05",
+      "accession": "0000732717-16-000160",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/732717/000073271716000160/0000732717-16-000160.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/d5d12facf309e2041af54ecc1f124cade68728614a78cf2a83aaeedaecc5d090.bin",
+      "header_sha256": "d5d12facf309e2041af54ecc1f124cade68728614a78cf2a83aaeedaecc5d090",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "4813"
+        }
+      ]
+    },
+    {
+      "symbol": "T",
+      "filed": "2025-04-29",
+      "accession": "0000732717-25-000023",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/732717/000073271725000023/0000732717-25-000023.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/7248ec05b48d816ed63698e0c875972a9e2e43db29626dea2f03d130ea70c36b.bin",
+      "header_sha256": "7248ec05b48d816ed63698e0c875972a9e2e43db29626dea2f03d130ea70c36b",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "4813"
+        }
+      ]
+    },
+    {
+      "symbol": "HRL",
+      "filed": "2012-03-09",
+      "accession": "0001104659-12-017006",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465912017006/0001104659-12-017006.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/62eac36c8d8b76d14117b0882ce7220ece8ce0fb0b18858d5be6edc6f480d72e.bin",
+      "header_sha256": "62eac36c8d8b76d14117b0882ce7220ece8ce0fb0b18858d5be6edc6f480d72e",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "2011"
+        }
+      ]
+    },
+    {
+      "symbol": "HRL",
+      "filed": "2016-03-04",
+      "accession": "0001104659-16-102502",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/48465/000110465916102502/0001104659-16-102502.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/057dff6af5b50bdba44488228b43b247cf6c101da976bd82c6fbbc59faa72438.bin",
+      "header_sha256": "057dff6af5b50bdba44488228b43b247cf6c101da976bd82c6fbbc59faa72438",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "2011"
+        }
+      ]
+    },
+    {
+      "symbol": "HRL",
+      "filed": "2025-02-27",
+      "accession": "0000048465-25-000008",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/48465/000004846525000008/0000048465-25-000008.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/5cbe2a7f3021ba0177bba8fb154cc867925df4d781a29d59b81d1a5c68a0f2cd.bin",
+      "header_sha256": "5cbe2a7f3021ba0177bba8fb154cc867925df4d781a29d59b81d1a5c68a0f2cd",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "2011"
+        }
+      ]
+    },
+    {
+      "symbol": "BANF",
+      "filed": "2012-05-10",
+      "accession": "0001193125-12-223959",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/760498/000119312512223959/0001193125-12-223959.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/576fb1064dca235abdf553a4be6970d8132ab5a7d30915473b818de1add5d4a8.bin",
+      "header_sha256": "576fb1064dca235abdf553a4be6970d8132ab5a7d30915473b818de1add5d4a8",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "6021"
+        }
+      ]
+    },
+    {
+      "symbol": "BANF",
+      "filed": "2016-05-06",
+      "accession": "0001564590-16-018258",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/760498/000156459016018258/0001564590-16-018258.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/1e8ce5025ca4ceffc936d4409609952b6b936d2bfd57b7369086897c77a90859.bin",
+      "header_sha256": "1e8ce5025ca4ceffc936d4409609952b6b936d2bfd57b7369086897c77a90859",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "6021"
+        }
+      ]
+    },
+    {
+      "symbol": "BANF",
+      "filed": "2025-05-09",
+      "accession": "0000950170-25-067899",
+      "header_url": "https://www.sec.gov/Archives/edgar/data/760498/000095017025067899/0000950170-25-067899.hdr.sgml",
+      "header_path": ".qualification/filing-source20260928/raw/cd7fed7ff40863ff7ea7e3740674d3eae2a4621344f0613eca0641424ca2111c.bin",
+      "header_sha256": "cd7fed7ff40863ff7ea7e3740674d3eae2a4621344f0613eca0641424ca2111c",
+      "SIC_fields": [
+        {
+          "tag": "ASSIGNED-SIC",
+          "value": "6021"
+        }
+      ]
+    }
+  ],
+  "limits": "Current SIC/entityType and original dated header SIC do not by themselves establish ordinary-common security class, historical domicile, or ongoing economic identity."
+}

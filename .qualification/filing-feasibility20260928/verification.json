@@ -1,0 +1,457 @@
+{
+  "status": "bounded_source_checks_passed_not_strategy_qualification",
+  "requests": 11,
+  "http_200": 11,
+  "total_raw_bytes": 11620679,
+  "raw_hashes_verified": true,
+  "parsed_selected_fact_rows": 190,
+  "examples": [
+    {
+      "symbol": "AAPL",
+      "accession": "0000320193-20-000062",
+      "source_sha256": "af280db54b418fac7a0acf769d7a8ca3a5422dcb93d8567b9739debb7283ace9",
+      "accepted_index_text": "2020-07-30 19:29:09",
+      "accepted_timezone_interpretation": "America/New_York; Apple independently API corroborated, others index convention only",
+      "filingDate": "2020-07-31",
+      "facts": [
+        {
+          "concept": "us-gaap:NetIncomeLoss",
+          "period": {
+            "startDate": "2020-03-29",
+            "endDate": "2020-06-27"
+          },
+          "USD": "11253000000",
+          "occurrences": 3,
+          "contextRefs": [
+            "i526a018599e94bbcb5c99ec1159f1a4d_D20200329-20200627"
+          ]
+        },
+        {
+          "concept": "us-gaap:NetIncomeLoss",
+          "period": {
+            "startDate": "2019-03-31",
+            "endDate": "2019-06-29"
+          },
+          "USD": "10044000000",
+          "occurrences": 3,
+          "contextRefs": [
+            "i064dcdd8a86e47beb1e6b5a9d9ceab88_D20190331-20190629"
+          ]
+        },
+        {
+          "concept": "us-gaap:Assets",
+          "period": {
+            "instant": "2019-09-28"
+          },
+          "USD": "338516000000",
+          "occurrences": 1,
+          "contextRefs": [
+            "i8d2e24f3acf240cfb5fb5e8abd2376b3_I20190928"
+          ]
+        }
+      ],
+      "securities": [
+        {
+          "title": "Common Stock, $0.00001 par value per share",
+          "ticker": "AAPL",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i77ed4f671a114bb6af18274bc9e7742d_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "us-gaap:CommonStockMember"
+            }
+          ]
+        },
+        {
+          "title": "1.000% Notes due 2022",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i31085109e24c484c93269a13154c1ae1_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A1.000NotesDue2022Member"
+            }
+          ]
+        },
+        {
+          "title": "1.375% Notes due 2024",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i27db54fd9639400982eede3cf23e89fa_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A1.375NotesDue2024Member"
+            }
+          ]
+        },
+        {
+          "title": "0.000% Notes due 2025",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i75a644e3be814f968a7b91693776aa20_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A0.000Notesdue2025Member"
+            }
+          ]
+        },
+        {
+          "title": "0.875% Notes due 2025",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i4e4f5522f5af4a158c6426c7f62cf749_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A0.875NotesDue2025Member"
+            }
+          ]
+        },
+        {
+          "title": "1.625% Notes due 2026",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i1a0c8d21283d4461859f19b7d81689aa_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A1.625NotesDue2026Member"
+            }
+          ]
+        },
+        {
+          "title": "2.000% Notes due 2027",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "ia0bbff9d4b324d3eb0f9c332fd52f165_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A2.000NotesDue2027Member"
+            }
+          ]
+        },
+        {
+          "title": "1.375% Notes due 2029",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "ia6c3ec78cc7e4a75915878ed7ce40729_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A1.375NotesDue2029Member"
+            }
+          ]
+        },
+        {
+          "title": "3.050% Notes due 2029",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "ia6d8519d42c6408f8813614b7a9f1be3_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A3.050NotesDue2029Member"
+            }
+          ]
+        },
+        {
+          "title": "0.500% Notes due 2031",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "i912aa59b32cc49a28a351b72f8141c66_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A0.500Notesdue2031Member"
+            }
+          ]
+        },
+        {
+          "title": "3.600% Notes due 2042",
+          "ticker": "\u2014",
+          "exchange": "The Nasdaq Stock Market LLC",
+          "contextRef": "ief7ff6a9060f426c91648550c9969a10_D20190929-20200627",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "aapl:A3.600NotesDue2042Member"
+            }
+          ]
+        }
+      ],
+      "proposed_D": "2020-07-31",
+      "proposed_cutoff_local": "2020-07-31 end-of-day +1hour",
+      "proposed_next_session": "2020-08-03",
+      "proposed_entry_close_utc": "2020-08-03T20:00:00+00:00",
+      "clock_is_proxy": true
+    },
+    {
+      "symbol": "MSFT",
+      "accession": "0000950170-24-048288",
+      "source_sha256": "65f218a11d5c35016bf7c0f992ac7c28cb44ee0f436fbefb6f82ef290d827085",
+      "accepted_index_text": "2024-04-25 16:06:24",
+      "accepted_timezone_interpretation": "America/New_York; Apple independently API corroborated, others index convention only",
+      "filingDate": "2024-04-25",
+      "facts": [
+        {
+          "concept": "us-gaap:NetIncomeLoss",
+          "period": {
+            "startDate": "2024-01-01",
+            "endDate": "2024-03-31"
+          },
+          "USD": "21939000000",
+          "occurrences": 4,
+          "contextRefs": [
+            "C_a2d4882c-16ef-4eef-8599-7bb7014adb07"
+          ]
+        },
+        {
+          "concept": "us-gaap:NetIncomeLoss",
+          "period": {
+            "startDate": "2023-01-01",
+            "endDate": "2023-03-31"
+          },
+          "USD": "18299000000",
+          "occurrences": 4,
+          "contextRefs": [
+            "C_7b55d69f-aa3e-45c8-8ad1-ecb14fc91aa7"
+          ]
+        },
+        {
+          "concept": "us-gaap:Assets",
+          "period": {
+            "instant": "2023-06-30"
+          },
+          "USD": "411976000000",
+          "occurrences": 1,
+          "contextRefs": [
+            "C_884cb367-3ab2-4197-81d0-9500c3cc60f4"
+          ]
+        }
+      ],
+      "securities": [
+        {
+          "title": "Common stock, $0.00000625 par value per share",
+          "ticker": "MSFT",
+          "exchange": "Nasdaq",
+          "contextRef": "C_592ace1e-b6b4-4575-acaf-7aa05edcd1ee",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "us-gaap:CommonStockMember"
+            }
+          ]
+        },
+        {
+          "title": "3.125% Notes due 2028",
+          "ticker": "MSFT",
+          "exchange": "Nasdaq",
+          "contextRef": "C_465c39f3-6ad7-4a0b-a02b-84bf39e9ec0d",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "msft:NotesThreePointOneTwoFivePercentDueDecemberSixTwentyTwentyEightMember"
+            }
+          ]
+        },
+        {
+          "title": "2.625% Notes due 2033",
+          "ticker": "MSFT",
+          "exchange": "Nasdaq",
+          "contextRef": "C_9016be29-873f-470c-a6b5-e84c6ce25c63",
+          "dimensions": [
+            {
+              "dimension": "us-gaap:StatementClassOfStockAxis",
+              "value": "msft:NotesTwoPointSixTwoFivePercentDueMayTwoTwentyThirtyThreeMember"
+            }
+          ]
+        }
+      ],
+      "proposed_D": "2024-04-25",
+      "proposed_cutoff_local": "2024-04-25 end-of-day +1hour",
+      "proposed_next_session": "2024-04-26",
+      "proposed_entry_close_utc": "2024-04-26T20:00:00+00:00",
+      "clock_is_proxy": true
+    },
+    {
+      "symbol": "F",
+      "accession": "0000037996-24-000144",
+      "source_sha256": "c2d4f9ab1bbef3feae8e2e2abe2c144b94823a73a55b6cd7c58a8809ce02a8e3",
+      "accepted_index_text": "2024-07-24 19:23:59",
+      "accepted_timezone_interpretation": "America/New_York; Apple independently API corroborated, others index convention only",
+      "filingDate": "2024-07-25",
+      "facts": [
+        {
+          "concept": "us-gaap:NetIncomeLoss",
+          "period": {
+            "startDate": "2024-04-01",
+            "endDate": "2024-06-30"
+          },
+          "USD": "1831000000",
+          "occurrences": 1,
+          "contextRefs": [
+            "c-16"
+          ]
+        },
+        {
+          "concept": "us-gaap:NetIncomeLoss",
+          "period": {
+            "startDate": "2023-04-01",
+            "endDate": "2023-06-30"
+          },
+          "USD": "1917000000",
+          "occurrences": 1,
+          "contextRefs": [
+            "c-15"
+          ]
+        },
+        {
+          "concept": "us-gaap:Assets",
+          "period": {
+            "instant": "2023-12-31"
+          },
+          "USD": "273310000000",
+          "occurrences": 1,
+          "contextRefs": [
+            "c-18"
+          ]
+        }
+      ],
+      "securities": [
+        {
+          "title": "Common Stock, par value $.01 per share",
+          "ticker": "F",
+          "exchange": "New York Stock Exchange",
+          "contextRef": "c-1",
+          "dimensions": []
+        },
+        {
+          "title": "6.200% Notes due June 1, 2059",
+          "ticker": "FPRB",
+          "exchange": "New York Stock Exchange",
+          "contextRef": "c-2",
+          "dimensions": [
+            {
+              "dimension": "f:FixedRateDebtSecurityAxis",
+              "value": "f:FPRBMember"
+            }
+          ]
+        },
+        {
+          "title": "6.000% Notes due December 1, 2059",
+          "ticker": "FPRC",
+          "exchange": "New York Stock Exchange",
+          "contextRef": "c-3",
+          "dimensions": [
+            {
+              "dimension": "f:FixedRateDebtSecurityAxis",
+              "value": "f:FPRCMember"
+            }
+          ]
+        },
+        {
+          "title": "6.500% Notes due August 15, 2062",
+          "ticker": "FPRD",
+          "exchange": "New York Stock Exchange",
+          "contextRef": "c-4",
+          "dimensions": [
+            {
+              "dimension": "f:FixedRateDebtSecurityAxis",
+              "value": "f:FPRDMember"
+            }
+          ]
+        }
+      ],
+      "proposed_D": "2024-07-25",
+      "proposed_cutoff_local": "2024-07-25 end-of-day +1hour",
+      "proposed_next_session": "2024-07-26",
+      "proposed_entry_close_utc": "2024-07-26T20:00:00+00:00",
+      "clock_is_proxy": true
+    }
+  ],
+  "apple_API_index_header_join": [
+    {
+      "accessionNumber": "0000320193-20-000062",
+      "filingDate": "2020-07-31",
+      "reportDate": "2020-06-27",
+      "acceptanceDateTime": "2020-07-30T23:29:09.000Z",
+      "act": "34",
+      "form": "10-Q",
+      "fileNumber": "001-36743",
+      "filmNumber": "201062122",
+      "items": "",
+      "core_type": "XBRL",
+      "size": 11076413,
+      "isXBRL": 1,
+      "isInlineXBRL": 1,
+      "isXBRLNumeric": null,
+      "primaryDocument": "aapl-20200627.htm",
+      "primaryDocDescription": "10-Q",
+      "acceptance_ET": "2020-07-30 19:29:09"
+    },
+    {
+      "accessionNumber": "0000320193-20-000060",
+      "filingDate": "2020-07-30",
+      "reportDate": "2020-07-30",
+      "acceptanceDateTime": "2020-07-30T22:55:04.000Z",
+      "act": "34",
+      "form": "8-K",
+      "fileNumber": "001-36743",
+      "filmNumber": "201061591",
+      "items": "2.02,9.01",
+      "core_type": "XBRL",
+      "size": 628978,
+      "isXBRL": 1,
+      "isInlineXBRL": 1,
+      "isXBRLNumeric": null,
+      "primaryDocument": "aapl-20200730.htm",
+      "primaryDocDescription": "8-K",
+      "acceptance_ET": "2020-07-30 18:55:04"
+    }
+  ],
+  "apple_EPS_same_period_vintages": [
+    {
+      "start": "2020-03-29",
+      "end": "2020-06-27",
+      "val": 2.58,
+      "accn": "0000320193-20-000062",
+      "fy": 2020,
+      "fp": "Q3",
+      "form": "10-Q",
+      "filed": "2020-07-31"
+    },
+    {
+      "start": "2020-03-29",
+      "end": "2020-06-27",
+      "val": 0.65,
+      "accn": "0000320193-20-000096",
+      "fy": 2020,
+      "fp": "FY",
+      "form": "10-K",
+      "filed": "2020-10-30"
+    },
+    {
+      "start": "2020-03-29",
+      "end": "2020-06-27",
+      "val": 0.65,
+      "accn": "0000320193-21-000065",
+      "fy": 2021,
+      "fp": "Q3",
+      "form": "10-Q",
+      "filed": "2021-07-28",
+      "frame": "CY2020Q2"
+    }
+  ],
+  "calendar_sha256": "5ffb2d9814b1f4505586103a60a4336a14689cb3a18e8baa75e43be3319cdcc4",
+  "limits": [
+    "Not independent proof of historical public dissemination time",
+    "Original accession content retrieved in2026; postacceptance corrections possible",
+    "Only3examples; no eight-innovation warmup or universe completeness check",
+    "No return, signal, strategy or live execution result"
+  ]
+}

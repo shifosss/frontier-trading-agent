@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "source_outputs_verified": 112,
+  "account_paths_checked": 20,
+  "trade_observations_reconciled": 2885,
+  "weekly_series_recomputed": 20,
+  "weekly_rows_recomputed": 5280,
+  "tolerance_USD": 1e-06,
+  "weekly_float_tolerance": 3e-15,
+  "original_bound_files_modified": false,
+  "new_models_or_accounts_executed": false,
+  "outputs": {
+    "analyze.py": "079c6f897d048194b58d6ae768fbf3a25b8e0664f8e40494cbee1037634e73cf",
+    "report.json": "e12fbce1f92b00194d673b5bbbec0421126ed8c5c211c273937ac0d20507cb59",
+    "report.md": "7a572c7bd6c220a0c3eeebf01e67d552b2e0d9d7f9cd6726c06915d5b7e20e3d"
+  }
+}

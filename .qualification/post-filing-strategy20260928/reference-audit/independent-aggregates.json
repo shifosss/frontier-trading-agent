@@ -1,0 +1,452 @@
+[
+  {
+    "group": "all_eligible",
+    "events": 121,
+    "entry_dates": 117,
+    "equal_event_mean": {
+      "stock_gross_return": "0.007487989552792644113455784492015722773250",
+      "benchmark_gross_return": "0.005201660435232789822284143285714151158317",
+      "stock_minus_benchmark": "0.002286329117559854291171641206301571614933"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.007393310744816209524524307302154677398927",
+      "benchmark_gross_return": "0.005283461194608884234064419736772381614683",
+      "stock_minus_benchmark": "0.002109849550207325290459887565382295784242"
+    }
+  },
+  {
+    "group": "selected",
+    "events": 27,
+    "entry_dates": 26,
+    "equal_event_mean": {
+      "stock_gross_return": "0.007656551363456513665468348196033443474752",
+      "benchmark_gross_return": "0.007220083833035806841062205637464061665337",
+      "stock_minus_benchmark": "0.0004364675304207068244061425585693818094148"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.007798842309393175488995692078020425598648",
+      "benchmark_gross_return": "0.007613139634000742091060099917385092200915",
+      "stock_minus_benchmark": "0.0001857026753924333979355921606353333977312"
+    }
+  },
+  {
+    "group": "by_issuer/AAPL/all_eligible",
+    "events": 27,
+    "entry_dates": 27,
+    "equal_event_mean": {
+      "stock_gross_return": "0.02097456144356413024188327991619283689651",
+      "benchmark_gross_return": "0.008867366130707660652968410064229505912996",
+      "stock_minus_benchmark": "0.01210719531285646958891486985196333098352"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.02097456144356413024188327991619283689652",
+      "benchmark_gross_return": "0.008867366130707660652968410064229505912996",
+      "stock_minus_benchmark": "0.01210719531285646958891486985196333098352"
+    }
+  },
+  {
+    "group": "by_issuer/AAPL/selected",
+    "events": 5,
+    "entry_dates": 5,
+    "equal_event_mean": {
+      "stock_gross_return": "0.01023381940442637323431328156643526450618",
+      "benchmark_gross_return": "0.018090561058509498519246678823717482579",
+      "stock_minus_benchmark": "-0.00785674165408312528493339725728221807282"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01023381940442637323431328156643526450618",
+      "benchmark_gross_return": "0.0180905610585094985192466788237174825790",
+      "stock_minus_benchmark": "-0.00785674165408312528493339725728221807282"
+    }
+  },
+  {
+    "group": "by_issuer/BANF/all_eligible",
+    "events": 27,
+    "entry_dates": 27,
+    "equal_event_mean": {
+      "stock_gross_return": "0.001089465981506392067245126482977818971219",
+      "benchmark_gross_return": "0.009090786647719549454225519482032704958130",
+      "stock_minus_benchmark": "-0.008001320666213157386980392999054885986911"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.001089465981506392067245126482977818971217",
+      "benchmark_gross_return": "0.009090786647719549454225519482032704958130",
+      "stock_minus_benchmark": "-0.008001320666213157386980392999054885986911"
+    }
+  },
+  {
+    "group": "by_issuer/BANF/selected",
+    "events": 10,
+    "entry_dates": 10,
+    "equal_event_mean": {
+      "stock_gross_return": "-0.00576820615380889430924167504232987397736",
+      "benchmark_gross_return": "0.00207061109060694358100090567117345408174",
+      "stock_minus_benchmark": "-0.0078388172444158378902425807135033280591"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "-0.00576820615380889430924167504232987397736",
+      "benchmark_gross_return": "0.00207061109060694358100090567117345408174",
+      "stock_minus_benchmark": "-0.00783881724441583789024258071350332805910"
+    }
+  },
+  {
+    "group": "by_issuer/HRL/all_eligible",
+    "events": 27,
+    "entry_dates": 27,
+    "equal_event_mean": {
+      "stock_gross_return": "-0.003057546146341218350743545024323327365470",
+      "benchmark_gross_return": "-0.004506705471798453490919664519108121682448",
+      "stock_minus_benchmark": "0.001449159325457235140176119494784794316978"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "-0.003057546146341218350743545024323327365471",
+      "benchmark_gross_return": "-0.004506705471798453490919664519108121682451",
+      "stock_minus_benchmark": "0.001449159325457235140176119494784794316980"
+    }
+  },
+  {
+    "group": "by_issuer/HRL/selected",
+    "events": 3,
+    "entry_dates": 3,
+    "equal_event_mean": {
+      "stock_gross_return": "0.010277129547210710017318122775004956216",
+      "benchmark_gross_return": "-0.0092364606676195158228467656536263780357",
+      "stock_minus_benchmark": "0.0195135902148302258401648884286313342517"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01027712954721071001731812277500495621600",
+      "benchmark_gross_return": "-0.00923646066761951582284676565362637803570",
+      "stock_minus_benchmark": "0.01951359021483022584016488842863133425170"
+    }
+  },
+  {
+    "group": "by_issuer/MSFT/all_eligible",
+    "events": 27,
+    "entry_dates": 27,
+    "equal_event_mean": {
+      "stock_gross_return": "0.009560996370245549335848896415970516739456",
+      "benchmark_gross_return": "0.008983404986734217067024567093568602561781",
+      "stock_minus_benchmark": "0.0005775913835113322688243293224019141776741"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.009560996370245549335848896415970516739465",
+      "benchmark_gross_return": "0.008983404986734217067024567093568602561782",
+      "stock_minus_benchmark": "0.000577591383511332268824329322401914177675"
+    }
+  },
+  {
+    "group": "by_issuer/MSFT/selected",
+    "events": 6,
+    "entry_dates": 6,
+    "equal_event_mean": {
+      "stock_gross_return": "0.02719521578148519834114479513683595153517",
+      "benchmark_gross_return": "0.02173281800268466058860913016590816743967",
+      "stock_minus_benchmark": "0.0054623977788005377525356649709277840955"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.02719521578148519834114479513683595153516",
+      "benchmark_gross_return": "0.02173281800268466058860913016590816743966",
+      "stock_minus_benchmark": "0.005462397778800537752535664970927784095500"
+    }
+  },
+  {
+    "group": "by_issuer/T/all_eligible",
+    "events": 13,
+    "entry_dates": 13,
+    "equal_event_mean": {
+      "stock_gross_return": "0.01036344918196837682952603562937081800284",
+      "benchmark_gross_return": "0.001819992364797483003639451562453816376462",
+      "stock_minus_benchmark": "0.008543456817170893825886584066917001626377"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01036344918196837682952603562937081800284",
+      "benchmark_gross_return": "0.001819992364797483003639451562453816376461",
+      "stock_minus_benchmark": "0.008543456817170893825886584066917001626379"
+    }
+  },
+  {
+    "group": "by_issuer/T/selected",
+    "events": 3,
+    "entry_dates": 3,
+    "equal_event_mean": {
+      "stock_gross_return": "0.006412389332913208596557534912664937734",
+      "benchmark_gross_return": "-0.006301392906633186586892460884454053093067",
+      "stock_minus_benchmark": "0.01271378223954639518344999579711899082707"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.006412389332913208596557534912664937734000",
+      "benchmark_gross_return": "-0.006301392906633186586892460884454053093067",
+      "stock_minus_benchmark": "0.01271378223954639518344999579711899082707"
+    }
+  },
+  {
+    "group": "by_entry_year/2017/all_eligible",
+    "events": 12,
+    "entry_dates": 12,
+    "equal_event_mean": {
+      "stock_gross_return": "-0.001156856501776905302242398835594463026733",
+      "benchmark_gross_return": "0.002583107880577058224423013871507610257167",
+      "stock_minus_benchmark": "-0.0037399643823539635266654127071020732839"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "-0.001156856501776905302242398835594463026733",
+      "benchmark_gross_return": "0.002583107880577058224423013871507610257168",
+      "stock_minus_benchmark": "-0.003739964382353963526665412707102073283901"
+    }
+  },
+  {
+    "group": "by_entry_year/2017/selected",
+    "events": 4,
+    "entry_dates": 4,
+    "equal_event_mean": {
+      "stock_gross_return": "-0.01657810771466512357556510716814964098642",
+      "benchmark_gross_return": "0.00180581929260980208521805298375015944415",
+      "stock_minus_benchmark": "-0.01838392700727492566078316015189980043058"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "-0.01657810771466512357556510716814964098642",
+      "benchmark_gross_return": "0.001805819292609802085218052983750159444150",
+      "stock_minus_benchmark": "-0.01838392700727492566078316015189980043058"
+    }
+  },
+  {
+    "group": "by_entry_year/2018/all_eligible",
+    "events": 13,
+    "entry_dates": 12,
+    "equal_event_mean": {
+      "stock_gross_return": "0.00008881575644078231122942804770009300334615",
+      "benchmark_gross_return": "-0.001823090753625646283239268690203587392669",
+      "stock_minus_benchmark": "0.001911906510066428594468696737903680396015"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "-0.0002335318279477613506479035536892249341664",
+      "benchmark_gross_return": "-0.001725067733756741001935620611013658653750",
+      "stock_minus_benchmark": "0.001491535905808979651287717057324433719584"
+    }
+  },
+  {
+    "group": "by_entry_year/2018/selected",
+    "events": 6,
+    "entry_dates": 5,
+    "equal_event_mean": {
+      "stock_gross_return": "0.007803495722543335968594021012675308208833",
+      "benchmark_gross_return": "0.0013273219550298508111023918689697191713",
+      "stock_minus_benchmark": "0.006476173767513485157491629143705589037533"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.0085727975132313419115613437623359881999",
+      "benchmark_gross_return": "0.00219265974444632290509947937086020945750",
+      "stock_minus_benchmark": "0.00638013776878501900646186439147577874240"
+    }
+  },
+  {
+    "group": "by_entry_year/2019/all_eligible",
+    "events": 15,
+    "entry_dates": 14,
+    "equal_event_mean": {
+      "stock_gross_return": "-0.001742950145414047835490083174020677142567",
+      "benchmark_gross_return": "0.002457128885399039256048376332400692381587",
+      "stock_minus_benchmark": "-0.004200079030813087091538459506421369524153"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "-0.003120315029297768537946277990183466689177",
+      "benchmark_gross_return": "0.002577057766374381279698361196995996174413",
+      "stock_minus_benchmark": "-0.005697372795672149817644639187179462863593"
+    }
+  },
+  {
+    "group": "by_entry_year/2019/selected",
+    "events": 2,
+    "entry_dates": 2,
+    "equal_event_mean": {
+      "stock_gross_return": "0.0045703315664327243578028515883822962645",
+      "benchmark_gross_return": "0.007876314083734320459892642269480974101",
+      "stock_minus_benchmark": "-0.0033059825173015961020897906810986778365"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.0045703315664327243578028515883822962645",
+      "benchmark_gross_return": "0.007876314083734320459892642269480974101",
+      "stock_minus_benchmark": "-0.0033059825173015961020897906810986778365"
+    }
+  },
+  {
+    "group": "by_entry_year/2020/all_eligible",
+    "events": 15,
+    "entry_dates": 14,
+    "equal_event_mean": {
+      "stock_gross_return": "0.01758675110447130281254869035674503916175",
+      "benchmark_gross_return": "0.001973480525138937190808862771718032168287",
+      "stock_minus_benchmark": "0.01561327057933236562173982758502700699346"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01645243365862864893801734935232663301697",
+      "benchmark_gross_return": "0.000741164264369753431266627958786594622236",
+      "stock_minus_benchmark": "0.01571126939425889550675072139354003839476"
+    }
+  },
+  {
+    "group": "by_entry_year/2020/selected",
+    "events": 1,
+    "entry_dates": 1,
+    "equal_event_mean": {
+      "stock_gross_return": "0.004137519182149053011222577267943027942",
+      "benchmark_gross_return": "0.019225908175907509824400150152758157813",
+      "stock_minus_benchmark": "-0.015088388993758456813177572884815129871"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.004137519182149053011222577267943027942",
+      "benchmark_gross_return": "0.019225908175907509824400150152758157813",
+      "stock_minus_benchmark": "-0.015088388993758456813177572884815129871"
+    }
+  },
+  {
+    "group": "by_entry_year/2021/all_eligible",
+    "events": 14,
+    "entry_dates": 14,
+    "equal_event_mean": {
+      "stock_gross_return": "0.006397078594233323100513666389851442102279",
+      "benchmark_gross_return": "0.005951026184837464393114052284809140119579",
+      "stock_minus_benchmark": "0.0004460524093958587073996141050423019827"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.006397078594233323100513666389851442102280",
+      "benchmark_gross_return": "0.005951026184837464393114052284809140119580",
+      "stock_minus_benchmark": "0.0004460524093958587073996141050423019826995"
+    }
+  },
+  {
+    "group": "by_entry_year/2021/selected",
+    "events": 8,
+    "entry_dates": 8,
+    "equal_event_mean": {
+      "stock_gross_return": "0.00701666430226238136745603471447713608375",
+      "benchmark_gross_return": "0.00640726469108826818851982016631759631165",
+      "stock_minus_benchmark": "0.0006093996111741131789362145481595397721"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.007016664302262381367456034714477136083749",
+      "benchmark_gross_return": "0.006407264691088268188519820166317596311650",
+      "stock_minus_benchmark": "0.000609399611174113178936214548159539772101"
+    }
+  },
+  {
+    "group": "by_entry_year/2022/all_eligible",
+    "events": 12,
+    "entry_dates": 12,
+    "equal_event_mean": {
+      "stock_gross_return": "0.005554534392987014619548999315876119827167",
+      "benchmark_gross_return": "0.01038572264361459212873154405703872371072",
+      "stock_minus_benchmark": "-0.004831188250627577509182544741162603883558"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.005554534392987014619548999315876119827166",
+      "benchmark_gross_return": "0.01038572264361459212873154405703872371073",
+      "stock_minus_benchmark": "-0.004831188250627577509182544741162603883558"
+    }
+  },
+  {
+    "group": "by_entry_year/2022/selected",
+    "events": 3,
+    "entry_dates": 3,
+    "equal_event_mean": {
+      "stock_gross_return": "0.029094549808195284524913221100371071721",
+      "benchmark_gross_return": "0.01751382340928173065278283145104225216323",
+      "stock_minus_benchmark": "0.01158072639891355387213038964932881955777"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.02909454980819528452491322110037107172100",
+      "benchmark_gross_return": "0.01751382340928173065278283145104225216324",
+      "stock_minus_benchmark": "0.01158072639891355387213038964932881955776"
+    }
+  },
+  {
+    "group": "by_entry_year/2023/all_eligible",
+    "events": 12,
+    "entry_dates": 11,
+    "equal_event_mean": {
+      "stock_gross_return": "0.01293927248760704590399694286225488094687",
+      "benchmark_gross_return": "0.00249396345538220583938276347486215057985",
+      "stock_minus_benchmark": "0.01044530903222484006461417938739273036702"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01538238467738190298161807828186239831142",
+      "benchmark_gross_return": "0.003245115846023418913837693279058548232302",
+      "stock_minus_benchmark": "0.01213726883135848406778038500280385007913"
+    }
+  },
+  {
+    "group": "by_entry_year/2023/selected",
+    "events": 1,
+    "entry_dates": 1,
+    "equal_event_mean": {
+      "stock_gross_return": "0.015850963392320328519504103651746735900",
+      "benchmark_gross_return": "0.012238222561973293341429912423646000656",
+      "stock_minus_benchmark": "0.003612740830347035178074191228100735244"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.015850963392320328519504103651746735900",
+      "benchmark_gross_return": "0.012238222561973293341429912423646000656",
+      "stock_minus_benchmark": "0.003612740830347035178074191228100735244"
+    }
+  },
+  {
+    "group": "by_entry_year/2024/all_eligible",
+    "events": 13,
+    "entry_dates": 13,
+    "equal_event_mean": {
+      "stock_gross_return": "0.0110231179393239676257874517385007756393",
+      "benchmark_gross_return": "0.0208395951621890064117550201701675921555",
+      "stock_minus_benchmark": "-0.0098164772228650387859675684316668165162"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01102311793932396762578745173850077563930",
+      "benchmark_gross_return": "0.02083959516218900641175502017016759215550",
+      "stock_minus_benchmark": "-0.009816477222865038785967568431666816516199"
+    }
+  },
+  {
+    "group": "by_entry_year/2024/selected",
+    "events": 1,
+    "entry_dates": 1,
+    "equal_event_mean": {
+      "stock_gross_return": "0.041425612165084991075999757154443406685",
+      "benchmark_gross_return": "0.031519185221600921128436137590242036489",
+      "stock_minus_benchmark": "0.009906426943484069947563619564201370196"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.041425612165084991075999757154443406685",
+      "benchmark_gross_return": "0.031519185221600921128436137590242036489",
+      "stock_minus_benchmark": "0.009906426943484069947563619564201370196"
+    }
+  },
+  {
+    "group": "by_entry_year/2025/all_eligible",
+    "events": 15,
+    "entry_dates": 15,
+    "equal_event_mean": {
+      "stock_gross_return": "0.01508880523946913185521450193360447270145",
+      "benchmark_gross_return": "0.0031239546567442309539182261961246389163",
+      "stock_minus_benchmark": "0.01196485058272490090129627573747983378515"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.01508880523946913185521450193360447270145",
+      "benchmark_gross_return": "0.003123954656744230953918226196124638916300",
+      "stock_minus_benchmark": "0.01196485058272490090129627573747983378516"
+    }
+  },
+  {
+    "group": "by_entry_year/2025/selected",
+    "events": 1,
+    "entry_dates": 1,
+    "equal_event_mean": {
+      "stock_gross_return": "0.012246621621621621621621621621621621622",
+      "benchmark_gross_return": "-0.0027804772921532311793655513265649579832",
+      "stock_minus_benchmark": "0.0150270989137748528009871729481865796052"
+    },
+    "equal_entry_date_mean": {
+      "stock_gross_return": "0.012246621621621621621621621621621621622",
+      "benchmark_gross_return": "-0.0027804772921532311793655513265649579832",
+      "stock_minus_benchmark": "0.0150270989137748528009871729481865796052"
+    }
+  }
+]

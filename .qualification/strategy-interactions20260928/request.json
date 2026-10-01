@@ -1,0 +1,39 @@
+{
+  "experiment": "daily-strategy-interactions-v1",
+  "source_run_id": "814780d48b4141b9a82a3fb917d1b85a",
+  "history_start": "2014-01-02",
+  "first_signal": "2016-01-04",
+  "last_session": "2026-09-18",
+  "universe": "All USD stock histories in the existing frozen current-member capture; original maturity/liquidity/ATR requirements. ETFs are context only.",
+  "capital_usd": 2000,
+  "holding_sessions": [
+    1,
+    3,
+    5
+  ],
+  "cost_profiles": [
+    "proportional",
+    "moomoo_ca_us"
+  ],
+  "round_trip_bps": 40,
+  "policies": [
+    "relative_reversal_2",
+    "relative_reversal_5",
+    "trend_pullback",
+    "relative_volume_continuation_5",
+    "beta_residual_reversal_2",
+    "trend_conditioned_reversal_5",
+    "compression_continuation_5",
+    "equal_percentile_blend",
+    "volatility_regime_selector"
+  ],
+  "planned_accounts": 54,
+  "signal_definition": "docs/strategy-experiment-2026-09-28.md and signals.py: freeze exact hashes before evaluation; no implementation changes after outcome inspection.",
+  "rationale": "Test new interactions, market-beta neutralization and adaptive rule combinations against unchanged existing rules, rather than repeat the old grid or perform code polishing.",
+  "execution": "Every completed session screened; next-close entry; independent fixed hold1/3/5 sessions; existing engine five slots/20percent cap/0.5percent two-ATR sizing; actual available settled cash; no margin.",
+  "comparisons": "All54 results, losses, failures, inactivity, trade/weekly/monthly/yearly metrics, cash and matched-window SPY; no selecting a winning tariff or changing thresholds after outcomes.",
+  "source_policy": "No correction, event-based hindsight exclusion or future-label eligibility filter. Original frozen prices unchanged. Source-unit/action omissions remain explicit; conclusions exploratory, not promotion qualification. Known event-crossing attribution can be reported separately without deleting trades.",
+  "chronology": "Causal features only. Warmup starts2014 to support273-close regime requirements by2016. No model fitting, outcome-trained weights or best-period oracle. All historical intervals are previously exposed research.",
+  "limits": "USD-only first economic experiment, current-member survivorship, revised-vintage prices, synthetic adjusted returns, one cost sensitivity plus explicit current-tariff counterfactual; not all-in fees, not future-profit guarantee.",
+  "operational": "Separate qualification workspace and actual main historical SQLite lock. Preserve each account result and failures. No broker API or paper journal access. Existing engine code unchanged."
+}

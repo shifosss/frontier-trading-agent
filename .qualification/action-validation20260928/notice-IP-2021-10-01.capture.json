@@ -1,0 +1,16 @@
+{
+  "symbol": "IP",
+  "effective_sessions": "2021-10-01",
+  "url": "https://www.sec.gov/Archives/edgar/data/51434/000005143422000040/ip-20220630.htm",
+  "method": "GET",
+  "started_at": "2026-09-28T19:13:59.778548+00:00",
+  "status": "response_retained",
+  "status_code": 200,
+  "final_url": "https://www.sec.gov/Archives/edgar/data/51434/000005143422000040/ip-20220630.htm",
+  "redirects": [],
+  "sha256": "865b02ac6f3af96479f2b77ae302c24e45e37206e37741f3fbec3a14bfb3d704",
+  "raw_file": "notice-IP-2021-10-01.865b02ac6f3af96479f2b77ae302c24e45e37206e37741f3fbec3a14bfb3d704.raw.html",
+  "bytes": 2380259,
+  "captured_at": "2026-09-28T19:14:00.164030+00:00",
+  "text_file": "notice-IP-2021-10-01.text.txt"
+}

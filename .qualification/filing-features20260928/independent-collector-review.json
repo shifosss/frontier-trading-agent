@@ -1,0 +1,22 @@
+{
+  "at": "2026-09-28T23:09:41.757843+00:00",
+  "status": "passed",
+  "reviewed_files": {
+    "run_qualification.py": "aad34ce7a15d8984a6c5cdf66d5e17b312bc58289c5cc43458fe836c4235cc4b",
+    "test_qualification.py": "d5a2b3ea7bf5512bc288ebc4677d1e936cdb4189397feebc1d66980223a5736f",
+    "features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+    "extraction-definition.json": "0fec227994f1508ed433cdbcea42b5f338be1d5e3d498ed63b0506c552db137e",
+    "extraction-amendment1.json": "2912dec67722f6331287829ed097270f5c82a9e6ac36a96ec508900edb329182"
+  },
+  "independently_passed_offline_tests": 8,
+  "reviewed_properties": [
+    "All original registry records retained including unavailable/missing input",
+    "Effective overlay bound to exact unchanged original failure path/hash/error and issuer/accession/registry row",
+    "Conflicting overlays and nonterminal denominator rejected",
+    "Raw source hashes and frozen code/declaration/calendar identities verified before/after collection",
+    "Unique attempts retain full records, compact events and failed attempts; no silent overwrite of predeclared identity"
+  ],
+  "material_findings": [],
+  "full_corpus_run": false,
+  "price_returns_read": false
+}

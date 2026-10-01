@@ -1,0 +1,23 @@
+{
+  "AAPL": {
+    "valid_quotes": 7809,
+    "valid_nanoseconds": 59998268105,
+    "decimal_count_mean_bps": 0.7258014766175976,
+    "decimal_duration_mean_bps": 0.6196998152407246,
+    "reconciled": true
+  },
+  "MSFT": {
+    "valid_quotes": 4316,
+    "valid_nanoseconds": 59996630836,
+    "decimal_count_mean_bps": 1.5043849946435606,
+    "decimal_duration_mean_bps": 1.4766668682070638,
+    "reconciled": true
+  },
+  "F": {
+    "valid_quotes": 207,
+    "valid_nanoseconds": 59997534208,
+    "decimal_count_mean_bps": 8.290821533897528,
+    "decimal_duration_mean_bps": 8.985530217004634,
+    "reconciled": true
+  }
+}

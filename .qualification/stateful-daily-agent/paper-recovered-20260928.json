@@ -1,0 +1,49 @@
+{
+  "status": "ready",
+  "message": "Paper cycle reconciled; saved decisions await execution.",
+  "clock": {
+    "is_open": true,
+    "next_close": "2026-09-28T16:00:00-04:00",
+    "next_open": "2026-09-29T09:30:00-04:00",
+    "timestamp": "2026-09-28T14:42:41.343127655-04:00"
+  },
+  "cash": "81194.12",
+  "positions": [
+    {
+      "symbol": "META",
+      "qty": "6",
+      "avg_entry_price": "721.74"
+    },
+    {
+      "symbol": "MSFT",
+      "qty": "15",
+      "avg_entry_price": "511.03"
+    },
+    {
+      "symbol": "XOM",
+      "qty": "42",
+      "avg_entry_price": "162.142619"
+    }
+  ],
+  "orders": [
+    {
+      "client_order_id": "ft-235c55250cb6ffc6a3b2f8aece36f51c7f7608a6",
+      "symbol": "MSFT",
+      "status": "filled",
+      "filled_qty": "15"
+    },
+    {
+      "client_order_id": "ft-a09fdbfa03d1a054396e63bc32b79bda24bc325c",
+      "symbol": "META",
+      "status": "filled",
+      "filled_qty": "6"
+    },
+    {
+      "client_order_id": "ft-08e4b3a865d50557db248da1b345fd88fee78413",
+      "symbol": "XOM",
+      "status": "filled",
+      "filled_qty": "42"
+    }
+  ],
+  "code": "9fd509d8ce514b9fe3e3136684c7475637a12304670cc517b285e48aebbc26a2"
+}

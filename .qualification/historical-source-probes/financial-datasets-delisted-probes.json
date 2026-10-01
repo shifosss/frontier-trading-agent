@@ -1,0 +1,41 @@
+{
+  "connector": "Financial Datasets",
+  "probes": [
+    {
+      "request": {
+        "ticker": "BBBYQ",
+        "start_date": "2023-09-01",
+        "end_date": "2023-09-30",
+        "interval": "day",
+        "interval_multiplier": 1
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Error fetching price data for BBBYQ: Please provide a valid ticker from https://www.sec.gov/files/company_tickers.json"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "request": {
+        "ticker": "LEH",
+        "start_date": "2008-09-01",
+        "end_date": "2008-09-19",
+        "interval": "day",
+        "interval_multiplier": 1
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Error fetching price data for LEH: Please provide a valid ticker from https://www.sec.gov/files/company_tickers.json"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ]
+}

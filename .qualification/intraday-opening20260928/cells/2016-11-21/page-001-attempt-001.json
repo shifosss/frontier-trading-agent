@@ -1,0 +1,34 @@
+{
+  "method": "GET",
+  "url": "https://data.alpaca.markets/v2/stocks/bars",
+  "params": {
+    "timeframe": "1Min",
+    "feed": "sip",
+    "adjustment": "raw",
+    "currency": "USD",
+    "sort": "asc",
+    "limit": 10000,
+    "symbols": "AAPL,MSFT,F,T,HRL,BANF,SPY",
+    "start": "2016-11-21T14:30:00+00:00",
+    "end": "2016-11-21T20:59:59+00:00",
+    "asof": "2016-11-21"
+  },
+  "started_at": "2026-09-28T21:26:21.602161+00:00",
+  "session": "2016-11-21",
+  "page": 1,
+  "attempt": 1,
+  "state": "success",
+  "status_code": 200,
+  "raw_file": "raw/c545f2c4a3f618f1bfd91bfe6ad170dac9a146624d419b2a10c619da2e1929b4.json",
+  "sha256": "c545f2c4a3f618f1bfd91bfe6ad170dac9a146624d419b2a10c619da2e1929b4",
+  "bytes": 251044,
+  "captured_at": "2026-09-28T21:26:22.196005+00:00",
+  "headers": {
+    "date": "Mon, 28 Sep 2026 21:26:22 GMT",
+    "content-type": "application/json",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "199",
+    "x-ratelimit-reset": "1790630782",
+    "x-request-id": "5e6a1f1194448896fb0856004a3084e2"
+  }
+}

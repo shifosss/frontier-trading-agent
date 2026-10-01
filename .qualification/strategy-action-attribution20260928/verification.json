@@ -1,0 +1,542 @@
+[
+  {
+    "account": "relative_reversal_2-1-proportional",
+    "status": "passed",
+    "trade_count": 13116,
+    "serialized_net_sum": "-1856.323139412474126405203",
+    "saved_net_total": "-1856.323139412476",
+    "total_delta": "1.873594797E-12",
+    "tolerance": "0.000001009411463790225728151729117",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_2-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 478,
+    "serialized_net_sum": "-1990.8764861792319913",
+    "saved_net_total": "-1990.876486179231",
+    "total_delta": "-9.913E-13",
+    "tolerance": "0.0000010020188373322877085573",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_2-3-proportional",
+    "status": "passed",
+    "trade_count": 4483,
+    "serialized_net_sum": "-1080.2177188270535395019",
+    "saved_net_total": "-1080.2177188270518",
+    "total_delta": "-1.7395019E-12",
+    "tolerance": "0.0000010104098967919158583271281",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_2-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 477,
+    "serialized_net_sum": "-1990.6471494764022253435",
+    "saved_net_total": "-1990.6471494764032",
+    "total_delta": "9.746565E-13",
+    "tolerance": "0.0000010021069349844253720958865",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_2-5-proportional",
+    "status": "passed",
+    "trade_count": 2690,
+    "serialized_net_sum": "-871.7692575675742354886",
+    "saved_net_total": "-871.7692575675737",
+    "total_delta": "-5.354886E-13",
+    "tolerance": "0.0000010086742017468332119377080",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_2-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 477,
+    "serialized_net_sum": "-1991.80955418665323931",
+    "saved_net_total": "-1991.8095541866517",
+    "total_delta": "-1.53931E-12",
+    "tolerance": "0.00000100220519855586305624375",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_5-1-proportional",
+    "status": "passed",
+    "trade_count": 13117,
+    "serialized_net_sum": "-1829.8134504930112046069602",
+    "saved_net_total": "-1829.8134504930056",
+    "total_delta": "-5.6046069602E-12",
+    "tolerance": "0.0000010092622714776434631262801198",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_5-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 469,
+    "serialized_net_sum": "-1990.66955834784749767",
+    "saved_net_total": "-1990.669558347847",
+    "total_delta": "-4.9767E-13",
+    "tolerance": "0.00000100200036635244819625347",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_5-3-proportional",
+    "status": "passed",
+    "trade_count": 4484,
+    "serialized_net_sum": "-510.2391409635270683240",
+    "saved_net_total": "-510.2391409635276",
+    "total_delta": "5.316760E-13",
+    "tolerance": "0.0000010123664129250439972700654",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_5-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 476,
+    "serialized_net_sum": "-1990.6799518113555899295",
+    "saved_net_total": "-1990.6799518113548",
+    "total_delta": "-7.899295E-13",
+    "tolerance": "0.0000010021064627172056744054125",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_5-5-proportional",
+    "status": "passed",
+    "trade_count": 2690,
+    "serialized_net_sum": "-356.7040005690488573614",
+    "saved_net_total": "-356.7040005690482",
+    "total_delta": "-6.573614E-13",
+    "tolerance": "0.0000010108081937220312724965444",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_reversal_5-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 490,
+    "serialized_net_sum": "-1991.79308524346876312",
+    "saved_net_total": "-1991.7930852434697",
+    "total_delta": "9.3688E-13",
+    "tolerance": "0.00000100220484653831116601192",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_pullback-1-proportional",
+    "status": "passed",
+    "trade_count": 12602,
+    "serialized_net_sum": "-1909.257872626427175225552",
+    "saved_net_total": "-1909.257872626427",
+    "total_delta": "-1.75225552E-13",
+    "tolerance": "0.000001007167893145224918793816528",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_pullback-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 462,
+    "serialized_net_sum": "-1990.666573452524543557",
+    "saved_net_total": "-1990.666573452524",
+    "total_delta": "-5.43557E-13",
+    "tolerance": "0.000001002008056896123430147957",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_pullback-3-proportional",
+    "status": "passed",
+    "trade_count": 4480,
+    "serialized_net_sum": "-1373.67626244830219022716",
+    "saved_net_total": "-1373.6762624482958",
+    "total_delta": "-6.39022716E-12",
+    "tolerance": "0.00000100957192773455140330021816",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_pullback-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 463,
+    "serialized_net_sum": "-1992.0311333415749119145",
+    "saved_net_total": "-1992.0311333415743",
+    "total_delta": "-6.119145E-13",
+    "tolerance": "0.0000010021530836524207382028655",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_pullback-5-proportional",
+    "status": "passed",
+    "trade_count": 2688,
+    "serialized_net_sum": "-814.3575307591998115653",
+    "saved_net_total": "-814.3575307592004",
+    "total_delta": "5.884347E-13",
+    "tolerance": "0.0000010099327045106572085626591",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_pullback-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 490,
+    "serialized_net_sum": "-1991.073310514949703286",
+    "saved_net_total": "-1991.0733105149502",
+    "total_delta": "4.96714E-13",
+    "tolerance": "0.000001002308317706541969369054",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_volume_continuation_5-1-proportional",
+    "status": "passed",
+    "trade_count": 12918,
+    "serialized_net_sum": "-1929.412253363093191704484",
+    "saved_net_total": "-1929.4122533631007",
+    "total_delta": "7.508295516E-12",
+    "tolerance": "0.000001010141625591917792068998476",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_volume_continuation_5-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 458,
+    "serialized_net_sum": "-1992.5176084787551049",
+    "saved_net_total": "-1992.5176084787547",
+    "total_delta": "-4.049E-13",
+    "tolerance": "0.0000010019981923328165753089",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_volume_continuation_5-3-proportional",
+    "status": "passed",
+    "trade_count": 4482,
+    "serialized_net_sum": "-1479.7930209726024938774",
+    "saved_net_total": "-1479.7930209726012",
+    "total_delta": "-1.2938774E-12",
+    "tolerance": "0.0000010141456847669252795505954",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_volume_continuation_5-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 466,
+    "serialized_net_sum": "-1993.314589505781283796",
+    "saved_net_total": "-1993.3145895057805",
+    "total_delta": "-7.83796E-13",
+    "tolerance": "0.000001002160641029679716820836",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_volume_continuation_5-5-proportional",
+    "status": "passed",
+    "trade_count": 2690,
+    "serialized_net_sum": "-1439.0851102430132069097",
+    "saved_net_total": "-1439.0851102430113",
+    "total_delta": "-1.9069097E-12",
+    "tolerance": "0.0000010102818846854071297432095",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "relative_volume_continuation_5-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 464,
+    "serialized_net_sum": "-1993.38456029190543701",
+    "saved_net_total": "-1993.384560291906",
+    "total_delta": "5.6299E-13",
+    "tolerance": "0.00000100223225412882138958227",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "beta_residual_reversal_2-1-proportional",
+    "status": "passed",
+    "trade_count": 13110,
+    "serialized_net_sum": "-1829.438967882319947208943",
+    "saved_net_total": "-1829.4389678823277",
+    "total_delta": "7.752791057E-12",
+    "tolerance": "0.000001009693866901375015606570157",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "beta_residual_reversal_2-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 481,
+    "serialized_net_sum": "-1993.4287633048510149",
+    "saved_net_total": "-1993.4287633048505",
+    "total_delta": "-5.149E-13",
+    "tolerance": "0.0000010020213896094133275809",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "beta_residual_reversal_2-3-proportional",
+    "status": "passed",
+    "trade_count": 4483,
+    "serialized_net_sum": "-947.2738298248370933186",
+    "saved_net_total": "-947.2738298248349",
+    "total_delta": "-2.1933186E-12",
+    "tolerance": "0.0000010114154084300358956911306",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "beta_residual_reversal_2-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 474,
+    "serialized_net_sum": "-1991.356613208024603485",
+    "saved_net_total": "-1991.356613208025",
+    "total_delta": "3.96515E-13",
+    "tolerance": "0.000001002101777057760786725225",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "beta_residual_reversal_2-5-proportional",
+    "status": "passed",
+    "trade_count": 2690,
+    "serialized_net_sum": "-591.3959392783050866926",
+    "saved_net_total": "-591.3959392783047",
+    "total_delta": "-3.866926E-13",
+    "tolerance": "0.0000010102299326715037494536026",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "beta_residual_reversal_2-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 502,
+    "serialized_net_sum": "-1993.452323648842329208",
+    "saved_net_total": "-1993.4523236488415",
+    "total_delta": "-8.29208E-13",
+    "tolerance": "0.000001002304853084815240075188",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_conditioned_reversal_5-1-proportional",
+    "status": "passed",
+    "trade_count": 12470,
+    "serialized_net_sum": "-1873.3520646404948111162701",
+    "saved_net_total": "-1873.352064640486",
+    "total_delta": "-8.8111162701E-12",
+    "tolerance": "0.0000010077693550241604168777980099",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_conditioned_reversal_5-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 478,
+    "serialized_net_sum": "-1992.453655882744684687",
+    "saved_net_total": "-1992.4536558827454",
+    "total_delta": "7.15313E-13",
+    "tolerance": "0.000001002015243716846940821527",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_conditioned_reversal_5-3-proportional",
+    "status": "passed",
+    "trade_count": 4478,
+    "serialized_net_sum": "-1280.2583405614801369467",
+    "saved_net_total": "-1280.2583405614776",
+    "total_delta": "-2.5369467E-12",
+    "tolerance": "0.0000010104242559411351299259173",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_conditioned_reversal_5-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 482,
+    "serialized_net_sum": "-1991.58362182188939255",
+    "saved_net_total": "-1991.5836218218901",
+    "total_delta": "7.0745E-13",
+    "tolerance": "0.00000100220335761610853913815",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_conditioned_reversal_5-5-proportional",
+    "status": "passed",
+    "trade_count": 2688,
+    "serialized_net_sum": "-655.7592606718588245592",
+    "saved_net_total": "-655.75926067186",
+    "total_delta": "1.1754408E-12",
+    "tolerance": "0.0000010108101469063639750239472",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "trend_conditioned_reversal_5-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 500,
+    "serialized_net_sum": "-1992.93982132977091662",
+    "saved_net_total": "-1992.9398213297713",
+    "total_delta": "3.8338E-13",
+    "tolerance": "0.00000100230588253523213365968",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "compression_continuation_5-1-proportional",
+    "status": "passed",
+    "trade_count": 11023,
+    "serialized_net_sum": "-1822.58964247335098289502",
+    "saved_net_total": "-1822.589642473353",
+    "total_delta": "2.01710498E-12",
+    "tolerance": "0.00000100792167841599747842090154",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "compression_continuation_5-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 476,
+    "serialized_net_sum": "-1991.87330485630553651",
+    "saved_net_total": "-1991.8733048563051",
+    "total_delta": "-4.3651E-13",
+    "tolerance": "0.00000100200632941720791610583",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "compression_continuation_5-3-proportional",
+    "status": "passed",
+    "trade_count": 4463,
+    "serialized_net_sum": "-1100.1715134344679434413",
+    "saved_net_total": "-1100.1715134344681",
+    "total_delta": "1.565587E-13",
+    "tolerance": "0.0000010125417664794931996971447",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "compression_continuation_5-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 437,
+    "serialized_net_sum": "-1990.918728327939734015",
+    "saved_net_total": "-1990.9187283279389",
+    "total_delta": "-8.34015E-13",
+    "tolerance": "0.000001002111621718952200697477",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "compression_continuation_5-5-proportional",
+    "status": "passed",
+    "trade_count": 2686,
+    "serialized_net_sum": "-203.72067328147159833027",
+    "saved_net_total": "-203.7206732814714",
+    "total_delta": "-1.9833027E-13",
+    "tolerance": "0.00000101380651753615034471571973",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "compression_continuation_5-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 448,
+    "serialized_net_sum": "-1990.30980370613000232",
+    "saved_net_total": "-1990.3098037061282",
+    "total_delta": "-1.80232E-12",
+    "tolerance": "0.00000100225702045084051918712",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "equal_percentile_blend-1-proportional",
+    "status": "passed",
+    "trade_count": 13195,
+    "serialized_net_sum": "-1873.14381995541047809131",
+    "saved_net_total": "-1873.143819955417",
+    "total_delta": "6.52190869E-12",
+    "tolerance": "0.00000101036930055333146100963419",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "equal_percentile_blend-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 466,
+    "serialized_net_sum": "-1991.42467908528329683",
+    "saved_net_total": "-1991.4246790852822",
+    "total_delta": "-1.09683E-12",
+    "tolerance": "0.00000100199619238092689027531",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "equal_percentile_blend-3-proportional",
+    "status": "passed",
+    "trade_count": 4484,
+    "serialized_net_sum": "-1024.4198956776634824709",
+    "saved_net_total": "-1024.4198956776631",
+    "total_delta": "-3.824709E-13",
+    "tolerance": "0.0000010141878111472293149930235",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "equal_percentile_blend-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 477,
+    "serialized_net_sum": "-1990.2577297457240874095",
+    "saved_net_total": "-1990.2577297457244",
+    "total_delta": "3.125905E-13",
+    "tolerance": "0.0000010021420310285204690238925",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "equal_percentile_blend-5-proportional",
+    "status": "passed",
+    "trade_count": 2690,
+    "serialized_net_sum": "-712.1549039377896809651",
+    "saved_net_total": "-712.1549039377879",
+    "total_delta": "-1.7809651E-12",
+    "tolerance": "0.0000010106924207511817063604129",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "equal_percentile_blend-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 480,
+    "serialized_net_sum": "-1992.54914671996135108",
+    "saved_net_total": "-1992.549146719962",
+    "total_delta": "6.4892E-13",
+    "tolerance": "0.00000100219568856115701925452",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "volatility_regime_selector-1-proportional",
+    "status": "passed",
+    "trade_count": 13056,
+    "serialized_net_sum": "-1877.0671808276398350726862",
+    "saved_net_total": "-1877.0671808276513",
+    "total_delta": "1.14649273138E-11",
+    "tolerance": "0.0000010104577267454833119801715458",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "volatility_regime_selector-1-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 468,
+    "serialized_net_sum": "-1993.21576331078501227",
+    "saved_net_total": "-1993.2157633107843",
+    "total_delta": "-7.1227E-13",
+    "tolerance": "0.00000100200055095801538181767",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "volatility_regime_selector-3-proportional",
+    "status": "passed",
+    "trade_count": 4483,
+    "serialized_net_sum": "-922.0412872827685152230",
+    "saved_net_total": "-922.0412872827675",
+    "total_delta": "-1.0152230E-12",
+    "tolerance": "0.0000010157038424458280753118014",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "volatility_regime_selector-3-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 494,
+    "serialized_net_sum": "-1990.541205811733438836",
+    "saved_net_total": "-1990.5412058117315",
+    "total_delta": "-1.938836E-12",
+    "tolerance": "0.000001002165844287255220997596",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "volatility_regime_selector-5-proportional",
+    "status": "passed",
+    "trade_count": 2690,
+    "serialized_net_sum": "-685.6131846415087008866",
+    "saved_net_total": "-685.613184641509",
+    "total_delta": "2.991134E-13",
+    "tolerance": "0.0000010124204041258136814599720",
+    "per_trade_arithmetic_errors": []
+  },
+  {
+    "account": "volatility_regime_selector-5-moomoo_ca_us",
+    "status": "passed",
+    "trade_count": 485,
+    "serialized_net_sum": "-1993.734358142815017833",
+    "saved_net_total": "-1993.7343581428152",
+    "total_delta": "1.82167E-13",
+    "tolerance": "0.000001002284837435064599635573",
+    "per_trade_arithmetic_errors": []
+  }
+]

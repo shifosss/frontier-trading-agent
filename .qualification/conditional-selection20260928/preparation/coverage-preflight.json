@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "first_signal_index": 1510,
+  "earliest_fit_index": 754,
+  "available_feature_warmup": 754,
+  "required_feature_warmup": 273,
+  "test_sessions": 2693,
+  "total_symbols": 5675,
+  "blocks": [
+    {
+      "fit_start": 754,
+      "calibration_start": 1258,
+      "test_start": 1510,
+      "test_end": 1761,
+      "sessions": {
+        "fit_start": "2013-01-02",
+        "calibration_start": "2015-01-02",
+        "test_start": "2016-01-04",
+        "test_end": "2016-12-30"
+      }
+    },
+    {
+      "fit_start": 1006,
+      "calibration_start": 1510,
+      "test_start": 1762,
+      "test_end": 2013,
+      "sessions": {
+        "fit_start": "2014-01-02",
+        "calibration_start": "2016-01-04",
+        "test_start": "2017-01-03",
+        "test_end": "2018-01-02"
+      }
+    },
+    {
+      "fit_start": 1258,
+      "calibration_start": 1762,
+      "test_start": 2014,
+      "test_end": 2265,
+      "sessions": {
+        "fit_start": "2015-01-02",
+        "calibration_start": "2017-01-03",
+        "test_start": "2018-01-03",
+        "test_end": "2019-01-03"
+      }
+    },
+    {
+      "fit_start": 1510,
+      "calibration_start": 2014,
+      "test_start": 2266,
+      "test_end": 2517,
+      "sessions": {
+        "fit_start": "2016-01-04",
+        "calibration_start": "2018-01-03",
+        "test_start": "2019-01-04",
+        "test_end": "2020-01-03"
+      }
+    },
+    {
+      "fit_start": 1762,
+      "calibration_start": 2266,
+      "test_start": 2518,
+      "test_end": 2769,
+      "sessions": {
+        "fit_start": "2017-01-03",
+        "calibration_start": "2019-01-04",
+        "test_start": "2020-01-06",
+        "test_end": "2021-01-04"
+      }
+    },
+    {
+      "fit_start": 2014,
+      "calibration_start": 2518,
+      "test_start": 2770,
+      "test_end": 3021,
+      "sessions": {
+        "fit_start": "2018-01-03",
+        "calibration_start": "2020-01-06",
+        "test_start": "2021-01-05",
+        "test_end": "2022-01-03"
+      }
+    },
+    {
+      "fit_start": 2266,
+      "calibration_start": 2770,
+      "test_start": 3022,
+      "test_end": 3273,
+      "sessions": {
+        "fit_start": "2019-01-04",
+        "calibration_start": "2021-01-05",
+        "test_start": "2022-01-04",
+        "test_end": "2023-01-04"
+      }
+    },
+    {
+      "fit_start": 2518,
+      "calibration_start": 3022,
+      "test_start": 3274,
+      "test_end": 3525,
+      "sessions": {
+        "fit_start": "2020-01-06",
+        "calibration_start": "2022-01-04",
+        "test_start": "2023-01-05",
+        "test_end": "2024-01-05"
+      }
+    },
+    {
+      "fit_start": 2770,
+      "calibration_start": 3274,
+      "test_start": 3526,
+      "test_end": 3777,
+      "sessions": {
+        "fit_start": "2021-01-05",
+        "calibration_start": "2023-01-05",
+        "test_start": "2024-01-08",
+        "test_end": "2025-01-07"
+      }
+    },
+    {
+      "fit_start": 3022,
+      "calibration_start": 3526,
+      "test_start": 3778,
+      "test_end": 4029,
+      "sessions": {
+        "fit_start": "2022-01-04",
+        "calibration_start": "2024-01-08",
+        "test_start": "2025-01-08",
+        "test_end": "2026-01-09"
+      }
+    },
+    {
+      "fit_start": 3274,
+      "calibration_start": 3778,
+      "test_start": 4030,
+      "test_end": 4202,
+      "sessions": {
+        "fit_start": "2023-01-05",
+        "calibration_start": "2025-01-08",
+        "test_start": "2026-01-12",
+        "test_end": "2026-09-18"
+      }
+    }
+  ]
+}

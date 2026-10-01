@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": [
+    "nine shapes and dtypes",
+    "original controls preserved",
+    "independent beta residual arithmetic",
+    "273-close regime warmup",
+    "lagged median arithmetic",
+    "both regime branches",
+    "future perturbation invariance",
+    "unused labels poison test",
+    "trend/compression gates",
+    "equal percentile mixture"
+  ],
+  "synthetic_observations": 1440,
+  "signal_sha256": "b10f406f73c7e0f57d65d6eefbaa03d14be96e74be6162781ad8184f21f70e86",
+  "plan_sha256": "9338edbdf7bb65266e8fe3b30ec0d7885dc4f675441dc64817c485f14179a74d"
+}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-09-28T23:07:58.319777+00:00",
+  "scope": "Two retained T daily pages; seven market columns; no account outcome reads, network, or preparation imports",
+  "ATR": "Independent40-digit Decimal arithmetic for every observed T session. True range=max(adjusted high-low, abs(adjusted high-prior adjusted close), abs(adjusted low-prior adjusted close)); mean14 regular sessions then divide current adjusted/raw close factor. First14 source rows unavailable. No forward filling.",
+  "tolerance_raw_USD": "1e-10",
+  "reported_sample": "First finite ATR, last observed and20lowest SHA256(session) ranked dates, plus2022-04-08/2022-04-11 source-action boundary; selection independent of returns",
+  "coverage": "Compare saved calendar, frozen cache calendar and installed XNYS session schedule; retain source revisions/action-accounting limits"
+}
