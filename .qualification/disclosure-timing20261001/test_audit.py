@@ -91,7 +91,8 @@ BBB_HISTORY = [
     row(acc(2, 18), "8-K", "2020-04-30", "2020-04-30T21:00:00.000Z", "2020-04-30", "2.02"),
 ]
 # Issuer CCC: retained history page is missing; its 10-Q stays in the denominator.
-CCC_ROOT = [row(acc(3, 10), "10-Q", "2020-08-06", "2020-08-06T21:00:00.000Z", "2020-06-30")]
+# Its 10-Q is also filed after reportDate + 83 days, so it carries the late flag.
+CCC_ROOT = [row(acc(3, 10), "10-Q", "2020-09-25", "2020-09-25T21:00:00.000Z", "2020-06-30")]
 CCC_HISTORY = [
     row(acc(3, 5), "8-K", "2020-04-30", "2020-04-30T21:00:00.000Z", "2020-04-30", "2.02")
 ]
@@ -194,9 +195,8 @@ def build(tmp, drop_history_for=("CCC",), events_override=None):
         for a, s in QUALIFIED.items()
     ]
     write(repo / FROZEN["paths"]["qualification_events"], events)
-    definition = {
-        k: v for k, v in FROZEN.items() if k not in ("inputs", "code", "filings", "denominators")
-    }
+    skip = ("inputs", "issuer_inputs", "code", "filings", "denominators")
+    definition = {k: v for k, v in FROZEN.items() if k not in skip}
     manifests = sorted((source / "filings").glob("*/*.json"))
     definition["filings"] = {
         "root": E + "/source/filings",
@@ -213,13 +213,26 @@ def build(tmp, drop_history_for=("CCC",), events_override=None):
         repo / FROZEN["paths"]["calendar"],
         repo / FROZEN["paths"]["qualification_events"],
     ]
-    bound += sorted((source / "issuers").glob("*/discovery.json"))
-    definition["inputs"] = {p.relative_to(repo).as_posix(): sha(p.read_bytes()) for p in bound}
-    definition["code"] = {}
+    issuer_bound = sorted((source / "issuers").glob("*/discovery.json"))
+    issuer_bound += [repo / r["path"] for r in reuse]
+    for rel in m.FROZEN_MODULES:
+        write(repo / rel, (REPO / rel).read_bytes())
+
+    def identities(paths):
+        return {p.relative_to(repo).as_posix(): sha(p.read_bytes()) for p in paths}
+
+    definition["inputs"] = identities(bound)
+    definition["issuer_inputs"] = identities(issuer_bound)
+    definition["code"] = dict(m.FROZEN_MODULES)
     study = tmp / "study"
     study.mkdir(parents=True)
+    amendments = {}
+    for record in FROZEN["amendments"]:
+        amendments[record["record"]] = sha(
+            write(study / record["record"], (HERE / record["record"]).read_bytes())
+        )
     raw = write(study / "definition.json", definition)
-    write(study / "freeze.json", {"definition_sha256": sha(raw)})
+    write(study / "freeze.json", {"definition_sha256": sha(raw), "amendments": amendments})
     return repo, study
 
 
@@ -323,15 +336,18 @@ def test_unavailable_issuer_clock_is_still_checked(tmp_path):
         for a, s in QUALIFIED.items()
     ]
     right = saved + [
-        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-08-07"}
+        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-09-28"}
     ]
     repo, study = build(tmp_path / "right", events_override=right)
     attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
     rows = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows[acc(3, 10)]["status"] == "issuer_unavailable"
-    assert rows[acc(3, 10)]["q_entry_session"] == "2020-08-07"
+    assert rows[acc(3, 10)]["q_entry_session"] == "2020-09-28"
+    assert rows[acc(3, 10)]["late_10q_beyond_window"] is True
+    summary = json.loads((attempt / "summary.json").read_text())
+    assert summary["strata"]["all_registered_originals"]["late_10q_beyond_window"] == 1
     wrong = saved + [
-        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-08-10"}
+        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-09-29"}
     ]
     repo, study = build(tmp_path / "wrong", events_override=wrong)
     with pytest.raises(m.AuditError, match="entry session differs"):
@@ -417,4 +433,67 @@ def test_frozen_declaration_identity():
     manifests = m.manifest_paths(REPO, FROZEN)
     assert len(manifests) == FROZEN["filings"]["count"] == 4057
     assert m.manifest_digest(REPO, manifests) == FROZEN["filings"]["digest_sha256"]
-    assert sum(p.endswith("/discovery.json") for p in FROZEN["inputs"]) == 100
+    assert sum(p.endswith("/discovery.json") for p in FROZEN["issuer_inputs"]) == 100
+    assert len(FROZEN["issuer_inputs"]) == 200
+    assert {"pyproject.toml", "uv.lock"} <= set(FROZEN["inputs"])
+    assert all(FROZEN["code"][rel] == digest for rel, digest in m.FROZEN_MODULES.items())
+
+
+def test_missing_issuer_discovery_keeps_denominator(tmp_path):
+    repo, study = build(tmp_path)
+    (repo / E / "source/issuers/DDD/discovery.json").unlink()
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    rows = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows[acc(4, 10)]["status"] == "issuer_unavailable"
+    assert rows[acc(4, 10)]["reasons"] == ["retained discovery.json not present"]
+    assert len(rows) == 8
+    problems = m.preflight(study / "definition.json", repo)
+    missing = [p["path"] for p in problems if p["problem"] == "missing"]
+    assert E + "/source/issuers/DDD/discovery.json" in missing
+
+
+def test_conflicts_excluded_from_issuer_counts(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    issuers = {i["issuer"]["symbol"]: i for i in json.loads((attempt / "issuers.json").read_text())}
+    assert issuers["DDD"]["unique_item_2_02_8k"] == 0
+    assert issuers["DDD"]["conflicting_8k_family_accessions"] == [acc(4, 9)]
+    assert issuers["AAA"]["unique_item_2_02_8k"] == 5
+
+
+def test_changed_module_is_not_executed(tmp_path):
+    marker = tmp_path / "executed"
+    module = tmp_path / "module.py"
+    module.write_text(f"open({str(marker)!r}, 'w').close()\n")
+    with pytest.raises(m.AuditError, match="not executed"):
+        m.load_verified_module(module, "0" * 64, "changed_module")
+    assert not marker.exists()
+    m.load_verified_module(module, sha(module.read_bytes()), "verified_module")
+    assert marker.exists()
+
+
+def test_amendment_records_and_runtime_checked(tmp_path):
+    repo, study = build(tmp_path)
+    record = study / FROZEN["amendments"][0]["record"]
+    record.write_bytes(record.read_bytes() + b" ")
+    with pytest.raises(m.AuditError, match="Amendment record"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    record.unlink()
+    with pytest.raises(m.AuditError, match="Amendment record"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    repo, study = build(tmp_path / "runtime")
+    definition = json.loads((study / "definition.json").read_text())
+    definition["runtime"] = dict(definition["runtime"], python="3.12")
+    raw = write(study / "definition.json", definition)
+    freeze = json.loads((study / "freeze.json").read_text())
+    write(study / "freeze.json", dict(freeze, definition_sha256=sha(raw)))
+    with pytest.raises(m.AuditError, match="Python runtime"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_attempt_records_runtime_and_input_identities(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["runtime"]["python"].startswith("3.13")
+    assert set(meta["runtime"]) >= {"tzdata_package", "zoneinfo_tzpath", "sqlite", "platform"}
+    assert meta["input_identities"][E + "/source/issuers/AAA/discovery.json"]

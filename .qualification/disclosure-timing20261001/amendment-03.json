@@ -1,0 +1,36 @@
+{
+ "id": "amendment-03",
+ "recorded_at_utc": "2026-10-01T18:22:23.856305+00:00",
+ "supersedes_definition_sha256": "6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47",
+ "new_definition_sha256": "891da3a2466f3dd10f725987a4fbd2f6ce0893b562cdaf9c433a4bb610a31c5d",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, six P2 findings on commit 5cbf8a2a",
+ "changes": [
+  {
+   "field": "runtime.reused_modules; audit.py load_verified_module",
+   "reason": "The reused capture and features modules executed at import before their digests were checked. audit.py now hard-codes their SHA256 and executes only the verified bytes."
+  },
+  {
+   "field": "runtime; inputs gain pyproject.toml and uv.lock",
+   "reason": "Dependency identity was not bound. Python 3.13 is required, the project/lock files are bound, and each attempt records exact Python, platform, SQLite, tzdata and zoneinfo TZPATH plus every input identity."
+  },
+  {
+   "field": "statistics.issuer_counts",
+   "reason": "Unique Item 2.02 and empty-primary-document counts read only the first variant of a conflicting accession, so they depended on source order. Conflicts are now excluded and listed separately."
+  },
+  {
+   "field": "issuer_inputs (split from inputs); provenance.source_location",
+   "reason": "Bound per-issuer discovery/root files were global required inputs, so one unrestorable issuer file blocked the whole audit, contradicting the per-issuer unavailability rule. Absent per-issuer inputs now make only that issuer unavailable; changed bytes stay fatal; the input state must be identical at start and end."
+  },
+  {
+   "field": "statistics.late_flag",
+   "reason": "late_10q_beyond_window was null for unavailable issuers. It is now computed from every frozen manifest."
+  },
+  {
+   "field": "audit.py verify_definition",
+   "reason": "Amendment records listed in freeze.json were not re-verified at run time. Every record must now exist, match its digest and match the definition's amendment list."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate form/token, clock function, ambiguity/coverage classification, locks, bounds and verdict thresholds."
+}

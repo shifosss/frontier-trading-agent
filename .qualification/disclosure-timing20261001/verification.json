@@ -1,21 +1,22 @@
 {
  "status": "passed",
- "checked_at": "2026-10-01T18:10:37.392978+00:00",
+ "checked_at": "2026-10-01T18:23:00.019305+00:00",
  "platform": "Linux container, Python 3.13.14, uv sync --frozen",
  "command": ".venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider",
- "result": "12 passed",
+ "result": "17 passed",
  "synthetic_only": true,
  "actual_8k_rows_read": false,
  "network_requests": 0,
- "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed.",
+ "initial_test_run": "First full run: 9 passed, 1 failed because freeze.json did not exist yet (expected; it is written after the tests pass). A synthetic fixture coverage gap was corrected in the test data before that run. Amendment-01: the new day-84 boundary and source-lock tests first failed against the superseded 84-day definition (single_prior became multiple), then all 11 passed under the amended definition. Amendment-02: the new unavailable-issuer clock test failed on the previous code (a wrong saved session passed), then all 12 passed. Amendment-03: before amendment-03.json existed, 15 of 17 failed at fixture setup (expected); one new assertion had a test-side type error, which was corrected; then all 17 passed. The amendment-03 tests target APIs that did not exist in the previous code, so they were not run against it.",
  "files": {
-  "audit.py": "4758621aada1fdc50434921b6ff37db6f5d08d619c47ab1f2b885665ec5d4d50",
-  "test_audit.py": "f276031da4937f1da3c2b2b3df43e7762ea015338483b9f30059dec8706feebe",
-  "definition.json": "6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47",
-  "freeze.json": "7d5d3c4e8f5f59594861e9bf6d46bd752b2c1d473ce0188c38da57412d66b077",
+  "audit.py": "c817b987e348d4b47facc93733af62bd6cfbdf0030589942ebe1c3ecfb80e838",
+  "test_audit.py": "b6f9c10578e1de674e73f05f8ea53c44c0459ad37a9795e912a0964d544e937f",
+  "definition.json": "891da3a2466f3dd10f725987a4fbd2f6ce0893b562cdaf9c433a4bb610a31c5d",
+  "freeze.json": "fc132639c45ff1bb54841d72a1e040112d88c6ad74d1ed81e63c42758c6e04ee",
   "amendment-01.json": "78b5c513937f1428b120a1dd83be187f203a66f5236c10f674008db132dc7195",
   "amendment-02.json": "906a70495713610e7d4d10bb55c80ef2a1cbdee93afad38b5fa11beb6735d858",
-  "interface.md": "ffbdc6f40a8d9da91f779e72390cd37c0e950487fff933e55b3dc42297e10184"
+  "amendment-03.json": "d8bbe0b8c58a55e3a4c80436c59fe8b389a32efd3ede918b3c256f0e8fd99ddb",
+  "interface.md": "d4c84a46dce36fd7d84c821c00cbbc3d420877e7837a714d7bf7e7ba2eba1b21"
  },
  "scope": [
   "single prior / same-session / after / multiple candidate classification and XNYS-session leads",
@@ -30,8 +31,13 @@
   "missing or write-held capture lock refused before any attempt; preflight names a missing lock",
   "raw byte corruption stops the attempt; changed definition or bound input refused before any attempt",
   "preflight names the missing retained page; no socket use; append-only attempts",
-  "frozen declaration SHA, amendment record SHA, bound code SHAs, 4,057-manifest digest and 100 discovery bindings in this clone"
+  "frozen declaration SHA, amendment record SHA, bound code SHAs, 4,057-manifest digest and 100 discovery bindings in this clone",
+  "reused module bytes are hash-checked before execution",
+  "absent per-issuer discovery file keeps the issuer in every denominator; preflight names it",
+  "conflicting accessions excluded from per-issuer Item 2.02 counts and listed separately",
+  "late flag set for unavailable issuers and counted in strata",
+  "amendment records and Python runtime verified before any attempt; runtime and input identities recorded per attempt"
  ],
- "real_preflight": "Not ready in this clone: 69 discovery.json, 100 root raw sources, the calendar, the qualification events and the history pages named by the 31 present discovery files are absent.",
+ "real_preflight": "Not ready in this clone (172 missing bound inputs plus raw sources named by the 31 present discovery files). A real run refuses before creating any attempt.",
  "qualification": "Software checks only; no economic or source result."
 }

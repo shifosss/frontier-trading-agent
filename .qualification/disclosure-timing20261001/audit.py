@@ -11,10 +11,14 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import importlib.metadata
 import importlib.util
 import json
+import platform
 import sqlite3
+import sys
 import uuid
+import zoneinfo
 from collections import Counter
 from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
@@ -24,23 +28,15 @@ ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
 DEFINITION = ROOT / "definition.json"
 FREEZE = ROOT / "freeze.json"
-
-
-def _module(path, name):
-    spec = importlib.util.spec_from_file_location(name, path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-# Reuse the frozen submissions-table parser and the frozen 10-Q event clock unchanged.
-base = _module(
-    REPO / ".qualification/filing-source20260928/capture.py", "timing_audit_submissions_parser"
-)
-features = _module(
-    REPO / ".qualification/filing-features20260928/features.py", "timing_audit_event_clock"
-)
-
+# Reused frozen modules; their bytes must match before they are executed.
+FROZEN_MODULES = {
+    ".qualification/filing-source20260928/capture.py": (
+        "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
+    ),
+    ".qualification/filing-features20260928/features.py": (
+        "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f"
+    ),
+}
 STATUSES = [
     "issuer_unavailable",
     "q_metadata_unavailable",
@@ -79,6 +75,42 @@ def day(value):
     return date.fromisoformat(value)
 
 
+def load_verified_module(path, digest, name):
+    """Execute exactly the verified bytes of a reused module, or refuse without executing."""
+    data = Path(path).read_bytes()
+    if sha(data) != digest:
+        raise AuditError("Reused module bytes changed; not executed: " + Path(path).as_posix())
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    exec(compile(data, str(path), "exec"), module.__dict__)
+    return module
+
+
+# Reuse the frozen submissions-table parser and the frozen 10-Q event clock unchanged.
+_CAPTURE, _FEATURES = FROZEN_MODULES
+base = load_verified_module(
+    REPO / _CAPTURE, FROZEN_MODULES[_CAPTURE], "timing_audit_submissions_parser"
+)
+features = load_verified_module(
+    REPO / _FEATURES, FROZEN_MODULES[_FEATURES], "timing_audit_event_clock"
+)
+
+
+def runtime_identity():
+    try:
+        tzdata = importlib.metadata.version("tzdata")
+    except importlib.metadata.PackageNotFoundError:
+        tzdata = None
+    return {
+        "python": platform.python_version(),
+        "implementation": platform.python_implementation(),
+        "platform": platform.platform(),
+        "sqlite": sqlite3.sqlite_version,
+        "tzdata_package": tzdata,
+        "zoneinfo_tzpath": list(zoneinfo.TZPATH),
+    }
+
+
 # ---------------------------------------------------------------- identities
 
 
@@ -91,15 +123,26 @@ def manifest_digest(repo, paths):
     return sha(lines.encode())
 
 
-def check_inputs(repo, definition):
-    """Return a list of missing/mismatched bound inputs; empty means all identities match."""
+def input_state(repo, definition):
+    """Observed SHA256 (or None when absent) for every bound global and per-issuer input."""
+    bound = {**definition["inputs"], **definition["issuer_inputs"], **definition["code"]}
+    return {
+        rel: sha((repo / rel).read_bytes()) if (repo / rel).is_file() else None for rel in bound
+    }
+
+
+def check_inputs(repo, definition, state=None, allow_missing_issuer_inputs=True):
+    """Problems with bound inputs. Absent per-issuer inputs only make that issuer unavailable."""
+    state = input_state(repo, definition) if state is None else state
     problems = []
-    for rel, digest in {**definition["inputs"], **definition["code"]}.items():
-        path = repo / rel
-        if not path.is_file():
-            problems.append({"path": rel, "problem": "missing", "expected_sha256": digest})
-        elif sha(path.read_bytes()) != digest:
-            problems.append({"path": rel, "problem": "sha256_mismatch", "expected_sha256": digest})
+    for group in ("inputs", "code", "issuer_inputs"):
+        for rel, digest in definition[group].items():
+            observed = state[rel]
+            if observed is None and group == "issuer_inputs" and allow_missing_issuer_inputs:
+                continue
+            if observed != digest:
+                problem = "missing" if observed is None else "sha256_mismatch"
+                problems.append({"path": rel, "problem": problem, "expected_sha256": digest})
     paths = manifest_paths(repo, definition)
     expected = definition["filings"]
     if len(paths) != expected["count"] or manifest_digest(repo, paths) != expected["digest_sha256"]:
@@ -121,10 +164,24 @@ def verify_definition(definition_path, freeze_path, repo):
     definition = json.loads(raw)
     if definition.get("schema") != 1 or definition.get("study") != ROOT.name:
         raise AuditError("Unexpected definition schema/study")
-    problems = check_inputs(repo, definition)
+    records = {a["record"] for a in definition.get("amendments", [])}
+    if records != set(frozen.get("amendments", {})):
+        raise AuditError("Amendment records differ between definition and freeze")
+    for name, digest in frozen.get("amendments", {}).items():
+        path = Path(definition_path).parent / name
+        if not path.is_file() or sha(path.read_bytes()) != digest:
+            raise AuditError("Amendment record missing or changed: " + name)
+    if "%d.%d" % sys.version_info[:2] != definition["runtime"]["python"]:
+        raise AuditError(
+            "Python runtime differs from the declared " + definition["runtime"]["python"]
+        )
+    if any(FROZEN_MODULES[rel] != definition["code"].get(rel) for rel in FROZEN_MODULES):
+        raise AuditError("Reused module identities differ from the definition")
+    state = input_state(repo, definition)
+    problems = check_inputs(repo, definition, state)
     if problems:
         raise AuditError("Bound inputs are missing or changed: " + json.dumps(problems[:20]))
-    return definition, sha(raw)
+    return definition, sha(raw), state
 
 
 # ---------------------------------------------------------------- provenance
@@ -538,7 +595,10 @@ def audit(definition, repo):
             "error": None,
         }
         try:
-            discovery = load(source_root / "issuers" / issuer["symbol"] / "discovery.json")
+            discovery_path = source_root / "issuers" / issuer["symbol"] / "discovery.json"
+            if not discovery_path.is_file():
+                raise IssuerUnavailable("retained discovery.json not present")
+            discovery = load(discovery_path)
             if sorted(r["accessionNumber"] for r in discovery.get("original_accessions", [])) != [
                 m["registry_row"]["accessionNumber"] for m in own
             ]:
@@ -546,12 +606,16 @@ def audit(definition, repo):
             rebuilt = reconstruct_issuer(issuer, discovery, request, source_root, repo)
             canonical = canonicalize(rebuilt["occurrences"])
             form_counts = Counter(o["row"].get("form") for o in rebuilt["occurrences"])
-            item_rows = [
+            # Conflicting accessions are never counted as one variant; they are listed instead.
+            clean_8k = [
                 c["row"]
                 for c in canonical.values()
-                if c["row"].get("form") == rules["candidate_form"]
-                and rules["item_token"] in (items_tokens(c["row"].get("items")) or ())
+                if not c["conflict"] and c["row"].get("form") == rules["candidate_form"]
             ]
+            item_rows = [
+                r for r in clean_8k if rules["item_token"] in (items_tokens(r.get("items")) or ())
+            ]
+            family = {rules["candidate_form"], rules["amendment_form"]}
             record.update(
                 sources=rebuilt["sources"],
                 coverage=rebuilt["coverage"],
@@ -561,10 +625,11 @@ def audit(definition, repo):
                 conflicting_accessions=sorted(a for a, c in canonical.items() if c["conflict"]),
                 raw_8k_occurrences=form_counts.get(rules["candidate_form"], 0),
                 unique_item_2_02_8k=len(item_rows),
-                empty_primary_document_8k=sum(
-                    not c["row"].get("primaryDocument")
-                    for c in canonical.values()
-                    if c["row"].get("form") == rules["candidate_form"]
+                empty_primary_document_8k=sum(not r.get("primaryDocument") for r in clean_8k),
+                conflicting_8k_family_accessions=sorted(
+                    a
+                    for a, c in canonical.items()
+                    if c["conflict"] and any(v.get("form") in family for v in c["variants"])
                 ),
             )
         except IssuerUnavailable as exc:
@@ -577,6 +642,12 @@ def audit(definition, repo):
             q_session = entry_session(
                 q_row.get("acceptanceDateTime"), q_row.get("filingDate"), calendar
             )[0]
+            try:
+                late = day(q_row["filingDate"]) > day(q_row["reportDate"]) + timedelta(
+                    days=rules["window_days_after_report_date"]
+                )
+            except (KeyError, TypeError, ValueError):
+                late = None
             if canonical is None:
                 result = {
                     "status": "issuer_unavailable",
@@ -597,9 +668,11 @@ def audit(definition, repo):
                     positions,
                     rules,
                 )
-            if result["q_entry_session"] not in (None, q_session):
+            if result["q_entry_session"] not in (None, q_session) or result[
+                "late_10q_beyond_window"
+            ] not in (None, late):
                 raise AuditError("Classification and manifest 10-Q clocks differ")
-            result["q_entry_session"] = q_session
+            result.update(q_entry_session=q_session, late_10q_beyond_window=late)
             accession = q_row["accessionNumber"]
             rows.append(flatten(issuer, manifest, result, accession in qualified))
     if len(rows) != definition["denominators"]["registered_originals"] or not qualified <= {
@@ -666,7 +739,7 @@ def write_json(path, value):
 
 
 def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=ROOT):
-    definition, definition_sha = verify_definition(definition_path, freeze_path, repo)
+    definition, definition_sha, state = verify_definition(definition_path, freeze_path, repo)
     with locks(repo / definition["paths"]["source_root"], output_root) as guard:
         attempt = output_root / "attempts" / uuid.uuid4().hex
         attempt.mkdir(parents=True, exist_ok=False)
@@ -676,13 +749,15 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
             "started_at_utc": now(),
             "network_requests": 0,
             "prices_or_returns_read": False,
+            "runtime": runtime_identity(),
+            "input_identities": state,
             "status": "running",
         }
         write_json(attempt / "attempt.json", meta)
         try:
             issuers, rows, summary = audit(definition, repo)
-            if check_inputs(repo, definition):
-                raise AuditError("Bound inputs changed during the audit")
+            if input_state(repo, definition) != state:
+                raise AuditError("Bound inputs appeared, disappeared or changed during the audit")
             files = {
                 "issuers.json": write_json(attempt / "issuers.json", issuers),
                 "events.json": write_json(attempt / "events.json", rows),
@@ -709,7 +784,7 @@ def run(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, output_root=R
 def preflight(definition_path=DEFINITION, repo=REPO):
     """List missing/changed inputs, including raw sources named by discovery files. No writes."""
     definition = load(definition_path)
-    problems = check_inputs(repo, definition)
+    problems = check_inputs(repo, definition, allow_missing_issuer_inputs=False)
     source_root = repo / definition["paths"]["source_root"]
     if not (source_root / "capture.lock.sqlite").is_file():
         problems.append(
@@ -719,7 +794,7 @@ def preflight(definition_path=DEFINITION, repo=REPO):
             }
         )
     reuse = {r["url"]: r for r in load(repo / definition["paths"]["source_request"])["reuse"]}
-    for rel in definition["inputs"]:
+    for rel in definition["issuer_inputs"]:
         if rel.endswith("/discovery.json") and (repo / rel).is_file():
             for meta in load(repo / rel).get("sources", []):
                 try:

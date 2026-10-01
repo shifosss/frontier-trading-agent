@@ -8,7 +8,7 @@ The [cash-backed earnings comparison](earnings-quality-results.md) decided at 09
 
 ## What is frozen
 
-The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47`.
+The study lives in [`.qualification/disclosure-timing20261001`](../.qualification/disclosure-timing20261001/interface.md). Definition SHA256: `891da3a2466f3dd10f725987a4fbd2f6ce0893b562cdaf9c433a4bb610a31c5d`.
 
 - **Denominators:** all 100 issuers and 4,057 registered original 10-Qs, including the 190 failed captures. The 3,867 captured originals and the 2,010 strategy-source-qualified events are reported as separate strata, and each filing year is also reported. No issuer is replaced or dropped.
 - **Candidate:** a same-CIK original `8-K` whose `items` field holds the exact token `2.02`, filed after the 10-Q period end and within 83 days of it. The shortest 12-week next quarter ends on day 84, so its results release cannot fall in the window. Review moved this bound from 84 to 83 days before any run; see `amendment-01.json`. `8-K/A` rows are counted but are never candidates.

@@ -34,13 +34,29 @@
  },
  "provenance": {
   "row_reconstruction": "Re-parse every discovery source in saved order with the frozen capture table_rows parser: source 0 is the root filings.recent table, later sources are bare history arrays. Keep every occurrence with (source index, row index). The concatenation must equal discovery.json rows exactly, else the issuer is unavailable.",
-  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. A recorded raw SHA256/byte-length mismatch stops the whole attempt; a missing retained file makes only that issuer unavailable.",
+  "source_location": "Reused sources resolve repository-relative and must equal the frozen request reuse catalog entry; captured sources resolve under source_root. Per-issuer inputs (each discovery.json and reused root source) are bound under issuer_inputs: an absent one makes only that issuer unavailable, while present bytes that differ from a bound or recorded SHA256/byte length stop the whole attempt. Global inputs, code and manifests must all be present and unchanged. The full input state must be identical at the start and end of the attempt.",
   "history_pages": "Fetched history URLs must equal, in order, the frozen capture's selection of declared history files overlapping 2012-01-01..2025-12-31.",
   "coverage": "Filing-date coverage is the union of [earliest root recent filingDate, open end] and each fetched history page's declared [filingFrom, filingTo]; an issuer with no declared history files is fully covered.",
   "canonicalization": "Group occurrences by accessionNumber within an issuer. Identical occurrences form one canonical row; differing occurrences are a retained conflict and are never used as a candidate.",
   "registered_set": "Each issuer's discovery original_accessions must equal its frozen 10-Q manifests exactly, else the issuer is unavailable."
  },
  "locks": "Requires .qualification/earnings-quality20260928/source/capture.lock.sqlite and holds a read-only transaction on it, plus its own exclusive audit.lock.sqlite, for the whole audit, as the terminal qualification collector does. A missing lock or a writer holding it refuses the run before any attempt is created.",
+ "runtime": {
+  "python": "3.13",
+  "bound_files": [
+   "pyproject.toml",
+   "uv.lock"
+  ],
+  "recorded_per_attempt": [
+   "exact Python version and implementation",
+   "platform",
+   "SQLite version",
+   "tzdata package version",
+   "zoneinfo TZPATH",
+   "every bound input SHA256 or absence"
+  ],
+  "reused_modules": "audit.py hard-codes the SHA256 of the reused capture and features modules and executes only those exact verified bytes, before anything else runs; the same digests are bound under code."
+ },
  "matching": {
   "candidate_form": "8-K",
   "amendment_form": "8-K/A",
@@ -75,7 +91,9 @@
    "captured_originals",
    "strategy_source_qualified",
    "filed_<year>"
-  ]
+  ],
+  "late_flag": "late_10q_beyond_window is computed from every frozen 10-Q manifest, whatever its issuer's source status.",
+  "issuer_counts": "Per-issuer unique Item 2.02 and empty-primary-document 8-K counts exclude conflicting accessions; conflicting 8-K-family accessions are listed separately."
  },
  "interpretation": {
   "primary_stratum": "strategy_source_qualified",
@@ -100,9 +118,14 @@
    "id": "amendment-02",
    "supersedes_definition_sha256": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
    "record": "amendment-02.json"
+  },
+  {
+   "id": "amendment-03",
+   "supersedes_definition_sha256": "6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47",
+   "record": "amendment-03.json"
   }
  ],
- "declared_at_utc": "2026-10-01T18:10:25.994750+00:00",
+ "declared_at_utc": "2026-10-01T18:21:20.473239+00:00",
  "filings": {
   "root": ".qualification/earnings-quality20260928/source/filings",
   "count": 4057,
@@ -112,6 +135,12 @@
  "inputs": {
   ".qualification/earnings-quality20260928/source/request.json": "2d688da497c4c58a8701db66083d88b5f07aff28a436a65dcb9395bdcb26dfe1",
   ".qualification/earnings-quality20260928/source/completion.json": "7bf591e82405daf3a1b00c595c9da824e921aefcc5fb9cdfda70a9455f87b72c",
+  "pyproject.toml": "521e44274b105c32d4835c915f756b60af9a274a2d07664349a2af6a7ae39dae",
+  "uv.lock": "9526a6c3492ee53f927fd6ed5971f10889602da8763eca908b2737e9ea8c28ce",
+  ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+  ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json": "0bf6151739e3cb8adabbb01ba38a9828474746b502ad6cdb7f196cd07a9277d3"
+ },
+ "issuer_inputs": {
   ".qualification/earnings-quality20260928/source/issuers/MCRB/discovery.json": "9b33f0c4e76cbb7c087cc8c64f700adba6ae0e5184add0f2270245e5840860ed",
   ".qualification/earnings-quality20260928/source/issuers/CAG/discovery.json": "003f68359231cdc5406c49f0576edbebb2edddb6aaa429393af30c9500f5c45b",
   ".qualification/earnings-quality20260928/source/issuers/SCOR/discovery.json": "ba7aa154d36b9620990eb6bb0e85a3f7152fa238d9a8e84d129c7c678a3fdb4b",
@@ -311,12 +340,10 @@
   ".qualification/earnings-quality20260928/discovery/profiles/raw/03db6bfa18980d72b04c935806bc1c6b1eb43d888c34e4fcaf809c894c60038d.bin": "03db6bfa18980d72b04c935806bc1c6b1eb43d888c34e4fcaf809c894c60038d",
   ".qualification/earnings-quality20260928/discovery/profiles/raw/b07951818c268b1a9089a2b756c06d012afa6affda93b980c2f64033af0087a9.bin": "b07951818c268b1a9089a2b756c06d012afa6affda93b980c2f64033af0087a9",
   ".qualification/earnings-quality20260928/discovery/profiles/raw/7272335b57e03213aa81ff1a14efe2733e09c5ec4bf0643ad3f8404b2d89af40.bin": "7272335b57e03213aa81ff1a14efe2733e09c5ec4bf0643ad3f8404b2d89af40",
-  ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd",
-  ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
-  ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/events.json": "0bf6151739e3cb8adabbb01ba38a9828474746b502ad6cdb7f196cd07a9277d3"
+  ".qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd"
  },
  "code": {
-  ".qualification/disclosure-timing20261001/audit.py": "4758621aada1fdc50434921b6ff37db6f5d08d619c47ab1f2b885665ec5d4d50",
+  ".qualification/disclosure-timing20261001/audit.py": "c817b987e348d4b47facc93733af62bd6cfbdf0030589942ebe1c3ecfb80e838",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  }
