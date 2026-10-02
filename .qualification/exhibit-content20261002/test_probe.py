@@ -1,0 +1,742 @@
+"""Offline synthetic checks for the exhibit-content probe. No SEC, price or outcome data."""
+
+import hashlib
+import importlib.util
+import io
+import json
+import shutil
+import socket
+import sqlite3
+from datetime import date, timedelta
+from decimal import Decimal
+from pathlib import Path
+from urllib.error import HTTPError, URLError
+
+import pytest
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[1]
+
+
+def module():
+    spec = importlib.util.spec_from_file_location("exhibit_probe_under_test", HERE / "probe.py")
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+m = module()
+DEFINITION = json.loads((HERE / "definition.json").read_text(encoding="utf-8"))
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+# ------------------------------------------------------------------ fixtures
+
+
+def group(*values):
+    """Each value is a ($, number, closing) triple in its own three physical columns."""
+    return "".join(f"<td>{a}</td><td>{b}</td><td>{c}</td>" for a, b, c in values)
+
+
+def plain(*values):
+    return group(*[("", v, "") for v in values])
+
+
+def release_html(ni=("5.2", "(1.1"), ytd_ni=("8.0", "3.0"), cfo=("14.0", "6.0"), assets="1,400"):
+    close = ")" if ni[1].startswith("(") else ""
+    years = "".join(f'<td colspan="3">{y}</td>' for y in (2025, 2024, 2025, 2024))
+    net = group(("$", ni[0], ""), ("$", ni[1], close), ("$", ytd_ni[0], ""), ("$", ytd_ni[1], ""))
+    return f"""<html><body><p>ACME Reports Second Quarter Fiscal 2025 Results</p>
+<p>Net income for the second quarter of fiscal 2025 was $5.2 million.</p>
+<p>Condensed Consolidated Statements of Operations (in millions)</p>
+<table>
+<tr><td></td><td colspan="6">Three Months Ended June 30,</td>
+<td colspan="6">Six Months Ended June 30,</td></tr>
+<tr><td></td>{years}</tr>
+<tr><td>Net income (loss)</td>{net}</tr>
+<tr><td>Adjusted net income</td>{plain("9.9", "5.2", "12.0", "7.0")}</tr>
+<tr><td>Net cash provided by operating activities</td>{plain("7.5", "2.0", *cfo)}</tr>
+</table>
+<p>Balance sheet (in millions)</p>
+<table><tr><td></td><td colspan="3">June 30, 2025</td><td colspan="3">December 31, 2024</td></tr>
+<tr><td>Total assets</td>{group(("$", "1,500", ""), ("$", assets, ""))}</tr></table>
+</body></html>""".encode()
+
+
+RECORD = {
+    "accession": "0000000001-24-000010",
+    "status": "qualified",
+    "q_status": "qualified",
+    "fiscal_year": 2025,
+    "fiscal_period": "Q2",
+    "prior_fy_end": "2024-12-31",
+    "current_ni": "5200000",
+    "prior_ni": "-1100000",
+    "prior_fy_assets": "1400000000",
+    "current_start": "2025-04-01",
+    "current_end": "2025-06-30",
+    "prior_start": "2024-04-01",
+    "prior_end": "2024-06-30",
+    "q_current_cfo": "14000000",
+    "q_current_ni": "8000000",
+    "q_prior_cfo": "6000000",
+    "q_prior_ni": "3000000",
+    "q_current_start": "2025-01-01",
+    "q_current_end": "2025-06-30",
+    "q_prior_start": "2024-01-01",
+    "q_prior_end": "2024-06-30",
+}
+
+
+def classify(html, record=RECORD, kind="html"):
+    doc = m.parse_document(kind, html)
+    specs = m.comparison(record)
+    return {name: m.match_component(doc, specs[name], m.CONCEPT[name])[0] for name in m.COMPONENTS}
+
+
+# ------------------------------------------------------------------ matching rules
+
+
+def test_full_release_states_every_component():
+    assert set(classify(release_html()).values()) == {"stated"}
+
+
+def test_split_header_rows_and_split_currency_cells():
+    doc = m.parse_document("html", release_html())
+    cells = list(m.table_cells(doc["tables"][0]))
+    first = cells[0]
+    assert first[1] == "$5.2" and first[2] == "Three Months Ended June 30, 2025"
+    assert cells[1][1] == "$(1.1)"
+    assert m.parse_number("$(1.1)") == (Decimal("-1.1"), 1, "USD")
+
+
+def test_adjusted_row_never_states_a_gaap_value():
+    # Only the adjusted row holds 5.2 for the current quarter; the GAAP row shows 4.0.
+    html = release_html(ni=("4.0", "(1.1")).replace(b"was $5.2 million", b"was $4.0 million")
+    assert classify(html)["current_ni"] == "label_only"
+
+
+def test_value_under_a_different_period_does_not_count():
+    # The quarterly value appears only under the six-month column.
+    html = release_html(ni=("9.0", "(1.1"), ytd_ni=("5.2", "3.0"))
+    html = html.replace(b"was $5.2 million", b"was strong")
+    assert classify(html)["current_ni"] == "label_only"
+
+
+def test_unreadable_header_is_period_unverified():
+    html = b"""<table><tr><td></td><td>Current</td><td>Prior</td></tr>
+    <tr><td>Net income</td><td>5.2</td><td>(1.1)</td></tr></table><p>(in millions)</p>"""
+    assert classify(html)["current_ni"] == "period_unverified"
+
+
+def table(header, *rows, before=b"<p>(in millions)</p>"):
+    cells = b"".join(b"<tr><td>" + b"</td><td>".join(r) + b"</td></tr>" for r in rows)
+    head = b"<tr><td></td><td>" + b"</td><td>".join(header) + b"</td></tr>"
+    return before + b"<table>" + head + cells + b"</table>"
+
+
+def test_stacked_sections_take_their_own_header():
+    html = b"""<p>(in millions)</p><table>
+<tr><td></td><td>Three Months Ended June 30,</td><td></td></tr>
+<tr><td></td><td>2025</td><td>2024</td></tr>
+<tr><td>Revenue</td><td>90.0</td><td>80.0</td></tr>
+<tr><td>Gross margin</td><td>45%</td><td>44%</td></tr>
+<tr><td>Net income</td><td>5.2</td><td>(1.1)</td></tr>
+<tr><td>Operating activities:</td><td></td><td></td></tr>
+<tr><td></td><td>Six Months Ended June 30,</td><td></td></tr>
+<tr><td></td><td>2025</td><td>2024</td></tr>
+<tr><td>Net income</td><td>8.0</td><td>3.0</td></tr>
+<tr><td>Net cash provided by operating activities</td><td>14.0</td><td>6.0</td></tr>
+</table>"""
+    result = classify(html)
+    assert {result[n] for n in m.S_FLOW + m.Q_FLOW} == {"stated"}
+
+
+def test_loss_and_cash_used_labels_sign_unsigned_amounts():
+    loss = dict(RECORD, current_ni="-3000000", q_current_cfo="-14000000")
+    html = table([b"Three Months Ended June 30, 2025"], [b"Net loss", b"3.0"])
+    assert classify(html, loss)["current_ni"] == "stated"
+    mixed = table([b"Three Months Ended June 30, 2025"], [b"Net (loss) income", b"3.0"])
+    assert classify(mixed, loss)["current_ni"] == "label_only"
+    signed = table([b"Three Months Ended June 30, 2025"], [b"Net (loss) income", b"(3.0)"])
+    assert classify(signed, loss)["current_ni"] == "stated"
+    used = (
+        b"<p>Net cash used in operating activities for the six months ended June 30, 2025"
+        b" was $14.0 million.</p>"
+    )
+    assert classify(used, loss)["q_current_cfo"] == "stated"
+    assert classify(used)["q_current_cfo"] == "label_only"
+
+
+def test_narrative_amounts_pair_with_their_own_clause():
+    record = dict(RECORD, prior_ni="1100000")
+    right = (
+        b"<p>Net income for the second quarter of 2025 was $5.2 million, compared with"
+        b" $1.1 million in the second quarter of 2024.</p>"
+    )
+    swapped = right.replace(b"$5.2", b"$X").replace(b"$1.1", b"$5.2").replace(b"$X", b"$1.1")
+    unpaired = (
+        b"<p>Net income for the three months ended June 30, 2025 and June 30, 2024 was"
+        b" $5.2 million and $1.1 million.</p>"
+    )
+    assert [classify(right, record)[n] for n in ("current_ni", "prior_ni")] == ["stated"] * 2
+    assert [classify(swapped, record)[n] for n in ("current_ni", "prior_ni")] == ["label_only"] * 2
+    assert classify(unpaired, record)["current_ni"] == "period_unverified"
+    signs = dict(RECORD, current_ni="-3000000", prior_ni="1100000")
+    mixed = (
+        b"<p>Net loss for the second quarter of 2025 was $3.0 million, compared with net income"
+        b" of $1.1 million in the second quarter of 2024.</p>"
+    )
+    assert [classify(mixed, signs)[n] for n in ("current_ni", "prior_ni")] == ["stated"] * 2
+    adjusted = (
+        b"<p>Net loss for the second quarter of 2025 was $3.0 million, compared with adjusted"
+        b" net income of $1.1 million in the second quarter of 2024.</p>"
+    )
+    assert classify(adjusted, signs)["prior_ni"] == "label_only"
+
+
+def test_rowspan_keeps_header_columns_aligned():
+    html = b"""<p>(in millions)</p><table>
+<tr><td rowspan="2">Unaudited</td><td colspan="2">Three Months Ended June 30,</td></tr>
+<tr><td>2025</td><td>2024</td></tr>
+<tr><td>Net income</td><td>5.2</td><td>(1.1)</td></tr></table>"""
+    result = classify(html)
+    assert result["current_ni"] == "stated" and result["prior_ni"] == "stated"
+
+
+def test_ambiguous_or_missing_duration_is_period_unverified():
+    # A dated column whose duration cannot be resolved is unverified, never silently dropped.
+    both = b"<p>Three and six months ended (in millions)</p>"
+    html = table([b"June 30, 2025"], [b"Net income", b"5.2"], before=both)
+    assert classify(html)["current_ni"] == "period_unverified"
+    bare = table([b"June 30, 2025"], [b"Net income", b"5.2"])
+    assert classify(bare)["current_ni"] == "period_unverified"
+    quarter = table([b"Three Months Ended June 30, 2025"], [b"Total assets", b"1,400"])
+    assert classify(quarter, dict(RECORD, prior_fy_end="2025-06-30"))["prior_fy_assets"] == (
+        "period_unverified"
+    )
+
+
+def test_other_currency_is_never_compared():
+    html = table([b"Three Months Ended June 30, 2025"], [b"Net income", b"C$5.2"])
+    assert classify(html)["current_ni"] == "currency_mismatch"
+
+
+def test_image_dependence_is_per_component():
+    statement = b'<p>Results</p><img alt="Statements of Cash Flows" src="cf.jpg">'
+    logo = b'<img alt="ACME logo" src="logo.jpg"><p>Results</p>'
+    assert classify(statement)["q_current_cfo"] == "exhibit_unavailable"
+    assert classify(statement)["current_ni"] == "not_found"
+    assert classify(logo)["q_current_cfo"] == "not_found"
+
+
+def test_narrative_sentences_need_their_own_period():
+    loss = dict(RECORD, current_ni="-3000000")
+    stated = b"<p>The net loss for the three months ended June 30, 2025 was $3.0 million.</p>"
+    vague = b"<p>The company reported a net loss of $3.0 million.</p>"
+    other = b"<p>The net loss for the three months ended March 31, 2025 was $3.0 million.</p>"
+    excluded = (
+        b"<p>Net income excluding special items for the quarter ended June 30, 2025"
+        b" was $5.2 million.</p>"
+    )
+    assert classify(stated, loss)["current_ni"] == "stated"
+    assert classify(vague, loss)["current_ni"] == "period_unverified"
+    assert classify(other, loss)["current_ni"] == "label_only"
+    assert classify(excluded)["current_ni"] == "not_found"
+
+
+def test_fiscal_quarter_phrase_and_prior_year():
+    prior = dict(RECORD, prior_ni="4100000")
+    html = b"<p>Net income in the second quarter of fiscal 2024 was $4.1 million.</p>"
+    assert classify(html, prior)["prior_ni"] == "stated"
+    assert classify(html, prior)["current_ni"] == "label_only"
+
+
+def test_plain_text_exhibit_tables():
+    text = b"""ACME CORP (in thousands)
+                Three Months Ended June 30, 2025    Three Months Ended June 30, 2024
+Net income                5,200                               (1,100)
+"""
+    result = classify(text, kind="text")
+    assert result["current_ni"] == "stated" and result["prior_ni"] == "stated"
+
+
+def at(*placed):
+    """One plain-text line with each text right-aligned to end at its column."""
+    line = ""
+    for end, text in placed:
+        line = line.ljust(end - len(text)) + text
+    return line
+
+
+def test_plain_text_tables_align_by_position_and_split_on_new_headers():
+    lines = [
+        "ACME CORP",
+        "CONDENSED STATEMENTS OF OPERATIONS (in thousands)",
+        at((48, "Three Months Ended"), (74, "Six Months Ended")),
+        at((43, "June 30,"), (71, "June 30,")),
+        at((38, "2025"), (52, "2024"), (66, "2025"), (80, "2024")),
+        at((38, "--------"), (52, "--------"), (66, "--------"), (80, "--------")),
+        "Revenues:",
+        at((9, "  Product"), (38, "9,000"), (52, "8,000"), (66, "17,000"), (80, "15,000")),
+        at((10, "Net income"), (31, "$"), (38, "5,200"), (52, "$ (1,100)"), (59, "$")),
+        "",
+        "BALANCE SHEETS (in thousands)",
+        at((40, "June 30, 2025"), (60, "December 31, 2024")),
+        at((12, "Total assets"), (40, "1,500,000"), (60, "1,400,000")),
+    ]
+    lines[8] += at((66 - 59, "8,000"), (80 - 59, "$ 3,000"))
+    doc = m.parse_document("text", "\n".join(lines).encode())
+    assert len(doc["tables"]) == 2
+    result = classify("\n".join(lines).encode(), kind="text")
+    for name in ("current_ni", "prior_ni", "q_current_ni", "q_prior_ni", "prior_fy_assets"):
+        assert result[name] == "stated", name
+    assert doc["tables"][1]["context"] == "BALANCE SHEETS (in thousands)"
+
+
+def test_numbers_and_periods():
+    assert m.parse_number("1,234") == (Decimal(1234), 0, "")
+    assert m.parse_number("—") == (Decimal(0), 0, "")
+    assert m.parse_number("12%") is None
+    assert m.parse_number("C$5")[2] == "other"
+    assert m.parse_period("June 30, 2025")["instant"]
+    period = m.parse_period("2025", "Three Months Ended June 30")
+    assert period["months"] == 3 and period["end"] == date(2025, 6, 30)
+    assert m.parse_period("June 30, 2025 December 31, 2024")["end"] is None
+    assert m.parse_period("Three and Six Months Ended June 30, 2025")["months"] is None
+    assert not m.parse_period("Three and Six Months Ended June 30, 2025")["instant"]
+
+
+def test_ytd_header_takes_the_10q_year_to_date_length():
+    html = table(
+        [b"Year to date June 30, 2025"],
+        [b"Net income", b"5.2"],
+        [b"Net cash from operating activities", b"14.0"],
+    )
+    result = classify(html)
+    assert result["current_ni"] == "label_only" and result["q_current_cfo"] == "stated"
+    q1 = dict(
+        RECORD,
+        fiscal_period="Q1",
+        current_start="2025-04-01",
+        q_current_start="2025-04-01",
+        q_prior_start="2024-04-01",
+    )
+    assert classify(html, q1)["current_ni"] == "stated"
+
+
+# ------------------------------------------------------------------ documents and identity
+
+
+def test_release_identification():
+    def doc(t, desc, text=""):
+        return {"type": t, "description": desc, "url": t, "parsed": {"text": text}}
+
+    pair = [doc("EX-99.1", "Press Release"), doc("EX-99.2", "Slides")]
+    assert m.identify_release(pair)[0] == "release"
+    assert m.identify_release([doc("EX-99.1", "", "ACME earnings release")])[0] == "release"
+    assert m.identify_release([doc("EX-99.1", ""), doc("EX-99.2", "")])[0] == "release_by_type"
+    two = [doc("EX-99.1", "Press release"), doc("EX-99.2", "News release")]
+    assert m.identify_release(two)[0] == "release_ambiguous"
+    assert m.identify_release([doc("EX-99.2", ""), doc("EX-99.3", "")])[0] == "release_unidentified"
+
+
+def test_document_kinds():
+    assert m.document_kind("x.pdf", b"%PDF-1.4") == "unsupported"
+    assert m.document_kind("x.htm", b"<html>") == "html"
+    assert m.document_kind("x.txt", b"text") == "text"
+    assert m.document_kind("x.jpg", b"\xff\xd8") == "unsupported"
+
+
+def header(
+    cik="0000000001",
+    form="8-K",
+    items=("2.02", "9.01"),
+    acc="0001104659-24-000001",
+    accepted="20240725161500",
+):
+    lines = [f"<ACCEPTANCE-DATETIME>{accepted}", f"<ACCESSION-NUMBER>{acc}", f"<TYPE>{form}"]
+    lines += [f"<ITEMS>{i}" for i in items] + ["<FILING-DATE>20240725", f"<CIK>{cik}"]
+    return "\n".join(lines)
+
+
+def test_header_identity():
+    def issues(text):
+        return m.header_identity(text, "0000000001", "0001104659-24-000001")["issues"]
+
+    m.Frozen(REPO)  # locks tzdata before any zone is resolved
+    good = m.header_identity(header(), "0000000001", "0001104659-24-000001")
+    assert good["issues"] == [] and good["acceptance"] == "2024-07-25T16:15:00-04:00"
+    assert issues(header(cik="0000000009")) and issues(header(form="10-Q"))
+    assert issues(header(items=("8.01",))) and issues(header(acc="0001104659-24-000002"))
+    missing = m.header_identity(header(accepted="2024", cik=""), "0000000001", "x")
+    assert missing["missing"] == ["header CIK missing", "header acceptance or filing date missing"]
+    assert missing["issues"] == ["header accession mismatch"]
+
+
+def test_archive_url_uses_issuer_cik_for_agent_filings():
+    frozen = m.Frozen(REPO)
+    base = frozen.capture.archive_base({"cik": "0000000001"}, "0001104659-24-000001")
+    assert base == "https://www.sec.gov/Archives/edgar/data/1/000110465924000001/"
+
+
+def test_projection_never_decodes_unapproved_fields(tmp_path):
+    frozen = m.Frozen(REPO)
+    path = tmp_path / "records.json"
+    huge = "7" * 5000  # json.loads cannot decode this integer
+    path.write_text(
+        '[{"accession": "a", "status": "qualified", "all_facts": ' + huge + "},"
+        ' {"accession": "b", "status": "x"}]',
+        encoding="utf-8",
+    )
+    assert m.project_values(frozen, path, ["a"]) == {"a": {"accession": "a", "status": "qualified"}}
+
+
+# ------------------------------------------------------------------ statistics
+
+
+def test_signals_bounds_and_verdicts():
+    def event(classes, kind="release", status="examined"):
+        comps = {n: {"classification": classes.get(n, "stated")} for n in m.COMPONENTS}
+        e = {"components": comps, "release": {"kind": kind}, "event_status": status}
+        return e
+
+    assert m.signal(event({}), m.S_FLOW) == {"comparable": True, "lower": True, "upper": True}
+    unverified = m.signal(event({"current_ni": "period_unverified"}), m.S_FLOW)
+    assert unverified["lower"] is False and unverified["upper"] is True
+    assert m.signal(event({"current_ni": "identity_failed"}), m.S_FLOW)["upper"] is False
+    ambiguous = m.signal(event({}, kind="release_ambiguous"), m.S_FLOW)
+    assert ambiguous == {"comparable": True, "lower": False, "upper": True}
+    empty = m.signal(event({"current_ni": "not_found"}, kind="release_ambiguous"), m.S_FLOW)
+    assert empty["upper"] is False
+    assert m.signal(event({"current_ni": "currency_mismatch"}), m.S_FLOW)["upper"] is False
+    unverified = dict(event({}), identity_unverified=True)
+    assert m.signal(unverified, m.S_FLOW) == {"comparable": True, "lower": False, "upper": True}
+    assert m.signal(event({"q_prior_ni": "not_comparable"}), m.Q_FLOW)["comparable"] is False
+    rules = DEFINITION["interpretation"]["thresholds"]
+    assert m.verdict(150, 150, 150, rules)[0] == "release_complete_common"
+    assert m.verdict(0, 10, 150, rules)[0] == "release_complete_rare"
+    assert m.verdict(80, 120, 150, rules)[0] == "inconclusive"
+    low, high = m.wilson(75, 150)
+    assert 0.41 < low < 0.43 and 0.57 < high < 0.59
+
+
+# ------------------------------------------------------------------ end-to-end lifecycle
+
+
+def calendar():
+    sessions, d = [], date(2024, 1, 2)
+    while d <= date(2025, 12, 31):
+        if d.weekday() < 5:
+            s = d.isoformat()
+            sessions.append(
+                {"session": s, "open": s + "T13:30:00+00:00", "close": s + "T20:00:00+00:00"}
+            )
+        d += timedelta(days=1)
+    return sessions
+
+
+ISSUERS = [("AAA", "0000000001"), ("BBB", "0000000002"), ("CCC", "0000000003")]
+
+
+def ids(i):
+    cik = ISSUERS[i][1]
+    return cik, f"{cik}-24-000010", f"0001104659-24-00000{i + 1}"
+
+
+def site(release=None, pdf_for=2, wrong_cik_for=1):
+    """URL -> bytes for every sampled filing."""
+    pages = {}
+    for i, (symbol, cik) in enumerate(ISSUERS):
+        _, _, k = ids(i)
+        base = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{k.replace('-', '')}/"
+        name = "ex991.pdf" if i == pdf_for else "ex991.htm"
+        rows = [("FORM 8-K", "d8k.htm", "8-K"), ("PRESS RELEASE", name, "EX-99.1")]
+        rows += [("XBRL", "x.xml", "EX-101.INS")]
+        table = "".join(
+            f'<tr><td>{n}</td><td>{d}</td><td><a href="{base}{f}">{f}</a></td><td>{t}</td></tr>'
+            for n, (d, f, t) in enumerate(rows, 1)
+        )
+        pages[base + k + "-index.html"] = (
+            f"<html><body><div>SEC Accession No. {k}</div><table>{table}</table></body></html>"
+        ).encode()
+        filer = "0000000099" if i == wrong_cik_for else cik
+        pages[base + k + ".hdr.sgml"] = header(cik=filer, acc=k).encode()
+        pages[base + name] = b"%PDF-1.4 binary" if i == pdf_for else (release or release_html())
+    return pages
+
+
+class Response(io.BytesIO):
+    def __init__(self, url, data, status=200):
+        super().__init__(data)
+        self.url, self.status, self.headers = url, status, {"Content-Type": "text/html"}
+
+
+class Opener:
+    def __init__(self, pages, fail=None):
+        self.pages, self.fail, self.calls = pages, dict(fail or {}), []
+
+    def open(self, request, timeout):
+        url = request.full_url
+        self.calls.append(url)
+        action = self.fail.pop(url, None)
+        if action == "interrupt":
+            raise KeyboardInterrupt
+        if action == "transport":
+            raise URLError("network down")
+        if isinstance(action, int):
+            raise HTTPError(url, action, "error", {}, io.BytesIO(b""))
+        if url not in self.pages:
+            raise HTTPError(url, 404, "missing", {}, io.BytesIO(b""))
+        return Response(url, self.pages[url])
+
+
+def build(tmp, records=None):
+    repo, study = tmp / "repo", tmp / "repo" / ".qualification" / m.STUDY
+    study.mkdir(parents=True)
+    for relative in (m.AUDIT[0], m.CAPTURE[0], m.FEATURES[0]):
+        (repo / relative).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(REPO / relative, repo / relative)
+    shutil.copy(HERE / "probe.py", study / "probe.py")
+    frozen = m.Frozen(repo)
+    cal = calendar()
+    events = []
+    for i, (symbol, cik) in enumerate(ISSUERS):
+        _, q, k = ids(i)
+        session = frozen.session("2025-08-05T20:00:00.000Z", "2025-08-05", cal)
+        events.append(
+            {
+                "accession": q,
+                "symbol": symbol,
+                "cik": cik,
+                "filing_date": "2025-08-05",
+                "acceptance": "2025-08-05T20:00:00.000Z",
+                "q_entry_session": session,
+                "strategy_source_qualified": True,
+                "status": "single_prior",
+                "candidates": [{"accession": k}],
+            }
+        )
+    events.append(dict(events[0], accession="0000000001-24-000099", status="multiple"))
+    paths = DEFINITION["paths"]
+    records = (
+        records
+        if records is not None
+        else [dict(RECORD, accession=ids(i)[1], all_facts=[1, 2, 3]) for i in range(3)]
+    )
+    files = {
+        paths["timing_events"]: json.dumps(events).encode(),
+        paths["calendar"]: json.dumps(cal).encode(),
+        paths["records"]: json.dumps(records).encode(),
+        "pyproject.toml": b"[project]\n",
+        "uv.lock": b"version = 1\n",
+    }
+    for relative, data in files.items():
+        (repo / relative).parent.mkdir(parents=True, exist_ok=True)
+        (repo / relative).write_bytes(data)
+    (repo / paths["shared_source_lock"]).write_bytes(b"")
+    definition = json.loads(json.dumps(DEFINITION))
+    definition["inputs"] = {r: sha(d) for r, d in files.items()}
+    definition["population"]["size"] = 3
+    definition["sample"]["size"] = 3
+    definition["requests"]["minimum_request_interval_seconds"] = 0
+    raw = (json.dumps(definition, indent=1) + "\n").encode()
+    (study / "definition.json").write_bytes(raw)
+    code = {r: sha((repo / r).read_bytes()) for r in (m.AUDIT[0], m.CAPTURE[0], m.FEATURES[0])}
+    code[f".qualification/{m.STUDY}/probe.py"] = sha((study / "probe.py").read_bytes())
+    (study / "freeze.json").write_text(json.dumps({"definition_sha256": sha(raw), "code": code}))
+    return repo, study
+
+
+def go(repo, study, opener, **kwargs):
+    return m.run(study / "definition.json", study / "freeze.json", repo, study, opener, **kwargs)
+
+
+@pytest.fixture(autouse=True)
+def no_network(monkeypatch):
+    def refuse(*args, **kwargs):
+        raise AssertionError("network access attempted")
+
+    monkeypatch.setattr(socket, "socket", refuse)
+    monkeypatch.setattr(socket, "create_connection", refuse)
+
+
+def test_end_to_end_run_and_reanalysis(tmp_path):
+    repo, study = build(tmp_path)
+    ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+    assert ready["ready"] and ready["sample_size"] == 3
+    opener = Opener(site())
+    attempt = go(repo, study, opener)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["status"] == "complete"
+    rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert all(c["classification"] == "stated" for c in rows["AAA"]["components"].values())
+    assert rows["AAA"]["signals"]["S_flow"] == {"comparable": True, "lower": True, "upper": True}
+    assert rows["BBB"]["event_status"] == "identity_failed"
+    assert rows["CCC"]["components"]["current_ni"]["classification"] == "exhibit_unavailable"
+    summary = json.loads((attempt / "summary.json").read_text())["all"]["signals"]["S_flow"]
+    assert (summary["lower_count"], summary["upper_count"], summary["comparable"]) == (1, 2, 3)
+    assert len(opener.calls) == 9 and "data.sec.gov" not in " ".join(opener.calls)
+    projection = json.loads((attempt / "projection.json").read_text())
+    assert "all_facts" not in json.dumps(projection)
+    check = m.reanalyze(attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    assert check["events_identical"] and check["summary_identical"]
+    with pytest.raises(m.ProbeError, match="already exists"):
+        go(repo, study, Opener(site()))
+    with pytest.raises(m.ProbeError, match="only running or halted"):
+        go(repo, study, Opener(site()), resume=attempt.name)
+    assert not m.preflight(study / "definition.json", study / "freeze.json", repo, study)["ready"]
+    spot = json.loads((attempt / "spot-check.json").read_text())
+    assert sorted(r["accession"] for r in spot) == sorted(rows[s]["accession"] for s in rows)
+
+
+def test_header_reclocked_to_the_10q_session_is_not_prior(tmp_path):
+    repo, study = build(tmp_path)
+    pages = site(wrong_cik_for=None, pdf_for=None)
+    for url in [u for u in pages if u.endswith(".hdr.sgml")]:
+        pages[url] = pages[url].replace(b"20240725161500", b"20250805180000")
+    attempt = go(repo, study, Opener(pages))
+    rows = json.loads((attempt / "events.json").read_text())
+    assert {r["event_status"] for r in rows} == {"header_not_prior"}
+
+
+def test_missing_header_identity_is_unverified_not_failed(tmp_path):
+    repo, study = build(tmp_path)
+    pages = site(wrong_cik_for=None, pdf_for=None)
+    for url in [u for u in pages if u.endswith(".hdr.sgml")]:
+        pages[url] = pages[url].replace(b"<CIK>", b"<NOTE>")
+    attempt = go(repo, study, Opener(pages))
+    rows = json.loads((attempt / "events.json").read_text())
+    assert {r["event_status"] for r in rows} == {"examined"}
+    assert all(r["identity_unverified"] for r in rows)
+    assert {(r["signals"]["S_flow"]["lower"], r["signals"]["S_flow"]["upper"]) for r in rows} == {
+        (False, True)
+    }
+    summary = json.loads((attempt / "summary.json").read_text())["all"]
+    assert summary["flags"]["identity_unverified"] == 3
+
+
+def test_overflowing_index_fetches_no_exhibit(tmp_path):
+    repo, study = build(tmp_path)
+    pages = site(wrong_cik_for=None, pdf_for=None)
+    index = next(u for u in pages if u.endswith("-index.html"))
+    base = index.rsplit("/", 1)[0] + "/"
+    extra = "".join(
+        f'<tr><td>9</td><td>Exhibit</td><td><a href="{base}e{i}.htm">e{i}.htm</a></td>'
+        f"<td>EX-99.{i + 2}</td></tr>"
+        for i in range(10)
+    )
+    pages[index] = pages[index].replace(b"</table>", extra.encode() + b"</table>")
+    opener = Opener(pages)
+    attempt = go(repo, study, opener)
+    assert not [u for u in opener.calls if u.startswith(base) and u.endswith(".htm")]
+    rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows["AAA"]["reason"] == "exhibit_overflow"
+
+
+def test_interruption_before_projection_is_completed_on_resume(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+
+    def stop(*args, **kwargs):
+        raise KeyboardInterrupt
+
+    with monkeypatch.context() as patch:
+        patch.setattr(m, "project_values", stop)
+        with pytest.raises(KeyboardInterrupt):
+            go(repo, study, Opener(site()))
+    attempt = next((study / "attempts").iterdir())
+    assert (attempt / "sample.json").exists() and not (attempt / "projection.json").exists()
+    with pytest.raises(m.ProbeError, match="complete attempt"):
+        m.reanalyze(attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    go(repo, study, Opener(site()), resume=attempt.name)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_rate_limit_halts_and_resumes_only_with_acknowledgement(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "halted"
+    assert (attempt / "source" / "STOP.json").exists()
+    with pytest.raises(m.ProbeError, match="acknowledge"):
+        go(repo, study, Opener(site()), resume=attempt.name)
+    opener = Opener(site())
+    go(repo, study, opener, resume=attempt.name, acknowledge_stop=True)
+    assert url not in opener.calls  # a saved outcome is never requested again
+    rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows["CCC"]["components"]["current_ni"]["classification"] == "exhibit_unavailable"
+    assert list((attempt / "source").glob("STOP-acknowledged-*.json"))
+
+
+def test_transport_failure_halts_once(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(m.ProbeError, match="Transport failure"):
+        go(repo, study, Opener(site(), fail={first: "transport"}))
+    attempt = next((study / "attempts").iterdir())
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows["AAA"]["event_status"] == "exhibit_unavailable"
+
+
+def test_interrupted_request_is_retried_once(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}))
+    attempt = next((study / "attempts").iterdir())
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "running"
+    opener = Opener(site())
+    go(repo, study, opener, resume=attempt.name)
+    assert opener.calls[0] == first
+    journal = (attempt / "source" / "requests.jsonl").read_text().splitlines()
+    starts = [json.loads(x) for x in journal if '"request_started"' in x]
+    assert [s["attempt"] for s in starts if s["url"] == first] == [1, 2]
+
+
+def test_held_locks_and_changed_declaration_refuse_before_any_request(tmp_path):
+    repo, study = build(tmp_path)
+    for path in (study / "probe.lock.sqlite", repo / DEFINITION["paths"]["shared_source_lock"]):
+        m.study_lock(study)
+        holder = sqlite3.connect(path, isolation_level=None)
+        holder.execute("BEGIN EXCLUSIVE")
+        try:
+            opener = Opener(site())
+            with pytest.raises(m.ProbeError, match="held"):
+                go(repo, study, opener)
+            assert opener.calls == []
+        finally:
+            holder.execute("ROLLBACK")
+            holder.close()
+    (study / "definition.json").write_bytes((study / "definition.json").read_bytes() + b" ")
+    with pytest.raises(m.ProbeError, match="frozen declaration"):
+        go(repo, study, Opener(site()))
+    assert not (study / "attempts").exists()
+
+
+def test_missing_q_record_leaves_the_q_denominator(tmp_path):
+    records = [dict(RECORD, accession=ids(0)[1], q_status="unavailable")]
+    repo, study = build(tmp_path, records=records)
+    attempt = go(repo, study, Opener(site()))
+    summary = json.loads((attempt / "summary.json").read_text())["all"]["signals"]
+    assert summary["Q_flow"]["comparable"] == 0 and summary["S_flow"]["comparable"] == 1
+
+
+def test_frozen_declaration_binds_this_code():
+    frozen = json.loads((HERE / "freeze.json").read_text())
+    assert frozen["definition_sha256"] == sha((HERE / "definition.json").read_bytes())
+    assert set(frozen["code"]) == {
+        m.AUDIT[0],
+        m.CAPTURE[0],
+        m.FEATURES[0],
+        f".qualification/{m.STUDY}/probe.py",
+        f".qualification/{m.STUDY}/test_probe.py",
+    }
+    for relative, digest in frozen["code"].items():
+        assert sha((REPO / relative).read_bytes()) == digest
+    assert m.declaration_problems(repo=REPO)[2] == []

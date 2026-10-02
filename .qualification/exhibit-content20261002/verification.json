@@ -1,0 +1,22 @@
+{
+ "status": "passed",
+ "checked_at": "2026-10-02T18:08:44.887810+00:00",
+ "platform": "Linux container, Python 3.13.14, uv sync --frozen",
+ "command": ".venv/bin/python -B -m pytest .qualification/exhibit-content20261002/test_probe.py -q -p no:cacheprovider",
+ "windows_command": ".venv\\Scripts\\python.exe -B -m pytest .qualification/exhibit-content20261002/test_probe.py -q -p no:cacheprovider",
+ "result": "35 passed",
+ "synthetic_only": true,
+ "network_requests": 0,
+ "sec_documents_read": false,
+ "records_json_read": false,
+ "initial_test_run": "First run: the plain-text fixture failed (its header line has no label column, so naive cell positions misaligned); plain-text cells now keep character offsets and headers align by overlap. Five lifecycle tests then failed because the frozen Cache does not create its root; the probe now creates attempts/<id>/source first. 'Three and Six Months Ended' parsed as six months; a shared-duration rule fixed it. A review before freezing then made these changes, each covered by a new or updated test (written with the change, not run against the earlier code): the attempt check moved under the study lock, a projection interrupted before it was written is completed on resume, --reanalyze accepts only a complete attempt of the frozen definition, an equal value is dropped as a different period only on a contradicting end date or duration (otherwise period_unverified), a bare year-to-date header takes the 10-Q's year-to-date length, plain-text headers skip section labels, table context is limited to text since the previous table, and a stacked mid-table period header starts a new header block. The frozen-identity test failed until freeze.json existed; then all 31 passed. Before that freeze was published, the Codex review of the previous push raised nine findings, addressed with new tests and a re-freeze: an unsigned amount under a 'net loss' or 'cash used' label is negative (one new assertion first failed because an unsigned amount was accepted with either sign; the rule now makes it negative only) and 'Net (loss) income' labels match; narrative amounts pair with the label and period of their own clause, and a clause naming an excluded measure does not count; rowspan is expanded; the spot-check membership rule is declared; a header missing identity fields is identity_unverified (lower bound only) rather than identity_failed; ambiguous releases and currency_mismatch no longer count in the upper bound by themselves. The header-identity test failed once as expected when a missing acceptance moved from issues to missing; then all 35 passed.",
+ "default_suite": "ruff check src tests scripts passes; pytest: 525 passed and the 2 known Linux test_timeout_terminates_owned_child failures remain",
+ "preflight_in_this_clone": "ready false with a single blocker: records.json missing (it is retained only on the owner's workstation); no request or write",
+ "dry_check_on_real_metadata": "draw_sample and the 10-Q session reproduction on the committed decision-session events.json and the calendar: 150 events, 56 issuers, 70 filed 2012-2020 and 80 filed 2021-2025, 50 agent-filed 8-Ks, 0 session mismatches; every archive URL passes the frozen allowed_url",
+ "files": {
+  "probe.py": "8df0f01180dde78dd3b790d06f6b8856a27fe588b6f6b10f7ef8ec29f432c0c0",
+  "test_probe.py": "ccc9d726fba292c6518ec43a9bd0e537f46bb184e31efa2f00b95aac677105b8",
+  "definition.json": "22e9733adbedc3319c0c6cf0efd90b7802eb778b4b537b760d339e115f470ebb",
+  "freeze.json": "a1f2ba9e6f551ad7138b9079607cfca44fa4e8e9bfd5528fe6cb88142e05e2c5"
+ }
+}
