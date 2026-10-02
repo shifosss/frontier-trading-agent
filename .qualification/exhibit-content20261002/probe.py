@@ -633,7 +633,9 @@ def text_tables(text):
         recent.append(cells)
         paragraph.append(" ".join(c["text"] for c in cells))
     flush()
-    return [{"rows": t["rows"], "caption": "", "context": t["context"]} for t in tables], blocks
+    return [
+        {"rows": t["rows"], "caption": "", "context": t["context"], "text": True} for t in tables
+    ], blocks
 
 
 # ------------------------------------------------------------- numbers and periods
@@ -685,6 +687,7 @@ OTHER_CURRENCY = re.compile(r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£", re.I)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(r"\(?\s*(US\$|C\$|CA\$|\$|€|£|USD|CAD|EUR|GBP)?\s*\(?")
 CODE_CELL = re.compile(r"USD|CAD|EUR|GBP")
+CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
     r"(?:thousands|millions|billions)\s+of\s+(?:canadian\s+dollars|euros?|pounds|c\$|cad|eur|gbp)"
     r"|(?:\b(?:cad|eur|gbp)\b|ca?\$|€|£)\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
@@ -818,7 +821,7 @@ def is_data_row(texts):
     """A label followed by at least one number that is not a year."""
     texts = [t for t in texts if t]
     return len(texts) >= 2 and any(
-        parse_number(t) is not None and not is_year(t) for t in texts[1:]
+        parse_number(CELL_SCALE.sub("", t)) is not None and not is_year(t) for t in texts[1:]
     )
 
 
@@ -875,22 +878,75 @@ def is_period_row(cells):
     )
 
 
+def _merge(filled):
+    """Join currency marks, codes, parentheses and percent signs to the value cells they mark."""
+    merged, prefix = [], ""
+    for c in filled[1:]:
+        text = c["text"]
+        if PREFIX_CELL.fullmatch(text):
+            prefix += text
+            continue
+        if merged and (text in (")", ")%", "%") or CODE_CELL.fullmatch(text)):
+            merged[-1]["text"] += (" " + text) if text[0].isalpha() else text
+            continue
+        joined = prefix + (" " if prefix[-1:].isalpha() else "") + text
+        merged.append({"text": joined, "col": c["col"], "span": c["span"]})
+        prefix = ""
+    if merged and CODE_CELL.search(prefix):  # a trailing code cell marks the last value
+        merged[-1]["text"] += " " + prefix.strip()
+    return merged
+
+
 def table_cells(table):
-    """Yield (label, value cell text, column header, table context, row index) per value.
+    """Yield (label, value cell text, column header, table-wide context, row index) per value.
 
     The header is the rows above the first data row. After a data row, a period row starts a new
-    header block (a stacked section such as 'Six Months Ended') for the rows below it.
+    header block (a stacked section such as 'Six Months Ended') for the rows below it. A value's
+    column header is the header cells overlapping its columns. The table-wide context is the
+    caption and preceding text, header cells that overlap no value column (such as '(in
+    thousands)' above the labels), and header rows with a single filled cell outside the label
+    column; another column's header never supplies a value's period or scale.
     """
     rows = grid(table["rows"])
     context = " ".join([table.get("caption", ""), table.get("context", "")])
+    values = [
+        (m["col"], m["span"])
+        for cells in rows
+        if is_data_row([c["text"] for c in cells])
+        for m in _merge([c for c in cells if c["text"]])
+    ]
     header, fresh = [], True
+    tolerance = 6 if table.get("text") else 0  # plain-text headers sit near, not over, values
+
+    def overlaps(c, column, span):
+        return c["col"] < column + span and column < c["col"] + c["span"]
 
     def column_header(column, span):
+        """Per header row, the cell overlapping the value most, else (plain text) the nearest
+        cell within the tolerance; one cell per row, so a neighbour's header is never borrowed."""
         parts = []
         for cells in header:
+            best, key = None, None
             for c in cells:
-                if c["col"] < column + span and column < c["col"] + c["span"] and c["text"]:
-                    parts.append(c["text"])
+                if not c["text"]:
+                    continue
+                overlap = min(c["col"] + c["span"], column + span) - max(c["col"], column)
+                if overlap <= -tolerance or (overlap <= 0 and not tolerance):
+                    continue
+                if key is None or overlap > key:
+                    best, key = c, overlap
+            if best is not None:
+                parts.append(best["text"])
+        return " ".join(parts)
+
+    def wide():
+        parts = [context]
+        for cells in header:
+            filled = [c for c in cells if c["text"]]
+            over = [c for c in filled if any(overlaps(c, col, span) for col, span in values)]
+            parts += [c["text"] for c in filled if c not in over]  # e.g. '(in thousands)'
+            if len(over) == 1:
+                parts.append(over[0]["text"])  # a single header over the values spans them all
         return " ".join(parts)
 
     for row, cells in enumerate(rows):
@@ -902,25 +958,9 @@ def table_cells(table):
             continue
         fresh = False
         filled = [c for c in cells if c["text"]]
-        label = filled[0]["text"]
-        merged, prefix = [], ""
-        for c in filled[1:]:
-            text = c["text"]
-            if PREFIX_CELL.fullmatch(text):
-                prefix += text
-                continue
-            if merged and (text in (")", ")%", "%") or CODE_CELL.fullmatch(text)):
-                merged[-1]["text"] += (" " + text) if text[0].isalpha() else text
-                continue
-            joined = prefix + (" " if prefix[-1:].isalpha() else "") + text
-            merged.append({"text": joined, "col": c["col"], "span": c["span"]})
-            prefix = ""
-        if merged and CODE_CELL.search(prefix):  # a trailing code cell marks the last value
-            merged[-1]["text"] += " " + prefix.strip()
-        header_text = " ".join(c["text"] for cells_ in header for c in cells_)
-        for m in merged:
-            column = column_header(m["col"], m["span"])
-            yield label, m["text"], column, context + " " + header_text, row
+        table_wide = wide()
+        for m in _merge(filled):
+            yield filled[0]["text"], m["text"], column_header(m["col"], m["span"]), table_wide, row
 
 
 def sentences(blocks):
@@ -1001,6 +1041,9 @@ def fiscal_quarters(clause):
     ]
 
 
+QUARTER_ENDED = re.compile(r"[^.;]{0,15}?\bend(?:ed|ing)\s+" + DATE_MDY.pattern, re.I)
+
+
 def clause_result(clause, spec, amounts):
     """stated, different_period or period_unverified for an equal amount in one clause.
 
@@ -1010,8 +1053,14 @@ def clause_result(clause, spec, amounts):
     both are period_unverified."""
     parsed, quarters = parse_period(clause), fiscal_quarters(clause)
     named = durations(clause)
+    # 'second quarter of fiscal 2025 ended June 30, 2025' describes one period, not two
+    separate = [
+        f for f in FISCAL_QUARTER.finditer(clause) if not QUARTER_ENDED.match(clause, f.end())
+    ]
     periods = max(
-        len(DATE_MDY.findall(clause)) + len(quarters), len(set(YEAR.findall(clause))), len(named)
+        len(set(DATE_MDY.findall(clause))) + len(separate),
+        len(set(YEAR.findall(clause))),
+        len(named),
     )
     if (amounts > 1 and periods > 1) or len(named) > 1:
         return "period_unverified"
@@ -1049,12 +1098,13 @@ def match_component(doc, spec, concept):
             if not matched:
                 continue
             label_seen = True
-            parsed = parse_number(cell)
+            unit = CELL_SCALE.search(cell)
+            parsed = parse_number(CELL_SCALE.sub("", cell) if unit else cell)
             if parsed is None:
                 continue
             number, decimals, currency = parsed
             negative = negative_label(label)
-            options = scales(context + " " + header)
+            options = scales(unit[0]) if unit else scales(context + " " + header)
             scale = equal(number, decimals, options, spec["value"], negative)
             if scale is None:
                 continue
@@ -1093,8 +1143,10 @@ def match_component(doc, spec, concept):
         current = None  # the label window that later unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
             labels = []  # (start, end, usable window or None when excluded)
+            starts = [a[5] for a in money_amounts(clause)]
             for f in LABELS[concept].finditer(clause):
-                excluded = EXCLUDED_LABEL.search(clause[max(0, f.start() - 30) : f.end() + 25])
+                upto = min([a for a in starts if a >= f.end()] or [len(clause)])
+                excluded = EXCLUDED_LABEL.search(clause[max(0, f.start() - 30) : upto])
                 window = None if excluded else clause[f.start() : f.end() + 10]
                 labels.append((f.start(), f.end(), window))
             if any(window for _, _, window in labels):
@@ -1103,8 +1155,13 @@ def match_component(doc, spec, concept):
             for text, number, decimals, word, usd, at in amounts:
                 before = [(end_, window) for start_, end_, window in labels if start_ < at]
                 owner, since = before[-1][::-1] if before else (current, 0)
-                if owner is None or OTHER_METRIC.search(clause[since:at]):
-                    continue  # no label, an excluded measure, or another metric in between
+                between = clause[since:at]
+                if (
+                    owner is None
+                    or OTHER_METRIC.search(between)
+                    or any(LABELS[other].search(between) for other in LABELS if other != concept)
+                ):
+                    continue  # no label, an excluded measure, or another measure in between
                 scale_options = scales(word) if word else [Decimal(1)]
                 scale = equal(number, decimals, scale_options, spec["value"], negative_label(owner))
                 if scale is None:
@@ -1126,13 +1183,15 @@ def match_component(doc, spec, concept):
                     note(result, item)
             if labels:
                 current = labels[-1][2]
-    if best:
+    if best in ("stated", "period_unverified", "scale_unverified"):
         return best, evidence
-    for image in doc["images"]:
+    for image in doc["images"]:  # an image of the statement may still hold the USD value
         if STATEMENT_IMAGE[concept].search(
             " ".join([image["alt"], image["src"], image["context"]])
         ):
             return "exhibit_unavailable", evidence + [{"image": image, "reason": "image_dependent"}]
+    if best:
+        return best, evidence
     return ("label_only" if label_seen else "not_found"), evidence
 
 
@@ -1187,7 +1246,6 @@ def classify_component(release_docs, spec, concept):
             result, items = "exhibit_unavailable", [{"reason": reason}]
         else:
             result, items = match_component(doc["parsed"], spec, concept)
-            items = [i for i in items if i.get("result") != "different_period"] or items
         evidence += [dict(i, document=doc["url"], sha256=doc.get("sha256")) for i in items]
         seen.add(result)
     for result in order:
@@ -1485,6 +1543,23 @@ def fetch_event(frozen, cache, event):
             data, meta = cache.get(url)
             return data, None
         except capture.Halt:
+            starts = sum(r["url"] == url for r in cache.starts)
+            ceiling = cache.request["max_attempts_per_url"]
+            if not record.exists() and starts >= ceiling:
+                # Interrupted at every allowed attempt: record a terminal failure (never requested
+                # again) and stop for the owner's review instead of halting on every resume.
+                failure = {
+                    "url": url,
+                    "status": "interrupted",
+                    "error": "Interrupted at each of " + str(starts) + " allowed attempts",
+                }
+                write_json(frozen, record, failure)
+                (cache.root / "STOP.json").write_text(
+                    json.dumps(dict(failure, at=now())), encoding="utf-8"
+                )
+                raise capture.Halt(
+                    "Request interrupted at its attempt ceiling; review, then resume"
+                )
             raise
         except capture.CaptureError as exc:
             # A transport failure (no HTTP status) stops the attempt until the owner acknowledges

@@ -367,6 +367,46 @@ def test_narrative_evidence_records_label_and_period():
     assert evidence[0]["period"]["end"] == "2025-06-30"
 
 
+def test_cell_units_own_column_periods_and_equivalent_quarter_dates():
+    unit = table(
+        [b"Three Months Ended June 30, 2025"], [b"Net income", b"$5.2 million"], before=b""
+    )
+    assert classify(unit)["current_ni"] == "stated"
+    bare = table([b"Three Months Ended June 30, 2025", b"2025"], [b"Net income", b"9.9", b"5.2"])
+    assert classify(bare)["current_ni"] == "period_unverified"
+    same = (
+        b"<p>For the second quarter of fiscal 2025 ended June 30, 2025, net income was $5.2"
+        b" million and revenue was $100 million.</p>"
+    )
+    assert classify(same)["current_ni"] == "stated"
+
+
+def test_sibling_measures_noncontrolling_phrases_and_images_over_currency():
+    sibling = (
+        b"<p>Net income was $4.0 million and cash flow from operations was $5.2 million for the"
+        b" three months ended June 30, 2025.</p>"
+    )
+    assert classify(sibling)["current_ni"] == "label_only"
+    minority = (
+        b"<p>Net income attributable to noncontrolling interests for the three months ended"
+        b" June 30, 2025 was $5.2 million.</p>"
+    )
+    assert classify(minority)["current_ni"] == "not_found"
+    image = (
+        b"<p>Net income for the three months ended June 30, 2025 was C$5.2 million.</p>"
+        b"<p>Condensed Statements of Operations</p><img src='p.jpg'>"
+    )
+    assert classify(image)["current_ni"] == "exhibit_unavailable"
+
+
+def test_evidence_keeps_matches_under_a_contradicting_period():
+    doc = m.parse_document("html", release_html(ytd_ni=("5.2", "3.0")))
+    docs = [{"url": "u", "kind": "html", "sha256": "s", "parsed": doc}]
+    result, evidence = m.classify_component(docs, m.comparison(RECORD)["current_ni"], "net_income")
+    assert result == "stated"
+    assert {"stated", "different_period"} <= {e.get("result") for e in evidence}
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -931,6 +971,23 @@ def test_reanalysis_rechecks_inputs_and_projection(tmp_path):
     calendar.write_bytes(calendar.read_bytes() + b" ")
     with pytest.raises(m.ProbeError, match="Input missing or changed"):
         m.reanalyze(*args)
+
+
+def test_a_url_interrupted_at_its_ceiling_becomes_a_reviewed_failure(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}))
+    attempt = next((study / "attempts").iterdir())
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}), resume=attempt.name)
+    opener = Opener(site())
+    with pytest.raises(m.ProbeError, match="attempt ceiling"):
+        go(repo, study, opener, resume=attempt.name)
+    assert first not in opener.calls and (attempt / "source" / "STOP.json").exists()
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows["AAA"]["event_status"] == "exhibit_unavailable"
 
 
 def test_resume_refuses_an_attempt_started_under_other_code(tmp_path):
