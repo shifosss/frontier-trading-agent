@@ -20,6 +20,14 @@ The study lives in [`.qualification/disclosure-timing20261001`](../.qualificatio
 
 Item 2.02 metadata says an earnings-related release was furnished. It does not say whether the release reported the same quarter, net income, year-to-date operating cash flow or assets. Submissions API acceptance times are not header-verified and are not proof of first public dissemination. A `supported` verdict therefore justifies only the next separately declared step: a bounded, seeded random sample of original press-release exhibits, recording which S/Q components were actually public. Only components shown to be public may ever be used at the earlier clock, in a new predeclared economic comparison.
 
-## To run it
+## Status and verification
 
-It has run once (attempt `31316f533e4f4c0e829d9e5bfbc4c6a4`); a rerun needs a new declared amendment. For reference, restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and two empty source lock files, not the 31.8 GB corpus. Restore the two lock files first: until both exist, the preflight reports only them and reads no source input. Then run `audit.py --preflight` until it reports `ready: true` with an empty or accepted `issuer_unavailable` list, and run `audit.py` once. A second run of the same frozen definition is refused; a rerun needs a new declared amendment. Record the attempt and summary in a dated `*-results.md` next to this file.
+The audit has run once (attempt `31316f533e4f4c0e829d9e5bfbc4c6a4`, see the [results](disclosure-timing-results.md)). Do not restore inputs to run it again: `audit.py --preflight` now reports `ready: false` because that attempt already used the frozen definition, and `audit.py` refuses before creating anything. A rerun needs a new declared amendment that records why.
+
+To verify the committed record without the retained inputs:
+
+1. Run the synthetic tests: `.venv/bin/python -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider` (on Windows `.venv/Scripts/python.exe`).
+2. Check that `definition.json` hashes to the `definition_sha256` in `freeze.json` and in the attempt's `attempt.json`, and that each amendment record matches its SHA256 in `freeze.json`.
+3. Check that each file under `attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/` matches the SHA256 listed in `attempt.json` `files`.
+
+The next stage is a separately declared, seeded exhibit-content probe of qualified `single_prior` candidates; it needs its own declaration and the owner's approval before any SEC request.
