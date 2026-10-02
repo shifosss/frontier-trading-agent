@@ -1,6 +1,6 @@
 # Earnings disclosure timing: 8-K Item 2.02 audit results
 
-**October 2, 2026: the frozen audit ran once and completed. Primary verdict: `supported_at_metadata_level`.** For 1,284 to 1,294 of the 2,010 strategy-qualified 10-Q events (63.9% to 64.4%), a same-company original 8-K with Item 2.02 became public at least one XNYS session before the 10-Q's decision session. This is filing metadata only. It does not show which S/Q components the earlier release contained, it changes no completed result, and it promotes no strategy.
+**October 2, 2026: the frozen audit ran once and completed. Primary verdict: `supported_at_metadata_level`.** For 1,284 to 1,294 of the 2,010 strategy-qualified 10-Q events (63.9% to 64.4%), a same-company original 8-K with Item 2.02 has SEC submissions acceptance metadata that maps, under the frozen clock, to a decision session at least one XNYS session before the 10-Q's. This is filing metadata only: acceptance time is not proof of first public dissemination. It does not show which S/Q components the earlier release contained, it changes no completed result, and it promotes no strategy.
 
 ## Run identity
 
@@ -8,7 +8,7 @@
 - Runtime: CPython 3.13.14 on Linux, SQLite 3.45.1, `tzdata` 2026.4 with an empty zoneinfo search path. America/New_York TZif SHA256 `d7f2206b…1fa9`.
 - No network requests, and no prices, returns, S/Q values or exhibits read. Both source read locks and the audit lock were held throughout.
 - Preflight before the run: `ready: true`, nothing blocking, 0 `issuer_unavailable`.
-- The inputs came from the owner's Google Drive copy of the retained workspace. Only the 249 needed files (97.7 MB) were fetched, out of a 31.8 GB corpus:
+- The inputs came from the owner's Google Drive copy of the retained workspace. Only the 250 needed files (120.6 MB) were fetched, out of a 31.8 GB corpus:
   - 69 `discovery.json` files
   - 100 root submissions sources
   - 79 history pages
@@ -50,7 +50,7 @@ Among the 1,284 qualified events with a prior candidate, the earliest one led th
 
 The median lead is 2 sessions (p75 7, p90 11, max 98). 480 qualified events (23.9% of 2,010) had the 8-K at least 5 sessions earlier, which is the completed study's full holding length.
 
-The other large group is `single_same_session`: 686 qualified events (34.1%) whose 8-K reached the same decision session as the 10-Q. Their median acceptance gap is 0.49 hours, and in 117 of them the 8-K was accepted after the 10-Q. For these rows, the completed study's decision was not later than the release.
+The other large group is `single_same_session`: 686 qualified events (34.1%) whose 8-K reached the same decision session as the 10-Q. Their median acceptance gap is 0.49 hours, and in 117 of them the 10-Q was accepted before the 8-K. Both filings precede the completed study's 09:00 ET decision on that shared session, so these rows give no session in which only the 8-K was available.
 
 ## Trend by filing year (all registered originals)
 
@@ -93,6 +93,9 @@ The declared next stage has not started. Before any request, it needs its own de
 
 Only components shown to be public may ever be used at the earlier clock, and only in a new predeclared economic comparison.
 
-## Known limitation carried forward
+## Known limitations carried forward
 
-A missing, truncated or key-less `freeze.json` makes `audit.py` and `--preflight` raise (`FileNotFoundError`, `JSONDecodeError` or `KeyError`) instead of returning a structured declaration blocker. It fails closed: no attempt is created. `audit.py` is left byte-identical to the code this attempt recorded (SHA256 `c4ccaa30…57b4`), so the fix belongs in any future amendment rather than a post-run edit.
+Both are left in place because `audit.py` stays byte-identical to the code this attempt recorded (SHA256 `c4ccaa30…57b4`); their fixes belong in any future amendment rather than a post-run edit.
+
+- `issuers.json` stores each resolved raw source as an absolute path in this run's checkout (`/home/user/frontier-trading-agent/…`, 179 records). Every record also carries the source URL and SHA256, and `attempt.json` lists the same sources repository-relative, so the prefix can be stripped mechanically.
+- A missing, truncated or key-less `freeze.json` makes `audit.py` and `--preflight` raise (`FileNotFoundError`, `JSONDecodeError` or `KeyError`) instead of returning a structured declaration blocker. It fails closed: no attempt is created.
