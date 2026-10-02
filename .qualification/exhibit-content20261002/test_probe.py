@@ -559,6 +559,37 @@ def test_singleton_currency_headers_and_mismatch_evidence_periods():
     assert result == "currency_mismatch" and evidence[0]["period"]["end"] == "2025-06-30"
 
 
+def test_trailing_qualifiers_non_gaap_columns_fy_quarters_images_and_forecasts():
+    period = b" for the three months ended June 30, 2025"
+    for tail in (b" attributable to noncontrolling interests", b" from continuing operations"):
+        html = b"<p>Net income" + period + b" was $5.2 million" + tail + b".</p>"
+        assert classify(html)["current_ni"] == "label_only", tail
+    per_share = b"<p>Net income" + period + b" was $5.2 million, or 52 cents per diluted share.</p>"
+    assert classify(per_share)["current_ni"] == "stated"
+    column = table([b"Non-GAAP Three Months Ended June 30, 2025"], [b"Net income", b"5.2"])
+    assert classify(column)["current_ni"] == "label_only"
+    for phrase in (b"Q2 FY2025", b"FY2025 Q2", b"Q2 FY25", b"fiscal 2025 second quarter"):
+        html = b"<p>Net income for " + phrase + b" was $5.2 million.</p>"
+        assert classify(html)["current_ni"] == "stated", phrase
+    other = b"<p>Net income for Q1 FY2025 was $5.2 million.</p>"
+    assert classify(other)["current_ni"] == "label_only"  # a different quarter is not counted
+    for name, component in (
+        (b"income_statement.png", "current_ni"),
+        (b"Income%20Statement.jpg", "current_ni"),
+        (b"cash-flow-statement.png", "q_current_cfo"),
+        (b"balance-sheet.jpg", "prior_fy_assets"),
+    ):
+        image = classify(b"<p>Results.</p><img src='" + name + b"'>")
+        assert image[component] == "exhibit_unavailable", name
+    for text in (
+        b"<p>We forecast net income"
+        + period.replace(b"ended", b"ending")
+        + b" of $5.2 million.</p>",
+        b"<p>Net income" + period + b" is expected to be $5.2 million.</p>",
+    ):
+        assert classify(text)["current_ni"] == "label_only", text
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -1153,6 +1184,27 @@ def test_reanalysis_checks_the_recorded_output_bytes(tmp_path):
     check = m.reanalyze(*args)
     assert check["events_identical"] and not check["files_match_record"]
     assert not check["reproduced"]
+
+
+def test_reanalysis_checks_the_saved_source_records(tmp_path):
+    repo, study = build(tmp_path)
+    attempt = go(repo, study, Opener(site()))
+    args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert "requests.jsonl" in meta["source"] and not any(
+        k.startswith("raw/") for k in meta["source"]
+    )
+    assert m.reanalyze(*args)["source_matches_record"]
+    journal = attempt / "source" / "requests.jsonl"
+    saved = journal.read_bytes()
+    journal.write_bytes(saved.replace(b'"at": "', b'"at":  "', 1))
+    check = m.reanalyze(*args)
+    assert check["events_identical"] and not check["source_matches_record"]
+    assert not check["reproduced"]
+    journal.write_bytes(saved)
+    record = next((attempt / "source" / "resources").glob("*.json"))
+    record.write_bytes(record.read_bytes().replace(b"retrieved_at_utc", b"retrieved_at_UTC"))
+    assert not m.reanalyze(*args)["reproduced"]
 
 
 def test_reanalysis_rechecks_inputs_and_projection(tmp_path):

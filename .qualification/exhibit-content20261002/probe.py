@@ -27,7 +27,7 @@ from decimal import Decimal, InvalidOperation
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qs, urljoin, urlparse
+from urllib.parse import parse_qs, unquote, urljoin, urlparse
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from zoneinfo import ZoneInfo
 
@@ -1110,9 +1110,11 @@ def money_amounts(clause):
     return out
 
 
-FISCAL_QUARTER = re.compile(
-    r"\b(first|second|third|fourth|q[1-4])\b[^.;]{0,25}?\b(?:fiscal\s+)?((?:19|20)\d{2})\b"
-    r"|\bfiscal\s+((?:19|20)\d{2})\s+(first|second|third|fourth)\b",
+FISCAL_QUARTER = re.compile(  # 'second quarter of fiscal 2025', 'Q2 FY2025', 'FY25 Q2'
+    r"\b(?P<qa>first|second|third|fourth|q[1-4])\b[^.;]{0,25}?"
+    r"(?:\bfy\s*'?(?P<ya2>\d{2})\b|\b(?:fiscal\s+|fy\s*'?)?(?P<ya>(?:19|20)\d{2})\b)"
+    r"|\b(?:fiscal\s+(?P<yb>(?:19|20)\d{2})|fy\s*'?(?P<yb2>(?:19|20)?\d{2}))\s+"
+    r"(?P<qb>first|second|third|fourth|q[1-4])\b",
     re.I,
 )
 ORDINAL = {"first": 1, "second": 2, "third": 3, "fourth": 4, "q1": 1, "q2": 2, "q3": 3, "q4": 4}
@@ -1123,6 +1125,17 @@ OTHER_METRIC = re.compile(  # a different measure named between a label and an a
     r"|gross (profit|margin)|margins?|earnings per|per (basic |diluted )?share|eps"
     r"|free cash flow|cash and cash equivalents|bookings|backlog|adjusted|non-?gaap|guidance"
     r"|outlook|total assets|capital expenditures|investing activities|financing activities)\b",
+    re.I,
+)
+QUALIFIER = re.compile(  # a non-GAAP or partial measure named after an amount or over a column
+    r"adjusted|non-?gaap|pro forma|excluding|\bbefore\s+(?:income\s+)?tax"
+    r"|non-?controlling|minority|(?:continuing|discontinued)\s+operations",
+    re.I,
+)
+TRAIL_END = re.compile(r"\b(?:and|while|whereas|but)\b", re.I)
+PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
+    r"\b(?:forecast(?:s|ed|ing)?|project(?:ed|ing|ions?)|expect(?:s|ed|ing)?"
+    r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|(?:will|would|could|may|should)\s+be)\b",
     re.I,
 )
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
@@ -1159,9 +1172,14 @@ def negative_label(text):
     return bool(loss or used)
 
 
+def _fiscal_year(found):
+    year = found["ya"] or found["ya2"] or found["yb"] or found["yb2"]
+    return int(year) if len(year) == 4 else 2000 + int(year)  # 'FY25': the filings are 2012-2025
+
+
 def fiscal_quarters(clause):
     return [
-        (ORDINAL.get((f[1] or f[4] or "").lower()), int(f[2] or f[3]))
+        (ORDINAL.get((f["qa"] or f["qb"]).lower()), _fiscal_year(f))
         for f in FISCAL_QUARTER.finditer(clause)
     ]
 
@@ -1260,6 +1278,8 @@ def match_component(doc, spec, concept):
                 if whole["end"] and (whole["months"] or whole["ytd"]):
                     period = whole
             item["period"] = {k: str(v) for k, v in period.items()}
+            if QUALIFIER.search(header) or QUALIFIER.search(units[1]):
+                continue  # a non-GAAP or partial column ('Non-GAAP Three Months Ended ...')
             if (
                 currency == "other"
                 or OTHER_CURRENCY_WORDS.search(header)
@@ -1302,11 +1322,18 @@ def match_component(doc, spec, concept):
                 gap = clause[earlier[-1][5] + len(earlier[-1][0]) : at] if earlier else between
                 if not before and not earlier:
                     gap = ", " + gap  # an owner carried from an earlier clause: a new subject
+                # the words after the amount up to the next amount or conjunction, at most 80
+                after = at + len(text)
+                stop = TRAIL_END.search(clause, after)
+                ends = [a[5] for a in amounts if a[5] > at] + [len(clause), after + 80]
+                trail = clause[after : min(ends + ([stop.start()] if stop else []))]
                 if (
                     owner is None
                     or OTHER_METRIC.search(between)
                     or any(LABELS[other].search(between) for other in LABELS if other != concept)
                     or new_subject(gap)
+                    or QUALIFIER.search(trail)  # '$5.2 million attributable to noncontrolling'
+                    or PROSPECTIVE.search(clause)  # 'is expected to be $5.2 million'
                 ):
                     continue  # no label, an excluded measure, or another measure in between
                 scale_options = scales(word) if word else [Decimal(1)]
@@ -1332,9 +1359,8 @@ def match_component(doc, spec, concept):
     if best in ("stated", "period_unverified", "scale_unverified"):
         return best, evidence
     for image in doc["images"]:  # an image of the statement may still hold the USD value
-        if STATEMENT_IMAGE[concept].search(
-            " ".join([image["alt"], image["src"], image["context"]])
-        ):
+        name = re.sub(r"[_\-+.]+", " ", unquote(image["src"]))  # 'income_statement.png'
+        if STATEMENT_IMAGE[concept].search(" ".join([image["alt"], name, image["context"]])):
             return "exhibit_unavailable", evidence + [{"image": image, "reason": "image_dependent"}]
     if best:
         return best, evidence
@@ -1707,6 +1733,16 @@ def quarantine_partial_raw(source):
     return moved
 
 
+def source_manifest(source):
+    """SHA256 of every saved source record (request journal, resource records, stops,
+    quarantined parts); raw payloads are named by their SHA256 and checked whenever read."""
+    return {
+        path.relative_to(source).as_posix(): file_sha(path)
+        for path in sorted(source.rglob("*"))
+        if path.is_file() and path.relative_to(source).parts[0] != "raw"
+    }
+
+
 def quarantine_journal_tail(source, keep):
     """Move aside an incomplete last line of requests.jsonl (a crash during the frozen cache's
     append) before the cache parses the journal. The cache sends a request only after its
@@ -2034,7 +2070,8 @@ def run(
             meta.update(status="failed", failed_at_utc=now(), error=repr(exc))
             write_json(frozen, record, meta)
             raise
-        meta.update(status="complete", finished_at_utc=now(), files=outputs)
+        manifest = source_manifest(attempt / "source")
+        meta.update(status="complete", finished_at_utc=now(), files=outputs, source=manifest)
         write_json(frozen, record, meta)
         return attempt
 
@@ -2132,6 +2169,8 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
         # the saved bytes are the ones the run wrote, not a rewrite with equal content
         "files_match_record": set(recorded) == set(expected)
         and all(file_sha(attempt / name) == recorded[name] for name in expected),
+        # the journal, resource records and stops are the ones the run left
+        "source_matches_record": source_manifest(attempt / "source") == meta.get("source"),
         "recorded_files": recorded,
     }
     check["reproduced"] = all(v for k, v in check.items() if k != "recorded_files")
