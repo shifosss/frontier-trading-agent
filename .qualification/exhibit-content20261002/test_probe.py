@@ -517,6 +517,48 @@ def test_prose_rows_join_their_cells_and_table_wide_header_currency():
     assert classify(usd)["current_ni"] == "stated"
 
 
+def test_new_measures_dated_quarters_nested_context_and_one_column_periods():
+    tax = (
+        b"<p>Net income was $4.0 million and income tax expense was $5.2 million for the three"
+        b" months ended June 30, 2025.</p>"
+    )
+    assert classify(tax)["current_ni"] == "label_only"
+    carried = b"<p>Net income for the three months ended June 30, 2025 rose; R&amp;D expense was"
+    carried += b" $5.2 million for the three months ended June 30, 2025.</p>"
+    assert classify(carried)["current_ni"] == "label_only"
+    respectively = (
+        b"<p>Net income was $5.2 million and $4.0 million for the three months ended June 30,"
+        b" 2025 and 2024, respectively.</p>"
+    )
+    assert classify(respectively)["current_ni"] == "period_unverified"
+    dated = (
+        b"<p>For the second quarter of fiscal 2025, the periods ended March 31, 2025 and June 30,"
+        b" 2025 had net income of $5.2 million.</p>"
+    )
+    assert classify(dated)["current_ni"] == "period_unverified"
+    nested = b"""<table><tr><td>(in millions of Canadian dollars)<table>
+<tr><td></td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td>Net income</td><td>5.2</td></tr></table></td></tr></table>"""
+    assert classify(nested)["current_ni"] == "currency_mismatch"
+    one = b"<p>Three Months Ended June 30, 2025 (in millions)</p><table>"
+    one += b"<tr><td>Net income</td><td>5.2</td></tr></table>"
+    assert classify(one)["current_ni"] == "stated"
+    two = one.replace(b"<td>5.2</td>", b"<td>5.2</td><td>4.0</td>")
+    assert classify(two)["current_ni"] == "period_unverified"
+
+
+def test_singleton_currency_headers_and_mismatch_evidence_periods():
+    html = b"""<p>(in millions)</p><table>
+<tr><td></td><td>CAD</td><td></td></tr>
+<tr><td></td><td>Three Months Ended June 30, 2025</td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td>Net income</td><td>7.1</td><td>5.2</td></tr></table>"""
+    assert classify(html)["current_ni"] == "stated"
+    cad = table([b"Three Months Ended June 30, 2025", b""], [b"Net income", b"5.2", b"CAD"])
+    doc = m.parse_document("html", cad)
+    result, evidence = m.match_component(doc, m.comparison(RECORD)["current_ni"], "net_income")
+    assert result == "currency_mismatch" and evidence[0]["period"]["end"] == "2025-06-30"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -1052,6 +1094,39 @@ def test_unidentified_release_still_reports_any_ex99(tmp_path):
     assert all(r["any_ex99"]["current_ni"] == "stated" for r in rows)
     summary = json.loads((attempt / "summary.json").read_text())["all"]
     assert summary["stated_in_any_ex99"]["current_ni"] == 3
+
+
+def test_any_ex99_readout_needs_a_verified_identity(tmp_path):
+    repo, study = build(tmp_path)
+    pages = site(wrong_cik_for=None, pdf_for=None)
+    for url in [u for u in pages if u.endswith("-index.html")]:
+        pages[url] = (
+            pages[url].replace(b"PRESS RELEASE", b"EXHIBIT").replace(b"EX-99.1", b"EX-99.2")
+        )
+    first = next(u for u in pages if u.endswith(".hdr.sgml"))
+    pages[first] = pages[first].replace(b"<TYPE>8-K", b"")  # the form is missing: unverified
+    attempt = go(repo, study, Opener(pages))
+    rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows["AAA"]["identity_unverified"] and rows["AAA"]["any_ex99"] == {}
+    summary = json.loads((attempt / "summary.json").read_text())["all"]
+    assert summary["stated_in_any_ex99"]["current_ni"] == 2
+
+
+def test_saved_error_responses_are_verified(tmp_path):
+    frozen = m.Frozen(REPO)
+    url = "https://www.sec.gov/Archives/edgar/data/1/000110465924000001/ex992.htm"
+    body = b"<html>Not Found</html>"
+    (tmp_path / "raw").mkdir()
+    (tmp_path / "resources").mkdir()
+    (tmp_path / "raw" / (sha(body) + ".bin")).write_bytes(body)
+    meta = {"url": url, "status": 404, "error": "HTTP 404", "bytes": len(body)}
+    meta.update(sha256=sha(body), path="raw/" + sha(body) + ".bin")
+    record = tmp_path / "resources" / (frozen.capture.sha(url.encode()) + ".json")
+    record.write_text(json.dumps(meta))
+    assert m.saved(tmp_path, frozen.capture, url) == (None, "HTTP 404")
+    (tmp_path / "raw" / (sha(body) + ".bin")).write_bytes(body + b" ")
+    with pytest.raises(m.ProbeError, match="Saved response changed"):
+        m.saved(tmp_path, frozen.capture, url)
 
 
 def test_transport_failure_stop_survives_a_crash_before_stop_json(tmp_path):

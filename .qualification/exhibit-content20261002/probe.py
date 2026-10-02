@@ -485,8 +485,12 @@ class Release(HTMLParser):
         if tag == "table":
             if top is None:
                 self._flush()
+                context = self.context()
+            else:  # a nested table also takes the text before it in its enclosing cell
+                cell = "".join(top["cell"]["text"]) if top["cell"] is not None else ""
+                context = " ".join((top["context"] + " " + cell).split())[-300:]
             self.stack.append(
-                {"rows": [], "caption": "", "context": self.context(), "row": None, "cell": None}
+                {"rows": [], "caption": "", "context": context, "row": None, "cell": None}
             )
         elif tag == "tr" and top is not None:
             top["row"] = []
@@ -963,8 +967,19 @@ def _merge(filled):
     return merged
 
 
+def value_columns(rows):
+    """(column, span) of every merged value in the data rows of a gridded table."""
+    return [
+        (m["col"], m["span"])
+        for cells in rows
+        if is_data_row([c["text"] for c in cells])
+        for m in _merge([c for c in cells if c["text"]])
+    ]
+
+
 def table_cells(table):
-    """Yield (label, value text, column header, table-wide context, row, unit texts) per value.
+    """Yield (label, value text, column header, table-wide context, row, unit texts, table-wide
+    currency text) per value.
 
     The header is the rows above the first data row. After a data row, a period row starts a new
     header block (a stacked section such as 'Six Months Ended') for the rows below it. A value's
@@ -975,12 +990,7 @@ def table_cells(table):
     """
     rows = grid(table["rows"])
     context = " ".join([table.get("caption", ""), table.get("context", "")])
-    values = [
-        (m["col"], m["span"])
-        for cells in rows
-        if is_data_row([c["text"] for c in cells])
-        for m in _merge([c for c in cells if c["text"]])
-    ]
+    values = value_columns(rows)
     header, fresh = [], True
     tolerance = 6 if table.get("text") else 0  # plain-text headers sit near, not over, values
 
@@ -1006,14 +1016,18 @@ def table_cells(table):
         return " ".join(parts)
 
     def header_wide():
-        parts = []
+        """Table-wide header text, and the part of it that may name every value's currency."""
+        parts, currency = [], []
         for cells in header:
             filled = [c for c in cells if c["text"]]
             over = [c for c in filled if any(overlaps(c, col, span) for col, span in values)]
             parts += [c["text"] for c in filled if c not in over]  # e.g. '(in thousands)'
-            if len(over) == 1:
-                parts.append(over[0]["text"])  # a single header over the values spans them all
-        return " ".join(parts)
+            currency += [c["text"] for c in filled if c not in over]
+            if len(over) == 1:  # a single header over the values: its period and scale are
+                parts.append(over[0]["text"])  # shared ('Three Months Ended' over the first)
+                if all(overlaps(over[0], col, span) for col, span in values):
+                    currency.append(over[0]["text"])  # a currency only when it spans them all
+        return " ".join(parts), " ".join(currency)
 
     for row, cells in enumerate(rows):
         if not is_data_row([c["text"] for c in cells]):
@@ -1024,11 +1038,11 @@ def table_cells(table):
             continue
         fresh = False
         filled = [c for c in cells if c["text"]]
-        wide = header_wide()
+        wide, currency = header_wide()
         for m in _merge(filled):
             column = column_header(m["col"], m["span"])
             units = [column, wide, table.get("caption", ""), table.get("context", "")]
-            yield filled[0]["text"], m["text"], column, context + " " + wide, row, units
+            yield filled[0]["text"], m["text"], column, context + " " + wide, row, units, currency
 
 
 ABBREVIATIONS = (
@@ -1111,6 +1125,25 @@ OTHER_METRIC = re.compile(  # a different measure named between a label and an a
     r"|outlook|total assets|capital expenditures|investing activities|financing activities)\b",
     re.I,
 )
+NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
+    r"(?:[,;]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
+    r"(?!(?:it|this|that|which|they|these|those|in|for|during|at|on|of|from|to|by|with|was|were"
+    r"|is|are|and|or|while|whereas|but)\b)\b(?P<subject>[a-z][\w&'\-]*(?:\s+[a-z][\w&'\-]*){0,5})\s+"
+    r"(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached)\s+"
+    r"(?:(?:approximately|about|roughly)\s+)?$",
+    re.I,
+)
+PERIOD_WORD = re.compile(  # 'and first six months were' names a period, not a measure
+    r"\b(?:months?|quarters?|years?|weeks?|periods?|half|fiscal|ytd|year-to-date|ended|ending)\b",
+    re.I,
+)
+
+
+def new_subject(gap):
+    found = NEW_SUBJECT.search(gap)
+    return bool(found) and not PERIOD_WORD.search(found["subject"])
+
+
 CLAUSE = re.compile(
     r";|,?\s+(?:as\s+)?compared\s+(?:with|to)\s+|\s+versus\s+|\s+vs\.?\s+"
     r"|,\s+(?:and|while|whereas|up|down)\s+",
@@ -1154,8 +1187,10 @@ def clause_result(clause, spec, amounts):
         len(set(YEAR.findall(clause))),
         len(named),
     )
+    dates = {(m.lower()[:3], int(d), int(y)) for m, d, y in DATE_MDY.findall(clause)}
     # every quarter phrase counts here, including one followed by its own end date
-    if (amounts > 1 and periods > 1) or len(named) > 1 or len(set(quarters)) > 1:
+    several = len(named) > 1 or len(set(quarters)) > 1 or len(dates) > 1
+    if (amounts > 1 and periods > 1) or several:
         return "period_unverified"
     fiscal = spec.get("fiscal") or {}
     quarter_ok = False
@@ -1193,7 +1228,8 @@ def match_component(doc, spec, concept):
 
     for index, table in enumerate(doc["tables"]):
         table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
-        for label, cell, header, context, row, units in table_cells(table):
+        single = len({col for col, _ in value_columns(grid(table["rows"]))}) == 1
+        for label, cell, header, context, row, units, wide_currency in table_cells(table):
             matched = label_match(label, concept)
             if not matched:
                 continue
@@ -1216,16 +1252,22 @@ def match_component(doc, spec, concept):
                 "header": header.strip(),
             }
             item["scale"] = str(scale)
+            period = parse_period(header, context)
+            if single and not any(period.values()):
+                # a one-column table whose header names no period takes a complete duration
+                # from its caption or heading ('Three Months Ended June 30, 2025 (in millions)')
+                whole = parse_period(context)
+                if whole["end"] and (whole["months"] or whole["ytd"]):
+                    period = whole
+            item["period"] = {k: str(v) for k, v in period.items()}
             if (
                 currency == "other"
                 or OTHER_CURRENCY_WORDS.search(header)
-                or OTHER_CURRENCY_WORDS.search(units[1])  # header cells over the whole table
+                or OTHER_CURRENCY_WORDS.search(wide_currency)  # header cells over every value
                 or CONTEXT_CURRENCY.search(table_wide)
             ):
                 note("currency_mismatch", item)
                 continue
-            period = parse_period(header, context)
-            item["period"] = {k: str(v) for k, v in period.items()}
             if not period_ok(period, spec):
                 note(_period_result(period, spec), item)
             elif len(options) > 1 and scale != 1:
@@ -1255,10 +1297,16 @@ def match_component(doc, spec, concept):
                 before = [(end_, window) for start_, end_, window in labels if start_ < at]
                 owner, since = before[-1][::-1] if before else (current, 0)
                 between = clause[since:at]
+                earlier = [a for a in amounts if since <= a[5] and a[5] + len(a[0]) <= at]
+                # the text since the owner's last amount (or the label) introduces this amount
+                gap = clause[earlier[-1][5] + len(earlier[-1][0]) : at] if earlier else between
+                if not before and not earlier:
+                    gap = ", " + gap  # an owner carried from an earlier clause: a new subject
                 if (
                     owner is None
                     or OTHER_METRIC.search(between)
                     or any(LABELS[other].search(between) for other in LABELS if other != concept)
+                    or new_subject(gap)
                 ):
                     continue  # no label, an excluded measure, or another measure in between
                 scale_options = scales(word) if word else [Decimal(1)]
@@ -1405,7 +1453,8 @@ def analyse_event(event, fetched, specs, frozen, calendar):
         else:
             result, evidence = classify_component(release_docs, spec, CONCEPT[name])
             out["components"][name] = {"classification": result, "evidence": evidence}
-    if status is None or out.get("reason") == "release_unidentified":
+    readout = status is None or out.get("reason") == "release_unidentified"
+    if readout and not out.get("identity_unverified"):  # only for a verified filer identity
         for name in COMPONENTS:
             if specs.get(name) is not None:
                 result, _ = classify_component(fetched["documents"], specs[name], CONCEPT[name])
@@ -1768,11 +1817,16 @@ def saved(cache_root, capture, url):
     if not record.exists():
         return None, "not fetched"
     meta = load(record)
+    data = None
+    if "path" in meta:  # any saved payload, an error response's included, must be unchanged
+        try:
+            data = (cache_root / meta["path"]).read_bytes()
+        except OSError as exc:
+            raise ProbeError("Saved response missing: " + url) from exc
+        if len(data) != meta.get("bytes") or sha(data) != meta.get("sha256"):
+            raise ProbeError("Saved response changed: " + url)
     if meta.get("error") or meta.get("status") != 200:
         return None, meta.get("error") or "HTTP " + str(meta.get("status"))
-    data = (cache_root / meta["path"]).read_bytes()
-    if sha(data) != meta["sha256"]:
-        raise ProbeError("Saved response changed: " + url)
     return data, None
 
 
