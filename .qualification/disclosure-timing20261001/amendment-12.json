@@ -1,0 +1,24 @@
+{
+ "id": "amendment-12",
+ "recorded_at_utc": "2026-10-01T20:04:10.264141+00:00",
+ "supersedes_definition_sha256": "47b14c3b771a67747bb09eba63ea29d636c862712f5ccdfd70a807c5946cba4e",
+ "new_definition_sha256": "e48d158b119094f0b320a3d0f875eb27475febc93688bb29b3ba397c9c151ca2",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "No candidate matching, window, timing or outcome has been computed; the audit has never run.",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, three P2 findings on commit 6c3d1f20",
+ "changes": [
+  {
+   "field": "scope.reads; audit.py load_event_fields/project_json",
+   "reason": "The object_pairs_hook projection dropped S, Q and u only after json had decoded them. A projection parser now decodes only the approved members' values and skips every other value by scanning its bytes, and the scope says exactly that."
+  },
+  {
+   "field": "preflight; audit.py preflight",
+   "reason": "Preflight still inspected sources when a source lock file was absent, but a starting worker creates that file, so its absence guards nothing. A missing source lock now stops preflight before any source input is hashed or read, as a held or invalid one does, and every lock problem is reported."
+  },
+  {
+   "field": "verification.json (record only; not bound by the freeze)",
+   "reason": "The recorded interface.md digest was stale. All verification.json file digests are now computed after the last edit to each listed file."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate rules, clock, classification, outputs, bounds and verdict thresholds."
+}

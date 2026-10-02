@@ -4,7 +4,7 @@ Start with [the project handbook](docs/project-handbook.md), then `config/mandat
 
 ## Current priority
 
-The October1 handover/publication and cached disclosure timing audit are complete. Read `docs/disclosure-novelty-results.md` and its frozen definition/reviews before continuing. Next: declare a bounded, source-only original 8-K document/exhibit probe to verify candidate filer identity, fiscal period and components actually disclosed. Metadata timing alone does not qualify an earlier financial signal. Do not rerun the unchanged cached audit or completed earnings, ETF, conditional, multi-model or intraday studies. Repository: `https://github.com/shifosss/frontier-trading-agent`.
+The October1 handover/publication and cached disclosure timing audit are complete. Read `docs/disclosure-novelty-results.md` and its frozen definition/reviews before continuing. Next: declare a bounded, source-only original 8-K document/exhibit probe to verify candidate filer identity, fiscal period and components actually disclosed. Metadata timing alone does not qualify an earlier financial signal. Do not rerun the unchanged cached audit or completed earnings, ETF, conditional, multi-model or intraday studies. Repository: `https://github.com/shifosss/frontier-trading-agent`. A second, independently declared decision-session audit (`docs/disclosure-timing-results.md`) also ran once on October 2 and agrees on timing; do not rerun it either.
 
 ## Governing constraints
 

@@ -1,0 +1,540 @@
+{
+ "primary_stratum": "strategy_source_qualified",
+ "primary_verdict": "supported_at_metadata_level",
+ "strata": {
+  "all_registered_originals": {
+   "denominator": 4057,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 46,
+    "ambiguous_metadata": 0,
+    "no_candidate": 85,
+    "single_prior": 2349,
+    "single_same_session": 1325,
+    "single_after": 22,
+    "multiple": 230
+   },
+   "with_prior_candidate_lower": 2568,
+   "with_prior_candidate_upper": 2614,
+   "prior_share_lower": 0.6329800345082573,
+   "prior_share_upper": 0.6443184619176732,
+   "late_10q_beyond_window": 8,
+   "earliest_prior_lead_sessions": {
+    "n": 2568,
+    "min": 1,
+    "p25": 1,
+    "median": 3,
+    "p75": 8,
+    "p90": 12,
+    "max": 205
+   },
+   "lead_at_least_5_sessions": 1145,
+   "verdict": "supported_at_metadata_level"
+  },
+  "captured_originals": {
+   "denominator": 3867,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 44,
+    "ambiguous_metadata": 0,
+    "no_candidate": 81,
+    "single_prior": 2272,
+    "single_same_session": 1238,
+    "single_after": 7,
+    "multiple": 225
+   },
+   "with_prior_candidate_lower": 2486,
+   "with_prior_candidate_upper": 2530,
+   "prior_share_lower": 0.6428756141711921,
+   "prior_share_upper": 0.6542539436255496,
+   "late_10q_beyond_window": 8,
+   "earliest_prior_lead_sessions": {
+    "n": 2486,
+    "min": 1,
+    "p25": 1,
+    "median": 3,
+    "p75": 8,
+    "p90": 12,
+    "max": 205
+   },
+   "lead_at_least_5_sessions": 1127,
+   "verdict": "supported_at_metadata_level"
+  },
+  "strategy_source_qualified": {
+   "denominator": 2010,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 10,
+    "ambiguous_metadata": 0,
+    "no_candidate": 23,
+    "single_prior": 1166,
+    "single_same_session": 686,
+    "single_after": 1,
+    "multiple": 124
+   },
+   "with_prior_candidate_lower": 1284,
+   "with_prior_candidate_upper": 1294,
+   "prior_share_lower": 0.6388059701492538,
+   "prior_share_upper": 0.6437810945273632,
+   "late_10q_beyond_window": 3,
+   "earliest_prior_lead_sessions": {
+    "n": 1284,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 7,
+    "p90": 11,
+    "max": 98
+   },
+   "lead_at_least_5_sessions": 480,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2012": {
+   "denominator": 263,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 3,
+    "ambiguous_metadata": 0,
+    "no_candidate": 10,
+    "single_prior": 172,
+    "single_same_session": 57,
+    "single_after": 5,
+    "multiple": 16
+   },
+   "with_prior_candidate_lower": 188,
+   "with_prior_candidate_upper": 191,
+   "prior_share_lower": 0.714828897338403,
+   "prior_share_upper": 0.7262357414448669,
+   "late_10q_beyond_window": 1,
+   "earliest_prior_lead_sessions": {
+    "n": 188,
+    "min": 1,
+    "p25": 2,
+    "median": 6,
+    "p75": 9,
+    "p90": 13,
+    "max": 91
+   },
+   "lead_at_least_5_sessions": 121,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2013": {
+   "denominator": 269,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 4,
+    "ambiguous_metadata": 0,
+    "no_candidate": 4,
+    "single_prior": 169,
+    "single_same_session": 66,
+    "single_after": 3,
+    "multiple": 23
+   },
+   "with_prior_candidate_lower": 188,
+   "with_prior_candidate_upper": 192,
+   "prior_share_lower": 0.6988847583643123,
+   "prior_share_upper": 0.7137546468401487,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 188,
+    "min": 1,
+    "p25": 3,
+    "median": 6,
+    "p75": 9,
+    "p90": 13,
+    "max": 22
+   },
+   "lead_at_least_5_sessions": 118,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2014": {
+   "denominator": 279,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 7,
+    "ambiguous_metadata": 0,
+    "no_candidate": 3,
+    "single_prior": 183,
+    "single_same_session": 64,
+    "single_after": 4,
+    "multiple": 18
+   },
+   "with_prior_candidate_lower": 201,
+   "with_prior_candidate_upper": 208,
+   "prior_share_lower": 0.7204301075268817,
+   "prior_share_upper": 0.7455197132616488,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 201,
+    "min": 1,
+    "p25": 1,
+    "median": 5,
+    "p75": 8,
+    "p90": 12,
+    "max": 22
+   },
+   "lead_at_least_5_sessions": 115,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2015": {
+   "denominator": 289,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 7,
+    "ambiguous_metadata": 0,
+    "no_candidate": 4,
+    "single_prior": 179,
+    "single_same_session": 70,
+    "single_after": 4,
+    "multiple": 25
+   },
+   "with_prior_candidate_lower": 202,
+   "with_prior_candidate_upper": 209,
+   "prior_share_lower": 0.698961937716263,
+   "prior_share_upper": 0.7231833910034602,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 202,
+    "min": 1,
+    "p25": 1,
+    "median": 5,
+    "p75": 8,
+    "p90": 14,
+    "max": 26
+   },
+   "lead_at_least_5_sessions": 107,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2016": {
+   "denominator": 290,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 2,
+    "ambiguous_metadata": 0,
+    "no_candidate": 11,
+    "single_prior": 181,
+    "single_same_session": 79,
+    "single_after": 4,
+    "multiple": 13
+   },
+   "with_prior_candidate_lower": 194,
+   "with_prior_candidate_upper": 196,
+   "prior_share_lower": 0.6689655172413793,
+   "prior_share_upper": 0.6758620689655173,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 194,
+    "min": 1,
+    "p25": 1,
+    "median": 3,
+    "p75": 8,
+    "p90": 12,
+    "max": 26
+   },
+   "lead_at_least_5_sessions": 92,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2017": {
+   "denominator": 292,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 6,
+    "ambiguous_metadata": 0,
+    "no_candidate": 6,
+    "single_prior": 186,
+    "single_same_session": 82,
+    "single_after": 1,
+    "multiple": 11
+   },
+   "with_prior_candidate_lower": 197,
+   "with_prior_candidate_upper": 203,
+   "prior_share_lower": 0.6746575342465754,
+   "prior_share_upper": 0.6952054794520548,
+   "late_10q_beyond_window": 1,
+   "earliest_prior_lead_sessions": {
+    "n": 197,
+    "min": 1,
+    "p25": 1,
+    "median": 3,
+    "p75": 7,
+    "p90": 10,
+    "max": 19
+   },
+   "lead_at_least_5_sessions": 82,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2018": {
+   "denominator": 297,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 11,
+    "ambiguous_metadata": 0,
+    "no_candidate": 10,
+    "single_prior": 176,
+    "single_same_session": 84,
+    "single_after": 0,
+    "multiple": 16
+   },
+   "with_prior_candidate_lower": 190,
+   "with_prior_candidate_upper": 201,
+   "prior_share_lower": 0.6397306397306397,
+   "prior_share_upper": 0.6767676767676768,
+   "late_10q_beyond_window": 4,
+   "earliest_prior_lead_sessions": {
+    "n": 190,
+    "min": 1,
+    "p25": 1,
+    "median": 3,
+    "p75": 7,
+    "p90": 11,
+    "max": 205
+   },
+   "lead_at_least_5_sessions": 83,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2019": {
+   "denominator": 293,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 2,
+    "ambiguous_metadata": 0,
+    "no_candidate": 4,
+    "single_prior": 174,
+    "single_same_session": 100,
+    "single_after": 0,
+    "multiple": 13
+   },
+   "with_prior_candidate_lower": 187,
+   "with_prior_candidate_upper": 189,
+   "prior_share_lower": 0.6382252559726962,
+   "prior_share_upper": 0.6450511945392492,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 187,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 7,
+    "p90": 10,
+    "max": 27
+   },
+   "lead_at_least_5_sessions": 77,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2020": {
+   "denominator": 296,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 1,
+    "ambiguous_metadata": 0,
+    "no_candidate": 7,
+    "single_prior": 156,
+    "single_same_session": 105,
+    "single_after": 0,
+    "multiple": 27
+   },
+   "with_prior_candidate_lower": 182,
+   "with_prior_candidate_upper": 183,
+   "prior_share_lower": 0.6148648648648649,
+   "prior_share_upper": 0.6182432432432432,
+   "late_10q_beyond_window": 1,
+   "earliest_prior_lead_sessions": {
+    "n": 182,
+    "min": 1,
+    "p25": 1,
+    "median": 3,
+    "p75": 8,
+    "p90": 13,
+    "max": 98
+   },
+   "lead_at_least_5_sessions": 78,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2021": {
+   "denominator": 296,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 0,
+    "ambiguous_metadata": 0,
+    "no_candidate": 3,
+    "single_prior": 161,
+    "single_same_session": 118,
+    "single_after": 1,
+    "multiple": 13
+   },
+   "with_prior_candidate_lower": 174,
+   "with_prior_candidate_upper": 174,
+   "prior_share_lower": 0.5878378378378378,
+   "prior_share_upper": 0.5878378378378378,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 174,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 6,
+    "p90": 11,
+    "max": 19
+   },
+   "lead_at_least_5_sessions": 59,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2022": {
+   "denominator": 297,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 1,
+    "ambiguous_metadata": 0,
+    "no_candidate": 8,
+    "single_prior": 153,
+    "single_same_session": 115,
+    "single_after": 0,
+    "multiple": 20
+   },
+   "with_prior_candidate_lower": 172,
+   "with_prior_candidate_upper": 173,
+   "prior_share_lower": 0.5791245791245792,
+   "prior_share_upper": 0.5824915824915825,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 172,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 6,
+    "p90": 12,
+    "max": 24
+   },
+   "lead_at_least_5_sessions": 64,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2023": {
+   "denominator": 297,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 2,
+    "ambiguous_metadata": 0,
+    "no_candidate": 4,
+    "single_prior": 148,
+    "single_same_session": 128,
+    "single_after": 0,
+    "multiple": 15
+   },
+   "with_prior_candidate_lower": 162,
+   "with_prior_candidate_upper": 164,
+   "prior_share_lower": 0.5454545454545454,
+   "prior_share_upper": 0.5521885521885522,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 162,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 7,
+    "p90": 11,
+    "max": 19
+   },
+   "lead_at_least_5_sessions": 55,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2024": {
+   "denominator": 299,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 0,
+    "ambiguous_metadata": 0,
+    "no_candidate": 4,
+    "single_prior": 159,
+    "single_same_session": 127,
+    "single_after": 0,
+    "multiple": 9
+   },
+   "with_prior_candidate_lower": 168,
+   "with_prior_candidate_upper": 168,
+   "prior_share_lower": 0.5618729096989966,
+   "prior_share_upper": 0.5618729096989966,
+   "late_10q_beyond_window": 1,
+   "earliest_prior_lead_sessions": {
+    "n": 168,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 5,
+    "p90": 11,
+    "max": 31
+   },
+   "lead_at_least_5_sessions": 50,
+   "verdict": "supported_at_metadata_level"
+  },
+  "filed_2025": {
+   "denominator": 300,
+   "status_counts": {
+    "issuer_unavailable": 0,
+    "q_metadata_unavailable": 0,
+    "q_session_unavailable": 0,
+    "window_coverage_incomplete": 0,
+    "ambiguous_metadata": 0,
+    "no_candidate": 7,
+    "single_prior": 152,
+    "single_same_session": 130,
+    "single_after": 0,
+    "multiple": 11
+   },
+   "with_prior_candidate_lower": 163,
+   "with_prior_candidate_upper": 163,
+   "prior_share_lower": 0.5433333333333333,
+   "prior_share_upper": 0.5433333333333333,
+   "late_10q_beyond_window": 0,
+   "earliest_prior_lead_sessions": {
+    "n": 163,
+    "min": 1,
+    "p25": 1,
+    "median": 2,
+    "p75": 5,
+    "p90": 10,
+    "max": 25
+   },
+   "lead_at_least_5_sessions": 44,
+   "verdict": "supported_at_metadata_level"
+  }
+ },
+ "issuers_unavailable": 0,
+ "issuers_without_item_2_02_8k": [],
+ "raw_8k_occurrences": 26712,
+ "unique_item_2_02_8k": 8052,
+ "source_lock": "read_guards_held",
+ "network_requests": 0,
+ "prices_or_returns_read": false
+}

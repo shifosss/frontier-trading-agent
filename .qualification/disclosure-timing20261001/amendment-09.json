@@ -1,0 +1,20 @@
+{
+ "id": "amendment-09",
+ "recorded_at_utc": "2026-10-01T19:25:03.227287+00:00",
+ "supersedes_definition_sha256": "1edc4ee9a2bd39e9a5377519cbf30d05b7243342dc5ced42c2046b52dec7fa0b",
+ "new_definition_sha256": "be3d744981013f84cf3ccadbc69658856fd6fb27eb46216a3ede3ae911f76903",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, two P2 findings on commit e4dfaffc",
+ "changes": [
+  {
+   "field": "provenance.source_location; audit.py resolve_source/observed_state/run",
+   "reason": "Captured history pages are resolved dynamically and were not covered by the final identity check. Every resolved raw source path (or its absence) is now recorded repository-relative with its SHA256 and re-hashed before completion; a page changed after it was read fails the attempt."
+  },
+  {
+   "field": "preflight; audit.py read_guard/preflight",
+   "reason": "Preflight hashed and parsed source inputs without holding the capture read transaction. It now inspects sources inside the same read guard as a run, skips inspection with a blocker when the lock is held or invalid, and reports whether inspection was guarded."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate rules, clock, classification, inputs, outputs, bounds and verdict thresholds."
+}

@@ -6249,28 +6249,38 @@
     },
     {
       "id": "disclosure-novelty",
-      "title": "Proposed source-only8-K disclosure novelty/timing",
-      "summary_document": "docs/earnings-quality-results.md",
-      "key_facts": "Undeclared/unexecuted; must freeze criteria and verify original-period/components before outcome work.",
+      "title": "Source-only 8-K Item 2.02 disclosure timing audit",
+      "summary_document": "docs/disclosure-timing-results.md",
+      "key_facts": "Frozen October 1 (definition e48d158b119094f0b320a3d0f875eb27475febc93688bb29b3ba397c9c151ca2, amendment-12); run once October 2: supported at metadata level, 63.9-64.4% of 2,010 qualified events. Timing metadata only; exhibit components unverified.",
       "attempt_or_run_ids_in_results_document": [
-        "7487019bf15a4eb89e1a3702f5a0f7fb"
+        "31316f533e4f4c0e829d9e5bfbc4c6a4"
       ],
-      "evidence_root": ".qualification/earnings-quality20260928",
-      "definition_paths": [],
-      "result_completion_paths": [],
-      "verification_source_paths": [],
+      "evidence_root": ".qualification/disclosure-timing20261001",
+      "definition_paths": [
+        ".qualification/disclosure-timing20261001/definition.json",
+        ".qualification/disclosure-timing20261001/freeze.json"
+      ],
+      "result_completion_paths": [
+        ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/attempt.json",
+        ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/summary.json"
+      ],
+      "verification_source_paths": [
+        ".qualification/disclosure-timing20261001/verification.json",
+        ".qualification/disclosure-timing20261001/test_audit.py"
+      ],
       "matched_inventory_files": 33371,
       "matched_inventory_bytes": 11911125501,
       "omitted_files": 28889,
       "omitted_bytes": 11839490406,
       "restoration": "Recover exact identities from artifact-inventory.csv. Restore raw sources/models/accounts as the declared runner requires; never reacquire/refit unchanged by default.",
       "runtime": "Python>=3.13,<3.14 with uv.lock; scikit-learn1.7.2 and declared per-attempt dependency/runtime identities; frontend runtime only for UI.",
-      "first_safe_verification": "Get-FileHash -Algorithm SHA256 -LiteralPath <exact retained definition/result/archive path>; compare inventory/source manifest.",
+      "first_safe_verification": ".venv/Scripts/python.exe -B -m pytest .qualification/disclosure-timing20261001/test_audit.py -q -p no:cacheprovider (synthetic, offline); compare the attempt.json files SHA256 values with the committed outputs. Do not rerun audit.py: the frozen definition has run once.",
       "verification_limit": "Hash checks establish identity only. Read each independent checker interface and restore all required inputs before an arithmetic/source/model audit; run_* scripts may execute acquisitions/fits/accounts and are not a first verification command.",
       "evidence_roots": [
+        ".qualification/disclosure-timing20261001",
         ".qualification/earnings-quality20260928"
       ],
-      "status": "Proposed only; no frozen definition, attempt or outcome exists for this hypothesis.",
+      "status": "Completed October 2: one complete attempt; verdict supported_at_metadata_level. The next stage (seeded exhibit-content probe) needs its own declaration.",
       "reused_completed_evidence_root": ".qualification/earnings-quality20260928"
     }
   ],

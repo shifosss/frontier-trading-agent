@@ -1,0 +1,24 @@
+{
+ "id": "amendment-08",
+ "recorded_at_utc": "2026-10-01T19:15:49.470856+00:00",
+ "supersedes_definition_sha256": "f7e3d8c49188ec9ffd149f2704fbe9a8d5d5a9767f9596171a9e48c1daf99eba",
+ "new_definition_sha256": "1edc4ee9a2bd39e9a5377519cbf30d05b7243342dc5ced42c2046b52dec7fa0b",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, three P2 findings on commit 39151f72",
+ "changes": [
+  {
+   "field": "provenance.source_location; audit.py run final check",
+   "reason": "The final identity check excluded the 4,057 manifests, so a manifest changed after the initial check could be consumed by a completed attempt. The final check now also recomputes the manifest count and digest."
+  },
+  {
+   "field": "runtime.tzdata, runtime.timezone_data; audit.py use_locked_tzdata/tz_identity",
+   "reason": "On Linux ZoneInfo read unbound system TZif files. A real run now resolves time zones only from the uv.lock-pinned tzdata package (2026.4, required), and records the America/New_York TZif SHA256."
+  },
+  {
+   "field": "locks; audit.py lock_busy/locks",
+   "reason": "A directory or other non-regular path named audit.lock.sqlite was treated as an absent free lock in preflight and crashed the run. It is now blocking in preflight and refused with AuditError by a run."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate rules, clock function, classification, inputs, outputs, bounds and verdict thresholds."
+}

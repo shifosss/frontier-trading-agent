@@ -10,6 +10,8 @@ The project has implemented substantial research, data, model, accounting, inter
 
 The latest completed study is the 100-issuer cash-backed earnings comparison of September 29. The next proposed research was disclosure novelty/timing using cached SEC metadata, but the owner requested this handover before continuation. **No original 8-K matching audit, new financial capture, new fit, or new economic test was run during this documentation task.**
 
+**Update October 2:** the source-only 8-K Item 2.02 timing audit was then declared, frozen and run once (attempt `31316f533e4f4c0e829d9e5bfbc4c6a4`). It was supported at the metadata level: for 63.9-64.4% of the 2,010 qualified events, an Item 2.02 8-K's acceptance metadata maps to an earlier decision session. It shows timing only, not which S/Q components were public; do not rerun it unchanged. See [the results](../disclosure-timing-results.md).
+
 ## Owner mandate and its evolution
 
 | Subject | Governing decision | Recorded reason or implication |

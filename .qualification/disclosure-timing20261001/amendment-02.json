@@ -1,0 +1,18 @@
+{
+ "id": "amendment-02",
+ "recorded_at_utc": "2026-10-01T18:10:26.047930+00:00",
+ "supersedes_definition_sha256": "851ef8bb767e558f4d9f192bf27024a09b4a548d2865c3242451d6bb36450205",
+ "new_definition_sha256": "6c3053d40d0a384705d5eff551138894c3f158500335a8fc7707210e5c07ab47",
+ "attempts_under_superseded_definition": 0,
+ "outcome_access_before_amendment": "none: no 8-K submissions row, price, return, S/Q value or exhibit was read; the audit has never run",
+ "trigger": "Automated Codex review of pull request shifosss/frontier-trading-agent#2, P2 finding on commit 51d4b6e9",
+ "changes": [
+  {
+   "field": "clock.limits and audit.py 10-Q session",
+   "from": "10-Q session only computed for classified rows; a missing session (unavailable issuer) passed the consistency check",
+   "to": "every 10-Q session recomputed from its frozen manifest regardless of issuer source status; the check requires exact equality for every saved event with an entry_session",
+   "reason": "A qualified event of an unavailable issuer escaped the declared clock check. Computing the clock from the in-clone manifest keeps the check strict without making one missing retained file fatal. A synthetic test reproduced the gap on the previous code before the change."
+  }
+ ],
+ "unchanged": "Denominators, window, candidate form/token, clock function, ambiguity/coverage rules, locks, statistics and verdict thresholds."
+}

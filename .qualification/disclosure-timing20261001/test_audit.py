@@ -1,0 +1,987 @@
+"""Offline synthetic checks for the 8-K Item 2.02 timing audit. No SEC, price or outcome data."""
+
+import hashlib
+import importlib.util
+import json
+import re
+import socket
+import sqlite3
+import sys
+from datetime import date, timedelta
+from pathlib import Path
+
+import pytest
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[1]
+E = ".qualification/earnings-quality20260928"
+
+
+def module():
+    spec = importlib.util.spec_from_file_location("timing_audit_under_test", HERE / "audit.py")
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+m = module()
+FROZEN = json.loads((HERE / "definition.json").read_text(encoding="utf-8"))
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def row(acc, form, filed, accepted, report="", items="", primary="doc.htm"):
+    return {
+        "accessionNumber": acc,
+        "filingDate": filed,
+        "reportDate": report,
+        "acceptanceDateTime": accepted,
+        "form": form,
+        "items": items,
+        "primaryDocument": primary,
+    }
+
+
+def table(rows):
+    keys = list(rows[0])
+    return {k: [r[k] for r in rows] for k in keys}
+
+
+def calendar():
+    sessions, d = [], date(2019, 12, 2)
+    while d <= date(2021, 3, 31):
+        if d.weekday() < 5:
+            s = d.isoformat()
+            sessions.append(
+                {"session": s, "open": s + "T14:30:00+00:00", "close": s + "T21:00:00+00:00"}
+            )
+        d += timedelta(days=1)
+    return {"sessions": sessions}
+
+
+def acc(cik, n):
+    return f"{cik:010d}-20-{n:06d}"
+
+
+# Issuer AAA (root only): single prior, same-session, after (+ 8-K/A and non-matching tokens).
+AAA = [
+    row(acc(1, 30), "8-K", "2020-11-05", "2020-11-05T21:10:00.000Z", "2020-11-05", "2.02,9.01"),
+    row(acc(1, 29), "8-K/A", "2020-11-02", "2020-11-02T21:10:00.000Z", "2020-10-28", "2.02"),
+    row(acc(1, 28), "10-Q", "2020-10-29", "2020-10-29T20:00:00.000Z", "2020-09-30"),
+    row(acc(1, 27), "8-K", "2020-10-15", "2020-10-15T20:00:00.000Z", "2020-10-15", "12.02,5.02"),
+    row(acc(1, 26), "8-K", "2020-09-30", "2020-09-30T20:00:00.000Z", "2020-09-30", "2.02"),
+    row(acc(1, 20), "10-Q", "2020-07-30", "2020-07-30T11:00:00.000Z", "2020-06-30"),
+    row(acc(1, 11), "8-K", "2020-06-23", "2020-06-23T20:05:00.000Z", "2020-06-23", "2.02"),
+    row(acc(1, 19), "8-K", "2020-07-30", "2020-07-30T10:30:00.000Z", "2020-07-30", "2.02,9.01"),
+    row(acc(1, 10), "10-Q", "2020-05-01", "2020-05-01T20:30:00.000Z", "2020-03-31"),
+    row(acc(1, 8), "8-K", "2020-04-28", "2020-04-28T20:05:00.000Z", "2020-04-28", "2.02, 9.01"),
+    row(acc(1, 7), "8-K", "2020-04-20", "2020-04-20T20:05:00.000Z", "2020-04-20", "5.02"),
+]
+# Issuer BBB (root + one history page): multiple, coverage gap, empty items, duplicate occurrence.
+BBB_ROOT = [
+    row(acc(2, 40), "10-Q", "2020-11-04", "2020-11-04T21:00:00.000Z", "2020-09-30"),
+    row(acc(2, 39), "8-K", "2020-10-20", "2020-10-20T21:00:00.000Z", "2020-10-20", ""),
+    row(acc(2, 31), "10-Q", "2020-08-05", "2020-08-05T21:00:00.000Z", "2020-06-30"),
+    row(acc(2, 30), "8-K", "2020-07-28", "2020-07-28T21:00:00.000Z", "2020-07-28", "2.02"),
+    row(acc(2, 29), "8-K", "2020-07-21", "2020-07-21T12:00:00.000Z", "2020-07-21", "2.02,7.01"),
+    row(acc(2, 25), "8-K", "2020-06-25", "2020-06-25T21:00:00.000Z", "2020-06-25", "5.02"),
+]
+BBB_HISTORY = [
+    row(acc(2, 20), "10-Q", "2020-05-06", "2020-05-06T21:00:00.000Z", "2020-03-31"),
+    row(acc(2, 18), "8-K", "2020-04-30", "2020-04-30T21:00:00.000Z", "2020-04-30", "2.02"),
+]
+# Issuer CCC: retained history page is missing; its 10-Q stays in the denominator.
+# Its 10-Q is also filed after reportDate + 83 days, so it carries the late flag.
+CCC_ROOT = [row(acc(3, 10), "10-Q", "2020-09-25", "2020-09-25T21:00:00.000Z", "2020-06-30")]
+CCC_HISTORY = [
+    row(acc(3, 5), "8-K", "2020-04-30", "2020-04-30T21:00:00.000Z", "2020-04-30", "2.02")
+]
+# Issuer DDD: one 8-K accession appears twice with different items -> conflict.
+DDD_ROOT = [
+    row(acc(4, 10), "10-Q", "2020-08-06", "2020-08-06T21:00:00.000Z", "2020-06-30"),
+    row(acc(4, 9), "8-K", "2020-07-20", "2020-07-20T21:00:00.000Z", "2020-07-20", "2.02"),
+]
+DDD_HISTORY = [
+    row(acc(4, 9), "8-K", "2020-07-20", "2020-07-20T21:00:00.000Z", "2020-07-20", "8.01")
+]
+
+ISSUERS = [
+    ("AAA", 1, AAA, None),
+    ("BBB", 2, BBB_ROOT, ("2020-01-01", "2020-05-31", BBB_HISTORY)),
+    ("CCC", 3, CCC_ROOT, ("2020-01-01", "2020-05-31", CCC_HISTORY)),
+    ("DDD", 4, DDD_ROOT, ("2019-01-01", "2020-07-31", DDD_HISTORY)),
+]
+QUALIFIED = {acc(1, 10): "2020-05-04", acc(1, 20): "2020-07-31", acc(2, 31): "2020-08-06"}
+
+
+def write(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = value if isinstance(value, bytes) else (json.dumps(value) + "\n").encode()
+    path.write_bytes(data)
+    return data
+
+
+def build(tmp, drop_history_for=("CCC",), events_override=None):
+    repo = tmp / "repo"
+    source = repo / E / "source"
+    issuers, reuse = [], []
+    write(source / "capture.lock.sqlite", b"")
+    write(repo / FROZEN["paths"]["shared_source_lock"], b"")
+    for symbol, number, root_rows, history in ISSUERS:
+        cik = f"{number:010d}"
+        issuers.append({"symbol": symbol, "cik": cik})
+        files = []
+        if history:
+            files = [
+                {
+                    "name": f"CIK{cik}-submissions-001.json",
+                    "filingFrom": history[0],
+                    "filingTo": history[1],
+                }
+            ]
+        body = {
+            "cik": str(number),
+            "tickers": [symbol],
+            "filings": {"recent": table(root_rows), "files": files},
+        }
+        raw = json.dumps(body).encode()
+        rel = f".qualification/reused-profiles/raw/{sha(raw)}.bin"
+        write(repo / rel, raw)
+        url = f"https://data.sec.gov/submissions/CIK{cik}.json"
+        reuse.append({"url": url, "path": rel, "sha256": sha(raw), "bytes": len(raw)})
+        sources = [dict(reuse[-1], reused=True, status=200)]
+        rows = list(root_rows)
+        if history:
+            hist = json.dumps(table(history[2])).encode()
+            if symbol not in drop_history_for:
+                write(source / "raw" / (sha(hist) + ".bin"), hist)
+            sources.append(
+                {
+                    "url": "https://data.sec.gov/submissions/" + files[0]["name"],
+                    "status": 200,
+                    "reused": False,
+                    "sha256": sha(hist),
+                    "bytes": len(hist),
+                    "path": "raw/" + sha(hist) + ".bin",
+                }
+            )
+            rows += history[2]
+        originals = [r for r in rows if r["form"] == "10-Q"]
+        write(
+            source / "issuers" / symbol / "discovery.json",
+            {
+                "complete": True,
+                "error": None,
+                "sources": sources,
+                "rows": rows,
+                "original_accessions": originals,
+            },
+        )
+        for q in originals:
+            write(
+                source / "filings" / symbol / (q["accessionNumber"] + ".json"),
+                {"issuer": issuers[-1], "registry_row": q, "status": "captured"},
+            )
+    request = {
+        "issuers": issuers,
+        "filed_from": "2012-01-01",
+        "filed_through": "2025-12-31",
+        "max_history_pages_per_issuer": 8,
+        "reuse": reuse,
+    }
+    write(source / "request.json", request)
+    write(repo / FROZEN["paths"]["calendar"], calendar())
+    events = events_override or [
+        {"accession": a, "strategy_source_status": "qualified", "entry_session": s}
+        for a, s in QUALIFIED.items()
+    ]
+    write(repo / FROZEN["paths"]["qualification_events"], events)
+    skip = ("inputs", "issuer_inputs", "code", "filings", "denominators")
+    definition = {k: v for k, v in FROZEN.items() if k not in skip}
+    manifests = sorted((source / "filings").glob("*/*.json"))
+    definition["filings"] = {
+        "root": E + "/source/filings",
+        "count": len(manifests),
+        "digest_sha256": m.manifest_digest(repo, manifests),
+    }
+    definition["denominators"] = {
+        "issuers": 4,
+        "registered_originals": len(manifests),
+        "strategy_source_qualified": len(QUALIFIED),
+    }
+    bound = [
+        source / "request.json",
+        repo / FROZEN["paths"]["calendar"],
+        repo / FROZEN["paths"]["qualification_events"],
+    ]
+    issuer_bound = sorted((source / "issuers").glob("*/discovery.json"))
+    issuer_bound += [repo / r["path"] for r in reuse]
+    for rel in m.FROZEN_MODULES:
+        write(repo / rel, (REPO / rel).read_bytes())
+
+    def identities(paths):
+        return {p.relative_to(repo).as_posix(): sha(p.read_bytes()) for p in paths}
+
+    definition["inputs"] = identities(bound)
+    definition["issuer_inputs"] = identities(issuer_bound)
+    definition["code"] = dict(m.FROZEN_MODULES)
+    study = tmp / "study"
+    study.mkdir(parents=True)
+    amendments = {}
+    for record in FROZEN["amendments"]:
+        amendments[record["record"]] = sha(
+            write(study / record["record"], (HERE / record["record"]).read_bytes())
+        )
+    raw = write(study / "definition.json", definition)
+    write(study / "freeze.json", {"definition_sha256": sha(raw), "amendments": amendments})
+    return repo, study
+
+
+def pre(repo, study):
+    return m.preflight(study / "definition.json", repo, study / "freeze.json", study)
+
+
+def run(tmp, **kwargs):
+    repo, study = build(tmp, **kwargs)
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    events = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
+    return attempt, events, json.loads((attempt / "summary.json").read_text())
+
+
+def test_classifications_and_leads(tmp_path):
+    attempt, events, summary = run(tmp_path)
+    assert events[acc(1, 10)]["status"] == "single_prior"
+    assert events[acc(1, 10)]["earliest_prior_lead_sessions"] == 3
+    assert events[acc(1, 10)]["q_entry_session"] == "2020-05-04"
+    assert events[acc(1, 20)]["status"] == "single_same_session"
+    third = events[acc(1, 28)]
+    assert third["status"] == "single_after" and third["amendments"] == [acc(1, 29)]
+    assert events[acc(2, 31)]["status"] == "multiple" and events[acc(2, 31)]["n_prior"] == 2
+    assert events[acc(2, 20)]["status"] == "window_coverage_incomplete"
+    assert events[acc(2, 40)]["status"] == "ambiguous_metadata"
+    assert events[acc(2, 40)]["items_unknown"] == [acc(2, 39)]
+    assert events[acc(3, 10)]["status"] == "issuer_unavailable"
+    assert events[acc(4, 10)]["status"] == "ambiguous_metadata"
+    (conflict,) = events[acc(4, 10)]["conflicts"]
+    assert conflict["accession"] == acc(4, 9)
+    assert [v["items"] for v in conflict["variants"]] == ["2.02", "8.01"]
+    assert [x["source_index"] for x in conflict["provenance"]] == [0, 1]
+    assert len(events) == 8
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["status"] == "complete" and meta["network_requests"] == 0
+    for name, digest in meta["files"].items():
+        assert sha((attempt / name).read_bytes()) == digest
+
+
+def test_bounds_and_verdict(tmp_path):
+    _, _, summary = run(tmp_path)
+    whole = summary["strata"]["all_registered_originals"]
+    # Clean priors: AAA q1 and BBB multiple. Definitely none: same-session and after.
+    assert whole["with_prior_candidate_lower"] == 2
+    assert whole["with_prior_candidate_upper"] == 8 - 2
+    primary = summary["strata"]["strategy_source_qualified"]
+    assert primary["denominator"] == 3 and primary["with_prior_candidate_lower"] == 2
+    assert primary["prior_share_upper"] == pytest.approx(2 / 3)
+    assert summary["primary_stratum"] == "strategy_source_qualified"
+    assert summary["primary_verdict"] == "supported_at_metadata_level"
+    assert summary["issuers_unavailable"] == 1
+
+
+def test_exact_item_token_and_window(tmp_path):
+    _, events, _ = run(tmp_path)
+    candidates = [c["accession"] for e in events.values() for c in e["candidates"]]
+    assert acc(1, 27) not in candidates  # "12.02" is not Item 2.02
+    assert acc(1, 26) not in candidates  # filed on the period end, outside the window
+    assert acc(1, 7) not in candidates  # Item 5.02 only
+    assert acc(1, 29) not in candidates  # 8-K/A is reported, never a candidate
+    # reportDate + 84 days is the earliest possible next-quarter end, so it is outside the window.
+    assert acc(1, 11) not in candidates
+    assert events[acc(1, 10)]["status"] == "single_prior"
+
+
+def test_coverage_union():
+    assert m.covered(
+        [("2020-01-01", "2020-05-31"), ("2020-06-01", "9999-12-31")],
+        date(2020, 4, 1),
+        date(2020, 6, 23),
+    )
+    assert not m.covered(
+        [("2020-01-01", "2020-05-31"), ("2020-07-21", "9999-12-31")],
+        date(2020, 4, 1),
+        date(2020, 6, 23),
+    )
+
+
+def test_entry_session_must_match_completed_study(tmp_path):
+    events = [
+        {
+            "accession": acc(1, 10),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-05-05",
+        },
+        {
+            "accession": acc(1, 20),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-07-31",
+        },
+        {
+            "accession": acc(2, 31),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-08-06",
+        },
+    ]
+    repo, study = build(tmp_path, events_override=events)
+    with pytest.raises(m.AuditError, match="entry session differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    assert json.loads((failed / "failure.json").read_text())["status"] == "failed"
+
+
+def test_unavailable_issuer_clock_is_still_checked(tmp_path):
+    # CCC's sources are missing, but its 10-Q clock comes from the frozen manifest.
+    saved = [
+        {"accession": a, "strategy_source_status": "qualified", "entry_session": s}
+        for a, s in QUALIFIED.items()
+    ]
+    right = saved + [
+        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-09-28"}
+    ]
+    repo, study = build(tmp_path / "right", events_override=right)
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    rows = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows[acc(3, 10)]["status"] == "issuer_unavailable"
+    assert rows[acc(3, 10)]["q_entry_session"] == "2020-09-28"
+    assert rows[acc(3, 10)]["late_10q_beyond_window"] is True
+    summary = json.loads((attempt / "summary.json").read_text())
+    assert summary["strata"]["all_registered_originals"]["late_10q_beyond_window"] == 1
+    wrong = saved + [
+        {"accession": acc(3, 10), "strategy_source_status": "x", "entry_session": "2020-09-29"}
+    ]
+    repo, study = build(tmp_path / "wrong", events_override=wrong)
+    with pytest.raises(m.AuditError, match="entry session differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_raw_corruption_stops_attempt(tmp_path):
+    repo, study = build(tmp_path)
+    raw = next((repo / E / "source/raw").glob("*.bin"))
+    raw.write_bytes(raw.read_bytes() + b" ")
+    with pytest.raises(m.AuditError, match="do not match recorded identity"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_changed_definition_or_input_refused(tmp_path):
+    repo, study = build(tmp_path)
+    (study / "definition.json").write_bytes((study / "definition.json").read_bytes() + b" ")
+    with pytest.raises(m.AuditError, match="frozen declaration"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    repo, study = build(tmp_path / "second")
+    discovery = repo / E / "source/issuers/AAA/discovery.json"
+    discovery.write_bytes(discovery.read_bytes() + b" ")
+    with pytest.raises(m.AuditError, match="missing or changed"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_missing_or_held_source_lock_refused(tmp_path):
+    repo, study = build(tmp_path)
+    lock = repo / E / "source/capture.lock.sqlite"
+    writer = sqlite3.connect(lock, timeout=0)
+    writer.execute("BEGIN EXCLUSIVE")
+    try:
+        with pytest.raises(m.AuditError, match="holds the capture lock"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+        held = pre(repo, study)
+        assert not held["ready"]
+        assert {
+            "path": E + "/source/capture.lock.sqlite",
+            "problem": "held by another process",
+        } in held["blocking"]
+    finally:
+        writer.rollback()
+        writer.close()
+    lock.unlink()
+    with pytest.raises(m.AuditError, match="lock is missing"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+    assert {"path": E + "/source/capture.lock.sqlite", "problem": "missing"} in pre(repo, study)[
+        "blocking"
+    ]
+
+
+def test_preflight_sees_another_audit_lock(tmp_path):
+    repo, study = build(tmp_path)
+    other = sqlite3.connect(study / "audit.lock.sqlite", timeout=0)
+    other.execute("BEGIN EXCLUSIVE")
+    try:
+        result = pre(repo, study)
+        assert {"path": "audit.lock.sqlite", "problem": "held by another process"} in result[
+            "blocking"
+        ]
+        with pytest.raises(m.AuditError, match="Another timing audit"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+    finally:
+        other.rollback()
+        other.close()
+
+
+def test_preflight_reports_corrupt_request_without_raising(tmp_path):
+    repo, study = build(tmp_path)
+    (repo / E / "source/request.json").write_bytes(b"not json")
+    result = pre(repo, study)
+    assert not result["ready"]
+    assert any(
+        b["path"] == E + "/source/request.json" and b["problem"] == "sha256_mismatch"
+        for b in result["blocking"]
+    )
+
+
+def test_preflight_names_missing_retained_source(tmp_path):
+    repo, study = build(tmp_path)
+    result = pre(repo, study)
+    # A missing retained history page is expected issuer unavailability, not a blocker.
+    assert result["ready"] and result["blocking"] == []
+    assert [p["url"] for p in result["issuer_unavailable"]] == [
+        "https://data.sec.gov/submissions/CIK0000000003-submissions-001.json"
+    ]
+
+
+def test_no_network_and_append_only(tmp_path, monkeypatch):
+    def refuse(*args, **kwargs):
+        raise AssertionError("network use attempted")
+
+    monkeypatch.setattr(socket, "socket", refuse)
+    monkeypatch.setattr(socket, "create_connection", refuse)
+    repo, study = build(tmp_path)
+    first = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    before = {p.name: p.read_bytes() for p in first.iterdir()}
+    # One attempt per frozen definition: a repeat is refused and the first is untouched.
+    with pytest.raises(m.AuditError, match="already used this definition"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert [p.name for p in (study / "attempts").iterdir()] == [first.name]
+    assert {p.name: p.read_bytes() for p in first.iterdir()} == before
+
+
+def test_frozen_declaration_identity():
+    frozen = json.loads((HERE / "freeze.json").read_text())
+    assert sha((HERE / "definition.json").read_bytes()) == frozen["definition_sha256"]
+    for name, digest in frozen.get("amendments", {}).items():
+        assert sha((HERE / name).read_bytes()) == digest, name
+    for rel, digest in FROZEN["code"].items():
+        assert sha((REPO / rel).read_bytes()) == digest, rel
+    assert FROZEN["denominators"] == {
+        "issuers": 100,
+        "registered_originals": 4057,
+        "captured_originals": 3867,
+        "strategy_source_qualified": 2010,
+    }
+    manifests = m.manifest_paths(REPO, FROZEN)
+    assert len(manifests) == FROZEN["filings"]["count"] == 4057
+    assert m.manifest_digest(REPO, manifests) == FROZEN["filings"]["digest_sha256"]
+    assert sum(p.endswith("/discovery.json") for p in FROZEN["issuer_inputs"]) == 100
+    assert len(FROZEN["issuer_inputs"]) == 200
+    assert {"pyproject.toml", "uv.lock"} <= set(FROZEN["inputs"])
+    assert all(FROZEN["code"][rel] == digest for rel, digest in m.FROZEN_MODULES.items())
+
+
+def test_missing_issuer_discovery_keeps_denominator(tmp_path):
+    repo, study = build(tmp_path)
+    (repo / E / "source/issuers/DDD/discovery.json").unlink()
+    result = pre(repo, study)
+    assert result["ready"]
+    missing = [p["path"] for p in result["issuer_unavailable"] if p["problem"] == "missing"]
+    assert E + "/source/issuers/DDD/discovery.json" in missing
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    rows = {r["accession"]: r for r in json.loads((attempt / "events.json").read_text())}
+    assert rows[acc(4, 10)]["status"] == "issuer_unavailable"
+    assert rows[acc(4, 10)]["reasons"] == ["retained discovery.json not present"]
+    assert len(rows) == 8
+
+
+def test_conflicts_excluded_from_issuer_counts(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    issuers = {i["issuer"]["symbol"]: i for i in json.loads((attempt / "issuers.json").read_text())}
+    evidence = issuers["DDD"]["conflict_evidence"][acc(4, 9)]
+    assert len(evidence["variants"]) == 2 and len(evidence["provenance"]) == 2
+    assert issuers["DDD"]["unique_item_2_02_8k"] == 0
+    assert issuers["DDD"]["conflicting_8k_family_accessions"] == [acc(4, 9)]
+    assert issuers["AAA"]["unique_item_2_02_8k"] == 5
+
+
+def test_changed_module_is_not_executed(tmp_path):
+    marker = tmp_path / "executed"
+    module = tmp_path / "module.py"
+    module.write_text(f"open({str(marker)!r}, 'w').close()\n")
+    with pytest.raises(m.AuditError, match="not executed"):
+        m.load_verified_module(module, "0" * 64, "changed_module")
+    assert not marker.exists()
+    m.load_verified_module(module, sha(module.read_bytes()), "verified_module")
+    assert marker.exists()
+
+
+def test_amendment_records_and_runtime_checked(tmp_path):
+    repo, study = build(tmp_path)
+    record = study / FROZEN["amendments"][0]["record"]
+    record.write_bytes(record.read_bytes() + b" ")
+    with pytest.raises(m.AuditError, match="Amendment record"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    record.unlink()
+    with pytest.raises(m.AuditError, match="Amendment record"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    repo, study = build(tmp_path / "runtime")
+    definition = json.loads((study / "definition.json").read_text())
+    definition["runtime"] = dict(definition["runtime"], python="3.12")
+    raw = write(study / "definition.json", definition)
+    freeze = json.loads((study / "freeze.json").read_text())
+    write(study / "freeze.json", dict(freeze, definition_sha256=sha(raw)))
+    with pytest.raises(m.AuditError, match="Python runtime"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_attempt_records_runtime_and_input_identities(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["runtime"]["python"].startswith("3.13")
+    assert set(meta["runtime"]) >= {"tzdata_package", "zoneinfo_tzpath", "sqlite", "platform"}
+    assert meta["input_identities"][E + "/source/issuers/AAA/discovery.json"]
+
+
+def test_reused_definitions_run_without_module_imports(tmp_path):
+    module = tmp_path / "frozen.py"
+    module.write_text(
+        "import module_that_does_not_exist\n"
+        "raise SystemExit('top level must not run')\n"
+        "class Oops(Exception): pass\n"
+        "def pick(x):\n    return re.sub('a', 'b', x)\n"
+    )
+    digest = sha(module.read_bytes())
+    loaded = m.load_verified_definitions(module, digest, ["Oops", "pick"], {"re": re})
+    assert loaded.pick("aa") == "bb" and issubclass(loaded.Oops, Exception)
+    with pytest.raises(m.AuditError, match="missing or duplicated"):
+        m.load_verified_definitions(module, digest, ["absent"], {})
+    with pytest.raises(m.AuditError, match="not executed"):
+        m.load_verified_definitions(module, "0" * 64, ["pick"], {"re": re})
+
+
+def test_loading_audit_does_not_import_the_project_package():
+    # capture.py's top-level `from frontier.historical_lab import _save` is never executed.
+    assert "frontier.historical_lab" not in sys.modules
+
+
+def test_preflight_reports_definition_drift(tmp_path):
+    repo, study = build(tmp_path)
+    assert pre(repo, study)["ready"]
+    definition = json.loads((study / "definition.json").read_text())
+    definition["interpretation"]["supported_if_lower_share_at_least"] = 0.1
+    write(study / "definition.json", definition)
+    result = pre(repo, study)
+    drift = {"path": "definition", "problem": "Definition bytes differ from the frozen declaration"}
+    assert not result["ready"] and drift in result["blocking"]
+
+
+def test_window_stops_before_next_frozen_report_date():
+    rules = FROZEN["matching"]
+    report = date(2012, 5, 9)
+    assert m.window_end(report, date(2012, 6, 30), rules) == date(2012, 6, 29)
+    assert m.window_end(report, None, rules) == report + timedelta(days=83)
+    assert m.window_end(report, report + timedelta(days=200), rules) == report + timedelta(days=83)
+    manifests = [
+        {"registry_row": {"reportDate": r}} for r in ["2012-06-30", "2012-05-09", "2012-05-09", ""]
+    ]
+    assert m.next_report_dates(manifests) == {
+        date(2012, 5, 9): date(2012, 6, 30),
+        date(2012, 6, 30): None,
+    }
+    # A release filed after the next period end is not a candidate for the earlier 10-Q.
+    m.load_frozen()
+    sessions = []
+    d = date(2012, 4, 2)
+    while d <= date(2012, 9, 28):
+        if d.weekday() < 5:
+            s = d.isoformat()
+            sessions.append(
+                {"session": s, "open": s + "T13:30:00+00:00", "close": s + "T20:00:00+00:00"}
+            )
+        d += timedelta(days=1)
+    q = row("0000000009-12-000010", "10-Q", "2012-06-20", "2012-06-20T21:00:00.000Z", "2012-05-09")
+    k = row(
+        "0000000009-12-000011",
+        "8-K",
+        "2012-07-10",
+        "2012-07-10T21:00:00.000Z",
+        "2012-07-10",
+        "2.02",
+    )
+    canonical = m.canonicalize(
+        [{"row": r, "source_index": 0, "row_index": i} for i, r in enumerate([q, k])]
+    )
+    positions = {x["session"]: i for i, x in enumerate(sessions)}
+    coverage = [("0001-01-01", "9999-12-31")]
+    capped = m.classify(q, canonical, coverage, sessions, positions, rules, date(2012, 6, 30))
+    uncapped = m.classify(q, canonical, coverage, sessions, positions, rules, None)
+    assert capped["status"] == "no_candidate"
+    assert uncapped["status"] == "single_after"
+
+
+def test_preflight_reports_drifted_reused_module_without_loading_it(tmp_path):
+    repo, study = build(tmp_path)
+    capture = repo / ".qualification/filing-source20260928/capture.py"
+    capture.write_bytes(capture.read_bytes() + b"\nraise SystemExit('must not run')\n")
+    result = pre(repo, study)
+    assert not result["ready"]
+    assert any(
+        b["path"] == ".qualification/filing-source20260928/capture.py"
+        and b["problem"] == "sha256_mismatch"
+        for b in result["blocking"]
+    )
+    with pytest.raises(m.AuditError, match="missing or changed"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_json_records_are_replaced_atomically(tmp_path, monkeypatch):
+    path = tmp_path / "attempt.json"
+    m.write_json(path, {"status": "running"})
+    before = path.read_bytes()
+
+    def crash(*args, **kwargs):
+        raise OSError("simulated crash before replace")
+
+    monkeypatch.setattr(m.os, "replace", crash)
+    with pytest.raises(OSError):
+        m.write_json(path, {"status": "complete"})
+    assert path.read_bytes() == before
+
+
+def test_capture_lock_is_taken_before_any_input_is_verified(tmp_path):
+    repo, study = build(tmp_path)
+    discovery = repo / E / "source/issuers/AAA/discovery.json"
+    discovery.write_bytes(discovery.read_bytes() + b" ")
+    writer = sqlite3.connect(repo / E / "source/capture.lock.sqlite", timeout=0)
+    writer.execute("BEGIN EXCLUSIVE")
+    try:
+        # The held lock is met first; inputs are never inspected while a writer is active.
+        with pytest.raises(m.AuditError, match="holds the capture lock"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+    finally:
+        writer.rollback()
+        writer.close()
+    with pytest.raises(m.AuditError, match="missing or changed"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_invalid_lock_files_are_reported_not_raised(tmp_path):
+    repo, study = build(tmp_path)
+    (repo / E / "source/capture.lock.sqlite").write_bytes(b"this is not an sqlite database" * 10)
+    (study / "audit.lock.sqlite").write_bytes(b"also not a database" * 10)
+    result = pre(repo, study)
+    assert not result["ready"]
+    invalid = {b["path"] for b in result["blocking"] if b["problem"].startswith("not a valid")}
+    assert invalid == {E + "/source/capture.lock.sqlite", "audit.lock.sqlite"}
+    with pytest.raises(m.AuditError, match="invalid"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_manifest_change_during_audit_fails_the_attempt(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.audit
+
+    def audit_then_change_manifest(definition, root, observed=None):
+        result = original(definition, root, observed)
+        manifest = next((root / E / "source/filings/AAA").glob("*.json"))
+        manifest.write_bytes(manifest.read_bytes() + b" ")
+        return result
+
+    monkeypatch.setattr(m, "audit", audit_then_change_manifest)
+    with pytest.raises(m.AuditError, match="changed during the audit"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    assert json.loads((failed / "attempt.json").read_text())["status"] == "failed"
+
+
+def test_clock_uses_only_the_locked_tzdata_package(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    assert m.zoneinfo.TZPATH == ()
+    runtime = json.loads((attempt / "attempt.json").read_text())["runtime"]
+    assert runtime["tzdata_package"] == FROZEN["runtime"]["tzdata"]
+    assert runtime["new_york_tzif_sha256"] and runtime["zoneinfo_tzpath"] == []
+    repo, study = build(tmp_path / "other")
+    definition = json.loads((study / "definition.json").read_text())
+    definition["runtime"] = dict(definition["runtime"], tzdata="0000.0")
+    raw = write(study / "definition.json", definition)
+    freeze = json.loads((study / "freeze.json").read_text())
+    write(study / "freeze.json", dict(freeze, definition_sha256=sha(raw)))
+    with pytest.raises(m.AuditError, match="tzdata package differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_non_file_audit_lock_is_invalid(tmp_path):
+    repo, study = build(tmp_path)
+    (study / "audit.lock.sqlite").mkdir()
+    result = pre(repo, study)
+    assert not result["ready"]
+    assert {
+        "path": "audit.lock.sqlite",
+        "problem": "not a valid SQLite lock file: not a regular file",
+    } in result["blocking"]
+    with pytest.raises(m.AuditError, match="Audit lock is invalid"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_history_page_change_during_audit_fails_the_attempt(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.audit
+
+    def audit_then_change_history(definition, root, observed=None):
+        result = original(definition, root, observed)
+        page = next((root / E / "source/raw").glob("*.bin"))
+        page.write_bytes(page.read_bytes() + b" ")
+        return result
+
+    monkeypatch.setattr(m, "audit", audit_then_change_history)
+    with pytest.raises(m.AuditError, match="changed during the audit"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_completed_attempt_records_raw_source_identities(tmp_path):
+    attempt, _, _ = run(tmp_path)
+    observed = json.loads((attempt / "attempt.json").read_text())["raw_source_identities"]
+    missing = [p for p, digest in observed.items() if digest is None]
+    assert len(missing) == 1 and missing[0].endswith(".bin")  # CCC's absent history page
+    assert all(digest for p, digest in observed.items() if p not in missing)
+
+
+def test_preflight_holds_capture_read_guard_while_inspecting(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    lock = repo / E / "source/capture.lock.sqlite"
+    writer_blocked = []
+    original = m.check_inputs
+
+    def check_while_probing_writer(*args, **kwargs):
+        writer = sqlite3.connect(lock, timeout=0)
+        try:
+            writer.execute("BEGIN EXCLUSIVE")
+            writer_blocked.append(False)
+            writer.rollback()
+        except sqlite3.OperationalError:
+            writer_blocked.append(True)
+        finally:
+            writer.close()
+        return original(*args, **kwargs)
+
+    monkeypatch.setattr(m, "check_inputs", check_while_probing_writer)
+    result = pre(repo, study)
+    assert writer_blocked == [True]
+    assert result["ready"] and result["source_inspection"].startswith("guarded")
+
+
+def test_window_stops_at_an_intervening_10k_period_end():
+    forms = FROZEN["matching"]["period_boundary_forms"]
+    manifests = [
+        {"registry_row": {"reportDate": "2012-10-31"}},
+        {"registry_row": {"reportDate": "2013-03-31"}},
+    ]
+    canonical = {
+        "a": {"row": {"form": "10-K", "reportDate": "2012-12-31"}, "conflict": False},
+        "b": {"row": {"form": "10-K/A", "reportDate": "2012-11-30"}, "conflict": False},
+        "c": {"row": {"form": "10-K", "reportDate": "2012-11-15"}, "conflict": True},
+        "d": {"row": {"form": "8-K", "reportDate": "2012-11-01"}, "conflict": False},
+    }
+    following = m.next_report_dates(manifests, canonical, forms)
+    assert following == {date(2012, 10, 31): date(2012, 12, 31), date(2013, 3, 31): None}
+    # Without the submissions rows only the next frozen 10-Q bounds the window.
+    assert m.next_report_dates(manifests)[date(2012, 10, 31)] == date(2013, 3, 31)
+
+
+def test_failed_attempt_keeps_raw_source_identities(tmp_path):
+    events = [
+        {
+            "accession": acc(1, 10),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-05-05",
+        },
+        {
+            "accession": acc(1, 20),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-07-31",
+        },
+        {
+            "accession": acc(2, 31),
+            "strategy_source_status": "qualified",
+            "entry_session": "2020-08-06",
+        },
+    ]
+    repo, study = build(tmp_path, events_override=events)
+    with pytest.raises(m.AuditError, match="entry session differs"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    observed = json.loads((failed / "failure.json").read_text())["raw_source_identities"]
+    assert observed and any(digest is None for digest in observed.values())
+
+
+def test_inputs_rechecked_after_result_files_are_written(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.write_json
+
+    def write_then_change_manifest(path, value):
+        digest = original(path, value)
+        if path.name == "summary.json":
+            manifest = next((repo / E / "source/filings/AAA").glob("*.json"))
+            manifest.write_bytes(manifest.read_bytes() + b" ")
+        return digest
+
+    monkeypatch.setattr(m, "write_json", write_then_change_manifest)
+    with pytest.raises(m.AuditError, match="changed during the audit"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    (failed,) = (study / "attempts").iterdir()
+    assert json.loads((failed / "attempt.json").read_text())["status"] == "failed"
+
+
+def test_preflight_stops_at_structural_declaration_drift(tmp_path):
+    repo, study = build(tmp_path)
+    definition = json.loads((study / "definition.json").read_text())
+    del definition["paths"]
+    write(study / "definition.json", definition)
+    result = pre(repo, study)
+    assert not result["ready"] and result["source_inspection"].startswith("skipped")
+    assert {
+        "path": "definition",
+        "problem": "Definition bytes differ from the frozen declaration",
+    } in result["blocking"]
+
+
+def refreeze(study, **changes):
+    definition = json.loads((study / "definition.json").read_text())
+    definition.update(changes)
+    raw = write(study / "definition.json", definition)
+    freeze = json.loads((study / "freeze.json").read_text())
+    write(study / "freeze.json", dict(freeze, definition_sha256=sha(raw)))
+
+
+def test_shared_sec_source_lock_is_required_and_guarded(tmp_path):
+    repo, study = build(tmp_path)
+    shared = repo / FROZEN["paths"]["shared_source_lock"]
+    writer = sqlite3.connect(shared, timeout=0)
+    writer.execute("BEGIN EXCLUSIVE")
+    try:
+        with pytest.raises(m.AuditError, match="shared SEC source lock"):
+            m.run(study / "definition.json", study / "freeze.json", repo, study)
+        result = pre(repo, study)
+        assert {
+            "path": FROZEN["paths"]["shared_source_lock"],
+            "problem": "held by another process",
+        } in result["blocking"]
+    finally:
+        writer.rollback()
+        writer.close()
+    shared.unlink()
+    with pytest.raises(m.AuditError, match="lock is missing"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert not (study / "attempts").exists()
+
+
+def test_unfinished_prior_attempt_must_be_reconciled(tmp_path):
+    repo, study = build(tmp_path)
+    stale = study / "attempts" / "interrupted0"
+    stale.mkdir(parents=True)
+    write(stale / "attempt.json", {"definition_sha256": "0" * 64, "status": "running"})
+    with pytest.raises(m.AuditError, match="unfinished or unreadable"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert any(b["path"] == "attempts" for b in pre(repo, study)["blocking"])
+    refreeze(study, reconciled_attempts=["interrupted0"])
+    attempt = m.run(study / "definition.json", study / "freeze.json", repo, study)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_qualification_events_keep_only_status_fields(tmp_path):
+    path = tmp_path / "events.json"
+    write(
+        path,
+        [
+            {
+                "accession": "a",
+                "strategy_source_status": "qualified",
+                "entry_session": "s",
+                "S": 1.5,
+                "Q": -2,
+                "u": "3",
+                "history": [{"S": 9, "accession": "old"}],
+            }
+        ],
+    )
+    assert m.load_event_fields(path) == [
+        {"accession": "a", "strategy_source_status": "qualified", "entry_session": "s"}
+    ]
+
+
+def test_drifted_definition_with_malformed_amendments_is_reported(tmp_path):
+    repo, study = build(tmp_path)
+    definition = json.loads((study / "definition.json").read_text())
+    definition["amendments"] = [{"id": "no-record-key"}]
+    write(study / "definition.json", definition)
+    result = pre(repo, study)
+    assert not result["ready"] and result["source_inspection"].startswith("skipped")
+    with pytest.raises(m.AuditError, match="frozen declaration"):
+        m.run(study / "definition.json", study / "freeze.json", repo, study)
+
+
+def test_unapproved_event_values_are_never_decoded(tmp_path, monkeypatch):
+    decoded = []
+
+    def spy(text, i):
+        value, end = json.JSONDecoder().raw_decode(text, i)
+        decoded.append(value)
+        return value, end
+
+    monkeypatch.setattr(m, "_decode", spy)
+    path = tmp_path / "events.json"
+    huge = "7" * 5000  # json.loads refuses to decode an integer this long
+    path.write_text(
+        '{"attempt": "x", "events": [{"accession": "a", "S": 0.123456, "Q": NaN, '
+        '"strategy_source_status": "qualified", "u": ' + huge + ", "
+        '"history": [{"S": "S-secret", "accession": "old"}], "entry_session": "s"}]}',
+        encoding="utf-8",
+    )
+    assert m.load_event_fields(path) == {
+        "events": [{"accession": "a", "strategy_source_status": "qualified", "entry_session": "s"}]
+    }
+    # Member names are decoded to be matched; only approved members' values are decoded.
+    assert decoded == [
+        "attempt",
+        "events",
+        "accession",
+        "a",
+        "S",
+        "Q",
+        "strategy_source_status",
+        "qualified",
+        "u",
+        "history",
+        "entry_session",
+        "s",
+    ]
+
+
+def test_preflight_skips_inspection_when_a_source_lock_is_missing(tmp_path, monkeypatch):
+    def refuse(*args, **kwargs):
+        raise AssertionError("source input read without both source read guards")
+
+    for name in ("check_inputs", "input_state", "resolve_source"):
+        monkeypatch.setattr(m, name, refuse)
+    for rel, label in [
+        (FROZEN["paths"]["shared_source_lock"], "shared SEC source lock"),
+        (E + "/source/capture.lock.sqlite", "capture lock"),
+    ]:
+        repo, study = build(tmp_path / label.replace(" ", "-"))
+        (repo / rel).unlink()
+        result = pre(repo, study)
+        assert not result["ready"]
+        assert {"path": rel, "problem": "missing"} in result["blocking"]
+        assert result["issuer_unavailable"] == []
+        assert result["source_inspection"] == "skipped: " + label + " missing"
