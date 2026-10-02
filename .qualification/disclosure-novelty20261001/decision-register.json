@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "recorded_at_utc": "2026-10-01T22:21:41.098656+00:00",
+  "scope": "Post-handover October1 source-only research decisions; original150-decision register preserved.",
+  "definition_sha256": "3946aac2f8f4bd0ab697ae36ba9ce41ee117fb2d05b4e40d0fe0a6485902b9a3",
+  "actual_attempt": "f6326cbd442d4ba08594221006e338eb",
+  "decisions": [
+    {
+      "id": "DN01",
+      "decision": "Reuse preserved source metadata",
+      "rule": "Read the same frozen discovery roots/history with zero HTTP requests and no financial/outcome joins.",
+      "reason": "Determine whether an earlier-disclosure investigation is useful without duplicating the completed source capture or selecting from trading returns."
+    },
+    {
+      "id": "DN02",
+      "decision": "Retain the complete fixed population",
+      "rule": "Keep all 100 issuers and 4,057 originals, including 190 incomplete financial captures and all issuer/year zero rows.",
+      "reason": "A missing financial capture does not erase its metadata event; extraction success must not select the source denominator."
+    },
+    {
+      "id": "DN03",
+      "decision": "Freeze explicit temporal windows",
+      "rule": "Original same-CIK 8-K with exact comma-delimited Item2.02; preceding45 and late7 elapsed UTC24-hour units; equal instants separate.",
+      "reason": "Use a declared near-filing envelope, preserve ordering boundaries and avoid a silent DST/civil-day substitution."
+    },
+    {
+      "id": "DN04",
+      "decision": "Preserve origins and ambiguity",
+      "rule": "Deduplicate only identical dictionaries with all raw origins; retain conflicts and every multiple match, with no nearest/latest choice.",
+      "reason": "Metadata alone cannot decide which release concerns the financial period; newer or nearer evidence must not silently overwrite original observations."
+    },
+    {
+      "id": "DN05",
+      "decision": "Leave fiscal/disclosure qualification unknown",
+      "rule": "Every candidate retains fiscal-period, component and public-dissemination verification as false.",
+      "reason": "Same CIK, a report date and an earlier Item2.02 timestamp do not prove the same financial facts were available; later10-Q S/Q cannot be backdated."
+    },
+    {
+      "id": "DN06",
+      "decision": "Store sufficient compact evidence",
+      "rule": "Retain groups once, all near-window pairs and exhaustive per-Q timing counts rather than serializing distant Cartesian rows.",
+      "reason": "Preserve reconstruction and failed/unavailable cases without millions of redundant rows; independently classify the full Cartesian space."
+    },
+    {
+      "id": "DN07",
+      "decision": "Isolate execution and preserve failures",
+      "rule": "Use immutable code/input identities, a durable UUID attempt and existing source/historical locks; no shared engine/operator edits.",
+      "reason": "Avoid concurrent writer drift and duplicate/resubmitted work while preserving the original research and paper identities."
+    },
+    {
+      "id": "DN08",
+      "decision": "Correct the checker transparently",
+      "rule": "Preserve failed v1 and independently version v2 to reconstruct all eight origin fields, retaining full equality.",
+      "reason": "The initial representation mismatch was a checker omission; strengthening its independent reconstruction does not justify modifying the actual audit outputs."
+    },
+    {
+      "id": "DN09",
+      "decision": "Declare descriptive timing after candidate counts",
+      "rule": "Freeze a supplementary diagnostic after prevalence was known but before reading lead distributions; include every primary pair and zero/multiple event.",
+      "reason": "Describe timing without choosing a favorable candidate or pretending the diagnostic was declared before all outcome-free metadata counts."
+    },
+    {
+      "id": "DN10",
+      "decision": "Continue with bounded original-document evidence",
+      "rule": "Freeze deterministic source-only document/exhibit selection and limits before acquisition; verify filer CIK, fiscal period and components before earlier-time features.",
+      "reason": "The prevalence supports further source investigation, not strategy promotion or a claim that stale information caused the earlier losses."
+    }
+  ]
+}

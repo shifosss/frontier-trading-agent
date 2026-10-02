@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "reviewed_at_utc": "2026-10-01T22:23:04.063335+00:00",
+  "status": "passed",
+  "scope": "Final immutable new-output/code checks and material source/design/results review; no new economic run or refit.",
+  "implementation_code_files_verified": 7,
+  "terminal_new_outputs_verified": 7,
+  "actual_attempts": 1,
+  "actual_failed_audit_attempts": 0,
+  "original_failed_checker_preserved": true,
+  "independent_source_review": "review-v2/verification.json",
+  "independent_exact_timing_review": "review-v2/timing-review.json",
+  "material_code_review": "Root corrected source-path handling before actual execution; focused32 synthetic checks and Ruff passed as bound in implementation.json.",
+  "read_only_document_review": "Independent implementation agent matched both research/results documents against actual outputs, yearly denominators and v2/timing reviews; no material issues found.",
+  "shared_model_engine_or_operator_code_changed": false,
+  "financial_facts_prices_returns_or_accounts_read": false,
+  "network_source_requests": 0
+}

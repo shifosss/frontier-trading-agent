@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "definition_sha256": "f44fdb786e594f6bf33a8a776aebc745579477c50a7270da5ab0d79e81a94408",
+  "actual_attempt": "f6326cbd442d4ba08594221006e338eb",
+  "primary_pairs": 3941,
+  "requested_q": 4057,
+  "lead_seconds": {
+    "minimum": "5",
+    "median": "88098",
+    "maximum": "3848692",
+    "mean": "429910.5686374016747018523217"
+  },
+  "pair_et_date_counts": {
+    "earlier_et_date": 2621,
+    "same_et_date": 1320
+  },
+  "event_et_date_counts": {
+    "any_same_et_date": 1316,
+    "any_earlier_et_date": 2484,
+    "both_date_classes": 68,
+    "no_primary": 325
+  },
+  "primary_pairs_per_q_distribution": {
+    "1": 3531,
+    "0": 325,
+    "2": 193,
+    "3": 8
+  },
+  "candidate_prevalence_fraction": "0.9198915454769534138526004437",
+  "network_requests": 0,
+  "financial_facts_prices_returns_read": false,
+  "period_components_dissemination_verified": false,
+  "interpretation": "Acceptance metadata durations and date classes only. Multiple candidate pairs are clustered observations. Earlier ET dates do not verify an earlier tradable earnings fact."
+}

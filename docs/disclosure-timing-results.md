@@ -81,6 +81,17 @@ Over these years, issuers moved toward filing the 10-Q in the same session as th
 - 89 issuers have qualified events. 55 of them have a prior candidate for at least half of those events, and 14 have none. The median issuer share is 78.6%, so the result is not one or two issuers.
 - 8 10-Qs (3 qualified) were filed after their window ended and are flagged `late_10q_beyond_window`.
 
+## Agreement with the companion novelty audit
+
+The owner's separately declared [novelty audit](disclosure-novelty-results.md) (`.qualification/disclosure-novelty20261001`, attempt `f6326cbd`) asked the same question with a different design. It looks back 45 days from each 10-Q's acceptance instant and compares ET civil dates; this audit uses the report-date window and the frozen decision-session clock. Over all 4,057 registered originals the two agree closely:
+
+| Measure | Novelty audit | This audit |
+|---|---:|---:|
+| Earlier candidate | 2,484 with an earlier ET acceptance date | 2,568 with an earlier decision session |
+| Same day or session | 1,316 with a same-date candidate | 1,325 `single_same_session` |
+
+Its 3,732 (91.99%) headline counts any preceding acceptance instant, including same-day filings, so it is not comparable to the prior shares here. The row-level files of the two audits have not been joined.
+
 ## What this does and does not establish
 
 As declared, `supported_at_metadata_level` means earlier Item 2.02 releases are common enough to justify a separately declared, bounded original-document probe. It does not show that net income, year-to-date operating cash flow or total assets were public early. An Item 2.02 release often reports a different measure (for example adjusted earnings), and the submissions acceptance time is not proof of first dissemination. Nothing here backdates any 10-Q fact, changes the completed earnings comparison, or implies an edge.

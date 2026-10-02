@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "checker_version": 2,
+  "checker_sha256": "8109b68ed116bd22b52c2bf123645badcb36b9cd0f04e9e1cd5720d109d0428e",
+  "prior_checker_sha256": "e49032b1ee619c5bac3ca46f88c9093fad563c7e003f7293d15da0420985bf39",
+  "prior_failed_review": ".qualification/disclosure-novelty20261001/review",
+  "prior_failure_identities": {
+    "attempt.json": "e40d0d00c9cd7e7c105decdabaf8b23bac812d6155bcb9e9d24749d8c9afe046",
+    "failure.json": "d17d16d35703b7ca632d53f00938d792fc341b8c719cd89e8849695d19f13994",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "435efe74f7c376ea64593e94d8752d99a7dc1d1d500ec984f15677f095cf2d46"
+  },
+  "revision_rationale": "Frozen v1 compared five reconstructed origin fields with eight saved fields. V2 derives source_bytes from verified raw length, table from root/history kind, and history_descriptor from exact ordered overlapping original root descriptors. Full origin equality remains required; source/audit/output/v1 failure retained.",
+  "definition_sha256": "3946aac2f8f4bd0ab697ae36ba9ce41ee117fb2d05b4e40d0fe0a6485902b9a3",
+  "clarification_sha256": "b02bad1b52da722e8885e2d0e6f97453afca6a95d320979c682f51ef474511d1",
+  "completion_sha256": "20572292cbb7eb1eef0aea6f3c131b4ed2d1eab698c8f84a22988dd3ff7aecb9",
+  "terminal_output_identities": 7,
+  "frozen_input_identities": 4243,
+  "requested_originals": 4057,
+  "issuer_year_denominators": 1400,
+  "discovery_row_occurrences": 200363,
+  "metadata_groups": 27327,
+  "full_cartesian_pairs_checked": 1127625,
+  "serialized_window_pairs": 8973,
+  "primary_candidate_pairs": 3941,
+  "scope": "Independent frozen identities, raw reconstruction/origins, requests/Q annotations, issuer/year denominators, full Cartesian category counts and exact serialized window union; no facts/outcomes/network."
+}
