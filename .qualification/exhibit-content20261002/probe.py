@@ -1219,6 +1219,7 @@ def match_component(doc, spec, concept):
             if (
                 currency == "other"
                 or OTHER_CURRENCY_WORDS.search(header)
+                or OTHER_CURRENCY_WORDS.search(units[1])  # header cells over the whole table
                 or CONTEXT_CURRENCY.search(table_wide)
             ):
                 note("currency_mismatch", item)
@@ -1231,19 +1232,12 @@ def match_component(doc, spec, concept):
                 note("scale_unverified", item)  # no unit phrase: the multiplier is inferred
             else:
                 note("stated", item)
-    prose = doc["blocks"] + [
-        c["text"]
-        for table in doc["tables"]
-        for cells in table["rows"]
-        if not is_data_row([c["text"] for c in cells])
-        for c in cells
-        if c["text"]
-    ]
-    for table in doc["tables"]:  # a sentence split across cells: '... June 30, 2025 was | $5.2'
+    prose = list(doc["blocks"])
+    for table in doc["tables"]:  # prose laid out in a row is read as one text, cell by cell
         for cells in table["rows"]:
             texts = [c["text"] for c in cells if c["text"]]
-            if is_data_row(texts) and CONTINUES.search(texts[0]):
-                prose.append(" ".join(texts))
+            if texts and (not is_data_row(texts) or CONTINUES.search(texts[0])):
+                prose.append(" ".join(texts))  # '... June 30, 2025 | was $5.2 million'
     for sentence in sentences(prose):
         current = None  # the label window that later unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
@@ -1664,6 +1658,37 @@ def quarantine_partial_raw(source):
     return moved
 
 
+def quarantine_journal_tail(source, keep):
+    """Move aside an incomplete last line of requests.jsonl (a crash during the frozen cache's
+    append) before the cache parses the journal. The cache sends a request only after its
+    request_started line is written, so a cut line is never a sent request. keep(record) saves
+    the record before the journal is cut, so a crash in between loses nothing. A complete line
+    that does not parse is not a crash tail and stops the run."""
+    journal = source / "requests.jsonl"
+    if not journal.exists():
+        return None
+    data = journal.read_bytes()
+    complete, newline, tail = data.rpartition(b"\n")
+    for line in complete.splitlines():
+        try:
+            json.loads(line)
+        except ValueError as exc:
+            raise ProbeError("requests.jsonl has an unreadable complete line; review it") from exc
+    if not tail:
+        return None
+    target = source / "partial" / ("requests.jsonl.tail." + uuid.uuid4().hex)
+    target.parent.mkdir(exist_ok=True)
+    with open(target, "xb") as handle:
+        handle.write(tail)
+        handle.flush()
+        os.fsync(handle.fileno())
+    keep({"at": now(), "file": target.name, "bytes": len(tail), "sha256": sha(tail)})
+    with open(journal, "r+b") as handle:
+        handle.truncate(len(complete) + len(newline))
+        handle.flush()
+        os.fsync(handle.fileno())
+
+
 def fetch_event(frozen, cache, event):
     """Fetch index, header and EX-99 documents; return references to saved bytes."""
     capture = frozen.capture
@@ -1930,6 +1955,12 @@ def run(
             if moved:
                 meta.setdefault("quarantined_partial_raw", []).append({"at": now(), "files": moved})
                 write_json(frozen, record, meta)
+
+        def keep(tail):
+            meta.setdefault("quarantined_journal_tail", []).append(tail)
+            write_json(frozen, record, meta)
+
+        quarantine_journal_tail(attempt / "source", keep)
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
         wait_after_last_request(cache)
         try:

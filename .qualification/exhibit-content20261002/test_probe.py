@@ -503,6 +503,20 @@ def test_reversed_currency_phrases_closing_quotes_split_cells_and_between_codes(
     assert merged("Net income", "US$", "5.2", "US$", "4.0") == ["US$5.2", "US$4.0"]
 
 
+def test_prose_rows_join_their_cells_and_table_wide_header_currency():
+    split = (
+        b"<table><tr><td>Net income for the three months ended June 30, 2025</td>"
+        b"<td>was $5.2 million.</td></tr></table>"
+    )
+    assert classify(split)["current_ni"] == "stated"
+    wide = b"""<table>
+<tr><td>CAD in millions</td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td>Net income</td><td>5.2</td></tr></table>"""
+    assert classify(wide)["current_ni"] == "currency_mismatch"
+    usd = wide.replace(b"CAD in millions", b"(in millions)")
+    assert classify(usd)["current_ni"] == "stated"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -1126,6 +1140,29 @@ def test_partial_raw_file_is_quarantined_before_the_cache_opens(tmp_path):
     meta = json.loads((attempt / "attempt.json").read_text())
     assert meta["status"] == "complete" and not partial.exists()
     assert meta["quarantined_partial_raw"][0]["files"] == [partial.name]
+
+
+def test_incomplete_journal_tail_is_quarantined_before_the_cache_opens(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}))
+    attempt = next((study / "attempts").iterdir())
+    journal = attempt / "source" / "requests.jsonl"
+    complete = journal.read_bytes()
+    cut = b'{"at": "2026-10-02T21:00:00+00:00", "event": "request_sta'
+    journal.write_bytes(complete + cut)  # as if a crash cut the cache's append short
+    go(repo, study, Opener(site()), resume=attempt.name)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["status"] == "complete" and journal.read_bytes().startswith(complete)
+    tail = meta["quarantined_journal_tail"][0]
+    assert (attempt / "source" / "partial" / tail["file"]).read_bytes() == cut
+    assert tail["bytes"] == len(cut) and tail["sha256"] == sha(cut)
+    source = tmp_path / "source"
+    source.mkdir()
+    (source / "requests.jsonl").write_bytes(b'{"event": "request_started"}\nnot json\n')
+    with pytest.raises(m.ProbeError, match="unreadable complete line"):
+        m.quarantine_journal_tail(source, keep=print)
 
 
 def test_ceiling_stop_written_before_its_record_survives_a_crash(tmp_path):
