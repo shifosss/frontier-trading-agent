@@ -1,6 +1,6 @@
 # Earnings disclosure timing: declared 8-K Item 2.02 audit
 
-**October 1, 2026: declared, frozen and tested offline. Not yet run.** The audit needs retained SEC metadata that is not in a fresh clone. No candidate matching, timing or outcome has been computed, and no price, return, S/Q value or exhibit has been read. An earlier schema-only inspection, recorded in the handbook, counted 26,712 raw 8-K occurrences and their field completeness without matching any of them.
+**October 1, 2026: declared, frozen and tested offline. October 2: run once; the primary verdict is `supported_at_metadata_level` (prior share 63.9–64.4% of the 2,010 qualified events). See the [results](disclosure-timing-results.md).** No price, return, S/Q value or exhibit was read. Before the run, an earlier schema-only inspection, recorded in the handbook, counted 26,712 raw 8-K occurrences and their field completeness without matching any of them.
 
 ## Why this is next
 
@@ -22,4 +22,4 @@ Item 2.02 metadata says an earnings-related release was furnished. It does not s
 
 ## To run it
 
-Restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and two empty source lock files, not the 31.8 GB corpus. Restore the two lock files first: until both exist, the preflight reports only them and reads no source input. Then run `audit.py --preflight` until it reports `ready: true` with an empty or accepted `issuer_unavailable` list, and run `audit.py` once. A second run of the same frozen definition is refused; a rerun needs a new declared amendment. Record the attempt and summary in a dated `*-results.md` next to this file.
+It has run once (attempt `31316f533e4f4c0e829d9e5bfbc4c6a4`); a rerun needs a new declared amendment. For reference, restore the retained files listed in the [study interface](../.qualification/disclosure-timing20261001/interface.md#inputs-to-restore-before-the-real-run). They total about 110 MB plus 79 small history pages and two empty source lock files, not the 31.8 GB corpus. Restore the two lock files first: until both exist, the preflight reports only them and reads no source input. Then run `audit.py --preflight` until it reports `ready: true` with an empty or accepted `issuer_unavailable` list, and run `audit.py` once. A second run of the same frozen definition is refused; a rerun needs a new declared amendment. Record the attempt and summary in a dated `*-results.md` next to this file.

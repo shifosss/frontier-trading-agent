@@ -1,0 +1,4171 @@
+[
+ {
+  "issuer": {
+   "symbol": "MCRB",
+   "cik": "0001609809"
+  },
+  "registered_originals": 32,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001609809.json",
+    "sha256": "0b7284e893dd2bf31612f3b044b53395b42e6c6f81cb8fcddbb2cc5317c14441",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/0b7284e893dd2bf31612f3b044b53395b42e6c6f81cb8fcddbb2cc5317c14441.bin",
+    "rows": 721
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 721,
+  "unique_accessions": 721,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 120,
+  "unique_item_2_02_8k": 43,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CAG",
+   "cik": "0000023217"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000023217.json",
+    "sha256": "fd95ca4b09cf5a56bc7046c22d6c79e71fde7e1a9ea60dcc2ad478423e20cff9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/fd95ca4b09cf5a56bc7046c22d6c79e71fde7e1a9ea60dcc2ad478423e20cff9.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000023217-submissions-001.json",
+    "sha256": "9adeb2cc608e41cda0d22e50f28b3e87cc8edb25f9a7616c3a87610b4997dcd5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/9adeb2cc608e41cda0d22e50f28b3e87cc8edb25f9a7616c3a87610b4997dcd5.bin",
+    "rows": 1366
+   }
+  ],
+  "coverage": [
+   [
+    "1994-01-12",
+    "2015-07-06"
+   ],
+   [
+    "2015-07-08",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2367,
+  "unique_accessions": 2367,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 368,
+  "unique_item_2_02_8k": 102,
+  "empty_primary_document_8k": 12,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SCOR",
+   "cik": "0001158172"
+  },
+  "registered_originals": 39,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001158172.json",
+    "sha256": "18ed8c8e5473f9a6acfb3fa25cf075d8709f60d72b5a86875bbff0e45daf9cf5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/18ed8c8e5473f9a6acfb3fa25cf075d8709f60d72b5a86875bbff0e45daf9cf5.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001158172-submissions-001.json",
+    "sha256": "334ba5f8f2821f0964f3fbd68450a2954d049c2321ccfa96447af57e8dc7dfde",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/334ba5f8f2821f0964f3fbd68450a2954d049c2321ccfa96447af57e8dc7dfde.bin",
+    "rows": 1056
+   }
+  ],
+  "coverage": [
+   [
+    "2002-06-21",
+    "2015-03-25"
+   ],
+   [
+    "2015-03-27",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2057,
+  "unique_accessions": 2057,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 247,
+  "unique_item_2_02_8k": 78,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "PPG",
+   "cik": "0000079879"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000079879.json",
+    "sha256": "f215160918100253a2a42afead96e83343a2e91fff55854db0cc6bd994daea0b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/f215160918100253a2a42afead96e83343a2e91fff55854db0cc6bd994daea0b.bin",
+    "rows": 1017
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000079879-submissions-001.json",
+    "sha256": "53a41b71d6bbd147a41b3e99019816506440227814fac770d05b4a9073e5924f",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/53a41b71d6bbd147a41b3e99019816506440227814fac770d05b4a9073e5924f.bin",
+    "rows": 2004
+   },
+   {
+    "index": 2,
+    "url": "https://data.sec.gov/submissions/CIK0000079879-submissions-002.json",
+    "sha256": "488ce2d289d5466d3ef5e8e37423186cd9ec835b8d354c3b61d976b8d323599e",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/488ce2d289d5466d3ef5e8e37423186cd9ec835b8d354c3b61d976b8d323599e.bin",
+    "rows": 2007
+   }
+  ],
+  "coverage": [
+   [
+    "2005-09-02",
+    "2014-03-11"
+   ],
+   [
+    "2014-03-13",
+    "2022-12-11"
+   ],
+   [
+    "2022-12-13",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 5028,
+  "unique_accessions": 5028,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 293,
+  "unique_item_2_02_8k": 95,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "DXCM",
+   "cik": "0001093557"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001093557.json",
+    "sha256": "8b1ad91b5819212fd58715b744c03aec74cb605f49dfb6151f6c780734b943c3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/8b1ad91b5819212fd58715b744c03aec74cb605f49dfb6151f6c780734b943c3.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001093557-submissions-001.json",
+    "sha256": "76f9d316b65cfaf94d385d570dc243bd1dff61e5d72f0e82addc5461d26e4a06",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/76f9d316b65cfaf94d385d570dc243bd1dff61e5d72f0e82addc5461d26e4a06.bin",
+    "rows": 1642
+   }
+  ],
+  "coverage": [
+   [
+    "2002-05-30",
+    "2019-02-09"
+   ],
+   [
+    "2019-02-11",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2643,
+  "unique_accessions": 2643,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 273,
+  "unique_item_2_02_8k": 108,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "MMM",
+   "cik": "0000066740"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000066740.json",
+    "sha256": "81c4f52cc43256a856a3e4a40f3f39692670af403ee00329980bcce7f0bd1edd",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/81c4f52cc43256a856a3e4a40f3f39692670af403ee00329980bcce7f0bd1edd.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000066740-submissions-001.json",
+    "sha256": "422e21b5e1132ea2c221ee534dc7c2e4e61359e5bf363d7e229cf388dc528f5b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/422e21b5e1132ea2c221ee534dc7c2e4e61359e5bf363d7e229cf388dc528f5b.bin",
+    "rows": 2016
+   }
+  ],
+  "coverage": [
+   [
+    "2006-02-07",
+    "2018-08-12"
+   ],
+   [
+    "2018-08-14",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3016,
+  "unique_accessions": 3016,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 348,
+  "unique_item_2_02_8k": 107,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ENOV",
+   "cik": "0001420800"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001420800.json",
+    "sha256": "e9876a71179cf3004997378ca2e3f0dfcbd17beaa395d1089a3e42b6c7f41bfd",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/e9876a71179cf3004997378ca2e3f0dfcbd17beaa395d1089a3e42b6c7f41bfd.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001420800-submissions-001.json",
+    "sha256": "74b27005446dbb7d6032ea81993a48b41118b899cab05515c7df09f0fe0d9166",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/74b27005446dbb7d6032ea81993a48b41118b899cab05515c7df09f0fe0d9166.bin",
+    "rows": 664
+   }
+  ],
+  "coverage": [
+   [
+    "2008-01-04",
+    "2015-11-16"
+   ],
+   [
+    "2015-11-18",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1666,
+  "unique_accessions": 1666,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 226,
+  "unique_item_2_02_8k": 81,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "TRU",
+   "cik": "0001552033"
+  },
+  "registered_originals": 40,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001552033.json",
+    "sha256": "bec6605390c8697b6e71c9ac1e18f34f47ecad048ba48a3fff7777bc76aa6250",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/bec6605390c8697b6e71c9ac1e18f34f47ecad048ba48a3fff7777bc76aa6250.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001552033-submissions-001.json",
+    "sha256": "082d2ab139bd6750ccbeb6524c29c6abbe3fcb8415a2b89f7fbb389b996c77f8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/082d2ab139bd6750ccbeb6524c29c6abbe3fcb8415a2b89f7fbb389b996c77f8.bin",
+    "rows": 260
+   }
+  ],
+  "coverage": [
+   [
+    "2012-07-25",
+    "2017-02-21"
+   ],
+   [
+    "2017-02-23",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1264,
+  "unique_accessions": 1264,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 177,
+  "unique_item_2_02_8k": 57,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "LULU",
+   "cik": "0001397187"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001397187.json",
+    "sha256": "16414af908b2e744b820053277b95dbf66f8b8f8c84d8b80575de7ebe186f9bc",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/16414af908b2e744b820053277b95dbf66f8b8f8c84d8b80575de7ebe186f9bc.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001397187-submissions-001.json",
+    "sha256": "a8dd049a865081142e0f0bbbbac85a39b17df0b02275d6f0d0503325891e4378",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/a8dd049a865081142e0f0bbbbac85a39b17df0b02275d6f0d0503325891e4378.bin",
+    "rows": 627
+   }
+  ],
+  "coverage": [
+   [
+    "2007-04-30",
+    "2013-01-05"
+   ],
+   [
+    "2013-01-07",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1628,
+  "unique_accessions": 1628,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 199,
+  "unique_item_2_02_8k": 77,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "WSM",
+   "cik": "0000719955"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000719955.json",
+    "sha256": "08cd02e68050c90c7ce22b10e7de9bbc02885f5544b94dd56920f7ca140eb622",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/08cd02e68050c90c7ce22b10e7de9bbc02885f5544b94dd56920f7ca140eb622.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000719955-submissions-001.json",
+    "sha256": "e32a42fe4768c8295bc09b9b9612056073c966c1e05bbb51a800d19d2d4a6d4a",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/e32a42fe4768c8295bc09b9b9612056073c966c1e05bbb51a800d19d2d4a6d4a.bin",
+    "rows": 830
+   }
+  ],
+  "coverage": [
+   [
+    "1995-02-08",
+    "2015-04-05"
+   ],
+   [
+    "2015-04-07",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1832,
+  "unique_accessions": 1832,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 214,
+  "unique_item_2_02_8k": 90,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "TKR",
+   "cik": "0000098362"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000098362.json",
+    "sha256": "6b437766da1f0cdcbfd00629856d384ddd5ede4a5b418d30280ebcdbe0e36329",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/6b437766da1f0cdcbfd00629856d384ddd5ede4a5b418d30280ebcdbe0e36329.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000098362-submissions-001.json",
+    "sha256": "fd6fd8522f49b151da2ce553598f69b599a7626b1709f6d98c7a0dc3599f5798",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/fd6fd8522f49b151da2ce553598f69b599a7626b1709f6d98c7a0dc3599f5798.bin",
+    "rows": 1372
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-10",
+    "2013-06-29"
+   ],
+   [
+    "2013-07-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2376,
+  "unique_accessions": 2376,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 317,
+  "unique_item_2_02_8k": 106,
+  "empty_primary_document_8k": 6,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "AWK",
+   "cik": "0001410636"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001410636.json",
+    "sha256": "fae011b567e44396c6e35bdce5b1b5f2cb9d49d99a5e1861fcdd4b000b2e51dc",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/fae011b567e44396c6e35bdce5b1b5f2cb9d49d99a5e1861fcdd4b000b2e51dc.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001410636-submissions-001.json",
+    "sha256": "8f934467998ffdb9276a8058618f9fc4ac95634a9b9114ec0b7698693a4c5eb2",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/8f934467998ffdb9276a8058618f9fc4ac95634a9b9114ec0b7698693a4c5eb2.bin",
+    "rows": 616
+   }
+  ],
+  "coverage": [
+   [
+    "2007-08-27",
+    "2015-03-08"
+   ],
+   [
+    "2015-03-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1616,
+  "unique_accessions": 1616,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 306,
+  "unique_item_2_02_8k": 81,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "GMED",
+   "cik": "0001237831"
+  },
+  "registered_originals": 41,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001237831.json",
+    "sha256": "9ea220486e6c40c8d8dd2b92966f94d09caa6cbeed9c5e1f7ec0bb4d1254892a",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/9ea220486e6c40c8d8dd2b92966f94d09caa6cbeed9c5e1f7ec0bb4d1254892a.bin",
+    "rows": 772
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 772,
+  "unique_accessions": 772,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 129,
+  "unique_item_2_02_8k": 70,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "BIO",
+   "cik": "0000012208"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000012208.json",
+    "sha256": "9de88d5892fbee64474dbfab52d2dacea7915dbb0378b12a02e5a2aa1139c243",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/9de88d5892fbee64474dbfab52d2dacea7915dbb0378b12a02e5a2aa1139c243.bin",
+    "rows": 1007
+   }
+  ],
+  "coverage": [
+   [
+    "2011-09-12",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1007,
+  "unique_accessions": 1007,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 136,
+  "unique_item_2_02_8k": 60,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "URBN",
+   "cik": "0000912615"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000912615.json",
+    "sha256": "c4fb7309222db7013a8513b19d266d781051142fd70203978e019821a8d297af",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/c4fb7309222db7013a8513b19d266d781051142fd70203978e019821a8d297af.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "2011-11-04",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 129,
+  "unique_item_2_02_8k": 31,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "OLED",
+   "cik": "0001005284"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001005284.json",
+    "sha256": "2b7f19453abad02139cd7e4f453beff6d1694c0d9e7336e48bc1a067481fdeb8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2b7f19453abad02139cd7e4f453beff6d1694c0d9e7336e48bc1a067481fdeb8.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001005284-submissions-001.json",
+    "sha256": "1915a78039611d1df9145af451c810e0d23e29dfc7b9af9bdfbe1cb592bb92a7",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/1915a78039611d1df9145af451c810e0d23e29dfc7b9af9bdfbe1cb592bb92a7.bin",
+    "rows": 835
+   }
+  ],
+  "coverage": [
+   [
+    "1996-05-28",
+    "2014-01-29"
+   ],
+   [
+    "2014-01-31",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1835,
+  "unique_accessions": 1835,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 153,
+  "unique_item_2_02_8k": 56,
+  "empty_primary_document_8k": 2,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "FIVE",
+   "cik": "0001177609"
+  },
+  "registered_originals": 41,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001177609.json",
+    "sha256": "cbca626910125686e448e3417143588a6f468052799d4ddd43a1614f42bc9ae8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/cbca626910125686e448e3417143588a6f468052799d4ddd43a1614f42bc9ae8.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001177609-submissions-001.json",
+    "sha256": "ca18bbac42d23429c84e2f4e684331768799c4683ee6e6367157848d3a805226",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/ca18bbac42d23429c84e2f4e684331768799c4683ee6e6367157848d3a805226.bin",
+    "rows": 254
+   }
+  ],
+  "coverage": [
+   [
+    "2002-06-24",
+    "2014-05-10"
+   ],
+   [
+    "2014-05-12",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1254,
+  "unique_accessions": 1254,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 131,
+  "unique_item_2_02_8k": 60,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "BCPC",
+   "cik": "0000009326"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000009326.json",
+    "sha256": "2a9cb82e4959daf0eccbe0d88dd3e4b1505d68c57bc047c0347f2ec72498eaaa",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2a9cb82e4959daf0eccbe0d88dd3e4b1505d68c57bc047c0347f2ec72498eaaa.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "2008-01-14",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 161,
+  "unique_item_2_02_8k": 75,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "VEEV",
+   "cik": "0001393052"
+  },
+  "registered_originals": 37,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001393052.json",
+    "sha256": "e49ca9541eb80c83f1a41c24f61efe4b87f4d0fdf2360672b73b8bdee1e0d165",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/e49ca9541eb80c83f1a41c24f61efe4b87f4d0fdf2360672b73b8bdee1e0d165.bin",
+    "rows": 1003
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001393052-submissions-001.json",
+    "sha256": "87951f434f7f8550227b0e52df7c96d8166e4447d923dd7cc9a62f5d6ad7ea45",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/87951f434f7f8550227b0e52df7c96d8166e4447d923dd7cc9a62f5d6ad7ea45.bin",
+    "rows": 988
+   }
+  ],
+  "coverage": [
+   [
+    "2007-03-07",
+    "2019-10-01"
+   ],
+   [
+    "2019-10-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1991,
+  "unique_accessions": 1991,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 114,
+  "unique_item_2_02_8k": 55,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "BAX",
+   "cik": "0000010456"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000010456.json",
+    "sha256": "cc15f1740d7cc26f941d4740f26fee86ecabc2ebd1f0c87ae40496fb6a65df56",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/cc15f1740d7cc26f941d4740f26fee86ecabc2ebd1f0c87ae40496fb6a65df56.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000010456-submissions-001.json",
+    "sha256": "c27355896676a3e2908f28d0c5a7b2d7f79b9bffdb8a133b022b5a0ee04cd8b3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/c27355896676a3e2908f28d0c5a7b2d7f79b9bffdb8a133b022b5a0ee04cd8b3.bin",
+    "rows": 1494
+   }
+  ],
+  "coverage": [
+   [
+    "1994-03-21",
+    "2016-04-04"
+   ],
+   [
+    "2016-04-06",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2494,
+  "unique_accessions": 2494,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 309,
+  "unique_item_2_02_8k": 94,
+  "empty_primary_document_8k": 22,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CMP",
+   "cik": "0001227654"
+  },
+  "registered_originals": 41,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001227654.json",
+    "sha256": "be4c367499d0c855ec0527b06b6ce189111d1f5eff393cd95c03e6d58e6656d5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/be4c367499d0c855ec0527b06b6ce189111d1f5eff393cd95c03e6d58e6656d5.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001227654-submissions-001.json",
+    "sha256": "c6ec82b7bd3c4819d0a8e0202c6f5490538abb80b4cde4fdea201c3fe79e47a3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/c6ec82b7bd3c4819d0a8e0202c6f5490538abb80b4cde4fdea201c3fe79e47a3.bin",
+    "rows": 1449
+   }
+  ],
+  "coverage": [
+   [
+    "2003-04-17",
+    "2017-09-17"
+   ],
+   [
+    "2017-09-19",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2453,
+  "unique_accessions": 2453,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 301,
+  "unique_item_2_02_8k": 94,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "EPD",
+   "cik": "0001061219"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001061219.json",
+    "sha256": "2910d37adb4b58f87e1231f03eacec177046251150f6c8ec3f27715c3c4a2bb9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2910d37adb4b58f87e1231f03eacec177046251150f6c8ec3f27715c3c4a2bb9.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001061219-submissions-001.json",
+    "sha256": "011716b2d9dc65010ea0cbed57c3558b251a4004b629efb426e0e481e604ec26",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/011716b2d9dc65010ea0cbed57c3558b251a4004b629efb426e0e481e604ec26.bin",
+    "rows": 1461
+   }
+  ],
+  "coverage": [
+   [
+    "1998-05-13",
+    "2013-04-28"
+   ],
+   [
+    "2013-04-30",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2461,
+  "unique_accessions": 2461,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 441,
+  "unique_item_2_02_8k": 90,
+  "empty_primary_document_8k": 8,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "STZ",
+   "cik": "0000016918"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000016918.json",
+    "sha256": "ac7abb058761dae7505b004c9a25692e11df356710e86c35af5c7e13ce1af950",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/ac7abb058761dae7505b004c9a25692e11df356710e86c35af5c7e13ce1af950.bin",
+    "rows": 1003
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000016918-submissions-001.json",
+    "sha256": "806a51fd35241958b85b82765770cc9dba5624837c2b933f96a3e0f15bb343f8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/806a51fd35241958b85b82765770cc9dba5624837c2b933f96a3e0f15bb343f8.bin",
+    "rows": 1457
+   }
+  ],
+  "coverage": [
+   [
+    "1994-01-13",
+    "2018-03-27"
+   ],
+   [
+    "2018-03-29",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2460,
+  "unique_accessions": 2460,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 512,
+  "unique_item_2_02_8k": 95,
+  "empty_primary_document_8k": 30,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "OGS",
+   "cik": "0001587732"
+  },
+  "registered_originals": 36,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001587732.json",
+    "sha256": "f63a58e777f1f50d4291940a41bd42c76821b342af05b317aad364b31e84254b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/f63a58e777f1f50d4291940a41bd42c76821b342af05b317aad364b31e84254b.bin",
+    "rows": 993
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 993,
+  "unique_accessions": 993,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 324,
+  "unique_item_2_02_8k": 58,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "PCRX",
+   "cik": "0001396814"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001396814.json",
+    "sha256": "ffe307754603dc9be67f0641e5ff3984e64c37d77ea7383a859162a2ca12a70a",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/ffe307754603dc9be67f0641e5ff3984e64c37d77ea7383a859162a2ca12a70a.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001396814-submissions-001.json",
+    "sha256": "e199b705db4bc42b95279e2528d7263e6cd404c9a2fcf694a71cec7dbe93d23b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/e199b705db4bc42b95279e2528d7263e6cd404c9a2fcf694a71cec7dbe93d23b.bin",
+    "rows": 291
+   }
+  ],
+  "coverage": [
+   [
+    "2007-04-16",
+    "2014-02-23"
+   ],
+   [
+    "2014-02-25",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1292,
+  "unique_accessions": 1292,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 202,
+  "unique_item_2_02_8k": 106,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "FLS",
+   "cik": "0000030625"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000030625.json",
+    "sha256": "2fff0f3a00514e3cc720b7e10b29b8e28a1353cbf64eac0e7439eef8b832279c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2fff0f3a00514e3cc720b7e10b29b8e28a1353cbf64eac0e7439eef8b832279c.bin",
+    "rows": 1005
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000030625-submissions-001.json",
+    "sha256": "caa1382cf076ac7bbab7d1b9d7fa5741433e9c5a82eb9da20c4f00ba007f3493",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/caa1382cf076ac7bbab7d1b9d7fa5741433e9c5a82eb9da20c4f00ba007f3493.bin",
+    "rows": 1417
+   }
+  ],
+  "coverage": [
+   [
+    "1994-03-11",
+    "2015-02-08"
+   ],
+   [
+    "2015-02-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2422,
+  "unique_accessions": 2422,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 245,
+  "unique_item_2_02_8k": 67,
+  "empty_primary_document_8k": 6,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CHH",
+   "cik": "0001046311"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001046311.json",
+    "sha256": "42ea40f162889f74839c70098accfd5bd364abd5eb1bc5407f9ea490af9c05ac",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/42ea40f162889f74839c70098accfd5bd364abd5eb1bc5407f9ea490af9c05ac.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001046311-submissions-001.json",
+    "sha256": "39faa8633dfd1c82d9cd18bcba30cf85af561d362e0699d3d327c21235c2b800",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/39faa8633dfd1c82d9cd18bcba30cf85af561d362e0699d3d327c21235c2b800.bin",
+    "rows": 2000
+   }
+  ],
+  "coverage": [
+   [
+    "1999-02-10",
+    "2018-03-26"
+   ],
+   [
+    "2018-03-28",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3001,
+  "unique_accessions": 3001,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 242,
+  "unique_item_2_02_8k": 88,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CNMD",
+   "cik": "0000816956"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000816956.json",
+    "sha256": "feee5f023d4c7674ef5e4c634c1c392f6f5c8b95cb451cf4c2be74b06a3eb042",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/feee5f023d4c7674ef5e4c634c1c392f6f5c8b95cb451cf4c2be74b06a3eb042.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000816956-submissions-001.json",
+    "sha256": "e95cd0727b423ec60dd09cdc2e093f7622503504b049a13616bb735b332d015a",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/e95cd0727b423ec60dd09cdc2e093f7622503504b049a13616bb735b332d015a.bin",
+    "rows": 1248
+   }
+  ],
+  "coverage": [
+   [
+    "1995-02-09",
+    "2015-03-03"
+   ],
+   [
+    "2015-03-05",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2250,
+  "unique_accessions": 2250,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 257,
+  "unique_item_2_02_8k": 93,
+  "empty_primary_document_8k": 13,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "FMC",
+   "cik": "0000037785"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000037785.json",
+    "sha256": "305a4447414f44bdf33130f4f42e8101e2a8557bd5ac42ca3033ddd0f5858d2d",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/305a4447414f44bdf33130f4f42e8101e2a8557bd5ac42ca3033ddd0f5858d2d.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000037785-submissions-001.json",
+    "sha256": "eedc84f97699ed656c4209e27c126d3fdce2fc4740fd393499261791e2406f45",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/eedc84f97699ed656c4209e27c126d3fdce2fc4740fd393499261791e2406f45.bin",
+    "rows": 1677
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-14",
+    "2017-07-31"
+   ],
+   [
+    "2017-08-02",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2677,
+  "unique_accessions": 2677,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 383,
+  "unique_item_2_02_8k": 98,
+  "empty_primary_document_8k": 30,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "MLKN",
+   "cik": "0000066382"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000066382.json",
+    "sha256": "2ad11341c5cfdd442945728abf11516845302bcfc429473cbf2d8f38b9f66b2f",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2ad11341c5cfdd442945728abf11516845302bcfc429473cbf2d8f38b9f66b2f.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000066382-submissions-001.json",
+    "sha256": "3844911de293417600da113d2249da7c5bd697589d507b7d07be44079c522088",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/3844911de293417600da113d2249da7c5bd697589d507b7d07be44079c522088.bin",
+    "rows": 960
+   }
+  ],
+  "coverage": [
+   [
+    "1994-01-04",
+    "2014-01-22"
+   ],
+   [
+    "2014-01-24",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1961,
+  "unique_accessions": 1961,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 284,
+  "unique_item_2_02_8k": 101,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "FISV",
+   "cik": "0000798354"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000798354.json",
+    "sha256": "4cbaeed925d21aa73739fd53f123977d4bd56a2b6c131b8a2983c0da098d8666",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/4cbaeed925d21aa73739fd53f123977d4bd56a2b6c131b8a2983c0da098d8666.bin",
+    "rows": 1005
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000798354-submissions-001.json",
+    "sha256": "a86ef93b83b70c959a1b3ba7c786848dbeed7faf3eeb27718492dc244be16a99",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/a86ef93b83b70c959a1b3ba7c786848dbeed7faf3eeb27718492dc244be16a99.bin",
+    "rows": 1734
+   }
+  ],
+  "coverage": [
+   [
+    "1994-08-04",
+    "2019-06-29"
+   ],
+   [
+    "2019-07-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2739,
+  "unique_accessions": 2739,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 291,
+  "unique_item_2_02_8k": 94,
+  "empty_primary_document_8k": 15,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SM",
+   "cik": "0000893538"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000893538.json",
+    "sha256": "950a472358012354cb9f81ccf4878fd2b1e3760c659f28d0b38bc5741ce2933f",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/950a472358012354cb9f81ccf4878fd2b1e3760c659f28d0b38bc5741ce2933f.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000893538-submissions-001.json",
+    "sha256": "958d0314cb2a24af9bd240b96623d7dc195bfce16f6232bce30284622aab7bdc",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/958d0314cb2a24af9bd240b96623d7dc195bfce16f6232bce30284622aab7bdc.bin",
+    "rows": 1308
+   }
+  ],
+  "coverage": [
+   [
+    "1996-07-05",
+    "2014-01-22"
+   ],
+   [
+    "2014-01-24",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2308,
+  "unique_accessions": 2308,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 507,
+  "unique_item_2_02_8k": 114,
+  "empty_primary_document_8k": 10,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ITGR",
+   "cik": "0001114483"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001114483.json",
+    "sha256": "02f81cda7bc327ef628eec9f18f89d52ede339a790aae4d50ae48eeef33dda43",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/02f81cda7bc327ef628eec9f18f89d52ede339a790aae4d50ae48eeef33dda43.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001114483-submissions-001.json",
+    "sha256": "bb3c505d37b8b4e8e5ced0e407b2d1aa7a530c1abb04b66291d4f47db5ef536c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/bb3c505d37b8b4e8e5ced0e407b2d1aa7a530c1abb04b66291d4f47db5ef536c.bin",
+    "rows": 793
+   }
+  ],
+  "coverage": [
+   [
+    "2000-05-22",
+    "2014-01-06"
+   ],
+   [
+    "2014-01-08",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1797,
+  "unique_accessions": 1797,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 283,
+  "unique_item_2_02_8k": 97,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ROP",
+   "cik": "0000882835"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000882835.json",
+    "sha256": "bfd277b8d39342287da4512b0db29295eb995fa80728540d2d45cfb78ea87f40",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/bfd277b8d39342287da4512b0db29295eb995fa80728540d2d45cfb78ea87f40.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "2011-08-08",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 141,
+  "unique_item_2_02_8k": 59,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "NKTR",
+   "cik": "0000906709"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000906709.json",
+    "sha256": "bb411d93087a1691994222bf965abb97a4f603d0cd154cb0a76474f29ffd660d",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/bb411d93087a1691994222bf965abb97a4f603d0cd154cb0a76474f29ffd660d.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000906709-submissions-001.json",
+    "sha256": "cbc7bbada9bff23467cdfe9db68149da09d37db9fa6c43f4c0b75ff9b7a21c62",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/cbc7bbada9bff23467cdfe9db68149da09d37db9fa6c43f4c0b75ff9b7a21c62.bin",
+    "rows": 976
+   }
+  ],
+  "coverage": [
+   [
+    "1996-02-14",
+    "2015-07-14"
+   ],
+   [
+    "2015-07-16",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1978,
+  "unique_accessions": 1978,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 357,
+  "unique_item_2_02_8k": 104,
+  "empty_primary_document_8k": 7,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "GRPN",
+   "cik": "0001490281"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001490281.json",
+    "sha256": "7ae04a9295f3bd2027d0cf91181915617793ed51e52e62283ceaa788cf978f8a",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7ae04a9295f3bd2027d0cf91181915617793ed51e52e62283ceaa788cf978f8a.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001490281-submissions-001.json",
+    "sha256": "ce06d37ad5ae4a04563c9954fd503727488634085e7b43401469881c5d775e27",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/ce06d37ad5ae4a04563c9954fd503727488634085e7b43401469881c5d775e27.bin",
+    "rows": 567
+   }
+  ],
+  "coverage": [
+   [
+    "2010-04-28",
+    "2015-05-10"
+   ],
+   [
+    "2015-05-12",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1571,
+  "unique_accessions": 1571,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 155,
+  "unique_item_2_02_8k": 60,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "MIDD",
+   "cik": "0000769520"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000769520.json",
+    "sha256": "48dcfdf19a3182dfba7494dc23b5cc53a293954c4b10c1dfe6fdfdc196a4daca",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/48dcfdf19a3182dfba7494dc23b5cc53a293954c4b10c1dfe6fdfdc196a4daca.bin",
+    "rows": 1001
+   }
+  ],
+  "coverage": [
+   [
+    "2007-06-21",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1001,
+  "unique_accessions": 1001,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 198,
+  "unique_item_2_02_8k": 79,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "PAYC",
+   "cik": "0001590955"
+  },
+  "registered_originals": 36,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001590955.json",
+    "sha256": "7e822a803ca2908a1eb1f5cda2d9687361f669696a7b34c22bccd0992bab9039",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7e822a803ca2908a1eb1f5cda2d9687361f669696a7b34c22bccd0992bab9039.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001590955-submissions-001.json",
+    "sha256": "849e08f69ed3aad81bde8c92b058fab6154758123d8bb935c6de17a072a37d6c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/849e08f69ed3aad81bde8c92b058fab6154758123d8bb935c6de17a072a37d6c.bin",
+    "rows": 147
+   }
+  ],
+  "coverage": [
+   [
+    "2013-12-09",
+    "2015-07-08"
+   ],
+   [
+    "2015-07-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1149,
+  "unique_accessions": 1149,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 147,
+  "unique_item_2_02_8k": 50,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ZUMZ",
+   "cik": "0001318008"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001318008.json",
+    "sha256": "d9c55a7bcfba196be14b8407e879d1e0ccb6a430ba459f857d3593df87ba43d5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/d9c55a7bcfba196be14b8407e879d1e0ccb6a430ba459f857d3593df87ba43d5.bin",
+    "rows": 1001
+   }
+  ],
+  "coverage": [
+   [
+    "2010-02-12",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1001,
+  "unique_accessions": 1001,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 222,
+  "unique_item_2_02_8k": 67,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ETD",
+   "cik": "0000896156"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000896156.json",
+    "sha256": "328a73a0f28fa3b33b4514940ee93185198abdb05ffaa19401dcefaf6738b215",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/328a73a0f28fa3b33b4514940ee93185198abdb05ffaa19401dcefaf6738b215.bin",
+    "rows": 1001
+   }
+  ],
+  "coverage": [
+   [
+    "2010-04-28",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1001,
+  "unique_accessions": 1001,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 167,
+  "unique_item_2_02_8k": 68,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SMTC",
+   "cik": "0000088941"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000088941.json",
+    "sha256": "deb78595600a37eef04d3b265ce6c7b1df8ab23b8f48404006f8116ed52cd998",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/deb78595600a37eef04d3b265ce6c7b1df8ab23b8f48404006f8116ed52cd998.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000088941-submissions-001.json",
+    "sha256": "0c4d894712df27acd2d323bb617197ca4c3625f1e969d07ae2e1a5ab4867fc78",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/0c4d894712df27acd2d323bb617197ca4c3625f1e969d07ae2e1a5ab4867fc78.bin",
+    "rows": 2002
+   }
+  ],
+  "coverage": [
+   [
+    "2003-02-21",
+    "2018-07-01"
+   ],
+   [
+    "2018-07-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3004,
+  "unique_accessions": 3004,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 268,
+  "unique_item_2_02_8k": 93,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "MTX",
+   "cik": "0000891014"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000891014.json",
+    "sha256": "ace1d54b9d6fd9c5fee613d672a83f072a33a4c5ef624b3079ae3669f225ddfd",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/ace1d54b9d6fd9c5fee613d672a83f072a33a4c5ef624b3079ae3669f225ddfd.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000891014-submissions-001.json",
+    "sha256": "8e7aed5ccfe4559f143242d5507c94d2d1db2e24daf3dee3da8539be771711c5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/8e7aed5ccfe4559f143242d5507c94d2d1db2e24daf3dee3da8539be771711c5.bin",
+    "rows": 2001
+   }
+  ],
+  "coverage": [
+   [
+    "2004-09-17",
+    "2018-10-24"
+   ],
+   [
+    "2018-10-26",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3002,
+  "unique_accessions": 3002,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 265,
+  "unique_item_2_02_8k": 92,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CWT",
+   "cik": "0001035201"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001035201.json",
+    "sha256": "3b2a755a027224f26e0bd97c30b6d5805f516f78241abddaf365cb714970fc7b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/3b2a755a027224f26e0bd97c30b6d5805f516f78241abddaf365cb714970fc7b.bin",
+    "rows": 1009
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001035201-submissions-001.json",
+    "sha256": "6ae59a71499b93f95bd7f3a47e3cc9e9fec90855368e0026fdd135dfdb185be2",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/6ae59a71499b93f95bd7f3a47e3cc9e9fec90855368e0026fdd135dfdb185be2.bin",
+    "rows": 1710
+   }
+  ],
+  "coverage": [
+   [
+    "1997-03-06",
+    "2019-09-08"
+   ],
+   [
+    "2019-09-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2719,
+  "unique_accessions": 2719,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 350,
+  "unique_item_2_02_8k": 87,
+  "empty_primary_document_8k": 6,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "AN",
+   "cik": "0000350698"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000350698.json",
+    "sha256": "df3ee60b29b69d6cb9e814d50fe60eba279f94b5f26fd49071c9a49c701939da",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/df3ee60b29b69d6cb9e814d50fe60eba279f94b5f26fd49071c9a49c701939da.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000350698-submissions-001.json",
+    "sha256": "84022c3a5ba0c5f8900ce5d488fdf06b9c351a9bb6aac987aecf156aa8cf5013",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/84022c3a5ba0c5f8900ce5d488fdf06b9c351a9bb6aac987aecf156aa8cf5013.bin",
+    "rows": 1488
+   }
+  ],
+  "coverage": [
+   [
+    "1995-08-08",
+    "2014-06-02"
+   ],
+   [
+    "2014-06-04",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2489,
+  "unique_accessions": 2489,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 408,
+  "unique_item_2_02_8k": 93,
+  "empty_primary_document_8k": 58,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "GPC",
+   "cik": "0000040987"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000040987.json",
+    "sha256": "ab26028ad9bafb014266436fd195306263efc70b22c84d97db7d703a4665c727",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/ab26028ad9bafb014266436fd195306263efc70b22c84d97db7d703a4665c727.bin",
+    "rows": 1005
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000040987-submissions-001.json",
+    "sha256": "16787c42e0226c490053a495fd17ea029d0dbf7795c312507a4c25339c227229",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/16787c42e0226c490053a495fd17ea029d0dbf7795c312507a4c25339c227229.bin",
+    "rows": 1773
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-04",
+    "2018-04-01"
+   ],
+   [
+    "2018-04-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2778,
+  "unique_accessions": 2778,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 320,
+  "unique_item_2_02_8k": 90,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ACM",
+   "cik": "0000868857"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000868857.json",
+    "sha256": "5c03630a94c29e28bed26db801a373c7e4323e50ab970fbe6659327a5f802f6c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/5c03630a94c29e28bed26db801a373c7e4323e50ab970fbe6659327a5f802f6c.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000868857-submissions-001.json",
+    "sha256": "58ed545b5358f66d36ffbaa9872578b4a9c3928fbcba418deff78802ac0eee24",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/58ed545b5358f66d36ffbaa9872578b4a9c3928fbcba418deff78802ac0eee24.bin",
+    "rows": 902
+   }
+  ],
+  "coverage": [
+   [
+    "2002-08-23",
+    "2013-04-01"
+   ],
+   [
+    "2013-04-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1902,
+  "unique_accessions": 1902,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 232,
+  "unique_item_2_02_8k": 78,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CRUS",
+   "cik": "0000772406"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000772406.json",
+    "sha256": "d1a0b6cf114ef3d41ec6845031f28bdedd37e6807314838d1f001e0df5249048",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/d1a0b6cf114ef3d41ec6845031f28bdedd37e6807314838d1f001e0df5249048.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000772406-submissions-001.json",
+    "sha256": "5fd42e69205a2057fd3eaeee3d80efe10a36fd7982525fc5c3e75b6d32fda0d3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/5fd42e69205a2057fd3eaeee3d80efe10a36fd7982525fc5c3e75b6d32fda0d3.bin",
+    "rows": 803
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-14",
+    "2013-07-29"
+   ],
+   [
+    "2013-07-31",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1803,
+  "unique_accessions": 1803,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 241,
+  "unique_item_2_02_8k": 97,
+  "empty_primary_document_8k": 7,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CNK",
+   "cik": "0001385280"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001385280.json",
+    "sha256": "db449b1f46efe7d1fffdbeca567e9e8446787c35f359a6864a523fb1eafeca89",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/db449b1f46efe7d1fffdbeca567e9e8446787c35f359a6864a523fb1eafeca89.bin",
+    "rows": 1008
+   }
+  ],
+  "coverage": [
+   [
+    "2010-04-02",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1008,
+  "unique_accessions": 1008,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 168,
+  "unique_item_2_02_8k": 67,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SR",
+   "cik": "0001126956"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001126956.json",
+    "sha256": "6d85de347f4d3c00894b9ce5b9dd4ce0dcb8badc6dc4079305c46fda37de6417",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/6d85de347f4d3c00894b9ce5b9dd4ce0dcb8badc6dc4079305c46fda37de6417.bin",
+    "rows": 1004
+   }
+  ],
+  "coverage": [
+   [
+    "2011-01-27",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1004,
+  "unique_accessions": 1004,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 227,
+  "unique_item_2_02_8k": 61,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "EFOR",
+   "cik": "0000890564"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000890564.json",
+    "sha256": "89c8fa45c8b4d37a82d516b0790827910aa19058ccfe904e0e729bf2dd453975",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/89c8fa45c8b4d37a82d516b0790827910aa19058ccfe904e0e729bf2dd453975.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000890564-submissions-001.json",
+    "sha256": "81c941c5b67a8e5d54447376e96af14c2bb158861ab487ea0f28df3706bcfc06",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/81c941c5b67a8e5d54447376e96af14c2bb158861ab487ea0f28df3706bcfc06.bin",
+    "rows": 1052
+   }
+  ],
+  "coverage": [
+   [
+    "1996-05-15",
+    "2013-01-05"
+   ],
+   [
+    "2013-01-07",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2056,
+  "unique_accessions": 2056,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 223,
+  "unique_item_2_02_8k": 91,
+  "empty_primary_document_8k": 2,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CSL",
+   "cik": "0000790051"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000790051.json",
+    "sha256": "c8f4f0275ea04ae6f6eea6ef331acd8b7322a0373c120d1115490a91522a0e03",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/c8f4f0275ea04ae6f6eea6ef331acd8b7322a0373c120d1115490a91522a0e03.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000790051-submissions-001.json",
+    "sha256": "93fbecad10e1e49f0cbf35d021545bb3d005bc7753d5e4e9727523e49dcc6064",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/93fbecad10e1e49f0cbf35d021545bb3d005bc7753d5e4e9727523e49dcc6064.bin",
+    "rows": 1028
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-14",
+    "2016-04-25"
+   ],
+   [
+    "2016-04-27",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2029,
+  "unique_accessions": 2029,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 219,
+  "unique_item_2_02_8k": 89,
+  "empty_primary_document_8k": 4,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "KBH",
+   "cik": "0000795266"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000795266.json",
+    "sha256": "6a04754aea1195b6402c46bfeba7b9dffb2321c41d2f01520914caf87b57719f",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/6a04754aea1195b6402c46bfeba7b9dffb2321c41d2f01520914caf87b57719f.bin",
+    "rows": 1002
+   }
+  ],
+  "coverage": [
+   [
+    "2010-04-05",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1002,
+  "unique_accessions": 1002,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 195,
+  "unique_item_2_02_8k": 66,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "NTGR",
+   "cik": "0001122904"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001122904.json",
+    "sha256": "037b6827e0645b3cec4d792b9b775374d2c4ec515ef324bdd85292c929eb4dad",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/037b6827e0645b3cec4d792b9b775374d2c4ec515ef324bdd85292c929eb4dad.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001122904-submissions-001.json",
+    "sha256": "843fb71e7376211a92fdc90b0ff8414954bbb4b2f493cc1d674f91c3c36833a0",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/843fb71e7376211a92fdc90b0ff8414954bbb4b2f493cc1d674f91c3c36833a0.bin",
+    "rows": 1538
+   }
+  ],
+  "coverage": [
+   [
+    "2000-09-08",
+    "2017-10-31"
+   ],
+   [
+    "2017-11-02",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2539,
+  "unique_accessions": 2539,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 184,
+  "unique_item_2_02_8k": 94,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "POST",
+   "cik": "0001530950"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001530950.json",
+    "sha256": "67d85ca23dbd2f7256452f9be4665a955128799611ac24679745583167966d50",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/67d85ca23dbd2f7256452f9be4665a955128799611ac24679745583167966d50.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001530950-submissions-001.json",
+    "sha256": "d321adb8f2eaa6224b8a6e838419c5a7bf8556f6725e5cb9da74344a6744ecbd",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/d321adb8f2eaa6224b8a6e838419c5a7bf8556f6725e5cb9da74344a6744ecbd.bin",
+    "rows": 1547
+   }
+  ],
+  "coverage": [
+   [
+    "2011-09-26",
+    "2021-11-29"
+   ],
+   [
+    "2021-12-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2547,
+  "unique_accessions": 2547,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 394,
+  "unique_item_2_02_8k": 79,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "RGR",
+   "cik": "0000095029"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000095029.json",
+    "sha256": "4a403b0ca9c401363a66d50c4c42340c97d933c139c79df6c41fd181afc78637",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/4a403b0ca9c401363a66d50c4c42340c97d933c139c79df6c41fd181afc78637.bin",
+    "rows": 1005
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000095029-submissions-001.json",
+    "sha256": "44635dc0b815ab5c5608ebb981d066e96d103c0d0f31c15c5fb872f2d7fed9fa",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/44635dc0b815ab5c5608ebb981d066e96d103c0d0f31c15c5fb872f2d7fed9fa.bin",
+    "rows": 580
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-14",
+    "2012-11-07"
+   ],
+   [
+    "2012-11-09",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1585,
+  "unique_accessions": 1585,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 307,
+  "unique_item_2_02_8k": 93,
+  "empty_primary_document_8k": 3,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "VZ",
+   "cik": "0000732712"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000732712.json",
+    "sha256": "54ae96760f32131df4dbd6a776ca9b4d568fc38b5eb26641e4b3d4caec2d923c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/54ae96760f32131df4dbd6a776ca9b4d568fc38b5eb26641e4b3d4caec2d923c.bin",
+    "rows": 1008
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000732712-submissions-001.json",
+    "sha256": "a02ac55ae746f66f261d03b9df13e0237c575c270a23c0387edfba6a6059eb4e",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/a02ac55ae746f66f261d03b9df13e0237c575c270a23c0387edfba6a6059eb4e.bin",
+    "rows": 2008
+   },
+   {
+    "index": 2,
+    "url": "https://data.sec.gov/submissions/CIK0000732712-submissions-002.json",
+    "sha256": "c03c71f37196ee322200cfee844d147842a32b1930b023780ec6598e4285d0e1",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/c03c71f37196ee322200cfee844d147842a32b1930b023780ec6598e4285d0e1.bin",
+    "rows": 2008
+   },
+   {
+    "index": 3,
+    "url": "https://data.sec.gov/submissions/CIK0000732712-submissions-003.json",
+    "sha256": "163fa5936e008cdbdabba9577534dd359d541f96e6ddc6168f81c491f3ec0eba",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/163fa5936e008cdbdabba9577534dd359d541f96e6ddc6168f81c491f3ec0eba.bin",
+    "rows": 2018
+   }
+  ],
+  "coverage": [
+   [
+    "2009-03-10",
+    "2013-10-26"
+   ],
+   [
+    "2013-10-28",
+    "2018-11-17"
+   ],
+   [
+    "2018-11-19",
+    "2023-12-02"
+   ],
+   [
+    "2023-12-04",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 7042,
+  "unique_accessions": 7042,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 324,
+  "unique_item_2_02_8k": 70,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "CENX",
+   "cik": "0000949157"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000949157.json",
+    "sha256": "7786d453935ddab747d80df79337896bf347bd2e9d3e7afa0b2d4420d0a7d072",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7786d453935ddab747d80df79337896bf347bd2e9d3e7afa0b2d4420d0a7d072.bin",
+    "rows": 1002
+   }
+  ],
+  "coverage": [
+   [
+    "2009-12-07",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1002,
+  "unique_accessions": 1002,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 191,
+  "unique_item_2_02_8k": 66,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SGI",
+   "cik": "0001206264"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001206264.json",
+    "sha256": "0fd7a0325985324fb0b37c1629167c15e544ff743d7ff99dfb9edd550f8a2c9d",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/0fd7a0325985324fb0b37c1629167c15e544ff743d7ff99dfb9edd550f8a2c9d.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001206264-submissions-001.json",
+    "sha256": "a4a317e255161347d68d7a9ea50bc6e67dc42ee8a65f2c6b9fc1c800c111e7d5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/a4a317e255161347d68d7a9ea50bc6e67dc42ee8a65f2c6b9fc1c800c111e7d5.bin",
+    "rows": 1041
+   }
+  ],
+  "coverage": [
+   [
+    "2002-11-14",
+    "2015-03-31"
+   ],
+   [
+    "2015-04-02",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2043,
+  "unique_accessions": 2043,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 398,
+  "unique_item_2_02_8k": 95,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "WDC",
+   "cik": "0000106040"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000106040.json",
+    "sha256": "7d80a2dc0b5eb6c2df1e7934abb912da524e01fe98608920bd0fff9bbf9ee60f",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7d80a2dc0b5eb6c2df1e7934abb912da524e01fe98608920bd0fff9bbf9ee60f.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000106040-submissions-001.json",
+    "sha256": "14ae8a262dc55a6cf2ea17f8dd69dca9f4a23b28cdc057fdb4b782834dc544db",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/14ae8a262dc55a6cf2ea17f8dd69dca9f4a23b28cdc057fdb4b782834dc544db.bin",
+    "rows": 2001
+   }
+  ],
+  "coverage": [
+   [
+    "2001-04-06",
+    "2018-11-06"
+   ],
+   [
+    "2018-11-08",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3005,
+  "unique_accessions": 3005,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 420,
+  "unique_item_2_02_8k": 92,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "OLLI",
+   "cik": "0001639300"
+  },
+  "registered_originals": 32,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001639300.json",
+    "sha256": "0941084d0342d99828713854a7a12d61bfc9beb854e94e52f2de3295a95c2e13",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/0941084d0342d99828713854a7a12d61bfc9beb854e94e52f2de3295a95c2e13.bin",
+    "rows": 918
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 918,
+  "unique_accessions": 918,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 91,
+  "unique_item_2_02_8k": 50,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "DBI",
+   "cik": "0001319947"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001319947.json",
+    "sha256": "be9efe0ab467bb1185518236deb9c8d771dfc861a3e7e4df24d290c8e5f2229c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/be9efe0ab467bb1185518236deb9c8d771dfc861a3e7e4df24d290c8e5f2229c.bin",
+    "rows": 1011
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001319947-submissions-001.json",
+    "sha256": "e3b9ba822aa1e815a735b8b41c5847e205e21e30158b72ee7f49a15d1b3f4642",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/e3b9ba822aa1e815a735b8b41c5847e205e21e30158b72ee7f49a15d1b3f4642.bin",
+    "rows": 1546
+   }
+  ],
+  "coverage": [
+   [
+    "2005-03-14",
+    "2018-10-08"
+   ],
+   [
+    "2018-10-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2557,
+  "unique_accessions": 2557,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 202,
+  "unique_item_2_02_8k": 87,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "PEP",
+   "cik": "0000077476"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000077476.json",
+    "sha256": "cdc781a717f9cc96866638f7118410f383c184ed7c039087544dc82fb3337db9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/cdc781a717f9cc96866638f7118410f383c184ed7c039087544dc82fb3337db9.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000077476-submissions-001.json",
+    "sha256": "0eb4159dc59a315cc17f99884183e84dc30bd3e6c3a901acba05c08f2fa0e635",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/0eb4159dc59a315cc17f99884183e84dc30bd3e6c3a901acba05c08f2fa0e635.bin",
+    "rows": 2000
+   }
+  ],
+  "coverage": [
+   [
+    "1996-04-18",
+    "2015-03-01"
+   ],
+   [
+    "2015-03-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3004,
+  "unique_accessions": 3004,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 447,
+  "unique_item_2_02_8k": 89,
+  "empty_primary_document_8k": 10,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "AEE",
+   "cik": "0001002910"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001002910.json",
+    "sha256": "d839039941685307ef3639297aefc5e6fcfcf0acee69b60ba85c31adf369de01",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/d839039941685307ef3639297aefc5e6fcfcf0acee69b60ba85c31adf369de01.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001002910-submissions-001.json",
+    "sha256": "d1cca3f7a87c34a66b2294854ae3d76f0b58bc0854b2fe1bd765145818bbed31",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/d1cca3f7a87c34a66b2294854ae3d76f0b58bc0854b2fe1bd765145818bbed31.bin",
+    "rows": 1566
+   }
+  ],
+  "coverage": [
+   [
+    "1995-11-13",
+    "2015-04-29"
+   ],
+   [
+    "2015-05-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2568,
+  "unique_accessions": 2568,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 403,
+  "unique_item_2_02_8k": 91,
+  "empty_primary_document_8k": 9,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "OI",
+   "cik": "0000812074"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000812074.json",
+    "sha256": "c7311ce80e595aff5f6b90d59f5713ca09993d44ea32aaa56498cc1fc4050e28",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/c7311ce80e595aff5f6b90d59f5713ca09993d44ea32aaa56498cc1fc4050e28.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "2010-11-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 230,
+  "unique_item_2_02_8k": 67,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "IOSP",
+   "cik": "0001054905"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001054905.json",
+    "sha256": "6ab3ae8deaaf1cd69a140a567f6b5a28f7ba206f44c53b4d9ce772c76752f043",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/6ab3ae8deaaf1cd69a140a567f6b5a28f7ba206f44c53b4d9ce772c76752f043.bin",
+    "rows": 1001
+   }
+  ],
+  "coverage": [
+   [
+    "2011-02-24",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1001,
+  "unique_accessions": 1001,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 139,
+  "unique_item_2_02_8k": 62,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "BJRI",
+   "cik": "0001013488"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001013488.json",
+    "sha256": "e0f6086fa1822982c1941efaf36b3a3beb3579e192e238e72160ea2812e19447",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/e0f6086fa1822982c1941efaf36b3a3beb3579e192e238e72160ea2812e19447.bin",
+    "rows": 1008
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001013488-submissions-001.json",
+    "sha256": "33cbc373617c467e555631af9f4a29aeda4e109aed1a321b723ec2ece7cb9211",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/33cbc373617c467e555631af9f4a29aeda4e109aed1a321b723ec2ece7cb9211.bin",
+    "rows": 1197
+   }
+  ],
+  "coverage": [
+   [
+    "1996-08-01",
+    "2015-02-25"
+   ],
+   [
+    "2015-02-27",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2205,
+  "unique_accessions": 2205,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 462,
+  "unique_item_2_02_8k": 97,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "FDS",
+   "cik": "0001013237"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001013237.json",
+    "sha256": "3b9e9d0f6fcb75cd7a547d84bcc935d7d48e3d6dfd0a86a149d1c4c8b81404f5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/3b9e9d0f6fcb75cd7a547d84bcc935d7d48e3d6dfd0a86a149d1c4c8b81404f5.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001013237-submissions-001.json",
+    "sha256": "ba393c27667859e2d557f8dc79c3f6a3f4481166ad2e0a746024ca55b0a391df",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/ba393c27667859e2d557f8dc79c3f6a3f4481166ad2e0a746024ca55b0a391df.bin",
+    "rows": 844
+   }
+  ],
+  "coverage": [
+   [
+    "1996-06-05",
+    "2014-10-01"
+   ],
+   [
+    "2014-10-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1845,
+  "unique_accessions": 1845,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 190,
+  "unique_item_2_02_8k": 87,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "KMI",
+   "cik": "0001506307"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001506307.json",
+    "sha256": "b8161875fa557ccf41bf45a26134b756fba24b9622f6cf732e1f3959c7fdf935",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/b8161875fa557ccf41bf45a26134b756fba24b9622f6cf732e1f3959c7fdf935.bin",
+    "rows": 1003
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001506307-submissions-001.json",
+    "sha256": "5e8fd1025d331f5e2f167214e0a4db0ad9f3055e8623e5e9e4295a8ddc2321bb",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/5e8fd1025d331f5e2f167214e0a4db0ad9f3055e8623e5e9e4295a8ddc2321bb.bin",
+    "rows": 569
+   }
+  ],
+  "coverage": [
+   [
+    "2010-11-23",
+    "2014-11-17"
+   ],
+   [
+    "2014-11-19",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1572,
+  "unique_accessions": 1572,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 344,
+  "unique_item_2_02_8k": 61,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SYK",
+   "cik": "0000310764"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000310764.json",
+    "sha256": "f9c9645576462318a405bc94fed05b45543e4064732222ebe8b6bd542556f1c9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/f9c9645576462318a405bc94fed05b45543e4064732222ebe8b6bd542556f1c9.bin",
+    "rows": 1014
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000310764-submissions-001.json",
+    "sha256": "28e64af37481bcccd8bec5874531dbce4efeb4f6c28aa6dc7d23444c83071889",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/28e64af37481bcccd8bec5874531dbce4efeb4f6c28aa6dc7d23444c83071889.bin",
+    "rows": 1860
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-10",
+    "2017-02-08"
+   ],
+   [
+    "2017-02-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2874,
+  "unique_accessions": 2874,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 260,
+  "unique_item_2_02_8k": 98,
+  "empty_primary_document_8k": 5,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "EL",
+   "cik": "0001001250"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001001250.json",
+    "sha256": "44b9d43cab9de6143862b72bb53fc3e2fc9bd9f7ca4e25385ff83cb484e26a1d",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/44b9d43cab9de6143862b72bb53fc3e2fc9bd9f7ca4e25385ff83cb484e26a1d.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001001250-submissions-001.json",
+    "sha256": "7705ae5f294e9e4b482f15fd6518cf1e0e714fa5b9bffcbe8714312d20882565",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/7705ae5f294e9e4b482f15fd6518cf1e0e714fa5b9bffcbe8714312d20882565.bin",
+    "rows": 2013
+   }
+  ],
+  "coverage": [
+   [
+    "2007-09-24",
+    "2020-05-09"
+   ],
+   [
+    "2020-05-11",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3013,
+  "unique_accessions": 3013,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 180,
+  "unique_item_2_02_8k": 78,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "VSH",
+   "cik": "0000103730"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000103730.json",
+    "sha256": "88fe0c9439d6f54d767fbf59519ba5080db4dcf9819a86fadf0c6f399edd5cfc",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/88fe0c9439d6f54d767fbf59519ba5080db4dcf9819a86fadf0c6f399edd5cfc.bin",
+    "rows": 1001
+   }
+  ],
+  "coverage": [
+   [
+    "2010-03-22",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1001,
+  "unique_accessions": 1001,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 246,
+  "unique_item_2_02_8k": 71,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "INTU",
+   "cik": "0000896878"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000896878.json",
+    "sha256": "be25c8a55f70886ab7f9d8063f1267280727d8729d763c4dba2c6bd4e139f3f8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/be25c8a55f70886ab7f9d8063f1267280727d8729d763c4dba2c6bd4e139f3f8.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000896878-submissions-001.json",
+    "sha256": "f27147e186748ac6b0e52b1a963aca11be192918ba97dd3f8d33972f9b0614b3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/f27147e186748ac6b0e52b1a963aca11be192918ba97dd3f8d33972f9b0614b3.bin",
+    "rows": 1997
+   }
+  ],
+  "coverage": [
+   [
+    "1996-02-12",
+    "2020-08-23"
+   ],
+   [
+    "2020-08-25",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2997,
+  "unique_accessions": 2997,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 282,
+  "unique_item_2_02_8k": 100,
+  "empty_primary_document_8k": 15,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "LRCX",
+   "cik": "0000707549"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000707549.json",
+    "sha256": "16347ab67e4c061fc9acf711ac1232dc3e08b7843b0232ae6286ecfd9d3fcd33",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/16347ab67e4c061fc9acf711ac1232dc3e08b7843b0232ae6286ecfd9d3fcd33.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000707549-submissions-001.json",
+    "sha256": "455643917be0efe4181e066f258f7e4d096f5124a804ea19df459285405070f3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/455643917be0efe4181e066f258f7e4d096f5124a804ea19df459285405070f3.bin",
+    "rows": 1052
+   }
+  ],
+  "coverage": [
+   [
+    "1994-05-06",
+    "2015-02-21"
+   ],
+   [
+    "2015-02-23",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2052,
+  "unique_accessions": 2052,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 296,
+  "unique_item_2_02_8k": 87,
+  "empty_primary_document_8k": 15,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "WTRG",
+   "cik": "0000078128"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000078128.json",
+    "sha256": "84891812ed8c119dc4518d8e07231ef66e76debfbf2053f40afa3fbd81cb9874",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/84891812ed8c119dc4518d8e07231ef66e76debfbf2053f40afa3fbd81cb9874.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000078128-submissions-001.json",
+    "sha256": "310138941e0bb4d21d240797c45669c64f5b20a7fcff103c9e1d816c93955456",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/310138941e0bb4d21d240797c45669c64f5b20a7fcff103c9e1d816c93955456.bin",
+    "rows": 800
+   }
+  ],
+  "coverage": [
+   [
+    "1994-03-08",
+    "2014-03-02"
+   ],
+   [
+    "2014-03-04",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1800,
+  "unique_accessions": 1800,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 262,
+  "unique_item_2_02_8k": 88,
+  "empty_primary_document_8k": 14,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ODFL",
+   "cik": "0000878927"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000878927.json",
+    "sha256": "3a48f41c1c0072676cd787d0ac9bd81e9f3752f07bc076fc8a50f6f7b348bb02",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/3a48f41c1c0072676cd787d0ac9bd81e9f3752f07bc076fc8a50f6f7b348bb02.bin",
+    "rows": 1002
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000878927-submissions-001.json",
+    "sha256": "8b07c60b59ac8d9a17cea1157c66916f9ae386a6be9f78e4f7eda006de636869",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/8b07c60b59ac8d9a17cea1157c66916f9ae386a6be9f78e4f7eda006de636869.bin",
+    "rows": 611
+   }
+  ],
+  "coverage": [
+   [
+    "1996-02-07",
+    "2012-02-04"
+   ],
+   [
+    "2012-02-06",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1613,
+  "unique_accessions": 1613,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 252,
+  "unique_item_2_02_8k": 89,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "GKOS",
+   "cik": "0001192448"
+  },
+  "registered_originals": 32,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001192448.json",
+    "sha256": "3a5cfcb57dd027d6ad972db71b33459e73d00d4caf5362c4405af6ac5b80f652",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/3a5cfcb57dd027d6ad972db71b33459e73d00d4caf5362c4405af6ac5b80f652.bin",
+    "rows": 1005
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001192448-submissions-001.json",
+    "sha256": "8b7342ac84f1efc2b7a84daadfe9d61e636fb2723218b888808bd14694edb45b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/8b7342ac84f1efc2b7a84daadfe9d61e636fb2723218b888808bd14694edb45b.bin",
+    "rows": 56
+   }
+  ],
+  "coverage": [
+   [
+    "2002-09-17",
+    "2015-06-28"
+   ],
+   [
+    "2015-06-30",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1061,
+  "unique_accessions": 1061,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 142,
+  "unique_item_2_02_8k": 50,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "GAP",
+   "cik": "0000039911"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000039911.json",
+    "sha256": "5de5a81693509b91d333952301c376e22a40e06a3cbafe4ae180f508fbe1ace9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/5de5a81693509b91d333952301c376e22a40e06a3cbafe4ae180f508fbe1ace9.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000039911-submissions-001.json",
+    "sha256": "2a0ac95b7ae34dbc772032d2f6abf1af691a39e85d3ff79852d531a69c4866ef",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/2a0ac95b7ae34dbc772032d2f6abf1af691a39e85d3ff79852d531a69c4866ef.bin",
+    "rows": 1975
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-08",
+    "2017-02-21"
+   ],
+   [
+    "2017-02-23",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2975,
+  "unique_accessions": 2975,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 455,
+  "unique_item_2_02_8k": 141,
+  "empty_primary_document_8k": 1,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "PRMB",
+   "cik": "0002042694"
+  },
+  "registered_originals": 4,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0002042694.json",
+    "sha256": "3a9449c4b8eca47fa5ba41f347bbf8363c198cc68881fb12b15a71894a642cae",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/3a9449c4b8eca47fa5ba41f347bbf8363c198cc68881fb12b15a71894a642cae.bin",
+    "rows": 226
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 226,
+  "unique_accessions": 226,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 33,
+  "unique_item_2_02_8k": 7,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ES",
+   "cik": "0000072741"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000072741.json",
+    "sha256": "60d078994720be6c481e29c9592a4b55ef485b15c5afa715f37efc6223039eb5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/60d078994720be6c481e29c9592a4b55ef485b15c5afa715f37efc6223039eb5.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000072741-submissions-001.json",
+    "sha256": "79e93fa65b3559b77d4171ee47138b4b741805a7b667970922b919c745960da7",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/79e93fa65b3559b77d4171ee47138b4b741805a7b667970922b919c745960da7.bin",
+    "rows": 1859
+   }
+  ],
+  "coverage": [
+   [
+    "1994-01-13",
+    "2014-11-30"
+   ],
+   [
+    "2014-12-02",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2860,
+  "unique_accessions": 2860,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 422,
+  "unique_item_2_02_8k": 95,
+  "empty_primary_document_8k": 42,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "AMGN",
+   "cik": "0000318154"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000318154.json",
+    "sha256": "2496639789f442b71d036db2d82a6418081459f192f0c29f563977cf835a67fd",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2496639789f442b71d036db2d82a6418081459f192f0c29f563977cf835a67fd.bin",
+    "rows": 1007
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000318154-submissions-001.json",
+    "sha256": "ad29344513cf5388a4d03320fba1a423ebd772ebd06874047e6276ff90520260",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/ad29344513cf5388a4d03320fba1a423ebd772ebd06874047e6276ff90520260.bin",
+    "rows": 2000
+   }
+  ],
+  "coverage": [
+   [
+    "2002-09-27",
+    "2018-05-05"
+   ],
+   [
+    "2018-05-07",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3007,
+  "unique_accessions": 3007,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 300,
+  "unique_item_2_02_8k": 90,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "WHR",
+   "cik": "0000106640"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000106640.json",
+    "sha256": "d7a2f6af35d4bfe3236bcc75ee41c3e33b2dbc0781e38131aa4c633f9a5b8c71",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/d7a2f6af35d4bfe3236bcc75ee41c3e33b2dbc0781e38131aa4c633f9a5b8c71.bin",
+    "rows": 1010
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000106640-submissions-001.json",
+    "sha256": "ec9cf3c04ba390b3b106b381c9edbc44b2336980edc14eaf47390b49ecab72f8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/ec9cf3c04ba390b3b106b381c9edbc44b2336980edc14eaf47390b49ecab72f8.bin",
+    "rows": 1342
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-10",
+    "2014-04-15"
+   ],
+   [
+    "2014-04-17",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2352,
+  "unique_accessions": 2352,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 389,
+  "unique_item_2_02_8k": 89,
+  "empty_primary_document_8k": 38,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "TTMI",
+   "cik": "0001116942"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001116942.json",
+    "sha256": "62ecb6a0f1f82071a01caf6adf257f1811bb4457c3e502c55d0ae2055c787049",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/62ecb6a0f1f82071a01caf6adf257f1811bb4457c3e502c55d0ae2055c787049.bin",
+    "rows": 1010
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001116942-submissions-001.json",
+    "sha256": "39f65d4e997c3f9be99cca32785c72bd49ae921dcb3453b9d3954cf7df145eac",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/39f65d4e997c3f9be99cca32785c72bd49ae921dcb3453b9d3954cf7df145eac.bin",
+    "rows": 1256
+   }
+  ],
+  "coverage": [
+   [
+    "2000-06-22",
+    "2017-05-15"
+   ],
+   [
+    "2017-05-17",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2266,
+  "unique_accessions": 2266,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 286,
+  "unique_item_2_02_8k": 95,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "UIS",
+   "cik": "0000746838"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000746838.json",
+    "sha256": "2812bf2b9a69ff21b780e08d424e93905d62729263598ac8e31779fcfead7d20",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/2812bf2b9a69ff21b780e08d424e93905d62729263598ac8e31779fcfead7d20.bin",
+    "rows": 1006
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000746838-submissions-001.json",
+    "sha256": "855ceafb792005640088744f4824e5bc4b360f996511cb3252cfcd0a7dbb2c75",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/855ceafb792005640088744f4824e5bc4b360f996511cb3252cfcd0a7dbb2c75.bin",
+    "rows": 1442
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-04",
+    "2015-02-07"
+   ],
+   [
+    "2015-02-09",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2448,
+  "unique_accessions": 2448,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 279,
+  "unique_item_2_02_8k": 96,
+  "empty_primary_document_8k": 12,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "EMR",
+   "cik": "0000032604"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000032604.json",
+    "sha256": "221bd29d873cef31b0f8387ceba93e82e0e744a7cacc603c3107a345701aacb9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/221bd29d873cef31b0f8387ceba93e82e0e744a7cacc603c3107a345701aacb9.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000032604-submissions-001.json",
+    "sha256": "7d55899bed573903f6e8a106e612ca667ce223c2bd86807dcac1f2ed49639dc4",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/7d55899bed573903f6e8a106e612ca667ce223c2bd86807dcac1f2ed49639dc4.bin",
+    "rows": 1018
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-14",
+    "2013-11-10"
+   ],
+   [
+    "2013-11-12",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2018,
+  "unique_accessions": 2018,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 425,
+  "unique_item_2_02_8k": 103,
+  "empty_primary_document_8k": 3,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "MAN",
+   "cik": "0000871763"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000871763.json",
+    "sha256": "24913cbcd69293093c1c634391067de27a2911ce8ebea69cf9b66a357647c01b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/24913cbcd69293093c1c634391067de27a2911ce8ebea69cf9b66a357647c01b.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "2011-04-21",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 151,
+  "unique_item_2_02_8k": 62,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "NWSA",
+   "cik": "0001564708"
+  },
+  "registered_originals": 37,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001564708.json",
+    "sha256": "5eb1b704c6d5fbc44bada548256b15704ff0dfad798b67366fa3c97799ca785c",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/5eb1b704c6d5fbc44bada548256b15704ff0dfad798b67366fa3c97799ca785c.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001564708-submissions-001.json",
+    "sha256": "1aed33bc60a74dbff34b7f8dc7de3b340a001c3d0b033f2fe0cf9139eef153f9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/1aed33bc60a74dbff34b7f8dc7de3b340a001c3d0b033f2fe0cf9139eef153f9.bin",
+    "rows": 1384
+   }
+  ],
+  "coverage": [
+   [
+    "2012-12-21",
+    "2023-10-22"
+   ],
+   [
+    "2023-10-24",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2385,
+  "unique_accessions": 2385,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 1287,
+  "unique_item_2_02_8k": 55,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "GWRE",
+   "cik": "0001528396"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001528396.json",
+    "sha256": "0846e4d7434df06cb7aca0a75e58326d64d4f1885c8d39513750065202cd121b",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/0846e4d7434df06cb7aca0a75e58326d64d4f1885c8d39513750065202cd121b.bin",
+    "rows": 1008
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001528396-submissions-001.json",
+    "sha256": "b6259b249e255e41e7467044e087d416d9e968ee2782a7815e8e2715a8a5093d",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/b6259b249e255e41e7467044e087d416d9e968ee2782a7815e8e2715a8a5093d.bin",
+    "rows": 1146
+   }
+  ],
+  "coverage": [
+   [
+    "2011-09-02",
+    "2018-12-08"
+   ],
+   [
+    "2018-12-10",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2154,
+  "unique_accessions": 2154,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 122,
+  "unique_item_2_02_8k": 59,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SEDG",
+   "cik": "0001419612"
+  },
+  "registered_originals": 32,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001419612.json",
+    "sha256": "cea41c6ff2ebfca7cf56bf4025ad8cbaa9954c6a01c86e03e056ad318793d6b9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/cea41c6ff2ebfca7cf56bf4025ad8cbaa9954c6a01c86e03e056ad318793d6b9.bin",
+    "rows": 898
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 898,
+  "unique_accessions": 898,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 109,
+  "unique_item_2_02_8k": 47,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ADBE",
+   "cik": "0000796343"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000796343.json",
+    "sha256": "11e706e71e0abd524dd6e951f4c3b2461b2454c0eb646f6f78f54fa9ab3722ca",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/11e706e71e0abd524dd6e951f4c3b2461b2454c0eb646f6f78f54fa9ab3722ca.bin",
+    "rows": 1007
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000796343-submissions-001.json",
+    "sha256": "569d7d5d3302874154270f899a797e92fbec7360cbfe1ccae350371a51a86b07",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/569d7d5d3302874154270f899a797e92fbec7360cbfe1ccae350371a51a86b07.bin",
+    "rows": 1668
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-14",
+    "2018-04-11"
+   ],
+   [
+    "2018-04-13",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2675,
+  "unique_accessions": 2675,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 233,
+  "unique_item_2_02_8k": 91,
+  "empty_primary_document_8k": 6,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "VMI",
+   "cik": "0000102729"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000102729.json",
+    "sha256": "ee9fb0e5ef8e7fc4d8bf2763a673661bbe4c88bf58caf045d57ac59eefaaf838",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/ee9fb0e5ef8e7fc4d8bf2763a673661bbe4c88bf58caf045d57ac59eefaaf838.bin",
+    "rows": 1003
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000102729-submissions-001.json",
+    "sha256": "6749eb0243e367cc6c02b0c9a5f2b790571b91bb8f2c9bc7f549632ffcb228c8",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/6749eb0243e367cc6c02b0c9a5f2b790571b91bb8f2c9bc7f549632ffcb228c8.bin",
+    "rows": 660
+   }
+  ],
+  "coverage": [
+   [
+    "1994-03-25",
+    "2012-12-17"
+   ],
+   [
+    "2012-12-19",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1663,
+  "unique_accessions": 1663,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 226,
+  "unique_item_2_02_8k": 94,
+  "empty_primary_document_8k": 5,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ED",
+   "cik": "0001047862"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001047862.json",
+    "sha256": "a3d29dd51c3a561faa94c412caf9498ded7f77f7f526ce9e39e371c83634ec1f",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/a3d29dd51c3a561faa94c412caf9498ded7f77f7f526ce9e39e371c83634ec1f.bin",
+    "rows": 1008
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001047862-submissions-001.json",
+    "sha256": "b82f7725e8cbeb45bb49dad432e53c4b6015f1b12114342bcf0391af56d4ecf6",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/b82f7725e8cbeb45bb49dad432e53c4b6015f1b12114342bcf0391af56d4ecf6.bin",
+    "rows": 2005
+   }
+  ],
+  "coverage": [
+   [
+    "2009-02-02",
+    "2020-02-04"
+   ],
+   [
+    "2020-02-06",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3013,
+  "unique_accessions": 3013,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 205,
+  "unique_item_2_02_8k": 69,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "RAMP",
+   "cik": "0000733269"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000733269.json",
+    "sha256": "4ef6b3e03bf9e4c71a9f445b6ba15e4ed2868ad485a956f7173df47b67e2adc7",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/4ef6b3e03bf9e4c71a9f445b6ba15e4ed2868ad485a956f7173df47b67e2adc7.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000733269-submissions-001.json",
+    "sha256": "ce1a041b30660dae63b0e4fd49e0ed79ca550dee4f0a76057574a1f975fb1b75",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/ce1a041b30660dae63b0e4fd49e0ed79ca550dee4f0a76057574a1f975fb1b75.bin",
+    "rows": 1970
+   }
+  ],
+  "coverage": [
+   [
+    "1994-07-26",
+    "2018-10-01"
+   ],
+   [
+    "2018-10-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2971,
+  "unique_accessions": 2971,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 287,
+  "unique_item_2_02_8k": 92,
+  "empty_primary_document_8k": 10,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "HAS",
+   "cik": "0000046080"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000046080.json",
+    "sha256": "4e2d466880d12bd5bbfd7d698e3a86a7589a352ca5dd459eeb9144b7afa824a5",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/4e2d466880d12bd5bbfd7d698e3a86a7589a352ca5dd459eeb9144b7afa824a5.bin",
+    "rows": 1001
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000046080-submissions-001.json",
+    "sha256": "6d557dc6c2825279f33b8a90e1c118772cf99bc8b980839d762fd7a2d880c462",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/6d557dc6c2825279f33b8a90e1c118772cf99bc8b980839d762fd7a2d880c462.bin",
+    "rows": 1766
+   }
+  ],
+  "coverage": [
+   [
+    "1994-02-09",
+    "2017-07-26"
+   ],
+   [
+    "2017-07-28",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2767,
+  "unique_accessions": 2767,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 312,
+  "unique_item_2_02_8k": 95,
+  "empty_primary_document_8k": 40,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "MZTI",
+   "cik": "0000057515"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000057515.json",
+    "sha256": "34fd26e3c536f5f4b7b6cbc4b5eaedccd47ee428c73ad035a1c1be2d17265655",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/34fd26e3c536f5f4b7b6cbc4b5eaedccd47ee428c73ad035a1c1be2d17265655.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "1994-09-26",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 203,
+  "unique_item_2_02_8k": 88,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "PRG",
+   "cik": "0001808834"
+  },
+  "registered_originals": 16,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001808834.json",
+    "sha256": "7706a63bdf6c07c7bf7ed8a9b0e1baa7192caa3e23db313e4e12460149b5e521",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7706a63bdf6c07c7bf7ed8a9b0e1baa7192caa3e23db313e4e12460149b5e521.bin",
+    "rows": 330
+   }
+  ],
+  "coverage": [
+   [
+    "0001-01-01",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 330,
+  "unique_accessions": 330,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 62,
+  "unique_item_2_02_8k": 24,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "SUPN",
+   "cik": "0001356576"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001356576.json",
+    "sha256": "7e58f3fbb0d44de0e69d03d4409ab2d19c1ef5dd3996a742f078270c71b180c2",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7e58f3fbb0d44de0e69d03d4409ab2d19c1ef5dd3996a742f078270c71b180c2.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001356576-submissions-001.json",
+    "sha256": "a6f58d7e151f424e0f2617d33bdcfe157d933e1c5391596f827a4ae7342e77e2",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/a6f58d7e151f424e0f2617d33bdcfe157d933e1c5391596f827a4ae7342e77e2.bin",
+    "rows": 182
+   }
+  ],
+  "coverage": [
+   [
+    "2006-03-06",
+    "2014-05-11"
+   ],
+   [
+    "2014-05-13",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1182,
+  "unique_accessions": 1182,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 306,
+  "unique_item_2_02_8k": 113,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "IRDM",
+   "cik": "0001418819"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001418819.json",
+    "sha256": "03db6bfa18980d72b04c935806bc1c6b1eb43d888c34e4fcaf809c894c60038d",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/03db6bfa18980d72b04c935806bc1c6b1eb43d888c34e4fcaf809c894c60038d.bin",
+    "rows": 1007
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001418819-submissions-001.json",
+    "sha256": "7a32740bc29d4c81d8f57decda4a15181cd6e87599dc0ad6aecc62dbc49dab78",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/7a32740bc29d4c81d8f57decda4a15181cd6e87599dc0ad6aecc62dbc49dab78.bin",
+    "rows": 1169
+   }
+  ],
+  "coverage": [
+   [
+    "2007-11-30",
+    "2017-09-04"
+   ],
+   [
+    "2017-09-06",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 2176,
+  "unique_accessions": 2176,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 256,
+  "unique_item_2_02_8k": 68,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "AZO",
+   "cik": "0000866787"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0000866787.json",
+    "sha256": "b07951818c268b1a9089a2b756c06d012afa6affda93b980c2f64033af0087a9",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/b07951818c268b1a9089a2b756c06d012afa6affda93b980c2f64033af0087a9.bin",
+    "rows": 1004
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0000866787-submissions-001.json",
+    "sha256": "19db40c88e8b0d0d589d9e98fdc9211d6814119ed3450328c75a35900e0a8ee3",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/19db40c88e8b0d0d589d9e98fdc9211d6814119ed3450328c75a35900e0a8ee3.bin",
+    "rows": 2003
+   }
+  ],
+  "coverage": [
+   [
+    "1998-11-09",
+    "2017-09-30"
+   ],
+   [
+    "2017-10-02",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 3007,
+  "unique_accessions": 3007,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 294,
+  "unique_item_2_02_8k": 91,
+  "empty_primary_document_8k": 3,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "ETSY",
+   "cik": "0001370637"
+  },
+  "registered_originals": 33,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001370637.json",
+    "sha256": "7272335b57e03213aa81ff1a14efe2733e09c5ec4bf0643ad3f8404b2d89af40",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/7272335b57e03213aa81ff1a14efe2733e09c5ec4bf0643ad3f8404b2d89af40.bin",
+    "rows": 1000
+   },
+   {
+    "index": 1,
+    "url": "https://data.sec.gov/submissions/CIK0001370637-submissions-001.json",
+    "sha256": "8f44c52cad9dbee6c4a393e57877514aa97d0fe2c3af58a895b9c5b516bbd1ff",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/source/raw/8f44c52cad9dbee6c4a393e57877514aa97d0fe2c3af58a895b9c5b516bbd1ff.bin",
+    "rows": 268
+   }
+  ],
+  "coverage": [
+   [
+    "2006-06-27",
+    "2019-02-10"
+   ],
+   [
+    "2019-02-12",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1268,
+  "unique_accessions": 1268,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 103,
+  "unique_item_2_02_8k": 48,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ },
+ {
+  "issuer": {
+   "symbol": "BRKR",
+   "cik": "0001109354"
+  },
+  "registered_originals": 42,
+  "status": "reconstructed",
+  "error": null,
+  "sources": [
+   {
+    "index": 0,
+    "url": "https://data.sec.gov/submissions/CIK0001109354.json",
+    "sha256": "87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd",
+    "resolved_path": "/home/user/frontier-trading-agent/.qualification/earnings-quality20260928/discovery/profiles/raw/87957f503ba3de15fb292bb3d8e2757cea83b9594c4b373e8376ee9b612c89fd.bin",
+    "rows": 1000
+   }
+  ],
+  "coverage": [
+   [
+    "2009-08-03",
+    "9999-12-31"
+   ]
+  ],
+  "occurrences": 1000,
+  "unique_accessions": 1000,
+  "duplicate_occurrences": 0,
+  "conflicting_accessions": [],
+  "conflict_evidence": {},
+  "raw_8k_occurrences": 196,
+  "unique_item_2_02_8k": 87,
+  "empty_primary_document_8k": 0,
+  "conflicting_8k_family_accessions": []
+ }
+]
