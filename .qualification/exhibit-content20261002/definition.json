@@ -15,7 +15,7 @@
    "periods": [
     "current_start/current_end",
     "prior_start/prior_end",
-    "prior fiscal-year-end instant"
+    "prior_fy_end (instant)"
    ]
   },
   "Q": {
@@ -29,10 +29,27 @@
    ],
    "periods": [
     "q_current_start/q_current_end",
-    "q_prior_start/q_prior_end"
+    "q_prior_start/q_prior_end",
+    "prior_fy_end (instant)"
    ]
   },
-  "note": "The S history of eight earlier innovations was already public through earlier 10-Qs and is not probed."
+  "note": "The S history of eight earlier innovations was already public through earlier 10-Qs and is not probed.",
+  "release_sets": {
+   "S_flow": [
+    "current_ni",
+    "prior_ni"
+   ],
+   "Q_flow": [
+    "q_current_cfo",
+    "q_current_ni",
+    "q_prior_cfo",
+    "q_prior_ni"
+   ],
+   "assets": [
+    "prior_fy_assets"
+   ],
+   "reason": "Prior fiscal-year-end total assets were normally public earlier through the prior annual report, like the eight historical S innovations. The verdict therefore uses the flow components; assets are reported separately as stated or not stated in the release. A later full extraction must bind assets to the earlier annual filing's verified clock and value; this probe does not fetch annual reports."
+  }
  },
  "population": {
   "source": ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json",
@@ -56,12 +73,14 @@
   ]
  },
  "requests": {
+  "archive": "https://www.sec.gov/Archives/edgar/data/{issuer CIK as an integer, no leading zeros}/{8-K accession without dashes}/ — the frozen capture's archive_base rule, keyed by the issuer CIK. 402 of the 1,166 frame 8-Ks were filed by an agent whose CIK is the accession prefix, so the prefix must never be used.",
   "per_event": [
-   "8-K accession index: {archive}/{accession}-index.html",
-   "SGML header: {archive}/{accession}.hdr.sgml",
-   "each document whose index type starts with EX-99, at most 3"
+   "accession index: {archive}{accession}-index.html",
+   "SGML header: {archive}{accession}.hdr.sgml",
+   "every document whose index type starts with EX-99, in index order, at most 10; an index with more than 10 fetches none of them and the event is exhibit_overflow"
   ],
-  "max_total_requests": 750,
+  "max_total_requests": 1800,
+  "max_total_requests_basis": "150 events x (2 + 10)",
   "minimum_interval_seconds": 1,
   "timeout_seconds": 30,
   "max_response_bytes": 33554432,
@@ -69,7 +88,6 @@
    403,
    429
   ],
-  "attempt_policy": "At most one completed transport attempt per URL; an interrupted request without a durable result may be retried once on resume",
   "redirects": "none; a redirect is saved as a failure",
   "allowed_prefix": "https://www.sec.gov/Archives/edgar/data/",
   "user_agent": "Reuse the frozen capture's user agent unless the owner supplies a contact address (see open_decisions)",
@@ -80,7 +98,7 @@
    "prices, returns, forecasts or account ledgers"
   ]
  },
- "storage": "Every response's exact bytes under source/raw/<sha256>.bin with an append-only request log (URL, start/end time, status, byte count, SHA256), following the frozen capture convention.",
+ "storage": "Every response's exact bytes under source/raw/<sha256>.bin, referenced from the request journal, following the frozen capture convention.",
  "identity_checks": {
   "rules": [
    "header filer CIK equals the issuer CIK",
@@ -94,51 +112,81 @@
   "source": ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json",
   "source_sha256": "0aa2fcd44e400157409a2bc639c8ee8d014d10eae99bc3ad5d7021d5a5df28db",
   "source_bytes": 208387935,
-  "projection": "Only the components' fields and period endpoints above, for the 150 sampled accessions, written to a committed projection file that records the source SHA256. No other field, price, return, forecast or account is read.",
+  "projection": "Only the components' value fields, their period endpoints and prior_fy_end, for the 150 sampled accessions, written to a committed projection file that records the source SHA256. No other field, price, return, forecast or account is read.",
   "q_unavailable": "A sampled event without a qualified Q keeps its S comparison; its Q components are reported as not_comparable and it leaves the Q denominator only in a separately reported row"
  },
  "matching": {
-  "documents": "Each fetched EX-99 exhibit: HTML tables parsed with the standard-library HTML parser into rows of cell text; plain-text exhibits split into lines",
+  "tables": "HTML tables parsed with the standard-library HTML parser, with colspan expanded. Header rows are the rows before the first row holding a numeric cell; each numeric cell inherits the header text of its column. The table caption and the nearest preceding heading are kept as context.",
+  "plain_text": "Lines split on two or more spaces into a label and value columns; the header is the nearest preceding line without numeric values",
   "numbers": "Commas removed; parentheses or a leading minus mean negative; a dash alone means zero; footnote markers ignored",
-  "scale": "1, 1e3, 1e6 or 1e9; an 'in thousands/millions/billions' caption in the same table fixes the scale",
+  "scale": "1, 1e3, 1e6 or 1e9; an 'in thousands/millions/billions' phrase in the caption, context or header fixes the scale",
   "tolerance": "half a unit of the displayed precision at that scale",
   "labels": {
    "net_income": "net (income|earnings|loss)( attributable to [^|]*)?",
    "operating_cash_flow": "net cash (provided by|used in|provided by \\(used in\\)|from) operating activities|cash flows? from operating activities",
    "total_assets": "total assets"
   },
-  "rule": "A component is stated when a cell in a row whose label matches its pattern equals the 10-Q value within the tolerance; matching both the current and prior value fixes the period linkage",
-  "evidence": "Exhibit SHA256, table and row index, label text, cell text and scale for every match",
-  "labels_note": "Patterns are case-insensitive searches over the row's label cell text after whitespace is collapsed"
+  "labels_note": "Case-insensitive searches over the row's label cell text after whitespace is collapsed",
+  "periods": {
+   "durations": "three months, quarter or 12-14 weeks = 3; six months or 25-27 weeks = 6; nine months or 38-40 weeks = 9; twelve months, year or 51-53 weeks = 12",
+   "end_dates": "month-day-year, month-year, or a year combined with a month-day phrase elsewhere in the same header, caption or context",
+   "required": {
+    "current_ni": "3-month duration ending within 7 days of current_end",
+    "prior_ni": "3-month duration ending within 7 days of prior_end",
+    "q_current_cfo / q_current_ni": "year-to-date duration (3, 6 or 9 months matching the 10-Q) ending within 7 days of q_current_end",
+    "q_prior_cfo / q_prior_ni": "same duration ending within 7 days of q_prior_end",
+    "prior_fy_assets": "an instant column dated within 7 days of prior_fy_end"
+   }
+  },
+  "rule": "A component is stated only when a cell in a row whose label matches its pattern equals the 10-Q value within the tolerance AND that cell's column header parses to the required period. An equal value whose header does not parse to any period is period_unverified; an equal value under a different parsed period does not count.",
+  "evidence": "Exhibit SHA256, table and row index, label text, cell text, header text, parsed period and scale for every match"
  },
  "classification": [
   "stated",
+  "period_unverified",
   "label_only (label found, no equal value)",
   "not_found",
-  "exhibit_unavailable",
+  "exhibit_unavailable (unsupported_format, image_dependent, exhibit_overflow, release_unidentified or fetch failure)",
   "identity_failed",
   "header_not_prior",
   "not_comparable"
  ],
  "statistics": {
   "per_component": "share of the 150 classified stated",
-  "per_signal": "share with every S component stated, and with every Q component stated",
-  "bounds": "lower counts exhibit_unavailable, identity_failed and header_not_prior as not stated; upper counts them as stated",
+  "per_signal": "share with every S_flow component stated, and with every Q_flow component stated; assets reported separately",
+  "bounds": "lower counts period_unverified, exhibit_unavailable, identity_failed, header_not_prior and release_ambiguous as not stated; upper counts period_unverified, exhibit_unavailable and release_ambiguous as stated (identity_failed and header_not_prior stay not stated: the filing is not an earlier same-issuer release)",
   "interval": "Wilson 95% interval",
   "strata": "both filing eras separately"
  },
  "interpretation": {
-  "per_signal": "release_complete_common if the Wilson lower limit of the lower-bound share is at least 0.7; release_complete_rare if the Wilson upper limit of the upper-bound share is below 0.3; otherwise inconclusive",
+  "per_signal": "For S_flow and Q_flow separately: release_complete_common if the Wilson lower limit of the lower-bound share is at least 0.7; release_complete_rare if the Wilson upper limit of the upper-bound share is below 0.3; otherwise inconclusive",
   "common": "Justifies only a separately declared full-population extraction of that signal's components from the releases",
   "never": "No verdict backdates a 10-Q value, changes a completed result, promotes a strategy or implies profitability"
  },
  "verification": "Offline synthetic tests of fetch bounds, index/header parsing, number parsing, scaling, tolerance and classification before any request; after the run, an independent checker re-derives every classification from the saved bytes; a seeded list of 20 events with their evidence for an owner spot check",
  "open_decisions": [
   "Population: decision-session single_prior qualified events (1,166) as drafted, or also the novelty audit's pairs",
-  "Sample size: 150 (about 450-750 requests, roughly 8-13 minutes at 1 request per second)",
+  "Sample size: 150. Each event needs 3 or more requests (index, header and every EX-99 document); typical filings have one or two EX-99 documents, so expect about 450-600 requests (8-10 minutes at 1 request per second), with a hard cap of 1,800",
   "Thresholds: 0.7 and 0.3",
   "Where to run: the owner's workstation, or this cloud container if its network policy allows www.sec.gov (checking that is itself an SEC request)",
   "10-Q comparison values: records.json (208 MB) is not in the clone; either run the projection on the workstation and commit its output, or upload a gzip copy split into parts under 10 MB",
   "User agent: reuse the frozen no-contact agent or add a contact address, which SEC fair-access guidance asks for"
- ]
+ ],
+ "lifecycle": {
+  "locks": [
+   "exclusive study lock .qualification/exhibit-content20261002/probe.lock.sqlite, held for the whole attempt",
+   "exclusive writer transaction on the shared .qualification/earnings-quality20260928/sec-source.lock.sqlite, so no other SEC source worker runs at the same time",
+   "before starting or resuming, inspect owned processes and both locks; a held lock or a live owned process refuses the start"
+  ],
+  "attempt": "One attempt per frozen definition, identified by a new UUID under attempts/<uuid>/. attempt.json records the definition SHA256, code SHA256s, runtime and status and is replaced atomically. A failed attempt is kept; a new attempt for the same definition needs a declared amendment.",
+  "journal": "attempts/<uuid>/requests.sqlite is append-only. A 'started' row (URL, time) is committed before each request; a 'completed' row (status, byte count, SHA256 or failure) is committed only after the response bytes are fsynced under source/raw/<sha256>.bin.",
+  "resume": "Only the same attempt may resume, after the lock and process checks pass. A URL with a completed row is never requested again, whatever its status. A URL with a started row and no completed row may be requested once more; both starts count toward every cap, and a second interruption records it as failed."
+ },
+ "documents": {
+  "supported": "HTML (by .htm/.html name or an <html>/<table> sniff) and plain text (.txt)",
+  "unsupported": "PDF (%PDF), images and any other binary are exhibit_unavailable (unsupported_format)",
+  "image_dependent": "A supported HTML document that contains <img> elements but no table row or text line matching any component label is exhibit_unavailable (image_dependent), never not_found",
+  "press_release": "Press-release candidates are fetched EX-99 documents whose index description, or whose first 3,000 characters of text, match (press|news|earnings) release case-insensitively. Exactly one candidate is the release. With none, the single EX-99.1 is used and flagged release_by_type; with no single EX-99.1 the event is release_unidentified (unavailable). With several, all candidates are matched jointly and the event is flagged release_ambiguous.",
+  "secondary": "Availability in any fetched EX-99 document is reported as a separate, non-verdict readout"
+ }
 }
