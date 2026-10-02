@@ -690,9 +690,9 @@ SCALE_WORDS = [
     (Decimal(10**6), re.compile(r"\bmillions?\b", re.I)),
     (Decimal(10**3), re.compile(r"\bthousands?\b|\(000'?s\)|\$000", re.I)),
 ]
-OTHER_CURRENCY = re.compile(r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£", re.I)
+OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:CAD|EUR|GBP|AUD)\b|€|£")
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
-PREFIX_CELL = re.compile(r"\(?\s*(US\$|C\$|CA\$|\$|€|£|USD|CAD|EUR|GBP)?\s*\(?")
+PREFIX_CELL = re.compile(r"\(?\s*([A-Z]{1,3}\$|\$|€|£|USD|CAD|EUR|GBP|AUD)?\s*\(?")
 CODE_CELL = re.compile(r"USD|CAD|EUR|GBP")
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
@@ -701,7 +701,9 @@ CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g
     re.I,
 )
 OTHER_CURRENCY_WORDS = re.compile(
-    r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£|canadian dollars?|\beuros?\b|pounds? sterling", re.I
+    r"(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:CAD|EUR|GBP|AUD)\b|€|£"
+    r"|canadian dollars?|australian dollars?|\beuros?\b|pounds? sterling",
+    re.I,
 )
 
 
@@ -1014,11 +1016,13 @@ AMOUNT = (
     r"(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?P<frac>\.\d+)?(?:\s*(?P<word>thousand|million|billion))?"
 )
 MONEY_BEFORE = re.compile(
-    r"(?P<neg>\(|[-−]\s?)?(?P<cur>US\$|CA\$|C\$|\$|€|£|\b(?:USD|CAD|EUR|GBP)\s?)\s?(?P<neg2>[-−])?"
-    + AMOUNT,
+    r"(?P<neg>\(|[-−]\s?)?(?<![a-z])(?P<cur>(?-i:[A-Z]{1,3})?\$|€|£|\b(?:USD|CAD|EUR|GBP|AUD)\s?)"
+    r"\s?(?P<neg2>[-−])?" + AMOUNT,
     re.I,
 )
-MONEY_AFTER = re.compile(r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|CAD|EUR|GBP)\b", re.I)
+MONEY_AFTER = re.compile(
+    r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|CAD|EUR|GBP|AUD)\b", re.I
+)
 USD_MARKS = {"$", "US$", "USD"}
 
 
@@ -1220,8 +1224,7 @@ def match_component(doc, spec, concept):
                     note("currency_mismatch", item)
                     continue
                 result = clause_result(clause, spec, len(amounts))
-                if result != "different_period":
-                    note(result, item)
+                note(result, item)  # different_period is kept as evidence but never ranked
             if labels:
                 current = labels[-1][2]
     if best in ("stated", "period_unverified", "scale_unverified"):
@@ -1561,6 +1564,18 @@ def request_settings(definition):
     return dict({k: definition["requests"][k] for k in keys}, reuse=[])
 
 
+def wait_after_last_request(cache):
+    """The frozen cache paces requests only within one process; before the first request of a
+    resume, wait until the declared interval has passed since the last journaled request."""
+    if not cache.starts:
+        return
+    last = datetime.fromisoformat(cache.starts[-1]["at"])
+    elapsed = (datetime.now(timezone.utc) - last).total_seconds()
+    interval = cache.request["minimum_request_interval_seconds"]
+    if 0 <= elapsed < interval:
+        time.sleep(interval - elapsed)
+
+
 def acknowledged_stops(source):
     """STOP records the owner acknowledged (renamed beside the source)."""
     out = []
@@ -1602,29 +1617,38 @@ def fetch_event(frozen, cache, event):
             return data, None
         except capture.Halt:
             starts = sum(r["url"] == url for r in cache.starts)
-            per_url = starts >= cache.request["max_attempts_per_url"]
-            lifetime = len(cache.starts) >= cache.request["max_lifetime_network_attempts"]
-            if not record.exists() and (per_url or lifetime):
-                # A ceiling reached: record a terminal failure (never requested again) and stop
-                # once for the owner's review instead of halting on every resume. After the
-                # lifetime stop is acknowledged, later URLs fail without another stop.
-                status = "interrupted" if per_url else "lifetime_ceiling"
-                failure = {
-                    "url": url,
-                    "status": status,
-                    "error": "Attempt ceiling reached (" + status + ") before an outcome",
-                }
-                write_json(frozen, record, failure)
-                acknowledged = acknowledged_stops(cache.root)
-                if status == "lifetime_ceiling" and any(
-                    a.get("status") == "lifetime_ceiling" for a in acknowledged
-                ):
-                    return None, failure["error"]
+            settings = cache.request
+            if starts >= settings["max_attempts_per_url"]:
+                status = "interrupted"
+            elif len(cache.starts) >= settings["max_lifetime_network_attempts"]:
+                status = "lifetime_ceiling"
+            elif cache.used_bytes >= settings["max_total_raw_bytes"]:
+                status = "byte_ceiling"
+            else:
+                raise
+            if record.exists():
+                raise
+            # A ceiling reached before an outcome: stop once for the owner's review, then record
+            # a terminal failure (never requested again). STOP.json is written first, so a crash
+            # between the two still needs the review. A per-URL stop covers its own URL; an
+            # acknowledged lifetime or byte stop covers every later URL.
+            failure = {
+                "url": url,
+                "status": status,
+                "error": "Attempt ceiling reached (" + status + ") before an outcome",
+            }
+            reviewed = any(
+                a.get("status") == status and (a.get("url") == url or status != "interrupted")
+                for a in acknowledged_stops(cache.root)
+            )
+            if not reviewed:
                 (cache.root / "STOP.json").write_text(
                     json.dumps(dict(failure, at=now())), encoding="utf-8"
                 )
+            write_json(frozen, record, failure)
+            if not reviewed:
                 raise capture.Halt("Attempt ceiling reached; review, then resume")
-            raise
+            return None, failure["error"]
         except capture.CaptureError as exc:
             # A transport failure (no HTTP status) stops the attempt until the owner acknowledges
             # it, even if a crash came between saving the failure and writing STOP.json.
@@ -1833,9 +1857,9 @@ def run(
             write_json(frozen, record, meta)
         elif meta.get("projection_sha256") is None:
             # Written atomically by this attempt before a crash; bind it before any request.
-            saved = load(projection)
-            if not isinstance(saved, dict) or not set(saved) <= set(accessions):
-                raise ProbeError("Saved projection does not belong to this sample")
+            values = project_values(frozen, repo / definition["paths"]["records"], accessions)
+            if load(projection) != json.loads(json.dumps(values)):
+                raise ProbeError("Saved projection does not match records.json for this sample")
             meta["projection_sha256"] = file_sha(projection)
             write_json(frozen, record, meta)
         elif file_sha(projection) != meta["projection_sha256"]:
@@ -1847,6 +1871,7 @@ def run(
                 meta.setdefault("quarantined_partial_raw", []).append({"at": now(), "files": moved})
                 write_json(frozen, record, meta)
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
+        wait_after_last_request(cache)
         try:
             for event in sample:
                 fetch_event(frozen, cache, event)

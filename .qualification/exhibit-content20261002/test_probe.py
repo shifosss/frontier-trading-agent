@@ -428,6 +428,21 @@ def test_contradicting_dates_scripts_and_unit_precedence():
     assert classify(only_prose)["current_ni"] == "scale_unverified"
 
 
+def test_other_dollar_prefixes_and_narrative_period_evidence():
+    narrative = b"<p>Net income for the three months ended June 30, 2025 was A$5.2 million.</p>"
+    assert classify(narrative)["current_ni"] == "currency_mismatch"
+    usd = b"<p>Net income for the three months ended June 30, 2025 was US$5.2 million.</p>"
+    assert classify(usd)["current_ni"] == "stated"
+    header = [b"Three Months Ended June 30, 2025", b""]
+    assert classify(table(header, [b"Net income", b"A$5.2"]))["current_ni"] == "currency_mismatch"
+    split = table(header, [b"Net income", b"A$", b"5.2"])
+    assert classify(split)["current_ni"] == "currency_mismatch"
+    march = b"<p>Net income for the three months ended March 31, 2025 was $5.2 million.</p>"
+    doc = m.parse_document("html", march)
+    result, evidence = m.match_component(doc, m.comparison(RECORD)["current_ni"], "net_income")
+    assert result == "label_only" and evidence[0]["result"] == "different_period"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -1038,6 +1053,67 @@ def test_partial_raw_file_is_quarantined_before_the_cache_opens(tmp_path):
     meta = json.loads((attempt / "attempt.json").read_text())
     assert meta["status"] == "complete" and not partial.exists()
     assert meta["quarantined_partial_raw"][0]["files"] == [partial.name]
+
+
+def test_ceiling_stop_written_before_its_record_survives_a_crash(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}))
+    attempt = next((study / "attempts").iterdir())
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}), resume=attempt.name)
+    with pytest.raises(m.ProbeError, match="(?i)attempt ceiling"):
+        go(repo, study, Opener(site()), resume=attempt.name)
+    record = attempt / "source" / "resources" / (sha(first.encode()) + ".json")
+    record.unlink()  # as if the crash came after STOP.json but before the record
+    with pytest.raises(m.ProbeError, match="acknowledge"):
+        go(repo, study, Opener(site()), resume=attempt.name)
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    assert json.loads(record.read_text())["status"] == "interrupted"
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_byte_ceiling_stops_once_then_fails_remaining_urls(tmp_path):
+    repo, study = build(tmp_path, requests={"max_total_raw_bytes": 1})
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site()))  # the first response exceeds the allowance
+    attempt = next((study / "attempts").iterdir())
+    with pytest.raises(m.ProbeError, match="(?i)attempt ceiling"):
+        go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    opener = Opener(site())
+    go(repo, study, opener, resume=attempt.name, acknowledge_stop=True)
+    assert opener.calls == []
+    rows = json.loads((attempt / "events.json").read_text())
+    assert {r["event_status"] for r in rows} == {"exhibit_unavailable"}
+
+
+def test_unbound_projection_must_match_records_json(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    record = attempt / "attempt.json"
+    meta = json.loads(record.read_text())
+    del meta["projection_sha256"]
+    record.write_text(json.dumps(meta))
+    (attempt / "projection.json").write_text("{}")
+    with pytest.raises(m.ProbeError, match="does not match records.json"):
+        go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+
+
+def test_resume_waits_out_the_request_interval(tmp_path, monkeypatch):
+    repo, study = build(tmp_path, requests={"minimum_request_interval_seconds": 1})
+    naps = []
+    monkeypatch.setattr(m.time, "sleep", lambda seconds: naps.append(seconds))
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    naps.clear()
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    assert naps and 0 < naps[0] <= 1
 
 
 def test_resume_refuses_an_attempt_started_under_other_code(tmp_path):
