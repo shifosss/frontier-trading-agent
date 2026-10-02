@@ -731,6 +731,21 @@ def test_ytd_header_takes_the_10q_year_to_date_length():
     assert classify(html, q1)["current_ni"] == "stated"
 
 
+def test_forward_table_labels_and_declared_table_currency():
+    header = [b"Three Months Ended June 30, 2025"]
+    for label in (b"Estimated net income", b"Net income guidance", b"Projected net income"):
+        assert classify(table(header, [label, b"5.2"]))["current_ni"] == "label_only", label
+    outlook = table([b"Outlook for the Three Months Ended June 30, 2025"], [b"Net income", b"5.2"])
+    assert classify(outlook)["current_ni"] == "label_only"
+    for before in (
+        b"<p>All amounts are in CAD.</p><p>(in millions)</p>",
+        b"<p>(in millions) CAD</p>",
+        b"<p>Amounts are expressed in Canadian dollars (in millions)</p>",
+    ):
+        html = table(header, [b"Net income", b"5.2"], before=before)
+        assert classify(html)["current_ni"] == "currency_mismatch", before
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -745,6 +760,10 @@ def test_release_identification():
     two = [doc("EX-99.1", "Press release"), doc("EX-99.2", "News release")]
     assert m.identify_release(two)[0] == "release_ambiguous"
     assert m.identify_release([doc("EX-99.2", ""), doc("EX-99.3", "")])[0] == "release_unidentified"
+    hyphen = [doc("EX-99.1", "Investor slides"), doc("EX-99.2", "Press-Release")]
+    assert m.identify_release(hyphen) == ("release", [hyphen[1]])
+    dash = [doc("EX-99.1", "Slides"), doc("EX-99.2", "", "ACME Earnings—Release")]
+    assert m.identify_release(dash) == ("release", [dash[1]])
 
 
 def test_document_kinds():
@@ -762,7 +781,8 @@ def header(
     accepted="20240725161500",
 ):
     lines = [f"<ACCEPTANCE-DATETIME>{accepted}", f"<ACCESSION-NUMBER>{acc}", f"<TYPE>{form}"]
-    lines += [f"<ITEMS>{i}" for i in items] + ["<FILING-DATE>20240725", f"<CIK>{cik}"]
+    lines += [f"<ITEMS>{i}" for i in items] + ["<FILING-DATE>20240725"]
+    lines += ["<FILER>", "<COMPANY-DATA>", f"<CIK>{cik}", "</COMPANY-DATA>", "</FILER>"]
     return "\n".join(lines)
 
 
@@ -778,6 +798,14 @@ def test_header_identity():
     missing = m.header_identity(header(accepted="2024", cik=""), "0000000001", "x")
     assert missing["missing"] == ["header CIK missing", "header acceptance or filing date missing"]
     assert missing["issues"] == ["header accession mismatch"]
+    subject = (
+        "<SUBJECT-COMPANY>\n<COMPANY-DATA>\n<CIK>0000000001\n</COMPANY-DATA>\n</SUBJECT-COMPANY>"
+    )
+    other = header(cik="0000000009") + "\n" + subject
+    assert "header CIK mismatch" in issues(other)  # the issuer only as subject company
+    alone = header().split("<FILER>")[0] + subject
+    only = m.header_identity(alone, "0000000001", "0001104659-24-000001")
+    assert "header CIK missing" in only["missing"] and only["ciks"] == []
 
 
 def test_archive_url_uses_issuer_cik_for_agent_filings():

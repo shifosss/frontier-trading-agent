@@ -125,7 +125,7 @@ STATEMENT_IMAGE = {
         r"balance sheets?|statements? of\b[^.]{0,20}?\bfinancial (condition|position)", re.I
     ),
 }
-RELEASE = re.compile(r"(press|news|earnings) release", re.I)
+RELEASE = re.compile(r"(press|news|earnings)[\s\-–—]+release", re.I)  # 'Press-Release' too
 UNVERIFIED = {
     "period_unverified",
     "scale_unverified",
@@ -384,7 +384,9 @@ def header_identity(header, issuer_cik, accession):
         found = re.search("<" + name + r">\s*([^\r\n<]+)", header)
         return found[1].strip() if found else None
 
-    ciks = [x.zfill(10) for x in re.findall(r"<CIK>\s*(\d+)", header)]
+    # the filer's CIK only: a subject company or other party in the header is not the filer
+    filers = re.findall(r"<FILER>(.*?)(?=</FILER>|<FILER>|$)", header, re.S)
+    ciks = [x.zfill(10) for block in filers for x in re.findall(r"<CIK>\s*(\d+)", block)]
     items = [x.strip() for x in re.findall(r"<ITEMS>\s*([^\r\n<]+)", header)]
     issues, missing = [], []  # observed mismatches; absent evidence
     found, form = sgml("ACCESSION-NUMBER"), sgml("TYPE")
@@ -707,6 +709,22 @@ CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g
     r"|(?:\b(?:cad|aud|eur|gbp)\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|€|£"
     r"|\b(?:canadian|australian)\s+dollars|\beuros?|\bpounds\s+sterling)"
     r"\s*,?\s*\(?\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
+    re.I,
+)
+CURRENCY_NAME = (
+    r"(?:(?:canadian|australian)\s+dollars|euros|pounds\s+sterling|\b(?:cad|aud|eur|gbp)\b"
+    r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$))"
+)
+DECLARED_CURRENCY = re.compile(  # 'All amounts are in CAD.', '(in millions) CAD', '(C$)'
+    r"\b(?:expressed|stated|presented|reported|denominated)\s+in\s+"
+    + CURRENCY_NAME
+    + r"|\b(?:amounts?|figures)\b[^.;]{0,30}?\b(?:are|is)\s+(?:\w+\s+)?in\s+"
+    + CURRENCY_NAME
+    + r"|\(\s*(?:in\s+)?"
+    + CURRENCY_NAME
+    + r"\s*\)"
+    + r"|\(\s*in\s+(?:thousands|millions|billions)[^)]{0,40}\)\s*"
+    + CURRENCY_NAME,
     re.I,
 )
 OTHER_CURRENCY_WORDS = re.compile(
@@ -1149,6 +1167,7 @@ PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|(?:will|would|could|may|should)\s+be)\b",
     re.I,
 )
+FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
     r"(?:[,;]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
     r"(?!(?:it|this|that|which|they|these|those|in|for|during|at|on|of|from|to|by|with|was|were"
@@ -1279,6 +1298,8 @@ def match_component(doc, spec, concept):
             if not matched:
                 continue
             label_seen = True
+            if any(FORWARD.search(t) for t in (label, header, units[1])):
+                continue  # 'Estimated net income', 'Net income guidance', an 'Outlook' column
             unit = CELL_SCALE.search(cell)
             parsed = parse_number(CELL_SCALE.sub("", cell) if unit else cell)
             if parsed is None:
@@ -1312,6 +1333,7 @@ def match_component(doc, spec, concept):
                 or OTHER_CURRENCY_WORDS.search(header)
                 or OTHER_CURRENCY_WORDS.search(wide_currency)  # header cells over every value
                 or CONTEXT_CURRENCY.search(table_wide)
+                or DECLARED_CURRENCY.search(table_wide)
             ):
                 note("currency_mismatch", item)
                 continue
