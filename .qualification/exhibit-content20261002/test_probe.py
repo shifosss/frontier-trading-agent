@@ -788,6 +788,26 @@ def test_excluded_column_headers_qualified_totals_and_colon_subjects():
     assert classify(period + b"$5.2 million.</p>")["current_ni"] == "stated"
 
 
+def test_cash_flow_scope_bound_prefix_qualifiers_and_mixed_header_dates():
+    six = [b"Six Months Ended June 30, 2025"]
+    for label in (
+        b"Net cash generated from financing operations",
+        b"Cash provided by investing operations",
+    ):
+        result = classify(table(six, [label, b"14.0"]))["q_current_cfo"]
+        assert result in ("not_found", "label_only"), label
+    assert (
+        classify(table(six, [b"Cash flow from operations", b"14.0"]))["q_current_cfo"] == "stated"
+    )
+    bound = b"<p>Adjusted EBITDA improved and net income for Q2 FY2025 was $5.2 million.</p>"
+    assert classify(bound)["current_ni"] == "stated"
+    adjusted = b"<p>Adjusted net income for Q2 FY2025 was $5.2 million.</p>"
+    assert classify(adjusted)["current_ni"] in ("not_found", "label_only")
+    mixed = table([b"Three Months Ended June 30, 2025 and March 2025"], [b"Net income", b"5.2"])
+    assert classify(mixed)["current_ni"] == "period_unverified"
+    assert m.parse_period("Three Months Ended June 30, 2025 and March 31")["end"] is None
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1380,6 +1400,26 @@ def test_partial_raw_file_is_quarantined_before_the_cache_opens(tmp_path):
     meta = json.loads((attempt / "attempt.json").read_text())
     assert meta["status"] == "complete" and not partial.exists()
     assert meta["quarantined_partial_raw"][0]["files"] == [partial.name]
+
+
+def test_resume_refuses_a_journal_edited_since_its_checkpoint(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}))
+    attempt = next((study / "attempts").iterdir())
+    mark = json.loads((attempt / "attempt.json").read_text())["journal"]
+    journal = attempt / "source" / "requests.jsonl"
+    saved = journal.read_bytes()
+    assert mark["bytes"] == len(saved) > 0 and mark["sha256"] == sha(saved)
+    journal.write_bytes(b"")  # a deleted request_started line would reset the URL's count
+    opener = Opener(site())
+    with pytest.raises(m.ProbeError, match="journal differs"):
+        go(repo, study, opener, resume=attempt.name)
+    assert opener.calls == []
+    journal.write_bytes(saved)
+    go(repo, study, Opener(site()), resume=attempt.name)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
 
 
 def test_incomplete_journal_tail_is_quarantined_before_the_cache_opens(tmp_path):

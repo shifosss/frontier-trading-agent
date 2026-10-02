@@ -103,7 +103,8 @@ CONCEPT = {
 LABELS = {
     "net_income": re.compile(r"\bnet \(?(income|earnings|loss)\b", re.I),
     "operating_cash_flow": re.compile(
-        r"\b(net )?cash (flows? )?(provided|generated|used|from)\b[^|]{0,40}?"
+        r"\b(net )?cash (flows? )?(provided|generated|used|from)\b"
+        r"(?:(?!financing|investing)[^|]){0,40}?"
         r"\b(operating activities|operations)\b|\boperating cash flows?\b",
         re.I,
     ),
@@ -819,6 +820,12 @@ def parse_period(text, context=""):
         for m, d, y in DATE_MDY.findall(text)
         if _valid(int(y), MONTHS[m.lower().rstrip(".")[:3]], int(d))
     }
+    if dates:  # another date form beside a full date ('June 30, 2025 and March 2025') adds one
+        years = {(MONTHS[m.lower().rstrip(".")[:3]], int(y)) for m, y in DATE_MY.findall(text)}
+        days = {(MONTHS[m.lower().rstrip(".")[:3]], int(d)) for m, d in DATE_MD.findall(text)}
+        years -= {(d.month, d.year) for d in dates}
+        days -= {(d.month, d.day) for d in dates}
+        dates |= {("other", m, n) for m, n in years | days}
     if not dates:  # month-year: the last day of that month
         dates = {
             _month_end(int(y), MONTHS[m.lower().rstrip(".")[:3]]) for m, y in DATE_MY.findall(text)
@@ -835,7 +842,7 @@ def parse_period(text, context=""):
         found = durations(context)
         ytd = bool(YTD.search(context)) and not found
     months = next(iter(found)) if len(found) == 1 else None
-    end = dates.pop() if len(dates) == 1 else None
+    end = dates.pop() if len(dates) == 1 else None  # several dates: no single end
     instant = end is not None and not found and not ytd
     return {"months": months, "end": end, "instant": instant, "ytd": ytd}
 
@@ -1218,6 +1225,7 @@ def excluded_header(text):
     return bool(EXCLUDED_LABEL.search(PER_SHARE_UNIT.sub("", text)))
 
 
+PREFIX_BREAK = re.compile(r"[,;:]|\b(?:and|or|while|whereas|but)\b", re.I)
 FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
     r"(?:[,;]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
@@ -1411,7 +1419,10 @@ def match_component(doc, spec, concept):
             starts = [a[5] for a in money_amounts(clause)]
             for f in LABELS[concept].finditer(clause):
                 upto = min([a for a in starts if a >= f.end()] or [len(clause)])
-                excluded = EXCLUDED_LABEL.search(clause[max(0, f.start() - 30) : upto])
+                before = clause[max(0, f.start() - 30) : f.start()]
+                cut = list(PREFIX_BREAK.finditer(before))  # 'Adjusted EBITDA rose and net income'
+                before = before[cut[-1].end() :] if cut else before
+                excluded = EXCLUDED_LABEL.search(before + clause[f.start() : upto])
                 window = None if excluded else clause[f.start() : f.end() + 10]
                 labels.append((f.start(), f.end(), window))
             if any(window for _, _, window in labels):
@@ -1878,13 +1889,39 @@ def quarantine_journal_tail(source, keep):
         os.fsync(handle.fileno())
 
 
-def fetch_event(frozen, cache, event):
-    """Fetch index, header and EX-99 documents; return references to saved bytes."""
+def journal_mark(source):
+    """Size and SHA256 of the request journal's complete lines."""
+    journal = source / "requests.jsonl"
+    data = journal.read_bytes() if journal.exists() else b""
+    data = data[: data.rfind(b"\n") + 1]
+    return {"bytes": len(data), "sha256": sha(data)}
+
+
+def journal_problem(source, mark):
+    """The journal must still begin with the complete lines recorded at the last checkpoint."""
+    if not mark:
+        return None
+    journal = source / "requests.jsonl"
+    data = journal.read_bytes() if journal.exists() else b""
+    if len(data) < mark["bytes"] or sha(data[: mark["bytes"]]) != mark["sha256"]:
+        return "Request journal differs from its recorded checkpoint; review it"
+    return None
+
+
+def fetch_event(frozen, cache, event, checkpoint=lambda: None):
+    """Fetch index, header and EX-99 documents; return references to saved bytes.
+    checkpoint() runs after every request outcome, so the journal so far is recorded."""
     capture = frozen.capture
     accession = event["candidates"][0]["accession"]
     base = capture.archive_base({"cik": event["cik"]}, accession)
 
     def get(url):
+        try:
+            return fetch(url)
+        finally:
+            checkpoint()
+
+    def fetch(url):
         record = cache.root / "resources" / (capture.sha(url.encode()) + ".json")
         try:
             data, meta = cache.get(url)
@@ -2155,11 +2192,19 @@ def run(
             write_json(frozen, record, meta)
 
         quarantine_journal_tail(attempt / "source", keep)
+        problem = journal_problem(attempt / "source", meta.get("journal"))
+        if problem:
+            raise ProbeError(problem)  # an edited journal would reset the request counters
+
+        def checkpoint():
+            meta["journal"] = journal_mark(attempt / "source")
+            write_json(frozen, record, meta)
+
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
         wait_after_last_request(cache)
         try:
             for event in sample:
-                fetch_event(frozen, cache, event)
+                fetch_event(frozen, cache, event, checkpoint)
         except frozen.capture.Halt as exc:
             meta.update(status="halted", halted_at_utc=now(), halt=str(exc))
             write_json(frozen, record, meta)
