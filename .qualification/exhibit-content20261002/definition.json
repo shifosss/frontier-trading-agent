@@ -116,7 +116,7 @@
   "q_unavailable": "A sampled event without a qualified Q keeps its S comparison; its Q components are reported as not_comparable and it leaves the Q denominator only in a separately reported row"
  },
  "matching": {
-  "tables": "HTML tables parsed with the standard-library HTML parser, with colspan expanded. Header rows are the rows before the first row holding a numeric cell; each numeric cell inherits the header text of its column. The table caption and the nearest preceding heading are kept as context.",
+  "tables": "HTML tables parsed with the standard-library HTML parser, with colspan expanded. A row is a header row when every cell after its label cell is empty or holds only period text: a year from 1990 to 2039, a month or month-day, or a duration or 'ended' phrase. Header rows end at the first row whose label cell is non-empty and that holds a numeric cell that is not a lone year; split rows such as 'Three Months Ended June 30,' followed by '2025 | 2024' therefore both stay in the header. Each value cell inherits the combined header text of its column. The table caption and nearest preceding heading are kept as context.",
   "plain_text": "Lines split on two or more spaces into a label and value columns; the header is the nearest preceding line without numeric values",
   "numbers": "Commas removed; parentheses or a leading minus mean negative; a dash alone means zero; footnote markers ignored",
   "scale": "1, 1e3, 1e6 or 1e9; an 'in thousands/millions/billions' phrase in the caption, context or header fixes the scale",
@@ -138,12 +138,17 @@
     "prior_fy_assets": "an instant column dated within 7 days of prior_fy_end"
    }
   },
-  "rule": "A component is stated only when a cell in a row whose label matches its pattern equals the 10-Q value within the tolerance AND that cell's column header parses to the required period. An equal value whose header does not parse to any period is period_unverified; an equal value under a different parsed period does not count.",
-  "evidence": "Exhibit SHA256, table and row index, label text, cell text, header text, parsed period and scale for every match"
+  "rule": "A component is stated only when a table cell or narrative sentence, under a label that matches its pattern and none of the exclusions, equals the 10-Q value within the tolerance AND its column header or sentence parses to the required period. An equal value whose period does not parse is period_unverified; an equal value under a different parsed period does not count.",
+  "evidence": "Exhibit SHA256, table and row index, label text, cell text, header text, parsed period and scale for every match",
+  "narrative": "Text outside tables is split into sentences. A sentence counts as evidence for a component when it contains the component's label (subject to the exclusions), a number equal to the 10-Q value (with a currency symbol and an optional 'thousand', 'million' or 'billion' word setting the scale) and a period phrase in the same sentence (for example 'three months ended June 30, 2024', 'second quarter of 2024', 'first half', 'year to date'). The period phrase must parse to the required period, else the match is period_unverified.",
+  "currency": "A leading or trailing $, US$ or USD is removed and recorded in the evidence. A cell or sentence marked with any other currency (C$, CAD, EUR, GBP, the euro or pound sign) is never compared, because the 10-Q values are USD, and is recorded as currency_mismatch",
+  "label_exclusions": "A label also matching adjusted, non-GAAP, pro forma, core, excluding, before, per share, margin or noncontrolling (case-insensitive) never counts for a component, so an adjusted or per-share figure that equals the GAAP value cannot make it stated",
+  "specification": "This prose specifies the rules. At freeze, the implementation and a synthetic fixture for every rule (split header rows, currency marks, adjusted labels, narrative sentences, image dependence, period mismatches) are bound by SHA256 and define them exactly; the 20-event spot check then reports any disagreement with a human reading"
  },
  "classification": [
   "stated",
   "period_unverified",
+  "currency_mismatch",
   "label_only (label found, no equal value)",
   "not_found",
   "exhibit_unavailable (unsupported_format, image_dependent, exhibit_overflow, release_unidentified or fetch failure)",
@@ -154,7 +159,7 @@
  "statistics": {
   "per_component": "share of the 150 classified stated",
   "per_signal": "share with every S_flow component stated, and with every Q_flow component stated; assets reported separately",
-  "bounds": "lower counts period_unverified, exhibit_unavailable, identity_failed, header_not_prior and release_ambiguous as not stated; upper counts period_unverified, exhibit_unavailable and release_ambiguous as stated (identity_failed and header_not_prior stay not stated: the filing is not an earlier same-issuer release)",
+  "bounds": "lower counts period_unverified, currency_mismatch, exhibit_unavailable, identity_failed, header_not_prior and release_ambiguous as not stated; upper counts period_unverified, currency_mismatch, exhibit_unavailable and release_ambiguous as stated (identity_failed and header_not_prior stay not stated: the filing is not an earlier same-issuer release)",
   "interval": "Wilson 95% interval",
   "strata": "both filing eras separately"
  },
@@ -185,8 +190,22 @@
  "documents": {
   "supported": "HTML (by .htm/.html name or an <html>/<table> sniff) and plain text (.txt)",
   "unsupported": "PDF (%PDF), images and any other binary are exhibit_unavailable (unsupported_format)",
-  "image_dependent": "A supported HTML document that contains <img> elements but no table row or text line matching any component label is exhibit_unavailable (image_dependent), never not_found",
+  "image_dependent": "Per component, not per document. A component that is not stated is exhibit_unavailable (image_dependent) when the document has an <img> whose alt text, file name or nearest preceding heading names the statement that would hold it (income or operations statement for net income, cash flow statement for operating cash flow, balance sheet for assets). A logo or any other image does not change not_found.",
   "press_release": "Press-release candidates are fetched EX-99 documents whose index description, or whose first 3,000 characters of text, match (press|news|earnings) release case-insensitively. Exactly one candidate is the release. With none, the single EX-99.1 is used and flagged release_by_type; with no single EX-99.1 the event is release_unidentified (unavailable). With several, all candidates are matched jointly and the event is flagged release_ambiguous.",
   "secondary": "Availability in any fetched EX-99 document is reported as a separate, non-verdict readout"
+ },
+ "runtime": {
+  "python": "3.13, with pyproject.toml and uv.lock bound by SHA256 at freeze",
+  "clock": "The decision session comes from event_clock in .qualification/filing-features20260928/features.py (SHA256 991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f), loaded only from those verified bytes",
+  "calendar": ".qualification/post-filing-strategy20260928/calendar.json (SHA256 a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560), the same XNYS calendar the completed study and the decision-session audit used",
+  "tzdata": "zoneinfo's search path is reset so America/New_York resolves only from the uv.lock-pinned tzdata 2026.4 package; the installed version must equal it, and the attempt records the America/New_York TZif SHA256 (the decision-session audit recorded d7f2206b3a45989fc9ad63d558922532fa7352280d5f87176bf1db79cb1d1fa9)",
+  "check": "Each sampled 10-Q's decision session is recomputed with these bindings and must equal its q_entry_session in the decision-session audit's events.json, or the attempt stops before any request",
+  "recorded_per_attempt": [
+   "exact Python version and implementation",
+   "platform",
+   "SQLite version",
+   "tzdata version and America/New_York TZif SHA256",
+   "every bound code and input SHA256"
+  ]
  }
 }
