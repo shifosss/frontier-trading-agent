@@ -698,6 +698,7 @@ OTHER_CURRENCY_WORDS = re.compile(
 def parse_number(text):
     """(value, decimals, currency) for a numeric cell, or None. Currency is 'USD', 'other' or ''."""
     t = text.strip()
+    t = re.sub(r"(?<=[\d)])\s*\(\d{1,2}\)$", "", t)  # '5.2(1)': a numbered footnote
     t = re.sub(r"(\s*(\*+|\([a-z]\)|\[\d+\]))+$", "", t)
     if not t or "%" in t:
         return None
@@ -937,7 +938,7 @@ MONEY_BEFORE = re.compile(
     + AMOUNT,
     re.I,
 )
-MONEY_AFTER = re.compile(r"(?P<neg>[-−])?" + AMOUNT + r"\s+(?P<cur>USD|CAD|EUR|GBP)\b", re.I)
+MONEY_AFTER = re.compile(r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|CAD|EUR|GBP)\b", re.I)
 USD_MARKS = {"$", "US$", "USD"}
 
 
@@ -971,6 +972,13 @@ FISCAL_QUARTER = re.compile(
 ORDINAL = {"first": 1, "second": 2, "third": 3, "fourth": 4, "q1": 1, "q2": 2, "q3": 3, "q4": 4}
 
 
+OTHER_METRIC = re.compile(  # a different measure named between a label and an amount
+    r"\b(ebitda|ebit|revenues?|sales|operating (income|loss)|income from operations"
+    r"|gross (profit|margin)|margins?|earnings per|per (basic |diluted )?share|eps"
+    r"|free cash flow|cash and cash equivalents|bookings|backlog|adjusted|non-?gaap|guidance"
+    r"|outlook|total assets|capital expenditures|investing activities|financing activities)\b",
+    re.I,
+)
 CLAUSE = re.compile(
     r";|,?\s+(?:as\s+)?compared\s+(?:with|to)\s+|\s+versus\s+|\s+vs\.?\s+"
     r"|,\s+(?:and|while|whereas|up|down)\s+",
@@ -1035,6 +1043,7 @@ def match_component(doc, spec, concept):
             best = kind
 
     for index, table in enumerate(doc["tables"]):
+        table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
         for label, cell, header, context, row in table_cells(table):
             matched = label_match(label, concept)
             if not matched:
@@ -1060,7 +1069,7 @@ def match_component(doc, spec, concept):
             if (
                 currency == "other"
                 or OTHER_CURRENCY_WORDS.search(header)
-                or CONTEXT_CURRENCY.search(context)
+                or CONTEXT_CURRENCY.search(table_wide)
             ):
                 note("currency_mismatch", item)
                 continue
@@ -1083,18 +1092,19 @@ def match_component(doc, spec, concept):
     for sentence in sentences(prose):
         current = None  # the label window that later unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
-            labels = []  # (start, usable window or None when excluded)
+            labels = []  # (start, end, usable window or None when excluded)
             for f in LABELS[concept].finditer(clause):
                 excluded = EXCLUDED_LABEL.search(clause[max(0, f.start() - 30) : f.end() + 25])
-                labels.append((f.start(), None if excluded else clause[f.start() : f.end() + 10]))
-            if any(window for _, window in labels):
+                window = None if excluded else clause[f.start() : f.end() + 10]
+                labels.append((f.start(), f.end(), window))
+            if any(window for _, _, window in labels):
                 label_seen = True
             amounts = money_amounts(clause)
             for text, number, decimals, word, usd, at in amounts:
-                before = [window for start_, window in labels if start_ < at]
-                owner = before[-1] if before else current
-                if owner is None:
-                    continue  # no label yet, or the amount belongs to an excluded measure
+                before = [(end_, window) for start_, end_, window in labels if start_ < at]
+                owner, since = before[-1][::-1] if before else (current, 0)
+                if owner is None or OTHER_METRIC.search(clause[since:at]):
+                    continue  # no label, an excluded measure, or another metric in between
                 scale_options = scales(word) if word else [Decimal(1)]
                 scale = equal(number, decimals, scale_options, spec["value"], negative_label(owner))
                 if scale is None:
@@ -1102,8 +1112,11 @@ def match_component(doc, spec, concept):
                 item = {
                     "sentence": sentence[:400],
                     "clause": clause[:400],
+                    "label": owner,
                     "money": text,
                     "scale": str(scale),
+                    "period": {k: str(v) for k, v in parse_period(clause).items()},
+                    "fiscal_quarters": fiscal_quarters(clause),
                 }
                 if not usd:
                     note("currency_mismatch", item)
@@ -1112,7 +1125,7 @@ def match_component(doc, spec, concept):
                 if result != "different_period":
                     note(result, item)
             if labels:
-                current = labels[-1][1]
+                current = labels[-1][2]
     if best:
         return best, evidence
     for image in doc["images"]:
@@ -1665,8 +1678,8 @@ def run(
                 stop.rename(
                     attempt / "source" / ("STOP-acknowledged-" + uuid.uuid4().hex + ".json")
                 )
-            meta["resumes"].append(now())
-        meta.update(status="running", runtime=identity)
+            meta["resumes"].append({"at": now(), "runtime": identity})
+        meta.update(status="running")  # meta["runtime"] stays the identity the attempt began with
         write_json(frozen, record, meta)
         accessions = [e["accession"] for e in sample]
         if (attempt / "sample.json").exists():
@@ -1674,10 +1687,20 @@ def run(
                 raise ProbeError("Saved sample differs from the recomputed sample")
         else:
             write_json(frozen, attempt / "sample.json", accessions)
-        if not (attempt / "projection.json").exists():
+        projection = attempt / "projection.json"
+        if not projection.exists():
             values = project_values(frozen, repo / definition["paths"]["records"], accessions)
-            meta["projection_sha256"] = write_json(frozen, attempt / "projection.json", values)
+            meta["projection_sha256"] = write_json(frozen, projection, values)
             write_json(frozen, record, meta)
+        elif meta.get("projection_sha256") is None:
+            # Written atomically by this attempt before a crash; bind it before any request.
+            saved = load(projection)
+            if not isinstance(saved, dict) or not set(saved) <= set(accessions):
+                raise ProbeError("Saved projection does not belong to this sample")
+            meta["projection_sha256"] = file_sha(projection)
+            write_json(frozen, record, meta)
+        elif file_sha(projection) != meta["projection_sha256"]:
+            raise ProbeError("Saved projection differs from the one the attempt recorded")
         (attempt / "source").mkdir(exist_ok=True)
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
         try:

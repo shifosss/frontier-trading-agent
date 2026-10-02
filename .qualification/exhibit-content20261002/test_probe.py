@@ -341,6 +341,32 @@ def test_table_wide_currency_and_mixed_duration_clauses():
     assert classify(single)["current_ni"] == "stated"
 
 
+def test_other_metrics_columns_footnotes_and_parenthesised_codes():
+    ebitda = (
+        b"<p>Net income was $4.0 million and EBITDA was $5.2 million for the three months ended"
+        b" June 30, 2025.</p>"
+    )
+    assert classify(ebitda)["current_ni"] == "label_only"
+    html = b"""<table>
+<tr><td></td><td>Three Months Ended June 30, 2025</td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td></td><td>USD in millions</td><td>CAD in millions</td></tr>
+<tr><td>Net income</td><td>5.2</td><td>7.1</td></tr></table>"""
+    assert classify(html)["current_ni"] == "stated"
+    assert m.parse_number("5.2(1)") == (Decimal("5.2"), 1, "")
+    assert m.parse_number("(12)") == (Decimal(-12), 0, "")
+    assert m.parse_number("(1,100)(2)") == (Decimal(-1100), 0, "")
+    assert m.money_amounts("a loss (5.2 million USD) in total")[0][1] == Decimal("-5.2")
+
+
+def test_narrative_evidence_records_label_and_period():
+    text = b"<p>Net income for the three months ended June 30, 2025 was $5.2 million.</p>"
+    doc = m.parse_document("html", text)
+    result, evidence = m.match_component(doc, m.comparison(RECORD)["current_ni"], "net_income")
+    assert result == "stated"
+    assert evidence[0]["label"].startswith("Net income")
+    assert evidence[0]["period"]["end"] == "2025-06-30"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -919,6 +945,39 @@ def test_resume_refuses_an_attempt_started_under_other_code(tmp_path):
     freeze["code"][f".qualification/{m.STUDY}/probe.py"] = sha(probe.read_bytes())
     (study / "freeze.json").write_text(json.dumps(freeze))
     with pytest.raises(m.ProbeError, match="other code"):
+        go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+
+
+def test_resume_binds_or_checks_the_projection_and_keeps_the_runtime(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    record = attempt / "attempt.json"
+    meta = json.loads(record.read_text())
+    original = meta["runtime"]
+    unbound = dict(meta)
+    del unbound["projection_sha256"]  # as if the crash came before the hash was saved
+    record.write_text(json.dumps(unbound))
+    saved = (attempt / "projection.json").read_bytes()
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    meta = json.loads(record.read_text())
+    assert meta["status"] == "complete" and meta["projection_sha256"] == sha(saved)
+    assert meta["runtime"] == original and meta["resumes"][0]["runtime"]
+    args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    assert m.reanalyze(*args)["events_identical"]
+
+
+def test_resume_refuses_a_changed_projection(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    projection = attempt / "projection.json"
+    projection.write_bytes(projection.read_bytes().replace(b"5200000", b"5200001"))
+    with pytest.raises(m.ProbeError, match="Saved projection differs"):
         go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
 
 

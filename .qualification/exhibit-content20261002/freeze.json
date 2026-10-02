@@ -1,14 +1,14 @@
 {
- "definition_sha256": "a566572a2faba6b94160079ab6ed32ef6a6a7ff66fc8f6870056215958a14322",
- "frozen_at_utc": "2026-10-02T19:07:50.109986+00:00",
+ "definition_sha256": "82fc2c29facd08c604f21046c96a2b89d861a6daa45f58ec075319edad072af4",
+ "frozen_at_utc": "2026-10-02T19:20:25.685388+00:00",
  "code": {
   ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
-  ".qualification/exhibit-content20261002/probe.py": "5670d165ae5c66d68060d4c77201d52247817fcda2089bd2c8ef62c211cc92c5",
-  ".qualification/exhibit-content20261002/test_probe.py": "4fd65179ede62186f069e601fb4d28fd8f8f88c28342137d150c5aaf2a5329b5",
+  ".qualification/exhibit-content20261002/probe.py": "d20a7b85b315e8c257e9f8096ab2b6717cacd8a3b31bc37b5b54968f27699627",
+  ".qualification/exhibit-content20261002/test_probe.py": "908cfbd39188dd494b2ab5821fef1cd3a6e67f8c11ce7c84243b2a911ff9cd22",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  },
  "outcome_access_before_freeze": "No SEC request, exhibit or records.json value was read, and no 10-Q value was projected. Before the freeze the sample draw and the 10-Q session reproduction were dry-checked offline on the committed decision-session events.json and the calendar (150 events from 56 issuers, 70 filed 2012-2020 and 80 filed 2021-2025, 50 with agent-filed 8-Ks, 0 session mismatches); that reads SEC filing metadata only.",
  "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten.",
- "revisions_before_any_run": "This freeze replaces those published in commits 67529c4c, 11e4ca33, 7434c98c and 07c47a95, each revised after its Codex review and before any attempt existed. No SEC request, exhibit or records.json value has been read."
+ "revisions_before_any_run": "This freeze replaces those published in commits 67529c4c, 11e4ca33, 7434c98c, 07c47a95 and a12c4da7, each revised after its Codex review and before any attempt existed. No SEC request, exhibit or records.json value has been read."
 }
