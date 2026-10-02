@@ -407,6 +407,27 @@ def test_evidence_keeps_matches_under_a_contradicting_period():
     assert {"stated", "different_period"} <= {e.get("result") for e in evidence}
 
 
+def test_contradicting_dates_scripts_and_unit_precedence():
+    wrong = (
+        b"<p>Net income for the second quarter of fiscal 2025 ended September 30, 2025 was $5.2"
+        b" million.</p>"
+    )
+    assert classify(wrong)["current_ni"] == "label_only"
+    script = (
+        b"<script>var s = 'Net income for the three months ended June 30, 2025 was $5.2 million.';"
+        b"</script><p>Results</p>"
+    )
+    assert classify(script)["current_ni"] == "not_found"
+    header = b"<tr><td>(in millions)</td><td>Three Months Ended June 30, 2025</td></tr>"
+    rows = b"<tr><td>Net income</td><td>5.2</td></tr>"
+    prose = b"<p>Revenue was $2.1 billion.</p><table>" + header + rows + b"</table>"
+    assert classify(prose)["current_ni"] == "stated"
+    only_prose = b"<p>Revenue was $2.1 billion.</p>" + table(
+        [b"Three Months Ended June 30, 2025"], [b"Net income", b"5.2"], before=b""
+    )
+    assert classify(only_prose)["current_ni"] == "scale_unverified"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -695,7 +716,7 @@ class Opener:
         return Response(url, self.pages[url])
 
 
-def build(tmp, records=None):
+def build(tmp, records=None, requests=None):
     repo, study = tmp / "repo", tmp / "repo" / ".qualification" / m.STUDY
     study.mkdir(parents=True)
     for relative in (m.AUDIT[0], m.CAPTURE[0], m.FEATURES[0]):
@@ -744,6 +765,7 @@ def build(tmp, records=None):
     definition["population"]["size"] = 3
     definition["sample"]["size"] = 3
     definition["requests"]["minimum_request_interval_seconds"] = 0
+    definition["requests"].update(requests or {})
     raw = (json.dumps(definition, indent=1) + "\n").encode()
     (study / "definition.json").write_bytes(raw)
     code = {r: sha((repo / r).read_bytes()) for r in (m.AUDIT[0], m.CAPTURE[0], m.FEATURES[0])}
@@ -982,12 +1004,40 @@ def test_a_url_interrupted_at_its_ceiling_becomes_a_reviewed_failure(tmp_path):
     with pytest.raises(KeyboardInterrupt):
         go(repo, study, Opener(site(), fail={first: "interrupt"}), resume=attempt.name)
     opener = Opener(site())
-    with pytest.raises(m.ProbeError, match="attempt ceiling"):
+    with pytest.raises(m.ProbeError, match="(?i)attempt ceiling"):
         go(repo, study, opener, resume=attempt.name)
     assert first not in opener.calls and (attempt / "source" / "STOP.json").exists()
     go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
     rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows["AAA"]["event_status"] == "exhibit_unavailable"
+
+
+def test_lifetime_ceiling_stops_once_then_fails_remaining_urls(tmp_path):
+    repo, study = build(tmp_path, requests={"max_lifetime_network_attempts": 4})
+    pages = site(wrong_cik_for=None, pdf_for=None)
+    with pytest.raises(m.ProbeError, match="(?i)attempt ceiling"):
+        go(repo, study, Opener(pages))
+    attempt = next((study / "attempts").iterdir())
+    go(repo, study, Opener(pages), resume=attempt.name, acknowledge_stop=True)
+    statuses = sorted(r["event_status"] for r in json.loads((attempt / "events.json").read_text()))
+    assert statuses == ["examined", "exhibit_unavailable", "exhibit_unavailable"]
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+    assert len(list((attempt / "source").glob("STOP-acknowledged-*.json"))) == 1
+
+
+def test_partial_raw_file_is_quarantined_before_the_cache_opens(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    full = site(wrong_cik_for=None)[next(u for u in site() if u.endswith("-index.html"))]
+    partial = attempt / "source" / "raw" / (sha(full + b"x") + ".bin")
+    partial.write_bytes(full[:10])  # as if a crash cut a direct raw write short
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["status"] == "complete" and not partial.exists()
+    assert meta["quarantined_partial_raw"][0]["files"] == [partial.name]
 
 
 def test_resume_refuses_an_attempt_started_under_other_code(tmp_path):

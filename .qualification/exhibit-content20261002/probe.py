@@ -454,6 +454,7 @@ class Release(HTMLParser):
         self.tables, self.blocks, self.images = [], [], []
         self.stack, self.text, self.since_table = [], [], []
         self.ordered, self.sup = [], 0  # every text node in source order; <sup> depth
+        self.skip = 0  # <script>/<style> depth
         self.tail = ""  # the last text before the current position, in or out of tables
 
     def _flush(self):
@@ -468,6 +469,9 @@ class Release(HTMLParser):
         return " ".join(self.since_table[-2:])[-300:]
 
     def handle_starttag(self, tag, attrs):
+        if tag in ("script", "style"):
+            self.skip += 1
+            return
         if tag == "sup":
             self.sup += 1
             return
@@ -505,6 +509,9 @@ class Release(HTMLParser):
             top["cell"]["text"].append(" ")  # <br>, <p> or <div> inside a cell
 
     def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.skip = max(0, self.skip - 1)
+            return
         if tag == "sup":
             self.sup = max(0, self.sup - 1)
             return
@@ -537,8 +544,8 @@ class Release(HTMLParser):
                 self.since_table = []
 
     def handle_data(self, data):
-        if self.sup:
-            return  # superscript footnote markers are not part of a value or label
+        if self.skip or self.sup:
+            return  # script/style is not shown; superscript markers are not values or labels
         self.ordered.append(data)
         self.tail = (self.tail + data)[-600:]
         top = self.stack[-1] if self.stack else None
@@ -795,6 +802,37 @@ def period_ok(period, spec):
     return not period["instant"] and period_months(period, spec) == spec["months"]
 
 
+UNIT_PHRASES = [
+    (
+        Decimal(10**9),
+        re.compile(r"\bin\s+billions\b|\bbillions\s+of\s+(u\.?s\.?\s+)?dollars\b", re.I),
+    ),
+    (
+        Decimal(10**6),
+        re.compile(r"\bin\s+millions\b|\bmillions\s+of\s+(u\.?s\.?\s+)?dollars\b", re.I),
+    ),
+    (
+        Decimal(10**3),
+        re.compile(
+            r"\bin\s+thousands\b|\bthousands\s+of\s+(u\.?s\.?\s+)?dollars\b|\(000'?s?\)|\$\s?000\b",
+            re.I,
+        ),
+    ),
+]
+
+
+def unit_scale(texts):
+    """Scale options from the nearest text naming a unit ('in millions', '$000'); a level naming
+    several units, or none at all, leaves every scale possible."""
+    for text in texts:
+        found = [scale for scale, pattern in UNIT_PHRASES if pattern.search(text or "")]
+        if len(found) == 1:
+            return found
+        if found:
+            break
+    return [Decimal(1), Decimal(10**3), Decimal(10**6), Decimal(10**9)]
+
+
 def scales(text):
     for scale, pattern in SCALE_WORDS:
         if pattern.search(text):
@@ -898,7 +936,7 @@ def _merge(filled):
 
 
 def table_cells(table):
-    """Yield (label, value cell text, column header, table-wide context, row index) per value.
+    """Yield (label, value text, column header, table-wide context, row, unit texts) per value.
 
     The header is the rows above the first data row. After a data row, a period row starts a new
     header block (a stacked section such as 'Six Months Ended') for the rows below it. A value's
@@ -939,8 +977,8 @@ def table_cells(table):
                 parts.append(best["text"])
         return " ".join(parts)
 
-    def wide():
-        parts = [context]
+    def header_wide():
+        parts = []
         for cells in header:
             filled = [c for c in cells if c["text"]]
             over = [c for c in filled if any(overlaps(c, col, span) for col, span in values)]
@@ -958,9 +996,11 @@ def table_cells(table):
             continue
         fresh = False
         filled = [c for c in cells if c["text"]]
-        table_wide = wide()
+        wide = header_wide()
         for m in _merge(filled):
-            yield filled[0]["text"], m["text"], column_header(m["col"], m["span"]), table_wide, row
+            column = column_header(m["col"], m["span"])
+            units = [column, wide, table.get("caption", ""), table.get("context", "")]
+            yield filled[0]["text"], m["text"], column, context + " " + wide, row, units
 
 
 def sentences(blocks):
@@ -1072,6 +1112,7 @@ def clause_result(clause, spec, amounts):
         except (TypeError, ValueError):
             year = None
         quarter_ok = (fiscal["quarter"], year) in quarters
+        quarter_ok = quarter_ok and _period_result(parsed, spec) != "different_period"
     if period_ok(parsed, spec) or quarter_ok:
         return "stated"
     if quarters or _period_result(parsed, spec) == "different_period":
@@ -1093,7 +1134,7 @@ def match_component(doc, spec, concept):
 
     for index, table in enumerate(doc["tables"]):
         table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
-        for label, cell, header, context, row in table_cells(table):
+        for label, cell, header, context, row, units in table_cells(table):
             matched = label_match(label, concept)
             if not matched:
                 continue
@@ -1104,7 +1145,7 @@ def match_component(doc, spec, concept):
                 continue
             number, decimals, currency = parsed
             negative = negative_label(label)
-            options = scales(unit[0]) if unit else scales(context + " " + header)
+            options = scales(unit[0]) if unit else unit_scale(units)
             scale = equal(number, decimals, options, spec["value"], negative)
             if scale is None:
                 continue
@@ -1520,15 +1561,32 @@ def request_settings(definition):
     return dict({k: definition["requests"][k] for k in keys}, reuse=[])
 
 
-def acknowledged_urls(source):
-    """URLs whose stop the owner acknowledged (renamed STOP records)."""
-    out = set()
+def acknowledged_stops(source):
+    """STOP records the owner acknowledged (renamed beside the source)."""
+    out = []
     for path in source.glob("STOP-acknowledged-*.json"):
         try:
-            out.add(load(path).get("url"))
+            out.append(load(path))
         except (OSError, ValueError):
             continue
     return out
+
+
+def acknowledged_urls(source):
+    return {stop.get("url") for stop in acknowledged_stops(source)}
+
+
+def quarantine_partial_raw(source):
+    """Move aside raw files whose bytes no longer match their SHA256 name (a crash during the
+    frozen cache's direct write), before the cache counts or reuses them; returns their names."""
+    moved = []
+    for path in sorted((source / "raw").glob("*.bin")):
+        if sha(path.read_bytes()) != path.stem:
+            target = source / "partial" / (path.name + "." + uuid.uuid4().hex)
+            target.parent.mkdir(exist_ok=True)
+            path.rename(target)
+            moved.append(path.name)
+    return moved
 
 
 def fetch_event(frozen, cache, event):
@@ -1544,22 +1602,28 @@ def fetch_event(frozen, cache, event):
             return data, None
         except capture.Halt:
             starts = sum(r["url"] == url for r in cache.starts)
-            ceiling = cache.request["max_attempts_per_url"]
-            if not record.exists() and starts >= ceiling:
-                # Interrupted at every allowed attempt: record a terminal failure (never requested
-                # again) and stop for the owner's review instead of halting on every resume.
+            per_url = starts >= cache.request["max_attempts_per_url"]
+            lifetime = len(cache.starts) >= cache.request["max_lifetime_network_attempts"]
+            if not record.exists() and (per_url or lifetime):
+                # A ceiling reached: record a terminal failure (never requested again) and stop
+                # once for the owner's review instead of halting on every resume. After the
+                # lifetime stop is acknowledged, later URLs fail without another stop.
+                status = "interrupted" if per_url else "lifetime_ceiling"
                 failure = {
                     "url": url,
-                    "status": "interrupted",
-                    "error": "Interrupted at each of " + str(starts) + " allowed attempts",
+                    "status": status,
+                    "error": "Attempt ceiling reached (" + status + ") before an outcome",
                 }
                 write_json(frozen, record, failure)
+                acknowledged = acknowledged_stops(cache.root)
+                if status == "lifetime_ceiling" and any(
+                    a.get("status") == "lifetime_ceiling" for a in acknowledged
+                ):
+                    return None, failure["error"]
                 (cache.root / "STOP.json").write_text(
                     json.dumps(dict(failure, at=now())), encoding="utf-8"
                 )
-                raise capture.Halt(
-                    "Request interrupted at its attempt ceiling; review, then resume"
-                )
+                raise capture.Halt("Attempt ceiling reached; review, then resume")
             raise
         except capture.CaptureError as exc:
             # A transport failure (no HTTP status) stops the attempt until the owner acknowledges
@@ -1777,6 +1841,11 @@ def run(
         elif file_sha(projection) != meta["projection_sha256"]:
             raise ProbeError("Saved projection differs from the one the attempt recorded")
         (attempt / "source").mkdir(exist_ok=True)
+        if (attempt / "source" / "raw").is_dir():
+            moved = quarantine_partial_raw(attempt / "source")
+            if moved:
+                meta.setdefault("quarantined_partial_raw", []).append({"at": now(), "files": moved})
+                write_json(frozen, record, meta)
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
         try:
             for event in sample:
