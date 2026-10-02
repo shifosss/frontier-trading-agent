@@ -668,7 +668,8 @@ DURATIONS = [
     (3, r"\b(three|3)[- ]months?\b|\bquarters?\b|\b1[2-4][- ]weeks?\b|\bq[1-4]\b"),
     (6, r"\b(six|6)[- ]months?\b|\b2[5-7][- ]weeks?\b|\bfirst half\b|\bhalf[- ]year\b"),
     (9, r"\b(nine|9)[- ]months?\b|\b3[89][- ]weeks?\b|\b40[- ]weeks?\b"),
-    (12, r"\b(twelve|12)[- ]months?\b|\bfiscal year\b|\byear ended\b|\b5[1-3][- ]weeks?\b"),
+    # 'of fiscal year 2025' names the year a quarter belongs to, not a twelve-month period
+    (12, r"\b(twelve|12)[- ]months?\b|(?<!of )\bfiscal year\b|\byear ended\b|\b5[1-3][- ]weeks?\b"),
 ]
 SHARED_MONTHS = re.compile(
     r"\b(three|six|nine|twelve|3|6|9|12)\s+and\s+(?=(?:three|six|nine|twelve|3|6|9|12)[- ]months?)",
@@ -684,6 +685,11 @@ OTHER_CURRENCY = re.compile(r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£", re.I)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(r"\(?\s*(US\$|C\$|CA\$|\$|€|£|USD|CAD|EUR|GBP)?\s*\(?")
 CODE_CELL = re.compile(r"USD|CAD|EUR|GBP")
+CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
+    r"(?:thousands|millions|billions)\s+of\s+(?:canadian\s+dollars|euros?|pounds|c\$|cad|eur|gbp)"
+    r"|(?:\b(?:cad|eur|gbp)\b|ca?\$|€|£)\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
+    re.I,
+)
 OTHER_CURRENCY_WORDS = re.compile(
     r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£|canadian dollars?|\beuros?\b|pounds? sterling", re.I
 )
@@ -720,12 +726,14 @@ def is_year(text):
     return bool(re.fullmatch(r"\s*(19[9]\d|20[0-3]\d)\s*", text))
 
 
+def durations(s):
+    """The distinct durations (in months) named in s; 'three and six months' names both."""
+    s = SHARED_MONTHS.sub(r"\1 months and ", s)
+    return {m for m, pattern in DURATIONS if re.search(pattern, s, re.I)}
+
+
 def parse_period(text, context=""):
     """{'months', 'end', 'instant', 'ytd'} from header text, using context only to fill gaps."""
-
-    def durations(s):
-        s = SHARED_MONTHS.sub(r"\1 months and ", s)
-        return {m for m, pattern in DURATIONS if re.search(pattern, s, re.I)}
 
     found = durations(text)
     ytd = bool(YTD.search(text))
@@ -988,11 +996,16 @@ def fiscal_quarters(clause):
 def clause_result(clause, spec, amounts):
     """stated, different_period or period_unverified for an equal amount in one clause.
 
-    Several amounts with several periods in one clause (several dates, fiscal quarters or
-    distinct years, as in 'June 30, 2025 and 2024') cannot be paired and are period_unverified."""
+    Several amounts with several periods in one clause (several dates, fiscal quarters, distinct
+    years as in 'June 30, 2025 and 2024', or durations as in 'second quarter and first six
+    months') cannot be paired, and a clause naming several durations cannot verify one amount;
+    both are period_unverified."""
     parsed, quarters = parse_period(clause), fiscal_quarters(clause)
-    periods = max(len(DATE_MDY.findall(clause)) + len(quarters), len(set(YEAR.findall(clause))))
-    if amounts > 1 and periods > 1:
+    named = durations(clause)
+    periods = max(
+        len(DATE_MDY.findall(clause)) + len(quarters), len(set(YEAR.findall(clause))), len(named)
+    )
+    if (amounts > 1 and periods > 1) or len(named) > 1:
         return "period_unverified"
     fiscal = spec.get("fiscal") or {}
     quarter_ok = False
@@ -1044,7 +1057,11 @@ def match_component(doc, spec, concept):
                 "header": header.strip(),
             }
             item["scale"] = str(scale)
-            if currency == "other" or OTHER_CURRENCY_WORDS.search(header):
+            if (
+                currency == "other"
+                or OTHER_CURRENCY_WORDS.search(header)
+                or CONTEXT_CURRENCY.search(context)
+            ):
                 note("currency_mismatch", item)
                 continue
             period = parse_period(header, context)
@@ -1219,7 +1236,7 @@ def analyse_event(event, fetched, specs, frozen, calendar):
         else:
             result, evidence = classify_component(release_docs, spec, CONCEPT[name])
             out["components"][name] = {"classification": result, "evidence": evidence}
-    if status is None:
+    if status is None or out.get("reason") == "release_unidentified":
         for name in COMPONENTS:
             if specs.get(name) is not None:
                 result, _ = classify_component(fetched["documents"], specs[name], CONCEPT[name])
@@ -1432,6 +1449,17 @@ def request_settings(definition):
     return dict({k: definition["requests"][k] for k in keys}, reuse=[])
 
 
+def acknowledged_urls(source):
+    """URLs whose stop the owner acknowledged (renamed STOP records)."""
+    out = set()
+    for path in source.glob("STOP-acknowledged-*.json"):
+        try:
+            out.add(load(path).get("url"))
+        except (OSError, ValueError):
+            continue
+    return out
+
+
 def fetch_event(frozen, cache, event):
     """Fetch index, header and EX-99 documents; return references to saved bytes."""
     capture = frozen.capture
@@ -1440,18 +1468,20 @@ def fetch_event(frozen, cache, event):
 
     def get(url):
         record = cache.root / "resources" / (capture.sha(url.encode()) + ".json")
-        existed = record.exists()
         try:
             data, meta = cache.get(url)
             return data, None
         except capture.Halt:
             raise
         except capture.CaptureError as exc:
-            if not existed and record.exists() and load(record).get("status") is None:
-                (cache.root / "STOP.json").write_text(
-                    json.dumps({"url": url, "error": str(exc), "at": now()}), encoding="utf-8"
-                )
-                raise capture.Halt("Transport failure; check the network, then resume") from exc
+            # A transport failure (no HTTP status) stops the attempt until the owner acknowledges
+            # it, even if a crash came between saving the failure and writing STOP.json.
+            if record.exists() and load(record).get("status") is None:
+                if url not in acknowledged_urls(cache.root):
+                    (cache.root / "STOP.json").write_text(
+                        json.dumps({"url": url, "error": str(exc), "at": now()}), encoding="utf-8"
+                    )
+                    raise capture.Halt("Transport failure; check the network, then resume") from exc
             return None, str(exc)
 
     index, error = get(base + accession + "-index.html")
@@ -1646,7 +1676,8 @@ def run(
             write_json(frozen, attempt / "sample.json", accessions)
         if not (attempt / "projection.json").exists():
             values = project_values(frozen, repo / definition["paths"]["records"], accessions)
-            write_json(frozen, attempt / "projection.json", values)
+            meta["projection_sha256"] = write_json(frozen, attempt / "projection.json", values)
+            write_json(frozen, record, meta)
         (attempt / "source").mkdir(exist_ok=True)
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
         try:
@@ -1719,6 +1750,17 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
         raise ProbeError("Only a complete attempt of this definition can be reanalysed")
     if meta.get("code") != load(freeze_path)["code"]:
         raise ProbeError("Attempt was produced by other code; it cannot be reanalysed")
+    if meta.get("inputs") != definition["inputs"]:
+        raise ProbeError("Attempt was produced from other inputs")
+    paths = definition["paths"]
+    for relative in (paths["timing_events"], paths["calendar"]):  # records.json is not read
+        if (
+            not (repo / relative).is_file()
+            or file_sha(repo / relative) != definition["inputs"][relative]
+        ):
+            raise ProbeError("Input missing or changed: " + relative)
+    if file_sha(attempt / "projection.json") != meta.get("projection_sha256"):
+        raise ProbeError("Saved projection differs from the one the attempt recorded")
     events = load(repo / definition["paths"]["timing_events"])
     events = events["events"] if isinstance(events, dict) else events
     by_accession = {e["accession"]: e for e in events}

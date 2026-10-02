@@ -326,6 +326,21 @@ def test_a_scale_inferred_from_the_10q_value_is_unverified():
     assert classify(units)["current_ni"] == "stated"
 
 
+def test_table_wide_currency_and_mixed_duration_clauses():
+    header = [b"Three Months Ended June 30, 2025"]
+    cad = table(header, [b"Net income", b"5.2"], before=b"<p>(in millions of Canadian dollars)</p>")
+    assert classify(cad)["current_ni"] == "currency_mismatch"
+    prose = b"<p>Results reflect a stronger Canadian dollar.</p><p>(in millions)</p>"
+    assert classify(table(header, [b"Net income", b"5.2"], before=prose))["current_ni"] == "stated"
+    mixed = (
+        b"<p>Net income for the second quarter of fiscal 2025 and first six months was $5.2"
+        b" million and $8.0 million, respectively.</p>"
+    )
+    assert classify(mixed)["current_ni"] == "period_unverified"
+    single = b"<p>Net income for the second quarter of fiscal year 2025 was $5.2 million.</p>"
+    assert classify(single)["current_ni"] == "stated"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -845,6 +860,51 @@ def test_rate_limit_halts_and_resumes_only_with_acknowledgement(tmp_path):
     rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows["CCC"]["components"]["current_ni"]["classification"] == "exhibit_unavailable"
     assert list((attempt / "source").glob("STOP-acknowledged-*.json"))
+
+
+def test_unidentified_release_still_reports_any_ex99(tmp_path):
+    repo, study = build(tmp_path)
+    pages = site(wrong_cik_for=None, pdf_for=None)
+    for url in [u for u in pages if u.endswith("-index.html")]:
+        pages[url] = (
+            pages[url].replace(b"PRESS RELEASE", b"EXHIBIT").replace(b"EX-99.1", b"EX-99.2")
+        )
+    attempt = go(repo, study, Opener(pages))
+    rows = json.loads((attempt / "events.json").read_text())
+    assert {r["reason"] for r in rows} == {"release_unidentified"}
+    assert all(r["any_ex99"]["current_ni"] == "stated" for r in rows)
+    summary = json.loads((attempt / "summary.json").read_text())["all"]
+    assert summary["stated_in_any_ex99"]["current_ni"] == 3
+
+
+def test_transport_failure_stop_survives_a_crash_before_stop_json(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(m.ProbeError, match="Transport failure"):
+        go(repo, study, Opener(site(), fail={first: "transport"}))
+    attempt = next((study / "attempts").iterdir())
+    (attempt / "source" / "STOP.json").unlink()  # as if the crash came before it was written
+    with pytest.raises(m.ProbeError, match="Transport failure"):
+        go(repo, study, Opener(site()), resume=attempt.name)
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_reanalysis_rechecks_inputs_and_projection(tmp_path):
+    repo, study = build(tmp_path)
+    attempt = go(repo, study, Opener(site()))
+    args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    assert m.reanalyze(*args)["events_identical"]
+    projection = attempt / "projection.json"
+    saved = projection.read_bytes()
+    projection.write_bytes(saved.replace(b"5200000", b"5200001"))
+    with pytest.raises(m.ProbeError, match="Saved projection"):
+        m.reanalyze(*args)
+    projection.write_bytes(saved)
+    calendar = repo / DEFINITION["paths"]["calendar"]
+    calendar.write_bytes(calendar.read_bytes() + b" ")
+    with pytest.raises(m.ProbeError, match="Input missing or changed"):
+        m.reanalyze(*args)
 
 
 def test_resume_refuses_an_attempt_started_under_other_code(tmp_path):
