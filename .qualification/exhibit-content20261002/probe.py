@@ -488,11 +488,14 @@ class Release(HTMLParser):
             if top is None:
                 self._flush()
                 context = self.context()
+                heading = self.since_table[-1] if self.since_table else ""
             else:  # a nested table also takes the text before it in its enclosing cell
                 cell = "".join(top["cell"]["text"]) if top["cell"] is not None else ""
                 context = " ".join((top["context"] + " " + cell).split())[-300:]
+                heading = " ".join(cell.split())
             self.stack.append(
-                {"rows": [], "caption": "", "context": context, "row": None, "cell": None}
+                {"rows": [], "caption": "", "context": context, "heading": heading}
+                | {"row": None, "cell": None}
             )
         elif tag == "tr" and top is not None:
             top["row"] = []
@@ -544,9 +547,7 @@ class Release(HTMLParser):
             top["row"] = None
         elif tag == "table":
             table = self.stack.pop()
-            self.tables.append(
-                {"rows": table["rows"], "caption": table["caption"], "context": table["context"]}
-            )
+            self.tables.append({k: table[k] for k in ("rows", "caption", "context", "heading")})
             if not self.stack:
                 self.since_table = []
 
@@ -637,7 +638,10 @@ def text_tables(text):
                     for above in recent
                     if not any(above is h for h in header)
                 )
+                above = [r for r in recent if not any(r is h for h in header)]
+                heading = " ".join(c["text"] for c in above[-1]) if above else ""
                 table = {"rows": header, "context": context[-300:], "label_end": label_end}
+                table["heading"] = heading
                 tables.append(table)
             table["rows"].append(cells)
             recent = []
@@ -648,7 +652,9 @@ def text_tables(text):
         paragraph.append(" ".join(c["text"] for c in cells))
     flush()
     return [
-        {"rows": t["rows"], "caption": "", "context": t["context"], "text": True} for t in tables
+        {"rows": t["rows"], "caption": "", "context": t["context"], "heading": t["heading"]}
+        | {"text": True}
+        for t in tables
     ], blocks
 
 
@@ -697,23 +703,48 @@ SCALE_WORDS = [
     (Decimal(10**6), re.compile(r"\bmillions?\b", re.I)),
     (Decimal(10**3), re.compile(r"\bthousands?\b|\(000'?s\)|\$000", re.I)),
 ]
-OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:CAD|EUR|GBP|AUD)\b|€|£")
+OTHER_CODES = (
+    "CAD|AUD|EUR|GBP|JPY|CHF|CNY|RMB|HKD|SGD|INR|KRW|BRL|MXN|SEK|NOK|DKK|NZD|ZAR|ILS|TWD|PLN"
+)
+OTHER_SIGNS = "€|£|¥|₹|₩|₪"
+OTHER_NAMES = (  # currency names that mark a non-USD amount
+    r"(?:canadian|australian|hong\s+kong|new\s+zealand|singapore|taiwan(?:ese)?)\s+dollars?"
+    r"|euros?|pounds?\s+sterling|(?:japanese\s+)?yen|(?:chinese\s+)?(?:yuan|renminbi)"
+    r"|(?:swiss\s+)?francs?|swedish\s+kron(?:a|or)|(?:norwegian|danish)\s+kron(?:e|er)"
+    r"|(?:indian\s+)?rupees?|korean\s+won|brazilian\s+reais?|(?:mexican\s+)?pesos?"
+    r"|south\s+african\s+rand|(?:israeli\s+)?shekels?|(?:polish\s+)?zloty"
+)
+OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
-PREFIX_CELL = re.compile(r"\(?\s*([A-Z]{1,3}\$|\$|€|£|USD|CAD|EUR|GBP|AUD)?\s*\(?")
-CODE_CELL = re.compile(r"USD|CAD|EUR|GBP|AUD|€|£|(?<![A-Z])(?!US\$)[A-Z]{1,3}\$")
+PREFIX_CELL = re.compile(
+    r"\(?\s*([A-Z]{1,3}\$|\$|" + OTHER_SIGNS + "|USD|" + OTHER_CODES + r")?\s*\(?"
+)
+CODE_CELL = re.compile(
+    "USD|" + OTHER_CODES + "|" + OTHER_SIGNS + r"|(?<![A-Z])(?!US\$)[A-Z]{1,3}\$"
+)
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
-    r"(?:thousands|millions|billions)\s+of\s+(?:(?:canadian|australian)\s+dollars|euros?|pounds"
-    r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|cad|aud|eur|gbp)"
+    r"(?:thousands|millions|billions)\s+of\s+(?:" + OTHER_NAMES + r"|pounds"
+    r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:" + OTHER_CODES + r")\b)"
     # the currency named first: 'CAD in thousands', 'Canadian dollars in millions'
-    r"|(?:\b(?:cad|aud|eur|gbp)\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|€|£"
-    r"|\b(?:canadian|australian)\s+dollars|\beuros?|\bpounds\s+sterling)"
+    r"|(?:\b(?:"
+    + OTHER_CODES
+    + r")\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|"
+    + OTHER_SIGNS
+    + r"|\b(?:"
+    + OTHER_NAMES
+    + r"))"
     r"\s*,?\s*\(?\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
     re.I,
 )
 CURRENCY_NAME = (
-    r"(?:(?:canadian|australian)\s+dollars|euros|pounds\s+sterling|\b(?:cad|aud|eur|gbp)\b"
-    r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$))"
+    r"(?:\b(?:"
+    + OTHER_NAMES
+    + r")|\b(?:"
+    + OTHER_CODES
+    + r")\b|"
+    + OTHER_SIGNS
+    + r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$))"
 )
 DECLARED_CURRENCY = re.compile(  # 'All amounts are in CAD.', '(in millions) CAD', '(C$)'
     r"\b(?:expressed|stated|presented|reported|denominated)\s+in\s+"
@@ -728,8 +759,13 @@ DECLARED_CURRENCY = re.compile(  # 'All amounts are in CAD.', '(in millions) CAD
     re.I,
 )
 OTHER_CURRENCY_WORDS = re.compile(
-    r"(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:CAD|EUR|GBP|AUD)\b|€|£"
-    r"|canadian dollars?|australian dollars?|\beuros?\b|pounds? sterling",
+    r"(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:"
+    + OTHER_CODES
+    + r")\b|"
+    + OTHER_SIGNS
+    + r"|\b(?:"
+    + OTHER_NAMES
+    + r")\b",
     re.I,
 )
 
@@ -1096,12 +1132,16 @@ AMOUNT = (
     r"(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?P<frac>\.\d+)?(?:\s*(?P<word>thousand|million|billion))?"
 )
 MONEY_BEFORE = re.compile(
-    r"(?P<neg>\(|[-−]\s?)?(?<![a-z])(?P<cur>(?-i:[A-Z]{1,3})?\$|€|£|\b(?:USD|CAD|EUR|GBP|AUD)\s?)"
+    r"(?P<neg>\(|[-−]\s?)?(?<![a-z])(?P<cur>(?-i:[A-Z]{1,3})?\$|"
+    + OTHER_SIGNS
+    + r"|\b(?:USD|"
+    + OTHER_CODES
+    + r")\s?)"
     r"\s?(?P<neg2>[-−])?" + AMOUNT,
     re.I,
 )
 MONEY_AFTER = re.compile(
-    r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|CAD|EUR|GBP|AUD)\b", re.I
+    r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|" + OTHER_CODES + r")\b", re.I
 )
 USD_MARKS = {"$", "US$", "USD"}
 
@@ -1293,13 +1333,17 @@ def match_component(doc, spec, concept):
     for index, table in enumerate(doc["tables"]):
         table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
         single = len({col for col, _ in value_columns(grid(table["rows"]))}) == 1
+        heading = table.get("heading", "")  # the text block just before the table, if short
+        title = " ".join([table.get("caption", ""), heading if len(heading) <= 150 else ""])
         for label, cell, header, context, row, units, wide_currency in table_cells(table):
             matched = label_match(label, concept)
             if not matched:
                 continue
             label_seen = True
-            if any(FORWARD.search(t) for t in (label, header, units[1])):
-                continue  # 'Estimated net income', 'Net income guidance', an 'Outlook' column
+            if any(FORWARD.search(t) for t in (label, header, units[1], title)) or QUALIFIER.search(
+                title
+            ):
+                continue  # 'Estimated net income', an 'Outlook' column, 'Projected Results' title
             unit = CELL_SCALE.search(cell)
             parsed = parse_number(CELL_SCALE.sub("", cell) if unit else cell)
             if parsed is None:
@@ -1382,7 +1426,7 @@ def match_component(doc, spec, concept):
                     or any(LABELS[other].search(between) for other in LABELS if other != concept)
                     or new_subject(gap)
                     or QUALIFIER.search(trail)  # '$5.2 million attributable to noncontrolling'
-                    or PROSPECTIVE.search(clause)  # 'is expected to be $5.2 million'
+                    or FORWARD.search(clause)  # 'is expected to be', 'Our guidance: net income'
                 ):
                     continue  # no label, an excluded measure, or another measure in between
                 scale_options = scales(word) if word else [Decimal(1)]

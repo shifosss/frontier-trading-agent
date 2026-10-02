@@ -746,6 +746,27 @@ def test_forward_table_labels_and_declared_table_currency():
         assert classify(html)["current_ni"] == "currency_mismatch", before
 
 
+def test_table_titles_other_currencies_and_guidance_before_labels():
+    header = [b"Three Months Ended June 30, 2025"]
+    for before in (
+        b"<p>Projected Financial Results (in millions)</p>",
+        b"<p>Reconciliation of Non-GAAP Measures (in millions)</p>",
+    ):
+        html = table(header, [b"Net income", b"5.2"], before=before)
+        assert classify(html)["current_ni"] == "label_only", before
+    for before in (
+        b"<p>(in millions of Japanese yen)</p>",
+        b"<p>(JPY in millions)</p>",
+        b"<p>(in millions of Swiss francs)</p>",
+    ):
+        html = table(header, [b"Net income", b"5.2"], before=before)
+        assert classify(html)["current_ni"] == "currency_mismatch", before
+    yen = "<p>Net income for the three months ended June 30, 2025 was \u00a55.2 million.</p>"
+    assert classify(yen.encode())["current_ni"] == "currency_mismatch"
+    guidance = b"<p>Our guidance: net income for Q2 FY2025 was $5.2 million.</p>"
+    assert classify(guidance)["current_ni"] == "label_only"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
