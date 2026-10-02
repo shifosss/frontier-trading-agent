@@ -15,7 +15,7 @@
   - the calendar
   - the qualification `events.json`, fetched as a gzip copy because it exceeds the connector's 10 MB limit and decompressed back to its exact bytes
 - Every fetched file matched its frozen SHA256 before the run. The two source lock files were empty in the original and were recreated byte-identical.
-- [`attempt.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/attempt.json) binds 209 input identities and 179 raw-source identities. [`summary.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/summary.json) and [`issuers.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/issuers.json) are committed. The per-10-Q `events.json` (SHA256 `862d0c09…a394`) and `events.csv` (SHA256 `23bdfc22…dfd9`) stay local.
+- [`attempt.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/attempt.json) binds 209 input identities and 179 raw-source identities. All five attempt files are committed: `attempt.json`, [`summary.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/summary.json), [`issuers.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/issuers.json), and the per-10-Q [`events.json`](../.qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json) (SHA256 `862d0c09…a394`) and `events.csv` (SHA256 `23bdfc22…dfd9`). The per-10-Q files carry SEC filing metadata only and are what a next-stage sample would draw from.
 
 ## Every 10-Q, by stratum
 
@@ -92,3 +92,7 @@ The declared next stage has not started. Before any request, it needs its own de
 - a record of whether the release itself states the current-period components
 
 Only components shown to be public may ever be used at the earlier clock, and only in a new predeclared economic comparison.
+
+## Known limitation carried forward
+
+A missing, truncated or key-less `freeze.json` makes `audit.py` and `--preflight` raise (`FileNotFoundError`, `JSONDecodeError` or `KeyError`) instead of returning a structured declaration blocker. It fails closed: no attempt is created. `audit.py` is left byte-identical to the code this attempt recorded (SHA256 `c4ccaa30…57b4`), so the fix belongs in any future amendment rather than a post-run edit.
