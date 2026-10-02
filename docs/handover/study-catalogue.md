@@ -31,7 +31,7 @@ This carries the key facts/results in GitHub even when large research files are 
 | Strategy action/source attribution | Retained attribution distinguishes abnormal marks from supported actions. | [Summary](../../docs/strategy-action-attribution-results.md) | `.qualification/strategy-action-attribution20260928` |
 | CAD-to-USD funding/account study | Research funding assumptions only; no transfer or borrowing. | [Summary](../../docs/usd-funding-study.md) | `artifacts/scans` |
 | Incremental listing/history refresh | Capture-only refresh; no new legacy study rerun. | [Summary](../../docs/weekly-data-refresh.md) | `.qualification/weekly-refresh20260926` |
-| Proposed source-only8-K disclosure novelty/timing | Undeclared/unexecuted; must freeze criteria and verify original-period/components before outcome work. | [Summary](../../docs/earnings-quality-results.md) | `.qualification/earnings-quality20260928` |
+| Source-only 8-K Item 2.02 disclosure timing audit | Frozen October 1 (definition `e48d158b…1ca2`, amendment-12); run once October 2 (attempt `31316f533e4f4c0e829d9e5bfbc4c6a4`): supported at metadata level, 63.9-64.4% of 2,010 qualified events. Timing metadata only; exhibit components unverified; do not rerun unchanged. | [Summary](../../docs/disclosure-timing-results.md) | `.qualification/disclosure-timing20261001` |
 
 ## Reproduce without searching the whole workspace
 
