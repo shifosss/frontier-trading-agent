@@ -125,7 +125,11 @@ STATEMENT_IMAGE = {
     ),
 }
 RELEASE = re.compile(r"(press|news|earnings) release", re.I)
-UNVERIFIED = {"period_unverified", "exhibit_unavailable"}  # possibly stated: upper bound only
+UNVERIFIED = {
+    "period_unverified",
+    "scale_unverified",
+    "exhibit_unavailable",
+}  # possibly stated: upper bound only
 
 
 class ProbeError(Exception):
@@ -497,6 +501,8 @@ class Release(HTMLParser):
             )
         elif tag in self.BREAK and top is None:
             self._flush()
+        elif tag in self.BREAK and top["cell"] is not None:
+            top["cell"]["text"].append(" ")  # <br>, <p> or <div> inside a cell
 
     def handle_endtag(self, tag):
         if tag == "sup":
@@ -511,7 +517,9 @@ class Release(HTMLParser):
             if tag in self.BREAK:
                 self._flush()
             return
-        if tag in ("td", "th") and top["cell"] is not None:
+        if tag in self.BREAK and tag not in ("tr", "table") and top["cell"] is not None:
+            top["cell"]["text"].append(" ")
+        elif tag in ("td", "th") and top["cell"] is not None:
             text = " ".join("".join(top["cell"]["text"]).split())
             top["row"].append(
                 {"text": text, "span": top["cell"]["span"], "rows": top["cell"]["rows"]}
@@ -843,8 +851,13 @@ def grid(rows):
 
 
 def is_period_row(cells):
-    """A non-data row naming a year, date, duration or year to date beyond its first cell."""
-    text = " ".join(c["text"] for c in cells[1:])
+    """A non-data row naming a year, date, duration or year to date beyond its first cell, or in
+    a single filled cell that spans several columns (a full-row section header)."""
+    filled = [c for c in cells if c["text"]]
+    if len(filled) == 1 and filled[0]["span"] > 1:
+        text = filled[0]["text"]
+    else:
+        text = " ".join(c["text"] for c in cells[1:])
     return bool(
         YEAR.search(text)
         or DATE_MD.search(text)
@@ -921,7 +934,7 @@ USD_MARKS = {"$", "US$", "USD"}
 
 
 def money_amounts(clause):
-    """Currency amounts in source order: (text, value, decimals, scale word, is_usd)."""
+    """Currency amounts in source order: (text, value, decimals, scale word, is_usd, offset)."""
     found = list(MONEY_BEFORE.finditer(clause))
     spans = [f.span() for f in found]
     found += [
@@ -936,7 +949,9 @@ def money_amounts(clause):
             value = -value
         decimals = len(f["frac"] or "") - (1 if f["frac"] else 0)
         currency = f["cur"].strip().upper()
-        out.append((f[0], value, decimals, (f["word"] or "").lower(), currency in USD_MARKS))
+        out.append(
+            (f[0], value, decimals, (f["word"] or "").lower(), currency in USD_MARKS, f.start())
+        )
     return out
 
 
@@ -1001,7 +1016,7 @@ def match_component(doc, spec, concept):
 
     def note(kind, item):
         nonlocal best
-        rank = ["stated", "period_unverified", "currency_mismatch"]
+        rank = ["stated", "period_unverified", "scale_unverified", "currency_mismatch"]
         evidence.append(dict(item, result=kind))
         if kind in rank and (best is None or rank.index(kind) < rank.index(best)):
             best = kind
@@ -1017,7 +1032,8 @@ def match_component(doc, spec, concept):
                 continue
             number, decimals, currency = parsed
             negative = negative_label(label)
-            scale = equal(number, decimals, scales(context + " " + header), spec["value"], negative)
+            options = scales(context + " " + header)
+            scale = equal(number, decimals, options, spec["value"], negative)
             if scale is None:
                 continue
             item = {
@@ -1033,7 +1049,12 @@ def match_component(doc, spec, concept):
                 continue
             period = parse_period(header, context)
             item["period"] = {k: str(v) for k, v in period.items()}
-            note("stated" if period_ok(period, spec) else _period_result(period, spec), item)
+            if not period_ok(period, spec):
+                note(_period_result(period, spec), item)
+            elif len(options) > 1 and scale != 1:
+                note("scale_unverified", item)  # no unit phrase: the multiplier is inferred
+            else:
+                note("stated", item)
     prose = doc["blocks"] + [
         c["text"]
         for table in doc["tables"]
@@ -1043,25 +1064,22 @@ def match_component(doc, spec, concept):
         if c["text"]
     ]
     for sentence in sentences(prose):
-        current = None  # the label the following unlabelled clauses refer to
+        current = None  # the label window that later unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
-            labels = list(LABELS[concept].finditer(clause))
-            if labels:
-                usable = [
-                    f
-                    for f in labels
-                    if not EXCLUDED_LABEL.search(clause[max(0, f.start() - 30) : f.end() + 25])
-                ]
-                current = clause[usable[0].start() : usable[0].end() + 10] if usable else None
-            if current is None:
-                continue  # no label yet, or the clause names an excluded measure
-            label_seen = True
+            labels = []  # (start, usable window or None when excluded)
+            for f in LABELS[concept].finditer(clause):
+                excluded = EXCLUDED_LABEL.search(clause[max(0, f.start() - 30) : f.end() + 25])
+                labels.append((f.start(), None if excluded else clause[f.start() : f.end() + 10]))
+            if any(window for _, window in labels):
+                label_seen = True
             amounts = money_amounts(clause)
-            for text, number, decimals, word, usd in amounts:
+            for text, number, decimals, word, usd, at in amounts:
+                before = [window for start_, window in labels if start_ < at]
+                owner = before[-1] if before else current
+                if owner is None:
+                    continue  # no label yet, or the amount belongs to an excluded measure
                 scale_options = scales(word) if word else [Decimal(1)]
-                scale = equal(
-                    number, decimals, scale_options, spec["value"], negative_label(current)
-                )
+                scale = equal(number, decimals, scale_options, spec["value"], negative_label(owner))
                 if scale is None:
                     continue
                 item = {
@@ -1076,6 +1094,8 @@ def match_component(doc, spec, concept):
                 result = clause_result(clause, spec, len(amounts))
                 if result != "different_period":
                     note(result, item)
+            if labels:
+                current = labels[-1][1]
     if best:
         return best, evidence
     for image in doc["images"]:
@@ -1125,6 +1145,7 @@ def classify_component(release_docs, spec, concept):
     order = [  # possibly stated outcomes first: any candidate that may hold the value counts
         "stated",
         "period_unverified",
+        "scale_unverified",
         "exhibit_unavailable",
         "currency_mismatch",
         "label_only",
@@ -1603,6 +1624,8 @@ def run(
         if resume:
             if meta["definition_sha256"] != definition_sha:
                 raise ProbeError("Attempt belongs to another definition")
+            if meta.get("code") != load(freeze_path)["code"]:
+                raise ProbeError("Attempt was started under other code; it cannot be resumed")
             stop = attempt / "source" / "STOP.json"
             if stop.exists():
                 if not acknowledge_stop:
@@ -1694,6 +1717,8 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
     meta = load(attempt / "attempt.json")
     if meta.get("definition_sha256") != definition_sha or meta.get("status") != "complete":
         raise ProbeError("Only a complete attempt of this definition can be reanalysed")
+    if meta.get("code") != load(freeze_path)["code"]:
+        raise ProbeError("Attempt was produced by other code; it cannot be reanalysed")
     events = load(repo / definition["paths"]["timing_events"])
     events = events["events"] if isinstance(events, dict) else events
     by_accession = {e["accession"]: e for e in events}

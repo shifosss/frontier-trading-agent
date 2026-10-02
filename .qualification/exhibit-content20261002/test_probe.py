@@ -296,6 +296,36 @@ def test_table_evidence_records_the_row():
     assert result == "stated" and evidence[0]["row"] == 2 and evidence[0]["table"] == 0
 
 
+def test_full_row_stacked_header_and_breaks_inside_cells():
+    html = b"""<p>(in millions)</p><table>
+<tr><td></td><td>Three Months Ended<br>June 30,</td><td></td></tr>
+<tr><td></td><td>2025</td><td>2024</td></tr>
+<tr><td>Net<br>income</td><td>5.2</td><td>(1.1)</td></tr>
+<tr><td colspan="3">Six Months Ended June 30,</td></tr>
+<tr><td></td><td>2025</td><td>2024</td></tr>
+<tr><td>Net income</td><td>8.0</td><td>3.0</td></tr>
+<tr><td>Net cash provided by operating activities</td><td>14.0</td><td>6.0</td></tr>
+</table>"""
+    result = classify(html)
+    assert {result[n] for n in m.S_FLOW + m.Q_FLOW} == {"stated"}
+
+
+def test_adjusted_amount_in_a_gaap_clause_is_not_credited():
+    text = (
+        b"<p>Net income was $4.0 million and adjusted net income was $5.2 million for the"
+        b" three months ended June 30, 2025.</p>"
+    )
+    assert classify(text)["current_ni"] == "label_only"
+    assert classify(text, dict(RECORD, current_ni="4000000"))["current_ni"] == "stated"
+
+
+def test_a_scale_inferred_from_the_10q_value_is_unverified():
+    bare = table([b"Three Months Ended June 30, 2025"], [b"Net income", b"5.2"], before=b"")
+    assert classify(bare)["current_ni"] == "scale_unverified"
+    units = table([b"Three Months Ended June 30, 2025"], [b"Net income", b"5,200,000"], before=b"")
+    assert classify(units)["current_ni"] == "stated"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -502,6 +532,7 @@ def test_signals_bounds_and_verdicts():
     empty = m.signal(event({"current_ni": "not_found"}, kind="release_ambiguous"), m.S_FLOW)
     assert empty["upper"] is False
     assert m.signal(event({"current_ni": "currency_mismatch"}), m.S_FLOW)["upper"] is False
+    assert m.signal(event({"current_ni": "scale_unverified"}), m.S_FLOW)["upper"] is True
     unverified = dict(event({}), identity_unverified=True)
     assert m.signal(unverified, m.S_FLOW) == {"comparable": True, "lower": False, "upper": True}
     assert m.signal(event({"q_prior_ni": "not_comparable"}), m.Q_FLOW)["comparable"] is False
@@ -814,6 +845,21 @@ def test_rate_limit_halts_and_resumes_only_with_acknowledgement(tmp_path):
     rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows["CCC"]["components"]["current_ni"]["classification"] == "exhibit_unavailable"
     assert list((attempt / "source").glob("STOP-acknowledged-*.json"))
+
+
+def test_resume_refuses_an_attempt_started_under_other_code(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    probe = study / "probe.py"
+    probe.write_bytes(probe.read_bytes() + b"# amended\n")
+    freeze = json.loads((study / "freeze.json").read_text())
+    freeze["code"][f".qualification/{m.STUDY}/probe.py"] = sha(probe.read_bytes())
+    (study / "freeze.json").write_text(json.dumps(freeze))
+    with pytest.raises(m.ProbeError, match="other code"):
+        go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
 
 
 def test_transport_failure_halts_once(tmp_path):
