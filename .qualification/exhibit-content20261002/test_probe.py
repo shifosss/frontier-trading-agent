@@ -767,6 +767,27 @@ def test_table_titles_other_currencies_and_guidance_before_labels():
     assert classify(guidance)["current_ni"] == "label_only"
 
 
+def test_excluded_column_headers_qualified_totals_and_colon_subjects():
+    for column in (
+        b"Core Three Months Ended June 30, 2025",
+        b"Per Share Three Months Ended June 30, 2025",
+    ):
+        assert classify(table([column], [b"Net income", b"5.2"]))["current_ni"] == "label_only"
+    unit = b"""<table>
+<tr><td>(in millions, except per share data)</td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td>Net income</td><td>5.2</td></tr></table>"""
+    assert classify(unit)["current_ni"] == "stated"
+    year_end = [b"December 31, 2024"]
+    assert classify(table(year_end, [b"Total assets", b"1,400"]))["prior_fy_assets"] == "stated"
+    for label in (b"Average total assets", b"Total assets under management"):
+        result = classify(table(year_end, [label, b"1,400"]))["prior_fy_assets"]
+        assert result in ("not_found", "label_only"), label
+    period = b"<p>Net income for the three months ended June 30, 2025: "
+    colon = period + b"$4.0 million and income tax expense: $5.2 million.</p>"
+    assert classify(colon)["current_ni"] == "label_only"
+    assert classify(period + b"$5.2 million.</p>")["current_ni"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1260,9 +1281,7 @@ def test_reanalysis_checks_the_saved_source_records(tmp_path):
     attempt = go(repo, study, Opener(site()))
     args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
     meta = json.loads((attempt / "attempt.json").read_text())
-    assert "requests.jsonl" in meta["source"] and not any(
-        k.startswith("raw/") for k in meta["source"]
-    )
+    assert "requests.jsonl" in meta["source"] and any(k.startswith("raw/") for k in meta["source"])
     assert m.reanalyze(*args)["source_matches_record"]
     journal = attempt / "source" / "requests.jsonl"
     saved = journal.read_bytes()
@@ -1274,6 +1293,25 @@ def test_reanalysis_checks_the_saved_source_records(tmp_path):
     record = next((attempt / "source" / "resources").glob("*.json"))
     record.write_bytes(record.read_bytes().replace(b"retrieved_at_utc", b"retrieved_at_UTC"))
     assert not m.reanalyze(*args)["reproduced"]
+
+
+def test_a_raw_payload_left_without_its_record_is_bound_to_the_attempt(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(KeyboardInterrupt):
+        go(repo, study, Opener(site(), fail={first: "interrupt"}))
+    attempt = next((study / "attempts").iterdir())
+    orphan_bytes = b"<html>a complete first response whose record was never written</html>"
+    orphan = attempt / "source" / "raw" / (sha(orphan_bytes) + ".bin")
+    orphan.write_bytes(orphan_bytes)  # a crash after the raw write, before the record
+    go(repo, study, Opener(site()), resume=attempt.name)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["source"]["raw/" + orphan.name] == sha(orphan_bytes)
+    args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    assert m.reanalyze(*args)["reproduced"]
+    orphan.unlink()
+    check = m.reanalyze(*args)
+    assert check["events_identical"] and not check["source_matches_record"]
 
 
 def test_reanalysis_rechecks_inputs_and_projection(tmp_path):
@@ -1288,8 +1326,14 @@ def test_reanalysis_rechecks_inputs_and_projection(tmp_path):
         m.reanalyze(*args)
     projection.write_bytes(saved)
     calendar = repo / DEFINITION["paths"]["calendar"]
-    calendar.write_bytes(calendar.read_bytes() + b" ")
+    saved = calendar.read_bytes()
+    calendar.write_bytes(saved + b" ")
     with pytest.raises(m.ProbeError, match="Input missing or changed"):
+        m.reanalyze(*args)
+    calendar.write_bytes(saved)
+    lock = repo / "uv.lock"
+    lock.write_bytes(lock.read_bytes() + b"# changed\n")  # a dependency identity changed
+    with pytest.raises(m.ProbeError, match="Input missing or changed: uv.lock"):
         m.reanalyze(*args)
 
 

@@ -111,7 +111,8 @@ LABELS = {
 }
 EXCLUDED_LABEL = re.compile(
     r"adjusted|non-?gaap|pro forma|\bcore\b|excluding|\bbefore\b|per (basic |diluted )?"
-    r"(common )?share|margin|non-?controlling|minority|continuing|discontinued",
+    r"(common )?share|margin|non-?controlling|minority|continuing|discontinued"
+    r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b",
     re.I,
 )
 STATEMENT_IMAGE = {
@@ -1207,12 +1208,22 @@ PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|(?:will|would|could|may|should)\s+be)\b",
     re.I,
 )
+PER_SHARE_UNIT = re.compile(  # '(in thousands, except per share data)' is a unit line
+    r"except\s+(?:for\s+)?per[- ]share\s+(?:data|amounts?|information|figures)", re.I
+)
+
+
+def excluded_header(text):
+    """A column or table-wide header naming an excluded measure ('Core', 'Per Share')."""
+    return bool(EXCLUDED_LABEL.search(PER_SHARE_UNIT.sub("", text)))
+
+
 FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
     r"(?:[,;]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
     r"(?!(?:it|this|that|which|they|these|those|in|for|during|at|on|of|from|to|by|with|was|were"
-    r"|is|are|and|or|while|whereas|but)\b)\b(?P<subject>[a-z][\w&'\-]*(?:\s+[a-z][\w&'\-]*){0,5})\s+"
-    r"(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached)\s+"
+    r"|is|are|and|or|while|whereas|but)\b)\b(?P<subject>[a-z][\w&'\-]*(?:\s+[a-z][\w&'\-]*){0,5})"
+    r"(?:\s+(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached)\s+|\s*:\s*)"
     r"(?:(?:approximately|about|roughly)\s+)?$",
     re.I,
 )
@@ -1370,7 +1381,7 @@ def match_component(doc, spec, concept):
                 if whole["end"] and (whole["months"] or whole["ytd"]):
                     period = whole
             item["period"] = {k: str(v) for k, v in period.items()}
-            if QUALIFIER.search(header) or QUALIFIER.search(units[1]):
+            if excluded_header(header) or excluded_header(units[1]):
                 continue  # a non-GAAP or partial column ('Non-GAAP Three Months Ended ...')
             if (
                 currency == "other"
@@ -1827,12 +1838,12 @@ def quarantine_partial_raw(source):
 
 
 def source_manifest(source):
-    """SHA256 of every saved source record (request journal, resource records, stops,
-    quarantined parts); raw payloads are named by their SHA256 and checked whenever read."""
+    """SHA256 of every saved source file: request journal, resource records, stops,
+    quarantined parts and every raw payload, including one a crash left without its record."""
     return {
         path.relative_to(source).as_posix(): file_sha(path)
         for path in sorted(source.rglob("*"))
-        if path.is_file() and path.relative_to(source).parts[0] != "raw"
+        if path.is_file()
     }
 
 
@@ -2228,7 +2239,8 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
     if meta.get("inputs") != definition["inputs"]:
         raise ProbeError("Attempt was produced from other inputs")
     paths = definition["paths"]
-    for relative in (paths["timing_events"], paths["calendar"]):  # records.json is not read
+    for relative in [r for r in definition["inputs"] if r != paths["records"]]:
+        # records.json is not read; the recorded projection SHA256 is checked instead
         if (
             not (repo / relative).is_file()
             or file_sha(repo / relative) != definition["inputs"][relative]
