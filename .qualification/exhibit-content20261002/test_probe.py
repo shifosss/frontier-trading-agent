@@ -256,6 +256,46 @@ def test_unreadable_candidate_keeps_an_ambiguous_component_possible():
     assert m.classify_component([readable], spec, "net_income")[0] == "label_only"
 
 
+def test_layout_tables_month_year_headers_and_cfo_synonyms():
+    layout = (
+        b"<table><tr><td>Net income for the three months ended June 30, 2025 was $5.2 million."
+        b"</td></tr></table>"
+    )
+    assert classify(layout)["current_ni"] == "stated"
+    month_year = table([b"Three Months Ended June 2025"], [b"Net income", b"5.2"])
+    assert classify(month_year)["current_ni"] == "stated"
+    synonym = table([b"Six Months Ended June 30, 2025"], [b"Cash flow from operations", b"14.0"])
+    assert classify(synonym)["q_current_cfo"] == "stated"
+    continuing = table(
+        [b"Three Months Ended June 30, 2025"], [b"Net income from continuing operations", b"5.2"]
+    )
+    assert classify(continuing)["current_ni"] == "not_found"
+
+
+def test_currency_code_cells_and_header_currency_are_never_compared():
+    header = [b"Three Months Ended June 30, 2025", b"", b""]
+    before = table(header, [b"Net income", b"CAD", b"5.2"])
+    after = table(header, [b"Net income", b"5.2", b"CAD"])
+    words = table([b"Three Months Ended June 30, 2025 (Canadian dollars)"], [b"Net income", b"5.2"])
+    for html in (before, after, words):
+        assert classify(html)["current_ni"] == "currency_mismatch"
+
+
+def test_image_inside_a_layout_table_takes_its_heading():
+    html = (
+        b"<table><tr><td>Consolidated Statements of Operations</td></tr>"
+        b"<tr><td><img src='image1.jpg'></td></tr></table>"
+    )
+    assert classify(html)["current_ni"] == "exhibit_unavailable"
+
+
+def test_table_evidence_records_the_row():
+    doc = m.parse_document("html", release_html())
+    spec = m.comparison(RECORD)["current_ni"]
+    result, evidence = m.match_component(doc, spec, "net_income")
+    assert result == "stated" and evidence[0]["row"] == 2 and evidence[0]["table"] == 0
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -717,6 +757,27 @@ def test_overflowing_index_fetches_no_exhibit(tmp_path):
     assert not [u for u in opener.calls if u.startswith(base) and u.endswith(".htm")]
     rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows["AAA"]["reason"] == "exhibit_overflow"
+
+
+def test_crash_before_the_attempt_record_leaves_no_attempt(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    original = m.write_json
+
+    def crash(frozen, path, value):
+        if Path(path).parent.name.endswith(".init"):
+            raise KeyboardInterrupt
+        return original(frozen, path, value)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(m, "write_json", crash)
+        with pytest.raises(KeyboardInterrupt):
+            go(repo, study, Opener(site()))
+    assert m.attempts(study) == []
+    ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+    assert ready["ready"] and len(ready["uninitialised_staging"]) == 1
+    opener = Opener(site())
+    attempt = go(repo, study, opener)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
 
 
 def test_interruption_before_projection_is_completed_on_resume(tmp_path, monkeypatch):

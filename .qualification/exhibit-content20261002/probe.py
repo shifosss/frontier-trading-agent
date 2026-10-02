@@ -103,14 +103,14 @@ LABELS = {
     "net_income": re.compile(r"\bnet \(?(income|earnings|loss)\b", re.I),
     "operating_cash_flow": re.compile(
         r"\b(net )?cash (flows? )?(provided|generated|used|from)\b[^|]{0,40}?"
-        r"\boperating activities\b|\boperating cash flows?\b",
+        r"\b(operating activities|operations)\b|\boperating cash flows?\b",
         re.I,
     ),
     "total_assets": re.compile(r"\btotal assets\b", re.I),
 }
 EXCLUDED_LABEL = re.compile(
     r"adjusted|non-?gaap|pro forma|\bcore\b|excluding|\bbefore\b|per (basic |diluted )?"
-    r"(common )?share|margin|non-?controlling|minority",
+    r"(common )?share|margin|non-?controlling|minority|continuing|discontinued",
     re.I,
 )
 STATEMENT_IMAGE = {
@@ -450,6 +450,7 @@ class Release(HTMLParser):
         self.tables, self.blocks, self.images = [], [], []
         self.stack, self.text, self.since_table = [], [], []
         self.ordered, self.sup = [], 0  # every text node in source order; <sup> depth
+        self.tail = ""  # the last text before the current position, in or out of tables
 
     def _flush(self):
         block = " ".join("".join(self.text).split())
@@ -469,6 +470,7 @@ class Release(HTMLParser):
         if tag in self.BREAK or tag in ("td", "th"):
             self.sup = 0  # an unclosed <sup> never swallows the following cell or block
             self.ordered.append(" ")
+            self.tail += " "
         attrs = dict(attrs)
         top = self.stack[-1] if self.stack else None
         if tag == "table":
@@ -490,7 +492,7 @@ class Release(HTMLParser):
                 {
                     "alt": attrs.get("alt") or "",
                     "src": attrs.get("src") or "",
-                    "context": self.context() + " " + "".join(self.text)[-200:],
+                    "context": " ".join(self.tail.split())[-300:],
                 }
             )
         elif tag in self.BREAK and top is None:
@@ -503,6 +505,7 @@ class Release(HTMLParser):
         if tag in self.BREAK or tag in ("td", "th"):
             self.sup = 0
             self.ordered.append(" ")
+            self.tail += " "
         top = self.stack[-1] if self.stack else None
         if top is None:
             if tag in self.BREAK:
@@ -529,6 +532,7 @@ class Release(HTMLParser):
         if self.sup:
             return  # superscript footnote markers are not part of a value or label
         self.ordered.append(data)
+        self.tail = (self.tail + data)[-600:]
         top = self.stack[-1] if self.stack else None
         if top is None:
             self.text.append(data)
@@ -650,6 +654,7 @@ MONTH = r"(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(
 MONTH += r"sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\.?"
 DATE_MDY = re.compile(MONTH + r"\s+(\d{1,2}),?\s*((?:19|20)\d{2})", re.I)
 DATE_MD = re.compile(MONTH + r"\s+(\d{1,2})\b", re.I)
+DATE_MY = re.compile(MONTH + r",?\s+((?:19|20)\d{2})\b", re.I)
 YEAR = re.compile(r"\b((?:19|20)\d{2})\b")
 DURATIONS = [
     (3, r"\b(three|3)[- ]months?\b|\bquarters?\b|\b1[2-4][- ]weeks?\b|\bq[1-4]\b"),
@@ -669,7 +674,11 @@ SCALE_WORDS = [
 ]
 OTHER_CURRENCY = re.compile(r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£", re.I)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
-PREFIX_CELL = re.compile(r"\(?\s*(US\$|C\$|CA\$|\$|€|£)?\s*\(?")
+PREFIX_CELL = re.compile(r"\(?\s*(US\$|C\$|CA\$|\$|€|£|USD|CAD|EUR|GBP)?\s*\(?")
+CODE_CELL = re.compile(r"USD|CAD|EUR|GBP")
+OTHER_CURRENCY_WORDS = re.compile(
+    r"C\$|CA\$|\bCAD\b|\bEUR\b|\bGBP\b|€|£|canadian dollars?|\beuros?\b|pounds? sterling", re.I
+)
 
 
 def parse_number(text):
@@ -717,6 +726,10 @@ def parse_period(text, context=""):
         for m, d, y in DATE_MDY.findall(text)
         if _valid(int(y), MONTHS[m.lower().rstrip(".")[:3]], int(d))
     }
+    if not dates:  # month-year: the last day of that month
+        dates = {
+            _month_end(int(y), MONTHS[m.lower().rstrip(".")[:3]]) for m, y in DATE_MY.findall(text)
+        }
     if not dates:
         years = set(YEAR.findall(text))
         month_days = DATE_MD.findall(text) or DATE_MD.findall(context)
@@ -732,6 +745,11 @@ def parse_period(text, context=""):
     end = dates.pop() if len(dates) == 1 else None
     instant = end is not None and not found and not ytd
     return {"months": months, "end": end, "instant": instant, "ytd": ytd}
+
+
+def _month_end(year, month):
+    following = date(year + month // 12, month % 12 + 1, 1)
+    return date.fromordinal(following.toordinal() - 1)
 
 
 def _valid(year, month, day_):
@@ -836,7 +854,7 @@ def is_period_row(cells):
 
 
 def table_cells(table):
-    """Yield (label, value cell text, column header, table context) for every data row.
+    """Yield (label, value cell text, column header, table context, row index) per value.
 
     The header is the rows above the first data row. After a data row, a period row starts a new
     header block (a stacked section such as 'Six Months Ended') for the rows below it.
@@ -853,7 +871,7 @@ def table_cells(table):
                     parts.append(c["text"])
         return " ".join(parts)
 
-    for cells in rows:
+    for row, cells in enumerate(rows):
         if not is_data_row([c["text"] for c in cells]):
             if fresh:
                 header.append(cells)
@@ -869,14 +887,18 @@ def table_cells(table):
             if PREFIX_CELL.fullmatch(text):
                 prefix += text
                 continue
-            if merged and text in (")", ")%", "%"):
-                merged[-1]["text"] += text
+            if merged and (text in (")", ")%", "%") or CODE_CELL.fullmatch(text)):
+                merged[-1]["text"] += (" " + text) if text[0].isalpha() else text
                 continue
-            merged.append({"text": prefix + text, "col": c["col"], "span": c["span"]})
+            joined = prefix + (" " if prefix[-1:].isalpha() else "") + text
+            merged.append({"text": joined, "col": c["col"], "span": c["span"]})
             prefix = ""
+        if merged and CODE_CELL.search(prefix):  # a trailing code cell marks the last value
+            merged[-1]["text"] += " " + prefix.strip()
         header_text = " ".join(c["text"] for cells_ in header for c in cells_)
         for m in merged:
-            yield label, m["text"], column_header(m["col"], m["span"]), context + " " + header_text
+            column = column_header(m["col"], m["span"])
+            yield label, m["text"], column, context + " " + header_text, row
 
 
 def sentences(blocks):
@@ -985,7 +1007,7 @@ def match_component(doc, spec, concept):
             best = kind
 
     for index, table in enumerate(doc["tables"]):
-        for label, cell, header, context in table_cells(table):
+        for label, cell, header, context, row in table_cells(table):
             matched = label_match(label, concept)
             if not matched:
                 continue
@@ -998,15 +1020,29 @@ def match_component(doc, spec, concept):
             scale = equal(number, decimals, scales(context + " " + header), spec["value"], negative)
             if scale is None:
                 continue
-            item = {"table": index, "label": label, "cell": cell, "header": header.strip()}
+            item = {
+                "table": index,
+                "row": row,
+                "label": label,
+                "cell": cell,
+                "header": header.strip(),
+            }
             item["scale"] = str(scale)
-            if currency == "other":
+            if currency == "other" or OTHER_CURRENCY_WORDS.search(header):
                 note("currency_mismatch", item)
                 continue
             period = parse_period(header, context)
             item["period"] = {k: str(v) for k, v in period.items()}
             note("stated" if period_ok(period, spec) else _period_result(period, spec), item)
-    for sentence in sentences(doc["blocks"]):
+    prose = doc["blocks"] + [
+        c["text"]
+        for table in doc["tables"]
+        for cells in table["rows"]
+        if not is_data_row([c["text"] for c in cells])
+        for c in cells
+        if c["text"]
+    ]
+    for sentence in sentences(prose):
         current = None  # the label the following unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
             labels = list(LABELS[concept].finditer(clause))
@@ -1472,6 +1508,8 @@ def attempts(root):
         return []
     out = []
     for path in sorted(folder.iterdir()):
+        if path.name.startswith("."):
+            continue  # an uninitialised staging folder (see run); preflight lists it
         try:
             out.append((path, load(path / "attempt.json")))
         except (OSError, ValueError):
@@ -1541,12 +1579,11 @@ def run(
                 )
         identity, sample, calendar = prepare(definition, repo, frozen)
         attempt = root / "attempts" / (resume or uuid.uuid4().hex)
-        attempt.mkdir(parents=True, exist_ok=resume is not None)
         record = attempt / "attempt.json"
-        meta = (
-            load(record)
-            if resume
-            else {
+        if resume:
+            meta = load(record)
+        else:
+            meta = {
                 "attempt": attempt.name,
                 "study": STUDY,
                 "definition_sha256": definition_sha,
@@ -1554,8 +1591,15 @@ def run(
                 "inputs": definition["inputs"],
                 "started_at_utc": now(),
                 "resumes": [],
+                "status": "running",
+                "runtime": identity,
             }
-        )
+            # The directory becomes visible only with its record: a crash before the rename
+            # leaves a dot-named staging folder that made no request and is not an attempt.
+            staging = attempt.parent / ("." + attempt.name + ".init")
+            staging.mkdir(parents=True)
+            write_json(frozen, staging / "attempt.json", meta)
+            staging.rename(attempt)
         if resume:
             if meta["definition_sha256"] != definition_sha:
                 raise ProbeError("Attempt belongs to another definition")
@@ -1706,7 +1750,13 @@ def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=RO
     resumable = [p.name for p, a in attempts(root) if a.get("status") in ("running", "halted")]
     if attempts(root) and not resumable:
         blocking.append({"path": "attempts", "problem": "a completed or failed attempt exists"})
-    result = {"ready": not blocking, "blocking": blocking, "resumable_attempts": resumable}
+    staging = sorted(p.name for p in (root / "attempts").glob(".*"))  # empty if absent
+    result = {
+        "ready": not blocking,
+        "blocking": blocking,
+        "resumable_attempts": resumable,
+        "uninitialised_staging": staging,
+    }
     if blocking:
         return result
     frozen = Frozen(repo)
