@@ -693,11 +693,13 @@ SCALE_WORDS = [
 OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:CAD|EUR|GBP|AUD)\b|€|£")
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(r"\(?\s*([A-Z]{1,3}\$|\$|€|£|USD|CAD|EUR|GBP|AUD)?\s*\(?")
-CODE_CELL = re.compile(r"USD|CAD|EUR|GBP")
+CODE_CELL = re.compile(r"USD|CAD|EUR|GBP|AUD|€|£|(?!US\$)[A-Z]{1,3}\$")
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
-    r"(?:thousands|millions|billions)\s+of\s+(?:canadian\s+dollars|euros?|pounds|c\$|cad|eur|gbp)"
-    r"|(?:\b(?:cad|eur|gbp)\b|ca?\$|€|£)\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
+    r"(?:thousands|millions|billions)\s+of\s+(?:(?:canadian|australian)\s+dollars|euros?|pounds"
+    r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|cad|aud|eur|gbp)"
+    r"|(?:\b(?:cad|aud|eur|gbp)\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|€|£)\s*(?:in\s+)?"
+    r"(?:thousands|millions|billions|000s?)\b",
     re.I,
 )
 OTHER_CURRENCY_WORDS = re.compile(
@@ -1005,9 +1007,23 @@ def table_cells(table):
             yield filled[0]["text"], m["text"], column, context + " " + wide, row, units
 
 
+ABBREVIATIONS = (
+    "Jan Feb Mar Apr Jun Jul Aug Sep Sept Oct Nov Dec Inc Corp Co Ltd LLC vs No Nos approx"
+    " Mr Ms Mrs Dr St Jr Sr U.S U.K e.g i.e etc"
+).split()
+SENTENCE_BREAK = re.compile(
+    r"(?<=[.;!?])"
+    + "".join(r"(?<!\b" + re.escape(a) + r"\.)" for a in ABBREVIATIONS)
+    + r"(?<!\b[A-Z]\.)\s+(?=[\"'“‘(]?[A-Za-z0-9$])",
+    re.I,
+)
+
+
 def sentences(blocks):
+    """Split at sentence ends, including before quotes, digits and lowercase starts, but never
+    after an abbreviation such as 'Sept.' or 'Inc.' or an initial."""
     for block in blocks:
-        for sentence in re.split(r"(?<=[.;!?])\s+(?=[A-Z(])", block):
+        for sentence in SENTENCE_BREAK.split(block):
             if sentence:
                 yield sentence
 
@@ -1106,7 +1122,8 @@ def clause_result(clause, spec, amounts):
         len(set(YEAR.findall(clause))),
         len(named),
     )
-    if (amounts > 1 and periods > 1) or len(named) > 1:
+    distinct_quarters = len({((q[1] or q[4]).lower(), q[2] or q[3]) for q in separate})
+    if (amounts > 1 and periods > 1) or len(named) > 1 or distinct_quarters > 1:
         return "period_unverified"
     fiscal = spec.get("fiscal") or {}
     quarter_ok = False

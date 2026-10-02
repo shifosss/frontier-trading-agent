@@ -443,6 +443,28 @@ def test_other_dollar_prefixes_and_narrative_period_evidence():
     assert result == "label_only" and evidence[0]["result"] == "different_period"
 
 
+def test_australian_markers_quarter_lists_and_sentence_boundaries():
+    header = [b"Three Months Ended June 30, 2025", b""]
+    for before in (b"<p>(in millions of Australian dollars)</p>", b"<p>(AUD in millions)</p>"):
+        html = table([b"Three Months Ended June 30, 2025"], [b"Net income", b"5.2"], before=before)
+        assert classify(html)["current_ni"] == "currency_mismatch", before
+    trailing = table(header, [b"Net income", b"5.2", b"AUD"])
+    assert classify(trailing)["current_ni"] == "currency_mismatch"
+    quarters = (
+        b"<p>For the first quarter of fiscal 2025 and the second quarter of fiscal 2025, net"
+        b" income was $5.2 million.</p>"
+    )
+    assert classify(quarters)["current_ni"] == "period_unverified"
+    quoted = (
+        b'<p>Net income for the three months ended June 30, 2025 was $4.0 million. "Net income'
+        b' was $5.2 million."</p>'
+    )
+    assert classify(quoted)["current_ni"] == "period_unverified"
+    september = dict(RECORD, current_start="2025-07-01", current_end="2025-09-30")
+    sept = b"<p>Net income for the three months ended Sept. 30, 2025 was $5.2 million.</p>"
+    assert classify(sept, september)["current_ni"] == "stated"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
