@@ -31,10 +31,10 @@
     "Broad verified regular-session hourly US/Canadian stock capture",
     "Qualified historical options chains/quotes/deliverables/cash-account economics",
     "Moomoo/Wealthsimple execution adapters, always-on operating-system/cloud deployment, remote authenticated hosting",
-    "Earlier earnings release novelty/timing audit definition and execution"
+    "Earlier earnings release exhibit-content probe (the metadata timing audit ran once October 2; see docs/disclosure-timing-results.md)"
   ],
   "source_release_audit": {
-    "status": "Undeclared and unexecuted after handover redirection",
+    "status": "Declared and frozen October 1 and run once October 2 (attempt 31316f533e4f4c0e829d9e5bfbc4c6a4): supported_at_metadata_level, 63.9-64.4% of 2,010 qualified events; timing metadata only. See docs/disclosure-timing-results.md. Next: a separately declared exhibit-content probe.",
     "registry": ".qualification/earnings-quality20260928/source/registry.json",
     "denominator": {
       "fixed_issuers": 100,
@@ -521,7 +521,7 @@
       "title": "Earlier-release hypothesis remains undeclared",
       "decision": "Freeze a metadata-only novelty/timing definition before matching preserved original 8-K Item2.02 candidates.",
       "reason": "Earlier timestamps are an unverified explanation for weak later-filing signals, not permission to move later S/Q backward.",
-      "basis": "Latest research direction; actual matching not executed",
+      "basis": "Latest research direction at the October 1 handover. Declared and frozen October 1 and run once October 2 (attempt 31316f533e4f4c0e829d9e5bfbc4c6a4): supported_at_metadata_level, 63.9-64.4% of 2,010 qualified events; timing metadata only. See docs/disclosure-timing-results.md. Next: a separately declared exhibit-content probe.",
       "evidence": [
         "docs/earnings-quality-results.md",
         ".qualification/earnings-quality20260928/source/registry.json",

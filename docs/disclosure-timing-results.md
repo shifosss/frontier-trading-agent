@@ -95,8 +95,9 @@ Only components shown to be public may ever be used at the earlier clock, and on
 
 ## Known limitations carried forward
 
-All three are left in place because `audit.py` stays byte-identical to the code this attempt recorded (SHA256 `c4ccaa30…57b4`); their fixes belong in any future amendment rather than a post-run edit.
+All four are left in place because `audit.py` stays byte-identical to the code this attempt recorded (SHA256 `c4ccaa30…57b4`); their fixes belong in any future amendment rather than a post-run edit.
 
 - `issuers.json` stores each resolved raw source as an absolute path in this run's checkout (`/home/user/frontier-trading-agent/…`, 179 records). Every record also carries the source URL and SHA256, and `attempt.json` lists the same sources repository-relative, so the prefix can be stripped mechanically.
 - `--preflight` probes the audit lock once and then scans prior attempts without holding it, so an audit that starts and completes during a preflight can leave that preflight reporting `ready: true` from a stale snapshot. A real run is unaffected: it takes the exclusive audit lock and rechecks prior attempts under it before creating anything.
+- The final identity check rehashes inputs, manifests, code and raw sources, but not `definition.json`, `freeze.json` or the amendment records, and `attempt.json` does not store the amendment SHA256s. For this attempt the chain is intact: those files last changed in commit `6d74c3ee` at 2026-10-01 20:09 UTC, six hours before the run, and their current bytes match `freeze.json`, whose definition SHA256 equals the attempt's.
 - A missing, truncated or key-less `freeze.json` makes `audit.py` and `--preflight` raise (`FileNotFoundError`, `JSONDecodeError` or `KeyError`) instead of returning a structured declaration blocker. It fails closed: no attempt is created.
