@@ -590,6 +590,26 @@ def test_trailing_qualifiers_non_gaap_columns_fy_quarters_images_and_forecasts()
         assert classify(text)["current_ni"] == "label_only", text
 
 
+def test_quarter_words_lists_and_partial_dates():
+    first = b"<p>Net income was first reported in June 2025 as $5.2 million.</p>"
+    q1 = dict(RECORD, fiscal_period="Q1")
+    assert classify(first, q1)["current_ni"] == "period_unverified"
+    months = (
+        b"<p>For Q2 FY2025, the periods June 2025 and March 2025 had net income of $5.2"
+        b" million.</p>"
+    )
+    assert classify(months)["current_ni"] == "period_unverified"
+    for listed in (b"the first and second quarters of 2025", b"Q1 and Q2 2025"):
+        html = b"<p>Net income for " + listed + b" was $5.2 million.</p>"
+        assert classify(html)["current_ni"] == "period_unverified", listed
+    per_share = table(
+        [b"Three Months Ended June 30, 2025"],
+        [b"Net income", b"5.2"],
+        before=b"<p>(in millions, except per share data)</p>",
+    )
+    assert classify(per_share)["current_ni"] == "stated"
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"

@@ -1110,11 +1110,22 @@ def money_amounts(clause):
     return out
 
 
+# a spelled-out ordinal counts only before 'quarter' ('first and second quarters' included)
+QUARTER_WORD = (
+    r"(?:first|second|third|fourth)(?=(?:\s*(?:,|and|or|through|to)\s*(?:the\s+)?"
+    r"(?:first|second|third|fourth))*\s+(?:fiscal\s+)?quarters?\b)"
+)
+QUARTER_LIST = re.compile(  # 'first and second quarters', 'Q1 and Q2': several quarters at once
+    r"\b(?:first|second|third|fourth)(?:\s*(?:,|and|or|through|to)\s*(?:the\s+)?"
+    r"(?:first|second|third|fourth))+\s+(?:fiscal\s+)?quarters?\b"
+    r"|\bq[1-4](?:\s*(?:,|and|or|through|to|-|–)\s*q[1-4])+\b",
+    re.I,
+)
 FISCAL_QUARTER = re.compile(  # 'second quarter of fiscal 2025', 'Q2 FY2025', 'FY25 Q2'
-    r"\b(?P<qa>first|second|third|fourth|q[1-4])\b[^.;]{0,25}?"
+    r"\b(?P<qa>" + QUARTER_WORD + r"|q[1-4])\b[^.;]{0,25}?"
     r"(?:\bfy\s*'?(?P<ya2>\d{2})\b|\b(?:fiscal\s+|fy\s*'?)?(?P<ya>(?:19|20)\d{2})\b)"
     r"|\b(?:fiscal\s+(?P<yb>(?:19|20)\d{2})|fy\s*'?(?P<yb2>(?:19|20)?\d{2}))\s+"
-    r"(?P<qb>first|second|third|fourth|q[1-4])\b",
+    r"(?P<qb>" + QUARTER_WORD + r"|q[1-4])\b",
     re.I,
 )
 ORDINAL = {"first": 1, "second": 2, "third": 3, "fourth": 4, "q1": 1, "q2": 2, "q3": 3, "q4": 4}
@@ -1184,6 +1195,22 @@ def fiscal_quarters(clause):
     ]
 
 
+def clause_dates(clause):
+    """How many distinct dates a clause names in any form parse_period reads: a month, day and
+    year, a month and day, or a month and year; a shorter form inside a fuller date is not
+    counted again."""
+
+    def month(name):
+        return MONTHS[name.lower().rstrip(".")[:3]]
+
+    full = {(month(m), int(d), int(y)) for m, d, y in DATE_MDY.findall(clause)}
+    days = {(month(m), int(d)) for m, d in DATE_MD.findall(clause)}
+    years = {(month(m), int(y)) for m, y in DATE_MY.findall(clause)}
+    days -= {(m, d) for m, d, _ in full}
+    years -= {(m, y) for m, _, y in full}
+    return len(full) + len(days) + len(years)
+
+
 QUARTER_ENDED = re.compile(r"[^.;]{0,15}?\bend(?:ed|ing)\s+" + DATE_MDY.pattern, re.I)
 
 
@@ -1205,9 +1232,9 @@ def clause_result(clause, spec, amounts):
         len(set(YEAR.findall(clause))),
         len(named),
     )
-    dates = {(m.lower()[:3], int(d), int(y)) for m, d, y in DATE_MDY.findall(clause)}
     # every quarter phrase counts here, including one followed by its own end date
-    several = len(named) > 1 or len(set(quarters)) > 1 or len(dates) > 1
+    several = len(named) > 1 or len(set(quarters)) > 1 or bool(QUARTER_LIST.search(clause))
+    several = several or clause_dates(clause) > 1
     if (amounts > 1 and periods > 1) or several:
         return "period_unverified"
     fiscal = spec.get("fiscal") or {}
