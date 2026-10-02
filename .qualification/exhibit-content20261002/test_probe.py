@@ -465,6 +465,44 @@ def test_australian_markers_quarter_lists_and_sentence_boundaries():
     assert classify(sept, september)["current_ni"] == "stated"
 
 
+def test_reversed_currency_phrases_closing_quotes_split_cells_and_between_codes():
+    header = [b"Three Months Ended June 30, 2025"]
+    for before, value in (
+        (b"<p>(Canadian dollars in millions)</p>", b"5.2"),
+        (b"<p>(Australian dollars, in thousands)</p>", b"5,200"),
+    ):
+        html = table(header, [b"Net income", value], before=before)
+        assert classify(html)["current_ni"] == "currency_mismatch", before
+    quoted = (
+        b'<p>"Net income for the three months ended June 30, 2025 was $4.0 million." Net income'
+        b" was $5.2 million.</p>"
+    )
+    assert classify(quoted)["current_ni"] == "period_unverified"
+    dated = (
+        b"<p>For the first quarter of fiscal 2025 ended March 31, 2025 and the second quarter of"
+        b" fiscal 2025 ended June 30, 2025, net income was $5.2 million.</p>"
+    )
+    assert classify(dated)["current_ni"] == "period_unverified"
+    split = (
+        b"<table><tr><td>Net income for the three months ended June 30, 2025 was</td>"
+        b"<td>$5.2 million</td></tr></table>"
+    )
+    assert classify(split)["current_ni"] == "stated"
+    columns = [b"Three Months Ended June 30, 2025", b"", b"Three Months Ended June 30, 2024", b""]
+    between = table(columns, [b"Net income", b"5.2", b"AUD", b"4.0", b"USD"])
+    assert classify(between)["current_ni"] == "currency_mismatch"
+
+    def merged(*texts):
+        cells = [{"text": t, "col": i, "span": 1} for i, t in enumerate(texts)]
+        return [c["text"] for c in m._merge(cells)]
+
+    assert merged("Net income", "5.2", "AUD", "4.0", "USD") == ["5.2 AUD", "4.0 USD"]
+    assert merged("Net income", "USD", "5.2", "AUD", "4.0") == ["USD 5.2", "AUD 4.0"]
+    assert merged("Net income", "5.2", "AUD", "4.0") == ["5.2 AUD", "AUD 4.0"]
+    assert merged("Net income", "$", "5.2", "$", "4.0") == ["$5.2", "$4.0"]
+    assert merged("Net income", "US$", "5.2", "US$", "4.0") == ["US$5.2", "US$4.0"]
+
+
 def test_ambiguous_or_missing_duration_is_period_unverified():
     # A dated column whose duration cannot be resolved is unverified, never silently dropped.
     both = b"<p>Three and six months ended (in millions)</p>"
@@ -1013,6 +1051,19 @@ def test_transport_failure_stop_survives_a_crash_before_stop_json(tmp_path):
         go(repo, study, Opener(site()), resume=attempt.name)
     go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
     assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_reanalysis_checks_the_recorded_output_bytes(tmp_path):
+    repo, study = build(tmp_path)
+    attempt = go(repo, study, Opener(site()))
+    args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    check = m.reanalyze(*args)
+    assert check["reproduced"] and check["spot_check_identical"] and check["files_match_record"]
+    events = attempt / "events.json"
+    events.write_text(json.dumps(json.loads(events.read_text()), indent=2), encoding="utf-8")
+    check = m.reanalyze(*args)
+    assert check["events_identical"] and not check["files_match_record"]
+    assert not check["reproduced"]
 
 
 def test_reanalysis_rechecks_inputs_and_projection(tmp_path):

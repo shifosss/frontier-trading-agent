@@ -13,7 +13,7 @@ An earlier-clock version of either signal is only defensible for the components 
 
 ## Design
 
-The machine-readable declaration is [`definition.json`](../.qualification/exhibit-content20261002/definition.json). [`freeze.json`](../.qualification/exhibit-content20261002/freeze.json) binds it by SHA256 (`9e35f098…bf05`) together with the code that implements it: [`probe.py`](../.qualification/exhibit-content20261002/probe.py), its synthetic tests [`test_probe.py`](../.qualification/exhibit-content20261002/test_probe.py), and the reused frozen `audit.py`, `capture.py` and `features.py`. Any change needs a dated amendment and a new freeze.
+The machine-readable declaration is [`definition.json`](../.qualification/exhibit-content20261002/definition.json). [`freeze.json`](../.qualification/exhibit-content20261002/freeze.json) binds it by SHA256 (`363f6e88…ec44`) together with the code that implements it: [`probe.py`](../.qualification/exhibit-content20261002/probe.py), its synthetic tests [`test_probe.py`](../.qualification/exhibit-content20261002/test_probe.py), and the reused frozen `audit.py`, `capture.py` and `features.py`. Any change needs a dated amendment and a new freeze.
 
 - **Frame:** the 1,166 strategy-qualified `single_prior` events from the decision-session audit, across 70 issuers (579 filed 2012–2020, 587 filed 2021–2025). Ambiguous `multiple` events and same-session events are excluded.
 - **Sample:** 150 events, ordered by the SHA256 of `exhibit-content20261002|` plus the 10-Q accession. No replacement: a failed fetch or missing exhibit stays in the denominator. An offline dry check of the draw (filing metadata only) gives 56 issuers, 70 events filed 2012–2020 and 80 filed 2021–2025, and 50 agent-filed 8-Ks.
@@ -33,7 +33,7 @@ The machine-readable declaration is [`definition.json`](../.qualification/exhibi
   - Every match keeps its document URL and SHA256, table and row (or clause), label, cell, header, parsed period and scale.
 - **Readout:** per component and per signal (shares and Wilson intervals for both), with lower and upper bounds (the upper bound also counts `period_unverified` and unavailable components; the lower bound also excludes ambiguous releases and unverified identity), Wilson 95% intervals and both filing eras. The signal verdicts use the flow components (net income and operating cash flow). Prior fiscal-year-end assets were normally public earlier through the annual report, so they are reported separately; a later full extraction must take them from that report at its own verified clock.
 - **Verdict per signal:** `release_complete_common` if the Wilson lower limit of the lower-bound share is at least 0.7; `release_complete_rare` if the Wilson upper limit of the upper-bound share is below 0.3; otherwise `inconclusive`. `common` justifies only a separately declared full extraction of that signal's components. Nothing here backdates a 10-Q value, changes a completed result or promotes a strategy.
-- **Verification:** 71 offline synthetic tests cover every matching rule and the fetch lifecycle with a fake opener (`verification.json`). After the run, `--reanalyze` recomputes every classification from the saved bytes and must reproduce `events.json` and `summary.json` exactly, and `spot-check.json` lists the 20 events with the smallest SHA256 of `exhibit-content20261002|spot|` plus the 10-Q accession, with their evidence, for an owner reading of the original documents.
+- **Verification:** 73 offline synthetic tests cover every matching rule and the fetch lifecycle with a fake opener (`verification.json`). After the run, `--reanalyze` recomputes every classification from the saved bytes and must reproduce `events.json`, `summary.json` and `spot-check.json` exactly, each still with the SHA256 recorded in `attempt.json`, and `spot-check.json` lists the 20 events with the smallest SHA256 of `exhibit-content20261002|spot|` plus the 10-Q accession, with their evidence, for an owner reading of the original documents.
 
 ## Owner decisions (October 2)
 
@@ -65,7 +65,7 @@ Run from the repository root in PowerShell, on `main` after this declaration is 
    - Interrupted (Ctrl+C, sleep, power): `--resume <id>`.
    - `Halted`: read `attempts\<id>\source\STOP.json` first. After a 403/429, wait at least an hour; after a transport failure, check the network. Then `--resume <id> --acknowledge-stop`.
    - `failed`: do not resume or rerun. Report the error; a fix needs an amendment.
-6. Confirm the saved bytes reproduce the outputs; both values must be `true`:
+6. Confirm the saved bytes reproduce the outputs; `reproduced` must be `true` (the command exits with status 1 otherwise):
 
    ```powershell
    .venv\Scripts\python.exe -B .qualification\exhibit-content20261002\probe.py --reanalyze <id>

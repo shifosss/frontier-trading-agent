@@ -18,6 +18,7 @@ import os
 import re
 import sqlite3
 import subprocess
+import sys
 import time
 import uuid
 from contextlib import contextmanager
@@ -693,13 +694,15 @@ SCALE_WORDS = [
 OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:CAD|EUR|GBP|AUD)\b|€|£")
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(r"\(?\s*([A-Z]{1,3}\$|\$|€|£|USD|CAD|EUR|GBP|AUD)?\s*\(?")
-CODE_CELL = re.compile(r"USD|CAD|EUR|GBP|AUD|€|£|(?!US\$)[A-Z]{1,3}\$")
+CODE_CELL = re.compile(r"USD|CAD|EUR|GBP|AUD|€|£|(?<![A-Z])(?!US\$)[A-Z]{1,3}\$")
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
     r"(?:thousands|millions|billions)\s+of\s+(?:(?:canadian|australian)\s+dollars|euros?|pounds"
     r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|cad|aud|eur|gbp)"
-    r"|(?:\b(?:cad|aud|eur|gbp)\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|€|£)\s*(?:in\s+)?"
-    r"(?:thousands|millions|billions|000s?)\b",
+    # the currency named first: 'CAD in thousands', 'Canadian dollars in millions'
+    r"|(?:\b(?:cad|aud|eur|gbp)\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|€|£"
+    r"|\b(?:canadian|australian)\s+dollars|\beuros?|\bpounds\s+sterling)"
+    r"\s*,?\s*\(?\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
     re.I,
 )
 OTHER_CURRENCY_WORDS = re.compile(
@@ -921,11 +924,32 @@ def is_period_row(cells):
 
 
 def _merge(filled):
-    """Join currency marks, codes, parentheses and percent signs to the value cells they mark."""
+    """Join currency marks, codes, parentheses and percent signs to the value cells they mark.
+
+    A currency code in its own cell is read by the row's layout: a code before the first value
+    makes codes prefixes, a code after the last value makes them suffixes, and a code only
+    between two values marks both, so a foreign code never leaves a value unmarked."""
+    cells = filled[1:]
+    values = [
+        i
+        for i, c in enumerate(cells)
+        if not PREFIX_CELL.fullmatch(c["text"]) and c["text"] not in (")", ")%", "%")
+    ]
+
+    def coded(part):
+        return any(PREFIX_CELL.fullmatch(c["text"]) and CODE_CELL.search(c["text"]) for c in part)
+
+    leading = bool(values) and coded(cells[: values[0]])
+    trailing = bool(values) and coded(cells[values[-1] + 1 :])
     merged, prefix = [], ""
-    for c in filled[1:]:
+    for c in cells:
         text = c["text"]
         if PREFIX_CELL.fullmatch(text):
+            code = CODE_CELL.search(text)
+            if code and merged and not leading:  # a code after a value may be its suffix
+                merged[-1]["text"] += " " + code[0]
+                if trailing:  # suffix layout: it is not also the next value's prefix
+                    text = text.replace(code[0], "", 1)
             prefix += text
             continue
         if merged and (text in (")", ")%", "%") or CODE_CELL.fullmatch(text)):
@@ -934,7 +958,7 @@ def _merge(filled):
         joined = prefix + (" " if prefix[-1:].isalpha() else "") + text
         merged.append({"text": joined, "col": c["col"], "span": c["span"]})
         prefix = ""
-    if merged and CODE_CELL.search(prefix):  # a trailing code cell marks the last value
+    if merged and leading and CODE_CELL.search(prefix):  # a trailing code marks the last value
         merged[-1]["text"] += " " + prefix.strip()
     return merged
 
@@ -1011,17 +1035,25 @@ ABBREVIATIONS = (
     "Jan Feb Mar Apr Jun Jul Aug Sep Sept Oct Nov Dec Inc Corp Co Ltd LLC vs No Nos approx"
     " Mr Ms Mrs Dr St Jr Sr U.S U.K e.g i.e etc"
 ).split()
+CLOSING = "[\"'”’)]"
+TAILS = ("", CLOSING, CLOSING * 2)  # up to two closing quotes or brackets after the punctuation
 SENTENCE_BREAK = re.compile(
-    r"(?<=[.;!?])"
-    + "".join(r"(?<!\b" + re.escape(a) + r"\.)" for a in ABBREVIATIONS)
-    + r"(?<!\b[A-Z]\.)\s+(?=[\"'“‘(]?[A-Za-z0-9$])",
+    "(?:"
+    + "|".join(r"(?<=[.;!?]" + tail + ")" for tail in TAILS)
+    + ")"
+    + "".join(
+        r"(?<!\b" + word + r"\." + tail + ")"
+        for word in [re.escape(a) for a in ABBREVIATIONS] + ["[A-Z]"]  # '[A-Z]': an initial
+        for tail in TAILS
+    )
+    + r"\s+(?=[\"'“‘(]?[A-Za-z0-9$])",
     re.I,
 )
 
 
 def sentences(blocks):
-    """Split at sentence ends, including before quotes, digits and lowercase starts, but never
-    after an abbreviation such as 'Sept.' or 'Inc.' or an initial."""
+    """Split at sentence ends, including after closing quotes and before quotes, digits and
+    lowercase starts, but never after an abbreviation such as 'Sept.' or 'Inc.' or an initial."""
     for block in blocks:
         for sentence in SENTENCE_BREAK.split(block):
             if sentence:
@@ -1122,8 +1154,8 @@ def clause_result(clause, spec, amounts):
         len(set(YEAR.findall(clause))),
         len(named),
     )
-    distinct_quarters = len({((q[1] or q[4]).lower(), q[2] or q[3]) for q in separate})
-    if (amounts > 1 and periods > 1) or len(named) > 1 or distinct_quarters > 1:
+    # every quarter phrase counts here, including one followed by its own end date
+    if (amounts > 1 and periods > 1) or len(named) > 1 or len(set(quarters)) > 1:
         return "period_unverified"
     fiscal = spec.get("fiscal") or {}
     quarter_ok = False
@@ -1139,6 +1171,12 @@ def clause_result(clause, spec, amounts):
     if quarters or _period_result(parsed, spec) == "different_period":
         return "different_period"
     return "period_unverified"
+
+
+CONTINUES = re.compile(  # a label cell whose sentence runs on into the value cell
+    r"\b(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached|to|approximately)\s*:?$",
+    re.I,
+)
 
 
 def match_component(doc, spec, concept):
@@ -1201,6 +1239,11 @@ def match_component(doc, spec, concept):
         for c in cells
         if c["text"]
     ]
+    for table in doc["tables"]:  # a sentence split across cells: '... June 30, 2025 was | $5.2'
+        for cells in table["rows"]:
+            texts = [c["text"] for c in cells if c["text"]]
+            if is_data_row(texts) and CONTINUES.search(texts[0]):
+                prose.append(" ".join(texts))
     for sentence in sentences(prose):
         current = None  # the label window that later unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
@@ -1918,9 +1961,17 @@ def analyse(frozen, definition, repo, attempt, sample, calendar):
         fetched = rebuild_fetched(frozen, attempt / "source", event)
         specs = comparison(values.get(event["accession"]))
         rows.append(analyse_event(event, fetched, specs, frozen, calendar))
+    files = {}
+    for name, value in outputs(rows, definition).items():
+        files[name] = write_json(frozen, attempt / name, value)
+    return files
+
+
+def outputs(rows, definition):
+    """The attempt's output files as the JSON values they hold."""
     summary = summarise(rows, definition["interpretation"]["thresholds"])
     spot = sorted(rows, key=lambda r: sha((STUDY + "|spot|" + r["accession"]).encode()))[:20]
-    files = {}
+    out = {}
     for name, value in (
         ("events.json", rows),
         ("summary.json", summary),
@@ -1943,8 +1994,8 @@ def analyse(frozen, definition, repo, attempt, sample, calendar):
             ],
         ),
     ):
-        files[name] = write_json(frozen, attempt / name, json.loads(json.dumps(value, default=str)))
-    return files
+        out[name] = json.loads(json.dumps(value, default=str))
+    return out
 
 
 def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=ROOT):
@@ -1987,15 +2038,19 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
         )
         for e in sample
     ]
-    recomputed = json.loads(json.dumps(rows, default=str))
-    return {
-        "events_identical": recomputed == load(attempt / "events.json"),
-        "summary_identical": json.loads(
-            json.dumps(summarise(rows, definition["interpretation"]["thresholds"]), default=str)
-        )
-        == load(attempt / "summary.json"),
-        "recorded_files": meta.get("files"),
+    expected = outputs(rows, definition)
+    recorded = meta.get("files") or {}
+    check = {
+        "events_identical": expected["events.json"] == load(attempt / "events.json"),
+        "summary_identical": expected["summary.json"] == load(attempt / "summary.json"),
+        "spot_check_identical": expected["spot-check.json"] == load(attempt / "spot-check.json"),
+        # the saved bytes are the ones the run wrote, not a rewrite with equal content
+        "files_match_record": set(recorded) == set(expected)
+        and all(file_sha(attempt / name) == recorded[name] for name in expected),
+        "recorded_files": recorded,
     }
+    check["reproduced"] = all(v for k, v in check.items() if k != "recorded_files")
+    return check
 
 
 def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=ROOT):
@@ -2056,7 +2111,9 @@ if __name__ == "__main__":
     if args.preflight:
         print(json.dumps(preflight(), indent=1, default=str))
     elif args.reanalyze:
-        print(json.dumps(reanalyze(args.reanalyze), indent=1))
+        check = reanalyze(args.reanalyze)
+        print(json.dumps(check, indent=1))
+        sys.exit(0 if check["reproduced"] else 1)
     else:
         print(
             json.dumps(
