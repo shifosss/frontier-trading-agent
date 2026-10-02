@@ -500,8 +500,12 @@ class Release(HTMLParser):
                 | {"row": None, "cell": None}
             )
         elif tag == "tr" and top is not None:
+            self._close_row(top)  # an omitted </tr> (and </td>) ends at the next row
             top["row"] = []
-        elif tag in ("td", "th") and top is not None and top["row"] is not None:
+        elif tag in ("td", "th") and top is not None:
+            self._close_cell(top)  # an omitted </td> ends at the next cell
+            if top["row"] is None:
+                top["row"] = []  # a cell outside any <tr> opens an implied row
             top["cell"] = {
                 "text": [],
                 "span": _span(attrs, "colspan"),
@@ -538,20 +542,31 @@ class Release(HTMLParser):
             return
         if tag in self.BREAK and tag not in ("tr", "table") and top["cell"] is not None:
             top["cell"]["text"].append(" ")
-        elif tag in ("td", "th") and top["cell"] is not None:
-            text = " ".join("".join(top["cell"]["text"]).split())
-            top["row"].append(
-                {"text": text, "span": top["cell"]["span"], "rows": top["cell"]["rows"]}
-            )
-            top["cell"] = None
-        elif tag == "tr" and top["row"] is not None:
-            top["rows"].append(top["row"])
-            top["row"] = None
+        elif tag in ("td", "th"):
+            self._close_cell(top)
+        elif tag == "tr":
+            self._close_row(top)
         elif tag == "table":
+            self._close_row(top)
             table = self.stack.pop()
             self.tables.append({k: table[k] for k in ("rows", "caption", "context", "heading")})
             if not self.stack:
                 self.since_table = []
+
+    @staticmethod
+    def _close_cell(top):
+        if top["cell"] is not None and top["row"] is not None:
+            text = " ".join("".join(top["cell"]["text"]).split())
+            top["row"].append(
+                {"text": text, "span": top["cell"]["span"], "rows": top["cell"]["rows"]}
+            )
+        top["cell"] = None
+
+    def _close_row(self, top):
+        self._close_cell(top)
+        if top["row"] is not None:
+            top["rows"].append(top["row"])
+        top["row"] = None
 
     def handle_data(self, data):
         if self.skip or self.sup:
@@ -1136,8 +1151,9 @@ def sentences(blocks):
                 yield sentence
 
 
-AMOUNT = (
-    r"(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?P<frac>\.\d+)?(?:\s*(?P<word>thousand|million|billion))?"
+AMOUNT = (  # '5.2 million', '(5.2) million' after a currency mark
+    r"(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?P<frac>\.\d+)?\)?"
+    r"(?:\s*(?P<word>thousand|million|billion))?"
 )
 MONEY_BEFORE = re.compile(
     r"(?P<neg>\(|[-−]\s?)?(?<![a-z])(?P<cur>(?-i:[A-Z]{1,3})?\$|"
@@ -1145,13 +1161,16 @@ MONEY_BEFORE = re.compile(
     + r"|\b(?:USD|"
     + OTHER_CODES
     + r")\s?)"
-    r"\s?(?P<neg2>[-−])?" + AMOUNT,
+    r"\s?(?P<neg2>[-−]|\(\s?)?" + AMOUNT,
     re.I,
 )
 MONEY_AFTER = re.compile(
     r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|" + OTHER_CODES + r")\b", re.I
 )
 USD_MARKS = {"$", "US$", "USD"}
+TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD': the code after the amount names it
+    r"\s*(?:\b(?P<code>USD|" + OTHER_CODES + r")\b|(?P<name>" + OTHER_NAMES + r")\b)", re.I
+)
 
 
 def money_amounts(clause):
@@ -1170,9 +1189,11 @@ def money_amounts(clause):
             value = -value
         decimals = len(f["frac"] or "") - (1 if f["frac"] else 0)
         currency = f["cur"].strip().upper()
-        out.append(
-            (f[0], value, decimals, (f["word"] or "").lower(), currency in USD_MARKS, f.start())
-        )
+        usd = currency in USD_MARKS
+        after = TRAILING_CURRENCY.match(clause, f.end())
+        if after and (after["name"] or after["code"].upper() != "USD"):
+            usd = False
+        out.append((f[0], value, decimals, (f["word"] or "").lower(), usd, f.start()))
     return out
 
 
@@ -1231,7 +1252,9 @@ NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes
     r"(?:[,;]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
     r"(?!(?:it|this|that|which|they|these|those|in|for|during|at|on|of|from|to|by|with|was|were"
     r"|is|are|and|or|while|whereas|but)\b)\b(?P<subject>[a-z][\w&'\-]*(?:\s+[a-z][\w&'\-]*){0,5})"
-    r"(?:\s+(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached)\s+|\s*:\s*)"
+    r"(?:\s+(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached"
+    r"|(?:increased|decreased|rose|fell|grew|declined|improved|dropped|climbed)(?:\s+(?:to|by))?)"
+    r"\s+|\s*:\s*)"
     r"(?:(?:approximately|about|roughly)\s+)?$",
     re.I,
 )
@@ -2269,12 +2292,22 @@ def outputs(rows, definition):
     return out
 
 
+def same_runtime(identity, began):
+    """Same Python minor version, implementation and America/New_York zone data."""
+    keys = ("implementation", "tzdata_package", "new_york_tzif_sha256")
+    minor = [str(r.get("python", "")).rsplit(".", 1)[0] for r in (identity, began)]
+    return minor[0] == minor[1] and all(identity.get(k) == began.get(k) for k in keys)
+
+
 def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=ROOT):
     """Recompute every output from saved bytes in memory and compare; writes nothing."""
     definition, definition_sha, problems = declaration_problems(definition_path, freeze_path, repo)
     if problems:
         raise ProbeError(problems[0])
     frozen = Frozen(repo)
+    identity, runtime = runtime_problems(frozen, definition)
+    if runtime:
+        raise ProbeError("; ".join(runtime))
     attempt = root / "attempts" / attempt_id
     meta = load(attempt / "attempt.json")
     if meta.get("definition_sha256") != definition_sha or meta.get("status") != "complete":
@@ -2321,6 +2354,8 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
         and all(file_sha(attempt / name) == recorded[name] for name in expected),
         # the journal, resource records and stops are the ones the run left
         "source_matches_record": source_manifest(attempt / "source") == meta.get("source"),
+        # the interpreter and time-zone data the attempt began with
+        "runtime_matches_record": same_runtime(identity, meta.get("runtime") or {}),
         "recorded_files": recorded,
     }
     check["reproduced"] = all(v for k, v in check.items() if k != "recorded_files")

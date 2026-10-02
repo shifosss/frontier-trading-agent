@@ -808,6 +808,23 @@ def test_cash_flow_scope_bound_prefix_qualifiers_and_mixed_header_dates():
     assert m.parse_period("Three Months Ended June 30, 2025 and March 31")["end"] is None
 
 
+def test_change_verbs_parenthesised_dollars_open_cells_and_trailing_codes():
+    tax = b"<p>Net income for Q2 FY2025 was $4.0 million and income tax expense increased to"
+    tax += b" $5.2 million.</p>"
+    assert classify(tax)["current_ni"] == "label_only"
+    rose = b"<p>Net income for Q2 FY2025 increased to $5.2 million.</p>"
+    assert classify(rose)["current_ni"] == "stated"
+    for money in (b"$(1.1) million", b"$ (1.1) million"):
+        html = b"<p>Net loss for the three months ended June 30, 2024 was " + money + b".</p>"
+        assert classify(html)["prior_ni"] == "stated", money
+    implicit = b"""<p>(in millions)</p><table><tr><td></td><td>Three Months Ended June 30, 2025
+<tr><td>Net income<td>5.2</table>"""
+    assert classify(implicit)["current_ni"] == "stated"
+    period = b"<p>Net income for the three months ended June 30, 2025 was $5.2 million "
+    assert classify(period + b"CAD.</p>")["current_ni"] == "currency_mismatch"
+    assert classify(period + b"USD.</p>")["current_ni"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1332,6 +1349,24 @@ def test_a_raw_payload_left_without_its_record_is_bound_to_the_attempt(tmp_path)
     orphan.unlink()
     check = m.reanalyze(*args)
     assert check["events_identical"] and not check["source_matches_record"]
+
+
+def test_reanalysis_checks_the_active_runtime(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    attempt = go(repo, study, Opener(site()))
+    args = (attempt.name, study / "definition.json", study / "freeze.json", repo, study)
+    assert m.reanalyze(*args)["runtime_matches_record"]
+    record = attempt / "attempt.json"
+    meta = json.loads(record.read_text())
+    meta["runtime"]["new_york_tzif_sha256"] = "0" * 64  # began under other zone data
+    record.write_text(json.dumps(meta), encoding="utf-8")
+    check = m.reanalyze(*args)
+    assert check["events_identical"] and not check["runtime_matches_record"]
+    assert not check["reproduced"]
+    real = m.runtime_problems
+    monkeypatch.setattr(m, "runtime_problems", lambda f, d: (real(f, d)[0], ["Python 3.12.0"]))
+    with pytest.raises(m.ProbeError, match="Python 3.12.0"):
+        m.reanalyze(*args)
 
 
 def test_reanalysis_rechecks_inputs_and_projection(tmp_path):
