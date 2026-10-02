@@ -4,6 +4,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import os
 import shutil
 import socket
 import sqlite3
@@ -205,6 +206,54 @@ def test_rowspan_keeps_header_columns_aligned():
 <tr><td>Net income</td><td>5.2</td><td>(1.1)</td></tr></table>"""
     result = classify(html)
     assert result["current_ni"] == "stated" and result["prior_ni"] == "stated"
+
+
+def test_money_forms_and_compact_comparatives():
+    loss = dict(RECORD, current_ni="-3000000")
+    for text in (
+        b"Net income for the three months ended June 30, 2025 was USD 5.2 million.",
+        b"Net income for the three months ended June 30, 2025 was 5.2 million USD.",
+    ):
+        assert classify(b"<p>" + text + b"</p>")["current_ni"] == "stated", text
+    minus = b"<p>Net income for the three months ended June 30, 2025 was -$3.0 million.</p>"
+    assert classify(minus, loss)["current_ni"] == "stated"
+    compact = (
+        b"<p>Net income for the three months ended June 30, 2025 and 2024 was $5.2 million"
+        b" and $1.1 million, respectively.</p>"
+    )
+    assert classify(compact)["current_ni"] == "period_unverified"
+
+
+def test_superscript_footnotes_and_source_order():
+    html = table(
+        [b"Three Months Ended June 30, 2025<sup>(a)</sup>"],
+        [b"Net income<sup>1</sup>", b"5.2<sup>1</sup>"],
+    )
+    assert classify(html)["current_ni"] == "stated"
+    layout = b"<table><tr><td>ACME Announces Earnings Release</td></tr></table><p>Body</p>"
+    assert m.parse_document("html", layout)["text"].startswith("ACME Announces Earnings Release")
+
+
+def test_statement_images_count_even_after_a_label():
+    prose = b"<p>Net income rose.</p><p>Condensed Statements of Operations</p><img src='p2.jpg'>"
+    assert classify(prose)["current_ni"] == "exhibit_unavailable"
+    chart = b"<p>Strong cash flow and net income growth.</p><img src='chart.jpg'>"
+    result = classify(chart)
+    assert result["q_current_cfo"] == "not_found" and result["current_ni"] == "label_only"
+
+
+def test_unreadable_candidate_keeps_an_ambiguous_component_possible():
+    spec = m.comparison(RECORD)["current_ni"]
+    readable = {
+        "url": "a",
+        "kind": "html",
+        "sha256": "aa",
+        "parsed": m.parse_document("html", table([b"Q2 2025"], [b"Net income", b"9.9"])),
+    }
+    unreadable = {"url": "b", "kind": "unsupported", "fetch_error": None}
+    result, evidence = m.classify_component([readable, unreadable], spec, "net_income")
+    assert result == "exhibit_unavailable"
+    assert m.classify_component([readable], spec, "net_income")[0] == "label_only"
 
 
 def test_ambiguous_or_missing_duration_is_period_unverified():
@@ -555,6 +604,9 @@ def go(repo, study, opener, **kwargs):
     return m.run(study / "definition.json", study / "freeze.json", repo, study, opener, **kwargs)
 
 
+REAL_PROCESSES = m.processes
+
+
 @pytest.fixture(autouse=True)
 def no_network(monkeypatch):
     def refuse(*args, **kwargs):
@@ -562,6 +614,29 @@ def no_network(monkeypatch):
 
     monkeypatch.setattr(socket, "socket", refuse)
     monkeypatch.setattr(socket, "create_connection", refuse)
+    # Hermetic by default: only this process runs; one test below lists real processes.
+    monkeypatch.setattr(m, "processes", lambda: [(os.getpid(), 0, "pytest")])
+
+
+def test_other_research_workers_block_before_any_request(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    worker = (424242, 1, "python .qualification/filing-source20260928/capture.py --run")
+    editor = (434343, 1, "code .qualification/exhibit-content20261002/probe.py")
+    monkeypatch.setattr(m, "processes", lambda: [(os.getpid(), 0, "pytest"), worker, editor])
+    opener = Opener(site())
+    with pytest.raises(m.ProbeError, match="Other research workers"):
+        go(repo, study, opener)
+    assert opener.calls == [] and not (study / "attempts").exists()
+    ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+    assert not ready["ready"]
+    assert [b["problem"] for b in ready["blocking"]] == [[{"pid": 424242, "command": worker[2]}]]
+
+
+def test_process_listing_excludes_this_process_and_its_ancestors(monkeypatch):
+    monkeypatch.setattr(m, "processes", REAL_PROCESSES)
+    rows = m.processes()
+    assert os.getpid() in {pid for pid, _, _ in rows}
+    assert os.getpid() not in {w["pid"] for w in m.other_workers()}
 
 
 def test_end_to_end_run_and_reanalysis(tmp_path):
@@ -589,6 +664,13 @@ def test_end_to_end_run_and_reanalysis(tmp_path):
     with pytest.raises(m.ProbeError, match="only running or halted"):
         go(repo, study, Opener(site()), resume=attempt.name)
     assert not m.preflight(study / "definition.json", study / "freeze.json", repo, study)["ready"]
+    stated = rows["AAA"]["components"]["current_ni"]["evidence"]
+    assert stated and all(len(e["sha256"]) == 64 for e in stated)
+    component = json.loads((attempt / "summary.json").read_text())["all"]["components"]
+    assert (
+        component["current_ni"]["comparable"] == 3 and component["current_ni"]["lower_count"] == 1
+    )
+    assert component["current_ni"]["classifications"]["identity_failed"] == 1
     spot = json.loads((attempt / "spot-check.json").read_text())
     assert sorted(r["accession"] for r in spot) == sorted(rows[s]["accession"] for s in rows)
 

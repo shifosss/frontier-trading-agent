@@ -1,13 +1,14 @@
 {
- "definition_sha256": "22e9733adbedc3319c0c6cf0efd90b7802eb778b4b537b760d339e115f470ebb",
- "frozen_at_utc": "2026-10-02T18:08:35.257783+00:00",
+ "definition_sha256": "00a7628bf408f9cfaebbabde4b7d9f9232dea25a996cd91aaf70d31a920e50ef",
+ "frozen_at_utc": "2026-10-02T18:24:28.388091+00:00",
  "code": {
   ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
-  ".qualification/exhibit-content20261002/probe.py": "8df0f01180dde78dd3b790d06f6b8856a27fe588b6f6b10f7ef8ec29f432c0c0",
-  ".qualification/exhibit-content20261002/test_probe.py": "ccc9d726fba292c6518ec43a9bd0e537f46bb184e31efa2f00b95aac677105b8",
+  ".qualification/exhibit-content20261002/probe.py": "93b309539550940711458da2f970cf8aaa60d96086e422444dac1fd93725266e",
+  ".qualification/exhibit-content20261002/test_probe.py": "f2f91844fa4dce83894b27286d0babb816fab8596db8a48ccc3b4f79d3eaff87",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  },
  "outcome_access_before_freeze": "No SEC request, exhibit or records.json value was read, and no 10-Q value was projected. Before the freeze the sample draw and the 10-Q session reproduction were dry-checked offline on the committed decision-session events.json and the calendar (150 events from 56 issuers, 70 filed 2012-2020 and 80 filed 2021-2025, 50 with agent-filed 8-Ks, 0 session mismatches); that reads SEC filing metadata only.",
- "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten."
+ "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten.",
+ "revisions_before_any_run": "This freeze replaces the one published in commit 67529c4c, revised after the Codex review of that commit and before any attempt existed. No SEC request, exhibit or records.json value has been read."
 }

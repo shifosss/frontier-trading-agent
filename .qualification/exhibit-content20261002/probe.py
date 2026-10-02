@@ -17,6 +17,7 @@ import math
 import os
 import re
 import sqlite3
+import subprocess
 import time
 import uuid
 from contextlib import contextmanager
@@ -113,9 +114,15 @@ EXCLUDED_LABEL = re.compile(
     re.I,
 )
 STATEMENT_IMAGE = {
-    "net_income": re.compile(r"income|operations|earnings", re.I),
-    "operating_cash_flow": re.compile(r"cash flow", re.I),
-    "total_assets": re.compile(r"balance sheet|financial (condition|position)", re.I),
+    "net_income": re.compile(
+        r"statements? of\b[^.]{0,40}?\b(income|operations|earnings)|income statements?", re.I
+    ),
+    "operating_cash_flow": re.compile(
+        r"statements? of\b[^.]{0,40}?\bcash flows?|cash flows? statements?", re.I
+    ),
+    "total_assets": re.compile(
+        r"balance sheets?|statements? of\b[^.]{0,20}?\bfinancial (condition|position)", re.I
+    ),
 }
 RELEASE = re.compile(r"(press|news|earnings) release", re.I)
 UNVERIFIED = {"period_unverified", "exhibit_unavailable"}  # possibly stated: upper bound only
@@ -442,6 +449,7 @@ class Release(HTMLParser):
         super().__init__()
         self.tables, self.blocks, self.images = [], [], []
         self.stack, self.text, self.since_table = [], [], []
+        self.ordered, self.sup = [], 0  # every text node in source order; <sup> depth
 
     def _flush(self):
         block = " ".join("".join(self.text).split())
@@ -455,6 +463,12 @@ class Release(HTMLParser):
         return " ".join(self.since_table[-2:])[-300:]
 
     def handle_starttag(self, tag, attrs):
+        if tag == "sup":
+            self.sup += 1
+            return
+        if tag in self.BREAK or tag in ("td", "th"):
+            self.sup = 0  # an unclosed <sup> never swallows the following cell or block
+            self.ordered.append(" ")
         attrs = dict(attrs)
         top = self.stack[-1] if self.stack else None
         if tag == "table":
@@ -483,6 +497,12 @@ class Release(HTMLParser):
             self._flush()
 
     def handle_endtag(self, tag):
+        if tag == "sup":
+            self.sup = max(0, self.sup - 1)
+            return
+        if tag in self.BREAK or tag in ("td", "th"):
+            self.sup = 0
+            self.ordered.append(" ")
         top = self.stack[-1] if self.stack else None
         if top is None:
             if tag in self.BREAK:
@@ -506,6 +526,9 @@ class Release(HTMLParser):
                 self.since_table = []
 
     def handle_data(self, data):
+        if self.sup:
+            return  # superscript footnote markers are not part of a value or label
+        self.ordered.append(data)
         top = self.stack[-1] if self.stack else None
         if top is None:
             self.text.append(data)
@@ -534,14 +557,11 @@ def parse_document(kind, raw):
     parser = Release()
     parser.feed(text)
     parser.close()
-    whole = " ".join(
-        parser.blocks + [c["text"] for t in parser.tables for r in t["rows"] for c in r]
-    )
     return {
         "tables": parser.tables,
         "blocks": parser.blocks,
         "images": parser.images,
-        "text": whole,
+        "text": " ".join("".join(parser.ordered).split()),  # source order
     }
 
 
@@ -866,10 +886,38 @@ def sentences(blocks):
                 yield sentence
 
 
-MONEY = re.compile(
-    r"(\()?(US\$|\$|C\$|CA\$|€|£)\s?(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?\s*(thousand|million|billion)?",
+AMOUNT = (
+    r"(?P<int>\d{1,3}(?:,\d{3})+|\d+)(?P<frac>\.\d+)?(?:\s*(?P<word>thousand|million|billion))?"
+)
+MONEY_BEFORE = re.compile(
+    r"(?P<neg>\(|[-−]\s?)?(?P<cur>US\$|CA\$|C\$|\$|€|£|\b(?:USD|CAD|EUR|GBP)\s?)\s?(?P<neg2>[-−])?"
+    + AMOUNT,
     re.I,
 )
+MONEY_AFTER = re.compile(r"(?P<neg>[-−])?" + AMOUNT + r"\s+(?P<cur>USD|CAD|EUR|GBP)\b", re.I)
+USD_MARKS = {"$", "US$", "USD"}
+
+
+def money_amounts(clause):
+    """Currency amounts in source order: (text, value, decimals, scale word, is_usd)."""
+    found = list(MONEY_BEFORE.finditer(clause))
+    spans = [f.span() for f in found]
+    found += [
+        f
+        for f in MONEY_AFTER.finditer(clause)
+        if not any(a < f.end() and f.start() < b for a, b in spans)
+    ]
+    out = []
+    for f in sorted(found, key=lambda f: f.start()):
+        value = Decimal(f["int"].replace(",", "") + (f["frac"] or ""))
+        if f["neg"] or f.groupdict().get("neg2"):
+            value = -value
+        decimals = len(f["frac"] or "") - (1 if f["frac"] else 0)
+        currency = f["cur"].strip().upper()
+        out.append((f[0], value, decimals, (f["word"] or "").lower(), currency in USD_MARKS))
+    return out
+
+
 FISCAL_QUARTER = re.compile(
     r"\b(first|second|third|fourth|q[1-4])\b[^.;]{0,25}?\b(?:fiscal\s+)?((?:19|20)\d{2})\b"
     r"|\bfiscal\s+((?:19|20)\d{2})\s+(first|second|third|fourth)\b",
@@ -903,10 +951,11 @@ def fiscal_quarters(clause):
 def clause_result(clause, spec, amounts):
     """stated, different_period or period_unverified for an equal amount in one clause.
 
-    Several amounts with several dated or fiscal-quarter periods in one clause cannot be paired
-    and are period_unverified."""
+    Several amounts with several periods in one clause (several dates, fiscal quarters or
+    distinct years, as in 'June 30, 2025 and 2024') cannot be paired and are period_unverified."""
     parsed, quarters = parse_period(clause), fiscal_quarters(clause)
-    if amounts > 1 and len(DATE_MDY.findall(clause)) + len(quarters) > 1:
+    periods = max(len(DATE_MDY.findall(clause)) + len(quarters), len(set(YEAR.findall(clause))))
+    if amounts > 1 and periods > 1:
         return "period_unverified"
     fiscal = spec.get("fiscal") or {}
     quarter_ok = False
@@ -971,13 +1020,8 @@ def match_component(doc, spec, concept):
             if current is None:
                 continue  # no label yet, or the clause names an excluded measure
             label_seen = True
-            amounts = list(MONEY.finditer(clause))
-            for money in amounts:
-                number = Decimal(money[3].replace(",", "") + (money[4] or ""))
-                if money[1]:
-                    number = -number
-                decimals = len(money[4] or "") - (1 if money[4] else 0)
-                word = (money[5] or "").lower()
+            amounts = money_amounts(clause)
+            for text, number, decimals, word, usd in amounts:
                 scale_options = scales(word) if word else [Decimal(1)]
                 scale = equal(
                     number, decimals, scale_options, spec["value"], negative_label(current)
@@ -987,10 +1031,10 @@ def match_component(doc, spec, concept):
                 item = {
                     "sentence": sentence[:400],
                     "clause": clause[:400],
-                    "money": money[0],
+                    "money": text,
                     "scale": str(scale),
                 }
-                if money[2].upper() not in ("$", "US$"):
+                if not usd:
                     note("currency_mismatch", item)
                     continue
                 result = clause_result(clause, spec, len(amounts))
@@ -998,14 +1042,12 @@ def match_component(doc, spec, concept):
                     note(result, item)
     if best:
         return best, evidence
-    if label_seen:
-        return "label_only", evidence
     for image in doc["images"]:
         if STATEMENT_IMAGE[concept].search(
             " ".join([image["alt"], image["src"], image["context"]])
         ):
-            return "exhibit_unavailable", [{"image": image, "reason": "image_dependent"}]
-    return "not_found", evidence
+            return "exhibit_unavailable", evidence + [{"image": image, "reason": "image_dependent"}]
+    return ("label_only" if label_seen else "not_found"), evidence
 
 
 def _period_result(period, spec):
@@ -1044,12 +1086,12 @@ def classify_component(release_docs, spec, concept):
     if spec is None:
         return "not_comparable", []
     best, evidence, seen = None, [], set()
-    order = [
+    order = [  # possibly stated outcomes first: any candidate that may hold the value counts
         "stated",
         "period_unverified",
+        "exhibit_unavailable",
         "currency_mismatch",
         "label_only",
-        "exhibit_unavailable",
         "not_found",
     ]
     for doc in release_docs:
@@ -1059,7 +1101,7 @@ def classify_component(release_docs, spec, concept):
         else:
             result, items = match_component(doc["parsed"], spec, concept)
             items = [i for i in items if i.get("result") != "different_period"] or items
-        evidence += [dict(i, document=doc["url"]) for i in items]
+        evidence += [dict(i, document=doc["url"], sha256=doc.get("sha256")) for i in items]
         seen.add(result)
     for result in order:
         if result in seen:
@@ -1194,7 +1236,21 @@ def summarise(events, rules):
             for r in rows:
                 c = r["components"][name]["classification"]
                 counts[c] = counts.get(c, 0) + 1
-            out["components"][name] = dict(sorted(counts.items()))
+            single = [x for x in (signal(r, [name]) for r in rows) if x["comparable"]]
+            n = len(single)
+            lower = sum(x["lower"] for x in single)
+            upper = sum(x["upper"] for x in single)
+            _, lo, up = verdict(lower, upper, n, rules)
+            out["components"][name] = {
+                "classifications": dict(sorted(counts.items())),
+                "comparable": n,
+                "lower_count": lower,
+                "upper_count": upper,
+                "lower_share": lower / n if n else None,
+                "upper_share": upper / n if n else None,
+                "wilson_lower_bound_interval": lo,
+                "wilson_upper_bound_interval": up,
+            }
         statuses = {}
         for r in rows:
             statuses[r["event_status"]] = statuses.get(r["event_status"], 0) + 1
@@ -1219,7 +1275,64 @@ def summarise(events, rules):
     }
 
 
-# ------------------------------------------------------------- locks and fetching
+# ------------------------------------------------------------- processes, locks and fetching
+
+WORKER = re.compile(r"python.*\.qualification[\\/]", re.I)
+
+
+def processes():
+    """(pid, parent pid, command line) for every running process; ProbeError if unavailable."""
+    try:
+        if os.name == "nt":
+            query = (
+                "Get-CimInstance Win32_Process | Select-Object ProcessId,ParentProcessId,"
+                "CommandLine | ConvertTo-Json -Compress"
+            )
+            out = subprocess.run(
+                ["powershell", "-NoProfile", "-NonInteractive", "-Command", query],
+                capture_output=True,
+                text=True,
+                timeout=120,
+                check=True,
+            ).stdout
+            rows = json.loads(out or "[]")
+            rows = [rows] if isinstance(rows, dict) else rows
+            return [
+                (int(r["ProcessId"]), int(r["ParentProcessId"] or 0), r.get("CommandLine") or "")
+                for r in rows
+            ]
+        out = subprocess.run(
+            ["ps", "-axo", "pid=,ppid=,args="],
+            capture_output=True,
+            text=True,
+            timeout=120,
+            check=True,
+        ).stdout
+        rows = []
+        for line in out.splitlines():
+            parts = line.split(None, 2)
+            if len(parts) >= 2:
+                rows.append((int(parts[0]), int(parts[1]), parts[2] if len(parts) > 2 else ""))
+        return rows
+    except (OSError, subprocess.SubprocessError, ValueError, KeyError, TypeError) as exc:
+        raise ProbeError("Running processes could not be listed: " + str(exc)) from exc
+
+
+def other_workers():
+    """Python processes running anything under .qualification, other than this process and its
+    ancestors. Older SEC capture workers hold only their own lock, so the shared lock alone
+    cannot show them."""
+    rows = processes()
+    parents = {pid: ppid for pid, ppid, _ in rows}
+    mine, pid = set(), os.getpid()
+    while pid and pid not in mine:
+        mine.add(pid)
+        pid = parents.get(pid)
+    return [
+        {"pid": pid, "command": command[:300]}
+        for pid, _, command in rows
+        if pid not in mine and WORKER.search(command)
+    ]
 
 
 @contextmanager
@@ -1408,6 +1521,9 @@ def run(
         exclusive(study_lock(root), "Study lock"),
         exclusive(repo / definition["paths"]["shared_source_lock"], "Shared SEC source lock"),
     ):
+        workers = other_workers()
+        if workers:
+            raise ProbeError("Other research workers are running: " + json.dumps(workers))
         previous = attempts(root)  # checked under the study lock
         if resume is None and previous:
             raise ProbeError(
@@ -1581,6 +1697,12 @@ def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=RO
             busy = "missing"
         if busy:
             blocking.append({"path": label, "problem": busy})
+    try:
+        workers = other_workers()
+    except ProbeError as exc:
+        workers = [{"problem": str(exc)}]
+    if workers:
+        blocking.append({"path": "processes", "problem": workers})
     resumable = [p.name for p, a in attempts(root) if a.get("status") in ("running", "halted")]
     if attempts(root) and not resumable:
         blocking.append({"path": "attempts", "problem": "a completed or failed attempt exists"})
