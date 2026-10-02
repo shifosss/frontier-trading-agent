@@ -825,6 +825,28 @@ def test_change_verbs_parenthesised_dollars_open_cells_and_trailing_codes():
     assert classify(period + b"USD.</p>")["current_ni"] == "stated"
 
 
+def test_excluded_titles_colon_qualifiers_and_change_amounts():
+    header = [b"Three Months Ended June 30, 2025"]
+    core = table(
+        header, [b"Net income", b"5.2"], before=b"<p>Core Financial Results (in millions)</p>"
+    )
+    assert classify(core)["current_ni"] == "label_only"
+    unit = b"<table><tr><td>(In thousands, except share and per share data)</td>"
+    unit += b"<td>Three Months Ended June 30, 2025</td></tr>"
+    unit += b"<tr><td>Net income</td><td>5,200</td></tr></table>"
+    assert classify(unit)["current_ni"] == "stated"
+    for qualifier in (b"Adjusted", b"Non-GAAP"):
+        html = b"<p>" + qualifier + b": net income for Q2 FY2025 was $5.2 million.</p>"
+        assert classify(html)["current_ni"] in ("not_found", "label_only"), qualifier
+    for change in (
+        b"increased by $5.2 million",
+        b"saw an increase of $5.2 million",
+        b"was up $5.2 million",
+    ):
+        html = b"<p>Net income for Q2 FY2025 " + change + b".</p>"
+        assert classify(html)["current_ni"] == "label_only", change
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1454,6 +1476,25 @@ def test_resume_refuses_a_journal_edited_since_its_checkpoint(tmp_path):
     assert opener.calls == []
     journal.write_bytes(saved)
     go(repo, study, Opener(site()), resume=attempt.name)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_a_refused_resume_keeps_the_stop_and_the_halted_state(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    journal = attempt / "source" / "requests.jsonl"
+    saved = journal.read_bytes()
+    journal.write_bytes(b"")
+    with pytest.raises(m.ProbeError, match="journal differs"):
+        go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    assert (attempt / "source" / "STOP.json").exists()
+    assert not list((attempt / "source").glob("STOP-acknowledged-*.json"))
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "halted"
+    journal.write_bytes(saved)
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
     assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
 
 

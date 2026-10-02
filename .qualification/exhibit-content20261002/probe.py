@@ -1236,8 +1236,9 @@ PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|(?:will|would|could|may|should)\s+be)\b",
     re.I,
 )
-PER_SHARE_UNIT = re.compile(  # '(in thousands, except per share data)' is a unit line
-    r"except\s+(?:for\s+)?per[- ]share\s+(?:data|amounts?|information|figures)", re.I
+PER_SHARE_UNIT = re.compile(  # '(in thousands, except share and per share data)': a unit line
+    r"except\b[^()]{0,40}?\bper[- ]share\b(?:\s+(?:data|amounts?|information|figures|items))?",
+    re.I,
 )
 
 
@@ -1246,6 +1247,12 @@ def excluded_header(text):
     return bool(EXCLUDED_LABEL.search(PER_SHARE_UNIT.sub("", text)))
 
 
+DELTA = re.compile(  # a change, not a level: 'increased by $5.2 million', 'an increase of'
+    r"(?:\b(?:increased|decreased|rose|fell|grew|declined|improved|dropped|climbed|gained)\s+by"
+    r"|\b(?:an?\s+)?(?:increase|decrease|change|improvement|decline|reduction|growth)\s+of"
+    r"|\b(?:up|down)\b)\s*(?:(?:approximately|about|roughly)\s+)?$",
+    re.I,
+)
 PREFIX_BREAK = re.compile(r"[,;:]|\b(?:and|or|while|whereas|but)\b", re.I)
 FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
@@ -1382,7 +1389,7 @@ def match_component(doc, spec, concept):
             if not matched:
                 continue
             label_seen = True
-            if any(FORWARD.search(t) for t in (label, header, units[1], title)) or QUALIFIER.search(
+            if any(FORWARD.search(t) for t in (label, header, units[1], title)) or excluded_header(
                 title
             ):
                 continue  # 'Estimated net income', an 'Outlook' column, 'Projected Results' title
@@ -1443,7 +1450,13 @@ def match_component(doc, spec, concept):
             for f in LABELS[concept].finditer(clause):
                 upto = min([a for a in starts if a >= f.end()] or [len(clause)])
                 before = clause[max(0, f.start() - 30) : f.start()]
-                cut = list(PREFIX_BREAK.finditer(before))  # 'Adjusted EBITDA rose and net income'
+                # 'Adjusted EBITDA rose and net income': the qualifier is another measure's, but
+                # 'Adjusted: net income' qualifies the label, so such a colon is no break
+                cut = [
+                    b
+                    for b in PREFIX_BREAK.finditer(before)
+                    if not (b[0] == ":" and EXCLUDED_LABEL.search(before[: b.start()][-15:]))
+                ]
                 before = before[cut[-1].end() :] if cut else before
                 excluded = EXCLUDED_LABEL.search(before + clause[f.start() : upto])
                 window = None if excluded else clause[f.start() : f.end() + 10]
@@ -1471,6 +1484,7 @@ def match_component(doc, spec, concept):
                     or any(LABELS[other].search(between) for other in LABELS if other != concept)
                     or new_subject(gap)
                     or QUALIFIER.search(trail)  # '$5.2 million attributable to noncontrolling'
+                    or DELTA.search(clause[max(0, at - 40) : at])  # 'increased by $5.2 million'
                     or FORWARD.search(clause)  # 'is expected to be', 'Our guidance: net income'
                 ):
                     continue  # no label, an excluded measure, or another measure in between
@@ -2166,11 +2180,28 @@ def run(
             staging.mkdir(parents=True)
             write_json(frozen, staging / "attempt.json", meta)
             staging.rename(attempt)
+        accessions = [e["accession"] for e in sample]
+        projection = attempt / "projection.json"
+        unbound = None
         if resume:
             if meta["definition_sha256"] != definition_sha:
                 raise ProbeError("Attempt belongs to another definition")
             if meta.get("code") != load(freeze_path)["code"]:
                 raise ProbeError("Attempt was started under other code; it cannot be resumed")
+            # Every check runs before a stop is consumed or the saved state changes.
+            if (attempt / "sample.json").exists():
+                if load(attempt / "sample.json") != accessions:
+                    raise ProbeError("Saved sample differs from the recomputed sample")
+            if projection.exists() and meta.get("projection_sha256") is None:
+                # Written atomically by this attempt before a crash; it must match records.json.
+                unbound = project_values(frozen, repo / definition["paths"]["records"], accessions)
+                if load(projection) != json.loads(json.dumps(unbound)):
+                    raise ProbeError("Saved projection does not match records.json for this sample")
+            elif projection.exists() and file_sha(projection) != meta["projection_sha256"]:
+                raise ProbeError("Saved projection differs from the one the attempt recorded")
+            problem = journal_problem(attempt / "source", meta.get("journal"))
+            if problem:
+                raise ProbeError(problem)  # an edited journal would reset the request counters
             stop = attempt / "source" / "STOP.json"
             if stop.exists():
                 if not acknowledge_stop:
@@ -2183,26 +2214,15 @@ def run(
             meta["resumes"].append({"at": now(), "runtime": identity})
         meta.update(status="running")  # meta["runtime"] stays the identity the attempt began with
         write_json(frozen, record, meta)
-        accessions = [e["accession"] for e in sample]
-        if (attempt / "sample.json").exists():
-            if load(attempt / "sample.json") != accessions:
-                raise ProbeError("Saved sample differs from the recomputed sample")
-        else:
+        if not (attempt / "sample.json").exists():
             write_json(frozen, attempt / "sample.json", accessions)
-        projection = attempt / "projection.json"
         if not projection.exists():
             values = project_values(frozen, repo / definition["paths"]["records"], accessions)
             meta["projection_sha256"] = write_json(frozen, projection, values)
             write_json(frozen, record, meta)
-        elif meta.get("projection_sha256") is None:
-            # Written atomically by this attempt before a crash; bind it before any request.
-            values = project_values(frozen, repo / definition["paths"]["records"], accessions)
-            if load(projection) != json.loads(json.dumps(values)):
-                raise ProbeError("Saved projection does not match records.json for this sample")
+        elif unbound is not None:  # checked above; bind it before any request
             meta["projection_sha256"] = file_sha(projection)
             write_json(frozen, record, meta)
-        elif file_sha(projection) != meta["projection_sha256"]:
-            raise ProbeError("Saved projection differs from the one the attempt recorded")
         (attempt / "source").mkdir(exist_ok=True)
         if (attempt / "source" / "raw").is_dir():
             moved = quarantine_partial_raw(attempt / "source")
@@ -2215,9 +2235,6 @@ def run(
             write_json(frozen, record, meta)
 
         quarantine_journal_tail(attempt / "source", keep)
-        problem = journal_problem(attempt / "source", meta.get("journal"))
-        if problem:
-            raise ProbeError(problem)  # an edited journal would reset the request counters
 
         def checkpoint():
             meta["journal"] = journal_mark(attempt / "source")
