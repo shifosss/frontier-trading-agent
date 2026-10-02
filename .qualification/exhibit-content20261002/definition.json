@@ -1,0 +1,144 @@
+{
+ "schema": 1,
+ "study": "exhibit-content20261002",
+ "status": "DRAFT for owner review, not frozen. No SEC request, sample draw, exhibit read or 10-Q value projection has been made. Freezing needs the owner's decisions listed under open_decisions; the SEC requests need separate owner approval.",
+ "question": "For a seeded random sample of strategy-qualified 10-Q events whose only Item 2.02 8-K maps to an earlier decision session, does that 8-K's original press-release exhibit state the same S and Q input values, for the same periods, that the later 10-Q reports?",
+ "why": "Both metadata audits found an earlier Item 2.02 8-K for most 10-Qs (disclosure-timing20261001: 63.9-64.4% of qualified events by decision session; disclosure-novelty20261001: 2,484 of 4,057 originals by ET date). Timing does not show content. Only a component shown to be stated in the earlier release may ever move to the earlier clock.",
+ "components": {
+  "S": {
+   "definition": "(current-quarter net income - prior-year same-quarter net income) / prior fiscal-year-end total assets, standardized by the issuer's previous eight innovations (unchanged)",
+   "fields": [
+    "current_ni",
+    "prior_ni",
+    "prior_fy_assets"
+   ],
+   "periods": [
+    "current_start/current_end",
+    "prior_start/prior_end",
+    "prior fiscal-year-end instant"
+   ]
+  },
+  "Q": {
+   "definition": "((current YTD operating cash flow - current YTD net income) - (prior-year YTD operating cash flow - prior-year YTD net income)) / prior fiscal-year-end total assets",
+   "fields": [
+    "q_current_cfo",
+    "q_current_ni",
+    "q_prior_cfo",
+    "q_prior_ni",
+    "q_prior_fy_assets"
+   ],
+   "periods": [
+    "q_current_start/q_current_end",
+    "q_prior_start/q_prior_end"
+   ]
+  },
+  "note": "The S history of eight earlier innovations was already public through earlier 10-Qs and is not probed."
+ },
+ "population": {
+  "source": ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json",
+  "source_sha256": "862d0c0959de361ac1d31a76dea4ff0d8bf9a63dbe7060598896bcb2013ca394",
+  "rule": "strategy_source_qualified is true and status is single_prior",
+  "size": 1166,
+  "issuers": 70,
+  "by_filing_era": {
+   "2012-2020": 579,
+   "2021-2025": 587
+  },
+  "excluded": "multiple (which release applies is ambiguous), single_same_session (no earlier session), single_after, no_candidate and window_coverage_incomplete"
+ },
+ "sample": {
+  "size": 150,
+  "order": "ascending SHA256 of the UTF-8 string 'exhibit-content20261002|' + 10-Q accession number; take the first 150",
+  "replacement": "none: a failed fetch, missing exhibit, identity failure or unmatched value stays in the sample and its denominator",
+  "strata_reported": [
+   "filed 2012-2020",
+   "filed 2021-2025"
+  ]
+ },
+ "requests": {
+  "per_event": [
+   "8-K accession index: {archive}/{accession}-index.html",
+   "SGML header: {archive}/{accession}.hdr.sgml",
+   "each document whose index type starts with EX-99, at most 3"
+  ],
+  "max_total_requests": 750,
+  "minimum_interval_seconds": 1,
+  "timeout_seconds": 30,
+  "max_response_bytes": 33554432,
+  "stop_http_status": [
+   403,
+   429
+  ],
+  "attempt_policy": "At most one completed transport attempt per URL; an interrupted request without a durable result may be retried once on resume",
+  "redirects": "none; a redirect is saved as a failure",
+  "allowed_prefix": "https://www.sec.gov/Archives/edgar/data/",
+  "user_agent": "Reuse the frozen capture's user agent unless the owner supplies a contact address (see open_decisions)",
+  "never": [
+   "images, XBRL or any non-EX-99 document",
+   "data.sec.gov",
+   "any accession outside the sample",
+   "prices, returns, forecasts or account ledgers"
+  ]
+ },
+ "storage": "Every response's exact bytes under source/raw/<sha256>.bin with an append-only request log (URL, start/end time, status, byte count, SHA256), following the frozen capture convention.",
+ "identity_checks": {
+  "rules": [
+   "header filer CIK equals the issuer CIK",
+   "header form is 8-K",
+   "header item information includes Results of Operations and Financial Condition (Item 2.02) when the header lists items",
+   "header acceptance time re-clocked with the frozen event_clock must still give a decision session strictly earlier than the 10-Q's"
+  ],
+  "failure": "Any failed check keeps the event in the sample as identity_failed or header_not_prior and it counts as not stated"
+ },
+ "comparison_values": {
+  "source": ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json",
+  "source_sha256": "0aa2fcd44e400157409a2bc639c8ee8d014d10eae99bc3ad5d7021d5a5df28db",
+  "source_bytes": 208387935,
+  "projection": "Only the components' fields and period endpoints above, for the 150 sampled accessions, written to a committed projection file that records the source SHA256. No other field, price, return, forecast or account is read.",
+  "q_unavailable": "A sampled event without a qualified Q keeps its S comparison; its Q components are reported as not_comparable and it leaves the Q denominator only in a separately reported row"
+ },
+ "matching": {
+  "documents": "Each fetched EX-99 exhibit: HTML tables parsed with the standard-library HTML parser into rows of cell text; plain-text exhibits split into lines",
+  "numbers": "Commas removed; parentheses or a leading minus mean negative; a dash alone means zero; footnote markers ignored",
+  "scale": "1, 1e3, 1e6 or 1e9; an 'in thousands/millions/billions' caption in the same table fixes the scale",
+  "tolerance": "half a unit of the displayed precision at that scale",
+  "labels": {
+   "net_income": "net (income|earnings|loss)( attributable to [^|]*)?",
+   "operating_cash_flow": "net cash (provided by|used in|provided by \\(used in\\)|from) operating activities|cash flows? from operating activities",
+   "total_assets": "total assets"
+  },
+  "rule": "A component is stated when a cell in a row whose label matches its pattern equals the 10-Q value within the tolerance; matching both the current and prior value fixes the period linkage",
+  "evidence": "Exhibit SHA256, table and row index, label text, cell text and scale for every match",
+  "labels_note": "Patterns are case-insensitive searches over the row's label cell text after whitespace is collapsed"
+ },
+ "classification": [
+  "stated",
+  "label_only (label found, no equal value)",
+  "not_found",
+  "exhibit_unavailable",
+  "identity_failed",
+  "header_not_prior",
+  "not_comparable"
+ ],
+ "statistics": {
+  "per_component": "share of the 150 classified stated",
+  "per_signal": "share with every S component stated, and with every Q component stated",
+  "bounds": "lower counts exhibit_unavailable, identity_failed and header_not_prior as not stated; upper counts them as stated",
+  "interval": "Wilson 95% interval",
+  "strata": "both filing eras separately"
+ },
+ "interpretation": {
+  "per_signal": "release_complete_common if the Wilson lower limit of the lower-bound share is at least 0.7; release_complete_rare if the Wilson upper limit of the upper-bound share is below 0.3; otherwise inconclusive",
+  "common": "Justifies only a separately declared full-population extraction of that signal's components from the releases",
+  "never": "No verdict backdates a 10-Q value, changes a completed result, promotes a strategy or implies profitability"
+ },
+ "verification": "Offline synthetic tests of fetch bounds, index/header parsing, number parsing, scaling, tolerance and classification before any request; after the run, an independent checker re-derives every classification from the saved bytes; a seeded list of 20 events with their evidence for an owner spot check",
+ "open_decisions": [
+  "Population: decision-session single_prior qualified events (1,166) as drafted, or also the novelty audit's pairs",
+  "Sample size: 150 (about 450-750 requests, roughly 8-13 minutes at 1 request per second)",
+  "Thresholds: 0.7 and 0.3",
+  "Where to run: the owner's workstation, or this cloud container if its network policy allows www.sec.gov (checking that is itself an SEC request)",
+  "10-Q comparison values: records.json (208 MB) is not in the clone; either run the projection on the workstation and commit its output, or upload a gzip copy split into parts under 10 MB",
+  "User agent: reuse the frozen no-contact agent or add a contact address, which SEC fair-access guidance asks for"
+ ]
+}
