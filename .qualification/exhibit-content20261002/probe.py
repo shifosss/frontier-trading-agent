@@ -776,10 +776,10 @@ CURRENCY_NAME = (
     + OTHER_SIGNS
     + r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$))"
 )
-DECLARED_CURRENCY = re.compile(  # 'All amounts are in CAD.', '(in millions) CAD', '(C$)'
+DECLARED_CURRENCY = re.compile(  # 'All amounts (are) in CAD.', '(in millions) CAD', '(C$)'
     r"\b(?:expressed|stated|presented|reported|denominated)\s+in\s+"
     + CURRENCY_NAME
-    + r"|\b(?:amounts?|figures)\b[^.;]{0,30}?\b(?:are|is)\s+(?:\w+\s+)?in\s+"
+    + r"|\b(?:amounts?|figures)\b[^.;]{0,30}?\b(?:(?:are|is)\s+(?:\w+\s+)?)?in\s+"
     + CURRENCY_NAME
     + r"|\(\s*(?:in\s+)?"
     + CURRENCY_NAME
@@ -1065,13 +1065,15 @@ def _merge(filled):
     return merged
 
 
-def value_columns(rows):
-    """(column, span) of every merged value in the data rows of a gridded table."""
+def value_columns(rows, numeric=False):
+    """(column, span) of every merged value in the data rows of a gridded table; with numeric,
+    only values that read as numbers, so an annotation cell ('*') is not a value column."""
     return [
         (m["col"], m["span"])
         for cells in rows
         if is_data_row([c["text"] for c in cells])
         for m in _merge([c for c in cells if c["text"]])
+        if not numeric or parse_number(CELL_SCALE.sub("", m["text"])) is not None
     ]
 
 
@@ -1192,6 +1194,11 @@ USD_MARKS = {"$", "US$", "USD"}
 TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD': the code after the amount names it
     r"\s*(?:\b(?P<code>USD|" + OTHER_CODES + r")\b|(?P<name>" + OTHER_NAMES + r")\b)", re.I
 )
+LEADING_CURRENCY = re.compile(  # 'CAD $5.2 million', '(CAD $5.2)': a code or name just before
+    r"(?:\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS + r"|\b(?:" + OTHER_NAMES + r")\b)"
+    r"\s*\(?\s*$",
+    re.I,
+)
 
 
 def money_amounts(clause):
@@ -1213,6 +1220,8 @@ def money_amounts(clause):
         usd = currency in USD_MARKS
         after = TRAILING_CURRENCY.match(clause, f.end())
         if after and (after["name"] or after["code"].upper() != "USD"):
+            usd = False
+        if LEADING_CURRENCY.search(clause[max(0, f.start() - 40) : f.start()]):
             usd = False
         out.append((f[0], value, decimals, (f["word"] or "").lower(), usd, f.start()))
     return out
@@ -1412,7 +1421,7 @@ def match_component(doc, spec, concept):
 
     for index, table in enumerate(doc["tables"]):
         table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
-        single = len({col for col, _ in value_columns(grid(table["rows"]))}) == 1
+        single = len({col for col, _ in value_columns(grid(table["rows"]), numeric=True)}) == 1
         heading = table.get("heading", "")  # the text block just before the table, if short
         title = " ".join([table.get("caption", ""), heading if len(heading) <= 150 else ""])
         for label, cell, header, context, row, units, wide_currency in table_cells(table):

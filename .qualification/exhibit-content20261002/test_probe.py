@@ -895,6 +895,28 @@ def test_elliptical_years_modal_forecasts_label_currency_and_footnote_cells():
     assert classify(marked, record=loss)["current_ni"] == "stated"
 
 
+def test_leading_spaced_codes_copula_less_declarations_and_annotation_columns():
+    for money in (b"CAD $5.2 million", b"(CAD $5.2 million)", b"Canadian dollars $5.2 million"):
+        html = b"<p>Net income for the second quarter of fiscal 2025 was %s.</p>" % money
+        assert classify(html)["current_ni"] == "currency_mismatch", money
+    usd = b"<p>Net income for the second quarter of fiscal 2025 was USD $5.2 million.</p>"
+    assert classify(usd)["current_ni"] == "stated"
+    header = [b"Three Months Ended June 30, 2025"]
+    for before in (b"<p>All amounts in Canadian dollars</p>", b"<p>Figures in EUR</p>"):
+        html = table(header, [b"Net income", b"$5,200,000"], before=before)
+        assert classify(html)["current_ni"] == "currency_mismatch", before
+    for extra in (b"<td>*</td>", b"<td>12%</td>", b""):
+        one = (
+            b"""<p>Three Months Ended June 30, 2025 (in millions)</p><table>
+<tr><td>Net income</td><td>5.2</td>%s</tr></table>"""
+            % extra
+        )
+        assert classify(one)["current_ni"] == "stated", extra
+    two = b"""<p>Three Months Ended June 30, 2025 (in millions)</p><table>
+<tr><td>Net income</td><td>5.2</td><td>4.0</td></tr></table>"""
+    assert classify(two)["current_ni"] == "period_unverified"  # two columns: neither is known
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
