@@ -135,6 +135,7 @@ CHANGE_AFTER = re.compile(  # 'Net income change', 'Net income (loss) increase':
 CHANGE_BEFORE = re.compile(  # 'The increase in (the Company's) net income': a change, in prose
     CHANGE_LABEL.pattern + r"\s+(?:(?:the|our|its|their|[\w&.\-]+['’]s)\s+){0,3}$", re.I
 )
+NOTE_COLUMN = re.compile(r"\bnotes?\b(?!\s*\d)", re.I)  # 'Note', not 'see Note 3'
 CHANGE_COLUMN = re.compile(  # a column of differences: 'Change', '% Change', 'Increase (Decrease)'
     r"\b(?:changes?|increase|decrease|variance|growth|decline|reduction|improvement"
     r"|inc\.?\s*/\s*\(?dec\.?\)?)\b",
@@ -616,12 +617,13 @@ class Release(HTMLParser):
 
 
 def titled(blocks):
-    """The text block just before a table, joined to the block before it when it only declares
-    units or audit status ('Core Financial Results' over '(in millions)')."""
-    heading = blocks[-1] if blocks else ""
-    if len(blocks) > 1 and unit_line(heading):
-        heading = blocks[-2] + " " + heading
-    return heading
+    """The text block just before a table, joined to the blocks before it while those nearer
+    blocks only declare units or audit status ('Core Financial Results' over '(Unaudited)' over
+    '(in millions)')."""
+    index = len(blocks) - 1
+    while index > 0 and unit_line(blocks[index]):
+        index -= 1
+    return " ".join(blocks[max(index, 0) :])
 
 
 def unit_line(text):
@@ -1003,7 +1005,7 @@ def equal(number, decimals, scale_options, value, negative_label=False):
         number = -number
     for scale in scale_options:
         tolerance = Decimal("0.5") * Decimal(10) ** (-decimals) * scale
-        if abs(number * scale - value) <= tolerance:
+        if abs(number * scale - value) < tolerance:  # a midpoint ('5' for 5.5) is not equal
             return scale
     return None
 
@@ -1376,6 +1378,36 @@ INCLUDED = re.compile(  # 'included a $5.2 million tax benefit': an item within 
 LEVEL_VERB = re.compile(r"\b(?:was|were|is|are|totaled|totalled|amounted\s+to|reached)\b", re.I)
 
 
+APPROX = r"\s*(?:(?:approximately|about|roughly)\s+)?$"
+BOUND = re.compile(  # 'less than $5.2 million': a bound, not the value
+    r"\b(?:(?:less|more|greater|fewer)\s+than|over|under|at\s+(?:least|most)|up\s+to|nearly"
+    r"|almost|below|above|in\s+excess\s+of|exceed(?:s|ed|ing)?|between)" + APPROX,
+    re.I,
+)
+BETWEEN = re.compile(r"\bbetween" + APPROX, re.I)
+FROM = re.compile(r"\bfrom" + APPROX, re.I)
+RANGE_GAP = re.compile(r"\s*(?:and|to|-|–|—)\s*", re.I)
+
+
+def bounded(clause, amounts):
+    """Offsets of amounts that are a bound or a range endpoint rather than an exact value: 'less
+    than $5.2 million', 'between $4.8 million and $5.2 million', '$4.8 million to $5.2 million'.
+    In 'from $4.1 million to $5.2 million' the second amount stays a level."""
+    out = set()
+    for index, (text, *_, at) in enumerate(amounts):
+        before = clause[max(0, at - 40) : at]
+        if BOUND.search(before):
+            out.add(at)
+        if index + 1 < len(amounts):
+            following = amounts[index + 1]
+            gap = clause[at + len(text) : following[5]]
+            if RANGE_GAP.fullmatch(gap) and (
+                BETWEEN.search(before) or (gap.strip().lower() != "and" and not FROM.search(before))
+            ):
+                out |= {at, following[5]}
+    return out
+
+
 def included_item(between):
     """An amount introduced as an item within the measure ('included a $5.2 million tax
     benefit', 'reflects income tax expense of'), unless a level verb follows the last such word
@@ -1596,7 +1628,12 @@ def match_component(doc, spec, concept):
                 if whole["end"] and (whole["months"] or whole["ytd"]):
                     period = whole
             item["period"] = {k: str(v) for k, v in period.items()}
-            if excluded_header(header) or excluded_header(units[1]) or CHANGE_COLUMN.search(header):
+            if (
+                excluded_header(header)
+                or excluded_header(units[1])
+                or CHANGE_COLUMN.search(header)
+                or NOTE_COLUMN.search(header)  # a 'Note' reference column, not an amount
+            ):
                 continue  # a non-GAAP or partial column ('Non-GAAP Three Months Ended ...')
             if (
                 currency == "other"
@@ -1650,6 +1687,7 @@ def match_component(doc, spec, concept):
             if any(window for _, _, window in labels):
                 label_seen = True
             amounts = money_amounts(clause)
+            ranged = bounded(clause, amounts)
             for text, number, decimals, word, usd, at in amounts:
                 before = [(end_, window) for start_, end_, window in labels if start_ < at]
                 owner, since = before[-1][::-1] if before else (current, 0)
@@ -1670,6 +1708,7 @@ def match_component(doc, spec, concept):
                     or any(LABELS[other].search(between) for other in LABELS if other != concept)
                     or new_subject(gap)
                     or included_item(between)  # 'included a $5.2 million tax benefit'
+                    or at in ranged  # 'less than $5.2 million', 'between $4.8 and $5.2 million'
                     or QUALIFIER.search(trail)  # '$5.2 million attributable to noncontrolling'
                     or DELTA.search(clause[max(0, at - 40) : at])  # 'increased by $5.2 million'
                     or FORWARD.search(clause)  # 'is expected to be', 'Our guidance: net income'
@@ -1934,7 +1973,17 @@ def summarise(events, rules):
 
 # ------------------------------------------------------------- processes, locks and fetching
 
-WORKER = re.compile(r"python.*\.qualification[\\/]", re.I)
+LAUNCHER = re.compile(r"(?:^|[\s\"'\\/])(?:python[\d.]*w?|py|uv)(?:\.exe)?(?=$|[\s\"'])", re.I)
+
+
+def worker_pattern(repo):
+    """A command line naming a .qualification path or any study script by its file name, so a
+    worker started inside its study folder ('py capture.py') is seen too."""
+    root = repo / ".qualification"
+    names = sorted({p.name for pattern in ("*/*.py", "*/*/*.py") for p in root.glob(pattern)})
+    scripts = "|".join(re.escape(name) for name in names)
+    named = r"|(?:^|[\s\"'\\/])(?:" + scripts + r")(?=$|[\s\"'])" if names else ""
+    return re.compile(r"\.qualification[\\/]" + named, re.I)
 
 
 def processes():
@@ -1975,11 +2024,11 @@ def processes():
         raise ProbeError("Running processes could not be listed: " + str(exc)) from exc
 
 
-def other_workers():
-    """Python processes running anything under .qualification, other than this process and its
-    ancestors. Older SEC capture workers hold only their own lock, so the shared lock alone
-    cannot show them."""
-    rows = processes()
+def other_workers(repo=REPO):
+    """Python processes (python, pythonw, py or uv) running anything under .qualification or a
+    study script by name, other than this process and its ancestors. Older SEC capture workers
+    hold only their own lock, so the shared lock alone cannot show them."""
+    rows, worker = processes(), worker_pattern(repo)
     parents = {pid: ppid for pid, ppid, _ in rows}
     mine, pid = set(), os.getpid()
     while pid and pid not in mine:
@@ -1988,7 +2037,7 @@ def other_workers():
     return [
         {"pid": pid, "command": command[:300]}
         for pid, _, command in rows
-        if pid not in mine and WORKER.search(command)
+        if pid not in mine and LAUNCHER.search(command) and worker.search(command)
     ]
 
 
@@ -2362,7 +2411,7 @@ def run(
         exclusive(study_lock(root), "Study lock"),
         exclusive(repo / definition["paths"]["shared_source_lock"], "Shared SEC source lock"),
     ):
-        workers = other_workers()
+        workers = other_workers(repo)
         if workers:
             raise ProbeError("Other research workers are running: " + json.dumps(workers))
         previous = attempts(root)  # checked under the study lock
@@ -2623,7 +2672,7 @@ def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=RO
         if busy:
             blocking.append({"path": label, "problem": busy})
     try:
-        workers = other_workers()
+        workers = other_workers(repo)
     except ProbeError as exc:
         workers = [{"problem": str(exc)}]
     if workers:

@@ -1134,6 +1134,35 @@ def test_mismatched_quarters_tax_labels_result_wording_and_abbreviation_endings(
     assert list(m.sentences([dated])) == [dated]  # no capital letter after the abbreviations
 
 
+def test_stacked_metadata_titles_midpoints_bounds_ranges_and_note_columns():
+    core = b"<p>Core Financial Results</p><p>(Unaudited)</p><p>(in millions)</p><table><tr><td>"
+    core += b"</td><td>Three Months Ended June 30, 2025</td></tr><tr><td>Net income</td><td>5.2"
+    core += b"</td></tr></table>"
+    assert classify(core)["current_ni"] == "label_only"
+    header = [b"Three Months Ended June 30, 2025"]
+    whole = table(header, [b"Net income", b"5"])
+    assert classify(whole, record=dict(RECORD, current_ni="5500000"))["current_ni"] == "label_only"
+    assert classify(whole, record=dict(RECORD, current_ni="5400000"))["current_ni"] == "stated"
+
+    def prose(sentence):
+        return classify(b"<p>Net income for Q2 FY2025 " + sentence + b"</p>")["current_ni"]
+
+    for sentence in (
+        b"was less than $5.2 million.",
+        b"was between $4.8 million and $5.2 million.",
+        b"was $5.2 million to $6.0 million.",
+    ):
+        assert prose(sentence) == "label_only", sentence
+    assert prose(b"improved from $4.1 million to $5.2 million.") == "stated"
+    assert prose(b"was approximately $5.2 million.") == "stated"
+    note = b"""<p>(in millions)</p><table>
+<tr><td></td><td colspan="3">Three Months Ended June 30, 2025</td></tr>
+<tr><td></td><td>Note</td><td>Current</td><td>Prior</td></tr>
+<tr><td>Net income</td><td>5</td><td>4.0</td><td>3.0</td></tr></table>"""
+    assert classify(note, record=dict(RECORD, current_ni="5000000"))["current_ni"] == "label_only"
+    assert classify(note, record=dict(RECORD, current_ni="4000000"))["current_ni"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1417,6 +1446,22 @@ def test_other_research_workers_block_before_any_request(tmp_path, monkeypatch):
     ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
     assert not ready["ready"]
     assert [b["problem"] for b in ready["blocking"]] == [[{"pid": 424242, "command": worker[2]}]]
+
+
+def test_workers_started_without_a_qualified_path_are_seen(tmp_path, monkeypatch):
+    repo, study = build(tmp_path)
+    for command in (
+        "py capture.py --run",
+        "C:\\Python313\\pythonw.exe audit.py",
+        "uv run probe.py",
+    ):
+        rows = [(os.getpid(), 0, "pytest"), (424242, 1, command)]
+        monkeypatch.setattr(m, "processes", lambda rows=rows: rows)
+        assert [w["pid"] for w in m.other_workers(repo)] == [424242], command
+    for command in ("code capture.py", "python -m http.server", "python other_tool.py"):
+        rows = [(os.getpid(), 0, "pytest"), (424242, 1, command)]
+        monkeypatch.setattr(m, "processes", lambda rows=rows: rows)
+        assert m.other_workers(repo) == [], command
 
 
 def test_process_listing_excludes_this_process_and_its_ancestors(monkeypatch):
