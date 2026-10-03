@@ -122,6 +122,14 @@ CHANGE_LABEL = re.compile(  # a row of differences: 'Increase in net income', 'C
     r"\b(?:increase|decrease|change|growth|improvement|decline|reduction|variance)s?\s+(?:in|of)\b",
     re.I,
 )
+SECTION_QUALIFIER = re.compile(  # a section heading row that marks the rows below as non-GAAP
+    r"adjusted|non-?gaap|pro\s*forma|\bcore\b|excluding|\bnormali[sz]ed\b|\bunderlying\b", re.I
+)
+CHANGE_AFTER = re.compile(  # 'Net income change', 'Net income (loss) increase': a change too
+    r"\s*(?:\(loss\)\s*)?(?:changes?|increases?|decreases?|growth|variances?|improvements?"
+    r"|declines?|reductions?)\b",
+    re.I,
+)
 CHANGE_BEFORE = re.compile(  # 'The increase in (the Company's) net income': a change, in prose
     CHANGE_LABEL.pattern + r"\s+(?:(?:the|our|its|their|[\w&.\-]+['’]s)\s+){0,3}$", re.I
 )
@@ -600,6 +608,8 @@ class Release(HTMLParser):
 
     def close(self):
         super().close()
+        while self.stack:  # a table left open at the end of the document is still read
+            self.handle_endtag("table")
         self._flush()
 
 
@@ -707,6 +717,10 @@ def text_tables(text):
             or (len(cells) == 1 and period_phrase(cells[0]["text"], year=False))
         ):
             table = None  # a cell right of the label, or a lone period line ('Six Months Ended')
+        elif table is not None and len(cells) == 1:
+            # a section heading inside the table ('Non-GAAP Measures'); like an unspanned HTML
+            # cell, a year alone in it does not start a new header block
+            table["rows"].append([dict(cells[0], span=1)])
         recent.append(cells)
         paragraph.append(" ".join(c["text"] for c in cells))
     flush()
@@ -753,7 +767,8 @@ DURATIONS = [
     (12, r"\b(twelve|12)[- ]months?\b|(?<!of )\bfiscal year\b|\byear ended\b|\b5[1-3][- ]weeks?\b"),
 ]
 SHARED_MONTHS = re.compile(
-    r"\b(three|six|nine|twelve|3|6|9|12)\s+and\s+(?=(?:three|six|nine|twelve|3|6|9|12)[- ]months?)",
+    r"\b(three|six|nine|twelve|3|6|9|12)\s*(?:\band\b|&|/|,)\s*"
+    r"(?=(?:three|six|nine|twelve|3|6|9|12)[- ]months?)",
     re.I,
 )
 YTD = re.compile(r"\byear[- ]to[- ]date\b|\bytd\b", re.I)
@@ -1005,6 +1020,8 @@ def is_data_row(texts):
 def label_match(text, concept):
     found = LABELS[concept].search(text)
     if not found or EXCLUDED_LABEL.search(text) or CHANGE_LABEL.search(text):
+        return None
+    if CHANGE_AFTER.match(text, found.end()):
         return None  # an excluded measure, or a row of differences ('Increase in net income')
     return found[0]
 
@@ -1119,7 +1136,7 @@ def value_columns(rows, numeric=False):
 
 def table_cells(table):
     """Yield (label, value text, column header, table-wide context, row, unit texts, table-wide
-    currency text) per value.
+    currency text, section heading) per value.
 
     The header is the rows above the first data row. After a data row, a period row starts a new
     header block (a stacked section such as 'Six Months Ended') for the rows below it. A value's
@@ -1169,26 +1186,35 @@ def table_cells(table):
                     currency.append(over[0]["text"])  # a currency only when it spans them all
         return " ".join(parts), " ".join(currency)
 
+    section, previous = "", None  # the latest section heading row after data ('Non-GAAP')
     for row, cells in enumerate(rows):
         if not is_data_row([c["text"] for c in cells]):
+            filled = [c for c in cells if c["text"]]
             if fresh:
                 header.append(cells)
             elif is_period_row(cells):
-                header, fresh = [cells], True
+                header, fresh, section, previous = [cells], True, "", None
+            elif len(filled) == 1:
+                previous, section = section, filled[0]["text"]
             continue
         fresh = False
         filled = [c for c in cells if c["text"]]
+        if previous is not None and filled[0]["text"][:1].islower():
+            section = previous  # the lone row was a label wrapped onto this row, not a heading
+        previous = None
         wide, currency = header_wide()
         for m in _merge(filled):
             column = column_header(m["col"], m["span"])
             units = [column, wide, table.get("caption", ""), table.get("context", "")]
-            yield filled[0]["text"], m["text"], column, context + " " + wide, row, units, currency
+            label = filled[0]["text"]
+            yield label, m["text"], column, context + " " + wide, row, units, currency, section
 
 
 ABBREVIATIONS = (
-    "Jan Feb Mar Apr Jun Jul Aug Sep Sept Oct Nov Dec Inc Corp Co Ltd LLC vs No Nos approx"
+    "Jan Feb Mar Apr Jun Jul Aug Sep Sept Oct Nov Dec vs No Nos approx"
     " Mr Ms Mrs Dr St Jr Sr U.S U.K e.g i.e etc"
 ).split()
+CORPORATE = "Inc Corp Co Ltd LLC".split()  # end a sentence only before a capital letter
 CLOSING = "[\"'”’)]"
 TAILS = ("", CLOSING, CLOSING * 2)  # up to two closing quotes or brackets after the punctuation
 SENTENCE_BREAK = re.compile(
@@ -1198,6 +1224,12 @@ SENTENCE_BREAK = re.compile(
     + "".join(
         r"(?<!\b" + word + r"\." + tail + ")"
         for word in [re.escape(a) for a in ABBREVIATIONS] + ["[A-Z]"]  # '[A-Z]': an initial
+        for tail in TAILS
+    )
+    # 'Acme Inc. Income tax expense ...' ends a sentence; 'Acme Inc. (NASDAQ: ACME)' does not
+    + "".join(
+        r"(?!(?<=\b" + word + r"\." + tail + r")\s+(?-i:[^A-Z]))"
+        for word in CORPORATE
         for tail in TAILS
     )
     + r"\s+(?=[\"'“‘(]?[A-Za-z0-9$])",
@@ -1275,13 +1307,13 @@ def money_amounts(clause):
 
 # a spelled-out ordinal counts only before 'quarter' ('first and second quarters' included)
 QUARTER_WORD = (
-    r"(?:first|second|third|fourth)(?=(?:\s*(?:,|and|or|through|to)\s*(?:the\s+)?"
+    r"(?:first|second|third|fourth)(?=(?:\s*(?:,|and|or|through|to|/|&)\s*(?:the\s+)?"
     r"(?:first|second|third|fourth))*\s+(?:fiscal\s+)?quarters?\b)"
 )
 QUARTER_LIST = re.compile(  # 'first and second quarters', 'Q1 and Q2': several quarters at once
-    r"\b(?:first|second|third|fourth)(?:\s*(?:,|and|or|through|to)\s*(?:the\s+)?"
+    r"\b(?:first|second|third|fourth)(?:\s*(?:,|and|or|through|to|/|&)\s*(?:the\s+)?"
     r"(?:first|second|third|fourth))+\s+(?:fiscal\s+)?quarters?\b"
-    r"|\bq[1-4](?:\s*(?:,|and|or|through|to|-|–)\s*q[1-4])+\b",
+    r"|\bq[1-4](?:\s*(?:,|and|or|through|to|-|–|/|&)\s*q[1-4])+\b",
     re.I,
 )
 FISCAL_QUARTER = re.compile(  # 'second quarter of fiscal 2025', 'Q2 FY2025', 'FY25 Q2'
@@ -1527,15 +1559,17 @@ def match_component(doc, spec, concept):
         single = len({col for col, _ in value_columns(grid(table["rows"]), numeric=True)}) == 1
         heading = table.get("heading", "")  # the text block just before the table, if short
         title = " ".join([table.get("caption", ""), heading if len(heading) <= 150 else ""])
-        for label, cell, header, context, row, units, wide_currency in table_cells(table):
+        for label, cell, header, context, row, units, wide, section in table_cells(table):
             matched = label_match(label, concept)
             if not matched:
                 continue
             label_seen = True
-            if any(FORWARD.search(t) for t in (label, header, units[1], title)) or excluded_header(
-                title
+            if (
+                any(FORWARD.search(t) for t in (label, header, units[1], title, section))
+                or excluded_header(title)
+                or SECTION_QUALIFIER.search(section)
             ):
-                continue  # 'Estimated net income', an 'Outlook' column, 'Projected Results' title
+                continue  # 'Estimated net income', an 'Outlook' column or title, 'Non-GAAP' rows
             unit = CELL_SCALE.search(cell)
             parsed = parse_number(CELL_SCALE.sub("", cell) if unit else cell)
             if parsed is None:
@@ -1568,7 +1602,7 @@ def match_component(doc, spec, concept):
                 currency == "other"
                 or OTHER_CURRENCY_WORDS.search(label)  # 'Net income (CAD millions)'
                 or OTHER_CURRENCY_WORDS.search(header)
-                or OTHER_CURRENCY_WORDS.search(wide_currency)  # header cells over every value
+                or OTHER_CURRENCY_WORDS.search(wide)  # header cells over every value
                 or CONTEXT_CURRENCY.search(table_wide)
                 or DECLARED_CURRENCY.search(table_wide)
             ):
@@ -1608,6 +1642,7 @@ def match_component(doc, spec, concept):
                 before = before[cut[-1].end() :] if cut else before
                 excluded = EXCLUDED_LABEL.search(before + clause[f.start() : upto])
                 excluded = excluded or CHANGE_BEFORE.search(before)  # 'The increase in net'
+                excluded = excluded or CHANGE_AFTER.match(clause, f.end())  # 'Net income change'
                 window = None if excluded else clause[f.start() : f.end() + 10]
                 labels.append((f.start(), f.end(), window))
             if any(window for _, _, window in labels):

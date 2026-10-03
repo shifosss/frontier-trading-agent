@@ -238,7 +238,7 @@ def test_superscript_footnotes_and_source_order():
 def test_statement_images_count_even_after_a_label():
     prose = b"<p>Net income rose.</p><p>Condensed Statements of Operations</p><img src='p2.jpg'>"
     assert classify(prose)["current_ni"] == "exhibit_unavailable"
-    chart = b"<p>Strong cash flow and net income growth.</p><img src='chart.jpg'>"
+    chart = b"<p>Strong cash flow and higher net income.</p><img src='chart.jpg'>"
     result = classify(chart)
     assert result["q_current_cfo"] == "not_found" and result["current_ni"] == "label_only"
 
@@ -1050,6 +1050,62 @@ def test_pretax_and_common_shareholder_labels_and_causal_subjects():
     ):
         assert prose(sentence) == "label_only", sentence
     assert prose(b"as reported was $5.2 million.") == "stated"
+
+
+def test_suffix_changes_list_separators_company_suffixes_open_tables_and_sections():
+    header = [b"Three Months Ended June 30, 2025"]
+    for label in (b"Net income change", b"Net income increase", b"Net income growth"):
+        assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
+    change = b"<p>Net income change for Q2 FY2025 was $5.2 million.</p>"
+    assert classify(change)["current_ni"] == "not_found"
+    ytd = dict(RECORD, q_current_ni="5200000")
+    for both in (
+        b"Three/Six Months Ended June 30, 2025",
+        b"Three & Six Months Ended June 30, 2025",
+    ):
+        html = table([both], [b"Net income", b"5.2"])
+        assert classify(html, record=ytd)["q_current_ni"] == "period_unverified", both
+    for quarters in (b"Q2/Q3 FY2025", b"Q2 & Q3 FY2025"):
+        html = table([quarters], [b"Net income", b"5.2"])
+        assert classify(html)["current_ni"] == "period_unverified", quarters
+    ended = b"<p>Net income for Q2 FY2025 declined at Acme Inc. Income tax expense for Q2 FY2025"
+    assert classify(ended + b" was $5.2 million.</p>")["current_ni"] == "label_only"
+    named = b"<p>Acme Inc. (NASDAQ: ACME) reported net income for Q2 FY2025 of $5.2 million.</p>"
+    assert classify(named)["current_ni"] == "stated"
+    unclosed = b"<p>(in millions)</p><table><tr><td></td><td>Three Months Ended June 30, 2025"
+    unclosed += b"</td></tr><tr><td>Net income</td><td>5.2</td></tr>"
+    assert classify(unclosed)["current_ni"] == "stated"  # the table is read at the end of input
+
+    def sectioned(heading):
+        return (
+            b"""<p>(in millions)</p><table>
+<tr><td></td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td>Revenue</td><td>90.0</td></tr>
+<tr><td colspan="2">%s</td></tr>
+<tr><td>Net income</td><td>5.2</td></tr></table>"""
+            % heading
+        )
+
+    assert classify(sectioned(b"Non-GAAP Measures"))["current_ni"] == "label_only"
+    assert classify(sectioned(b"Operating activities:"))["current_ni"] == "stated"
+    assert classify(sectioned(b"Discontinued operations:"))["current_ni"] == "stated"  # a total
+    text = b"""(in millions)
+                                  Three Months Ended June 30, 2025
+Revenue                                  90.0
+Non-GAAP Measures
+Net income                                5.2
+"""
+    assert classify(text, kind="text")["current_ni"] == "label_only"
+    wrapped = b"""(in millions)
+                                  Three Months Ended June 30, 2025
+Revenue                                  90.0
+Net income excluding
+special items                             1.0
+Net income                                5.2
+"""
+    assert (
+        classify(wrapped, kind="text")["current_ni"] == "stated"
+    )  # a wrapped label, not a heading
 
 
 # ------------------------------------------------------------------ documents and identity
