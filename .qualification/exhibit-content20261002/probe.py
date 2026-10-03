@@ -113,7 +113,8 @@ LABELS = {
 EXCLUDED_LABEL = re.compile(
     r"adjusted|non-?gaap|pro forma|\bcore\b|excluding|\bbefore\b|per (basic |diluted )?"
     r"(common )?share|margin|non-?controlling|minority|continuing|discontinued"
-    r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b",
+    r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b|\bnormali[sz]ed\b"
+    r"|\bunderlying\b",
     re.I,
 )
 CHANGE_LABEL = re.compile(  # a row of differences: 'Increase in net income', 'Change in ...'
@@ -124,7 +125,9 @@ CHANGE_BEFORE = re.compile(  # 'The increase in (the Company's) net income': a c
     CHANGE_LABEL.pattern + r"\s+(?:(?:the|our|its|their|[\w&.\-]+['’]s)\s+){0,3}$", re.I
 )
 CHANGE_COLUMN = re.compile(  # a column of differences: 'Change', '% Change', 'Increase (Decrease)'
-    r"\b(?:changes?|increase|decrease|variance|inc\.?\s*/\s*\(?dec\.?\)?)\b", re.I
+    r"\b(?:changes?|increase|decrease|variance|growth|decline|reduction|improvement"
+    r"|inc\.?\s*/\s*\(?dec\.?\)?)\b",
+    re.I,
 )
 STATEMENT_IMAGE = {
     "net_income": re.compile(
@@ -1227,12 +1230,17 @@ MONEY_AFTER = re.compile(
     r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|" + OTHER_CODES + r")\b", re.I
 )
 USD_MARKS = {"$", "US$", "USD"}
-TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD', '... in Canadian dollars': names it
-    r"\s*(?:in\s+)?(?:\b(?P<code>USD|" + OTHER_CODES + r")\b|(?P<name>" + OTHER_NAMES + r")\b)",
+TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD', '(CAD)', 'in Canadian dollars': names it
+    r"\s*\(?\s*(?:in\s+)?(?:\b(?P<code>USD|"
+    + OTHER_CODES
+    + r")\b|(?P<name>"
+    + OTHER_NAMES
+    + r")\b)",
     re.I,
 )
-LEADING_CURRENCY = re.compile(  # 'CAD $5.2 million', '(CAD $5.2)': a code or name just before
-    r"(?:\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS + r"|\b(?:" + OTHER_NAMES + r")\b)"
+LEADING_CURRENCY = re.compile(  # 'CAD $5.2 million', '(CAD $5.2)', 'Canadian $5.2 million'
+    r"(?:\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS + r"|\b(?:" + OTHER_NAMES + r")\b"
+    r"|\b(?:canadian|australian|hong\s+kong|new\s+zealand|singapore|taiwan(?:ese)?)\b)"
     r"\s*\(?\s*$",
     re.I,
 )
@@ -1300,7 +1308,8 @@ QUALIFIER = re.compile(  # a non-GAAP or partial measure named after an amount o
 TRAIL_END = re.compile(r"\b(?:and|while|whereas|but)\b", re.I)
 PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     r"\b(?:forecast(?:s|ed|ing)?|project(?:s|ed|ing|ions?)?|expect(?:s|ed|ing|ations?)?"
-    r"|target(?:s|ed|ing)?|predict(?:s|ed|ing|ions?)?"
+    r"|target(?:s|ed|ing)?|predict(?:s|ed|ing|ions?)?|(?:un)?likely|probabl[ey]|possibly"
+    r"|potentially|on\s+track\s+to|poised\s+to"
     r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|going\s+to"
     # a modal names a level that is not yet reported: 'will total', 'would reach', 'may be'
     r"|(?:will|would|could|should|might|shall)|may\s+(?:not\s+)?(?:be|total|reach|exceed"
@@ -1318,10 +1327,11 @@ def excluded_header(text):
     return bool(EXCLUDED_LABEL.search(PER_SHARE_UNIT.sub("", text)))
 
 
-DELTA = re.compile(  # a change, not a level: 'increased by $5.2 million', 'an increase of'
-    r"(?:\b(?:increased|decreased|rose|fell|grew|declined|improved|dropped|climbed|gained)\s+by"
-    r"|\b(?:an?\s+)?(?:increase|decrease|change|improvement|decline|reduction|growth)\s+of"
-    r"|\b(?:up|down)\b)\s*(?:(?:approximately|about|roughly)\s+)?$",
+DELTA = re.compile(  # a change or comparison base, not the level: 'increased (by) $5.2 million',
+    # 'an increase of', 'up', 'from $5.2 million'; 'rose to $5.2 million' stays a level
+    r"(?:\b(?:increased|decreased|rose|fell|grew|declined|improved|dropped|climbed|gained)"
+    r"(?:\s+by)?|\b(?:an?\s+)?(?:increase|decrease|change|improvement|decline|reduction|growth)"
+    r"\s+of|\b(?:up|down|from)\b)\s*(?:(?:approximately|about|roughly)\s+)?$",
     re.I,
 )
 INCLUDED = re.compile(  # 'included a $5.2 million tax benefit': an item within the measure
@@ -1443,7 +1453,20 @@ def clause_dates(clause):
     years = {(month(m), int(y)) for m, y in DATE_MY.findall(clause)}
     days -= {(m, d) for m, d, _ in full}
     years -= {(m, y) for m, _, y in full}
+    # 'June and September 2025': the months before a shared year are dates of that year too
+    for shared in SHARED_YEAR.finditer(clause):
+        names = re.findall(MONTH, shared[0], re.I)
+        years |= {(month(m), int(shared["year"])) for m in names}
     return len(full) + len(days) + len(years)
+
+
+SHARED_YEAR = re.compile(
+    MONTH
+    + r"(?:\s*(?:,|and|or|&|through|to|-|–)\s*"
+    + MONTH
+    + r")+,?\s+(?P<year>(?:19|20)\d{2})\b",
+    re.I,
+)
 
 
 QUARTER_ENDED = re.compile(r"[^.;]{0,15}?\bend(?:ed|ing)\s+" + DATE_MDY.pattern, re.I)
@@ -1998,7 +2021,10 @@ def acknowledged_urls(source):
 
 def quarantine_partial_raw(source):
     """Move aside raw files whose bytes no longer match their SHA256 name (a crash during the
-    frozen cache's direct write), before the cache counts or reuses them; returns their names."""
+    frozen cache's direct write), before the cache counts or reuses them, and then any resource
+    record whose own payload is missing (its raw file just moved, or never made durable), so the
+    URL keeps its remaining attempt instead of halting on a missing payload; returns their names
+    (records as 'resources/<name>')."""
     moved = []
     for path in sorted((source / "raw").glob("*.bin")):
         if sha(path.read_bytes()) != path.stem:
@@ -2006,6 +2032,13 @@ def quarantine_partial_raw(source):
             target.parent.mkdir(exist_ok=True)
             path.rename(target)
             moved.append(path.name)
+    for record in sorted((source / "resources").glob("*.json")):
+        meta = load(record)
+        if meta.get("path") and not meta.get("reused") and not (source / meta["path"]).exists():
+            target = source / "partial" / (record.name + "." + uuid.uuid4().hex)
+            target.parent.mkdir(exist_ok=True)
+            record.rename(target)
+            moved.append("resources/" + record.name)
     return moved
 
 

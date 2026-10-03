@@ -998,6 +998,39 @@ Net income                                5.2
     )
 
 
+def test_more_currency_forms_shared_years_changes_bases_and_probable_forecasts():
+    def prose(sentence):
+        return classify(b"<p>Net income for Q2 FY2025 " + sentence + b"</p>")["current_ni"]
+
+    assert prose(b"was $5.2 million (CAD).") == "currency_mismatch"
+    assert prose(b"was Canadian $5.2 million.") == "currency_mismatch"
+    assert prose(b"was $5.2 million (USD).") == "stated"
+    september = dict(RECORD, current_start="2025-07-01", current_end="2025-09-30")
+    for header, expected in (
+        (b"Three Months Ended June and September 2025", "period_unverified"),
+        (b"Three Months Ended September 2025", "stated"),
+    ):
+        html = table([header], [b"Net income", b"5.2"])
+        assert classify(html, record=september)["current_ni"] == expected, header
+    growth = b"""<p>(in millions)</p><table>
+<tr><td></td><td colspan="2">Q2 FY2025</td></tr>
+<tr><td></td><td>Amount</td><td>Growth</td></tr>
+<tr><td>Net income</td><td>9.9</td><td>5.2</td></tr></table>"""
+    assert classify(growth)["current_ni"] == "label_only"
+    for sentence in (
+        b"increased $5.2 million.",
+        b"fell $5.2 million.",
+        b"increased to $6.0 million from $5.2 million.",
+        b"is likely to reach $5.2 million.",
+    ):
+        assert prose(sentence) == "label_only", sentence
+    assert prose(b"rose to $5.2 million.") == "stated"
+    assert prose(b"improved from $4.1 million to $5.2 million.") == "stated"
+    header = [b"Three Months Ended June 30, 2025"]
+    for label in (b"Normalized net income", b"Underlying net earnings"):
+        assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1610,6 +1643,25 @@ def test_partial_raw_file_is_quarantined_before_the_cache_opens(tmp_path):
     meta = json.loads((attempt / "attempt.json").read_text())
     assert meta["status"] == "complete" and not partial.exists()
     assert meta["quarantined_partial_raw"][0]["files"] == [partial.name]
+
+
+def test_a_record_whose_payload_was_cut_short_is_quarantined_and_retried(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    saved = [json.loads(r.read_text()) for r in (attempt / "source" / "resources").iterdir()]
+    first = next(r for r in saved if r.get("status") == 200)
+    record = attempt / "source" / "resources" / (sha(first["url"].encode()) + ".json")
+    raw = attempt / "source" / first["path"]
+    raw.write_bytes(raw.read_bytes()[:10])  # the record was durable, the raw write was not
+    opener = Opener(site())
+    go(repo, study, opener, resume=attempt.name, acknowledge_stop=True)
+    meta = json.loads((attempt / "attempt.json").read_text())
+    assert meta["status"] == "complete" and first["url"] in opener.calls  # its second attempt
+    assert meta["quarantined_partial_raw"][0]["files"] == [raw.name, "resources/" + record.name]
+    assert len(list((attempt / "source" / "partial").glob(record.name + ".*"))) == 1
 
 
 def test_resume_refuses_a_journal_edited_since_its_checkpoint(tmp_path):
