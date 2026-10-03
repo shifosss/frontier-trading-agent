@@ -1006,9 +1006,18 @@ def grid(rows):
 
 def is_period_row(cells):
     """A non-data row naming a year, date, duration or year to date beyond its first cell, or in
-    a single filled cell that spans several columns (a full-row section header)."""
+    a single filled cell that spans several columns (a full-row section header). A single filled
+    cell without a span is a section header when it names a duration, year to date or month-day
+    date ('Six Months Ended June 30, 2025'), but not for a year alone ('2024 Restructuring:')."""
     filled = [c for c in cells if c["text"]]
-    if len(filled) == 1 and filled[0]["span"] > 1:
+    if len(filled) == 1 and filled[0]["span"] == 1:
+        text = filled[0]["text"]
+        return bool(
+            DATE_MD.search(text)
+            or YTD.search(text)
+            or any(re.search(pattern, text, re.I) for _, pattern in DURATIONS)
+        )
+    if len(filled) == 1:
         text = filled[0]["text"]
     else:
         text = " ".join(c["text"] for c in cells[1:])
@@ -1262,7 +1271,8 @@ QUALIFIER = re.compile(  # a non-GAAP or partial measure named after an amount o
 )
 TRAIL_END = re.compile(r"\b(?:and|while|whereas|but)\b", re.I)
 PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
-    r"\b(?:forecast(?:s|ed|ing)?|project(?:ed|ing|ions?)|expect(?:s|ed|ing)?"
+    r"\b(?:forecast(?:s|ed|ing)?|project(?:s|ed|ing|ions?)?|expect(?:s|ed|ing|ations?)?"
+    r"|target(?:s|ed|ing)?|predict(?:s|ed|ing|ions?)?"
     r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|going\s+to"
     # a modal names a level that is not yet reported: 'will total', 'would reach', 'may be'
     r"|(?:will|would|could|should|might|shall)|may\s+(?:not\s+)?(?:be|total|reach|exceed"
@@ -1351,6 +1361,17 @@ def fiscal_match(spec, quarters, parsed):
     )
 
 
+def several_periods(text):
+    """The text names several periods at once: several durations, several fiscal quarters
+    (lists such as 'first and second quarters' or 'Q1 and Q2' included) or several dates."""
+    return (
+        len(durations(text)) > 1
+        or len(set(fiscal_quarters(text))) > 1
+        or bool(QUARTER_LIST.search(text))
+        or clause_dates(text) > 1
+    )
+
+
 def clause_dates(clause):
     """How many distinct dates a clause names in any form parse_period reads: a month, day and
     year, a month and day, or a month and year; a shorter form inside a fuller date is not
@@ -1389,9 +1410,7 @@ def clause_result(clause, spec, amounts):
         len(named),
     )
     # every quarter phrase counts here, including one followed by its own end date
-    several = len(named) > 1 or len(set(quarters)) > 1 or bool(QUARTER_LIST.search(clause))
-    several = several or clause_dates(clause) > 1
-    if (amounts > 1 and periods > 1) or several:
+    if (amounts > 1 and periods > 1) or several_periods(clause):
         return "period_unverified"
     quarter_ok = fiscal_match(spec, quarters, parsed)
     if period_ok(parsed, spec) or quarter_ok:
@@ -1473,7 +1492,9 @@ def match_component(doc, spec, concept):
                 continue
             quarters = set(fiscal_quarters(header))  # 'Q2 FY2025' over this column alone
             by_quarter = len(quarters) == 1 and fiscal_match(spec, quarters, period)
-            if not (period_ok(period, spec) or by_quarter):
+            if several_periods(header):  # 'Q1 and Q2 FY2025', two dates beside 'Q2 FY2025'
+                note("period_unverified", item)
+            elif not (period_ok(period, spec) or by_quarter):
                 note(_period_result(period, spec), item)
             elif len(options) > 1 and scale != 1:
                 note("scale_unverified", item)  # no unit phrase: the multiplier is inferred

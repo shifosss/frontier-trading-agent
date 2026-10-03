@@ -917,6 +917,31 @@ def test_leading_spaced_codes_copula_less_declarations_and_annotation_columns():
     assert classify(two)["current_ni"] == "period_unverified"  # two columns: neither is known
 
 
+def test_ambiguous_fiscal_headers_present_tense_forecasts_and_unspanned_sections():
+    for header in (b"Q2 and Q3 FY2025", b"Q2 FY2025 June 30, 2025 and March 31, 2025"):
+        html = table([header], [b"Net income", b"5.2"])
+        assert classify(html)["current_ni"] == "period_unverified", header
+    for sentence in (
+        b"The company projects net income for the quarter ended June 30, 2025 of $5.2 million.",
+        b"Net income for the three months ended June 30, 2025 is targeted at $5.2 million.",
+    ):
+        assert classify(b"<p>" + sentence + b"</p>")["current_ni"] == "label_only", sentence
+
+    def stacked(section):
+        return (
+            b"""<p>(in millions)</p><table>
+<tr><td></td><td>Three Months Ended June 30, 2025</td></tr>
+<tr><td>Revenue</td><td>90.0</td></tr>
+<tr><td>%s</td><td></td></tr>
+<tr><td>Net income</td><td>5.2</td></tr></table>"""
+            % section
+        )
+
+    # a lone, unspanned period cell starts a new section; a label naming only a year does not
+    assert classify(stacked(b"Six Months Ended June 30, 2025"))["current_ni"] == "label_only"
+    assert classify(stacked(b"2024 Restructuring Plan:"))["current_ni"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
