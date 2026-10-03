@@ -1128,6 +1128,8 @@ def test_mismatched_quarters_tax_labels_result_wording_and_abbreviation_endings(
     ):
         assert prose(sentence) == "label_only", sentence
     assert prose(q2 + b"in the U.S. was $5.2 million.") == "stated"
+    level = b"Net income for Q2 FY2025, which resulted from a tax benefit, was $5.2 million."
+    assert prose(level) == "stated"  # a level verb follows the inclusion word
     dated = "Net income for the quarter ended Sept. 30, 2025 was $5.2 million at Acme Inc. today."
     assert list(m.sentences([dated])) == [dated]  # no capital letter after the abbreviations
 
