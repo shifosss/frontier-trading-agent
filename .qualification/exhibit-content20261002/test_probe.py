@@ -1,6 +1,7 @@
 """Offline synthetic checks for the exhibit-content probe. No SEC, price or outcome data."""
 
 import hashlib
+import http.client
 import importlib.util
 import io
 import json
@@ -1031,6 +1032,26 @@ def test_more_currency_forms_shared_years_changes_bases_and_probable_forecasts()
         assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
 
 
+def test_pretax_and_common_shareholder_labels_and_causal_subjects():
+    header = [b"Three Months Ended June 30, 2025"]
+    for label in (
+        b"Pre-tax net income",
+        b"Pretax net income",
+        b"Net income available to common shareholders",
+    ):
+        assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
+
+    def prose(sentence):
+        return classify(b"<p>Net income for Q2 FY2025 " + sentence + b"</p>")["current_ni"]
+
+    for sentence in (
+        b"declined primarily because income tax expense was $5.2 million.",
+        b"declined as restructuring charges were $5.2 million.",
+    ):
+        assert prose(sentence) == "label_only", sentence
+    assert prose(b"as reported was $5.2 million.") == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1194,6 +1215,17 @@ class Response(io.BytesIO):
         self.url, self.status, self.headers = url, status, {"Content-Type": "text/html"}
 
 
+class Cut(io.BytesIO):
+    """A response whose body ends before its declared length."""
+
+    def __init__(self, url):
+        super().__init__(b"")
+        self.url, self.status, self.headers = url, 200, {"Content-Type": "text/html"}
+
+    def read(self, *args):
+        raise http.client.IncompleteRead(b"part", 100)
+
+
 class Opener:
     def __init__(self, pages, fail=None):
         self.pages, self.fail, self.calls = pages, dict(fail or {}), []
@@ -1204,6 +1236,8 @@ class Opener:
         action = self.fail.pop(url, None)
         if action == "interrupt":
             raise KeyboardInterrupt
+        if action == "incomplete":
+            return Cut(url)
         if action == "transport":
             raise URLError("network down")
         if isinstance(action, int):
@@ -1662,6 +1696,36 @@ def test_a_record_whose_payload_was_cut_short_is_quarantined_and_retried(tmp_pat
     assert meta["status"] == "complete" and first["url"] in opener.calls  # its second attempt
     assert meta["quarantined_partial_raw"][0]["files"] == [raw.name, "resources/" + record.name]
     assert len(list((attempt / "source" / "partial").glob(record.name + ".*"))) == 1
+
+
+def test_an_incomplete_read_halts_for_review_and_keeps_its_retry(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Transport failure"):
+        go(repo, study, Opener(site(), fail={url: "incomplete"}))
+    attempt = next((study / "attempts").iterdir())
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "halted"
+    stop = json.loads((attempt / "source" / "STOP.json").read_text())
+    assert stop["url"] == url and stop["error"].startswith("IncompleteRead")
+    opener = Opener(site())
+    go(repo, study, opener, resume=attempt.name, acknowledge_stop=True)
+    assert url in opener.calls  # its second attempt
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_a_saved_access_stop_is_restored_after_a_crash_before_stop_json(tmp_path):
+    repo, study = build(tmp_path)
+    url = next(u for u in site() if u.endswith("ex991.pdf"))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={url: 429}))
+    attempt = next((study / "attempts").iterdir())
+    (attempt / "source" / "STOP.json").unlink()  # killed after the 429 record, before STOP.json
+    opener = Opener(site())
+    with pytest.raises(m.ProbeError, match="access or size stop"):
+        go(repo, study, opener, resume=attempt.name)
+    assert opener.calls == [] and (attempt / "source" / "STOP.json").exists()
+    go(repo, study, Opener(site()), resume=attempt.name, acknowledge_stop=True)
+    assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
 
 
 def test_resume_refuses_a_journal_edited_since_its_checkpoint(tmp_path):

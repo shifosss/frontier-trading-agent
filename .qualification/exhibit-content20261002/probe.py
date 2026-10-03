@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import importlib.util
 import json
 import math
@@ -114,7 +115,7 @@ EXCLUDED_LABEL = re.compile(
     r"adjusted|non-?gaap|pro forma|\bcore\b|excluding|\bbefore\b|per (basic |diluted )?"
     r"(common )?share|margin|non-?controlling|minority|continuing|discontinued"
     r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b|\bnormali[sz]ed\b"
-    r"|\bunderlying\b",
+    r"|\bunderlying\b|\bpre-?tax\b|\bavailable\s+to\s+common\b",
     re.I,
 )
 CHANGE_LABEL = re.compile(  # a row of differences: 'Increase in net income', 'Change in ...'
@@ -1354,7 +1355,9 @@ def included_item(between):
 PREFIX_BREAK = re.compile(r"[,;:]|\b(?:and|or|while|whereas|but)\b", re.I)
 FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
-    r"(?:[,;:]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
+    r"(?:[,;:]|\b(?:and|while|whereas|but|because|since)\b|\bas\b(?!\s+(?:reported|restated"
+    r"|previously|presented|adjusted|expected|noted|discussed|described|disclosed|compared|an?)\b))"
+    r"\s*(?:(?:the|its|our)\s+)?"
     r"(?!(?:it|this|that|which|they|these|those|in|for|during|at|on|of|from|to|by|with|was|were"
     r"|is|are|and|or|while|whereas|but)\b)\b(?P<subject>[a-z][\w&'\-]*(?:\s+[a-z][\w&'\-]*){0,5})"
     r"(?:\s+(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached"
@@ -2168,15 +2171,35 @@ def fetch_event(frozen, cache, event, checkpoint=lambda: None):
                 raise capture.Halt("Attempt ceiling reached; review, then resume")
             return None, failure["error"]
         except capture.CaptureError as exc:
-            # A transport failure (no HTTP status) stops the attempt until the owner acknowledges
-            # it, even if a crash came between saving the failure and writing STOP.json.
-            if record.exists() and load(record).get("status") is None:
-                if url not in acknowledged_urls(cache.root):
-                    (cache.root / "STOP.json").write_text(
-                        json.dumps({"url": url, "error": str(exc), "at": now()}), encoding="utf-8"
-                    )
+            # A saved transport failure (no HTTP status), access stop (403/429) or oversize
+            # response stops the attempt until the owner acknowledges it, even if a crash came
+            # between saving the outcome and writing STOP.json.
+            saved = load(record) if record.exists() else None
+            stop = saved is not None and (
+                saved.get("status") is None
+                or saved.get("status") in cache.request["stop_http_status"]
+                or str(saved.get("error", "")).startswith("Response/raw")
+            )
+            if stop and url not in acknowledged_urls(cache.root):
+                (cache.root / "STOP.json").write_text(
+                    json.dumps(
+                        {"url": url, "status": saved.get("status"), "error": str(exc), "at": now()}
+                    ),
+                    encoding="utf-8",
+                )
+                if saved.get("status") is None:
                     raise capture.Halt("Transport failure; check the network, then resume") from exc
+                raise capture.Halt("Saved access or size stop; review, then resume") from exc
             return None, str(exc)
+        except http.client.HTTPException as exc:
+            # A failure the frozen cache does not catch, such as a body cut short (IncompleteRead):
+            # the started request stays journaled without an outcome, so after the owner
+            # acknowledges the stop it uses its remaining attempt.
+            error = type(exc).__name__ + ": " + str(exc)
+            (cache.root / "STOP.json").write_text(
+                json.dumps({"url": url, "error": error, "at": now()}), encoding="utf-8"
+            )
+            raise capture.Halt("Transport failure; check the network, then resume") from exc
 
     index, error = get(base + accession + "-index.html")
     if error:
