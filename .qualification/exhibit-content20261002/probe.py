@@ -394,7 +394,10 @@ def header_identity(header, issuer_cik, accession):
         return found[1].strip() if found else None
 
     # the filer's CIK only: a subject company or other party in the header is not the filer
-    filers = re.findall(r"<FILER>(.*?)(?=</FILER>|<FILER>|$)", header, re.S)
+    # a block left open ends at the next top-level party section or the header's end
+    peer = r"</?(?:FILER|SUBJECT-COMPANY|FILED-BY|REPORTING-OWNER|ISSUER|DEPOSITOR|SECURITIZER"
+    peer += r"|SEC-HEADER|DOCUMENT)>"
+    filers = re.findall(r"<FILER>(.*?)(?=" + peer + r"|$)", header, re.S)
     ciks = [x.zfill(10) for block in filers for x in re.findall(r"<CIK>\s*(\d+)", block)]
     items = [x.strip() for x in re.findall(r"<ITEMS>\s*([^\r\n<]+)", header)]
     issues, missing = [], []  # observed mismatches; absent evidence
@@ -626,7 +629,9 @@ def text_tables(text):
     A run of data lines forms one table. Walking up from its first data line, a line with a cell
     starting right of that line's label is a header line, a line ending before its first value
     (a section label) is skipped, and any other line ends the header. Inside a table a line with a
-    cell right of the label ends it. The other non-data lines since the previous data line are the
+    cell right of the label ends it, as does a lone line naming a duration, year to date or
+    month-day date (a stacked 'Six Months Ended June 30, 2025' section), which then becomes the
+    next table's context. The other non-data lines since the previous data line are the
     table's context. Rule lines are skipped; non-data lines also form blocks.
     """
     tables, blocks, paragraph, recent, table = [], [], [], [], None
@@ -670,8 +675,11 @@ def text_tables(text):
             table["rows"].append(cells)
             recent = []
             continue
-        if table is not None and any(c["col"] >= table["label_end"] for c in cells):
-            table = None
+        if table is not None and (
+            any(c["col"] >= table["label_end"] for c in cells)
+            or (len(cells) == 1 and period_phrase(cells[0]["text"], year=False))
+        ):
+            table = None  # a cell right of the label, or a lone period line ('Six Months Ended')
         recent.append(cells)
         paragraph.append(" ".join(c["text"] for c in cells))
     flush()
@@ -1010,19 +1018,15 @@ def is_period_row(cells):
     cell without a span is a section header when it names a duration, year to date or month-day
     date ('Six Months Ended June 30, 2025'), but not for a year alone ('2024 Restructuring:')."""
     filled = [c for c in cells if c["text"]]
-    if len(filled) == 1 and filled[0]["span"] == 1:
-        text = filled[0]["text"]
-        return bool(
-            DATE_MD.search(text)
-            or YTD.search(text)
-            or any(re.search(pattern, text, re.I) for _, pattern in DURATIONS)
-        )
     if len(filled) == 1:
-        text = filled[0]["text"]
-    else:
-        text = " ".join(c["text"] for c in cells[1:])
+        return period_phrase(filled[0]["text"], year=filled[0]["span"] > 1)
+    return period_phrase(" ".join(c["text"] for c in cells[1:]))
+
+
+def period_phrase(text, year=True):
+    """A month-day date, duration, year to date or (with year) a year named in text."""
     return bool(
-        YEAR.search(text)
+        (year and YEAR.search(text))
         or DATE_MD.search(text)
         or YTD.search(text)
         or any(re.search(pattern, text, re.I) for _, pattern in DURATIONS)
@@ -1296,6 +1300,23 @@ DELTA = re.compile(  # a change, not a level: 'increased by $5.2 million', 'an i
     r"|\b(?:up|down)\b)\s*(?:(?:approximately|about|roughly)\s+)?$",
     re.I,
 )
+INCLUDED = re.compile(  # 'included a $5.2 million tax benefit': an item within the measure
+    r"\b(?:includ(?:e|es|ed|ing)|reflect(?:s|ed|ing)?|benefit(?:s|ed|ted)?\s+from"
+    r"|(?:impacted|affected|driven|offset)\s+by|due\s+to|net\s+of"
+    r"|comprised\s+of|consist(?:s|ed|ing)?\s+of)\b",
+    re.I,
+)
+LEVEL_VERB = re.compile(r"\b(?:was|were|is|are|totaled|totalled|amounted\s+to|reached)\b", re.I)
+
+
+def included_item(between):
+    """An amount introduced as an item within the measure ('included a $5.2 million tax
+    benefit', 'reflects income tax expense of'), unless a level verb follows the last such word
+    ('Net income, which included a tax benefit, was $5.2 million')."""
+    found = list(INCLUDED.finditer(between))
+    return bool(found) and not LEVEL_VERB.search(between[found[-1].end() :])
+
+
 PREFIX_BREAK = re.compile(r"[,;:]|\b(?:and|or|while|whereas|but)\b", re.I)
 FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
@@ -1547,6 +1568,7 @@ def match_component(doc, spec, concept):
                     or OTHER_METRIC.search(between)
                     or any(LABELS[other].search(between) for other in LABELS if other != concept)
                     or new_subject(gap)
+                    or included_item(between)  # 'included a $5.2 million tax benefit'
                     or QUALIFIER.search(trail)  # '$5.2 million attributable to noncontrolling'
                     or DELTA.search(clause[max(0, at - 40) : at])  # 'increased by $5.2 million'
                     or FORWARD.search(clause)  # 'is expected to be', 'Our guidance: net income'
@@ -2009,6 +2031,19 @@ def journal_problem(source, mark):
     return None
 
 
+class BoundOpener:
+    """The cache opens a request only after it has fsynced request_started. Binding the journal
+    into attempt.json there, before any network I/O, means a hard crash during a request cannot
+    leave a sent request whose start line could be removed to reset the attempt counters."""
+
+    def __init__(self, opener, checkpoint):
+        self.opener, self.checkpoint = opener, checkpoint
+
+    def open(self, request, timeout):
+        self.checkpoint()
+        return self.opener.open(request, timeout=timeout)
+
+
 def fetch_event(frozen, cache, event, checkpoint=lambda: None):
     """Fetch index, header and EX-99 documents; return references to saved bytes.
     checkpoint() runs after every request outcome, so the journal so far is recorded."""
@@ -2304,6 +2339,7 @@ def run(
             meta["journal"] = journal_mark(attempt / "source")
             write_json(frozen, record, meta)
 
+        opener = BoundOpener(opener or build_opener(frozen.capture.NoRedirect()), checkpoint)
         cache = frozen.capture.Cache(attempt / "source", request_settings(definition), repo, opener)
         wait_after_last_request(cache)
         try:

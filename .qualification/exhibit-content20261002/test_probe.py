@@ -942,6 +942,27 @@ def test_ambiguous_fiscal_headers_present_tense_forecasts_and_unspanned_sections
     assert classify(stacked(b"2024 Restructuring Plan:"))["current_ni"] == "stated"
 
 
+def test_embedded_items_and_plain_text_period_sections():
+    for sentence in (
+        b"Net income for Q2 FY2025 included a $5.2 million tax benefit.",
+        b"Net income for Q2 FY2025 reflects income tax expense of $5.2 million.",
+    ):
+        assert classify(b"<p>" + sentence + b"</p>")["current_ni"] == "label_only", sentence
+    for sentence in (
+        b"Net income for Q2 FY2025, which included a tax benefit, was $5.2 million.",
+        b"Net income for Q2 FY2025 increased by 10% to $5.2 million.",
+    ):
+        assert classify(b"<p>" + sentence + b"</p>")["current_ni"] == "stated", sentence
+    text = b"""ACME Corp
+(in millions)
+                                  Three Months Ended June 30, 2025
+Revenue                                  90.0
+Six Months Ended June 30, 2025
+Net income                                5.2
+"""
+    assert classify(text, kind="text")["current_ni"] == "label_only"  # a six-month value
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1002,6 +1023,8 @@ def test_header_identity():
     alone = header().split("<FILER>")[0] + subject
     only = m.header_identity(alone, "0000000001", "0001104659-24-000001")
     assert "header CIK missing" in only["missing"] and only["ciks"] == []
+    unclosed = header(cik="0000000009").replace("</FILER>", "") + "\n" + subject
+    assert "header CIK mismatch" in issues(unclosed)  # an open filer block ends at the subject
 
 
 def test_archive_url_uses_issuer_cik_for_agent_filings():
@@ -1572,6 +1595,27 @@ def test_resume_refuses_a_journal_edited_since_its_checkpoint(tmp_path):
     journal.write_bytes(saved)
     go(repo, study, Opener(site()), resume=attempt.name)
     assert json.loads((attempt / "attempt.json").read_text())["status"] == "complete"
+
+
+def test_each_request_start_is_bound_before_the_request_is_sent(tmp_path):
+    repo, study = build(tmp_path)
+    bound = []
+
+    class Watching(Opener):
+        def open(self, request, timeout):
+            attempt = next((study / "attempts").iterdir())
+            mark = json.loads((attempt / "attempt.json").read_text())["journal"]
+            journal = (attempt / "source" / "requests.jsonl").read_bytes()
+            last = json.loads(journal.splitlines()[-1])
+            bound.append(
+                mark == {"bytes": len(journal), "sha256": sha(journal)}
+                and last["event"] == "request_started"
+                and last["url"] == request.full_url
+            )
+            return super().open(request, timeout)
+
+    go(repo, study, Watching(site()))
+    assert len(bound) == 9 and all(bound)  # a hard crash mid-request leaves the start bound
 
 
 def test_a_refused_resume_keeps_the_stop_and_the_halted_state(tmp_path):
