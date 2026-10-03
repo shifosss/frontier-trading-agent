@@ -1180,6 +1180,34 @@ def test_document_currency_declarations_and_forecast_headings_reach_later_blocks
     assert classify(bullet)["current_ni"] == "stated"  # a sentence-case bullet is not a heading
 
 
+def test_table_declarations_layout_headings_quoted_starts_and_free_cash_flow():
+    cad = table([b"Three Months Ended June 30, 2025"], [b"Net income", b"$5.2"])
+    layout = b"<table><tr><td>All amounts are in Canadian dollars.</td></tr></table>"
+    assert classify(layout + cad)["current_ni"] == "currency_mismatch"  # declared in a table
+
+    def boxed(text):
+        return b"<table><tr><td>" + text + b"</td></tr></table>"
+
+    result = b"<p>Net income for Q2 FY2025 was $5.2 million.</p>"
+    assert classify(boxed(b"Outlook") + result)["current_ni"] == "label_only"
+    assert classify(result + boxed(b"Outlook"))["current_ni"] == "stated"  # source order kept
+    assert classify(boxed(b"Second Quarter Results") + result)["current_ni"] == "stated"
+    ended = b"<h2>Outlook</h2><p>We expect growth.</p>" + boxed(b"Results") + result
+    assert classify(ended)["current_ni"] == "stated"  # a layout heading ends the section
+    doc = m.parse_document("html", b"<p>One.</p>" + boxed(b"Outlook") + b"<p>Two.</p>")
+    assert m.narrative(doc) == [("One.", True), ("Outlook", True), ("Two.", True)]
+    quoted = b'<p>Net income declined in the U.S. "Income tax expense for Q2 FY2025 was $5.2'
+    assert classify(quoted + b' million."</p>')["current_ni"] == "label_only"
+    assert list(m.sentences(['in the U.S. "the plan"'])) == ['in the U.S. "the plan"']
+    header = [b"Six Months Ended June 30, 2025"]
+    period = b" for the six months ended June 30, 2025 was $14.0 million.</p>"
+    for label in (b"Free operating cash flow", b"Free cash flow from operations"):
+        assert classify(table(header, [label, b"14.0"]))["q_current_cfo"] == "not_found", label
+        assert classify(b"<p>" + label + period)["q_current_cfo"] == "not_found", label
+    gaap = table(header, [b"Net cash provided by operating activities", b"14.0"])
+    assert classify(gaap)["q_current_cfo"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1198,6 +1226,16 @@ def test_release_identification():
     assert m.identify_release(hyphen) == ("release", [hyphen[1]])
     dash = [doc("EX-99.1", "Slides"), doc("EX-99.2", "", "ACME Earnings—Release")]
     assert m.identify_release(dash) == ("release", [dash[1]])
+    deck = "Q2 Earnings Presentation. Please see our earnings release for reconciliations."
+    cited = [doc("EX-99.1", "Exhibit 99.1"), doc("EX-99.2", "", deck)]
+    assert m.identify_release(cited) == ("release_by_type", [cited[0]])  # only refers to one
+    for text in (
+        "Results. This press release contains",
+        "As set out in this press release",
+        "See the website. NEWS RELEASE",
+    ):
+        named = [doc("EX-99.1", ""), doc("EX-99.2", "", text)]
+        assert m.identify_release(named) == ("release", [named[1]]), text
 
 
 def test_document_kinds():

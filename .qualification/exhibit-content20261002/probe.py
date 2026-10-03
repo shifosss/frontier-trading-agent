@@ -120,6 +120,16 @@ EXCLUDED_LABEL = re.compile(
     r"|\bunderlying\b|\bpre-?tax\b|\bavailable\s+to\s+common\b",
     re.I,
 )
+EXCLUDED_FOR = {  # a distinct measure embedding the label: 'Free cash flow from operations'
+    "operating_cash_flow": re.compile(r"\bfree\b", re.I),
+}
+
+
+def excluded_label(text, concept):
+    other = EXCLUDED_FOR.get(concept)
+    return bool(EXCLUDED_LABEL.search(text) or (other and other.search(text)))
+
+
 CHANGE_LABEL = re.compile(  # a row of differences: 'Increase in net income', 'Change in ...'
     r"\b(?:increase|decrease|change|growth|improvement|decline|reduction|variance)s?\s+(?:in|of)\b",
     re.I,
@@ -153,6 +163,12 @@ STATEMENT_IMAGE = {
     ),
 }
 RELEASE = re.compile(r"(press|news|earnings)[\s\-–—]+release", re.I)  # 'Press-Release' too
+RELEASE_REFERENCE = re.compile(  # 'see our earnings release', 'in the press release': another one
+    r"\b(?:our|the|its|their|see|in|with|accompanying|attached|related|separate|companion"
+    r"|today['’]s|earlier|previous|prior)\s+(?:[\w'’\-]+\s+){0,2}$",
+    re.I,
+)
+RELEASE_SELF = re.compile(r"\bthis\s+$", re.I)  # 'in this press release' names itself
 UNVERIFIED = {
     "period_unverified",
     "scale_unverified",
@@ -481,7 +497,8 @@ def decode(raw):
 class Release(HTMLParser):
     """Tables (rows of cells with colspan), text blocks outside tables, and images.
     A nested table is kept as its own table; each table tracks its own open row and cell.
-    A table's context is the last two text blocks between it and the previous top-level table."""
+    A table's context is the last two text blocks between it and the previous top-level table,
+    and its position ('at') is the number of text blocks before it, so text keeps source order."""
 
     BREAK = {"p", "div", "br", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "table"}
 
@@ -522,12 +539,14 @@ class Release(HTMLParser):
                 self._flush()
                 context = self.context()
                 heading = titled(self.since_table)
+                at = len(self.blocks)
             else:  # a nested table also takes the text before it in its enclosing cell
                 cell = "".join(top["cell"]["text"]) if top["cell"] is not None else ""
                 context = " ".join((top["context"] + " " + cell).split())[-300:]
                 heading = " ".join(cell.split())
+                at = top["at"]
             self.stack.append(
-                {"rows": [], "caption": "", "context": context, "heading": heading}
+                {"rows": [], "caption": "", "context": context, "heading": heading, "at": at}
                 | {"row": None, "cell": None}
             )
         elif tag == "tr" and top is not None:
@@ -580,7 +599,8 @@ class Release(HTMLParser):
         elif tag == "table":
             self._close_row(top)
             table = self.stack.pop()
-            self.tables.append({k: table[k] for k in ("rows", "caption", "context", "heading")})
+            keys = ("rows", "caption", "context", "heading", "at")
+            self.tables.append({k: table[k] for k in keys})
             if not self.stack:
                 self.since_table = []
 
@@ -676,7 +696,8 @@ def text_tables(text):
     cell right of the label ends it, as does a lone line naming a duration, year to date or
     month-day date (a stacked 'Six Months Ended June 30, 2025' section), which then becomes the
     next table's context. The other non-data lines since the previous data line are the
-    table's context. Rule lines are skipped; non-data lines also form blocks.
+    table's context. Rule lines are skipped; non-data lines also form blocks, and a table's
+    position ('at') is the number of blocks before its first data line.
     """
     tables, blocks, paragraph, recent, table = [], [], [], [], None
 
@@ -714,7 +735,7 @@ def text_tables(text):
                 above = [r for r in recent if not any(r is h for h in header)]
                 heading = titled([" ".join(c["text"] for c in line) for line in above])
                 table = {"rows": header, "context": context[-300:], "label_end": label_end}
-                table["heading"] = heading
+                table["heading"], table["at"] = heading, len(blocks)
                 tables.append(table)
             table["rows"].append(cells)
             recent = []
@@ -733,7 +754,7 @@ def text_tables(text):
     flush()
     return [
         {"rows": t["rows"], "caption": "", "context": t["context"], "heading": t["heading"]}
-        | {"text": True}
+        | {"at": t["at"], "text": True}
         for t in tables
     ], blocks
 
@@ -1032,7 +1053,7 @@ def is_data_row(texts):
 
 def label_match(text, concept):
     found = LABELS[concept].search(text)
-    if not found or EXCLUDED_LABEL.search(text) or CHANGE_LABEL.search(text):
+    if not found or excluded_label(text, concept) or CHANGE_LABEL.search(text):
         return None
     if CHANGE_AFTER.match(text, found.end()):
         return None  # an excluded measure, or a row of differences ('Increase in net income')
@@ -1233,11 +1254,11 @@ SENTENCE_BREAK = re.compile(
     "(?:"
     + "|".join(r"(?<=[.;!?]" + tail + ")" for tail in TAILS)
     + ")"
-    # after an abbreviation or an initial a sentence ends only before a capital letter:
-    # 'in the U.S. Income tax expense' and 'Acme Inc. Income' split; 'Sept. 30' and
-    # 'Acme Inc. (NASDAQ: ACME)' do not
+    # after an abbreviation or an initial a sentence ends only before a capital letter, looking
+    # through an opening quote: 'in the U.S. Income tax expense', 'in the U.S. "Income tax' and
+    # 'Acme Inc. Income' split; 'Sept. 30' and 'Acme Inc. (NASDAQ: ACME)' do not
     + "".join(
-        r"(?!(?<=\b" + word + r"\." + tail + r")\s+(?-i:[^A-Z]))"
+        r"(?!(?<=\b" + word + r"\." + tail + r")\s+[\"'“‘]?+(?-i:[^A-Z]))"
         for word in [re.escape(a) for a in ABBREVIATIONS] + ["[A-Z]"]  # '[A-Z]': an initial
         for tail in TAILS
     )
@@ -1249,7 +1270,7 @@ SENTENCE_BREAK = re.compile(
 def sentences(blocks):
     """Split at sentence ends, including after closing quotes and before quotes, digits and
     lowercase starts; after an abbreviation such as 'Sept.', 'U.S.' or 'Inc.' or an initial,
-    only before a capital letter."""
+    only before a capital letter, which may follow an opening quote but not a parenthesis."""
     for block in blocks:
         for sentence in SENTENCE_BREAK.split(block):
             if sentence:
@@ -1431,17 +1452,48 @@ def heading_block(block):
     )
 
 
-def section_flags(blocks):
-    """Per text block: whether it sits under a heading block with forward-looking wording or a
-    non-GAAP qualifier ('Outlook', 'Non-GAAP Financial Measures'), until the next heading."""
+def section_flags(entries):
+    """Per (text, may head) entry in source order: whether it sits under a heading with
+    forward-looking wording or a non-GAAP qualifier ('Outlook', 'Non-GAAP Financial Measures'),
+    until the next heading. Text blocks and lone-cell table rows (a one-cell layout table's
+    'Outlook') may head a section; other table rows only take the current section."""
     flags, active = [], False
-    for block in blocks:
-        if heading_block(block):
-            active = bool(FORWARD.search(block) or SECTION_QUALIFIER.search(block))
+    for text, may_head in entries:
+        if may_head and heading_block(text):
+            active = bool(FORWARD.search(text) or SECTION_QUALIFIER.search(text))
             flags.append(False)
         else:
             flags.append(active)
     return flags
+
+
+def narrative(doc):
+    """Text read as prose, in source order: (text, may head a section) per text block and per
+    table row that is not a data row or whose label runs on into its value ('... June 30, 2025 |
+    was $5.2 million'), joined cell by cell. A table without a recorded position follows the
+    blocks."""
+    rows = {}
+    for table in doc["tables"]:
+        at = min(table.get("at", len(doc["blocks"])), len(doc["blocks"]))
+        for cells in table["rows"]:
+            texts = [c["text"] for c in cells if c["text"]]
+            if texts and (not is_data_row(texts) or CONTINUES.search(texts[0])):
+                rows.setdefault(at, []).append((" ".join(texts), len(texts) == 1))
+    entries = []
+    for index, block in enumerate(doc["blocks"] + [None]):
+        entries += rows.get(index, [])
+        if block is not None:
+            entries.append((block, True))
+    return entries
+
+
+def document_texts(doc):
+    """Every text of the release: blocks, table captions and each table row's cells."""
+    yield from doc["blocks"]
+    for table in doc["tables"]:
+        yield table.get("caption", "")
+        for cells in table["rows"]:
+            yield " ".join(c["text"] for c in cells if c["text"])
 
 
 def included_item(between):
@@ -1622,8 +1674,9 @@ def match_component(doc, spec, concept):
         if kind in rank and (best is None or rank.index(kind) < rank.index(best)):
             best = kind
 
-    # 'All amounts are in Canadian dollars' anywhere in the release: '$' there is not USD
-    declared = any(DOCUMENT_CURRENCY.search(block) for block in doc["blocks"])
+    # 'All amounts are in Canadian dollars' anywhere in the release, in a table too: '$' there
+    # is not USD
+    declared = any(DOCUMENT_CURRENCY.search(text) for text in document_texts(doc))
     for index, table in enumerate(doc["tables"]):
         table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
         single = len({col for col, _ in value_columns(grid(table["rows"]), numeric=True)}) == 1
@@ -1696,14 +1749,9 @@ def match_component(doc, spec, concept):
                 note("scale_unverified", item)  # no unit phrase: the multiplier is inferred
             else:
                 note("stated", item)
-    prose = list(doc["blocks"])
-    under = section_flags(prose)  # blocks under an 'Outlook' or 'Non-GAAP' heading block
-    for table in doc["tables"]:  # prose laid out in a row is read as one text, cell by cell
-        for cells in table["rows"]:
-            texts = [c["text"] for c in cells if c["text"]]
-            if texts and (not is_data_row(texts) or CONTINUES.search(texts[0])):
-                prose.append(" ".join(texts))  # '... June 30, 2025 | was $5.2 million'
-                under.append(False)
+    entries = narrative(doc)  # blocks and prose rows, in source order
+    prose = [text for text, _ in entries]
+    under = section_flags(entries)  # text under an 'Outlook' or 'Non-GAAP' heading
     for sentence, sectioned in (
         (sentence, flag) for block, flag in zip(prose, under) for sentence in sentences([block])
     ):
@@ -1722,7 +1770,7 @@ def match_component(doc, spec, concept):
                     if not (b[0] == ":" and EXCLUDED_LABEL.search(before[: b.start()][-15:]))
                 ]
                 before = before[cut[-1].end() :] if cut else before
-                excluded = EXCLUDED_LABEL.search(before + clause[f.start() : upto])
+                excluded = excluded_label(before + clause[f.start() : upto], concept)
                 excluded = excluded or CHANGE_BEFORE.search(before)  # 'The increase in net'
                 excluded = excluded or CHANGE_AFTER.match(clause, f.end())  # 'Net income change'
                 window = None if excluded else clause[f.start() : f.end() + 10]
@@ -1803,13 +1851,20 @@ def _period_result(period, spec):
 # ------------------------------------------------------------- per-event analysis
 
 
+def names_itself(text):
+    """The text calls itself a release ('ACME Earnings Release', 'this press release'), not
+    only refers to another document ('see our earnings release', 'in the press release')."""
+    before = [text[max(0, f.start() - 60) : f.start()] for f in RELEASE.finditer(text)]
+    return any(RELEASE_SELF.search(b) or not RELEASE_REFERENCE.search(b) for b in before)
+
+
 def identify_release(documents):
     """documents: [{'description','type','url','kind','parsed'}] for fetched EX-99 documents."""
     candidates = [
         d
         for d in documents
         if RELEASE.search(d["description"])
-        or (d.get("parsed") and RELEASE.search(d["parsed"]["text"][:3000]))
+        or (d.get("parsed") and names_itself(d["parsed"]["text"][:3000]))
     ]
     if len(candidates) == 1:
         return "release", candidates
