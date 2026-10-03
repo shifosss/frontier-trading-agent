@@ -1,0 +1,14 @@
+{
+ "definition_sha256": "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f",
+ "frozen_at_utc": "2026-10-03T03:37:28.487908+00:00",
+ "code": {
+  ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
+  ".qualification/exhibit-content20261002/probe.py": "e3363871ee556c5aab9f54a67aca000a587a54c1b68c0edcdc2dd88062aaf9ea",
+  ".qualification/exhibit-content20261002/test_probe.py": "a8dbee29fd373003d894df35b04e15713e00c47f0161fa1663e90c872847af5c",
+  ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+  ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
+ },
+ "outcome_access_before_freeze": "No SEC request, exhibit or records.json value was read, and no 10-Q value was projected. Before the freeze the sample draw and the 10-Q session reproduction were dry-checked offline on the committed decision-session events.json and the calendar (150 events from 56 issuers, 70 filed 2012-2020 and 80 filed 2021-2025, 50 with agent-filed 8-Ks, 0 session mismatches); that reads SEC filing metadata only.",
+ "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten.",
+ "revisions_before_any_run": "This freeze replaces those published in commits 67529c4c, 11e4ca33, 7434c98c, 07c47a95, a12c4da7, ba41656a, 47d27fcb, c6a6485a, 22ce822c, cbc391d5, 570da49d, 8a5080a8, 908a064f, 08483eec, b87f9938, ab1c3fc4, c6711f43, 145c6325, e1cb3fd5, f6817114, 95085381, c5620be3, 49536996, 744b828d, eda1c555, 0637dcb4, 45becdc5, 48410a2d, b5019096, bf327698, 520f4218, 9807d6a8, 934ebe3d and 3daf77f5, each revised after its Codex review and before any attempt existed. No SEC request, exhibit or records.json value has been read."
+}

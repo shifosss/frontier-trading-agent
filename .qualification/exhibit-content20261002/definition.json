@@ -1,0 +1,239 @@
+{
+ "schema": 1,
+ "study": "exhibit-content20261002",
+ "status": "Frozen on owner approval (October 2, 2026). The owner accepted the draft defaults and chose to run on the owner's workstation, where records.json and the calendar are available. No SEC request, exhibit read or 10-Q value projection has been made; probe.py makes the requests only when the owner runs it.",
+ "question": "For a seeded random sample of strategy-qualified 10-Q events whose only Item 2.02 8-K maps to an earlier decision session, does that 8-K's original press-release exhibit state the same S and Q input values, for the same periods, that the later 10-Q reports?",
+ "why": "Both metadata audits found an earlier Item 2.02 8-K for most 10-Qs (disclosure-timing20261001: 63.9-64.4% of qualified events by decision session; disclosure-novelty20261001: 2,484 of 4,057 originals by ET date). Timing does not show content. Only a component shown to be stated in the earlier release may ever move to the earlier clock.",
+ "components": {
+  "S": {
+   "definition": "(current-quarter net income - prior-year same-quarter net income) / prior fiscal-year-end total assets, standardized by the issuer's previous eight innovations (unchanged)",
+   "fields": [
+    "current_ni",
+    "prior_ni",
+    "prior_fy_assets"
+   ],
+   "periods": [
+    "current_start/current_end",
+    "prior_start/prior_end",
+    "prior_fy_end (instant)"
+   ]
+  },
+  "Q": {
+   "definition": "((current YTD operating cash flow - current YTD net income) - (prior-year YTD operating cash flow - prior-year YTD net income)) / prior fiscal-year-end total assets",
+   "fields": [
+    "q_current_cfo",
+    "q_current_ni",
+    "q_prior_cfo",
+    "q_prior_ni",
+    "q_prior_fy_assets"
+   ],
+   "periods": [
+    "q_current_start/q_current_end",
+    "q_prior_start/q_prior_end",
+    "prior_fy_end (instant)"
+   ]
+  },
+  "note": "The S history of eight earlier innovations was already public through earlier 10-Qs and is not probed.",
+  "release_sets": {
+   "S_flow": [
+    "current_ni",
+    "prior_ni"
+   ],
+   "Q_flow": [
+    "q_current_cfo",
+    "q_current_ni",
+    "q_prior_cfo",
+    "q_prior_ni"
+   ],
+   "assets": [
+    "prior_fy_assets"
+   ],
+   "reason": "Prior fiscal-year-end total assets were normally public earlier through the prior annual report, like the eight historical S innovations. The verdict therefore uses the flow components; assets are reported separately as stated or not stated in the release. A later full extraction must bind assets to the earlier annual filing's verified clock and value; this probe does not fetch annual reports."
+  }
+ },
+ "population": {
+  "source": ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json",
+  "source_sha256": "862d0c0959de361ac1d31a76dea4ff0d8bf9a63dbe7060598896bcb2013ca394",
+  "rule": "strategy_source_qualified is true and status is single_prior",
+  "size": 1166,
+  "issuers": 70,
+  "by_filing_era": {
+   "2012-2020": 579,
+   "2021-2025": 587
+  },
+  "excluded": "multiple (which release applies is ambiguous), single_same_session (no earlier session), single_after, no_candidate and window_coverage_incomplete"
+ },
+ "sample": {
+  "size": 150,
+  "order": "ascending SHA256 of the UTF-8 string 'exhibit-content20261002|' + 10-Q accession number; take the first 150",
+  "replacement": "none: a failed fetch, missing exhibit, identity failure or unmatched value stays in the sample and its denominator",
+  "strata_reported": [
+   "filed 2012-2020",
+   "filed 2021-2025"
+  ]
+ },
+ "requests": {
+  "archive": "https://www.sec.gov/Archives/edgar/data/{issuer CIK as an integer, no leading zeros}/{8-K accession without dashes}/ — the frozen capture's archive_base rule, keyed by the issuer CIK. 402 of the 1,166 frame 8-Ks were filed by an agent whose CIK is the accession prefix, so the prefix must never be used.",
+  "per_event": [
+   "accession index: {archive}{accession}-index.html",
+   "SGML header: {archive}{accession}.hdr.sgml",
+   "every document whose index type starts with EX-99, in index order, at most 10; an index with more than 10 fetches none of them and the event is exhibit_overflow"
+  ],
+  "minimum_interval_seconds": 1,
+  "timeout_seconds": 30,
+  "max_response_bytes": 33554432,
+  "stop_http_status": [
+   403,
+   429
+  ],
+  "redirects": "none; a redirect is saved as a failure",
+  "allowed_prefix": "https://www.sec.gov/Archives/edgar/data/",
+  "user_agent": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
+  "never": [
+   "images, XBRL or any non-EX-99 document",
+   "data.sec.gov",
+   "any accession outside the sample",
+   "prices, returns, forecasts or account ledgers"
+  ],
+  "max_lifetime_network_attempts": 1800,
+  "max_attempts_per_url": 2,
+  "max_total_raw_bytes": 2147483648,
+  "minimum_request_interval_seconds": 1,
+  "caps_basis": "max_lifetime_network_attempts 1,800 = 150 events x (index + header + up to 10 EX-99 documents); max_attempts_per_url 2 allows one retry of an interrupted request"
+ },
+ "storage": "Every response's exact bytes under source/raw/<sha256>.bin, referenced from the request journal, following the frozen capture convention.",
+ "identity_checks": {
+  "rules": [
+   "header filer CIK equals the issuer CIK: only a CIK inside a <FILER> block counts (a block left without </FILER> ends at the next party section such as <SUBJECT-COMPANY>, <FILED-BY> or <REPORTING-OWNER>, or at </SEC-HEADER>), so an issuer named only as a subject company or other party leaves the CIK missing",
+   "header form is 8-K",
+   "header item information includes Results of Operations and Financial Condition (Item 2.02) when the header lists items",
+   "header acceptance time re-clocked with the frozen event_clock must still give a decision session strictly earlier than the 10-Q's"
+  ],
+  "failure": "An observed mismatch (another CIK, form, accession or item list) makes the event identity_failed, and a header acceptance that re-clocks to the 10-Q's session or later makes it header_not_prior; both stay in the sample as not stated in both bounds. A header that is fetched but lacks the accession, CIK, form or acceptance time, or whose acceptance cannot be clocked, leaves identity unverified: the release is still examined, and the event counts as not stated in the lower bound and by its components in the upper bound."
+ },
+ "comparison_values": {
+  "source": ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json",
+  "source_sha256": "0aa2fcd44e400157409a2bc639c8ee8d014d10eae99bc3ad5d7021d5a5df28db",
+  "source_bytes": 208387935,
+  "projection": "Written to attempts/<id>/projection.json before any request: only the PROJECTED fields of probe.py (the components' values, their period endpoints, prior_fy_end, fiscal_year/fiscal_period, status and q_status) for the 150 sampled accessions. A new attempt projects before its folder is created, and records.json lacking any sampled accession refuses the run before any attempt or request exists, so every sampled event keeps its place in the denominators. records.json is read with the decision-session audit's projection parser, which skips every other value without decoding it.",
+  "q_unavailable": "A sampled event without a qualified Q keeps its S comparison; its Q components are reported as not_comparable and it leaves the Q denominator only in a separately reported row"
+ },
+ "matching": {
+  "tables": "HTML tables parsed with the standard-library HTML parser (a <br>, <p> or <div> inside a cell separates words; <script> and <style> contents are never read); colspan and rowspan are expanded so every cell has a column index (a cell spanning rows is repeated at its column in the rows below), and a nested table is its own table, whose preceding text also includes the text before it in its enclosing cell. Omitted optional end tags are honoured: a new <td>/<th> ends the open cell, a new <tr> or </table> ends the open cell and row, and a cell outside any <tr> opens an implied row, and a table left open at the end of the document is closed there and read. Header rows are the rows before the first data row, a row with a non-empty label cell and a numeric cell that is not a lone year from 1990 to 2039, so split rows such as 'Three Months Ended June 30,' over '2025 | 2024' stay in the header. After a data row, a non-data row naming a year, date, duration or year to date beyond its first cell, or in a single filled cell spanning several columns, or naming a duration, year to date or month-day date in a single filled cell without a span (but not a year alone, as in '2024 Restructuring Plan:'), starts a new header block for the rows below it (a stacked 'Six Months Ended' section); other non-data rows such as section labels or percentages leave the header unchanged, but a later row with a single filled cell is the section heading of the rows below it (until the next heading or header block), and a section heading with forward-looking wording or a non-GAAP qualifier (adjusted, non-GAAP, pro forma, core, excluding, normalized or underlying; SECTION_QUALIFIER in probe.py, as in 'Non-GAAP Measures') excludes those rows' values, while other headings such as 'Discontinued operations:' do not, since a total row may follow; a single-cell row followed by a data row whose label starts in lowercase is a wrapped label, not a heading. From each header row a value takes the one cell overlapping its columns most (plain text: else the nearest cell within 6 characters), so a neighbouring column's header is never borrowed. The table-wide context is the caption, the preceding text, header cells overlapping no value column (such as '(in thousands)' above the labels) and a header row's single cell over the values; period and scale gaps are filled only from it. A value whose own column header names exactly one fiscal quarter and year ('Q2 FY2025', 'Second quarter of fiscal 2025') matching the 10-Q's (one year earlier for a prior-year value), with no contradicting date or duration, has the required period, and a header naming fiscal quarters none of which is the required one ('Q3 FY2025', or 'Q2 FY2024' for the current quarter) is a different period, as in prose. A column header naming several periods at once (several durations, several fiscal quarters, a quarter list such as 'Q2 and Q3 FY2025', or several dates as in 'Q2 FY2025 June 30, 2025 and March 31, 2025') is period_unverified, whatever else it names. In a table with one numeric value column (an annotation cell such as '*' or a percentage is not one) whose column header names no period, a complete duration (a length or year to date with an end date) in that context is the value's period. A cell holding only '$', US$ or '(' is joined to the next value, and a cell holding only ')' or '%' to the previous one. A cell holding only a currency code or mark (USD, CAD, EUR, GBP, AUD, the euro or pound sign, or a letter-prefixed dollar) follows the row's layout: with such a cell before the row's first value it is joined to the next value, else with one after the last value it is joined to the previous value, else (only between values) to both neighbours, so a foreign code never leaves a value unmarked. A value whose column header or table-wide header text carries a non-GAAP or partial qualifier (QUALIFIER in probe.py, for example 'Non-GAAP Three Months Ended') is not a component value. A column header or row label naming another currency (C$, CAD, EUR, GBP, Canadian dollars, euros, pounds sterling; 'Net income (CAD millions)') makes its values currency_mismatch, and a table-wide header cell naming one (a header cell over no value column, such as 'CAD in millions' above the labels, or a single header cell spanning every value column) makes every value currency_mismatch; a single header over only some value columns names their currency only. The caption and preceding text are the last two text blocks between the table and the previous top-level table.",
+  "plain_text": "Cells are runs of text separated by two or more spaces (tabs expanded to 8) and keep their character offsets; from each header line a value takes the cell overlapping it most, else the nearest within 6 characters. A run of data lines is one table. Walking up from its first data line, a line with a cell starting right of that line's label is a header line, a line ending before its first value (a section label such as 'Revenues:') is skipped, and any other line ends the header. Inside a table a lone line that does not end it is kept as a section-heading row (a year alone in it does not start a new header block); a line with a cell right of the label ends the table, as does a lone line naming a duration, year to date or month-day date (a stacked 'Six Months Ended June 30, 2025' section), which becomes the next table's context. The other non-data lines since the previous data line are its context. Lines of only dashes, equals signs or underscores are skipped; non-table lines form paragraphs for the narrative rule.",
+  "numbers": "Commas removed; parentheses or a leading minus mean negative; a dash alone means zero; footnote markers ignored, including any <sup> text, a numbered marker such as '5.2(1)' after a value, and a numbered marker alone in a cell ('(1)'), which is an annotation rather than a value unless a currency mark such as '$' precedes it. Under a label naming only a loss ('net loss', not 'net income (loss)') or a use of cash ('cash used in', not 'provided by (used in)'), an unsigned amount is negative.",
+  "scale": "1, 1e3, 1e6 or 1e9. A unit word in the value cell itself ('$5.2 million') fixes its scale. Otherwise the nearest unit phrase ('in thousands/millions/billions', 'thousands/millions/billions of dollars', '(000s)', '$000') fixes it, looking in order at the column header, the table-wide header cells, the caption and the preceding text; a bare scale word in prose (such as 'revenue was $2 billion') is not a unit phrase, and a level naming several units leaves every scale possible. Without a unit, an equal value at scale 1 counts normally, and an equal value only at a larger scale is scale_unverified: the multiplier was inferred from the 10-Q value, so it counts in the upper bound only. In prose the scale is the amount's own 'thousand', 'million' or 'billion' word, else 1.",
+  "tolerance": "less than half a unit of the displayed precision at that scale; a value exactly halfway between two displayed values (a displayed 5 for 5.5) is not equal, since the release does not state its rounding rule",
+  "labels": {
+   "net_income": "\\bnet \\(?(income|earnings|loss)\\b(?!\\)?\\s+tax(?:es)?\\b)",
+   "operating_cash_flow": "\\b(net )?cash (flows? )?(provided|generated|used|from)\\b(?:(?!financing|investing)[^|]){0,40}?\\b(operating activities|operations)\\b|\\boperating cash flows?\\b",
+   "total_assets": "\\btotal assets\\b"
+  },
+  "labels_note": "Case-insensitive searches over the row's label cell text after whitespace is collapsed",
+  "periods": {
+   "durations": "three months, quarter or 12-14 weeks = 3; six months or 25-27 weeks = 6; nine months or 38-40 weeks = 9; twelve months, year or 51-53 weeks = 12; 'three and six months', 'three/six months', 'three & six months' or 'three, six months' names both durations; 'of fiscal year 2025' names the year a quarter belongs to and is not a twelve-month period",
+   "end_dates": "month-day-year; month-year, read as the last day of that month; or a year combined with a month-day phrase elsewhere in the same header, caption or context. A header naming a month-day-year together with another month-year, month-day or year of its own ('June 30, 2025 and 2024') names several periods and has no single end date",
+   "required": {
+    "current_ni": "3-month duration ending within 7 days of current_end",
+    "prior_ni": "3-month duration ending within 7 days of prior_end",
+    "q_current_cfo / q_current_ni": "year-to-date duration (3, 6 or 9 months matching the 10-Q) ending within 7 days of q_current_end",
+    "q_prior_cfo / q_prior_ni": "same duration ending within 7 days of q_prior_end",
+    "prior_fy_assets": "an instant column dated within 7 days of prior_fy_end"
+   },
+   "context": "A column header with only a year takes its month-day from the table-wide context, and a dated header with no duration word takes its duration from it. Several durations or dates leave that part unparsed. A dated column with no duration or year-to-date word in its header or the context consulted is an instant.",
+   "year_to_date": "A 'year to date' header without a duration takes the 10-Q's year-to-date length: from q_current_start/q_current_end when Q is qualified, else three months times the fiscal quarter"
+  },
+  "rule": "A component is stated only when a table cell or narrative sentence, under a label that matches its pattern and none of the exclusions, equals the 10-Q value within the tolerance AND its column header or sentence parses to the required period. In a table, an equal value is dropped as a different period only when its parsed end date is more than 7 days from the required end or its parsed duration differs from the required one; any other equal value whose period is not verified (no date, an ambiguous duration, instant against duration) is period_unverified.",
+  "evidence": "Exhibit URL and SHA256, table and row index (or sentence and clause), label text, cell text, header text, parsed period and scale for every match; table and narrative matches under a contradicting period are kept with result different_period",
+  "narrative": "Text outside tables, each table row that is not a data row (prose laid out in tables), and each data row whose label cell runs on into its values (ending in 'was', 'were', 'is', 'are', 'of', 'totaled', 'amounted to', 'reached', 'to' or 'approximately'), each row joined into one text cell by cell and all read in source order (a table's rows where the table stands among the text blocks; narrative in probe.py), is split into sentences (at '.', ';', '!' or '?', optionally followed by up to two closing quotes or brackets, before a capital, lowercase letter, digit, quote or parenthesis, but after an abbreviation such as 'Sept.', 'U.S.', 'Inc.' or 'Corp.' or an initial, with or without closing marks, only before a capital letter, which may follow an opening quote but not a parenthesis, as in 'in the U.S. Income tax expense was', 'in the U.S. \"Income tax expense was' or 'Acme Inc. Income tax expense was', and never in 'Sept. 30' or 'Acme Inc. (NASDAQ: ACME)') and each sentence into clauses at ';', 'compared with/to', 'versus', 'vs.' and ', and/while/whereas/up/down'. Each amount belongs to the nearest component label before it in its clause or, without one, to the last label of the nearest earlier clause of the same sentence; an amount whose owning label matches an exclusion (for example 'adjusted net income was $5.2 million' after 'net income was $4.0 million'), or with another measure named between it and its label (OTHER_METRIC in probe.py, or another component's label, for example 'and EBITDA was' or 'and cash flow from operations was'), does not count; nor does an amount introduced by a new subject after a comma, semicolon, colon, 'and', 'while', 'whereas', 'but', 'because', 'since' or 'as' (not 'as reported', 'as previously', 'as a' and similar) (or at the start of a clause whose label is carried) and before 'was', 'were', 'is', 'are', 'of', 'totaled', 'amounted to', 'reached', a change verb (increased, decreased, rose, fell, grew, declined, improved, dropped or climbed, optionally with 'to' or 'by') or a colon (for example 'and income tax expense was', 'and income tax expense increased to' or 'and income tax expense:'), unless the subject is a pronoun, a preposition or a period phrase such as 'first six months'; nor does an amount followed, before the next amount or 'and/while/whereas/but' and within 80 characters, by a non-GAAP or partial qualifier (adjusted, non-GAAP, pro forma, excluding, before (income) taxes, noncontrolling or minority interests, continuing or discontinued operations; QUALIFIER in probe.py), nor an amount that is a change rather than a level ('increased by $5.2 million', 'an increase of', 'up $5.2 million', a bare change verb as in 'increased $5.2 million' or 'fell $5.2 million', and a comparison base as in 'increased to $6.0 million from $5.2 million'; 'rose to $5.2 million' stays a level; DELTA in probe.py), nor an amount introduced as an item within the measure ('included a $5.2 million tax benefit', 'reflects income tax expense of $5.2 million': include, reflect, benefited, resulted or stemmed from, impacted/affected/driven/offset by, due to (each optionally with an adverb such as 'primarily' before from, by or to), net of, comprised or consisting of between the label and the amount; INCLUDED in probe.py) unless was, were, is, are, totaled, amounted to or reached follows the last such word ('Net income, which included a tax benefit, was $5.2 million'), nor an amount that is a bound or a range endpoint rather than an exact value ('less than', 'more than', 'at least', 'up to', 'nearly', 'over', 'below', 'between $4.8 million and $5.2 million', '$4.8 million to $5.2 million'; in 'from $4.1 million to $5.2 million' the second amount stays a level; BOUND and bounded in probe.py), nor any amount in a clause with forward-looking wording (forecast, project, projects, projected, projection, expect, expectation, target, targeted, predict, likely, unlikely, probable, probably, possibly, potentially, 'on track to', 'poised to', anticipate, estimate, 'going to', will, would, could, should, might, shall, 'may' before a level verb such as be, total, reach or exceed, guidance, outlook; FORWARD in probe.py), wherever it stands in the clause, which is not a disclosure of the actual value, nor any amount in a text block or prose row under a heading (a text block, or a table row with a single filled cell such as a one-cell layout table, of at most 80 characters with no closing punctuation and no amount, whose words longer than three letters are all capitalized, as in 'Business Outlook' but not 'Raising full-year outlook') that has forward-looking wording or a non-GAAP qualifier ('Outlook', 'Non-GAAP Financial Measures'), until the next such heading in source order (section_flags in probe.py). A label's exclusion check reads from 30 characters before it to the next amount, so 'net income attributable to noncontrolling interests' is excluded; a change phrase directly before the label ('The increase in net income', 'growth in the Company's net income'; CHANGE_BEFORE in probe.py) excludes it as well, as does a change word directly after it ('Net income change was'). Amounts may also be written '(5.2 million USD)', '$(5.2) million' or '$ (5.2) million'; a currency code or name right after a dollar amount, optionally after 'in' or an opening parenthesis ('$5.2 million CAD', '$5.2 million (CAD)', '$5.2 million in Canadian dollars'), or right before it, including a country adjective ('CAD $5.2 million', '(CAD $5.2 million)', 'Canadian $5.2 million') makes it that currency. Each narrative match records its clause, owning label, amount, scale, parsed period and fiscal-quarter phrases. An amount (a $, US$ or USD mark before it or USD after it, or another currency marked the same ways; an optional leading minus or parenthesis; an optional 'thousand', 'million' or 'billion' word setting the scale) equal to the 10-Q value is stated when a period phrase in the same clause parses to the required period ('three months ended June 30, 2024', 'year to date') or names the 10-Q's fiscal quarter and year ('second quarter of fiscal 2024', 'Q2 FY2024', 'FY24 Q2', 'fiscal 2024 second quarter'; a spelled-out ordinal counts only before 'quarter'; one year earlier for prior-year values) with no date or duration in the clause contradicting the requirement. A clause whose dated period or fiscal-quarter phrase contradicts the requirement does not count; a clause with several amounts and several periods (several dates, fiscal quarters, distinct years as in 'June 30, 2025 and 2024 ... respectively', or durations as in 'second quarter and first six months') cannot be paired and is period_unverified, as is a clause naming several durations, several distinct fiscal quarters (counting those followed by their own end date, and lists such as 'first and second quarters', 'Q1 and Q2', 'Q2/Q3' or 'Q2 & Q3'), several distinct dates (full dates, month-days and month-years, a shorter form inside a fuller date not counted again, and months listed before one shared year, as in 'June and September 2025', each counted as a date of that year), several distinct years (bare, fiscal or FY years, as in 'second quarter of fiscal 2025 and fiscal 2024'; a fiscal-quarter phrase followed by its own end date, as in 'first quarter of fiscal 2026 ended June 30, 2025', counts as that date's year only), or no period phrase; a value's column header naming several periods by the same tests is period_unverified too; a fiscal-quarter phrase followed by 'ended <date>' describes one period.",
+  "currency": "A leading or trailing $, US$ or USD is removed and recorded in the evidence. An equal amount marked with any other currency (any letter-prefixed dollar other than US$, such as C$, CA$, A$ or HK$; the codes CAD, AUD, EUR, GBP, JPY, CHF, CNY, RMB, HKD, SGD, INR, KRW, BRL, MXN, SEK, NOK, DKK, NZD, ZAR, ILS, TWD, PLN, RUB, TRY, ARS, CLP, COP, PHP, IDR, THB, MYR, VND, PKR, EGP, NGN, KES, SAR, AED, QAR, KWD, CZK, HUF, RON, UAH, KZT, ISK, BGN or HRK (ISO codes that are also common words, tickers or headings, such as ALL, TOP or AMD, are not used); the euro, pound, yen/yuan, rupee, won or shekel sign; or, in headers and table-wide text, the currency's name such as Japanese yen, Swiss francs, Russian rubles or Turkish lira; OTHER_CODES, OTHER_SIGNS and OTHER_NAMES in probe.py) is recorded as currency_mismatch: it is not the USD 10-Q component and counts as not stated in both bounds. A unit phrase naming another currency in the table caption or context (table-wide; a column header's currency applies only to its own column) (for example '(in millions of Canadian dollars)', '(in millions of Australian dollars)', '(AUD in millions)', '(Canadian dollars in millions)' or 'C$ in thousands'), or a declaration anywhere in the release's text, table cells and captions included, that its amounts are in another currency ('All amounts are in Canadian dollars'; DOCUMENT_CURRENCY in probe.py), under which an amount without an explicit US$ or USD is currency_mismatch in tables and prose, or a standalone declaration of another currency there ('All amounts are in CAD.', 'All amounts in Canadian dollars', '(in millions) CAD', '(C$)', 'expressed in Canadian dollars'; DECLARED_CURRENCY in probe.py) makes the table's values currency_mismatch; a passing mention of a currency in prose does not.",
+  "label_exclusions": "adjusted|non-?gaap|pro forma|\\bcore\\b|excluding|\\bbefore\\b|per (basic |diluted )?(common )?share|margin|non-?controlling|minority|continuing|discontinued|\\baverage\\b|\\bunder\\s+(?:management|administration|custody)\\b|\\bnormali[sz]ed\\b|\\bunderlying\\b|\\bpre-?tax\\b|\\bavailable\\s+to\\s+common\\b (case-insensitive; also applied to a value's column header, the table-wide header text and a table's caption or short heading, after removing a unit line's 'except ... per share ...' phrase such as 'except share and per share data'; for narrative sentences it is checked from up to 30 characters before the label, starting after the last comma, semicolon, colon or and/or/while/whereas/but there so that a qualifier of an earlier measure ('Adjusted EBITDA improved and net income') is not bound to the label, except that a colon right after an exclusion ('Adjusted: net income') does not break it, to the next amount). For operating cash flow a label, or a narrative label's checked text, containing 'free' ('Free cash flow from operations', 'Free operating cash flow') is excluded as a distinct measure as well (EXCLUDED_FOR in probe.py). A table row of differences ('Increase in net income', 'Change in ...'; CHANGE_LABEL in probe.py), a label followed by a change word ('Net income change', 'Net income (loss) increase'; CHANGE_AFTER) and a note-reference column (a 'Note' or 'Notes' column header, not 'see Note 3'; NOTE_COLUMN) and a column of differences ('Change', '% Change', 'Increase (Decrease)', 'Growth', 'Decline', 'Reduction', 'Improvement' in the value's column header; CHANGE_COLUMN) are not component values. A table label, column header or table-wide header with forward-looking wording (estimated, projected, expected, targeted, forecast, guidance, outlook; FORWARD in probe.py) is not a component value either, nor is any value of a table whose caption, or whose text block just before it when at most 150 characters long (joined to the blocks before it while the nearer blocks only declare units or audit status, as in 'Core Financial Results' over '(Unaudited)' over '(in millions)'), carries forward-looking wording or any label exclusion ('Projected Financial Results', 'Reconciliation of Non-GAAP Measures', 'Core Financial Results').",
+  "specification": "probe.py and test_probe.py are bound by SHA256 in freeze.json and define these rules exactly; this prose summarises them"
+ },
+ "classification": [
+  "stated",
+  "period_unverified",
+  "scale_unverified (equal only at a scale inferred without a unit phrase)",
+  "currency_mismatch (an equal amount in another currency)",
+  "label_only (label found, no equal value)",
+  "not_found",
+  "exhibit_unavailable (unsupported_format, image_dependent, exhibit_overflow, release_unidentified or fetch failure)",
+  "identity_failed",
+  "header_not_prior",
+  "not_comparable",
+  "event flags: release_ambiguous, release_by_type, identity_unverified"
+ ],
+ "statistics": {
+  "per_component": "For each component, the share of comparable events stated, with the same lower and upper bounds as the signals and Wilson 95% intervals for both",
+  "per_signal": "share with every S_flow component stated, and with every Q_flow component stated; assets reported separately",
+  "bounds": "A signal is lower-bound stated when every component in it is stated and the event is neither release_ambiguous nor identity_unverified. It is upper-bound stated when every component is stated, period_unverified, scale_unverified or exhibit_unavailable (for a release_ambiguous event the candidates are matched jointly, so a component found in none of them stays not stated). currency_mismatch, label_only, not_found, identity_failed and header_not_prior are not stated in both bounds.",
+  "interval": "Wilson 95% interval",
+  "strata": "both filing eras separately"
+ },
+ "interpretation": {
+  "per_signal": "For S_flow and Q_flow separately: release_complete_common if the Wilson lower limit of the lower-bound share is at least 0.7; release_complete_rare if the Wilson upper limit of the upper-bound share is below 0.3; otherwise inconclusive",
+  "common": "Justifies only a separately declared full-population extraction of that signal's components from the releases",
+  "never": "No verdict backdates a 10-Q value, changes a completed result, promotes a strategy or implies profitability",
+  "thresholds": {
+   "common_if_wilson_lower_at_least": 0.7,
+   "rare_if_wilson_upper_below": 0.3
+  }
+ },
+ "verification": "Before freezing: offline synthetic tests (test_probe.py) for every rule and for the fetch lifecycle with a fake opener. After the run: probe.py --reanalyze recomputes every classification from the saved bytes and must reproduce events.json, summary.json and spot-check.json exactly, and each of those files must still have the SHA256 recorded in attempt.json; its 'reproduced' value is true, and its exit status 0, only when all of these hold. spot-check.json lists the 20 sampled events with the smallest SHA256 of 'exhibit-content20261002|spot|' + 10-Q accession, a membership fixed before and independent of any classification, with their evidence for an owner reading of the original documents; disagreements are reported with the results. This replaces the draft's separately written checker.",
+ "lifecycle": {
+  "fetch": "The frozen capture's Cache class, executed from its verified bytes (SHA256 962bccbf…), under attempts/<id>/source/: a request_started row is fsynced to requests.jsonl before each request; each URL's outcome is saved once under resources/; a URL with a saved outcome is never requested again; a started URL without an outcome may be requested once more; 403/429 or an oversize response writes STOP.json and halts. A URL that reaches its per-URL attempt ceiling, the lifetime ceiling or the total raw-byte ceiling without an outcome gets STOP.json and then a terminal failure record (never requested again; the stop is written first so a crash between them still needs the review), so after the owner's acknowledgement its event is unavailable rather than halting every resume; once a lifetime or byte stop is acknowledged, later unfetched URLs fail the same way without another stop. Before the cache opens, raw files whose bytes no longer match their SHA256 name (a crash during the cache's direct write) are moved to source/partial and listed in attempt.json, and so is any resource record whose own payload is then missing (the record was made durable but its raw write was not), so the URL keeps its remaining attempt instead of halting on the missing payload; and an incomplete last line of requests.jsonl (a crash during the cache's append; the cache sends a request only after its request_started line is written, so a cut line was never a sent request) is moved to source/partial with its size and SHA256 recorded in attempt.json; a complete journal line that does not parse stops the run for review.",
+  "transport": "A transport failure (no HTTP status) writes STOP.json and halts the attempt, so a network outage cannot silently fail every event. A saved transport failure, access stop (403/429) or oversize response whose URL is not in an acknowledged STOP record halts again on resume, so a crash between saving the outcome and writing STOP.json cannot skip the owner's review. Every STOP.json the probe writes is written atomically and fsynced. An HTTP-level failure the frozen cache does not catch (http.client.HTTPException, such as a body cut short by IncompleteRead) also writes STOP.json and halts; its started request has no saved outcome, so after the owner's acknowledgement the URL uses its remaining attempt.",
+  "locks": [
+   "exclusive study lock probe.lock.sqlite, held for the whole run",
+   "exclusive transaction on the shared .qualification/earnings-quality20260928/sec-source.lock.sqlite, so no other SEC source worker runs at the same time",
+   "a held lock refuses the start; a free study lock means no live worker of this study exists",
+   "under both locks and before any attempt is created or resumed, the running processes are listed (PowerShell Get-CimInstance on Windows, ps elsewhere); any process other than this one and its ancestors whose command line runs a Python launcher (python, pythonw, py or uv) on a path under .qualification or on any study script by its file name (so a worker started inside its study folder, such as 'py capture.py', is seen) refuses the start, because older SEC capture workers hold only their own lock. If the processes cannot be listed the start is refused."
+  ],
+  "attempt": "One attempt per frozen definition under attempts/<uuid>/, with attempt.json (definition and code SHA256s, runtime, status) replaced atomically. A new attempt's folder appears only by renaming a dot-named staging folder that already holds its attempt.json, so a crash before that rename leaves no attempt (the staging folder made no request; preflight lists it). Existing attempts are checked under the study lock: a completed or failed attempt refuses any new run; a new attempt needs a declared amendment.",
+  "resume": "probe.py --resume ID continues a running or halted attempt after the same checks, only when the attempt's recorded code SHA256s equal the active freeze's; the saved sample must equal the recomputed one, a projection interrupted before it was written is completed before any request, a projection written but not yet recorded must equal a fresh projection of the verified records.json before it is bound by its SHA256, and a recorded projection must still match. attempt.json keeps the runtime the attempt began with and records each resume's runtime beside it. A resume checks the saved sample, projection and journal before it consumes an acknowledged STOP or marks the attempt running, so a refused resume leaves the stop and the saved state as they were. When each request is opened (after the cache has fsynced its request_started line and before any network I/O) and after every request outcome, attempt.json records the size and SHA256 of the request journal's complete lines, so a hard crash during a request still leaves its start bound, and a resume is refused unless the journal still begins with exactly those bytes, so a deleted or edited request line cannot reset the per-URL or lifetime counters. Before a resume's first request the probe waits until the declared interval has passed since the last journaled request. A halted attempt resumes only with --acknowledge-stop, which keeps the STOP record renamed beside it. --reanalyze accepts only a complete attempt of the frozen definition, code and inputs, refuses to run under an undeclared Python or tzdata version, and reports reproduced only when the active interpreter's minor version, implementation and America/New_York zone data equal those the attempt began with; every saved payload it reads, an error response's included, must still match its recorded size and SHA256; a completed attempt records in attempt.json the SHA256 of every file under source/ (the request journal, resource records, stops, quarantined parts and every raw payload, including one a crash left without its resource record), and --reanalyze reports reproduced only when they are unchanged; it rechecks the SHA256 of every bound input (the timing events, calendar, pyproject.toml and uv.lock) except records.json, which is not read; the projection's SHA256 recorded in attempt.json is checked instead."
+ },
+ "documents": {
+  "supported": "HTML (by .htm/.html name or an <html>/<table> sniff) and plain text (.txt)",
+  "unsupported": "PDF (%PDF), images and any other binary are exhibit_unavailable (unsupported_format)",
+  "image_dependent": "Per component, not per document. A component that is not stated, period_unverified or scale_unverified (including one that is only currency_mismatch) is exhibit_unavailable (image_dependent) when the document has an <img> whose alt text, file name (URL-decoded, with '_', '-', '+' and '.' read as spaces) or the 300 characters of text before it in source order (in or out of tables) name the statement that would hold it (a statement of income, operations or earnings; a statement of cash flows; a balance sheet or statement of financial condition or position), even when the label appears elsewhere in the document. A logo, chart or any other image does not change label_only or not_found.",
+  "press_release": "Press-release candidates are fetched EX-99 documents whose index description matches (press|news|earnings) then release, separated by spaces, hyphens or dashes ('Press-Release'), case-insensitively, or whose first 3,000 characters of text in source order name the document itself that way: a match there preceded, with at most two words between, by our, the, its, their, see, in, with, accompanying, attached, related, separate, companion, today's, earlier, previous or prior only refers to another document ('see our earnings release', 'in the press release') and does not count, unless 'this' directly precedes it ('in this press release'; RELEASE_REFERENCE and names_itself in probe.py). Exactly one candidate is the release. With none, the single EX-99.1 is used and flagged release_by_type; with no single EX-99.1 the event is release_unidentified (unavailable). With several, all candidates are matched jointly and the event is flagged release_ambiguous.",
+  "secondary": "Availability in any fetched EX-99 document is reported as a separate, non-verdict readout, for every event whose identity checks pass and whose identity is verified (identity_unverified events are excluded), including release_unidentified events",
+  "combination": "When several documents are matched jointly (release_ambiguous candidates, or any EX-99 document for the secondary readout), the component takes the first of stated, period_unverified, scale_unverified, exhibit_unavailable, currency_mismatch, label_only, not_found found in any of them, so a candidate that may hold the value keeps it possible."
+ },
+ "runtime": {
+  "python": "3.13, with pyproject.toml and uv.lock bound by SHA256 at freeze",
+  "clock": "The decision session comes from event_clock in .qualification/filing-features20260928/features.py (SHA256 991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f), loaded only from those verified bytes",
+  "calendar": ".qualification/post-filing-strategy20260928/calendar.json (SHA256 a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560), the same XNYS calendar the completed study and the decision-session audit used",
+  "tzdata": "2026.4",
+  "check": "Each sampled 10-Q's decision session is recomputed with these bindings and must equal its q_entry_session in the decision-session audit's events.json, or the attempt stops before any request",
+  "recorded_per_attempt": [
+   "exact Python version and implementation",
+   "platform",
+   "SQLite version",
+   "tzdata version and America/New_York TZif SHA256",
+   "every bound code and input SHA256"
+  ],
+  "python_version": "3.13",
+  "code": {
+   ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
+   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb",
+   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f"
+  }
+ },
+ "owner_decisions": {
+  "2026-10-02": "Accept the draft defaults: the 1,166-event decision-session single_prior frame, a 150-event sample, thresholds 0.7 and 0.3, and the frozen capture's user agent. Run on the owner's workstation, which also performs the records.json projection."
+ },
+ "paths": {
+  "timing_events": ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json",
+  "calendar": ".qualification/post-filing-strategy20260928/calendar.json",
+  "records": ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json",
+  "shared_source_lock": ".qualification/earnings-quality20260928/sec-source.lock.sqlite"
+ },
+ "inputs": {
+  ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json": "862d0c0959de361ac1d31a76dea4ff0d8bf9a63dbe7060598896bcb2013ca394",
+  ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+  ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json": "0aa2fcd44e400157409a2bc639c8ee8d014d10eae99bc3ad5d7021d5a5df28db",
+  "pyproject.toml": "521e44274b105c32d4835c915f756b60af9a274a2d07664349a2af6a7ae39dae",
+  "uv.lock": "9526a6c3492ee53f927fd6ed5971f10889602da8763eca908b2737e9ea8c28ce"
+ }
+}
