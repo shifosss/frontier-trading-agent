@@ -1163,6 +1163,23 @@ def test_stacked_metadata_titles_midpoints_bounds_ranges_and_note_columns():
     assert classify(note, record=dict(RECORD, current_ni="4000000"))["current_ni"] == "stated"
 
 
+def test_document_currency_declarations_and_forecast_headings_reach_later_blocks():
+    declared = b"<p>All amounts are in Canadian dollars.</p><p>One.</p><p>Two.</p><p>Three.</p>"
+    cad = table([b"Three Months Ended June 30, 2025"], [b"Net income", b"$5.2"])
+    assert classify(declared + cad)["current_ni"] == "currency_mismatch"
+    assert classify(cad)["current_ni"] == "stated"
+    prose = b"<p>Net income for Q2 FY2025 was %s million.</p>"
+    assert classify(declared + prose % b"$5.2")["current_ni"] == "currency_mismatch"
+    assert classify(declared + prose % b"US$5.2")["current_ni"] == "stated"
+    result = prose % b"$5.2"
+    assert classify(b"<h2>Outlook</h2>" + result)["current_ni"] == "label_only"
+    assert classify(b"<h2>Second Quarter Results</h2>" + result)["current_ni"] == "stated"
+    later = b"<h2>Outlook</h2><p>We expect growth.</p><h2>Results</h2>" + result
+    assert classify(later)["current_ni"] == "stated"  # a new heading ends the outlook section
+    bullet = b"<li>Raising full-year outlook</li><li>Net income for Q2 FY2025 was $5.2 million</li>"
+    assert classify(bullet)["current_ni"] == "stated"  # a sentence-case bullet is not a heading
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
@@ -1575,11 +1592,15 @@ def test_crash_before_the_attempt_record_leaves_no_attempt(tmp_path, monkeypatch
 def test_interruption_before_projection_is_completed_on_resume(tmp_path, monkeypatch):
     repo, study = build(tmp_path)
 
-    def stop(*args, **kwargs):
-        raise KeyboardInterrupt
+    write_json = m.write_json
+
+    def stop(frozen, path, value):  # interrupted while the projection is written
+        if Path(path).name == "projection.json":
+            raise KeyboardInterrupt
+        return write_json(frozen, path, value)
 
     with monkeypatch.context() as patch:
-        patch.setattr(m, "project_values", stop)
+        patch.setattr(m, "write_json", stop)
         with pytest.raises(KeyboardInterrupt):
             go(repo, study, Opener(site()))
     attempt = next((study / "attempts").iterdir())
@@ -2094,11 +2115,20 @@ def test_held_locks_and_changed_declaration_refuse_before_any_request(tmp_path):
 
 
 def test_missing_q_record_leaves_the_q_denominator(tmp_path):
-    records = [dict(RECORD, accession=ids(0)[1], q_status="unavailable")]
+    records = [dict(RECORD, accession=ids(i)[1], q_status="unavailable") for i in range(3)]
     repo, study = build(tmp_path, records=records)
     attempt = go(repo, study, Opener(site()))
     summary = json.loads((attempt / "summary.json").read_text())["all"]["signals"]
-    assert summary["Q_flow"]["comparable"] == 0 and summary["S_flow"]["comparable"] == 1
+    assert summary["Q_flow"]["comparable"] == 0 and summary["S_flow"]["comparable"] == 3
+
+
+def test_records_lacking_a_sampled_event_refuse_before_any_attempt_or_request(tmp_path):
+    records = [dict(RECORD, accession=ids(i)[1]) for i in range(2)]  # the third is missing
+    repo, study = build(tmp_path, records=records)
+    opener = Opener(site())
+    with pytest.raises(m.ProbeError, match="lacks sampled accessions"):
+        go(repo, study, opener)
+    assert opener.calls == [] and not (study / "attempts").exists()
 
 
 def test_frozen_declaration_binds_this_code():

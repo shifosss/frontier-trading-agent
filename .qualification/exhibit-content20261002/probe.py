@@ -326,6 +326,9 @@ def project_values(frozen, path, accessions):
             if record["accession"] in out:
                 raise ProbeError("Duplicate qualification record: " + record["accession"])
             out[record["accession"]] = record
+    missing = sorted(wanted - set(out))
+    if missing:  # every sampled event keeps its place; only an unqualified Q leaves Q
+        raise ProbeError("records.json lacks sampled accessions: " + ", ".join(missing))
     return out
 
 
@@ -842,6 +845,12 @@ DECLARED_CURRENCY = re.compile(  # 'All amounts (are) in CAD.', '(in millions) C
     + CURRENCY_NAME,
     re.I,
 )
+DOCUMENT_CURRENCY = re.compile(  # 'All amounts are in Canadian dollars': the whole release
+    r"\b(?:all\s+)?(?:dollar\s+)?(?:amounts?|figures)\b[^.;]{0,40}?\b(?:(?:are|is)\s+(?:\w+\s+)?)?"
+    r"in\s+" + CURRENCY_NAME,
+    re.I,
+)
+EXPLICIT_USD = re.compile(r"US\$|\bUSD\b", re.I)  # still USD under such a declaration
 OTHER_CURRENCY_WORDS = re.compile(
     r"(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:"
     + OTHER_CODES
@@ -1408,6 +1417,33 @@ def bounded(clause, amounts):
     return out
 
 
+def heading_block(block):
+    """A short title-like block: at most 80 characters, no closing punctuation or amount, and
+    every word longer than three letters capitalized ('Business Outlook', not 'Raising full-year
+    outlook')."""
+    words = [w for w in re.findall(r"[A-Za-z][A-Za-z'\-]*", block) if len(w) > 3]
+    return (
+        bool(words)
+        and len(block) <= 80
+        and all(w[0].isupper() for w in words)
+        and not re.search(r"[.!?]\W*$", block)
+        and not money_amounts(block)
+    )
+
+
+def section_flags(blocks):
+    """Per text block: whether it sits under a heading block with forward-looking wording or a
+    non-GAAP qualifier ('Outlook', 'Non-GAAP Financial Measures'), until the next heading."""
+    flags, active = [], False
+    for block in blocks:
+        if heading_block(block):
+            active = bool(FORWARD.search(block) or SECTION_QUALIFIER.search(block))
+            flags.append(False)
+        else:
+            flags.append(active)
+    return flags
+
+
 def included_item(between):
     """An amount introduced as an item within the measure ('included a $5.2 million tax
     benefit', 'reflects income tax expense of'), unless a level verb follows the last such word
@@ -1586,6 +1622,8 @@ def match_component(doc, spec, concept):
         if kind in rank and (best is None or rank.index(kind) < rank.index(best)):
             best = kind
 
+    # 'All amounts are in Canadian dollars' anywhere in the release: '$' there is not USD
+    declared = any(DOCUMENT_CURRENCY.search(block) for block in doc["blocks"])
     for index, table in enumerate(doc["tables"]):
         table_wide = " ".join([table.get("caption", ""), table.get("context", "")])
         single = len({col for col, _ in value_columns(grid(table["rows"]), numeric=True)}) == 1
@@ -1642,6 +1680,7 @@ def match_component(doc, spec, concept):
                 or OTHER_CURRENCY_WORDS.search(wide)  # header cells over every value
                 or CONTEXT_CURRENCY.search(table_wide)
                 or DECLARED_CURRENCY.search(table_wide)
+                or (declared and not EXPLICIT_USD.search(cell))
             ):
                 note("currency_mismatch", item)
                 continue
@@ -1658,12 +1697,16 @@ def match_component(doc, spec, concept):
             else:
                 note("stated", item)
     prose = list(doc["blocks"])
+    under = section_flags(prose)  # blocks under an 'Outlook' or 'Non-GAAP' heading block
     for table in doc["tables"]:  # prose laid out in a row is read as one text, cell by cell
         for cells in table["rows"]:
             texts = [c["text"] for c in cells if c["text"]]
             if texts and (not is_data_row(texts) or CONTINUES.search(texts[0])):
                 prose.append(" ".join(texts))  # '... June 30, 2025 | was $5.2 million'
-    for sentence in sentences(prose):
+                under.append(False)
+    for sentence, sectioned in (
+        (sentence, flag) for block, flag in zip(prose, under) for sentence in sentences([block])
+    ):
         current = None  # the label window that later unlabelled clauses refer to
         for clause in CLAUSE.split(sentence):
             labels = []  # (start, end, usable window or None when excluded)
@@ -1712,6 +1755,7 @@ def match_component(doc, spec, concept):
                     or QUALIFIER.search(trail)  # '$5.2 million attributable to noncontrolling'
                     or DELTA.search(clause[max(0, at - 40) : at])  # 'increased by $5.2 million'
                     or FORWARD.search(clause)  # 'is expected to be', 'Our guidance: net income'
+                    or sectioned  # a block under an 'Outlook' or 'Non-GAAP Measures' heading
                 ):
                     continue  # no label, an excluded measure, or another measure in between
                 scale_options = scales(word) if word else [Decimal(1)]
@@ -1727,7 +1771,7 @@ def match_component(doc, spec, concept):
                     "period": {k: str(v) for k, v in parse_period(clause).items()},
                     "fiscal_quarters": fiscal_quarters(clause),
                 }
-                if not usd:
+                if not usd or (declared and not EXPLICIT_USD.search(text)):
                     note("currency_mismatch", item)
                     continue
                 result = clause_result(clause, spec, len(amounts))
@@ -2430,6 +2474,11 @@ def run(
                     + "; only running or halted attempts resume"
                 )
         identity, sample, calendar = prepare(definition, repo, frozen)
+        accessions = [e["accession"] for e in sample]
+        # a new attempt projects first, so an incomplete records.json refuses before any attempt
+        # folder or request exists
+        records_path = repo / definition["paths"]["records"]
+        values = None if resume else project_values(frozen, records_path, accessions)
         attempt = root / "attempts" / (resume or uuid.uuid4().hex)
         record = attempt / "attempt.json"
         if resume:
@@ -2452,7 +2501,6 @@ def run(
             staging.mkdir(parents=True)
             write_json(frozen, staging / "attempt.json", meta)
             staging.rename(attempt)
-        accessions = [e["accession"] for e in sample]
         projection = attempt / "projection.json"
         unbound = None
         if resume:
@@ -2466,7 +2514,7 @@ def run(
                     raise ProbeError("Saved sample differs from the recomputed sample")
             if projection.exists() and meta.get("projection_sha256") is None:
                 # Written atomically by this attempt before a crash; it must match records.json.
-                unbound = project_values(frozen, repo / definition["paths"]["records"], accessions)
+                unbound = project_values(frozen, records_path, accessions)
                 if load(projection) != json.loads(json.dumps(unbound)):
                     raise ProbeError("Saved projection does not match records.json for this sample")
             elif projection.exists() and file_sha(projection) != meta["projection_sha256"]:
@@ -2489,7 +2537,8 @@ def run(
         if not (attempt / "sample.json").exists():
             write_json(frozen, attempt / "sample.json", accessions)
         if not projection.exists():
-            values = project_values(frozen, repo / definition["paths"]["records"], accessions)
+            if values is None:
+                values = project_values(frozen, records_path, accessions)
             meta["projection_sha256"] = write_json(frozen, projection, values)
             write_json(frozen, record, meta)
         elif unbound is not None:  # checked above; bind it before any request
