@@ -847,6 +847,32 @@ def test_excluded_titles_colon_qualifiers_and_change_amounts():
         assert classify(html)["current_ni"] == "label_only", change
 
 
+def test_change_rows_and_columns_more_currencies_and_fiscal_quarter_headers():
+    header = [b"Three Months Ended June 30, 2025"]
+    assert classify(table(header, [b"Increase in net income", b"5.2"]))["current_ni"] in (
+        "not_found",
+        "label_only",
+    )
+    change = b"""<p>(in millions)</p><table>
+<tr><td></td><td colspan="2">Three Months Ended June 30, 2025</td></tr>
+<tr><td></td><td>Amount</td><td>Change</td></tr>
+<tr><td>Net income</td><td>9.9</td><td>5.2</td></tr></table>"""
+    assert classify(change)["current_ni"] == "label_only"
+    for before in (
+        b"<p>(in millions of Russian rubles)</p>",
+        b"<p>(TRY in millions)</p>",
+        b"<p>(in millions of Turkish lira)</p>",
+    ):
+        html = table(header, [b"Net income", b"5.2"], before=before)
+        assert classify(html)["current_ni"] == "currency_mismatch", before
+    for quarter in (b"Q2 FY2025", b"FY2025 Q2", b"Second quarter of fiscal 2025"):
+        assert classify(table([quarter], [b"Net income", b"5.2"]))["current_ni"] == "stated"
+    other = classify(table([b"Q1 FY2025"], [b"Net income", b"5.2"]))["current_ni"]
+    assert other == "period_unverified"
+    both = table([b"Q2 FY2025", b"Q2 FY2024"], [b"Net income", b"5.2", b"(1.1)"])
+    assert classify(both)["prior_ni"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 

@@ -116,6 +116,13 @@ EXCLUDED_LABEL = re.compile(
     r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b",
     re.I,
 )
+CHANGE_LABEL = re.compile(  # a row of differences: 'Increase in net income', 'Change in ...'
+    r"\b(?:increase|decrease|change|growth|improvement|decline|reduction|variance)s?\s+(?:in|of)\b",
+    re.I,
+)
+CHANGE_COLUMN = re.compile(  # a column of differences: 'Change', '% Change', 'Increase (Decrease)'
+    r"\b(?:changes?|increase|decrease|variance|inc\.?\s*/\s*\(?dec\.?\)?)\b", re.I
+)
 STATEMENT_IMAGE = {
     "net_income": re.compile(
         r"statements? of\b[^.]{0,40}?\b(income|operations|earnings)|income statements?", re.I
@@ -720,8 +727,10 @@ SCALE_WORDS = [
     (Decimal(10**6), re.compile(r"\bmillions?\b", re.I)),
     (Decimal(10**3), re.compile(r"\bthousands?\b|\(000'?s\)|\$000", re.I)),
 ]
-OTHER_CODES = (
+OTHER_CODES = (  # ISO codes that are not common English words, company tickers or headings
     "CAD|AUD|EUR|GBP|JPY|CHF|CNY|RMB|HKD|SGD|INR|KRW|BRL|MXN|SEK|NOK|DKK|NZD|ZAR|ILS|TWD|PLN"
+    "|RUB|TRY|ARS|CLP|COP|PHP|IDR|THB|MYR|VND|PKR|EGP|NGN|KES|SAR|AED|QAR|KWD|CZK|HUF|RON|UAH"
+    "|KZT|ISK|BGN|HRK"
 )
 OTHER_SIGNS = "€|£|¥|₹|₩|₪"
 OTHER_NAMES = (  # currency names that mark a non-USD amount
@@ -730,6 +739,9 @@ OTHER_NAMES = (  # currency names that mark a non-USD amount
     r"|(?:swiss\s+)?francs?|swedish\s+kron(?:a|or)|(?:norwegian|danish)\s+kron(?:e|er)"
     r"|(?:indian\s+)?rupees?|korean\s+won|brazilian\s+reais?|(?:mexican\s+)?pesos?"
     r"|south\s+african\s+rand|(?:israeli\s+)?shekels?|(?:polish\s+)?zloty"
+    r"|(?:russian\s+)?r[ou]?ubles?|(?:turkish\s+)?liras?|rupiah|baht|ringgit|vietnamese\s+dong"
+    r"|dirhams?|riyals?|dinars?|forints?|korun[ay]|romanian\s+lei|hryvnias?|tenge|naira"
+    r"|kenyan\s+shillings?"
 )
 OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
@@ -953,8 +965,8 @@ def is_data_row(texts):
 
 def label_match(text, concept):
     found = LABELS[concept].search(text)
-    if not found or EXCLUDED_LABEL.search(text):
-        return None
+    if not found or EXCLUDED_LABEL.search(text) or CHANGE_LABEL.search(text):
+        return None  # an excluded measure, or a row of differences ('Increase in net income')
     return found[0]
 
 
@@ -1303,6 +1315,21 @@ def fiscal_quarters(clause):
     ]
 
 
+def fiscal_match(spec, quarters, parsed):
+    """The text names the 10-Q's fiscal quarter and year (one year earlier for a prior-year
+    value) and no date or duration in it contradicts the requirement."""
+    fiscal = spec.get("fiscal") or {}
+    if not (spec["kind"] == "duration" and spec["months"] == 3 and fiscal.get("quarter")):
+        return False
+    try:
+        year = int(fiscal["year"]) - (1 if spec.get("prior") else 0)
+    except (TypeError, ValueError):
+        return False
+    return (fiscal["quarter"], year) in quarters and _period_result(parsed, spec) != (
+        "different_period"
+    )
+
+
 def clause_dates(clause):
     """How many distinct dates a clause names in any form parse_period reads: a month, day and
     year, a month and day, or a month and year; a shorter form inside a fuller date is not
@@ -1345,15 +1372,7 @@ def clause_result(clause, spec, amounts):
     several = several or clause_dates(clause) > 1
     if (amounts > 1 and periods > 1) or several:
         return "period_unverified"
-    fiscal = spec.get("fiscal") or {}
-    quarter_ok = False
-    if spec["kind"] == "duration" and spec["months"] == 3 and fiscal.get("quarter"):
-        try:
-            year = int(fiscal["year"]) - (1 if spec.get("prior") else 0)
-        except (TypeError, ValueError):
-            year = None
-        quarter_ok = (fiscal["quarter"], year) in quarters
-        quarter_ok = quarter_ok and _period_result(parsed, spec) != "different_period"
+    quarter_ok = fiscal_match(spec, quarters, parsed)
     if period_ok(parsed, spec) or quarter_ok:
         return "stated"
     if quarters or _period_result(parsed, spec) == "different_period":
@@ -1419,7 +1438,7 @@ def match_component(doc, spec, concept):
                 if whole["end"] and (whole["months"] or whole["ytd"]):
                     period = whole
             item["period"] = {k: str(v) for k, v in period.items()}
-            if excluded_header(header) or excluded_header(units[1]):
+            if excluded_header(header) or excluded_header(units[1]) or CHANGE_COLUMN.search(header):
                 continue  # a non-GAAP or partial column ('Non-GAAP Three Months Ended ...')
             if (
                 currency == "other"
@@ -1430,7 +1449,9 @@ def match_component(doc, spec, concept):
             ):
                 note("currency_mismatch", item)
                 continue
-            if not period_ok(period, spec):
+            quarters = set(fiscal_quarters(header))  # 'Q2 FY2025' over this column alone
+            by_quarter = len(quarters) == 1 and fiscal_match(spec, quarters, period)
+            if not (period_ok(period, spec) or by_quarter):
                 note(_period_result(period, spec), item)
             elif len(options) > 1 and scale != 1:
                 note("scale_unverified", item)  # no unit phrase: the multiplier is inferred
