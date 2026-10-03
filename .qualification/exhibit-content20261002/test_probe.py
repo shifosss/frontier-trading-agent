@@ -963,6 +963,41 @@ Net income                                5.2
     assert classify(text, kind="text")["current_ni"] == "label_only"  # a six-month value
 
 
+def test_in_currency_titles_over_unit_lines_years_colons_and_prefixed_changes():
+    def prose(sentence):
+        return classify(b"<p>" + sentence + b"</p>")["current_ni"]
+
+    q2 = b"Net income for Q2 FY2025 "
+    assert prose(q2 + b"was $5.2 million in Canadian dollars.") == "currency_mismatch"
+    assert prose(q2 + b"was $5.2 million in USD.") == "stated"
+
+    def titled(title):
+        return (
+            b"<p>%s</p><p>(in millions)</p><table><tr><td></td>"
+            b"<td>Three Months Ended June 30, 2025</td></tr>"
+            b"<tr><td>Net income</td><td>5.2</td></tr></table>" % title
+        )
+
+    assert classify(titled(b"Core Financial Results"))["current_ni"] == "label_only"
+    assert classify(titled(b"Condensed Statements of Operations"))["current_ni"] == "stated"
+    text = b"""Core Financial Results
+(in millions)
+                                  Three Months Ended June 30, 2025
+Net income                                5.2
+"""
+    assert classify(text, kind="text")["current_ni"] == "label_only"
+    second = b"Net income for the second quarter of fiscal 2025 "
+    assert prose(second + b"and fiscal 2024 was $5.2 million.") == "period_unverified"
+    assert prose(second + b"ended June 30, 2025 was $5.2 million.") == "stated"
+    assert prose(q2 + b": income tax expense was $5.2 million.") == "label_only"
+    assert prose(q2 + b": $5.2 million.") == "stated"
+    for change in (b"The increase in net income", b"Growth in the Company's net income"):
+        assert prose(change + b" for Q2 FY2025 was $5.2 million.") == "not_found", change
+    assert prose(b"Despite a decline in revenue net income for Q2 FY2025 was $5.2 million.") == (
+        "stated"
+    )
+
+
 # ------------------------------------------------------------------ documents and identity
 
 

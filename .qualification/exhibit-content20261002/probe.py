@@ -120,6 +120,9 @@ CHANGE_LABEL = re.compile(  # a row of differences: 'Increase in net income', 'C
     r"\b(?:increase|decrease|change|growth|improvement|decline|reduction|variance)s?\s+(?:in|of)\b",
     re.I,
 )
+CHANGE_BEFORE = re.compile(  # 'The increase in (the Company's) net income': a change, in prose
+    CHANGE_LABEL.pattern + r"\s+(?:(?:the|our|its|their|[\w&.\-]+['’]s)\s+){0,3}$", re.I
+)
 CHANGE_COLUMN = re.compile(  # a column of differences: 'Change', '% Change', 'Increase (Decrease)'
     r"\b(?:changes?|increase|decrease|variance|inc\.?\s*/\s*\(?dec\.?\)?)\b", re.I
 )
@@ -500,7 +503,7 @@ class Release(HTMLParser):
             if top is None:
                 self._flush()
                 context = self.context()
-                heading = self.since_table[-1] if self.since_table else ""
+                heading = titled(self.since_table)
             else:  # a nested table also takes the text before it in its enclosing cell
                 cell = "".join(top["cell"]["text"]) if top["cell"] is not None else ""
                 context = " ".join((top["context"] + " " + cell).split())[-300:]
@@ -596,6 +599,26 @@ class Release(HTMLParser):
         self._flush()
 
 
+def titled(blocks):
+    """The text block just before a table, joined to the block before it when it only declares
+    units or audit status ('Core Financial Results' over '(in millions)')."""
+    heading = blocks[-1] if blocks else ""
+    if len(blocks) > 1 and unit_line(heading):
+        heading = blocks[-2] + " " + heading
+    return heading
+
+
+def unit_line(text):
+    """'(in millions)', '(Unaudited)', '(Dollars in thousands, except per share data)'."""
+    rest = re.sub(r"\bexcept\b[^()]*", " ", text, flags=re.I)
+    for _, pattern in UNIT_PHRASES:
+        rest = pattern.sub(" ", rest)
+    rest = re.sub(
+        r"\b(?:unaudited|and|of|dollars|u\.?s\.?|usd|amounts)\b|\$|[(),;:.\s]", "", rest, flags=re.I
+    )
+    return len(text) <= 120 and not rest
+
+
 def _span(attrs, name):
     try:
         return max(1, min(int(attrs.get(name) or 1), 50))
@@ -668,7 +691,7 @@ def text_tables(text):
                     if not any(above is h for h in header)
                 )
                 above = [r for r in recent if not any(r is h for h in header)]
-                heading = " ".join(c["text"] for c in above[-1]) if above else ""
+                heading = titled([" ".join(c["text"] for c in line) for line in above])
                 table = {"rows": header, "context": context[-300:], "label_end": label_end}
                 table["heading"] = heading
                 tables.append(table)
@@ -1204,8 +1227,9 @@ MONEY_AFTER = re.compile(
     r"(?P<neg>\(\s?|[-−])?" + AMOUNT + r"\s+(?P<cur>USD|" + OTHER_CODES + r")\b", re.I
 )
 USD_MARKS = {"$", "US$", "USD"}
-TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD': the code after the amount names it
-    r"\s*(?:\b(?P<code>USD|" + OTHER_CODES + r")\b|(?P<name>" + OTHER_NAMES + r")\b)", re.I
+TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD', '... in Canadian dollars': names it
+    r"\s*(?:in\s+)?(?:\b(?P<code>USD|" + OTHER_CODES + r")\b|(?P<name>" + OTHER_NAMES + r")\b)",
+    re.I,
 )
 LEADING_CURRENCY = re.compile(  # 'CAD $5.2 million', '(CAD $5.2)': a code or name just before
     r"(?:\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS + r"|\b(?:" + OTHER_NAMES + r")\b)"
@@ -1320,7 +1344,7 @@ def included_item(between):
 PREFIX_BREAK = re.compile(r"[,;:]|\b(?:and|or|while|whereas|but)\b", re.I)
 FORWARD = re.compile(PROSPECTIVE.pattern + r"|\b(?:guidance|outlook)\b", re.I)
 NEW_SUBJECT = re.compile(  # 'and income tax expense was': another measure takes the amount
-    r"(?:[,;]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
+    r"(?:[,;:]|\b(?:and|while|whereas|but)\b)\s*(?:(?:the|its|our)\s+)?"
     r"(?!(?:it|this|that|which|they|these|those|in|for|during|at|on|of|from|to|by|with|was|were"
     r"|is|are|and|or|while|whereas|but)\b)\b(?P<subject>[a-z][\w&'\-]*(?:\s+[a-z][\w&'\-]*){0,5})"
     r"(?:\s+(?:was|were|is|are|of|totaled|totalled|amounted\s+to|reached"
@@ -1384,13 +1408,26 @@ def fiscal_match(spec, quarters, parsed):
 
 def several_periods(text):
     """The text names several periods at once: several durations, several fiscal quarters
-    (lists such as 'first and second quarters' or 'Q1 and Q2' included) or several dates."""
+    (lists such as 'first and second quarters' or 'Q1 and Q2' included), several dates or
+    several distinct years ('second quarter of fiscal 2025 and fiscal 2024')."""
     return (
         len(durations(text)) > 1
         or len(set(fiscal_quarters(text))) > 1
         or bool(QUARTER_LIST.search(text))
         or clause_dates(text) > 1
+        or len(distinct_years(text)) > 1
     )
+
+
+def distinct_years(text):
+    """Years the text names (FY25 and FY2025 included), a fiscal-quarter phrase followed by its
+    own end date ('first quarter of fiscal 2026 ended June 30, 2025') counting as one period."""
+    for f in reversed(list(FISCAL_QUARTER.finditer(text))):
+        if QUARTER_ENDED.match(text, f.end()):
+            text = text[: f.start()] + " " + text[f.end() :]
+    years = {int(y) for y in YEAR.findall(text)}
+    years |= {int(y) for y in re.findall(r"\bfy\s*'?((?:19|20)\d{2})\b", text, re.I)}
+    return years | {2000 + int(y) for y in re.findall(r"\bfy\s*'?(\d{2})\b", text, re.I)}
 
 
 def clause_dates(clause):
@@ -1544,6 +1581,7 @@ def match_component(doc, spec, concept):
                 ]
                 before = before[cut[-1].end() :] if cut else before
                 excluded = EXCLUDED_LABEL.search(before + clause[f.start() : upto])
+                excluded = excluded or CHANGE_BEFORE.search(before)  # 'The increase in net'
                 window = None if excluded else clause[f.start() : f.end() + 10]
                 labels.append((f.start(), f.end(), window))
             if any(window for _, _, window in labels):
