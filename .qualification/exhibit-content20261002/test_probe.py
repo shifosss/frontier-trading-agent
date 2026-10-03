@@ -869,7 +869,7 @@ def test_change_rows_and_columns_more_currencies_and_fiscal_quarter_headers():
     for quarter in (b"Q2 FY2025", b"FY2025 Q2", b"Second quarter of fiscal 2025"):
         assert classify(table([quarter], [b"Net income", b"5.2"]))["current_ni"] == "stated"
     other = classify(table([b"Q1 FY2025"], [b"Net income", b"5.2"]))["current_ni"]
-    assert other == "period_unverified"
+    assert other == "label_only"  # another fiscal quarter: a different period, dropped
     both = table([b"Q2 FY2025", b"Q2 FY2024"], [b"Net income", b"5.2", b"(1.1)"])
     assert classify(both)["prior_ni"] == "stated"
 
@@ -1106,6 +1106,30 @@ Net income                                5.2
     assert (
         classify(wrapped, kind="text")["current_ni"] == "stated"
     )  # a wrapped label, not a heading
+
+
+def test_mismatched_quarters_tax_labels_result_wording_and_abbreviation_endings():
+    for quarter in (b"Q3 FY2025", b"Q2 FY2024"):
+        html = table([quarter], [b"Net income", b"5.2"])
+        assert classify(html)["current_ni"] == "label_only", quarter  # a different period
+    header = [b"Three Months Ended June 30, 2025"]
+    for label in (b"Net income taxes paid", b"Net income tax expense"):
+        assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
+
+    def prose(sentence):
+        return classify(b"<p>" + sentence + b"</p>")["current_ni"]
+
+    q2 = b"Net income for Q2 FY2025 "
+    for sentence in (
+        q2 + b"resulted primarily from an income tax benefit of $5.2 million.",
+        q2 + b"stemmed from an income tax benefit of $5.2 million.",
+        q2 + b"was driven primarily by a $5.2 million tax benefit.",
+        b"Net income declined in the U.S. Income tax expense for Q2 FY2025 was $5.2 million.",
+    ):
+        assert prose(sentence) == "label_only", sentence
+    assert prose(q2 + b"in the U.S. was $5.2 million.") == "stated"
+    dated = "Net income for the quarter ended Sept. 30, 2025 was $5.2 million at Acme Inc. today."
+    assert list(m.sentences([dated])) == [dated]  # no capital letter after the abbreviations
 
 
 # ------------------------------------------------------------------ documents and identity

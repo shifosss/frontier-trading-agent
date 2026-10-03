@@ -102,7 +102,9 @@ CONCEPT = {
     "prior_fy_assets": "total_assets",
 }
 LABELS = {
-    "net_income": re.compile(r"\bnet \(?(income|earnings|loss)\b", re.I),
+    "net_income": re.compile(  # not 'Net income taxes paid', 'Net income tax expense'
+        r"\bnet \(?(income|earnings|loss)\b(?!\)?\s+tax(?:es)?\b)", re.I
+    ),
     "operating_cash_flow": re.compile(
         r"\b(net )?cash (flows? )?(provided|generated|used|from)\b"
         r"(?:(?!financing|investing)[^|]){0,40}?"
@@ -1210,26 +1212,22 @@ def table_cells(table):
             yield label, m["text"], column, context + " " + wide, row, units, currency, section
 
 
-ABBREVIATIONS = (
-    "Jan Feb Mar Apr Jun Jul Aug Sep Sept Oct Nov Dec vs No Nos approx"
+ABBREVIATIONS = (  # each ends a sentence only before a capital letter
+    "Jan Feb Mar Apr Jun Jul Aug Sep Sept Oct Nov Dec Inc Corp Co Ltd LLC vs No Nos approx"
     " Mr Ms Mrs Dr St Jr Sr U.S U.K e.g i.e etc"
 ).split()
-CORPORATE = "Inc Corp Co Ltd LLC".split()  # end a sentence only before a capital letter
 CLOSING = "[\"'”’)]"
 TAILS = ("", CLOSING, CLOSING * 2)  # up to two closing quotes or brackets after the punctuation
 SENTENCE_BREAK = re.compile(
     "(?:"
     + "|".join(r"(?<=[.;!?]" + tail + ")" for tail in TAILS)
     + ")"
-    + "".join(
-        r"(?<!\b" + word + r"\." + tail + ")"
-        for word in [re.escape(a) for a in ABBREVIATIONS] + ["[A-Z]"]  # '[A-Z]': an initial
-        for tail in TAILS
-    )
-    # 'Acme Inc. Income tax expense ...' ends a sentence; 'Acme Inc. (NASDAQ: ACME)' does not
+    # after an abbreviation or an initial a sentence ends only before a capital letter:
+    # 'in the U.S. Income tax expense' and 'Acme Inc. Income' split; 'Sept. 30' and
+    # 'Acme Inc. (NASDAQ: ACME)' do not
     + "".join(
         r"(?!(?<=\b" + word + r"\." + tail + r")\s+(?-i:[^A-Z]))"
-        for word in CORPORATE
+        for word in [re.escape(a) for a in ABBREVIATIONS] + ["[A-Z]"]  # '[A-Z]': an initial
         for tail in TAILS
     )
     + r"\s+(?=[\"'“‘(]?[A-Za-z0-9$])",
@@ -1239,7 +1237,8 @@ SENTENCE_BREAK = re.compile(
 
 def sentences(blocks):
     """Split at sentence ends, including after closing quotes and before quotes, digits and
-    lowercase starts, but never after an abbreviation such as 'Sept.' or 'Inc.' or an initial."""
+    lowercase starts; after an abbreviation such as 'Sept.', 'U.S.' or 'Inc.' or an initial,
+    only before a capital letter."""
     for block in blocks:
         for sentence in SENTENCE_BREAK.split(block):
             if sentence:
@@ -1368,8 +1367,9 @@ DELTA = re.compile(  # a change or comparison base, not the level: 'increased (b
     re.I,
 )
 INCLUDED = re.compile(  # 'included a $5.2 million tax benefit': an item within the measure
-    r"\b(?:includ(?:e|es|ed|ing)|reflect(?:s|ed|ing)?|benefit(?:s|ed|ted)?\s+from"
-    r"|(?:impacted|affected|driven|offset)\s+by|due\s+to|net\s+of"
+    r"\b(?:includ(?:e|es|ed|ing)|reflect(?:s|ed|ing)?"
+    r"|(?:benefit(?:s|ed|ted)?|result(?:s|ed|ing)?|stem(?:s|med|ming)?)\s+(?:\w+ly\s+)?from"
+    r"|(?:impacted|affected|driven|offset)\s+(?:\w+ly\s+)?by|due\s+(?:\w+ly\s+)?to|net\s+of"
     r"|comprised\s+of|consist(?:s|ed|ing)?\s+of)\b",
     re.I,
 )
@@ -1613,7 +1613,9 @@ def match_component(doc, spec, concept):
             if several_periods(header):  # 'Q1 and Q2 FY2025', two dates beside 'Q2 FY2025'
                 note("period_unverified", item)
             elif not (period_ok(period, spec) or by_quarter):
-                note(_period_result(period, spec), item)
+                # a header naming another fiscal quarter ('Q3 FY2025', 'Q2 FY2024' for the
+                # current quarter) is a different period, as in prose
+                note("different_period" if quarters else _period_result(period, spec), item)
             elif len(options) > 1 and scale != 1:
                 note("scale_unverified", item)  # no unit phrase: the multiplier is inferred
             else:
@@ -2198,9 +2200,7 @@ def fetch_event(frozen, cache, event, checkpoint=lambda: None):
                 for a in acknowledged_stops(cache.root)
             )
             if not reviewed:
-                (cache.root / "STOP.json").write_text(
-                    json.dumps(dict(failure, at=now())), encoding="utf-8"
-                )
+                write_json(frozen, cache.root / "STOP.json", dict(failure, at=now()))
             write_json(frozen, record, failure)
             if not reviewed:
                 raise capture.Halt("Attempt ceiling reached; review, then resume")
@@ -2216,12 +2216,8 @@ def fetch_event(frozen, cache, event, checkpoint=lambda: None):
                 or str(saved.get("error", "")).startswith("Response/raw")
             )
             if stop and url not in acknowledged_urls(cache.root):
-                (cache.root / "STOP.json").write_text(
-                    json.dumps(
-                        {"url": url, "status": saved.get("status"), "error": str(exc), "at": now()}
-                    ),
-                    encoding="utf-8",
-                )
+                stop = {"url": url, "status": saved.get("status"), "error": str(exc), "at": now()}
+                write_json(frozen, cache.root / "STOP.json", stop)
                 if saved.get("status") is None:
                     raise capture.Halt("Transport failure; check the network, then resume") from exc
                 raise capture.Halt("Saved access or size stop; review, then resume") from exc
@@ -2229,11 +2225,10 @@ def fetch_event(frozen, cache, event, checkpoint=lambda: None):
         except http.client.HTTPException as exc:
             # A failure the frozen cache does not catch, such as a body cut short (IncompleteRead):
             # the started request stays journaled without an outcome, so after the owner
-            # acknowledges the stop it uses its remaining attempt.
+            # acknowledges the stop it uses its remaining attempt. The stop is written durably;
+            # a crash before it lands leaves an interrupted request, which may be retried once.
             error = type(exc).__name__ + ": " + str(exc)
-            (cache.root / "STOP.json").write_text(
-                json.dumps({"url": url, "error": error, "at": now()}), encoding="utf-8"
-            )
+            write_json(frozen, cache.root / "STOP.json", {"url": url, "error": error, "at": now()})
             raise capture.Halt("Transport failure; check the network, then resume") from exc
 
     index, error = get(base + accession + "-index.html")
