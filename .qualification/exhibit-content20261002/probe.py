@@ -751,6 +751,7 @@ PREFIX_CELL = re.compile(
 CODE_CELL = re.compile(
     "USD|" + OTHER_CODES + "|" + OTHER_SIGNS + r"|(?<![A-Z])(?!US\$)[A-Z]{1,3}\$"
 )
+MARKER = re.compile(r"\(\d{1,2}\)")  # a numbered footnote in a cell of its own
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
     r"(?:thousands|millions|billions)\s+of\s+(?:" + OTHER_NAMES + r"|pounds"
@@ -847,12 +848,15 @@ def parse_period(text, context=""):
         for m, d, y in DATE_MDY.findall(text)
         if _valid(int(y), MONTHS[m.lower().rstrip(".")[:3]], int(d))
     }
-    if dates:  # another date form beside a full date ('June 30, 2025 and March 2025') adds one
+    if dates:  # another date form beside a full date ('June 30, 2025 and March 2025') adds one,
+        # and so does a year of its own ('June 30, 2025 and 2024')
         years = {(MONTHS[m.lower().rstrip(".")[:3]], int(y)) for m, y in DATE_MY.findall(text)}
         days = {(MONTHS[m.lower().rstrip(".")[:3]], int(d)) for m, d in DATE_MD.findall(text)}
+        bare = {int(y) for y in YEAR.findall(DATE_MY.sub(" ", DATE_MDY.sub(" ", text)))}
+        bare -= {d.year for d in dates}
         years -= {(d.month, d.year) for d in dates}
         days -= {(d.month, d.day) for d in dates}
-        dates |= {("other", m, n) for m, n in years | days}
+        dates |= {("other", m, n) for m, n in years | days} | {("year", y) for y in bare}
     if not dates:  # month-year: the last day of that month
         dates = {
             _month_end(int(y), MONTHS[m.lower().rstrip(".")[:3]]) for m, y in DATE_MY.findall(text)
@@ -1021,8 +1025,13 @@ def _merge(filled):
 
     A currency code in its own cell is read by the row's layout: a code before the first value
     makes codes prefixes, a code after the last value makes them suffixes, and a code only
-    between two values marks both, so a foreign code never leaves a value unmarked."""
-    cells = filled[1:]
+    between two values marks both, so a foreign code never leaves a value unmarked. A numbered
+    footnote alone in a cell ('(1)') is an annotation unless a currency mark precedes it."""
+    cells = [
+        c
+        for before, c in zip(filled, filled[1:])
+        if not (MARKER.fullmatch(c["text"].strip()) and not PREFIX_CELL.fullmatch(before["text"]))
+    ]
     values = [
         i
         for i, c in enumerate(cells)
@@ -1245,7 +1254,10 @@ QUALIFIER = re.compile(  # a non-GAAP or partial measure named after an amount o
 TRAIL_END = re.compile(r"\b(?:and|while|whereas|but)\b", re.I)
 PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     r"\b(?:forecast(?:s|ed|ing)?|project(?:ed|ing|ions?)|expect(?:s|ed|ing)?"
-    r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|(?:will|would|could|may|should)\s+be)\b",
+    r"|anticipat(?:e|es|ed|ing)|estimat(?:e|es|ed|ing)|going\s+to"
+    # a modal names a level that is not yet reported: 'will total', 'would reach', 'may be'
+    r"|(?:will|would|could|should|might|shall)|may\s+(?:not\s+)?(?:be|total|reach|exceed"
+    r"|amount|approximate|range|come|increase|decrease|decline|rise|fall|grow|improve))\b",
     re.I,
 )
 PER_SHARE_UNIT = re.compile(  # '(in thousands, except share and per share data)': a unit line
@@ -1442,6 +1454,7 @@ def match_component(doc, spec, concept):
                 continue  # a non-GAAP or partial column ('Non-GAAP Three Months Ended ...')
             if (
                 currency == "other"
+                or OTHER_CURRENCY_WORDS.search(label)  # 'Net income (CAD millions)'
                 or OTHER_CURRENCY_WORDS.search(header)
                 or OTHER_CURRENCY_WORDS.search(wide_currency)  # header cells over every value
                 or CONTEXT_CURRENCY.search(table_wide)

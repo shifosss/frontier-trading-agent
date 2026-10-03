@@ -873,6 +873,28 @@ def test_change_rows_and_columns_more_currencies_and_fiscal_quarter_headers():
     assert classify(both)["prior_ni"] == "stated"
 
 
+def test_elliptical_years_modal_forecasts_label_currency_and_footnote_cells():
+    both = table([b"Three Months Ended June 30, 2025 and 2024"], [b"Net income", b"5.2"])
+    assert classify(both)["current_ni"] == "period_unverified"
+    for verb in (b"will total", b"will reach", b"would be", b"is going to be", b"may reach"):
+        html = b"<p>Net income for the second quarter of fiscal 2025 %s $5.2 million.</p>" % verb
+        assert classify(html)["current_ni"] == "label_only", verb
+    may = b"<p>Net income for the quarter ended May 31, 2025 was $5.2 million.</p>"
+    assert m.PROSPECTIVE.search(may.decode()) is None  # the month is not a modal
+    header = [b"Three Months Ended June 30, 2025"]
+    coded = table(header, [b"Net income (CAD millions)", b"5.2"])
+    assert classify(coded)["current_ni"] == "currency_mismatch"
+    loss = dict(RECORD, current_ni="-1000000")
+    note = b"""<p>(in millions)</p><table>
+<tr><td></td><td colspan="2">Three Months Ended June 30, 2025</td></tr>
+<tr><td>Net loss</td><td>(1)</td><td>(5.2)</td></tr></table>"""
+    assert classify(note, record=loss)["current_ni"] == "label_only"
+    after = table(header, [b"Net loss", b"(5.2)", b"(1)"])
+    assert classify(after, record=loss)["current_ni"] == "label_only"
+    marked = table(header, [b"Net loss", b"$", b"(1)"])  # a currency mark makes it a value
+    assert classify(marked, record=loss)["current_ni"] == "stated"
+
+
 # ------------------------------------------------------------------ documents and identity
 
 
