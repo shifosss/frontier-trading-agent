@@ -1,0 +1,63 @@
+{
+ "id": "amendment-01",
+ "recorded_at_utc": "2026-10-10T00:53:58.137390+00:00",
+ "supersedes_definition_sha256": "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f",
+ "new_definition_sha256": "00cae883f4e9174cf149e5a83e7958d53b9711d0beb976dd46b5f30b812f08dc",
+ "attempts_under_superseded_definition": 1,
+ "superseded_attempt": {
+  "id": "aa8f9104d57c4d94aada8705284d211b",
+  "status": "halted",
+  "started_at_utc": "2026-10-08T02:37:17.769565+00:00",
+  "halted_at_utc": "2026-10-08T02:37:17.901149+00:00",
+  "halt": "HTTP 403",
+  "runtime": {
+   "python": "3.13.12",
+   "implementation": "CPython",
+   "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+   "sqlite": "3.50.4",
+   "zoneinfo_tzpath": [],
+   "tzdata_package": "2026.4",
+   "new_york_tzif_sha256": "d7f2206b3a45989fc9ad63d558922532fa7352280d5f87176bf1db79cb1d1fa9"
+  },
+  "files": {
+   "attempt.json": "31934eefa5572cd7c51cbcdd9df006c0f147e4388f88466a39c76c70efc3045d",
+   "projection.json": "234154d7baa9e6fa4dca22e3effe21cfa9f328966e4e430428d96ae2ce752aa0",
+   "sample.json": "97e3f048c53e5c894623506f5816c14e954e03bce48e563c1036cf6ff449bb1f",
+   "source/STOP.json": "8a163502c6981f25688c5be3e7af7f6351d91b1725f2023d2abddd483e320b92",
+   "source/raw/a1e9b6f3ffe573823b9d67fa7c58b79d00b774cbd006accc4458e32371e25aac.bin": "a1e9b6f3ffe573823b9d67fa7c58b79d00b774cbd006accc4458e32371e25aac",
+   "source/requests.jsonl": "49808f019ac7b7390e31d179943d304bf1db71c0e949d311b14d28041d2dcbe6",
+   "source/resources/d556bf969eaf23319d3bba01dde7fbcef4ed45c1c6e20d7bfd36699fddf35ff7.json": "8a163502c6981f25688c5be3e7af7f6351d91b1725f2023d2abddd483e320b92"
+  }
+ },
+ "trigger": "Attempt aa8f9104d57c4d94aada8705284d211b made one request (the first event's accession index) and SEC answered HTTP 403 with its 4,819-byte notice for an undeclared automated tool. probe.py wrote STOP.json and halted; the stop is not acknowledged and the attempt is not resumed.",
+ "outcome_access_before_amendment": "probe.py wrote projection.json (the sampled 10-Qs' comparison inputs) before its single request; the request returned SEC's 4,819-byte 403 notice and no exhibit, index or header content was read; the Claude and Codex session transcripts of 2026-10-07..09 show no tool call that displayed projection.json's values (agents only hashed it).",
+ "changes": {
+  "user_agent": {
+   "from": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
+   "to": "Alex Zhang alexandar.zhang@mail.utoronto.ca"
+  },
+  "probe.py": {
+   "blocking_attempts": "new: an attempt blocks a new run unless the definition lists it in reconciled_attempts and a declared amendment supersedes the definition it ran under",
+   "run": "refuses a new attempt only while blocking_attempts is not empty",
+   "preflight": "a resumable attempt is running or halted and carries the active definition and the freeze's code; the attempts blocker follows blocking_attempts",
+   "declaration_problems": "checks that definition and freeze list the same amendment records and that each record's bytes match the freeze"
+  },
+  "definition.json": [
+   "status",
+   "lifecycle.attempt",
+   "owner_decisions.2026-10-09",
+   "amendments",
+   "reconciled_attempts"
+  ],
+  "freeze.json": [
+   "outcome_access_before_freeze and revisions_before_any_run limited to the original freeze of 2026-10-03T03:37Z",
+   "amendments map"
+  ]
+ },
+ "access_check": {
+  "rule": "A GET of https://www.sec.gov/Archives/edgar/full-index/ with the declared user agent; only the status is kept, outside the probe and its journals. It runs once before the freeze, once right before --run and once before acknowledging any 403 or 429. Acknowledge only when that GET returns 200 and it is the attempt's first acknowledged 403 or 429; otherwise stop and re-plan. The probe can never request this URL itself (outside the allowed prefix). An acknowledged 403 is permanent for its URL and its event stays in the denominators as unavailable.",
+  "performed": "on 2026-10-09 a GET of https://www.sec.gov/Archives/edgar/full-index/ with the declared user agent, over a direct connection from the owner's Mac, returned 200 (status only kept; nothing from the sample requested)."
+ },
+ "run_location": "The owner's macOS main checkout only, launched by the owner in Terminal.app; no other checkout, including this worktree and the Windows workstation, may start an amended attempt.",
+ "unchanged": "Frame, sample, projection, request caps, pacing, stop rules, identity checks, matching, statistics and thresholds. Each attempt has its own ceilings, so the two attempts make at most 1,801 requests together."
+}

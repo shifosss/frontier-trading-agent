@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "study": "exhibit-content20261002",
- "status": "Frozen on owner approval (October 2, 2026). The owner accepted the draft defaults and chose to run on the owner's workstation, where records.json and the calendar are available. No SEC request, exhibit read or 10-Q value projection has been made; probe.py makes the requests only when the owner runs it.",
+ "status": "Frozen on owner approval (October 2, 2026) and amended once (amendment-01, October 9, 2026). The owner accepted the draft defaults and chose to run on the owner's workstation, where records.json and the calendar are available. The first attempt, aa8f9104d57c4d94aada8705284d211b, halted on SEC's 403 for an undeclared automated tool at its first request, which returned no index, header or exhibit content; amendment-01 changes only the user agent. probe.py makes SEC requests only when the owner runs it.",
  "question": "For a seeded random sample of strategy-qualified 10-Q events whose only Item 2.02 8-K maps to an earlier decision session, does that 8-K's original press-release exhibit state the same S and Q input values, for the same periods, that the later 10-Q reports?",
  "why": "Both metadata audits found an earlier Item 2.02 8-K for most 10-Qs (disclosure-timing20261001: 63.9-64.4% of qualified events by decision session; disclosure-novelty20261001: 2,484 of 4,057 originals by ET date). Timing does not show content. Only a component shown to be stated in the earlier release may ever move to the earlier clock.",
  "components": {
@@ -88,7 +88,7 @@
   ],
   "redirects": "none; a redirect is saved as a failure",
   "allowed_prefix": "https://www.sec.gov/Archives/edgar/data/",
-  "user_agent": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
+  "user_agent": "Alex Zhang alexandar.zhang@mail.utoronto.ca",
   "never": [
    "images, XBRL or any non-EX-99 document",
    "data.sec.gov",
@@ -189,7 +189,7 @@
    "a held lock refuses the start; a free study lock means no live worker of this study exists",
    "under both locks and before any attempt is created or resumed, the running processes are listed (PowerShell Get-CimInstance on Windows, ps elsewhere); any process other than this one and its ancestors whose command line runs a Python launcher (python, pythonw, py or uv) on a path under .qualification or on any study script by its file name (so a worker started inside its study folder, such as 'py capture.py', is seen) refuses the start, because older SEC capture workers hold only their own lock. If the processes cannot be listed the start is refused."
   ],
-  "attempt": "One attempt per frozen definition under attempts/<uuid>/, with attempt.json (definition and code SHA256s, runtime, status) replaced atomically. A new attempt's folder appears only by renaming a dot-named staging folder that already holds its attempt.json, so a crash before that rename leaves no attempt (the staging folder made no request; preflight lists it). Existing attempts are checked under the study lock: a completed or failed attempt refuses any new run; a new attempt needs a declared amendment.",
+  "attempt": "One attempt per frozen definition under attempts/<uuid>/, with attempt.json (definition and code SHA256s, runtime, status) replaced atomically. A new attempt's folder appears only by renaming a dot-named staging folder that already holds its attempt.json, so a crash before that rename leaves no attempt (the staging folder made no request; preflight lists it). Existing attempts are checked under the study lock: an attempt refuses any new run unless this definition lists it in reconciled_attempts and a declared amendment supersedes the definition it ran under (blocking_attempts in probe.py); an attempt of the active definition always refuses, because a definition cannot contain its own hash. A set-aside attempt is kept unchanged and can be neither resumed nor reanalysed.",
   "resume": "probe.py --resume ID continues a running or halted attempt after the same checks, only when the attempt's recorded code SHA256s equal the active freeze's; the saved sample must equal the recomputed one, a projection interrupted before it was written is completed before any request, a projection written but not yet recorded must equal a fresh projection of the verified records.json before it is bound by its SHA256, and a recorded projection must still match. attempt.json keeps the runtime the attempt began with and records each resume's runtime beside it. A resume checks the saved sample, projection and journal before it consumes an acknowledged STOP or marks the attempt running, so a refused resume leaves the stop and the saved state as they were. When each request is opened (after the cache has fsynced its request_started line and before any network I/O) and after every request outcome, attempt.json records the size and SHA256 of the request journal's complete lines, so a hard crash during a request still leaves its start bound, and a resume is refused unless the journal still begins with exactly those bytes, so a deleted or edited request line cannot reset the per-URL or lifetime counters. Before a resume's first request the probe waits until the declared interval has passed since the last journaled request. A halted attempt resumes only with --acknowledge-stop, which keeps the STOP record renamed beside it. --reanalyze accepts only a complete attempt of the frozen definition, code and inputs, refuses to run under an undeclared Python or tzdata version, and reports reproduced only when the active interpreter's minor version, implementation and America/New_York zone data equal those the attempt began with; every saved payload it reads, an error response's included, must still match its recorded size and SHA256; a completed attempt records in attempt.json the SHA256 of every file under source/ (the request journal, resource records, stops, quarantined parts and every raw payload, including one a crash left without its resource record), and --reanalyze reports reproduced only when they are unchanged; it rechecks the SHA256 of every bound input (the timing events, calendar, pyproject.toml and uv.lock) except records.json, which is not read; the projection's SHA256 recorded in attempt.json is checked instead."
  },
  "documents": {
@@ -221,7 +221,8 @@
   }
  },
  "owner_decisions": {
-  "2026-10-02": "Accept the draft defaults: the 1,166-event decision-session single_prior frame, a 150-event sample, thresholds 0.7 and 0.3, and the frozen capture's user agent. Run on the owner's workstation, which also performs the records.json projection."
+  "2026-10-02": "Accept the draft defaults: the 1,166-event decision-session single_prior frame, a 150-event sample, thresholds 0.7 and 0.3, and the frozen capture's user agent. Run on the owner's workstation, which also performs the records.json projection.",
+  "2026-10-09": "After attempt aa8f9104d57c4d94aada8705284d211b halted on SEC's 403 for an undeclared automated tool, the owner chose amendment-01, which changes only the user agent to the declared \"Alex Zhang alexandar.zhang@mail.utoronto.ca\"; earlier attempts stop blocking only when named and superseded (D1a); access check per D2(a); amendment-01 is revised in place while no attempt exists under it (D3a); aa8f's non-raw files are committed with the amendment (D4a); the amended run happens once, from the owner's macOS main checkout, launched by the owner in Terminal.app."
  },
  "paths": {
   "timing_events": ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json",
@@ -235,5 +236,15 @@
   ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json": "0aa2fcd44e400157409a2bc639c8ee8d014d10eae99bc3ad5d7021d5a5df28db",
   "pyproject.toml": "521e44274b105c32d4835c915f756b60af9a274a2d07664349a2af6a7ae39dae",
   "uv.lock": "9526a6c3492ee53f927fd6ed5971f10889602da8763eca908b2737e9ea8c28ce"
- }
+ },
+ "amendments": [
+  {
+   "id": "amendment-01",
+   "supersedes_definition_sha256": "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f",
+   "record": "amendment-01.json"
+  }
+ ],
+ "reconciled_attempts": [
+  "aa8f9104d57c4d94aada8705284d211b"
+ ]
 }

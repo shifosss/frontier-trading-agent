@@ -1394,11 +1394,12 @@ class Cut(io.BytesIO):
 
 class Opener:
     def __init__(self, pages, fail=None):
-        self.pages, self.fail, self.calls = pages, dict(fail or {}), []
+        self.pages, self.fail, self.calls, self.agents = pages, dict(fail or {}), [], []
 
     def open(self, request, timeout):
         url = request.full_url
         self.calls.append(url)
+        self.agents.append(request.get_header("User-agent"))
         action = self.fail.pop(url, None)
         if action == "interrupt":
             raise KeyboardInterrupt
@@ -1463,6 +1464,7 @@ def build(tmp, records=None, requests=None):
     definition["sample"]["size"] = 3
     definition["requests"]["minimum_request_interval_seconds"] = 0
     definition["requests"].update(requests or {})
+    definition["amendments"], definition["reconciled_attempts"] = [], []
     raw = (json.dumps(definition, indent=1) + "\n").encode()
     (study / "definition.json").write_bytes(raw)
     code = {r: sha((repo / r).read_bytes()) for r in (m.AUDIT[0], m.CAPTURE[0], m.FEATURES[0])}
@@ -1473,6 +1475,35 @@ def build(tmp, records=None, requests=None):
 
 def go(repo, study, opener, **kwargs):
     return m.run(study / "definition.json", study / "freeze.json", repo, study, opener, **kwargs)
+
+
+def amend(study, reconciled, supersedes=None, **requests):
+    """Declare amendment-01: new request settings, the attempts it names, and a fresh freeze."""
+    path = study / "definition.json"
+    supersedes = supersedes or sha(path.read_bytes())
+    definition = json.loads(path.read_text())
+    definition["requests"].update(requests)
+    definition["amendments"] = [
+        {
+            "id": "amendment-01",
+            "supersedes_definition_sha256": supersedes,
+            "record": "amendment-01.json",
+        }
+    ]
+    definition["reconciled_attempts"] = list(reconciled)
+    raw = (json.dumps(definition, indent=1) + "\n").encode()
+    path.write_bytes(raw)
+    record = json.dumps({"supersedes_definition_sha256": supersedes}).encode()
+    (study / "amendment-01.json").write_bytes(record)
+    freeze = json.loads((study / "freeze.json").read_text())
+    freeze.update(definition_sha256=sha(raw), amendments={"amendment-01.json": sha(record)})
+    (study / "freeze.json").write_text(json.dumps(freeze))
+
+
+def tree(folder):
+    return {
+        str(p.relative_to(folder)): sha(p.read_bytes()) for p in folder.rglob("*") if p.is_file()
+    }
 
 
 REAL_PROCESSES = m.processes
@@ -1665,6 +1696,67 @@ def test_rate_limit_halts_and_resumes_only_with_acknowledgement(tmp_path):
     rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows["CCC"]["components"]["current_ni"]["classification"] == "exhibit_unavailable"
     assert list((attempt / "source").glob("STOP-acknowledged-*.json"))
+
+
+def test_amendment_sets_aside_a_named_attempt_and_allows_one_new_run(tmp_path):
+    repo, study = build(tmp_path)
+    old_agent = json.loads((study / "definition.json").read_text())["requests"]["user_agent"]
+    new_agent = "Declared Agent declared@example.com"
+    first = next(iter(site()))
+    refused = Opener(site(), fail={first: 403})
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, refused)
+    halted = next((study / "attempts").iterdir())
+    saved = tree(halted)
+    amend(study, [halted.name], user_agent=new_agent)
+    ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+    assert ready["ready"] and ready["resumable_attempts"] == []
+    opener = Opener(site())
+    new = go(repo, study, opener)
+    assert json.loads((new / "attempt.json").read_text())["status"] == "complete"
+    assert set(refused.agents) == {old_agent} and set(opener.agents) == {new_agent}
+    for name in ("sample.json", "projection.json"):
+        assert (new / name).read_bytes() == (halted / name).read_bytes()
+    with pytest.raises(m.ProbeError, match="another definition"):
+        go(repo, study, Opener(site()), resume=halted.name, acknowledge_stop=True)
+    with pytest.raises(m.ProbeError, match="complete attempt"):
+        m.reanalyze(halted.name, study / "definition.json", study / "freeze.json", repo, study)
+    with pytest.raises(m.ProbeError, match="already exists"):
+        go(repo, study, Opener(site()))
+    assert tree(halted) == saved and not list((halted / "source").glob("STOP-acknowledged-*"))
+
+
+def test_an_attempt_not_named_or_not_superseded_still_blocks(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={first: 403}))
+    halted = next((study / "attempts").iterdir())
+    for reconciled, supersedes in (([], None), ([halted.name], "0" * 64)):
+        amend(study, reconciled, supersedes)
+        opener = Opener(site())
+        with pytest.raises(m.ProbeError, match="already exists"):
+            go(repo, study, opener)
+        assert opener.calls == []
+        ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+        assert not ready["ready"] and ready["resumable_attempts"] == []
+        assert [b["path"] for b in ready["blocking"]] == ["attempts"]
+
+
+def test_changed_or_unbound_amendment_record_refuses_before_any_request(tmp_path):
+    repo, study = build(tmp_path)
+    amend(study, [])
+    record, freeze_path = study / "amendment-01.json", study / "freeze.json"
+    original, freeze = record.read_bytes(), json.loads(freeze_path.read_text())
+    opener = Opener(site())
+    record.write_bytes(original + b" ")
+    with pytest.raises(m.ProbeError, match="Amendment record missing or changed"):
+        go(repo, study, opener)
+    record.write_bytes(original)
+    freeze_path.write_text(json.dumps({k: v for k, v in freeze.items() if k != "amendments"}))
+    with pytest.raises(m.ProbeError, match="Amendment records differ"):
+        go(repo, study, opener)
+    assert opener.calls == [] and not (study / "attempts").exists()
 
 
 def test_unidentified_release_still_reports_any_ex99(tmp_path):
@@ -2182,3 +2274,18 @@ def test_frozen_declaration_binds_this_code():
     for relative, digest in frozen["code"].items():
         assert sha((REPO / relative).read_bytes()) == digest
     assert m.declaration_problems(repo=REPO)[2] == []
+    definition = json.loads((HERE / "definition.json").read_text())
+    agent = definition["requests"]["user_agent"]
+    assert agent.isascii() and agent.isprintable() and "@" in agent
+    amendment = json.loads((HERE / "amendment-01.json").read_text())
+    superseded = "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f"
+    assert amendment["new_definition_sha256"] == frozen["definition_sha256"]
+    assert amendment["supersedes_definition_sha256"] == superseded
+    assert definition["amendments"] == [
+        {
+            "id": "amendment-01",
+            "supersedes_definition_sha256": superseded,
+            "record": "amendment-01.json",
+        }
+    ]
+    assert amendment["superseded_attempt"]["id"] in definition["reconciled_attempts"]

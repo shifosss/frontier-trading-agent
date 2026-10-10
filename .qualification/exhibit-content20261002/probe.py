@@ -2,7 +2,7 @@
 
 Run on the owner's workstation:
     probe.py --preflight              # checks only; no request, no write
-    probe.py --run                    # one new attempt (refused once any attempt exists)
+    probe.py --run                    # one new attempt (refused while an attempt is not set aside)
     probe.py --resume ID [--acknowledge-stop]
     probe.py --reanalyze ID           # recomputes the analysis from saved bytes; writes nothing
 """
@@ -273,6 +273,12 @@ def declaration_problems(definition_path=DEFINITION, freeze_path=FREEZE, repo=RE
     problems = []
     if definition.get("study") != STUDY:
         problems.append("Unexpected study")
+    if {a["record"] for a in definition["amendments"]} != set(frozen.get("amendments", {})):
+        problems.append("Amendment records differ between definition and freeze")
+    for name, digest in frozen.get("amendments", {}).items():
+        path = Path(definition_path).parent / name
+        if not path.is_file() or file_sha(path) != digest:
+            problems.append("Amendment record missing or changed: " + name)
     for relative, digest in frozen.get("code", {}).items():
         path = repo / relative
         if not path.is_file() or file_sha(path) != digest:
@@ -2468,6 +2474,18 @@ def attempts(root):
     return out
 
 
+def blocking_attempts(previous, definition):
+    """One attempt per frozen definition: an attempt blocks a new run unless this definition
+    lists it in reconciled_attempts and a declared amendment supersedes the one it ran under."""
+    superseded = {a["supersedes_definition_sha256"] for a in definition["amendments"]}
+    reconciled = set(definition["reconciled_attempts"])
+    return [
+        path.name
+        for path, meta in previous
+        if path.name not in reconciled or meta.get("definition_sha256") not in superseded
+    ]
+
+
 def prepare(definition, repo, frozen):
     """Everything a run needs before its first request; raises ProbeError on any problem."""
     problems = input_problems(repo, definition)
@@ -2514,7 +2532,7 @@ def run(
         if workers:
             raise ProbeError("Other research workers are running: " + json.dumps(workers))
         previous = attempts(root)  # checked under the study lock
-        if resume is None and previous:
+        if resume is None and blocking_attempts(previous, definition):
             raise ProbeError(
                 "An attempt already exists for this study; resume it or declare an amendment"
             )
@@ -2758,7 +2776,7 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
 
 def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=ROOT):
     """What a run would meet, without any request or write."""
-    definition, _, problems = declaration_problems(definition_path, freeze_path, repo)
+    definition, definition_sha, problems = declaration_problems(definition_path, freeze_path, repo)
     blocking = [{"path": "declaration", "problem": p} for p in problems]
     if problems:
         return {"ready": False, "blocking": blocking}
@@ -2781,9 +2799,19 @@ def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=RO
         workers = [{"problem": str(exc)}]
     if workers:
         blocking.append({"path": "processes", "problem": workers})
-    resumable = [p.name for p, a in attempts(root) if a.get("status") in ("running", "halted")]
-    if attempts(root) and not resumable:
-        blocking.append({"path": "attempts", "problem": "a completed or failed attempt exists"})
+    code = load(freeze_path)["code"]
+    previous = attempts(root)
+    resumable = [
+        p.name
+        for p, a in previous
+        if a.get("status") in ("running", "halted")
+        and a.get("definition_sha256") == definition_sha
+        and a.get("code") == code
+    ]
+    if blocking_attempts(previous, definition) and not resumable:
+        blocking.append(
+            {"path": "attempts", "problem": "an attempt that no amendment sets aside exists"}
+        )
     staging = sorted(p.name for p in (root / "attempts").glob(".*"))  # empty if absent
     result = {
         "ready": not blocking,
