@@ -1,8 +1,8 @@
 {
  "id": "amendment-01",
- "recorded_at_utc": "2026-10-10T00:53:58.137390+00:00",
+ "recorded_at_utc": "2026-10-10T06:49:24.341142+00:00",
  "supersedes_definition_sha256": "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f",
- "new_definition_sha256": "00cae883f4e9174cf149e5a83e7958d53b9711d0beb976dd46b5f30b812f08dc",
+ "new_definition_sha256": "18270233374af71316322075e57ad82cbc961986a2e809946c51ca7a654d1fca",
  "attempts_under_superseded_definition": 1,
  "superseded_attempt": {
   "id": "aa8f9104d57c4d94aada8705284d211b",
@@ -29,8 +29,8 @@
    "source/resources/d556bf969eaf23319d3bba01dde7fbcef4ed45c1c6e20d7bfd36699fddf35ff7.json": "8a163502c6981f25688c5be3e7af7f6351d91b1725f2023d2abddd483e320b92"
   }
  },
- "trigger": "Attempt aa8f9104d57c4d94aada8705284d211b made one request (the first event's accession index) and SEC answered HTTP 403 with its 4,819-byte notice for an undeclared automated tool. probe.py wrote STOP.json and halted; the stop is not acknowledged and the attempt is not resumed.",
- "outcome_access_before_amendment": "probe.py wrote projection.json (the sampled 10-Qs' comparison inputs) before its single request; the request returned SEC's 4,819-byte 403 notice and no exhibit, index or header content was read; the Claude and Codex session transcripts of 2026-10-07..09 show no tool call that displayed projection.json's values (agents only hashed it).",
+ "trigger": "Attempt aa8f9104d57c4d94aada8705284d211b made one request (the first event's accession index) and SEC answered HTTP 403 with its 4,819-byte notice for an undeclared automated tool. probe.py wrote STOP.json and halted; the stop is not acknowledged and the attempt is not resumed. While the amendment was open, the six Codex review comments of 2026-10-03 on PR #3 (probe.py as frozen at 020f0a09) were folded in: 4171587498 is discarded (a row counts only when its value equals NetIncomeLoss within display precision, so a 'to common' line that differs by preferred dividends already fails that check, and with none it is the parent company's net income); 4171587503, 4171587506, 4171587510, 4171587513 and 4171587518 are addressed in narrowed forms.",
+ "outcome_access_before_amendment": "probe.py wrote projection.json (the sampled 10-Qs' comparison inputs) before its single request; the request returned SEC's 4,819-byte 403 notice and no exhibit, index or header content was read. A scan of the eight projected value fields (exact value strings of 5+ digits with no adjacent digit, values also present in test_probe.py skipped) across the Claude session transcripts for this repository and six Codex rollouts found the values of one projection record (index 0) displayed in four tool-call lines of two subagents of one workflow, between 2026-10-10T01:21:46Z and 01:30:14Z, after commit 0b34b177; in one of them the agent re-typed three of the values into a command. None of the six Codex rollouts has any. The owner states he did not open projection.json. The six Codex comments were posted 2026-10-03T03:50:45Z, before projection.json was written (2026-10-08T02:37Z). The narrowed rule forms were chosen on 2026-10-09/10, afterwards, from synthetic cases only, with 0 network requests. Any PR from this branch shows projection.json (from 0b34b177) in its diff to the review bots; matching rules therefore close with this re-freeze (D4a), and later findings on them get a verdict reply and a known-limitation note.",
  "changes": {
   "user_agent": {
    "from": "FrontierResearch/0.1 (bounded local SEC source-feasibility study; no contact address configured)",
@@ -40,18 +40,36 @@
    "blocking_attempts": "new: an attempt blocks a new run unless the definition lists it in reconciled_attempts and a declared amendment supersedes the definition it ran under",
    "run": "refuses a new attempt only while blocking_attempts is not empty",
    "preflight": "a resumable attempt is running or halted and carries the active definition and the freeze's code; the attempts blocker follows blocking_attempts",
-   "declaration_problems": "checks that definition and freeze list the same amendment records and that each record's bytes match the freeze"
+   "declaration_problems": "checks that definition and freeze list the same amendment records and that each record's bytes match the freeze",
+   "release_suffix_4171587506": "RELEASE_SUFFIX: 'earnings release' followed by up to two words and materials, date(s) or available refers to another document in names_itself",
+   "document_currency_4171587503": "DOCUMENT_CURRENCY also matches 'financial information/results/statements are/is presented/reported/expressed/stated in <currency>'. Known limitations, recorded and not fixed: the release-wide financial-information declaration also fires on a possessive segment sentence such as 'Our Canadian subsidiary's financial results are reported in Canadian dollars' or 'The Canadian segment's financial statements are expressed in Canadian dollars', turning the release to currency_mismatch; a possessive guard would also drop real declarations such as 'The Company's financial statements are presented in ...'; '...information in this news release is presented in ...' is not covered",
+   "excluded_for_total_assets_4171587510": "EXCLUDED_FOR['total_assets']: held for sale, acquired, sold",
+   "layout_box_4171587513": "a top-level table with a filled cell, at most one filled cell per row and no nested table is text for the next table (D1a)",
+   "worker_pattern_4171587518": "worker_pattern reads study script names at any depth (rglob)",
+   "available_to_common_D2b": "removed from EXCLUDED_LABEL; 4171587498 is discarded",
+   "currency_word_boundary_D3a": "CURRENCY_NAME ends OTHER_NAMES with a word boundary",
+   "docstring": "run location line: only the owner's macOS main checkout"
   },
   "definition.json": [
    "status",
+   "matching.tables",
+   "matching.currency",
+   "matching.label_exclusions",
+   "documents.press_release",
+   "lifecycle.locks[3]",
    "lifecycle.attempt",
    "owner_decisions.2026-10-09",
+   "owner_decisions.2026-10-10",
    "amendments",
    "reconciled_attempts"
   ],
   "freeze.json": [
    "outcome_access_before_freeze and revisions_before_any_run limited to the original freeze of 2026-10-03T03:37Z",
    "amendments map"
+  ],
+  "test_probe.py": [
+   "lifecycle tests added in 0b34b177 (blocking_attempts, preflight, declaration_problems)",
+   "extended: qualified total assets, document currency declarations and the Europe/euro narrowing, layout boxes (box, spacer, wrapper, CAD unit line), release suffix words, deep worker names, available-to-common flip"
   ]
  },
  "access_check": {
@@ -59,5 +77,5 @@
   "performed": "on 2026-10-09 a GET of https://www.sec.gov/Archives/edgar/full-index/ with the declared user agent, over a direct connection from the owner's Mac, returned 200 (status only kept; nothing from the sample requested)."
  },
  "run_location": "The owner's macOS main checkout only, launched by the owner in Terminal.app; no other checkout, including this worktree and the Windows workstation, may start an amended attempt.",
- "unchanged": "Frame, sample, projection, request caps, pacing, stop rules, identity checks, matching, statistics and thresholds. Each attempt has its own ceilings, so the two attempts make at most 1,801 requests together."
+ "unchanged": "Frame, sample, projection, request caps, pacing, stop rules, identity checks, statistics and thresholds. Each attempt has its own ceilings, so the two attempts make at most 1,801 requests together."
 }

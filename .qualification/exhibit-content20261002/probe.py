@@ -1,6 +1,6 @@
 """Seeded 8-K exhibit-content probe (exhibit-content20261002). See definition.json.
 
-Run on the owner's workstation:
+Run only from the owner's macOS main checkout (amendment-01):
     probe.py --preflight              # checks only; no request, no write
     probe.py --run                    # one new attempt (refused while an attempt is not set aside)
     probe.py --resume ID [--acknowledge-stop]
@@ -117,11 +117,13 @@ EXCLUDED_LABEL = re.compile(
     r"adjusted|non-?gaap|pro forma|\bcore\b|excluding|\bbefore\b|per (basic |diluted )?"
     r"(common )?share|margin|non-?controlling|minority|continuing|discontinued"
     r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b|\bnormali[sz]ed\b"
-    r"|\bunderlying\b|\bpre-?tax\b|\bavailable\s+to\s+common\b",
+    r"|\bunderlying\b|\bpre-?tax\b",
     re.I,
 )
 EXCLUDED_FOR = {  # a distinct measure embedding the label: 'Free cash flow from operations'
     "operating_cash_flow": re.compile(r"\bfree\b", re.I),
+    # a subset or a transaction, not the balance: 'Total assets held for sale', '... acquired'
+    "total_assets": re.compile(r"\bheld\s+for\s+sale\b|\bacquired\b|\bsold\b", re.I),
 }
 
 
@@ -169,6 +171,10 @@ RELEASE_REFERENCE = re.compile(  # 'see our earnings release', 'in the press rel
     re.I,
 )
 RELEASE_SELF = re.compile(r"\bthis\s+$", re.I)  # 'in this press release' names itself
+RELEASE_SUFFIX = re.compile(  # 'earnings release materials', 'Earnings release date:': another one
+    r"earnings[\s\-–—]+release\s+(?:[\w'’\-]+\s+){0,2}?(?:materials?|dates?|available)\b",
+    re.I,
+)
 UNVERIFIED = {
     "period_unverified",
     "scale_unverified",
@@ -503,7 +509,8 @@ def decode(raw):
 class Release(HTMLParser):
     """Tables (rows of cells with colspan), text blocks outside tables, and images.
     A nested table is kept as its own table; each table tracks its own open row and cell.
-    A table's context is the last two text blocks between it and the previous top-level table,
+    A table's context is the last two text blocks between it and the previous top-level table
+    (a top-level layout box, with no inner table and at most one filled cell per row, is text),
     and its position ('at') is the number of text blocks before it, so text keeps source order."""
 
     BREAK = {"p", "div", "br", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "table"}
@@ -547,6 +554,7 @@ class Release(HTMLParser):
                 heading = titled(self.since_table)
                 at = len(self.blocks)
             else:  # a nested table also takes the text before it in its enclosing cell
+                self.stack[0]["nested"] = True  # a box holding a table is not text
                 cell = "".join(top["cell"]["text"]) if top["cell"] is not None else ""
                 context = " ".join((top["context"] + " " + cell).split())[-300:]
                 heading = " ".join(cell.split())
@@ -607,8 +615,13 @@ class Release(HTMLParser):
             table = self.stack.pop()
             keys = ("rows", "caption", "context", "heading", "at")
             self.tables.append({k: table[k] for k in keys})
-            if not self.stack:
-                self.since_table = []
+            if not self.stack:  # a layout box ('Non-GAAP Financial Measures') is text, like a block
+                filled = [[cell["text"] for cell in row if cell["text"]] for row in table["rows"]]
+                boxed = not table.get("nested") and any(filled)
+                boxed = boxed and all(len(cells) <= 1 for cells in filled)
+                self.since_table = (
+                    self.since_table + [cells[0] for cells in filled if cells] if boxed else []
+                )
 
     @staticmethod
     def _close_cell(top):
@@ -854,7 +867,7 @@ CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g
 CURRENCY_NAME = (
     r"(?:\b(?:"
     + OTHER_NAMES
-    + r")|\b(?:"
+    + r")\b|\b(?:"
     + OTHER_CODES
     + r")\b|"
     + OTHER_SIGNS
@@ -874,7 +887,8 @@ DECLARED_CURRENCY = re.compile(  # 'All amounts (are) in CAD.', '(in millions) C
 )
 DOCUMENT_CURRENCY = re.compile(  # 'All amounts are in Canadian dollars': the whole release
     r"\b(?:all\s+)?(?:dollar\s+)?(?:amounts?|figures)\b[^.;]{0,40}?\b(?:(?:are|is)\s+(?:\w+\s+)?)?"
-    r"in\s+" + CURRENCY_NAME,
+    r"in\s+" + CURRENCY_NAME + r"|\bfinancial\s+(?:information|results|statements)\s+(?:are|is)\s+"
+    r"(?:presented|reported|expressed|stated)\s+in\s+" + CURRENCY_NAME,
     re.I,
 )
 EXPLICIT_USD = re.compile(r"US\$|\bUSD\b", re.I)  # still USD under such a declaration
@@ -1859,9 +1873,14 @@ def _period_result(period, spec):
 
 def names_itself(text):
     """The text calls itself a release ('ACME Earnings Release', 'this press release'), not
-    only refers to another document ('see our earnings release', 'in the press release')."""
-    before = [text[max(0, f.start() - 60) : f.start()] for f in RELEASE.finditer(text)]
-    return any(RELEASE_SELF.search(b) or not RELEASE_REFERENCE.search(b) for b in before)
+    only refers to another document ('see our earnings release', 'in the press release',
+    'earnings release materials', 'Earnings release date:')."""
+    found = [(text[max(0, f.start() - 60) : f.start()], f.start()) for f in RELEASE.finditer(text)]
+    return any(
+        RELEASE_SELF.search(before)
+        or not (RELEASE_REFERENCE.search(before) or RELEASE_SUFFIX.match(text, start))
+        for before, start in found
+    )
 
 
 def identify_release(documents):
@@ -2082,10 +2101,10 @@ LAUNCHER = re.compile(r"(?:^|[\s\"'\\/])(?:python[\d.]*w?|py|uv)(?:\.exe)?(?=$|[
 
 
 def worker_pattern(repo):
-    """A command line naming a .qualification path or any study script by its file name, so a
-    worker started inside its study folder ('py capture.py') is seen too."""
+    """A command line naming a .qualification path or any study script, at any depth, by its file
+    name, so a worker started inside its own folder ('py capture.py') is seen too."""
     root = repo / ".qualification"
-    names = sorted({p.name for pattern in ("*/*.py", "*/*/*.py") for p in root.glob(pattern)})
+    names = sorted({p.name for p in root.rglob("*.py")})
     scripts = "|".join(re.escape(name) for name in names)
     named = r"|(?:^|[\s\"'\\/])(?:" + scripts + r")(?=$|[\s\"'])" if names else ""
     return re.compile(r"\.qualification[\\/]" + named, re.I)

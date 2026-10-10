@@ -780,9 +780,17 @@ def test_excluded_column_headers_qualified_totals_and_colon_subjects():
     assert classify(unit)["current_ni"] == "stated"
     year_end = [b"December 31, 2024"]
     assert classify(table(year_end, [b"Total assets", b"1,400"]))["prior_fy_assets"] == "stated"
-    for label in (b"Average total assets", b"Total assets under management"):
+    for label in (
+        b"Average total assets",
+        b"Total assets under management",
+        b"Total assets held for sale",
+        b"Total assets acquired",
+        b"Total assets sold",
+    ):
         result = classify(table(year_end, [label, b"1,400"]))["prior_fy_assets"]
         assert result in ("not_found", "label_only"), label
+    balance = b"<p>Total assets at December 31, 2024 were $1.4 billion.</p>"
+    assert classify(balance)["prior_fy_assets"] == "stated"
     period = b"<p>Net income for the three months ended June 30, 2025: "
     colon = period + b"$4.0 million and income tax expense: $5.2 million.</p>"
     assert classify(colon)["current_ni"] == "label_only"
@@ -1037,9 +1045,10 @@ def test_pretax_and_common_shareholder_labels_and_causal_subjects():
     for label in (
         b"Pre-tax net income",
         b"Pretax net income",
-        b"Net income available to common shareholders",
     ):
         assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
+    common = table(header, [b"Net income", b"6.0"], [b"Net income available to common", b"5.2"])
+    assert classify(common)["current_ni"] == "stated"  # equal only when it is net income
 
     def prose(sentence):
         return classify(b"<p>Net income for Q2 FY2025 " + sentence + b"</p>")["current_ni"]
@@ -1171,6 +1180,21 @@ def test_document_currency_declarations_and_forecast_headings_reach_later_blocks
     prose = b"<p>Net income for Q2 FY2025 was %s million.</p>"
     assert classify(declared + prose % b"$5.2")["current_ni"] == "currency_mismatch"
     assert classify(declared + prose % b"US$5.2")["current_ni"] == "stated"
+    blocks = b"<p>One.</p><p>Two.</p><p>Three.</p>"
+    for wide in (
+        b"<p>All financial information is presented in Canadian dollars.</p>",
+        b"<p>Financial results are reported in Canadian dollars.</p>",
+    ):
+        assert classify(wide + blocks + cad)["current_ni"] == "currency_mismatch", wide
+        assert classify(wide + blocks + prose % b"$5.2")["current_ni"] == "currency_mismatch", wide
+    usd = b"<p>All financial information is presented in U.S. dollars.</p>"
+    assert classify(usd + blocks + cad)["current_ni"] == "stated"
+    fx = b"<p>About 30% of our revenue is denominated in euros.</p>"
+    europe = b"<p>Amounts for our operations in Europe are translated at average rates.</p>"
+    assert classify(europe + blocks + cad)["current_ni"] == "stated"  # 'Euro' is not 'Europe'
+    growth = b"<p>Financial results for the quarter reflect growth in Europe.</p>"
+    assert classify(growth + blocks + cad)["current_ni"] == "stated"
+    assert classify(fx + blocks + prose % b"$5.2")["current_ni"] == "stated"  # a passing mention
     result = prose % b"$5.2"
     assert classify(b"<h2>Outlook</h2>" + result)["current_ni"] == "label_only"
     assert classify(b"<h2>Second Quarter Results</h2>" + result)["current_ni"] == "stated"
@@ -1196,6 +1220,23 @@ def test_table_declarations_layout_headings_quoted_starts_and_free_cash_flow():
     assert classify(ended)["current_ni"] == "stated"  # a layout heading ends the section
     doc = m.parse_document("html", b"<p>One.</p>" + boxed(b"Outlook") + b"<p>Two.</p>")
     assert m.narrative(doc) == [("One.", True), ("Outlook", True), ("Two.", True)]
+    unit = b"<table><tr><td>(in millions)</td><td>Three Months Ended June 30, 2025</td></tr>"
+    unit += b"<tr><td>Net income</td><td>5.2</td></tr></table>"
+    assert classify(boxed(b"Non-GAAP Financial Measures") + unit)["current_ni"] == "label_only"
+    assert classify(boxed(b"Second Quarter Results") + unit)["current_ni"] == "stated"
+    spacer = b"<p>We expect continued growth in fiscal 2026.</p>" + boxed(b"&nbsp;")
+    assert classify(spacer + unit)["current_ni"] == "stated"  # an empty box still ends the text
+    nested = table([b"Three Months Ended June 30, 2025"], [b"Adjusted EBITDA", b"9.9"], before=b"")
+    wrapper = boxed(b"Adjusted EBITDA reconciliation" + nested)
+    assert classify(wrapper + unit)["current_ni"] == "stated"  # a box holding a table is a table
+    data = b"<table><tr><td>Non-GAAP Financial Measures</td><td>Q2</td></tr></table>"
+    balance = b"<table><tr><td>(in millions)</td><td>December 31, 2024</td></tr>"
+    balance += b"<tr><td>Total assets</td><td>1,400</td></tr></table>"
+    heading = classify(boxed(b"Non-GAAP Financial Measures") + balance)
+    assert heading["prior_fy_assets"] == "label_only"
+    assert classify(data + balance)["prior_fy_assets"] == "stated"  # a data table is no heading
+    canadian = boxed(b"(in millions of Canadian dollars)") + unit
+    assert classify(canadian)["current_ni"] == "currency_mismatch"  # as a text block would
     quoted = b'<p>Net income declined in the U.S. "Income tax expense for Q2 FY2025 was $5.2'
     assert classify(quoted + b' million."</p>')["current_ni"] == "label_only"
     assert list(m.sentences(['in the U.S. "the plan"'])) == ['in the U.S. "the plan"']
@@ -1233,6 +1274,23 @@ def test_release_identification():
         "Results. This press release contains",
         "As set out in this press release",
         "See the website. NEWS RELEASE",
+    ):
+        named = [doc("EX-99.1", ""), doc("EX-99.2", "", text)]
+        assert m.identify_release(named) == ("release", [named[1]]), text
+    for text in (
+        "Q2 2025 Investor Presentation. Q2 earnings release materials are available online.",
+        "Earnings release date: August 5, 2025",
+        "The Q2 earnings release is available at ir.acme.com",
+        "Q2 earnings release is available at ir.acme.com",
+    ):
+        referenced = [doc("EX-99.1", "Exhibit 99.1"), doc("EX-99.2", "", text)]
+        assert m.identify_release(referenced) == ("release_by_type", [referenced[0]]), text
+    for text in (
+        "ACME Q2 2025 Earnings Release",
+        "PRESS RELEASE For Immediate Release",
+        "Press release dated August 5, 2025",
+        "This press release is available at ir.acme.com",
+        "PRESS RELEASE DATE: August 5, 2025",
     ):
         named = [doc("EX-99.1", ""), doc("EX-99.2", "", text)]
         assert m.identify_release(named) == ("release", [named[1]]), text
@@ -1536,10 +1594,16 @@ def test_other_research_workers_block_before_any_request(tmp_path, monkeypatch):
 
 def test_workers_started_without_a_qualified_path_are_seen(tmp_path, monkeypatch):
     repo, study = build(tmp_path)
+    deep = repo / ".qualification/earnings-quality20260928/qualification-review/collector"
+    deep.mkdir(parents=True)
+    (deep / "audit_collector.py").write_text("")
+    (repo / ".qualification/corporate_action_probe.py").write_text("")
     for command in (
         "py capture.py --run",
         "C:\\Python313\\pythonw.exe audit.py",
         "uv run probe.py",
+        "python audit_collector.py",
+        "python corporate_action_probe.py",
     ):
         rows = [(os.getpid(), 0, "pytest"), (424242, 1, command)]
         monkeypatch.setattr(m, "processes", lambda rows=rows: rows)
