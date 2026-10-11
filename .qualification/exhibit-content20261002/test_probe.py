@@ -844,6 +844,17 @@ def test_excluded_titles_colon_qualifiers_and_change_amounts():
     unit += b"<td>Three Months Ended June 30, 2025</td></tr>"
     unit += b"<tr><td>Net income</td><td>5,200</td></tr></table>"
     assert classify(unit)["current_ni"] == "stated"
+    header = [b"Three Months Ended June 30, 2025"]
+    for line in (
+        b"(In millions, except per common share data)",
+        b"(In millions, except per diluted share data)",
+        b"(In millions, excluding per share data)",
+        b"(In millions, other than per share data)",
+    ):
+        boxed = b"<table><tr><td>" + line + b"</td></tr></table>"
+        for before in (b"<p>" + line + b"</p>", boxed):
+            html = table(header, [b"Net income", b"5.2"], before=before)
+            assert classify(html)["current_ni"] == "stated", before
     for qualifier in (b"Adjusted", b"Non-GAAP"):
         html = b"<p>" + qualifier + b": net income for Q2 FY2025 was $5.2 million.</p>"
         assert classify(html)["current_ni"] in ("not_found", "label_only"), qualifier
@@ -1195,6 +1206,18 @@ def test_document_currency_declarations_and_forecast_headings_reach_later_blocks
     growth = b"<p>Financial results for the quarter reflect growth in Europe.</p>"
     assert classify(growth + blocks + cad)["current_ni"] == "stated"
     assert classify(fx + blocks + prose % b"$5.2")["current_ni"] == "stated"  # a passing mention
+    for rands in (b"South African rands", b"Polish zlotys"):
+        plural = b"<p>All amounts are in " + rands + b".</p>"
+        assert classify(plural + blocks + cad)["current_ni"] == "currency_mismatch", rands
+    header = [b"Three Months Ended June 30, 2025"]
+    for caption in (
+        b"<p>Our brands include thousands of franchised restaurants.</p><p>(in millions)</p>",
+        b"<p>We serve millions of European customers.</p><p>(in millions)</p>",
+    ):
+        html = table(header, [b"Net income", b"$5.2"], before=caption)
+        assert classify(html)["current_ni"] == "stated", caption  # a word, not a currency name
+    euros = table(header, [b"Net income", b"$5.2"], before=b"<p>(in millions of euros)</p>")
+    assert classify(euros)["current_ni"] == "currency_mismatch"
     result = prose % b"$5.2"
     assert classify(b"<h2>Outlook</h2>" + result)["current_ni"] == "label_only"
     assert classify(b"<h2>Second Quarter Results</h2>" + result)["current_ni"] == "stated"

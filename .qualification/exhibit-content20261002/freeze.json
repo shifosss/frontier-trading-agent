@@ -1,17 +1,17 @@
 {
- "definition_sha256": "18270233374af71316322075e57ad82cbc961986a2e809946c51ca7a654d1fca",
- "frozen_at_utc": "2026-10-10T06:55:06.001937+00:00",
+ "definition_sha256": "f07f494ddcb9be948872d7fb78a92b9ccc176556065a8e57b594825f0cfdb7cb",
+ "frozen_at_utc": "2026-10-11T17:24:59.307320+00:00",
  "code": {
   ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
-  ".qualification/exhibit-content20261002/probe.py": "7d359515ef201296c25efafff90853cd1c5e4c795ef3a6f83789359900c3166c",
-  ".qualification/exhibit-content20261002/test_probe.py": "064332f0fcde23021078d76cb8b441095acabb3973acc488d8441a6529825b5d",
+  ".qualification/exhibit-content20261002/probe.py": "1cbf9dc381f6013ad38c9cf2d50083b3970f0c5f353ff3a147a657d63523194b",
+  ".qualification/exhibit-content20261002/test_probe.py": "44902a7b807a55e4e0d2c9de5424a2d223f38ba9005e0881d231fc7b93ff220b",
   ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
   ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
  },
  "outcome_access_before_freeze": "At the original freeze (2026-10-03T03:37Z) no SEC request, exhibit or records.json value had been read, and no 10-Q value had been projected. Before the freeze the sample draw and the 10-Q session reproduction were dry-checked offline on the committed decision-session events.json and the calendar (150 events from 56 issuers, 70 filed 2012-2020 and 80 filed 2021-2025, 50 with agent-filed 8-Ks, 0 session mismatches); that reads SEC filing metadata only. After it, attempt aa8f9104d57c4d94aada8705284d211b projected the sampled 10-Qs' comparison inputs into projection.json and made one request, which returned SEC's 4,819-byte 403 notice; no exhibit, index or header content was read, and a scan of the eight projected value fields (exact value strings of 5+ digits with no adjacent digit, values also present in test_probe.py skipped) across the Claude session transcripts for this repository and six Codex rollouts found the values of one projection record (index 0) displayed in four tool-call lines of two subagents of one workflow, between 2026-10-10T01:21:46Z and 01:30:14Z, after commit 0b34b177; in one of them the agent re-typed three of the values into a command. None of the six Codex rollouts has any. The owner states he did not open projection.json (amendment-01.json).",
  "amendment_policy": "Any change to definition.json or bound code after this freeze needs a new dated amendment record and a new freeze; existing attempts are never rewritten.",
- "revisions_before_any_run": "This freeze replaces those published in commits 67529c4c, 11e4ca33, 7434c98c, 07c47a95, a12c4da7, ba41656a, 47d27fcb, c6a6485a, 22ce822c, cbc391d5, 570da49d, 8a5080a8, 908a064f, 08483eec, b87f9938, ab1c3fc4, c6711f43, 145c6325, e1cb3fd5, f6817114, 95085381, c5620be3, 49536996, 744b828d, eda1c555, 0637dcb4, 45becdc5, 48410a2d, b5019096, bf327698, 520f4218, 9807d6a8, 934ebe3d and 3daf77f5, each revised after its Codex review and before any attempt existed. At the original freeze (2026-10-03T03:37Z) no SEC request, exhibit or records.json value had been read. The 0b34b177 amendment-01 freeze was replaced in place before any attempt existed under amendment-01.",
+ "revisions_before_any_run": "This freeze replaces those published in commits 67529c4c, 11e4ca33, 7434c98c, 07c47a95, a12c4da7, ba41656a, 47d27fcb, c6a6485a, 22ce822c, cbc391d5, 570da49d, 8a5080a8, 908a064f, 08483eec, b87f9938, ab1c3fc4, c6711f43, 145c6325, e1cb3fd5, f6817114, 95085381, c5620be3, 49536996, 744b828d, eda1c555, 0637dcb4, 45becdc5, 48410a2d, b5019096, bf327698, 520f4218, 9807d6a8, 934ebe3d and 3daf77f5, each revised after its Codex review and before any attempt existed. At the original freeze (2026-10-03T03:37Z) no SEC request, exhibit or records.json value had been read. The 0b34b177 amendment-01 freeze was replaced in place before any attempt existed under amendment-01. The 9dcb441d amendment-01 freeze was likewise replaced in place, after the pre-PR review, before any attempt existed under amendment-01.",
  "amendments": {
-  "amendment-01.json": "f106a94ee640c00217121bddb54df420b1b01417fabcf0a2aafebfedd89e85c6"
+  "amendment-01.json": "92629b9b484cd78b21e6c210135521bde232c0ebb140d9b4ec06b32297408d8f"
  }
 }

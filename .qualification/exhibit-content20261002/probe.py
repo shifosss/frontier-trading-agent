@@ -840,6 +840,7 @@ OTHER_NAMES = (  # currency names that mark a non-USD amount
     r"|dirhams?|riyals?|dinars?|forints?|korun[ay]|romanian\s+lei|hryvnias?|tenge|naira"
     r"|kenyan\s+shillings?"
 )
+OTHER_NAME_WORD = "(?:" + OTHER_NAMES + r")s?\b"  # a whole currency name, singular or plural
 OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(
@@ -851,23 +852,23 @@ CODE_CELL = re.compile(
 MARKER = re.compile(r"\(\d{1,2}\)")  # a numbered footnote in a cell of its own
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
-    r"(?:thousands|millions|billions)\s+of\s+(?:" + OTHER_NAMES + r"|pounds"
+    r"(?:thousands|millions|billions)\s+of\s+(?:" + OTHER_NAME_WORD + r"|pounds"
     r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:" + OTHER_CODES + r")\b)"
     # the currency named first: 'CAD in thousands', 'Canadian dollars in millions'
     r"|(?:\b(?:"
     + OTHER_CODES
     + r")\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|"
     + OTHER_SIGNS
-    + r"|\b(?:"
-    + OTHER_NAMES
-    + r"))"
+    + r"|\b"
+    + OTHER_NAME_WORD
+    + r")"
     r"\s*,?\s*\(?\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
     re.I,
 )
 CURRENCY_NAME = (
-    r"(?:\b(?:"
-    + OTHER_NAMES
-    + r")\b|\b(?:"
+    r"(?:\b"
+    + OTHER_NAME_WORD
+    + r"|\b(?:"
     + OTHER_CODES
     + r")\b|"
     + OTHER_SIGNS
@@ -1401,7 +1402,8 @@ PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     re.I,
 )
 PER_SHARE_UNIT = re.compile(  # '(in thousands, except share and per share data)': a unit line
-    r"except\b[^()]{0,40}?\bper[- ]share\b(?:\s+(?:data|amounts?|information|figures|items))?",
+    r"(?:except|excluding|other\s+than)\b[^()]{0,40}?\bper[- ](?:(?:basic|diluted)\s+)?"
+    r"(?:common\s+)?share\b(?:\s+(?:data|amounts?|information|figures|items))?",
     re.I,
 )
 
