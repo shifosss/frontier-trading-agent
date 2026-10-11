@@ -670,7 +670,7 @@ def titled(blocks):
 
 def unit_line(text):
     """'(in millions)', '(Unaudited)', '(Dollars in thousands, except per share data)'."""
-    rest = re.sub(r"\bexcept\b[^()]*", " ", text, flags=re.I)
+    rest = PER_SHARE_UNIT.sub(" ", re.sub(r"\bexcept\b[^()]*", " ", text, flags=re.I))
     for _, pattern in UNIT_PHRASES:
         rest = pattern.sub(" ", rest)
     rest = re.sub(
@@ -898,9 +898,8 @@ OTHER_CURRENCY_WORDS = re.compile(
     + OTHER_CODES
     + r")\b|"
     + OTHER_SIGNS
-    + r"|\b(?:"
-    + OTHER_NAMES
-    + r")\b",
+    + r"|\b"
+    + OTHER_NAME_WORD,
     re.I,
 )
 
@@ -1319,13 +1318,18 @@ TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD', '(CAD)', 'in Canadian dol
     r"\s*\(?\s*(?:in\s+)?(?:\b(?P<code>USD|"
     + OTHER_CODES
     + r")\b|(?P<name>"
-    + OTHER_NAMES
-    + r")\b)",
+    + OTHER_NAME_WORD
+    + r"))",
     re.I,
 )
 LEADING_CURRENCY = re.compile(  # 'CAD $5.2 million', '(CAD $5.2)', 'Canadian $5.2 million'
-    r"(?:\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS + r"|\b(?:" + OTHER_NAMES + r")\b"
-    r"|\b(?:canadian|australian|hong\s+kong|new\s+zealand|singapore|taiwan(?:ese)?)\b)"
+    r"(?:\b(?:"
+    + OTHER_CODES
+    + r")\b|"
+    + OTHER_SIGNS
+    + r"|\b"
+    + OTHER_NAME_WORD
+    + r"|\b(?:canadian|australian|hong\s+kong|new\s+zealand|singapore|taiwan(?:ese)?)\b)"
     r"\s*\(?\s*$",
     re.I,
 )
@@ -1402,8 +1406,9 @@ PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     re.I,
 )
 PER_SHARE_UNIT = re.compile(  # '(in thousands, except share and per share data)': a unit line
-    r"(?:except|excluding|other\s+than)\b[^()]{0,40}?\bper[- ](?:(?:basic|diluted)\s+)?"
-    r"(?:common\s+)?share\b(?:\s+(?:data|amounts?|information|figures|items))?",
+    r"(?:except\b[^()]{0,40}?\bper[- ](?=share\b)|"
+    r"except\b[^()]{0,40}?\bper[- ]|(?:excluding|other\s+than)\s+per[- ])"
+    r"(?:(?:basic|diluted)\s+)?(?:common\s+)?share\b(?:\s+(?:data|amounts?|information|figures|items))?",
     re.I,
 )
 
