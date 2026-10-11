@@ -670,7 +670,7 @@ def titled(blocks):
 
 def unit_line(text):
     """'(in millions)', '(Unaudited)', '(Dollars in thousands, except per share data)'."""
-    rest = PER_SHARE_UNIT.sub(" ", re.sub(r"\bexcept\b[^()]*", " ", text, flags=re.I))
+    rest = re.sub(r"\bexcept\b[^()]*", " ", text, flags=re.I)
     for _, pattern in UNIT_PHRASES:
         rest = pattern.sub(" ", rest)
     rest = re.sub(
@@ -835,12 +835,12 @@ OTHER_NAMES = (  # currency names that mark a non-USD amount
     r"|euros?|pounds?\s+sterling|(?:japanese\s+)?yen|(?:chinese\s+)?(?:yuan|renminbi)"
     r"|(?:swiss\s+)?francs?|swedish\s+kron(?:a|or)|(?:norwegian|danish)\s+kron(?:e|er)"
     r"|(?:indian\s+)?rupees?|korean\s+won|brazilian\s+reais?|(?:mexican\s+)?pesos?"
-    r"|south\s+african\s+rand|(?:israeli\s+)?shekels?|(?:polish\s+)?zloty"
+    r"|south\s+african\s+rand|(?:israeli\s+)?shekels?|(?:polish\s+)?zlot(?:y|ych)"
     r"|(?:russian\s+)?r[ou]?ubles?|(?:turkish\s+)?liras?|rupiah|baht|ringgit|vietnamese\s+dong"
-    r"|dirhams?|riyals?|dinars?|forints?|korun[ay]|romanian\s+lei|hryvnias?|tenge|naira"
+    r"|dirhams?|riyals?|dinar[ais]?|forints?|korun[ay]|romanian\s+lei|hryvnias?|tenge|naira"
     r"|kenyan\s+shillings?"
 )
-OTHER_NAME_WORD = "(?:" + OTHER_NAMES + r")s?\b"  # a whole currency name, singular or plural
+OTHER_NAME_WORD = "(?:" + OTHER_NAMES + r")s?(?![a-z])"  # footnote marks may follow
 OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(
@@ -1406,9 +1406,7 @@ PROSPECTIVE = re.compile(  # a forecast is not a disclosure of the actual value
     re.I,
 )
 PER_SHARE_UNIT = re.compile(  # '(in thousands, except share and per share data)': a unit line
-    r"(?:except\b[^()]{0,40}?\bper[- ](?=share\b)|"
-    r"except\b[^()]{0,40}?\bper[- ]|(?:excluding|other\s+than)\s+per[- ])"
-    r"(?:(?:basic|diluted)\s+)?(?:common\s+)?share\b(?:\s+(?:data|amounts?|information|figures|items))?",
+    r"except\b[^()]{0,40}?\bper[- ]share\b(?:\s+(?:data|amounts?|information|figures|items))?",
     re.I,
 )
 

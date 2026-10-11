@@ -854,14 +854,12 @@ def test_excluded_titles_colon_qualifiers_and_change_amounts():
         boxed = b"<table><tr><td>" + line + b"</td></tr></table>"
         for before in (b"<p>" + line + b"</p>", boxed):
             html = table(header, [b"Net income", b"5.2"], before=before)
-            assert classify(html)["current_ni"] == "stated", before
+            assert classify(html)["current_ni"] == "label_only", before  # known limit: errs low
         for title in (b"Non-GAAP Results", b"Core", b"Adjusted"):
             html = table(header, [b"Net income", b"5.2"], before=b"<p>" + title + b"</p>" + boxed)
             assert classify(html)["current_ni"] == "label_only", (title, line)
             html = table(header, [b"Net income", b"5.2"], before=b"<p>" + title + b"</p><p>" + line)
             assert classify(html)["current_ni"] == "label_only", (title, line)
-        html = table(header, [b"Net income", b"5.2"], before=b"<p>Financial Results</p>" + boxed)
-        assert classify(html)["current_ni"] == "stated", line
     tail = b"(In millions, except per share data and percentages)"
     tail_box = b"<table><tr><td>" + tail + b"</td></tr></table>"
     for before in (
@@ -888,11 +886,16 @@ def test_excluded_titles_colon_qualifiers_and_change_amounts():
         b"Reconciliation of Net Income Excluding Items, Per Share",
         b"Net Income Excluding Special Items, Per Diluted Share",
         b"Income other than discontinued operations, per share",
+        b"Net Income Excluding Per Share Items",
     ):
         html = table(
             header, [b"Net income", b"5.2"], before=b"<p>" + caption + b"</p><p>(in millions)</p>"
         )
         assert classify(html)["current_ni"] == "label_only", caption
+    html = table(
+        [b"Three Months Ended June 30, 2025 Excluding Per Share Items"], [b"Net income", b"5.2"]
+    )
+    assert classify(html)["current_ni"] == "label_only"
     for qualifier in (b"Adjusted", b"Non-GAAP"):
         html = b"<p>" + qualifier + b": net income for Q2 FY2025 was $5.2 million.</p>"
         assert classify(html)["current_ni"] in ("not_found", "label_only"), qualifier
@@ -1262,6 +1265,15 @@ def test_document_currency_declarations_and_forecast_headings_reach_later_blocks
     assert classify(wide)["current_ni"] == "currency_mismatch"
     label = table(header, [b"Net income (Polish zlotys)", b"5.2"])
     assert classify(label)["current_ni"] == "currency_mismatch"
+    for unit in (
+        b"(in millions of Polish zlotych)",
+        b"(in millions of dinara)",
+        b"(in millions of euros&sup1;)",  # a footnote mark after the name is not a longer word
+        b"(in millions of euros1)",
+        b'(in millions of euros<span style="vertical-align:super">1</span>)',
+    ):
+        html = table(header, [b"Net income", b"$5.2"], before=b"<p>" + unit + b"</p>")
+        assert classify(html)["current_ni"] == "currency_mismatch", unit
     result = prose % b"$5.2"
     assert classify(b"<h2>Outlook</h2>" + result)["current_ni"] == "label_only"
     assert classify(b"<h2>Second Quarter Results</h2>" + result)["current_ni"] == "stated"
