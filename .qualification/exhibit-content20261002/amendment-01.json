@@ -1,8 +1,8 @@
 {
  "id": "amendment-01",
- "recorded_at_utc": "2026-10-11T20:38:30.068735+00:00",
+ "recorded_at_utc": "2026-10-12T02:04:13.194905+00:00",
  "supersedes_definition_sha256": "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f",
- "new_definition_sha256": "a56a653fa98d416efdb5d88a700e6eb174dd3bc15703f4addfa4ce1a30c78882",
+ "new_definition_sha256": "05ed6d3874ad726ab1f576302b5b06c61e9156dedc5dcbf718f8b93327157740",
  "attempts_under_superseded_definition": 1,
  "superseded_attempt": {
   "id": "aa8f9104d57c4d94aada8705284d211b",
@@ -48,11 +48,11 @@
    "worker_pattern_4171587518": "worker_pattern reads study script names at any depth (rglob)",
    "available_to_common_D2b": "removed from EXCLUDED_LABEL; 4171587498 is discarded",
    "per_share_unit_line_reverted_2026_10_11": "PER_SHARE_UNIT and unit_line are unchanged from 9dcb441d. The unit-line exception was widened to 'qualified' per-share forms (cea94e09), scoped to 'excluding' and 'other than' only immediately before 'per share' (b90a5d75) and reverted on 2026-10-11 by the owner after reviews found three regressions that each raised stated. Known limitations, recorded and not fixed: (a) a unit line naming a qualified or 'excluding' or 'other than' per-share exception ('(In millions, except per common share data)', '(..., except per diluted share data)', '(..., excluding per share data)', '(..., other than per share data)') or another exception ('(... except for percentages and average rates)') is not stripped and excludes a GAAP table (errs low); (b) titled() uses the nearest text block, so a prose paragraph between a Non-GAAP, Core, Adjusted or Outlook title and its table keeps the title from the exclusion check (pre-existing); (c) '(... except per share and per diluted share data)' and '(... except per basic share and per diluted share data)' still exclude a GAAP table (unchanged since 9dcb441d)",
-   "currency_name_plural_pre_pr_review_9dcb441d": "OTHER_NAME_WORD = (?:OTHER_NAMES)s?\\b is the single whole-word currency-name fragment, used by CURRENCY_NAME, so 'All amounts are in South African rands' and 'Polish zlotys' are declarations (E2); the other uses are in currency_name_word_pre_pr_review_cea94e09",
+   "currency_name_plural_pre_pr_review_9dcb441d": "OTHER_NAME_WORD = (?:OTHER_NAMES)s?\\b is the single whole-word currency-name fragment, used by CURRENCY_NAME, so 'All amounts are in South African rands' and 'Polish zlotys' are declarations (E2); the other uses are in currency_name_word_pre_pr_review_cea94e09 (history only: the fragment later became s?(?![a-z]), see currency_name_footnote_review_round)",
    "caption_currency_word_boundary_pre_pr_review_9dcb441d": "CONTEXT_CURRENCY uses OTHER_NAME_WORD in both places, so 'thousands of franchised restaurants' and 'millions of European customers' no longer name a currency while '(in millions of euros)' still does (E3)",
    "currency_name_word_pre_pr_review_cea94e09": "OTHER_CURRENCY_WORDS, TRAILING_CURRENCY and LEADING_CURRENCY use OTHER_NAME_WORD, each keeping its own leading boundary and structure; OTHER_NAMES is now referenced only inside OTHER_NAME_WORD, so a header 'South African rands' and a row label 'Net income (Polish zlotys)' are currency_mismatch. The zlotych and dinar entries of OTHER_NAMES also match the Polish genitive plural 'zlotych' and the Serbian 'dinara' and 'dinari' ('zlot(?:y|ych)', 'dinar[ais]?'), restoring the caption matches of 9dcb441d that the whole-word fragment had dropped. Known limitation, recorded and not fixed: the bare 'pounds' alternative of CONTEXT_CURRENCY still matches 'millions of pounds of copper' as currency_mismatch (pre-existing, errs low)",
    "docstring": "run location line: only the owner's macOS main checkout",
-   "currency_name_footnote_review_round": "OTHER_NAME_WORD ends with (?![a-z]) instead of \\b, so a footnote digit or superscript right after a currency name ('euros1', 'euros¹', 'euros' plus a vertical-align:super span) no longer turns '(in millions of euros¹)' into stated; franchised, European, Eurozone, Euronext and eurodollars still do not count as currencies. Known limitation, recorded and not fixed: a letter footnote after the name ('francs' plus 'a') is not matched, since it cannot be told from 'franchise' (D4a)"
+   "currency_name_footnote_review_round": "OTHER_NAME_WORD ends with (?![a-z]) instead of \\b, so a footnote digit or superscript right after a currency name ('euros1', 'euros¹', 'euros' plus a vertical-align:super span) no longer turns '(in millions of euros¹)' into stated; franchised, European, Eurozone, Euronext and eurodollars still do not count as currencies. Known limitation, recorded and not fixed (D4a): a letter footnote glued to a currency name ('millions of Swiss francsa', or a vertical-align:super span holding a letter) and non-English inflections other than 'zlotych', 'dinara' and 'dinari' ('zlotym', 'korunami', 'rublej', 'forintot', 'dinarom') are no longer matched in caption and context unit phrases (CONTEXT_CURRENCY; 9dcb441d matched them by prefix), so such a phrase leaves the table stated (errs high; frequency in English-language 8-K exhibits not measured, expected rare). A one-letter-tail rule would separate 'francsa' from 'franchise' but over-matches English words such as 'France' or 'Korean wont', and the owner froze the matching code on 2026-10-11 instead of iterating. A <sup>a</sup> footnote is unaffected, since the parser drops <sup> text"
   },
   "definition.json": [
    "status",
@@ -67,7 +67,8 @@
    "amendments",
    "reconciled_attempts",
    "owner_decisions.2026-10-11",
-   "owner_decisions.2026-10-11 and matching.currency: footnote marks after a currency name"
+   "owner_decisions.2026-10-11 and matching.currency: footnote marks after a currency name",
+   "wording corrected to the frozen matching code (re-freeze after a1c7cbc8): per-share unit-line description, rands, the pounds exception, letter-footnote and inflection limitations, status dates, owner_decisions.2026-10-11 freeze sentence"
   ],
   "freeze.json": [
    "outcome_access_before_freeze and revisions_before_any_run limited to the original freeze of 2026-10-03T03:37Z",
