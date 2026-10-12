@@ -1,0 +1,38 @@
+{
+ "attempt": "aa8f9104d57c4d94aada8705284d211b",
+ "study": "exhibit-content20261002",
+ "definition_sha256": "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f",
+ "code": {
+  ".qualification/disclosure-timing20261001/audit.py": "c4ccaa30053d49be5410067321bbd20971558a8abd157cccff203234da6a57b4",
+  ".qualification/exhibit-content20261002/probe.py": "e3363871ee556c5aab9f54a67aca000a587a54c1b68c0edcdc2dd88062aaf9ea",
+  ".qualification/exhibit-content20261002/test_probe.py": "a8dbee29fd373003d894df35b04e15713e00c47f0161fa1663e90c872847af5c",
+  ".qualification/filing-features20260928/features.py": "991260b80547c03c873c0d5bf62c57d86bf3fc1f5c0df0c192a7b4cc1fcc372f",
+  ".qualification/filing-source20260928/capture.py": "962bccbf962d6aff53d3102156f3ad1f50765b66a5373124aa6b9ab0a62c84bb"
+ },
+ "inputs": {
+  ".qualification/disclosure-timing20261001/attempts/31316f533e4f4c0e829d9e5bfbc4c6a4/events.json": "862d0c0959de361ac1d31a76dea4ff0d8bf9a63dbe7060598896bcb2013ca394",
+  ".qualification/post-filing-strategy20260928/calendar.json": "a1ead37ff8a7696fd503d0f5eb8c97c99d833be5e9ef3c17c487e610fb5d2560",
+  ".qualification/earnings-quality20260928/qualification/attempts/b1258d8e28124eea8ffdd227f6ac71cf/records.json": "0aa2fcd44e400157409a2bc639c8ee8d014d10eae99bc3ad5d7021d5a5df28db",
+  "pyproject.toml": "521e44274b105c32d4835c915f756b60af9a274a2d07664349a2af6a7ae39dae",
+  "uv.lock": "9526a6c3492ee53f927fd6ed5971f10889602da8763eca908b2737e9ea8c28ce"
+ },
+ "started_at_utc": "2026-10-08T02:37:17.769565+00:00",
+ "resumes": [],
+ "status": "halted",
+ "runtime": {
+  "python": "3.13.12",
+  "implementation": "CPython",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "sqlite": "3.50.4",
+  "zoneinfo_tzpath": [],
+  "tzdata_package": "2026.4",
+  "new_york_tzif_sha256": "d7f2206b3a45989fc9ad63d558922532fa7352280d5f87176bf1db79cb1d1fa9"
+ },
+ "projection_sha256": "234154d7baa9e6fa4dca22e3effe21cfa9f328966e4e430428d96ae2ce752aa0",
+ "journal": {
+  "bytes": 426,
+  "sha256": "49808f019ac7b7390e31d179943d304bf1db71c0e949d311b14d28041d2dcbe6"
+ },
+ "halted_at_utc": "2026-10-08T02:37:17.901149+00:00",
+ "halt": "HTTP 403"
+}

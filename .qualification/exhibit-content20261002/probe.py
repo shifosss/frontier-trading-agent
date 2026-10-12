@@ -1,8 +1,8 @@
 """Seeded 8-K exhibit-content probe (exhibit-content20261002). See definition.json.
 
-Run on the owner's workstation:
+Run only from the owner's macOS main checkout (amendment-01):
     probe.py --preflight              # checks only; no request, no write
-    probe.py --run                    # one new attempt (refused once any attempt exists)
+    probe.py --run                    # one new attempt (refused while an attempt is not set aside)
     probe.py --resume ID [--acknowledge-stop]
     probe.py --reanalyze ID           # recomputes the analysis from saved bytes; writes nothing
 """
@@ -117,11 +117,13 @@ EXCLUDED_LABEL = re.compile(
     r"adjusted|non-?gaap|pro forma|\bcore\b|excluding|\bbefore\b|per (basic |diluted )?"
     r"(common )?share|margin|non-?controlling|minority|continuing|discontinued"
     r"|\baverage\b|\bunder\s+(?:management|administration|custody)\b|\bnormali[sz]ed\b"
-    r"|\bunderlying\b|\bpre-?tax\b|\bavailable\s+to\s+common\b",
+    r"|\bunderlying\b|\bpre-?tax\b",
     re.I,
 )
 EXCLUDED_FOR = {  # a distinct measure embedding the label: 'Free cash flow from operations'
     "operating_cash_flow": re.compile(r"\bfree\b", re.I),
+    # a subset or a transaction, not the balance: 'Total assets held for sale', '... acquired'
+    "total_assets": re.compile(r"\bheld\s+for\s+sale\b|\bacquired\b|\bsold\b", re.I),
 }
 
 
@@ -169,6 +171,10 @@ RELEASE_REFERENCE = re.compile(  # 'see our earnings release', 'in the press rel
     re.I,
 )
 RELEASE_SELF = re.compile(r"\bthis\s+$", re.I)  # 'in this press release' names itself
+RELEASE_SUFFIX = re.compile(  # 'earnings release materials', 'Earnings release date:': another one
+    r"earnings[\s\-–—]+release\s+(?:[\w'’\-]+\s+){0,2}?(?:materials?|dates?|available)\b",
+    re.I,
+)
 UNVERIFIED = {
     "period_unverified",
     "scale_unverified",
@@ -273,6 +279,12 @@ def declaration_problems(definition_path=DEFINITION, freeze_path=FREEZE, repo=RE
     problems = []
     if definition.get("study") != STUDY:
         problems.append("Unexpected study")
+    if {a["record"] for a in definition["amendments"]} != set(frozen.get("amendments", {})):
+        problems.append("Amendment records differ between definition and freeze")
+    for name, digest in frozen.get("amendments", {}).items():
+        path = Path(definition_path).parent / name
+        if not path.is_file() or file_sha(path) != digest:
+            problems.append("Amendment record missing or changed: " + name)
     for relative, digest in frozen.get("code", {}).items():
         path = repo / relative
         if not path.is_file() or file_sha(path) != digest:
@@ -497,7 +509,8 @@ def decode(raw):
 class Release(HTMLParser):
     """Tables (rows of cells with colspan), text blocks outside tables, and images.
     A nested table is kept as its own table; each table tracks its own open row and cell.
-    A table's context is the last two text blocks between it and the previous top-level table,
+    A table's context is the last two text blocks between it and the previous top-level table
+    (a top-level layout box, with no inner table and at most one filled cell per row, is text),
     and its position ('at') is the number of text blocks before it, so text keeps source order."""
 
     BREAK = {"p", "div", "br", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "table"}
@@ -541,6 +554,7 @@ class Release(HTMLParser):
                 heading = titled(self.since_table)
                 at = len(self.blocks)
             else:  # a nested table also takes the text before it in its enclosing cell
+                self.stack[0]["nested"] = True  # a box holding a table is not text
                 cell = "".join(top["cell"]["text"]) if top["cell"] is not None else ""
                 context = " ".join((top["context"] + " " + cell).split())[-300:]
                 heading = " ".join(cell.split())
@@ -601,8 +615,13 @@ class Release(HTMLParser):
             table = self.stack.pop()
             keys = ("rows", "caption", "context", "heading", "at")
             self.tables.append({k: table[k] for k in keys})
-            if not self.stack:
-                self.since_table = []
+            if not self.stack:  # a layout box ('Non-GAAP Financial Measures') is text, like a block
+                filled = [[cell["text"] for cell in row if cell["text"]] for row in table["rows"]]
+                boxed = not table.get("nested") and any(filled)
+                boxed = boxed and all(len(cells) <= 1 for cells in filled)
+                self.since_table = (
+                    self.since_table + [cells[0] for cells in filled if cells] if boxed else []
+                )
 
     @staticmethod
     def _close_cell(top):
@@ -816,11 +835,12 @@ OTHER_NAMES = (  # currency names that mark a non-USD amount
     r"|euros?|pounds?\s+sterling|(?:japanese\s+)?yen|(?:chinese\s+)?(?:yuan|renminbi)"
     r"|(?:swiss\s+)?francs?|swedish\s+kron(?:a|or)|(?:norwegian|danish)\s+kron(?:e|er)"
     r"|(?:indian\s+)?rupees?|korean\s+won|brazilian\s+reais?|(?:mexican\s+)?pesos?"
-    r"|south\s+african\s+rand|(?:israeli\s+)?shekels?|(?:polish\s+)?zloty"
+    r"|south\s+african\s+rand|(?:israeli\s+)?shekels?|(?:polish\s+)?zlot(?:y|ych)"
     r"|(?:russian\s+)?r[ou]?ubles?|(?:turkish\s+)?liras?|rupiah|baht|ringgit|vietnamese\s+dong"
-    r"|dirhams?|riyals?|dinars?|forints?|korun[ay]|romanian\s+lei|hryvnias?|tenge|naira"
+    r"|dirhams?|riyals?|dinar[ais]?|forints?|korun[ay]|romanian\s+lei|hryvnias?|tenge|naira"
     r"|kenyan\s+shillings?"
 )
+OTHER_NAME_WORD = "(?:" + OTHER_NAMES + r")s?(?![a-z])"  # footnote marks may follow
 OTHER_CURRENCY = re.compile(r"(?!US\$)\b[A-Z]{1,3}\$|\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS)
 NUMBER = re.compile(r"^(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?$")
 PREFIX_CELL = re.compile(
@@ -832,23 +852,23 @@ CODE_CELL = re.compile(
 MARKER = re.compile(r"\(\d{1,2}\)")  # a numbered footnote in a cell of its own
 CELL_SCALE = re.compile(r"\s*\b(thousands?|millions?|billions?)\b\.?", re.I)  # '$5.2 million'
 CONTEXT_CURRENCY = re.compile(  # a unit phrase that names another currency, e.g. in a caption
-    r"(?:thousands|millions|billions)\s+of\s+(?:" + OTHER_NAMES + r"|pounds"
+    r"(?:thousands|millions|billions)\s+of\s+(?:" + OTHER_NAME_WORD + r"|pounds"
     r"|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|\b(?:" + OTHER_CODES + r")\b)"
     # the currency named first: 'CAD in thousands', 'Canadian dollars in millions'
     r"|(?:\b(?:"
     + OTHER_CODES
     + r")\b|(?-i:(?!US\$)\b[A-Z]{1,3}\$)|"
     + OTHER_SIGNS
-    + r"|\b(?:"
-    + OTHER_NAMES
-    + r"))"
+    + r"|\b"
+    + OTHER_NAME_WORD
+    + r")"
     r"\s*,?\s*\(?\s*(?:in\s+)?(?:thousands|millions|billions|000s?)\b",
     re.I,
 )
 CURRENCY_NAME = (
-    r"(?:\b(?:"
-    + OTHER_NAMES
-    + r")|\b(?:"
+    r"(?:\b"
+    + OTHER_NAME_WORD
+    + r"|\b(?:"
     + OTHER_CODES
     + r")\b|"
     + OTHER_SIGNS
@@ -868,7 +888,8 @@ DECLARED_CURRENCY = re.compile(  # 'All amounts (are) in CAD.', '(in millions) C
 )
 DOCUMENT_CURRENCY = re.compile(  # 'All amounts are in Canadian dollars': the whole release
     r"\b(?:all\s+)?(?:dollar\s+)?(?:amounts?|figures)\b[^.;]{0,40}?\b(?:(?:are|is)\s+(?:\w+\s+)?)?"
-    r"in\s+" + CURRENCY_NAME,
+    r"in\s+" + CURRENCY_NAME + r"|\bfinancial\s+(?:information|results|statements)\s+(?:are|is)\s+"
+    r"(?:presented|reported|expressed|stated)\s+in\s+" + CURRENCY_NAME,
     re.I,
 )
 EXPLICIT_USD = re.compile(r"US\$|\bUSD\b", re.I)  # still USD under such a declaration
@@ -877,9 +898,8 @@ OTHER_CURRENCY_WORDS = re.compile(
     + OTHER_CODES
     + r")\b|"
     + OTHER_SIGNS
-    + r"|\b(?:"
-    + OTHER_NAMES
-    + r")\b",
+    + r"|\b"
+    + OTHER_NAME_WORD,
     re.I,
 )
 
@@ -1298,13 +1318,18 @@ TRAILING_CURRENCY = re.compile(  # '$5.2 million CAD', '(CAD)', 'in Canadian dol
     r"\s*\(?\s*(?:in\s+)?(?:\b(?P<code>USD|"
     + OTHER_CODES
     + r")\b|(?P<name>"
-    + OTHER_NAMES
-    + r")\b)",
+    + OTHER_NAME_WORD
+    + r"))",
     re.I,
 )
 LEADING_CURRENCY = re.compile(  # 'CAD $5.2 million', '(CAD $5.2)', 'Canadian $5.2 million'
-    r"(?:\b(?:" + OTHER_CODES + r")\b|" + OTHER_SIGNS + r"|\b(?:" + OTHER_NAMES + r")\b"
-    r"|\b(?:canadian|australian|hong\s+kong|new\s+zealand|singapore|taiwan(?:ese)?)\b)"
+    r"(?:\b(?:"
+    + OTHER_CODES
+    + r")\b|"
+    + OTHER_SIGNS
+    + r"|\b"
+    + OTHER_NAME_WORD
+    + r"|\b(?:canadian|australian|hong\s+kong|new\s+zealand|singapore|taiwan(?:ese)?)\b)"
     r"\s*\(?\s*$",
     re.I,
 )
@@ -1853,9 +1878,14 @@ def _period_result(period, spec):
 
 def names_itself(text):
     """The text calls itself a release ('ACME Earnings Release', 'this press release'), not
-    only refers to another document ('see our earnings release', 'in the press release')."""
-    before = [text[max(0, f.start() - 60) : f.start()] for f in RELEASE.finditer(text)]
-    return any(RELEASE_SELF.search(b) or not RELEASE_REFERENCE.search(b) for b in before)
+    only refers to another document ('see our earnings release', 'in the press release',
+    'earnings release materials', 'Earnings release date:')."""
+    found = [(text[max(0, f.start() - 60) : f.start()], f.start()) for f in RELEASE.finditer(text)]
+    return any(
+        RELEASE_SELF.search(before)
+        or not (RELEASE_REFERENCE.search(before) or RELEASE_SUFFIX.match(text, start))
+        for before, start in found
+    )
 
 
 def identify_release(documents):
@@ -2076,10 +2106,10 @@ LAUNCHER = re.compile(r"(?:^|[\s\"'\\/])(?:python[\d.]*w?|py|uv)(?:\.exe)?(?=$|[
 
 
 def worker_pattern(repo):
-    """A command line naming a .qualification path or any study script by its file name, so a
-    worker started inside its study folder ('py capture.py') is seen too."""
+    """A command line naming a .qualification path or any study script, at any depth, by its file
+    name, so a worker started inside its own folder ('py capture.py') is seen too."""
     root = repo / ".qualification"
-    names = sorted({p.name for pattern in ("*/*.py", "*/*/*.py") for p in root.glob(pattern)})
+    names = sorted({p.name for p in root.rglob("*.py")})
     scripts = "|".join(re.escape(name) for name in names)
     named = r"|(?:^|[\s\"'\\/])(?:" + scripts + r")(?=$|[\s\"'])" if names else ""
     return re.compile(r"\.qualification[\\/]" + named, re.I)
@@ -2468,6 +2498,18 @@ def attempts(root):
     return out
 
 
+def blocking_attempts(previous, definition):
+    """One attempt per frozen definition: an attempt blocks a new run unless this definition
+    lists it in reconciled_attempts and a declared amendment supersedes the one it ran under."""
+    superseded = {a["supersedes_definition_sha256"] for a in definition["amendments"]}
+    reconciled = set(definition["reconciled_attempts"])
+    return [
+        path.name
+        for path, meta in previous
+        if path.name not in reconciled or meta.get("definition_sha256") not in superseded
+    ]
+
+
 def prepare(definition, repo, frozen):
     """Everything a run needs before its first request; raises ProbeError on any problem."""
     problems = input_problems(repo, definition)
@@ -2514,7 +2556,7 @@ def run(
         if workers:
             raise ProbeError("Other research workers are running: " + json.dumps(workers))
         previous = attempts(root)  # checked under the study lock
-        if resume is None and previous:
+        if resume is None and blocking_attempts(previous, definition):
             raise ProbeError(
                 "An attempt already exists for this study; resume it or declare an amendment"
             )
@@ -2758,7 +2800,7 @@ def reanalyze(attempt_id, definition_path=DEFINITION, freeze_path=FREEZE, repo=R
 
 def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=ROOT):
     """What a run would meet, without any request or write."""
-    definition, _, problems = declaration_problems(definition_path, freeze_path, repo)
+    definition, definition_sha, problems = declaration_problems(definition_path, freeze_path, repo)
     blocking = [{"path": "declaration", "problem": p} for p in problems]
     if problems:
         return {"ready": False, "blocking": blocking}
@@ -2781,9 +2823,19 @@ def preflight(definition_path=DEFINITION, freeze_path=FREEZE, repo=REPO, root=RO
         workers = [{"problem": str(exc)}]
     if workers:
         blocking.append({"path": "processes", "problem": workers})
-    resumable = [p.name for p, a in attempts(root) if a.get("status") in ("running", "halted")]
-    if attempts(root) and not resumable:
-        blocking.append({"path": "attempts", "problem": "a completed or failed attempt exists"})
+    code = load(freeze_path)["code"]
+    previous = attempts(root)
+    resumable = [
+        p.name
+        for p, a in previous
+        if a.get("status") in ("running", "halted")
+        and a.get("definition_sha256") == definition_sha
+        and a.get("code") == code
+    ]
+    if blocking_attempts(previous, definition) and not resumable:
+        blocking.append(
+            {"path": "attempts", "problem": "an attempt that no amendment sets aside exists"}
+        )
     staging = sorted(p.name for p in (root / "attempts").glob(".*"))  # empty if absent
     result = {
         "ready": not blocking,

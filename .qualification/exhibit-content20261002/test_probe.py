@@ -780,9 +780,17 @@ def test_excluded_column_headers_qualified_totals_and_colon_subjects():
     assert classify(unit)["current_ni"] == "stated"
     year_end = [b"December 31, 2024"]
     assert classify(table(year_end, [b"Total assets", b"1,400"]))["prior_fy_assets"] == "stated"
-    for label in (b"Average total assets", b"Total assets under management"):
+    for label in (
+        b"Average total assets",
+        b"Total assets under management",
+        b"Total assets held for sale",
+        b"Total assets acquired",
+        b"Total assets sold",
+    ):
         result = classify(table(year_end, [label, b"1,400"]))["prior_fy_assets"]
         assert result in ("not_found", "label_only"), label
+    balance = b"<p>Total assets at December 31, 2024 were $1.4 billion.</p>"
+    assert classify(balance)["prior_fy_assets"] == "stated"
     period = b"<p>Net income for the three months ended June 30, 2025: "
     colon = period + b"$4.0 million and income tax expense: $5.2 million.</p>"
     assert classify(colon)["current_ni"] == "label_only"
@@ -836,6 +844,58 @@ def test_excluded_titles_colon_qualifiers_and_change_amounts():
     unit += b"<td>Three Months Ended June 30, 2025</td></tr>"
     unit += b"<tr><td>Net income</td><td>5,200</td></tr></table>"
     assert classify(unit)["current_ni"] == "stated"
+    header = [b"Three Months Ended June 30, 2025"]
+    for line in (
+        b"(In millions, except per common share data)",
+        b"(In millions, except per diluted share data)",
+        b"(In millions, excluding per share data)",
+        b"(In millions, other than per share data)",
+    ):
+        boxed = b"<table><tr><td>" + line + b"</td></tr></table>"
+        for before in (b"<p>" + line + b"</p>", boxed):
+            html = table(header, [b"Net income", b"5.2"], before=before)
+            assert classify(html)["current_ni"] == "label_only", before  # known limit: errs low
+        for title in (b"Non-GAAP Results", b"Core", b"Adjusted"):
+            html = table(header, [b"Net income", b"5.2"], before=b"<p>" + title + b"</p>" + boxed)
+            assert classify(html)["current_ni"] == "label_only", (title, line)
+            html = table(header, [b"Net income", b"5.2"], before=b"<p>" + title + b"</p><p>" + line)
+            assert classify(html)["current_ni"] == "label_only", (title, line)
+    tail = b"(In millions, except per share data and percentages)"
+    tail_box = b"<table><tr><td>" + tail + b"</td></tr></table>"
+    for before in (
+        b"<p>Non-GAAP Results</p><p>" + tail + b"</p>",
+        b"<p>Non-GAAP Results</p>" + tail_box,
+    ):
+        html = table(header, [b"Net income", b"5.2"], before=before)
+        assert classify(html)["current_ni"] == "label_only", before
+    title = b"Condensed Consolidated Statements of Operations and Comprehensive Income for the "
+    title += b"Three and Six Months Ended June 30, 2025 and 2024"
+    average = b"<p>(In millions, except per share data and average balances)</p>"
+    html = table(header, [b"Net income", b"5.2"], before=b"<p>" + title + b"</p>" + average)
+    assert classify(html)["current_ni"] == "stated"
+    short = (
+        b"Condensed Consolidated Statements of Operations"  # title + line stay under 150 characters
+    )
+    for line, amount in (
+        (b"(In millions, except per diluted share data and per share amounts)", b"5.2"),
+        (b"(In thousands, except per common share and per share data)", b"5,200"),
+    ):
+        html = table(header, [b"Net income", amount], before=b"<p>" + short + b"</p><p>" + line)
+        assert classify(html)["current_ni"] == "stated", line
+    for caption in (
+        b"Reconciliation of Net Income Excluding Items, Per Share",
+        b"Net Income Excluding Special Items, Per Diluted Share",
+        b"Income other than discontinued operations, per share",
+        b"Net Income Excluding Per Share Items",
+    ):
+        html = table(
+            header, [b"Net income", b"5.2"], before=b"<p>" + caption + b"</p><p>(in millions)</p>"
+        )
+        assert classify(html)["current_ni"] == "label_only", caption
+    html = table(
+        [b"Three Months Ended June 30, 2025 Excluding Per Share Items"], [b"Net income", b"5.2"]
+    )
+    assert classify(html)["current_ni"] == "label_only"
     for qualifier in (b"Adjusted", b"Non-GAAP"):
         html = b"<p>" + qualifier + b": net income for Q2 FY2025 was $5.2 million.</p>"
         assert classify(html)["current_ni"] in ("not_found", "label_only"), qualifier
@@ -1037,9 +1097,10 @@ def test_pretax_and_common_shareholder_labels_and_causal_subjects():
     for label in (
         b"Pre-tax net income",
         b"Pretax net income",
-        b"Net income available to common shareholders",
     ):
         assert classify(table(header, [label, b"5.2"]))["current_ni"] == "not_found", label
+    common = table(header, [b"Net income", b"6.0"], [b"Net income available to common", b"5.2"])
+    assert classify(common)["current_ni"] == "stated"  # equal only when it is net income
 
     def prose(sentence):
         return classify(b"<p>Net income for Q2 FY2025 " + sentence + b"</p>")["current_ni"]
@@ -1171,6 +1232,48 @@ def test_document_currency_declarations_and_forecast_headings_reach_later_blocks
     prose = b"<p>Net income for Q2 FY2025 was %s million.</p>"
     assert classify(declared + prose % b"$5.2")["current_ni"] == "currency_mismatch"
     assert classify(declared + prose % b"US$5.2")["current_ni"] == "stated"
+    blocks = b"<p>One.</p><p>Two.</p><p>Three.</p>"
+    for wide in (
+        b"<p>All financial information is presented in Canadian dollars.</p>",
+        b"<p>Financial results are reported in Canadian dollars.</p>",
+    ):
+        assert classify(wide + blocks + cad)["current_ni"] == "currency_mismatch", wide
+        assert classify(wide + blocks + prose % b"$5.2")["current_ni"] == "currency_mismatch", wide
+    usd = b"<p>All financial information is presented in U.S. dollars.</p>"
+    assert classify(usd + blocks + cad)["current_ni"] == "stated"
+    fx = b"<p>About 30% of our revenue is denominated in euros.</p>"
+    europe = b"<p>Amounts for our operations in Europe are translated at average rates.</p>"
+    assert classify(europe + blocks + cad)["current_ni"] == "stated"  # 'Euro' is not 'Europe'
+    growth = b"<p>Financial results for the quarter reflect growth in Europe.</p>"
+    assert classify(growth + blocks + cad)["current_ni"] == "stated"
+    assert classify(fx + blocks + prose % b"$5.2")["current_ni"] == "stated"  # a passing mention
+    for rands in (b"South African rands", b"Polish zlotys"):
+        plural = b"<p>All amounts are in " + rands + b".</p>"
+        assert classify(plural + blocks + cad)["current_ni"] == "currency_mismatch", rands
+    header = [b"Three Months Ended June 30, 2025"]
+    for caption in (
+        b"<p>Our brands include thousands of franchised restaurants.</p><p>(in millions)</p>",
+        b"<p>We serve millions of European customers.</p><p>(in millions)</p>",
+    ):
+        html = table(header, [b"Net income", b"$5.2"], before=caption)
+        assert classify(html)["current_ni"] == "stated", caption  # a word, not a currency name
+    euros = table(header, [b"Net income", b"$5.2"], before=b"<p>(in millions of euros)</p>")
+    assert classify(euros)["current_ni"] == "currency_mismatch"
+    wide = table(
+        [b"Three Months Ended June 30, 2025", b"South African rands"], [b"Net income", b"5.2"]
+    )
+    assert classify(wide)["current_ni"] == "currency_mismatch"
+    label = table(header, [b"Net income (Polish zlotys)", b"5.2"])
+    assert classify(label)["current_ni"] == "currency_mismatch"
+    for unit in (
+        b"(in millions of Polish zlotych)",
+        b"(in millions of dinara)",
+        b"(in millions of euros&sup1;)",  # a footnote mark after the name is not a longer word
+        b"(in millions of euros1)",
+        b'(in millions of euros<span style="vertical-align:super">1</span>)',
+    ):
+        html = table(header, [b"Net income", b"$5.2"], before=b"<p>" + unit + b"</p>")
+        assert classify(html)["current_ni"] == "currency_mismatch", unit
     result = prose % b"$5.2"
     assert classify(b"<h2>Outlook</h2>" + result)["current_ni"] == "label_only"
     assert classify(b"<h2>Second Quarter Results</h2>" + result)["current_ni"] == "stated"
@@ -1196,6 +1299,23 @@ def test_table_declarations_layout_headings_quoted_starts_and_free_cash_flow():
     assert classify(ended)["current_ni"] == "stated"  # a layout heading ends the section
     doc = m.parse_document("html", b"<p>One.</p>" + boxed(b"Outlook") + b"<p>Two.</p>")
     assert m.narrative(doc) == [("One.", True), ("Outlook", True), ("Two.", True)]
+    unit = b"<table><tr><td>(in millions)</td><td>Three Months Ended June 30, 2025</td></tr>"
+    unit += b"<tr><td>Net income</td><td>5.2</td></tr></table>"
+    assert classify(boxed(b"Non-GAAP Financial Measures") + unit)["current_ni"] == "label_only"
+    assert classify(boxed(b"Second Quarter Results") + unit)["current_ni"] == "stated"
+    spacer = b"<p>We expect continued growth in fiscal 2026.</p>" + boxed(b"&nbsp;")
+    assert classify(spacer + unit)["current_ni"] == "stated"  # an empty box still ends the text
+    nested = table([b"Three Months Ended June 30, 2025"], [b"Adjusted EBITDA", b"9.9"], before=b"")
+    wrapper = boxed(b"Adjusted EBITDA reconciliation" + nested)
+    assert classify(wrapper + unit)["current_ni"] == "stated"  # a box holding a table is a table
+    data = b"<table><tr><td>Non-GAAP Financial Measures</td><td>Q2</td></tr></table>"
+    balance = b"<table><tr><td>(in millions)</td><td>December 31, 2024</td></tr>"
+    balance += b"<tr><td>Total assets</td><td>1,400</td></tr></table>"
+    heading = classify(boxed(b"Non-GAAP Financial Measures") + balance)
+    assert heading["prior_fy_assets"] == "label_only"
+    assert classify(data + balance)["prior_fy_assets"] == "stated"  # a data table is no heading
+    canadian = boxed(b"(in millions of Canadian dollars)") + unit
+    assert classify(canadian)["current_ni"] == "currency_mismatch"  # as a text block would
     quoted = b'<p>Net income declined in the U.S. "Income tax expense for Q2 FY2025 was $5.2'
     assert classify(quoted + b' million."</p>')["current_ni"] == "label_only"
     assert list(m.sentences(['in the U.S. "the plan"'])) == ['in the U.S. "the plan"']
@@ -1233,6 +1353,23 @@ def test_release_identification():
         "Results. This press release contains",
         "As set out in this press release",
         "See the website. NEWS RELEASE",
+    ):
+        named = [doc("EX-99.1", ""), doc("EX-99.2", "", text)]
+        assert m.identify_release(named) == ("release", [named[1]]), text
+    for text in (
+        "Q2 2025 Investor Presentation. Q2 earnings release materials are available online.",
+        "Earnings release date: August 5, 2025",
+        "The Q2 earnings release is available at ir.acme.com",
+        "Q2 earnings release is available at ir.acme.com",
+    ):
+        referenced = [doc("EX-99.1", "Exhibit 99.1"), doc("EX-99.2", "", text)]
+        assert m.identify_release(referenced) == ("release_by_type", [referenced[0]]), text
+    for text in (
+        "ACME Q2 2025 Earnings Release",
+        "PRESS RELEASE For Immediate Release",
+        "Press release dated August 5, 2025",
+        "This press release is available at ir.acme.com",
+        "PRESS RELEASE DATE: August 5, 2025",
     ):
         named = [doc("EX-99.1", ""), doc("EX-99.2", "", text)]
         assert m.identify_release(named) == ("release", [named[1]]), text
@@ -1394,11 +1531,12 @@ class Cut(io.BytesIO):
 
 class Opener:
     def __init__(self, pages, fail=None):
-        self.pages, self.fail, self.calls = pages, dict(fail or {}), []
+        self.pages, self.fail, self.calls, self.agents = pages, dict(fail or {}), [], []
 
     def open(self, request, timeout):
         url = request.full_url
         self.calls.append(url)
+        self.agents.append(request.get_header("User-agent"))
         action = self.fail.pop(url, None)
         if action == "interrupt":
             raise KeyboardInterrupt
@@ -1463,6 +1601,7 @@ def build(tmp, records=None, requests=None):
     definition["sample"]["size"] = 3
     definition["requests"]["minimum_request_interval_seconds"] = 0
     definition["requests"].update(requests or {})
+    definition["amendments"], definition["reconciled_attempts"] = [], []
     raw = (json.dumps(definition, indent=1) + "\n").encode()
     (study / "definition.json").write_bytes(raw)
     code = {r: sha((repo / r).read_bytes()) for r in (m.AUDIT[0], m.CAPTURE[0], m.FEATURES[0])}
@@ -1473,6 +1612,35 @@ def build(tmp, records=None, requests=None):
 
 def go(repo, study, opener, **kwargs):
     return m.run(study / "definition.json", study / "freeze.json", repo, study, opener, **kwargs)
+
+
+def amend(study, reconciled, supersedes=None, **requests):
+    """Declare amendment-01: new request settings, the attempts it names, and a fresh freeze."""
+    path = study / "definition.json"
+    supersedes = supersedes or sha(path.read_bytes())
+    definition = json.loads(path.read_text())
+    definition["requests"].update(requests)
+    definition["amendments"] = [
+        {
+            "id": "amendment-01",
+            "supersedes_definition_sha256": supersedes,
+            "record": "amendment-01.json",
+        }
+    ]
+    definition["reconciled_attempts"] = list(reconciled)
+    raw = (json.dumps(definition, indent=1) + "\n").encode()
+    path.write_bytes(raw)
+    record = json.dumps({"supersedes_definition_sha256": supersedes}).encode()
+    (study / "amendment-01.json").write_bytes(record)
+    freeze = json.loads((study / "freeze.json").read_text())
+    freeze.update(definition_sha256=sha(raw), amendments={"amendment-01.json": sha(record)})
+    (study / "freeze.json").write_text(json.dumps(freeze))
+
+
+def tree(folder):
+    return {
+        str(p.relative_to(folder)): sha(p.read_bytes()) for p in folder.rglob("*") if p.is_file()
+    }
 
 
 REAL_PROCESSES = m.processes
@@ -1505,10 +1673,16 @@ def test_other_research_workers_block_before_any_request(tmp_path, monkeypatch):
 
 def test_workers_started_without_a_qualified_path_are_seen(tmp_path, monkeypatch):
     repo, study = build(tmp_path)
+    deep = repo / ".qualification/earnings-quality20260928/qualification-review/collector"
+    deep.mkdir(parents=True)
+    (deep / "audit_collector.py").write_text("")
+    (repo / ".qualification/corporate_action_probe.py").write_text("")
     for command in (
         "py capture.py --run",
         "C:\\Python313\\pythonw.exe audit.py",
         "uv run probe.py",
+        "python audit_collector.py",
+        "python corporate_action_probe.py",
     ):
         rows = [(os.getpid(), 0, "pytest"), (424242, 1, command)]
         monkeypatch.setattr(m, "processes", lambda rows=rows: rows)
@@ -1665,6 +1839,67 @@ def test_rate_limit_halts_and_resumes_only_with_acknowledgement(tmp_path):
     rows = {r["symbol"]: r for r in json.loads((attempt / "events.json").read_text())}
     assert rows["CCC"]["components"]["current_ni"]["classification"] == "exhibit_unavailable"
     assert list((attempt / "source").glob("STOP-acknowledged-*.json"))
+
+
+def test_amendment_sets_aside_a_named_attempt_and_allows_one_new_run(tmp_path):
+    repo, study = build(tmp_path)
+    old_agent = json.loads((study / "definition.json").read_text())["requests"]["user_agent"]
+    new_agent = "Declared Agent declared@example.com"
+    first = next(iter(site()))
+    refused = Opener(site(), fail={first: 403})
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, refused)
+    halted = next((study / "attempts").iterdir())
+    saved = tree(halted)
+    amend(study, [halted.name], user_agent=new_agent)
+    ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+    assert ready["ready"] and ready["resumable_attempts"] == []
+    opener = Opener(site())
+    new = go(repo, study, opener)
+    assert json.loads((new / "attempt.json").read_text())["status"] == "complete"
+    assert set(refused.agents) == {old_agent} and set(opener.agents) == {new_agent}
+    for name in ("sample.json", "projection.json"):
+        assert (new / name).read_bytes() == (halted / name).read_bytes()
+    with pytest.raises(m.ProbeError, match="another definition"):
+        go(repo, study, Opener(site()), resume=halted.name, acknowledge_stop=True)
+    with pytest.raises(m.ProbeError, match="complete attempt"):
+        m.reanalyze(halted.name, study / "definition.json", study / "freeze.json", repo, study)
+    with pytest.raises(m.ProbeError, match="already exists"):
+        go(repo, study, Opener(site()))
+    assert tree(halted) == saved and not list((halted / "source").glob("STOP-acknowledged-*"))
+
+
+def test_an_attempt_not_named_or_not_superseded_still_blocks(tmp_path):
+    repo, study = build(tmp_path)
+    first = next(iter(site()))
+    with pytest.raises(m.ProbeError, match="Halted"):
+        go(repo, study, Opener(site(), fail={first: 403}))
+    halted = next((study / "attempts").iterdir())
+    for reconciled, supersedes in (([], None), ([halted.name], "0" * 64)):
+        amend(study, reconciled, supersedes)
+        opener = Opener(site())
+        with pytest.raises(m.ProbeError, match="already exists"):
+            go(repo, study, opener)
+        assert opener.calls == []
+        ready = m.preflight(study / "definition.json", study / "freeze.json", repo, study)
+        assert not ready["ready"] and ready["resumable_attempts"] == []
+        assert [b["path"] for b in ready["blocking"]] == ["attempts"]
+
+
+def test_changed_or_unbound_amendment_record_refuses_before_any_request(tmp_path):
+    repo, study = build(tmp_path)
+    amend(study, [])
+    record, freeze_path = study / "amendment-01.json", study / "freeze.json"
+    original, freeze = record.read_bytes(), json.loads(freeze_path.read_text())
+    opener = Opener(site())
+    record.write_bytes(original + b" ")
+    with pytest.raises(m.ProbeError, match="Amendment record missing or changed"):
+        go(repo, study, opener)
+    record.write_bytes(original)
+    freeze_path.write_text(json.dumps({k: v for k, v in freeze.items() if k != "amendments"}))
+    with pytest.raises(m.ProbeError, match="Amendment records differ"):
+        go(repo, study, opener)
+    assert opener.calls == [] and not (study / "attempts").exists()
 
 
 def test_unidentified_release_still_reports_any_ex99(tmp_path):
@@ -2182,3 +2417,18 @@ def test_frozen_declaration_binds_this_code():
     for relative, digest in frozen["code"].items():
         assert sha((REPO / relative).read_bytes()) == digest
     assert m.declaration_problems(repo=REPO)[2] == []
+    definition = json.loads((HERE / "definition.json").read_text())
+    agent = definition["requests"]["user_agent"]
+    assert agent.isascii() and agent.isprintable() and "@" in agent
+    amendment = json.loads((HERE / "amendment-01.json").read_text())
+    superseded = "f9e6e2b509d244e33142fd94d1820bdb0995e0432fb4912fb77e26f58e5a0b8f"
+    assert amendment["new_definition_sha256"] == frozen["definition_sha256"]
+    assert amendment["supersedes_definition_sha256"] == superseded
+    assert definition["amendments"] == [
+        {
+            "id": "amendment-01",
+            "supersedes_definition_sha256": superseded,
+            "record": "amendment-01.json",
+        }
+    ]
+    assert amendment["superseded_attempt"]["id"] in definition["reconciled_attempts"]
